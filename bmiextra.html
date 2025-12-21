@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <!-- Added Google Font for a stylish look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modern & Colorful Styling */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #FF6B6B 0%, #556270 100%);
+            --secondary-gradient: linear-gradient(45deg, #11998e, #38ef7d);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-main: #333;
+            --text-light: #666;
+            --highlight: #38ef7d;
+        }
+
+        body {
+            /* Animated Colorful Background */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif; /* Modern Font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #calculator-container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        #calculator-container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #444;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: -webkit-linear-gradient(#e73c7e, #23a6d5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-align: left;
+            color: #555;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input[type="number"]:focus {
+            border-color: #23a6d5;
+            background: #fff;
+            outline: none;
+            box-shadow: 0 0 10px rgba(35, 166, 213, 0.2);
+        }
+
+        /* Gender Options Styling */
+        .gender-options {
+            text-align: left;
+            margin-bottom: 20px;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .gender-options label {
+            display: inline-flex;
+            align-items: center;
+            margin: 0;
+            font-weight: 500;
+            cursor: pointer;
+            text-transform: none;
+            color: #333;
+        }
+
+        .gender-options input[type="radio"] {
+            margin-right: 8px;
+            accent-color: #e73c7e;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        button {
+            background-image: var(--secondary-gradient);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(56, 239, 125, 0.6);
+            background-image: linear-gradient(45deg, #38ef7d, #11998e);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1rem;
+            font-weight: 400;
+            min-height: 80px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+            border: 2px dashed #38ef7d;
+            border-radius: 15px;
+            line-height: 1.7;
+            text-align: left;
+            color: #444;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #result strong {
+            font-weight: 700;
+            color: #008000;
+            font-size: 1.1em;
+        }
+
+        #result .category {
+            font-style: normal;
+            text-transform: uppercase;
+            background: #23a6d5;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        #result .range-info {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        #result small {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.75em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .error {
+            color: #ff4757;
+            font-size: 0.85em;
+            margin-top: -5px;
+            margin-bottom: 15px;
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            animation: shake 0.3s;
+        }
+
+        @keyframes shake {
+            0%, 100% {transform: translateX(0);}
+            25% {transform: translateX(-5px);}
+            75% {transform: translateX(5px);}
+        }
+
+        small[style*="(For adults 18+)"] {
+            color: #888;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="calculator-container">
+        <h1>BMI Calculator</h1>
+
+        <form id="bmi-form">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age (e.g., 25)" required min="1">
+             <small style="display: block; text-align: left; margin-top: -5px; margin-bottom: 15px; font-size: 0.8em;">(For adults 18+)</small>
+
+
+            <label>Gender:</label>
+            <div class="gender-options">
+                 <label for="male"><input type="radio" id="male" name="gender" value="male" required> Male</label>
+                 <label for="female"><input type="radio" id="female" name="gender" value="female" required> Female</label>
+                 <label for="other"><input type="radio" id="other" name="gender" value="other" required> Other</label>
+            </div>
+             <!-- Hidden error message area for gender -->
+             <span id="gender-error" class="error" style="display: none;">Please select a gender.</span>
+
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" placeholder="e.g., 175" required step="0.1" min="50">
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" placeholder="e.g., 70" required step="0.1" min="10">
+
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+
+        <div id="result">
+            Result will appear here.
+        </div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            // Clear previous results/errors
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Calculating...'; // Provide feedback
+            document.getElementById('gender-error').style.display = 'none';
+
+
+            // Get input values
+            const ageInput = document.getElementById('age');
+            const heightInput = document.getElementById('height');
+            const weightInput = document.getElementById('weight');
+            const selectedGender = document.querySelector('input[name="gender"]:checked');
+
+            const age = parseInt(ageInput.value);
+            const heightCm = parseFloat(heightInput.value);
+            const weightKg = parseFloat(weightInput.value);
+
+            let isValid = true;
+
+            // --- Input Validation ---
+             if (!age || age <= 0) {
+                 // alert("Please enter a valid age."); // Using result div instead
+                 resultDiv.textContent = 'Please enter a valid age.';
+                 isValid = false;
+             } else if (age < 18) {
+                 // Add a warning for non-adults
+                  resultDiv.innerHTML = `
+                    BMI calculation for individuals under 18 requires age-and-gender specific charts (BMI-for-age percentiles). <br>
+                    This calculator uses the adult formula. Please consult a healthcare provider for children/adolescents.`;
+                 // We can still calculate using adult formula for informational purposes if needed,
+                 // but the interpretation below won't be appropriate.
+                 // For now, let's just show the warning and stop.
+                 // If you wanted to proceed with adult calculation anyway, remove the 'return;'
+                 return;
+             }
+
+            if (!selectedGender) {
+                document.getElementById('gender-error').style.display = 'block';
+                 resultDiv.textContent = 'Please select a gender.';
+                 isValid = false;
+             }
+            if (!heightCm || heightCm <= 50) { // Added a more realistic minimum height
+                // alert("Please enter a valid height in cm (e.g., > 50).");
+                resultDiv.textContent = 'Please enter a valid height in cm (e.g., > 50).';
+                 isValid = false;
+            }
+            if (!weightKg || weightKg <= 10) { // Added a more realistic minimum weight
+                 // alert("Please enter a valid weight in kg (e.g., > 10).");
+                 resultDiv.textContent = 'Please enter a valid weight in kg (e.g., > 10).';
+                 isValid = false;
+             }
+
+            if (!isValid) {
+                 // If any validation failed (besides age < 18 which has its own message)
+                 if (resultDiv.textContent === 'Calculating...') { // Avoid overwriting specific messages
+                    resultDiv.textContent = 'Please fill in all fields correctly.';
+                 }
+                 return; // Stop calculation
+             }
+
+            // --- Calculation ---
+            const heightM = heightCm / 100;
+            const bmi = weightKg / (heightM * heightM);
+            const bmiRounded = bmi.toFixed(1);
+
+            // --- Interpretation (Standard Adult Categories) ---
+            let interpretation = '';
+            const healthyRangeLower = 18.5;
+            const healthyRangeUpper = 24.9;
+
+            if (bmi < healthyRangeLower) {
+                interpretation = 'Underweight';
+            } else if (bmi >= healthyRangeLower && bmi <= healthyRangeUpper) {
+                interpretation = 'Healthy Weight';
+            } else if (bmi > healthyRangeUpper && bmi < 30) {
+                interpretation = 'Overweight';
+            } else { // bmi >= 30
+                interpretation = 'Obesity';
+            }
+
+             // --- Define standard healthy range text ---
+             const healthyRangeText = `<strong>${healthyRangeLower} - ${healthyRangeUpper}</strong>`;
+
+            // --- Display Result (Task 2: Retrieval/Display with Range) ---
+            resultDiv.innerHTML = `
+                Your BMI is: <strong>${bmiRounded}</strong><br>
+                This falls into the <strong class="category">${interpretation}</strong> category.
+                <div class="range-info">
+                    The standard <strong>Healthy Weight</strong> range for adults is generally considered BMI ${healthyRangeText}.
+                </div>
+                <small>Note: BMI is a screening tool, not a diagnostic one. Factors like age, sex, ethnicity, and muscle mass can influence the relationship between BMI and health risk. Consult a healthcare professional for personalized advice.</small>
+            `;
+
+            // Log collected data
+            console.log(`Age: ${age}, Gender: ${selectedGender.value}, Height: ${heightCm} cm, Weight: ${weightKg} kg, BMI: ${bmiRounded}`);
+        }
+
+        // Optional: Add event listener to form to prevent default submission if Enter is pressed
+        document.getElementById('bmi-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+            calculateBMI(); // Trigger calculation on Enter key press in a field
+        });
+    </script>
+
+</body>
+</html>

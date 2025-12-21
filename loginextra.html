@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup/Login Form with AutoComplete and Firebase</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <style>
+  body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+    background-color: white; 
+    color: black; 
+    font-weight: bold; 
+    text-align: center;
+  }
+  input, button { 
+    display: block; 
+    margin: 10px auto; 
+    padding: 10px; 
+    width: 300px; 
+    font-weight: bold; 
+  }
+  button {
+    background: linear-gradient(to top, #333, #555); /* darker at bottom, shiny at top */
+    border: none;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255,255,255,0.2);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px 12px 0 0;
+  }
+  button:active {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5), inset 0 1px 2px rgba(0,0,0,0.2);
+    transform: translateY(2px);
+  }
+  #suggestions { 
+    border: 1px solid #ccc; 
+    max-height: 150px; 
+    overflow-y: auto; 
+    display: none; 
+    background-color: white;
+    margin: 0 auto;
+  }
+  .suggest-item { 
+    padding: 5px; 
+    cursor: pointer; 
+  }
+  .suggest-item:hover { 
+    background-color: #f0f0f0; 
+  }
+  .flag { 
+    width: 32px; 
+    height: 24px; 
+    vertical-align: middle; 
+    margin-right: 10px; 
+  }
+  .hidden { 
+    display: none; 
+  }
+  .message { 
+    margin: 10px 0; 
+    font-weight: bold; 
+  }
+  .link { 
+    color: green;
+    text-decoration: underline; 
+    cursor: pointer; 
+  }
+</style>
+</head>
+<body>
+
+  <h2 id="form-title">Signup Form</h2>
+
+  <form id="signup-form">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="name" placeholder="Full Name" required>
+
+    <div>
+      <input type="text" id="city" placeholder="Enter city" autocomplete="off" required>
+      <div id="suggestions"></div>
+    </div>
+
+    <input type="text" id="country" placeholder="Country" readonly>
+
+    <div>
+      <img id="flag" class="flag" src="" alt="Flag">
+      <input type="text" id="isd" placeholder="ISD Code" readonly>
+    </div>
+
+    <input type="text" id="mobile" placeholder="Mobile Number" required>
+
+    <div style="position: relative;">
+      <input type="password" id="password" placeholder="Password" required>
+      <span id="togglePassword" style="position:absolute; top:12px; right:10px; cursor:pointer;">ðŸ‘ï¸</span>
+    </div>
+
+    <button type="submit">Sign Up</button>
+    <p class="link" id="switch-to-login">Already have an account? Login</p>
+    <p class="message" id="message"></p>
+  </form>
+
+  <form id="login-form" class="hidden">
+    <input type="email" id="login-email" placeholder="Email" required>
+    <div style="position: relative;">
+      <input type="password" id="login-password" placeholder="Password" required>
+      <span id="toggleLoginPassword" style="position:absolute; top:12px; right:10px; cursor:pointer;">ðŸ‘ï¸</span>
+    </div>
+    <button type="submit">Login</button>
+    <p class="link" id="forgot-password">Forgot Password?</p>
+    <p class="link" id="switch-to-signup">Don't have an account? Sign up</p>
+    <p class="message" id="login-message"></p>
+  </form>
+
+  <script>
+    const firebaseConfig = {
+     apiKey:  "AIzaSyBaKBHL2iKnnvGY6HD6l4p7Hs UKt3CchdI",
+authDomain: "healthplus-6a769.firebaseapp. com",
+projectId: "healthplus-6a769",
+storageBucket: "healthplus-6a769. firebasestorage.app",
+messagingSenderId: "841353217929",
+appId: "1:841353217929:web: b76f08599cc7e8e1264358"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+
+    let cityData = [];
+    Papa.parse("citiesextra.csv", {
+      download: true,
+      header: true,
+      complete: function(results) {
+        cityData = results.data;
+      }
+    });
+
+    const cityInput = document.getElementById('city');
+    const suggestionsBox = document.getElementById('suggestions');
+    const countryInput = document.getElementById('country');
+    const isdInput = document.getElementById('isd');
+    const flagImg = document.getElementById('flag');
+
+    cityInput.addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      if (query.length < 3) {
+        suggestionsBox.style.display = 'none';
+        return;
+      }
+      const matches = cityData.filter(row => row.City.toLowerCase().startsWith(query));
+      suggestionsBox.innerHTML = matches.map(m => `<div class='suggest-item'>${m.City}</div>`).join('');
+      suggestionsBox.style.display = matches.length ? 'block' : 'none';
+      document.querySelectorAll('.suggest-item').forEach(item => {
+        item.addEventListener('click', () => {
+          cityInput.value = item.textContent;
+          suggestionsBox.style.display = 'none';
+          const selectedData = cityData.find(row => row.City === item.textContent);
+          if (selectedData) {
+            countryInput.value = selectedData.Country;
+            isdInput.value = selectedData["ISD Code"];
+            flagImg.src = `https://flagcdn.com/32x24/${selectedData["Country Code"].toLowerCase()}.png`;
+          }
+        });
+      });
+    });
+
+    document.getElementById('togglePassword').addEventListener('click', () => {
+      const pass = document.getElementById('password');
+      pass.type = pass.type === 'password' ? 'text' : 'password';
+    });
+
+    document.getElementById('toggleLoginPassword').addEventListener('click', () => {
+      const pass = document.getElementById('login-password');
+      pass.type = pass.type === 'password' ? 'text' : 'password';
+    });
+
+    // Signup form submission
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const name = document.getElementById('name').value;
+      const city = cityInput.value;
+      const country = countryInput.value;
+      const isd = isdInput.value;
+      const mobile = document.getElementById('mobile').value;
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+localStorage.setItem("loggedIn", "true"); 
+          return db.collection('myHealthPlus').doc(userCredential.user.uid).set({
+            name, city, country, isd, mobile, email
+          });
+        })
+        .then(() => {
+          document.getElementById('message').textContent = "Signup successful!";
+          document.getElementById('message').style.color = 'green';
+          document.getElementById('signup-form').reset();
+          flagImg.src = "";
+          setTimeout(() => {
+            window.location.href = 'mainextra.html';
+          }, 500);
+        })
+        .catch(error => {
+          document.getElementById('message').textContent = error.message;
+          document.getElementById('message').style.color = 'red';
+        });
+    });
+
+    // Login form submission
+   document.getElementById('login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const uid = user.uid;
+
+      db.collection('myHealthPlus').doc(uid).get().then(doc => {
+        let name = user.email;
+        if (doc.exists && doc.data().name) {
+          name = doc.data().name;
+        }
+localStorage.setItem("loggedIn", "true"); 
+        localStorage.setItem("userName", name);
+
+        document.getElementById('login-message').textContent = "Login successful!";
+        document.getElementById('login-message').style.color = 'green';
+
+        setTimeout(() => {
+          window.location.href = 'mainextra.html';
+        }, 500);
+      }).catch((err) => {
+        alert("Login successful, but name not found. Redirecting...");
+        localStorage.setItem("userName", user.email);
+        window.location.href = 'mainextra.html';
+      });
+    })
+    .catch(error => {
+      document.getElementById('login-message').textContent = error.message;
+      document.getElementById('login-message').style.color = 'red';
+    });
+});
+
+    document.getElementById('forgot-password').addEventListener('click', () => {
+      const email = prompt("Enter your email for password reset:");
+      if (email) {
+        auth.sendPasswordResetEmail(email)
+          .then(() => alert("Reset link sent to your email."))
+          .catch(error => alert(error.message));
+      }
+    });
+
+    document.getElementById('switch-to-login').addEventListener('click', () => {
+      document.getElementById('signup-form').classList.add('hidden');
+      document.getElementById('login-form').classList.remove('hidden');
+      document.getElementById('form-title').textContent = 'Login Form';
+    });
+
+    document.getElementById('switch-to-signup').addEventListener('click', () => {
+      document.getElementById('login-form').classList.add('hidden');
+      document.getElementById('signup-form').classList.remove('hidden');
+      document.getElementById('form-title').textContent = 'Signup Form';
+    });
+  </script>
+</body>
+</html>

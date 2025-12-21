@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Pulmonologists (Chest Physicians) in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Lungs/Breathing Inspired Palette */
+            --primary-blue: #00cec9;
+            --secondary-blue: #00b894;
+            --accent-pink: #e84393;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-color: #f7f9fc;
+            --header-gradient: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative bubbles/circles */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            animation: breathe 3s infinite ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--secondary-blue);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0f2f1;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "🫁";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1rem;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 206, 201, 0.2);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #e0f2f1;
+            font-size: 1.1rem;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--accent-pink);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--secondary-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 184, 148, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: var(--primary-blue);
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">ﮠ</span> <!-- Lungs Icon Placeholder -->
+        <h1>Top 100 Pulmonologists (Chest Physicians) in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. Verify MD/DNB/DM qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Pulmonologist:</h2>
+        <ul>
+            <li><strong>Your Condition:</strong> Asthma, COPD, cough, breathing difficulty, sleep apnea, lung infection (TB, pneumonia), Interstitial Lung Disease (ILD)?</li>
+            <li><strong>Sub-specialty Need:</strong> Consider specialists in Interventional Pulmonology, Sleep Medicine, ILD, Allergy, or Critical Care for complex issues.</li>
+            <li><strong>Diagnostic Tools:</strong> Ensure access to PFT, Bronchoscopy, Sleep Lab, CT Scan if needed.</li>
+            <li><strong>Inpatient Care:</strong> Check hospital affiliation and critical care capabilities if admission might be required.</li>
+            <li><strong>Referral:</strong> Your GP can often provide a suitable referral.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                 <td>1</td>
+                 <td>Dr. Randeep Guleria (MD, DM - Pulm Med)</td>
+                 <td>General Pulmonology, Respiratory Medicine (Former Director, AIIMS)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Institute of Internal Med & Respiratory)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. Zarir F Udwadia (MD, FRCP, FCCP)</td>
+                 <td>General Pulmonology, Tuberculosis (esp. MDR/XDR-TB), ILD</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC / Breach Candy Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja</a> / Breach Candy</td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. Deepak Talwar (MD, DM - Pulm Med)</td>
+                 <td>Interventional Pulmonology, Sleep Medicine, Critical Care</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Metro Centre for Respiratory Diseases (Chairman) / Formerly Fortis Noida</td>
+                 <td>Noida</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Metro Centre for Respiratory Diseases Noida"</td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. G C Khilnani (MD, FAMS)</td>
+                 <td>General Pulmonology, Sleep Medicine, Critical Care</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Chairman - Pulm, Critical Care & Sleep Med) / Formerly AIIMS</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. J C Suri (MD, FCCP)</td>
+                 <td>Sleep Medicine, Critical Care, Pulmonology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis Hospital, Vasant Kunj (Director & HOD - Pulmonary, Critical Care & Sleep Med)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. Ashok Mahashur (MD, FRCP)</td>
+                 <td>General Pulmonology, Respiratory Medicine</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>P.D. Hinduja Hospital (Consultant) / Formerly KEM Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. Raja Dhar (MD, MRCP, FCCP)</td>
+                 <td>General Pulmonology, ILD, Interventional Pulmonology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CMRI / Fortis Hospital, Anandapur (Director & HOD - Pulmonology)</td>
+                 <td>Kolkata</td>
+                 <td>Via Fortis/CMRI Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> / <a href="https://www.cmri.in/" target="_blank" class="website-link">CMRI</a></td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. Bornali Datta (MD, MRCP)</td>
+                 <td>ILD, General Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Director - Respiratory & Sleep Medicine)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. Vikas Maurya (MD, DNB - Resp Med)</td>
+                 <td>Interventional Pulmonology, General Pulmonology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Director & HOD - Pulmonology & Sleep Disorders)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Rajesh Chawla (MD)</td>
+                 <td>Critical Care, Pulmonology, Sleep Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Arjun Khanna (MD, EDIC, FCCP)</td>
+                 <td>Interventional Pulmonology, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Amrita Hospital, Faridabad (HOD) / Formerly Yashoda Hyderabad</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://amritahospitals.org/fbd/" target="_blank" class="website-link">Amrita Hospital Faridabad</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Prashant Saxena (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Principal Director & Head)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. N Ramakrishnan (MD, AB - Internal Med, Critical Care, Sleep Med)</td>
+                 <td>Critical Care Medicine, Sleep Medicine (manages respiratory failure)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Chennai (Director - Critical Care) / Founder, TACT Academy</td>
+                 <td>Chennai</td>
+                 <td>Via Apollo/TACT</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / TACT Academy</td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. S K Jindal (MD, FAMS, FCCP)</td>
+                 <td>General Pulmonology, COPD, Asthma (Highly respected figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Jindal Clinics / Formerly Head of Dept, PGI Chandigarh</td>
+                 <td>Chandigarh</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Jindal Clinics Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. D J Christopher (MD, PhD)</td>
+                 <td>ILD, General Pulmonology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Christian Medical College (CMC) (Professor & Head - Pulmonary Med)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Neeraj Jain (MD)</td>
+                 <td>Pulmonology, Critical Care, Sleep Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant & Chairman - Chest Med)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Vivek Nangia (MD, DNB - Resp Med, FCCP)</td>
+                 <td>Interventional Pulmonology, Sleep Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (East Wing) (Principal Director & Head)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Karan Madan (MD, DM - Pulm Med)</td>
+                 <td>Interventional Pulmonology, General Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>AIIMS (Professor - Pulmonary, Critical Care & Sleep Med)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Ravindra Mehta (MD, FCCP, AB - Int Med, Pulm, Crit Care, Sleep Med)</td>
+                 <td>Interventional Pulmonology, Critical Care, Sleep Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Chief - Pulmonary & Critical Care) / Formerly Apollo Bengaluru</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Lancelot Pinto (MD, DNB - Resp Med)</td>
+                 <td>General Pulmonology, Tuberculosis, Smoking Cessation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant Respirologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Apar Jindal (MD, DM - Pulm Med)</td>
+                 <td>Lung Transplant Pulmonology, ILD, Pulmonary Hypertension</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>MGM Healthcare (Director - Lung Transplant Program, Clinical Lead)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://mgmhealthcare.in/" target="_blank" class="website-link">MGM Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Srinivas Rajagopala (MD, FRCP, EDIC)</td>
+                 <td>Lung Transplant Pulmonology, Critical Care, ILD</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Gleneagles Global Health City (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Manoj Kumar Goel (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Critical Care, Sleep Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Ashish Kumar Prakash (MD, DNB - Resp Med)</td>
+                 <td>Interventional Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. P R Gupta (MD - Resp Med)</td>
+                 <td>General Pulmonology, Asthma, COPD</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Formerly SMS Medical College / Consultant Roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P R Gupta Pulmonologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. B Sadananda Naik (MD - Resp Med)</td>
+                 <td>General Pulmonology, Sleep Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Narayana Health City (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Sujeet Rajan (MD, DNB - Resp Med)</td>
+                 <td>General Pulmonology, Asthma, Allergy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Bombay Hospital / Bhatia Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> / Bhatia</td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Prasanna Kumar Thomas (MD, FRCP)</td>
+                 <td>General Pulmonology, ILD</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Prashant Chhajed (MD, FCCP)</td>
+                 <td>Interventional Pulmonology, Lung Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant at various hospitals (Nanavati Max etc.) / Lung Care & Sleep Centre (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Dr Prashant Chhajed Pulmonologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. V R Pattabhi Raman (MD, FCCP)</td>
+                 <td>General Pulmonology, Sleep Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Apollo Hospitals / SEHAT Healthcare</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic/Practice</td>
+                 <td>Search "Dr Pattabhi Raman Pulmonologist Chennai" or SEHAT</td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Preeti Devnani (MD, DNB - Neurology, AB - Sleep Med)</td>
+                 <td>Sleep Medicine (Neurologist with strong focus on sleep disorders)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jaslok Hospital and Research Centre (Clinical Director - Sleep Disorders Clinic)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a> (Note: Neurologist)</td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Ashutosh N Aggarwal (MD, DM - Pulm Med)</td>
+                 <td>General Pulmonology, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor - Pulmonary Medicine)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Rajiv Goyal (MD, DNB - Resp Med)</td>
+                 <td>Interventional Pulmonology, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Rohit Sarin (MD - Resp Med)</td>
+                 <td>Tuberculosis, Respiratory Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>National Institute of Tuberculosis and Respiratory Diseases (NITRD) (Director Professor & HOD)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="http://nitrd.nic.in/" target="_blank" class="website-link">NITRD</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Arup Basu (MD)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant & Chairman - Chest Med)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Jeenam Shah (MD, DNB - Resp Med)</td>
+                 <td>Interventional Pulmonology, General Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Saifee Hospital / Bhatia Hospital / Jaslok Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.saifeehospital.com/" target="_blank" class="website-link">Saifee</a> / Bhatia / Jaslok</td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Arun Chowdary Kotaru (MD, DM - Pulm Med)</td>
+                 <td>Interventional Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Sheetu Singh (MD - Resp Med, Fellow Interventional Pulm)</td>
+                 <td>Interventional Pulmonology, ILD, Allergy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant Pulmonologist</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sheetu Singh Pulmonologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Sandeep Nayar (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine, Critical Care</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Raj Tarun (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Director - Pulmonology & Critical Care)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Murali Mohan (MD - Resp Med)</td>
+                 <td>General Pulmonology, Sleep Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road / Narayana Health (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal</a> / <a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Raj Kumar (MD - Resp Med)</td>
+                 <td>General Pulmonology, Allergy, Sleep Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Vallabhbhai Patel Chest Institute (VPCI) (Senior Consultant & HOD) / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Via VPCI / Search</td>
+                 <td><a href="http://www.vpci.org.in/" target="_blank" class="website-link">VPCI</a> or search current practice</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Inder Mohan Chugh (MD)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. V K Vijayan (MD, PhD, FCCP)</td>
+                 <td>General Pulmonology, Research (Former Director, VPCI)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant / Formerly VPCI, Delhi (Advisor / Emeritus Scientist)</td>
+                 <td>Consultant</td>
+                 <td>Search Current Role</td>
+                 <td>Search current role</td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Manvir Bhatia (MD, DM - Neurology, AB - Sleep Med)</td>
+                 <td>Sleep Medicine, Neurology (Neurologist specializing in Sleep)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Neurology & Sleep Centre (Director) / Formerly Sir Ganga Ram</td>
+                 <td>New Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Neurology & Sleep Centre Delhi Dr Manvir Bhatia" (Note: Neurologist)</td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Bobby Bhalotra (MD)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant - Chest Med)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Himanshu Garg (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology, Sleep Medicine, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Senior Consultant / Director - Respiratory & Critical Care)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Sameer Garde (MD, DNB - Resp Med)</td>
+                 <td>Interventional Pulmonology, Thoracoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Global Hospitals (Consultant Pulmonologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Nirmal Kumar (MD - Resp Med)</td>
+                 <td>General Pulmonology, Asthma, Allergy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Sharad Joshi (MD)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Vaishali (Principal Consultant - Pulmonology)</td>
+                 <td>Ghaziabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>51</td>
+                 <td>Dr. A G Ghoshal (MD, FCCP)</td>
+                 <td>General Pulmonology, Asthma, Allergy (Veteran Figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>National Allergy Asthma Bronchitis Institute (NAABI) (Director)</td>
+                 <td>Kolkata</td>
+                 <td>Search Institute Contact</td>
+                 <td>Search "NAABI Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Ajit Singh (MD - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Senior Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Amit Kumar Mandal (MD, DM - Pulm Med)</td>
+                 <td>Interventional Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Director - Pulmonology & Critical Care)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Amitabha Saha (MD - Resp Med)</td>
+                 <td>General Pulmonology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Anand Jaiswal (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Anil Kumar (MD)</td>
+                 <td>General Pulmonology, Tuberculosis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Animesh Arya (MD - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Animesh Arya Pulmonologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Anirban Biswas (MD - Resp Med)</td>
+                 <td>General Pulmonology, Allergy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anirban Biswas Pulmonologist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Ankita Priya (MD, DNB - Resp Med)</td>
+                 <td>General Pulmonology, Interventional Pulmonology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Ashish Kumar Singh (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Ashutosh Shukla (MD - Internal Med)</td>
+                 <td>Internal Medicine (May handle Pulm cases)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Director - Internal Medicine)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a> (Verify Pulm focus)</td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Avi Kumar (MD, DNB - Resp Med)</td>
+                 <td>Interventional Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Heart Institute (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Bela Sharma (MD - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Dipankar Mitra (MD - Resp Med)</td>
+                 <td>General Pulmonology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Dipankar Mitra Pulmonologist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Gangadhar Davaluri (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology, Interventional Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Consultant Pulmonologist)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Gaurav Aneja (MD - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Gyanendra Agrawal (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jaypee Hospital (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaypeehospital.com/" target="_blank" class="website-link">Jaypee Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. H K Chopra (MD, FACC - Cardiologist)</td>
+                 <td>Cardiology & Internal Medicine (May see Pulm cases)</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Moolchand Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://moolchandhealthcare.com/" target="_blank" class="website-link">Moolchand</a> (Note: Cardiologist)</td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Hemanth K V (MD - Resp Med)</td>
+                 <td>Pulmonology, Interventional Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>70</td>
+                 <td>Dr. Kapil Salgia (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Bombay Hospital (Consultant Pulmonologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. M S Kanwar (MD, FCCP)</td>
+                 <td>Sleep Medicine, Pulmonology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / Director - Sleep Med)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Mayank Saxena (MD - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mayank Saxena Pulmonologist Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Mohit Kumar Mathur (MD - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mohit Kumar Mathur Pulmonologist Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>74</td>
+                 <td>Dr. M D Mitra (MD - Resp Med)</td>
+                 <td>General Pulmonology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M D Mitra Pulmonologist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>75</td>
+                 <td>Dr. N P Singh (MD - Internal Med)</td>
+                 <td>Internal Medicine, Critical Care (Manages Respiratory ICUs)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a> (Note: Internal Medicine focus)</td>
+            </tr>
+            <tr>
+                 <td>76</td>
+                 <td>Dr. Nikhil Modi (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Critical Care, Sleep Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>77</td>
+                 <td>Dr. Nikhil Narayan Bante (MD, DM - Pulm Med)</td>
+                 <td>Interventional Pulmonology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>78</td>
+                 <td>Dr. Pavan Yadav (MD, DM - Pulm Med)</td>
+                 <td>Interventional Pulmonology, Critical Care</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Aster CMI Hospital (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.asterhospitals.in/hospitals/aster-cmi-hebbal-bengaluru" target="_blank" class="website-link">Aster CMI Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Piyush Goel (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Columbia Asia (now Manipal) / Consultant roles</td>
+                 <td>Gurugram</td>
+                 <td>Search Current Affiliation</td>
+                 <td>Search "Dr Piyush Goel Pulmonologist Gurgaon"</td>
+            </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Poonam Sachdev (MD - Resp Med)</td>
+                 <td>General Pulmonology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>81</td>
+                 <td>Dr. Prabhat Kumar Singh (MD - Resp Med)</td>
+                 <td>General Pulmonology, Tuberculosis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Prabhat Kumar Singh Pulmonologist Patna"</td>
+            </tr>
+            <tr>
+                 <td>82</td>
+                 <td>Dr. Pradeep Kumar V (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology, Interventional Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>83</td>
+                 <td>Dr. Pratibha Dogra (MD - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>W Pratiksha Hospital (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.pratikshahospitals.com/" target="_blank" class="website-link">W Pratiksha Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Puneet Khanna (MD, DNB - Resp Med)</td>
+                 <td>Interventional Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. R K Mani (MD, FRCP)</td>
+                 <td>Critical Care Medicine, Pulmonology (Veteran Intensivist)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Nayati / Saket City Hospitals</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr R K Mani Critical Care Delhi"</td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Rahul Sharma (MD - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rahul Sharma Pulmonologist Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Rajiv Kumar Gupta (MD - Resp Med)</td>
+                 <td>Pulmonology, Tuberculosis</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. Ram Babu (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology, Interventional Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. S P Rai (MD - Resp Med)</td>
+                 <td>General Pulmonology, Asthma, Allergy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly KGMU</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S P Rai Pulmonologist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Samiran Panda (MD - Microbiology, PhD)</td>
+                 <td>Epidemiology, Infectious Diseases (Public Health Role)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>ICMR (Head - ECD Division)</td>
+                 <td>New Delhi</td>
+                 <td>Via ICMR Website</td>
+                 <td><a href="https://main.icmr.nic.in/" target="_blank" class="website-link">ICMR</a> (Note: Public Health/Research)</td>
+             </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Sandeep Garg (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Sanjay Kumar (MD - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Satyanarayana M (MD - Resp Med)</td>
+                 <td>General Pulmonology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Saurabh Mittal (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology, Interventional Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Soumya Das (MD - Resp Med)</td>
+                 <td>General Pulmonology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhubaneswar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Soumya Das Pulmonologist Bhubaneswar"</td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Sushmita Roychowdhury (MD - Resp Med)</td>
+                 <td>General Pulmonology, ILD</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Anandapur (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Swapnil Mehta (MD, DNB - Resp Med)</td>
+                 <td>Pulmonology, Sleep Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Swapnil Mehta Pulmonologist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Tanmay Banerjee (MD - Resp Med)</td>
+                 <td>Pulmonology, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Vishwanath Gella (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology, Interventional Pulmonology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Continental Hospitals (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://continentalhospitals.com/" target="_blank" class="website-link">Continental Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Yashdeep Gupta (MD, DM - Endocrinology)</td>
+                 <td>Endocrinology (Related field - manages sleep apnea aspects)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka / Formerly AIIMS (Consultant Endocrinologist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a> (Note: Endocrinologist)</td>
+             </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Pulmonologist:</h2>
+        <ul>
+            <li><strong>Your Condition:</strong> Asthma, COPD, cough, breathing difficulty, sleep apnea suspicion, lung infection (like TB or pneumonia), ILD, or need for procedures like bronchoscopy.</li>
+            <li><strong>Sub-specialty Need:</strong> For complex issues like ILD, pulmonary hypertension, severe asthma, complex sleep disorders, or interventional procedures, look for a specialist with focused expertise.</li>
+            <li><strong>Diagnostic Tools:</strong> Check if the hospital/clinic has necessary facilities like PFT (Pulmonary Function Test), Bronchoscopy suite, Sleep Lab, CT Scan.</li>
+            <li><strong>Inpatient Care:</strong> If your condition might require hospitalization or ICU care, consider the pulmonologist's hospital affiliation and critical care capabilities.</li>
+            <li><strong>Referral:</strong> Your GP can often provide a referral to a suitable chest specialist.</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

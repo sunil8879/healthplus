@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus | Pathology Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #0f172a; color: white; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding-bottom: 50px; }
+        #title-bar { background: linear-gradient(90deg, #00b894, #0984e3); padding: 40px 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: sticky; top: 0; z-index: 100; }
+        #title-bar h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; }
+        #disease-bar { padding: 40px 20px; text-align: center; max-width: 1400px; margin: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .disease-name { 
+            cursor: pointer; padding: 12px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; 
+            background: rgba(255,255,255,0.05); transition: 0.4s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 600; color: #94a3b8; backdrop-filter: blur(10px); font-size: 0.95rem;
+        }
+        .disease-name:hover { 
+            background: #00b894; color: white; transform: scale(1.1); 
+            box-shadow: 0 0 25px rgba(0,184,148,0.5); border-color: transparent;
+        }
+        #popup { 
+            display: none; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); 
+            width: 90%; max-width: 550px; background: white; padding: 40px; 
+            border-radius: 30px; box-shadow: 0 30px 100px rgba(0,0,0,1); z-index: 1000; color: #1e293b;
+            animation: popIn 0.5s ease;
+        }
+        @keyframes popIn { from { transform: translate(-50%, -40%) scale(0.9); opacity: 0; } }
+        #popup h3 { color: #0984e3; font-size: 2rem; margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+        #popup p { line-height: 1.6; font-size: 1.1rem; }
+        #close-popup { position: absolute; top: 20px; right: 25px; font-size: 2.5rem; cursor: pointer; color: #cbd5e1; transition: 0.3s; }
+        #close-popup:hover { color: #ef4444; transform: rotate(90deg); }
+    </style>
+</head>
+<body>
+    <div id="title-bar"><h1>Health Plus Pathology</h1></div>
+    <div id="disease-bar">
+        <!-- Re-inserted ALL your original data exactly -->
+        <span class="disease-name" data-test="IGF-1 (Insulin-like Growth Factor 1), Oral Glucose Tolerance Test (OGTT) for GH suppression">Acromegaly (Excess Growth Hormone)</span>
+        <span class="disease-name" data-test="Urine Porphobilinogen (PBG) and Aminolevulinic Acid (ALA) - elevated during acute attacks">Acute Intermittent Porphyria (AIP)</span>
+        <span class="disease-name" data-test="Serum Creatinine, BUN, Urinalysis, Urine Electrolytes">Acute Kidney Injury (AKI)</span>
+        <span class="disease-name" data-test="Serum Amylase, Serum Lipase (more specific)">Acute Pancreatitis</span>
+        <span class="disease-name" data-test="Morning Serum Cortisol, ACTH Stimulation Test, Plasma ACTH level, Serum Renin/Aldosterone">Addison's Disease (Adrenal Insufficiency)</span>
+        <span class="disease-name" data-test="AST/ALT ratio (often >2), GGT (Gamma-Glutamyl Transferase), Bilirubin, Albumin, PT/INR">Alcoholic Liver Disease</span>
+        <span class="disease-name" data-test="Serum Alpha-1 Antitrypsin Level, AAT Phenotyping/Genotyping">Alpha-1 Antitrypsin Deficiency</span>
+        <span class="disease-name" data-test="Urinalysis (hematuria), Kidney Biopsy (electron microscopy showing GBM splitting), Genetic testing (COL4A3/4/5 genes)">Alport Syndrome</span>
+        <span class="disease-name" data-test="Stool Antigen test, Stool Ova & Parasites (trophozoites/cysts), Serology (for extraintestinal disease)">Amebiasis (Entamoeba histolytica)</span>
+        <span class="disease-name" data-test="Serum/Urine Protein Electrophoresis & Immunofixation, Serum Free Light Chain Assay, Tissue Biopsy (Congo red staining, mass spectrometry or IHC for typing)">Amyloidosis (AL type)</span>
+        <span class="disease-name" data-test="ANCA (Anti-Neutrophil Cytoplasmic Antibody - c-ANCA/PR3, p-ANCA/MPO), Urinalysis, Creatinine, Biopsy (kidney, lung, skin)">ANCA-associated Vasculitis (GPA, MPA, EGPA)</span>
+        <span class="disease-name" data-test="NMDA Receptor Antibodies (serum, CSF)">Anti-NMDA Receptor Encephalitis</span>
+        <span class="disease-name" data-test="Lupus Anticoagulant, Anti-Cardiolipin Antibodies (IgG, IgM), Anti-Beta-2 Glycoprotein I Antibodies (IgG, IgM)">Antiphospholipid Syndrome</span>
+        <span class="disease-name" data-test="Urine Arsenic level (spot or 24-hour), Hair/Nail Arsenic testing (for chronic exposure)">Arsenic Poisoning</span>
+        <span class="disease-name" data-test="Galactomannan Antigen test (serum, BAL fluid), Beta-D-Glucan assay, Fungal Culture, Biopsy">Aspergillosis (Invasive)</span>
+        <span class="disease-name" data-test="Direct Antiglobulin Test (DAT / Direct Coombs Test), Indirect Antiglobulin Test (IAT / Indirect Coombs), CBC, Reticulocyte Count, LDH, Bilirubin">Autoimmune Hemolytic Anemia (AIHA)</span>
+        <span class="disease-name" data-test="ANA (Antinuclear Antibody), ASMA (Anti-Smooth Muscle Antibody), Anti-LKM-1 (Liver Kidney Microsomal type 1), Serum IgG levels, Liver Biopsy">Autoimmune Hepatitis</span>
+        <span class="disease-name" data-test="Thick and Thin Blood Smears (intraerythrocytic parasites, 'Maltese cross'), Babesia PCR (blood)">Babesiosis</span>
+        <span class="disease-name" data-test="CSF Analysis (Gram stain, culture, cell count, glucose, protein), Blood Culture">Bacterial Meningitis</span>
+        <span class="disease-name" data-test="Pathergy test (clinical skin reactivity), HLA-B51 testing (association, not diagnostic), ESR/CRP - clinical diagnosis primarily">Behçet's Disease</span>
+        <span class="disease-name" data-test="Urinalysis/Culture (to exclude infection), Cystoscopy with hydrodistention (clinical procedure, may show glomerulations) - primarily diagnosis of exclusion.">Bladder Pain Syndrome / Interstitial Cystitis</span>
+        <span class="disease-name" data-test="Tumor Biopsy (histopathology, ER/PR/HER2 status)">Breast Cancer</span>
+        <span class="disease-name" data-test="Blood cultures, Serum Agglutination Test (SAT), Brucella serology (ELISA)">Brucellosis</span>
+        <span class="disease-name" data-test="Fungal Culture, Beta-D-Glucan assay (for invasive candidiasis)">Candida Infection (Candidiasis)</span>
+        <span class="disease-name" data-test="Carboxyhemoglobin Level">Carbon Monoxide Poisoning</span>
+        <span class="disease-name" data-test="Urine 5-Hydroxyindoleacetic Acid (5-HIAA), Serum Chromogranin A">Carcinoid Syndrome</span>
+        <span class="disease-name" data-test="Anti-tTG IgA (tissue transglutaminase), EMA IgA (endomysial antibody), Total Serum IgA (to check for deficiency), Duodenal Biopsy">Celiac Disease</span>
+        <span class="disease-name" data-test="Pap Smear (Cytology), HPV testing, Cervical Biopsy">Cervical Cancer</span>
+        <span class="disease-name" data-test="Blood Smear (acute phase), Trypanosoma cruzi serology (IgG - chronic phase), PCR">Chagas Disease (American Trypanosomiasis)</span>
+        <span class="disease-name" data-test="Chikungunya IgM/IgG serology, Chikungunya RT-PCR (early)">Chikungunya Virus</span>
+        <span class="disease-name" data-test="NAAT (Nucleic Acid Amplification Test) on urine or swab">Chlamydia</span>
+        <span class="disease-name" data-test="Serum Creatinine, BUN (Blood Urea Nitrogen), eGFR (estimated Glomerular Filtration Rate), Urinalysis (proteinuria, hematuria)">Chronic Kidney Disease (CKD)</span>
+        <span class="disease-name" data-test="CBC (monocytosis), Peripheral Blood Smear, Bone Marrow Biopsy & Aspiration">Chronic Myelomonocytic Leukemia (CMML)</span>
+        <span class="disease-name" data-test="Fecal Elastase, Serum Trypsinogen, Imaging often key (lab tests less reliable)">Chronic Pancreatitis</span>
+        <span class="disease-name" data-test="Stool Toxin Assay (EIA) or Stool PCR for Toxin Genes (GDH antigen often included)">Clostridioides difficile Infection</span>
+        <span class="disease-name" data-test="Fecal Occult Blood Test (FOBT)/Fecal Immunochemical Test (FIT - screening), Colon Biopsy (histopathology), CEA (Carcinoembryonic Antigen - monitoring)">Colorectal Cancer</span>
+        <span class="disease-name" data-test="Serum 17-hydroxyprogesterone (17-OHP), ACTH Stimulation Test, Serum Electrolytes (Na+, K+), Genetic testing (CYP21A2 etc.)">Congenital Adrenal Hyperplasia (CAH)</span>
+        <span class="disease-name" data-test="Serum Copper, Ceruloplasmin (can be low), CBC (anemia, neutropenia)">Copper Deficiency</span>
+        <span class="disease-name" data-test="CSF 14-3-3 protein, CSF Tau protein, CSF Real-Time Quaking-Induced Conversion (RT-QuIC)">Creutzfeldt-Jakob Disease (CJD)</span>
+        <span class="disease-name" data-test="Serum Cryoglobulins, RF, Complement levels (C4 often low), Hepatitis C testing">Cryoglobulinemia</span>
+        <span class="disease-name" data-test="Stool Acid-Fast Stain (oocysts), Stool Antigen test (EIA, DFA)">Cryptosporidiosis</span>
+        <span class="disease-name" data-test="24-hour Urine Free Cortisol, Late-Night Salivary Cortisol, Low-Dose Dexamethasone Suppression Test, ACTH level">Cushing's Syndrome (Excess Cortisol)</span>
+        <span class="disease-name" data-test="Sweat Chloride Test, CFTR Gene Mutation Analysis">Cystic Fibrosis</span>
+        <span class="disease-name" data-test="Serology (enzyme-linked immunoelectrotransfer blot - EITB), CSF analysis (if CNS involvement), Imaging often key">Cysticercosis (Taenia solium larva)</span>
+        <span class="disease-name" data-test="CMV PCR (viral load), CMV IgG/IgM serology">Cytomegalovirus (CMV)</span>
+        <span class="disease-name" data-test="D-dimer (high negative predictive value)">Deep Vein Thrombosis (DVT) / Pulmonary Embolism (PE)</span>
+        <span class="disease-name" data-test="Dengue NS1 Antigen test (early), Dengue IgM/IgG serology, Dengue PCR">Dengue Fever</span>
+        <span class="disease-name" data-test="Serum & Urine Osmolality, Water Deprivation Test, ADH (Vasopressin) level (if needed)">Diabetes Insipidus</span>
+        <span class="disease-name" data-test="Fasting Plasma Glucose, HbA1c (Glycated Hemoglobin), Oral Glucose Tolerance Test (OGTT), C-peptide, Islet cell autoantibodies (for Type 1)">Diabetes Mellitus (Type 1 & 2)</span>
+        <span class="disease-name" data-test="PT/INR, aPTT, Fibrinogen (low), D-dimer (high), Platelet count (low), Peripheral Blood Smear (schistocytes)">Disseminated Intravascular Coagulation (DIC)</span>
+        <span class="disease-name" data-test="CK (Creatine Kinase - markedly elevated), Genetic testing (DMD gene)">Duchenne/Becker Muscular Dystrophy</span>
+        <span class="disease-name" data-test="Serology (IgG ELISA), Imaging key, Cyst fluid analysis (if aspirated - risk of anaphylaxis)">Echinococcosis (Hydatid Disease)</span>
+        <span class="disease-name" data-test="Peripheral Blood Smear (morulae in WBCs - rare), PCR (blood), Serology (IgG/IgM)">Ehrlichiosis / Anaplasmosis</span>
+        <span class="disease-name" data-test="Urinalysis, Urine Culture, Urethral swab for GC/Chlamydia (NAAT), Scrotal Ultrasound (imaging)">Epididymitis/Orchitis</span>
+        <span class="disease-name" data-test="CBC (high platelets), JAK2/CALR/MPL mutation analysis, Bone Marrow Biopsy">Essential Thrombocythemia</span>
+        <span class="disease-name" data-test="Alpha-Galactosidase A Enzyme Activity assay (plasma, leukocytes, or fibroblasts), Genetic testing (GLA gene)">Fabry Disease</span>
+        <span class="disease-name" data-test="Genetic testing (MEFV gene mutations), ESR/CRP (elevated during attacks)">Familial Mediterranean Fever (FMF)</span>
+        <span class="disease-name" data-test="Newborn Screening, Plasma Acylcarnitine Profile, Urine Organic Acids">Fatty Acid Oxidation Disorders (e.g., MCAD deficiency)</span>
+        <span class="disease-name" data-test="CBC, Serum Folate, Red Blood Cell Folate">Folate Deficiency Anemia</span>
+        <span class="disease-name" data-test="Genetic testing (FMR1 gene CGG repeat expansion)">Fragile X Syndrome</span>
+        <span class="disease-name" data-test="Newborn Screening (GALT enzyme activity), Galactose-1-Phosphate level">Galactosemia</span>
+        <span class="disease-name" data-test="Beta-Glucosidase Enzyme Activity assay (leukocytes or fibroblasts), Genetic testing (GBA gene)">Gaucher Disease</span>
+        <span class="disease-name" data-test="Oral Glucose Tolerance Test (OGTT) during pregnancy">Gestational Diabetes</span>
+        <span class="disease-name" data-test="ESR, CRP (typically very high), Temporal Artery Biopsy (histopathology showing vasculitis)">Giant Cell Arteritis (Temporal Arteritis)</span>
+        <span class="disease-name" data-test="Stool Antigen test (EIA, DFA), Stool Ova & Parasites (trophozoites/cysts)">Giardiasis</span>
+        <span class="disease-name" data-test="Urinalysis (hematuria, RBC casts, proteinuria), Serum Creatinine, Complement levels (C3, C4), ANA, ANCA, Anti-GBM antibodies, Kidney Biopsy">Glomerulonephritis</span>
+        <span class="disease-name" data-test="G6PD Enzyme Assay (measure activity, avoid testing during acute hemolysis)">Glucose-6-Phosphate Dehydrogenase (G6PD) Deficiency</span>
+        <span class="disease-name" data-test="NAAT (Nucleic Acid Amplification Test) on urine or swab">Gonorrhea</span>
+        <span class="disease-name" data-test="Anti-GBM (Glomerular Basement Membrane) Antibody test (serum), Kidney Biopsy (linear IgG deposition)">Goodpasture Syndrome (Anti-GBM Disease)</span>
+        <span class="disease-name" data-test="Serum Uric Acid, Synovial Fluid Analysis (microscopy for urate crystals)">Gout</span>
+        <span class="disease-name" data-test="CSF Analysis (albuminocytologic dissociation - high protein, normal cells)">Guillain-Barré Syndrome (GBS)</span>
+        <span class="disease-name" data-test="CBC (pancytopenia), Peripheral Blood Smear (hairy cells), Bone Marrow Biopsy (immunohistochemistry - CD20, CD11c, CD25, CD103, Annexin A1), Flow Cytometry">Hairy Cell Leukemia</span>
+        <span class="disease-name" data-test="BNP (Brain Natriuretic Peptide) or NT-proBNP">Heart Failure</span>
+        <span class="disease-name" data-test="Ferritin, Iron, TIBC, Transferrin Saturation, HFE gene testing">Hemochromatosis (Iron Overload)</span>
+        <span class="disease-name" data-test="CBC (thrombocytopenia), Peripheral Blood Smear (schistocytes), Creatinine, BUN, Urinalysis, Stool culture (for E. coli O157:H7 Shiga toxin)">Hemolytic Uremic Syndrome (HUS)</span>
+        <span class="disease-name" data-test="Factor VIII Activity Assay">Hemophilia A</span>
+        <span class="disease-name" data-test="Factor IX Activity Assay">Hemophilia B</span>
+        <span class="disease-name" data-test="Anti-HAV IgM (acute infection), Anti-HAV IgG (past infection/immunity)">Hepatitis A</span>
+        <span class="disease-name" data-test="HBsAg (surface antigen - infection), Anti-HBs (surface antibody - immunity), Anti-HBc IgM/IgG (core antibody), HBeAg (e antigen), HBV DNA (viral load)">Hepatitis B</span>
+        <span class="disease-name" data-test="Anti-HCV (antibody), HCV RNA (viral load, genotyping)">Hepatitis C</span>
+        <span class="disease-name" data-test="Osmotic Fragility Test, Eosin-5'-maleimide (EMA) binding test (flow cytometry), Peripheral Blood Smear (spherocytes)">Hereditary Spherocytosis</span>
+        <span class="disease-name" data-test="Viral Culture, PCR (Polymerase Chain Reaction) from lesion, HSV type-specific serology (IgG)">Herpes Simplex Virus (HSV)</span>
+        <span class="disease-name" data-test="HIV-1/2 Antigen/Antibody Combination Immunoassay, HIV RNA Viral Load, CD4 T-cell count">HIV/AIDS</span>
+        <span class="disease-name" data-test="Plasma Amino Acid Analysis (elevated homocysteine and methionine), Urine Amino Acids">Homocystinuria</span>
+        <span class="disease-name" data-test="HPV DNA test (cervical swab), Pap smear (cytology - detects cellular changes caused by HPV)">Human Papillomavirus (HPV)</span>
+        <span class="disease-name" data-test="Genetic testing (HTT gene CAG repeat expansion)">Huntington's Disease</span>
+        <span class="disease-name" data-test="Lipid Panel (Total Cholesterol, LDL, HDL, Triglycerides)">Hyperlipidemia (High Cholesterol)</span>
+        <span class="disease-name" data-test="Serum Calcium (high), PTH (Parathyroid Hormone - high), Serum Phosphate (low/normal)">Hyperparathyroidism</span>
+        <span class="disease-name" data-test="TSH, Free T4, Free T3 (Triiodothyronine), TRAb (TSH Receptor Antibodies)">Hyperthyroidism (Graves' Disease)</span>
+        <span class="disease-name" data-test="Serum Calcium (low), PTH (low), Serum Phosphate (high)">Hypoparathyroidism</span>
+        <span class="disease-name" data-test="TSH (Thyroid Stimulating Hormone), Free T4 (Thyroxine)">Hypothyroidism</span>
+        <span class="disease-name" data-test="Urinalysis (hematuria, proteinuria), Kidney Biopsy (IgA deposition in mesangium)">IgA Nephropathy (Berger's Disease)</span>
+        <span class="disease-name" data-test="Urinalysis (hematuria, proteinuria), Skin Biopsy (leukocytoclastic vasculitis with IgA deposition), Serum IgA (may be elevated)">IgA Vasculitis (Henoch-Schönlein Purpura - HSP)</span>
+        <span class="disease-name" data-test="Monospot Test (heterophile antibodies), EBV-specific antibodies (VCA IgM/IgG, EBNA)">Infectious Mononucleosis (EBV)</span>
+        <span class="disease-name" data-test="CRP (C-Reactive Protein), ESR (Erythrocyte Sedimentation Rate), Fecal Calprotectin, CBC (anemia), Albumin, Stool studies (to rule out infection), Biopsy (colonoscopy)">Inflammatory Bowel Disease (Crohn's/Ulcerative Colitis)</span>
+        <span class="disease-name" data-test="CBC (Complete Blood Count), Ferritin, Serum Iron, TIBC (Total Iron Binding Capacity), Transferrin Saturation">Iron Deficiency Anemia</span>
+        <span class="disease-name" data-test="ESR, CRP, CBC (thrombocytosis, leukocytosis), LFTs, Urinalysis (sterile pyuria) - clinical diagnosis primarily">Kawasaki Disease</span>
+        <span class="disease-name" data-test="Voltage-Gated Calcium Channel (VGCC) Antibodies">Lambert-Eaton Myasthenic Syndrome (LEMS)</span>
+        <span class="disease-name" data-test="Blood Lead Level (BLL), CBC (basophilic stippling), Zinc Protoporphyrin (ZPP)">Lead Poisoning</span>
+        <span class="disease-name" data-test="Legionella Urinary Antigen Test, Sputum Culture on special media (BCYE), Legionella PCR, Serology (4-fold rise)">Legionnaires' Disease</span>
+        <span class="disease-name" data-test="Tissue Smear/Biopsy (amastigotes within macrophages), Culture, PCR, Serology (visceral)">Leishmaniasis (Visceral/Cutaneous)</span>
+        <span class="disease-name" data-test="Leptospira serology (Microscopic Agglutination Test - MAT is gold standard, ELISA), PCR (blood, urine - early phase)">Leptospirosis</span>
+        <span class="disease-name" data-test="Serum Uric Acid (high), HGPRT Enzyme Activity assay, Genetic testing (HPRT1 gene)">Lesch-Nyhan Syndrome</span>
+        <span class="disease-name" data-test="CBC with Differential, Peripheral Blood Smear, Bone Marrow Biopsy & Aspiration (with flow cytometry, cytogenetics, molecular testing)">Leukemia (Acute/Chronic)</span>
+        <span class="disease-name" data-test="Blood Culture, CSF Culture (requires specific suspicion)">Listeriosis</span>
+        <span class="disease-name" data-test="LFTs (AST, ALT, ALP, Bilirubin), Albumin, PT/INR, CBC (thrombocytopenia), AFP (alpha-fetoprotein - for HCC screening)">Liver Cirrhosis</span>
+        <span class="disease-name" data-test="Sputum Cytology, Biopsy (histopathology, molecular testing - EGFR, ALK, ROS1, PD-L1)">Lung Cancer</span>
+        <span class="disease-name" data-test="Lyme Serology (ELISA followed by Western Blot if positive/equivocal)">Lyme Disease</span>
+        <span class="disease-name" data-test="Lymph Node Biopsy (histopathology, immunohistochemistry, flow cytometry), LDH (Lactate Dehydrogenase)">Lymphoma (Hodgkin/Non-Hodgkin)</span>
+        <span class="disease-name" data-test="Thick and Thin Blood Smears (microscopy for parasites), Malaria Rapid Diagnostic Test (antigen detection)">Malaria</span>
+        <span class="disease-name" data-test="Newborn Screening, Plasma Amino Acid Analysis (elevated leucine, isoleucine, valine), Urine Organic Acids">Maple Syrup Urine Disease (MSUD)</span>
+        <span class="disease-name" data-test="Serum Tryptase, Urine N-methylhistamine, Bone Marrow Biopsy, KIT D816V mutation analysis">Mastocytosis</span>
+        <span class="disease-name" data-test="Culture (blood, sputum, pus - requires specific suspicion), Serology">Melioidosis (Burkholderia pseudomallei)</span>
+        <span class="disease-name" data-test="Kidney Biopsy (thickened GBM, subepithelial deposits), Anti-PLA2R antibody test">Membranous Nephropathy</span>
+        <span class="disease-name" data-test="Blood Mercury level (recent exposure), Urine Mercury level (longer-term)">Mercury Poisoning</span>
+        <span class="disease-name" data-test="Methemoglobin level (co-oximetry on arterial blood gas)">Methemoglobinemia</span>
+        <span class="disease-name" data-test="PTH, Calcium, Gastrin, Prolactin, IGF-1, MEN1 gene testing">Multiple Endocrine Neoplasia Type 1 (MEN1)</span>
+        <span class="disease-name" data-test="Calcitonin (basal and stimulated), PTH, Calcium, Plasma/Urine Metanephrines, RET proto-oncogene testing">Multiple Endocrine Neoplasia Type 2 (MEN2)</span>
+        <span class="disease-name" data-test="Serum Protein Electrophoresis (SPEP - M-spike), Urine Protein Electrophoresis (UPEP - Bence Jones protein), Serum Free Light Chain Assay, Bone Marrow Biopsy">Multiple Myeloma</span>
+        <span class="disease-name" data-test="AChR (Acetylcholine Receptor) Antibodies, MuSK (Muscle-Specific Kinase) Antibodies">Myasthenia Gravis</span>
+        <span class="disease-name" data-test="CBC with Differential (cytopenias, dysplasia), Peripheral Blood Smear, Bone Marrow Biopsy & Aspiration (dysplasia, blast count, cytogenetics, molecular studies)">Myelodysplastic Syndromes (MDS)</span>
+        <span class="disease-name" data-test="Troponin T / Troponin I (cardiac specific)">Myocardial Infarction (Heart Attack)</span>
+        <span class="disease-name" data-test="Urinalysis (heavy proteinuria), 24-hour Urine Protein, Serum Albumin, Lipid Panel">Nephrotic Syndrome</span>
+        <span class="disease-name" data-test="Urine Vanillylmandelic Acid (VMA) and Homovanillic Acid (HVA), Biopsy (histology, N-myc amplification)">Neuroblastoma</span>
+        <span class="disease-name" data-test="Aquaporin-4 (AQP4) Antibodies (NMO-IgG)">Neuromyelitis Optica (NMO / Devic's Disease)</span>
+        <span class="disease-name" data-test="Acid Sphingomyelinase Enzyme Activity assay, Genetic testing (SMPD1 gene)">Niemann-Pick Disease (A/B)</span>
+        <span class="disease-name" data-test="ALT, AST, Lipid Panel, Glucose, HbA1c, Liver Biopsy (for NASH confirmation/staging)">Non-Alcoholic Fatty Liver Disease (NAFLD/NASH)</span>
+        <span class="disease-name" data-test="Plasma Cholinesterase and Red Blood Cell (RBC) Acetylcholinesterase activity (decreased)">Organophosphate Poisoning</span>
+        <span class="disease-name" data-test="CA-125 (Cancer Antigen 125 - primarily monitoring/risk in specific populations), Biopsy">Ovarian Cancer</span>
+        <span class="disease-name" data-test="Serum Alkaline Phosphatase (ALP - bone specific fraction)">Paget's Disease of Bone</span>
+        <span class="disease-name" data-test="CA 19-9 (Carbohydrate Antigen 19-9 - monitoring), Biopsy">Pancreatic Cancer</span>
+        <span class="disease-name" data-test="Paraneoplastic Antibody Panel (serum, CSF - e.g., Anti-Hu, Yo, Ri, Ma2, CV2/CRMP5, Amphiphysin)">Paraneoplastic Neurologic Syndromes</span>
+        <span class="disease-name" data-test="Flow Cytometry for GPI-anchored proteins (CD55, CD59) on RBCs and WBCs">Paroxysmal Nocturnal Hemoglobinuria (PNH)</span>
+        <span class="disease-name" data-test="H. pylori Urea Breath Test, H. pylori Stool Antigen Test, H. pylori Serology (less reliable for active infection), Biopsy (CLO test)">Peptic Ulcer Disease (H. pylori associated)</span>
+        <span class="disease-name" data-test="Plasma Free Metanephrines or 24-hour Urine Fractionated Metanephrines and Catecholamines">Pheochromocytoma/Paraganglioma</span>
+        <span class="disease-name" data-test="Newborn Screening (Phenylalanine level), Quantitative Plasma Amino Acids">Phenylketonuria (PKU)</span>
+        <span class="disease-name" data-test="Sputum Gram Stain & Culture, Blood Culture, Urinary Antigen tests (e.g., Strep pneumo, Legionella)">Pneumonia (Bacterial)</span>
+        <span class="disease-name" data-test="SPEP, VEGF (Vascular Endothelial Growth Factor), Skeletal survey, Nerve conduction studies (clinical), Biopsy (if needed)">POEMS Syndrome</span>
+        <span class="disease-name" data-test="CBC (high Hgb/Hct), JAK2 V617F mutation analysis, Serum Erythropoietin (EPO) level (low)">Polycythemia Vera</span>
+        <span class="disease-name" data-test="ESR, CRP (typically very high), CBC (normocytic anemia possible) - clinical diagnosis primarily">Polymyalgia Rheumatica (PMR)</span>
+        <span class="disease-name" data-test="CK (Creatine Kinase), Aldolase, ANA, Myositis-specific antibodies (e.g., Anti-Jo-1)">Polymyositis/Dermatomyositis</span>
+        <span class="disease-name" data-test="Urine Porphyrin Analysis (elevated uroporphyrin), Plasma Porphyrins">Porphyria Cutanea Tarda (PCT)</span>
+        <span class="disease-name" data-test="Urinalysis (proteinuria), CBC (platelet count), LFTs (AST, ALT), Serum Creatinine">Preeclampsia</span>
+        <span class="disease-name" data-test="Serum or Urine hCG (Human Chorionic Gonadotropin)">Pregnancy</span>
+        <span class="disease-name" data-test="Plasma Aldosterone Concentration (PAC), Plasma Renin Activity (PRA) or Direct Renin Concentration (DRC), Aldosterone-to-Renin Ratio (ARR), Saline Suppression Test">Primary Aldosteronism (Conn's Syndrome)</span>
+        <span class="disease-name" data-test="AMA (Anti-Mitochondrial Antibodies), ALP, GGT">Primary Biliary Cholangitis (PBC)</span>
+        <span class="disease-name" data-test="ALP, GGT, Bilirubin (often normal early), p-ANCA (non-specific), MRCP/ERCP (imaging is key), Liver biopsy">Primary Sclerosing Cholangitis (PSC)</span>
+        <span class="disease-name" data-test="PSA (Prostate-Specific Antigen - screening/monitoring), Prostate Biopsy (histopathology, Gleason score)">Prostate Cancer</span>
+        <span class="disease-name" data-test="Urinalysis, Urine Culture (post-prostatic massage specimen - 4 glass test historically), Semen culture">Prostatitis (Bacterial)</span>
+        <span class="disease-name" data-test="Synovial Fluid Analysis (microscopy for calcium pyrophosphate crystals)">Pseudogout (CPPD)</span>
+        <span class="disease-name" data-test="Chlamydia psittaci serology (Complement Fixation or MIF)">Psittacosis (Chlamydia psittaci)</span>
+        <span class="disease-name" data-test="Pyruvate Kinase Enzyme Assay">Pyruvate Kinase Deficiency</span>
+
+        <span class="disease-name" data-test="Coxiella burnetii Phase I and Phase II IgG/IgM serology">Q Fever (Coxiella burnetii)</span>
+        <span class="disease-name" data-test="Direct Fluorescent Antibody (DFA) test on brain tissue (post-mortem) or skin biopsy (ante-mortem), Saliva/CSF RT-PCR, Serum/CSF antibodies (late)">Rabies</span>
+        <span class="disease-name" data-test="ESR, CRP, Biopsy of affected cartilage (chondritis) - rare, often clinical diagnosis">Relapsing Polychondritis</span>
+        <span class="disease-name" data-test="Serum CK (Creatine Kinase - markedly elevated), Urinalysis (myoglobinuria), Serum Potassium (hyperkalemia)">Rhabdomyolysis</span>
+        <span class="disease-name" data-test="RF (Rheumatoid Factor), Anti-CCP (Anti-Cyclic Citrullinated Peptide), ESR, CRP">Rheumatoid Arthritis (RA)</span>
+        <span class="disease-name" data-test="Rickettsia rickettsii serology (IgG/IgM - often negative early), Skin biopsy of rash (immunohistochemistry or PCR)">Rocky Mountain Spotted Fever (RMSF)</span>
+        <span class="disease-name" data-test="ACE (Angiotensin-Converting Enzyme) level (non-specific), Serum Calcium, Biopsy (showing non-caseating granulomas)">Sarcoidosis</span>
+        <span class="disease-name" data-test="Stool or Urine Ova & Parasites (eggs), Serology (IgG)">Schistosomiasis</span>
+        <span class="disease-name" data-test="ANA, Anti-Scl-70 (topoisomerase I), Anti-centromere antibodies">Scleroderma (Systemic Sclerosis)</span>
+        <span class="disease-name" data-test="Plasma Ascorbic Acid level (clinical diagnosis often key)">Scurvy (Vitamin C Deficiency)</span>
+        <span class="disease-name" data-test="Plasma Selenium level, Glutathione Peroxidase activity">Selenium Deficiency</span>
+        <span class="disease-name" data-test="Blood Cultures, Lactate, Procalcitonin, CBC, CRP">Sepsis</span>
+        <span class="disease-name" data-test="Serum Sodium (low), Serum Osmolality (low), Urine Osmolality (inappropriately high), Urine Sodium (high)">SIADH (Syndrome of Inappropriate ADH)</span>
+        <span class="disease-name" data-test="CBC, Hemoglobin Electrophoresis, Sickle Cell Test (solubility test)">Sickle Cell Anemia</span>
+        <span class="disease-name" data-test="ANA, Anti-SSA (Ro), Anti-SSB (La), RF, Schirmer's test (clinical, not lab), Salivary gland biopsy">Sjogren's Syndrome</span>
+        <span class="disease-name" data-test="Genetic testing (SMN1 gene deletion/mutation)">Spinal Muscular Atrophy (SMA)</span>
+        <span class="disease-name" data-test="Anti-GAD65 (Glutamic Acid Decarboxylase) Antibodies, Anti-Amphiphysin Antibodies">Stiff-Person Syndrome</span>
+        <span class="disease-name" data-test="Rapid Strep Antigen Test, Throat Culture">Strep Throat (Streptococcal Pharyngitis)</span>
+        <span class="disease-name" data-test="Stool Ova & Parasites (larvae), Serology (IgG), Agar Plate Culture">Strongyloidiasis</span>
+        <span class="disease-name" data-test="RPR/VDRL (non-treponemal screening), TP-PA/FTA-ABS (treponemal confirmatory)">Syphilis</span>
+        <span class="disease-name" data-test="ANA (Antinuclear Antibody), Anti-dsDNA, Anti-Sm (Smith antibody), Complement levels (C3, C4), CBC (cytopenias), Urinalysis (nephritis)">Systemic Lupus Erythematosus (SLE)</span>
+        <span class="disease-name" data-test="ESR, CRP (often elevated), Imaging (angiography) is key">Takayasu Arteritis</span>
+        <span class="disease-name" data-test="Hexosaminidase A Enzyme Activity assay (serum, leukocytes), Genetic testing (HEXA gene)">Tay-Sachs Disease</span>
+        <span class="disease-name" data-test="AFP (Alpha-fetoprotein), hCG (Human Chorionic Gonadotropin), LDH (markers for non-seminoma/monitoring)">Testicular Cancer</span>
+        <span class="disease-name" data-test="CBC (low MCV), Hemoglobin Electrophoresis, Iron Studies (to rule out IDA)">Thalassemia (Alpha or Beta)</span>
+        <span class="disease-name" data-test="ADAMTS13 Activity Assay and Inhibitor level, CBC (thrombocytopenia), Peripheral Blood Smear (schistocytes), LDH, Bilirubin">Thrombotic Thrombocytopenic Purpura (TTP)</span>
+        <span class="disease-name" data-test="Thyroid Biopsy (Fine Needle Aspiration - FNA cytology), Thyroglobulin (Tg - monitoring post-thyroidectomy)">Thyroid Cancer</span>
+        <span class="disease-name" data-test="Toxoplasma IgG/IgM serology">Toxoplasmosis</span>
+        <span class="disease-name" data-test="Small bowel biopsy (villous atrophy), Tests for malabsorption (fecal fat, D-xylose test), Folate/B12 levels">Tropical Sprue</span>
+        <span class="disease-name" data-test="Blood Smear, CSF analysis (trypanosomes, elevated WBC/protein), Card Agglutination Trypanosomiasis Test (CATT - screening)">Trypanosomiasis (African Sleeping Sickness)</span>
+        <span class="disease-name" data-test="Sputum AFB Smear & Culture, IGRA (Interferon-Gamma Release Assay - e.g., Quantiferon Gold, T-SPOT.TB), Tuberculin Skin Test (TST - clinical, not lab)">Tuberculosis (TB)</span>
+        <span class="disease-name" data-test="Francisella tularensis serology, Culture (requires BSL-3), PCR">Tularemia</span>
+        <span class="disease-name" data-test="Plasma Ammonia (markedly elevated), Plasma Amino Acid Analysis, Urine Orotic Acid">Urea Cycle Disorders (e.g., OTC deficiency)</span>
+        <span class="disease-name" data-test="Urinalysis (leukocyte esterase, nitrites, WBCs, bacteria), Urine Culture & Sensitivity">Urinary Tract Infection (UTI)</span>
+        <span class="disease-name" data-test="CSF Analysis (cell count, glucose, protein), CSF PCR for specific viruses (e.g., HSV, Enterovirus)">Viral Meningitis/Encephalitis</span>
+        <span class="disease-name" data-test="Serum Retinol level">Vitamin A Deficiency</span>
+        <span class="disease-name" data-test="CBC, Serum Vitamin B12, Methylmalonic Acid (MMA), Homocysteine, Anti-Intrinsic Factor Antibodies">Vitamin B12 Deficiency Anemia (Pernicious Anemia)</span>
+        <span class="disease-name" data-test="25-Hydroxyvitamin D [25(OH)D] level">Vitamin D Deficiency</span>
+        <span class="disease-name" data-test="Prothrombin Time (PT)/INR (prolonged)">Vitamin K Deficiency</span>
+        <span class="disease-name" data-test="von Willebrand Factor Antigen (vWF:Ag), Ristocetin Cofactor Activity (vWF:RCo), Factor VIII activity">Von Willebrand Disease</span>
+        <span class="disease-name" data-test="Serum Protein Electrophoresis (SPEP - IgM M-spike), Serum Immunofixation, Serum Viscosity, Bone Marrow Biopsy">Waldenström Macroglobulinemia</span>
+        <span class="disease-name" data-test="West Nile Virus IgM/IgG serology (serum, CSF), West Nile Virus PCR (CSF, tissue)">West Nile Virus</span>
+        <span class="disease-name" data-test="Duodenal Biopsy (PAS-positive macrophages, PCR for Tropheryma whipplei)">Whipple's Disease</span>
+        <span class="disease-name" data-test="Serum Ceruloplasmin (low), Urinary Copper (high), Liver Biopsy (copper quantification)">Wilson's Disease (Copper Overload)</span>
+        <span class="disease-name" data-test="Zika Virus IgM serology, Zika Virus RT-PCR (urine, serum - early)">Zika Virus</span>
+        <span class="disease-name" data-test="Plasma or Serum Zinc level (interpretation can be complex)">Zinc Deficiency</span>
+        <span class="disease-name" data-test="Fasting Serum Gastrin level (high), Secretin Stimulation Test">Zollinger-Ellison Syndrome</span>
+    </div>
+
+    <div id="popup"><span id="close-popup">×</span><div id="popup-content"></div></div>
+
+    <script>
+        document.querySelectorAll('.disease-name').forEach(el => {
+            el.onclick = () => {
+                document.getElementById('popup-content').innerHTML = `<h3>${el.textContent}</h3><p style="color:#64748b; font-weight:bold;">Associated Lab Test(s):</p><p style="background:#f8fafc; padding:15px; border-radius:12px; border-left:5px solid #00b894;">${el.dataset.test}</p>`;
+                document.getElementById('popup').style.display = 'block';
+            };
+        });
+        document.getElementById('close-popup').onclick = () => document.getElementById('popup').style.display = 'none';
+        window.onclick = (e) => { if (e.target.id == 'popup') document.getElementById('popup').style.display = 'none'; }
+    </script>
+</body>
+</html>

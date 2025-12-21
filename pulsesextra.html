@@ -1,0 +1,257 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pulses Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #40E0D0; /* turquoise background */
+      color: black; /* corrected spelling from "colour" */
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: bold; /* bold font */
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .title {
+      font-size: 3em;
+      margin-top: 50px;
+      letter-spacing: 0.1em;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .letter {
+      opacity: 0;
+      transform: scale(4) rotate(720deg) translateY(-300px);
+      animation: formTitle 1.2s ease-out forwards;
+    }
+
+    .letter:nth-child(n) {
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    @keyframes formTitle {
+      0% {
+        opacity: 0;
+        transform: scale(4) rotate(720deg) translateY(-300px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg) translateY(0);
+      }
+    }
+
+    model-viewer {
+      width: 400px;
+      height: 400px;
+      margin: 40px auto;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+
+ .arrow-btn {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(145deg, #2ecc71, #27ae60); /* 3D Green Gradient */
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px; /* Rounded pill shape */
+      box-shadow: 
+        0 6px #1e8449, /* Darker green bottom shadow for 3D depth */
+        0 10px 20px rgba(0,0,0,0.2); /* Soft drop shadow */
+      transition: all 0.1s ease; /* Snappy click animation */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      outline: none;
+    }
+
+    .arrow-btn:hover {
+      background: linear-gradient(145deg, #27ae60, #2ecc71); /* Subtle color shift */
+      transform: translateY(-2px); /* Slight lift on hover */
+      box-shadow: 
+        0 8px #1e8449, 
+        0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    .arrow-btn:active {
+      transform: translateY(4px); /* Push down effect */
+      box-shadow: 
+        0 2px #1e8449, /* Reduced shadow to simulate press */
+        0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    .info-box {
+      background-color: white; /* white background for small box */
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black; /* black font inside small box */
+      margin-top: 20px;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+  <div class="title">
+    <span class="letter" style="--i:1">P</span>
+    <span class="letter" style="--i:2">U</span>
+    <span class="letter" style="--i:3">L</span>
+    <span class="letter" style="--i:4">S</span>
+    <span class="letter" style="--i:5">E</span>
+    <span class="letter" style="--i:6">S</span>
+    <span class="letter" style="--i:7"> </span>
+    <span class="letter" style="--i:8">F</span>
+    <span class="letter" style="--i:9">O</span>
+    <span class="letter" style="--i:10">O</span>
+    <span class="letter" style="--i:11">D</span>
+    <span class="letter" style="--i:12"> </span>
+    <span class="letter" style="--i:13">V</span>
+    <span class="letter" style="--i:14">I</span>
+    <span class="letter" style="--i:15">E</span>
+    <span class="letter" style="--i:16">W</span>
+    <span class="letter" style="--i:17">E</span>
+    <span class="letter" style="--i:18">R</span>
+  </div>
+
+  <model-viewer id="viewer"
+    src="media/pulse1.glb"
+    alt="Pulses model"
+    disable-zoom
+    camera-controls
+    exposure="1"
+    ar
+    shadow-intensity="1"
+    style="background-color: white; border-radius: 20px;">
+  </model-viewer>
+
+<div class="controls">
+    <button class="arrow-btn" onclick="showPrev()">PREVIOUS</button>
+    <button class="arrow-btn" onclick="showNext()">NEXT</button>
+  </div>
+
+  <div id="info" class="info-box">Click the pulses model to view details</div>
+
+  <script>
+    const pulsesfood = [
+      {
+        name: "Mung Dal",
+        file: "media/pulses1.glb",
+        info: "Calories: 347 kcal<br>Nutrients: High in protein, fiber, folate, and antioxidants; supports heart and digestive health"
+      },
+      {
+        name: "Masoor Dal",
+        file: "media/pulses1.glb",
+        info: "Calories: 352 kcal<br>Nutrients: Rich in iron, protein, and fiber; helps with anemia and supports muscle growth"
+      },
+      {
+        name: "Whole Mung (Green Gram)",
+        file: "media/pulses1.glb",
+        info: "Calories: 347 kcal<br>Nutrients: High in protein, potassium, magnesium, and fiber; good for detox and digestion"
+      },
+      {
+        name: "Chana Dal",
+        file: "media/pulses1.glb",
+        info: "Calories: 360 kcal<br>Nutrients: Excellent source of protein, fiber, iron, and folate; supports weight management and heart health"
+      },
+      {
+        name: "Waal ki Dal (Field Beans)",
+        file: "media/pulses1.glb",
+        info: "Calories: 341 kcal<br>Nutrients: Rich in protein, iron, and B vitamins; boosts energy and aids muscle repair"
+      },
+      {
+        name: "Kabuli Chana (Chickpeas)",
+        file: "media/pulses1.glb",
+        info: "Calories: 364 kcal<br>Nutrients: High in protein, fiber, iron, and phosphorus; controls blood sugar and supports bone health"
+      },
+      {
+        name: "Kidney Beans (Rajma)",
+        file: "media/pulses1.glb",
+        info: "Calories: 333 kcal<br>Nutrients: Packed with protein, fiber, folate, and potassium; supports heart and kidney function"
+      },
+      {
+        name: "Black Eyed Beans (Lobia)",
+        file: "media/pulses1.glb",
+        info: "Calories: 336 kcal<br>Nutrients: Good source of fiber, iron, potassium, and protein; supports blood health and digestion"
+      },
+      {
+        name: "Soya Beans",
+        file: "media/pulses1.glb",
+        info: "Calories: 446 kcal<br>Nutrients: Excellent plant-based protein, rich in iron, calcium, and omega-3 fatty acids; supports muscle and bone health"
+      }
+    ];
+
+let current = 0;
+    const viewer = document.getElementById('viewer');
+    const infoBox = document.getElementById('info');
+
+    let rotation = 0;
+    const speed = 0.5; // Slightly slower for smoother look
+    let isRotating = true;
+    let animationFrameId; // To manage the animation loop cleanly
+
+    function rotateModel() {
+      if (!isRotating) return;
+      rotation += speed;
+      // Using cameraOrbit to rotate camera around the object
+      viewer.cameraOrbit = `${rotation % 360}deg 75deg auto`;
+      animationFrameId = requestAnimationFrame(rotateModel);
+    }
+
+    // Start rotation when model is loaded
+    viewer.addEventListener('load', () => {
+      // Cancel any previous loop to prevent speed-ups
+      cancelAnimationFrame(animationFrameId); 
+      isRotating = true;
+      rotateModel();
+    });
+
+    // Stop on Click
+    viewer.addEventListener('click', () => {
+      isRotating = false;
+      const item = pulsesfood[current];
+      infoBox.innerHTML = `<strong>${item.name}</strong><br>${item.info}`;
+      cancelAnimationFrame(animationFrameId); // Stop the loop CPU usage
+    });
+
+    function showPulsesfood(index) {
+      current = (index + pulsesfood.length) % pulsesfood.length;
+      
+      // Update Model Source
+      viewer.src = pulsesfood[current].file;
+      
+      // Reset Info Text
+      infoBox.innerHTML = "Click the pulses to view details";
+
+      // Restart Rotation
+      isRotating = true;
+      cancelAnimationFrame(animationFrameId); // Ensure clean restart
+      rotateModel();
+    }
+
+    function showNext() {
+      showPulsesfood(current + 1);
+    }
+
+    function showPrev() {
+      showPulsesfood(current - 1);
+    }
+  
+  </script>
+
+</body>
+</html>

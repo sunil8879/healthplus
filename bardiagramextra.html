@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Metrics Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <style>
+    body {
+      background: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(to right, #333, #777);
+      color: white;
+      cursor: pointer;
+    }
+    #error {
+      margin-top: 15px;
+      color: red;
+      font-size: 16px;
+    }
+    canvas {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>View Health Chart</h1>
+
+<div class="container">
+  <label for="metricSelect">Select Metric:</label>
+  <select id="metricSelect">
+    <option value="weight">Weight</option>
+    <option value="sugar">Sugar Level</option>
+    <option value="bp_upper">BP Upper</option>
+    <option value="bp_lower">BP Lower</option>
+    <option value="temperature">Temperature</option>
+    <option value="pulse">Pulse Rate</option>
+    <option value="oxygen">Oxygen Level</option>
+  </select>
+
+  <label for="timeframeSelect">Select Time Frame:</label>
+  <select id="timeframeSelect">
+    <option value="today">Today</option>
+    <option value="yesterday">Yesterday</option>
+    <option value="week">Weekly</option>
+    <option value="month">Monthly</option>
+    <option value="quarter">Quarterly</option>
+    <option value="halfyear">Half Yearly</option>
+    <option value="year">Yearly</option>
+  </select>
+
+  <button onclick="showChart()">Show Chart</button>
+
+  <div id="error"></div>
+
+  <canvas id="myChart" width="400" height="400"></canvas>
+</div>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBaKBHL2iKnnvGY6HD6l4p7HsUKt3CchdI",
+    authDomain: "healthplus-6a769.firebaseapp.com",
+    projectId: "healthplus-6a769",
+    storageBucket: "healthplus-6a769.appspot.com",
+    messagingSenderId: "841353217929",
+    appId: "1:841353217929:web:b76f08599cc7e8e1264358"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  
+  let chartInstance = null;
+
+  function showChart() {
+    const metric = document.getElementById('metricSelect').value;
+    const timeframe = document.getElementById('timeframeSelect').value;
+    const errorDiv = document.getElementById('error');
+    errorDiv.innerText = '';
+
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        errorDiv.innerText = 'Please log in first!';
+        return;
+      }
+
+      db.collection("graph")
+        .where("uid", "==", user.uid)
+        .where("metric", "==", metric)
+        .get()
+        .then(snapshot => {
+          if (snapshot.empty) {
+            errorDiv.innerText = 'Chart Unavailable. Please select the valid metrics & Comparator';
+            clearChart();
+            return;
+          }
+
+          const data = [];
+          snapshot.forEach(doc => {
+            data.push(doc.data());
+          });
+
+          processChartData(data, timeframe);
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+          errorDiv.innerText = 'Error fetching chart data.';
+        });
+    });
+  }
+
+  function processChartData(data, timeframe) {
+    const errorDiv = document.getElementById('error');
+    const labels = [];
+    const readings = [];
+
+    const now = new Date();
+
+    if (timeframe === 'today') {
+      const todayData = data.filter(item => isSameDay(new Date(item.date), now));
+      if (todayData.length === 0) {
+        showNoGraph();
+        return;
+      }
+      labels.push(formatDate(now));
+      readings.push(todayData[0].reading);
+    }
+    else if (timeframe === 'yesterday') {
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+
+      const todayData = data.find(item => isSameDay(new Date(item.date), now));
+      const yesterdayData = data.find(item => isSameDay(new Date(item.date), yesterday));
+
+      if (!todayData && !yesterdayData) {
+        showNoGraph();
+        return;
+      }
+
+      if (yesterdayData) {
+        labels.push(formatDate(yesterday));
+        readings.push(yesterdayData.reading);
+      }
+      if (todayData) {
+        labels.push(formatDate(now));
+        readings.push(todayData.reading);
+      }
+    }
+    else if (timeframe === 'week') {
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date();
+        date.setDate(now.getDate() - i);
+        const dayData = data.find(item => isSameDay(new Date(item.date), date));
+        labels.push(days[date.getDay()]);
+        readings.push(dayData ? dayData.reading : 0);
+      }
+    }
+    else if (timeframe === 'month') {
+      const weeks = ["Week 1", "Week 2", "Week 3", "Week 4"];
+      for (let i = 0; i < 4; i++) {
+        const start = new Date(now.getFullYear(), now.getMonth(), i * 7 + 1);
+        const end = new Date(now.getFullYear(), now.getMonth(), (i + 1) * 7);
+        const weekData = data.filter(item => {
+          const d = new Date(item.date);
+          return d >= start && d <= end;
+        });
+        labels.push(weeks[i]);
+        readings.push(weekData.length > 0 ? average(weekData.map(w => w.reading)) : 0);
+      }
+    }
+    else if (timeframe === 'quarter' || timeframe === 'halfyear' || timeframe === 'year') {
+      let monthsToShow = timeframe === 'quarter' ? 3 : (timeframe === 'halfyear' ? 6 : 12);
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      for (let i = 0; i < monthsToShow; i++) {
+        const month = new Date(now.getFullYear(), now.getMonth() - monthsToShow + i + 1, 1);
+        const monthData = data.filter(item => {
+          const d = new Date(item.date);
+          return d.getMonth() === month.getMonth() && d.getFullYear() === month.getFullYear();
+        });
+        labels.push(monthNames[month.getMonth()]);
+        readings.push(monthData.length > 0 ? average(monthData.map(m => m.reading)) : 0);
+      }
+    }
+
+    if (readings.every(r => r === 0)) {
+      showNoGraph();
+      return;
+    }
+
+    plotChart(labels, readings);
+  }
+
+  function plotChart(labels, data) {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    if (chartInstance) {
+      chartInstance.destroy();
+    }
+    chartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Readings',
+          data: data,
+          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1,
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
+
+  function showNoGraph() {
+    document.getElementById('error').innerText = "No graph available";
+    clearChart();
+  }
+
+  function clearChart() {
+    if (chartInstance) {
+      chartInstance.destroy();
+      chartInstance = null;
+    }
+  }
+
+  function isSameDay(d1, d2) {
+    return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear();
+  }
+
+  function formatDate(d) {
+    return `${d.getDate()}-${d.getMonth() + 1}`;
+  }
+
+  function average(arr) {
+    if (arr.length === 0) return 0;
+    const sum = arr.reduce((a, b) => a + b, 0);
+    return (sum / arr.length).toFixed(2);
+  }
+</script>
+
+</body>
+</html>

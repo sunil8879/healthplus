@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Physiotherapists in India</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Active & Healthy Palette */
+            --primary-color: #00b894;
+            --secondary-color: #0984e3;
+            --accent-color: #fdcb6e;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --header-gradient: linear-gradient(to right, #00b894, #00cec9);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-image: var(--bg-gradient);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            text-align: center;
+            padding: 60px 20px 80px;
+            background: var(--header-gradient);
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #dfe6e9;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "🏃";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1em;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto 50px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 184, 148, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: #f0fdf4;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(253, 203, 110, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #e1b12c;
+            color: white;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.5rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">尿</span> <!-- Leg Icon Placeholder -->
+        <h1>Top 100 Physiotherapists in India</h1>
+        <p class="subtitle">A representative list of recognized professionals. Not an objective ranking. Verify BPT/MPT qualifications independently.</p>
+    </div>
+
+     <div class="considerations">
+        <h2>Choosing a Physiotherapist:</h2>
+        <ul>
+            <li><strong>Your Condition:</strong> Match the therapist's specialty (Ortho, Neuro, Sports, Cardio-Pulmonary, Peds, Women's Health) to your needs.</li>
+            <li><strong>Diagnosis:</strong> Physiotherapy is often most effective after a medical diagnosis from a relevant doctor (Orthopedist, Neurologist, etc.).</li>
+            <li><strong>Techniques:</strong> Discuss their approach (Manual Therapy, Exercise Prescription, Electrotherapy, Taping).</li>
+            <li><strong>Location & Sessions:</strong> Therapy usually requires multiple sessions, so convenience matters.</li>
+            <li><strong>Credentials:</strong> Look for BPT (Bachelor's) and preferably MPT (Master's) in a relevant specialty.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Therapist Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Ali Irani (PT, PhD)</td>
+                 <td>Sports Physiotherapy, Orthopedics (Former Head Physio - Indian Cricket Team)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital / Own Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati</a> / Search clinic</td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Deepak Kumar (PT, DC)</td>
+                 <td>Orthopedics, Manual Therapy, Spine Rehab (Also Chiropractor)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Vardan Physiotherapy & Chiropractic Clinic (Founder Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://vardan.in/" target="_blank" class="website-link">Vardan Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Amit Shrikhande (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Sports Injury, Manual Therapy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant / HOD)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Kiran Challagundla (PT, MPT - Ortho/Sports)</td>
+                 <td>Sports Physiotherapy, Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AktivHealth (Founder / Key figure)</td>
+                 <td>Delhi/Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aktivhealth.in/" target="_blank" class="website-link">AktivHealth</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Ridwana Sanam (PT)</td>
+                 <td>Women's Health, Orthopedics, Lifestyle Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KRV Healthcare & Physiotherapy (Founder / Director)</td>
+                 <td>Gurugram/Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "KRV Healthcare Dr Ridwana Sanam"</td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Narkeesh Arumugam (PT, MPT, PhD)</td>
+                 <td>Orthopedics, Manual Therapy, Taping Techniques</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Punjabi University (Professor) / Workshops & Seminars</td>
+                 <td>Patiala/Academic</td>
+                 <td>Search Workshops/Clinics</td>
+                 <td>Academic circles; Search for workshops/clinics</td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Ashish Contractor (MD - Rehab Medicine)</td>
+                 <td>Cardiac Rehabilitation, Preventive Cardiology (Directs rehab programs)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir H. N. Reliance Foundation Hospital (Head - Rehab & Sports Med)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Chaitanya Shah (PT, MPT - Neuro)</td>
+                 <td>Neurological Physiotherapy, Stroke Rehabilitation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indian Spinal Injuries Centre (ISIC) (HOD / Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.isiconline.org/" target="_blank" class="website-link">ISIC</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Rajani Mullerpatan (PT, PhD)</td>
+                 <td>Ergonomics, Musculoskeletal Pain, Yoga in PT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>MGM School of Physiotherapy (Principal/Professor) / Own Practice</td>
+                 <td>Navi Mumbai</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Rajani Mullerpatan MGM" or private clinic</td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Anand Mishra (PT, MPT - Ortho)</td>
+                 <td>Orthopedic & Sports Physiotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant / HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. Hetal Desai (PT, MPT - Neuro/Peds)</td>
+                 <td>Neurological Rehabilitation, Pediatrics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Senior Physiotherapist / HOD)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. V P Singh (PT, MPT)</td>
+                 <td>Orthopedics, Sports Injuries</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Director - Physiotherapy & Rehabilitation)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Dhaval Patel (PT, MPT - Sports)</td>
+                 <td>Sports Physiotherapy, Strength & Conditioning</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr Dhaval Patel's Physio Fitness Clinic (Founder)</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Dhaval Patel Physio Fitness Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Jeba Chitra (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant / HOD)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Dhanajeyan Jayavel (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Physiotherapy, Manual Therapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Spectrum Physio Centre (Founder)</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic Website</td>
+                 <td>Via Spectrum Physio website or Search "Spectrum Physio Chennai"</td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Gaurav Sharma (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine Care, Manual Therapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (HOD / Senior Physio)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Bhavana Gupta (PT, MPT - Neuro)</td>
+                 <td>Neuro Rehabilitation, Stroke Rehab</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Rizwana Sayyed (PT, MPT - Women's Health)</td>
+                 <td>Women's Health Physiotherapy (Pelvic Floor, Ante/Post Natal)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital / Own Practice (Specialist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search Clinic</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben</a> / Search "Dr Rizwana Sayyed Pelvic Floor Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Ashu Kumar Jain (PT, MPT - Sports)</td>
+                 <td>Sports Physiotherapy, Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Head - Sports Med & Rehab)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Gladson Johnson (PT, MPT - Sports)</td>
+                 <td>Sports Physiotherapy, High-Performance Training</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Attitude Prime (Founder - Works with elite athletes)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Attitude Prime Gladson Johnson Bengaluru"</td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. K G Smitha (PT, MPT - Neuro/Peds)</td>
+                 <td>Neurological Physiotherapy, Pediatric Neuro Rehab</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant / HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Manish Sharma (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Sports Physiotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Prachi Shah Bogam (PT, MPT - Peds)</td>
+                 <td>Pediatric Physiotherapy, Neurodevelopmental Therapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Associated with clinics like SRCC Children's Hospital (check current)</td>
+                 <td>Mumbai</td>
+                 <td>Search Current Affiliation</td>
+                 <td>Search "Dr Prachi Shah Bogam Pediatric Physiotherapist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Debashish Chanda (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Sports Physiotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Shagun Aggarwal (PT, MPT - Women's Health)</td>
+                 <td>Women's Health, Pelvic Floor Rehab, Ante/Post Natal Care</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Physio Pilates Studio / Consults at hospitals</td>
+                 <td>Gurugram</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Shagun Aggarwal Physiotherapist Gurgaon"</td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Ruchi Varshney (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Dipti Patil (PT, MPT - Musculoskeletal)</td>
+                 <td>Orthopedics, Musculoskeletal Rehab</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Subhanjan Das (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedic & Sports Physiotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant / HOD)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Sanjay Parmar (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine Rehab</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AktivHealth (Senior Physiotherapist)</td>
+                 <td>Delhi/Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aktivhealth.in/" target="_blank" class="website-link">AktivHealth</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Anjana Hulse (PT, MPT - Peds)</td>
+                 <td>Pediatric Physiotherapy, Neurodevelopmental Therapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>31</td>
+                 <td>Dr. Muthukumar S. (PT, MPT, PhD)</td>
+                 <td>Orthopedics, Sports Physiotherapy, Manual Therapy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>SRM Institute of Science and Technology (SRMIST) (Professor) / Private Practice</td>
+                 <td>Chennai</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Muthukumar Physiotherapist SRM Chennai"</td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Bobby John (PT, MPT - Ortho)</td>
+                 <td>Orthopedic Manual Therapy, Spine Conditions</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant / HOD)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Navita Purohit (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation, Geriatric Care</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Physiotherapist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Taruna Tannu (PT, MPT - Musculoskeletal)</td>
+                 <td>Orthopedics, Musculoskeletal Rehab</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Yogita Gupta (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Balasundaram (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine Rehabilitation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kauvery Hospital (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kauveryhospital.com/" target="_blank" class="website-link">Kauvery Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Hemant Sharma (MS - Ortho, FRCS)</td>
+                 <td>Sports Injuries, Arthroscopy (Orthopedic Surgeon influential in rehab protocols)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals / Fortis Escorts (Senior Consultant Ortho)</td>
+                 <td>New Delhi</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> (Note: Surgeon)</td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Shabnam Agarwal (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Sports Injuries, Pilates for Rehab</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>EduCare (Director) / Works with sports personalities</td>
+                 <td>Kolkata</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Shabnam Agarwal Physiotherapist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. M G Prasad (PT, MPT - Neuro)</td>
+                 <td>Neurological Physiotherapy, Spinal Cord Injury Rehab</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indian Spinal Injuries Centre (ISIC) (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.isiconline.org/" target="_blank" class="website-link">ISIC</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Shweta Gupta (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Physiotherapist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+              <tr>
+                 <td>41</td>
+                 <td>Dr. Aijaz Ashai (PT, MPT - Sports)</td>
+                 <td>Sports Physiotherapy, High-Performance Rehab</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant / Associated with various sports organizations (e.g., Delhi Capitals)</td>
+                 <td>Consultant</td>
+                 <td>Search Current Affiliation</td>
+                 <td>Search "Aijaz Ashai Physiotherapist"</td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Deepali Badhe (PT, MPT - Musculoskeletal)</td>
+                 <td>Musculoskeletal Physiotherapy, Women's Health</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Physiotherapist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Saravana Kumar (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Physio Lounge (Senior Consultant / Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Physio Lounge Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Hema Chaudhary (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Gurugram (Senior Physiotherapist / HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Snehal Patel (PT, MPT - Women's Health)</td>
+                 <td>Pelvic Floor Physiotherapy, Women's Health</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Own practice / Associated clinics (Founder)</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Snehal Patel Pelvic Floor Physiotherapist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Manish Lewis (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AktivHealth (Senior Physiotherapist / Director)</td>
+                 <td>Delhi/Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aktivhealth.in/" target="_blank" class="website-link">AktivHealth</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Garima Anand Gupta (PT, MPT - Peds)</td>
+                 <td>Pediatric Physiotherapy, Early Intervention</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Vinod Kumar (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedic & Sports Rehabilitation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Senior Physiotherapist / HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Kruti Parekh (PT, MPT - Musculoskeletal)</td>
+                 <td>Musculoskeletal & Sports Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Reema Singh (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation, ICU Physio</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Escorts Heart Institute (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>51</td>
+                 <td>Dr. Priya Karthik (PT, MPT - Ortho/Women's Health)</td>
+                 <td>Women's Health, Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Priya Karthik Physiotherapist Chennai"</td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Jitendra Sharma (PT, MPT, PhD)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Amar Jyoti Institute of Physiotherapy (Principal / HOD)</td>
+                 <td>Delhi</td>
+                 <td>Via Institute Website</td>
+                 <td><a href="https://ajipt.org/" target="_blank" class="website-link">Amar Jyoti Institute</a> (Academic focus)</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Nidhi Kumar (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Physiotherapist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Kavita Kumrawat (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Manisha Rathi (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir H. N. Reliance Foundation Hospital (Senior Physiotherapist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Rajeev Aggarwal (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>VIMHANS Nayati Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://vimhansnayati.com/" target="_blank" class="website-link">VIMHANS Nayati</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Shailesh Jain (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Senior Physiotherapist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Anjali Sharma (PT, MPT - Peds)</td>
+                 <td>Pediatric Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anjali Sharma Pediatric Physiotherapist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Gautam Das (PT)</td>
+                 <td>Pain Management, Musculoskeletal</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fit O Fine Physiotherapy Clinic (Founder)</td>
+                 <td>Kolkata</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Fit O Fine Physiotherapy Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Gaurav Singh (PT, MPT - Sports)</td>
+                 <td>Sports Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jaypee Hospital (Senior Physiotherapist)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaypeehospital.com/" target="_blank" class="website-link">Jaypee Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Jaspriya Sandhu (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Senior Physiotherapist)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Kiran Kumar K V (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Rehab</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Physiotherapist)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Laxmi Agarwal (PT, MPT - Women's Health)</td>
+                 <td>Women's Health, Ante/Post Natal</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Laxmi Agarwal Women's Health Physio Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Meenakshi Pandit (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Physiotherapist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Nilesh Makwana (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Dr Makwana's Physiotherapy Clinic (Founder)</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Makwana Physiotherapy Ahmedabad"</td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Palak Dengla (PT, MPT - Musculoskeletal)</td>
+                 <td>Musculoskeletal Physiotherapy</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Pradeep Kumar Singh (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Sports Rehab</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Rajni Gupta (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Reema Malhotra (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>70</td>
+                 <td>Dr. Ritesh Sharma (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ritesh Sharma Physiotherapist Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Rohit Kumar Singh (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Sarika Gupta (PT, MPT - Women's Health)</td>
+                 <td>Women's Health, Pelvic Floor Rehab</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Online</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sarika Gupta Pelvic Floor Delhi"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Saurabh Sharma (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine Rehab</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Gurugram (Senior Physiotherapist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>74</td>
+                 <td>Dr. Seema Grover (PT, MPT - Peds)</td>
+                 <td>Pediatric Physiotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Shivani Sharma (PT, MPT - Musculoskeletal)</td>
+                 <td>Musculoskeletal Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>76</td>
+                 <td>Dr. Shruti Kamath (PT, MPT - Sports)</td>
+                 <td>Sports Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (worked with sports teams)</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shruti Kamath Sports Physio Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>77</td>
+                 <td>Dr. Sonal Shah (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sonal Shah Physiotherapist Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>78</td>
+                 <td>Dr. Sonia Kanwar (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Injury</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Mohali (Senior Physiotherapist)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Sumit Sharma (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Sunita Kumari (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Physiotherapist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>81</td>
+                 <td>Dr. Suresh Babu (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Physiotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Physiotherapist)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>82</td>
+                 <td>Dr. Swati Maheshwari (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Tanu Sharma (PT, MPT - Women's Health)</td>
+                 <td>Women's Health</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Cradle / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td><a href="https://www.apollocradle.com/" target="_blank" class="website-link">Apollo Cradle</a> or search practice</td>
+            </tr>
+            <tr>
+                 <td>84</td>
+                 <td>Dr. Tarang Agrawal (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Physio Active Clinic (Founder)</td>
+                 <td>Lucknow</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Physio Active Clinic Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Usha Kiran (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Health City (Senior Physiotherapist)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Varun Kumar (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine Rehab</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Veena K (PT, MPT - Peds)</td>
+                 <td>Pediatric Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Physiotherapist)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Vikas Kumar Sharma (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Rehab</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras Hospitals (Senior Physiotherapist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Vinita Otia (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jaslok Hospital and Research Centre (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Vivek Kumar Singh (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>91</td>
+                 <td>Dr. Yogesh Kumar (PT, MPT - Sports)</td>
+                 <td>Sports Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Physiotherapist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Zalak Patel (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant Physiotherapist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>93</td>
+                 <td>Dr. Payal Sharma (PT, MPT - Musculoskeletal)</td>
+                 <td>Orthopedics, Musculoskeletal</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Mona Bhatia (PT, MPT - Neuro)</td>
+                 <td>Neurological Rehabilitation</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Gaurav Bhatnagar (PT, MPT - Ortho/Sports)</td>
+                 <td>Orthopedics, Sports Physiotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gaurav Bhatnagar Physiotherapist Pune"</td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Megha Sharma (PT, MPT - Women's Health)</td>
+                 <td>Women's Health</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Megha Sharma Women's Health Physio Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Anoop Kumar Singh (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Spine Rehab</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anoop Kumar Singh Physiotherapist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Sweta Singh (PT, MPT - Neuro)</td>
+                 <td>Neurological Physiotherapy</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sweta Singh Physiotherapist Patna"</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. R K Sharma (PT, MPT - Ortho)</td>
+                 <td>Orthopedics, Manual Therapy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Santosh Hospital & Medical College (Senior Physiotherapist / HOD)</td>
+                 <td>Ghaziabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://santosh.ac.in/" target="_blank" class="website-link">Santosh University</a></td>
+             </tr>
+            <tr>
+                 <td>100</td>
+                 <td>Dr. Preeti Saran (PT, MPT - Cardio pulm)</td>
+                 <td>Cardio-Pulmonary Rehabilitation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Physiotherapist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a Physiotherapist:</h2>
+        <ul>
+            <li><strong>Your Condition:</strong> Match the therapist's specialty (Ortho, Neuro, Sports, Cardio-Pulmonary, Peds, Women's Health) to your specific needs.</li>
+            <li><strong>Diagnosis:</strong> Often, you'll be referred by a doctor (Orthopedist, Neurologist, etc.) who has diagnosed the underlying issue.</li>
+            <li><strong>Techniques:</strong> Some therapists specialize in manual therapy, others in exercise prescription, electrotherapy, taping, etc. Discuss their approach.</li>
+            <li><strong>Location & Sessions:</strong> Physiotherapy often requires multiple sessions, so convenient location is important.</li>
+            <li><strong>Credentials:</strong> Look for BPT (Bachelor's) and preferably MPT (Master's) in a relevant specialty.</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

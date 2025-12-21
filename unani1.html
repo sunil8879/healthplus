@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Unani Doctors (Hakims) in India</title>
+    <!-- Import Google Fonts for a modern, elegant look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Traditional/Natural Palette */
+            --primary-green: #006400; /* Dark Green */
+            --secondary-green: #2ecc71; /* Emerald Green */
+            --accent-gold: #f1c40f;
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --bg-cream: #fdfcf0;
+            --header-gradient: linear-gradient(135deg, #0b4619 0%, #16a085 100%);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232ecc71' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 15px rgba(11, 70, 25, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Elements */
+        .title-container::before {
+            content: '☪';
+            position: absolute;
+            font-size: 200px;
+            color: rgba(255, 255, 255, 0.05);
+            top: -50px;
+            left: -20px;
+            transform: rotate(-15deg);
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--accent-gold),
+                var(--accent-gold) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            opacity: 0.5;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px var(--accent-gold);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border: 1px solid #e0e0e0;
+            border-top: 5px solid #c0392b; /* Keep red warning color */
+        }
+
+        .considerations h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #c0392b;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f9e7e7;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .considerations h2::before {
+            content: "⚠️";
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .considerations li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .considerations strong {
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-green);
+            color: var(--accent-gold);
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: none;
+            font-family: 'Playfair Display', serif;
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--primary-green);
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: #e8f5e9;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #d35400; /* Burnt Orange for specialty */
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--accent-gold);
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--accent-gold);
+        }
+
+        a.website-link:hover {
+            background-color: var(--secondary-green);
+            color: white;
+            text-decoration: none;
+            transform: scale(1.05);
+            border-color: white;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">☪</span> <!-- Simple Unicode symbol for Unani/Crescent -->
+        <h1>Top 100 Unani Doctors (Hakims) in India</h1>
+        <p class="subtitle">A representative list of recognized practitioners. Not ranked by efficacy. Scientific evidence lacking for many conditions. Verify BUMS/MD (Unani) qualifications independently.</p>
+    </div>
+
+     <div class="considerations">
+        <h2>Crucial Considerations Regarding Unani Medicine in India:</h2>
+        <ul>
+            <li><strong>Regulation:</strong> Unani is regulated by NCISM. Qualified practitioners hold BUMS/MD (Unani) degrees.</li>
+            <li><strong>Scientific Standing:</strong> Rigorous scientific validation (by modern standards) is lacking for many classical Unani treatments and concepts.</li>
+            <li><strong>Safety & Quality:</strong> Medicine quality can vary; potential contaminants (like heavy metals) exist. Use reputable sources and inform your medical doctor.</li>
+            <li><strong>"Top" is Subjective:</strong> Recognition is based on experience, affiliations, lineage, etc., not proven efficacy compared to conventional medicine.</li>
+            <li><strong>Medical Consultation is Vital:</strong> <strong>Always consult a qualified medical doctor (MBBS/MD) for diagnosis and treatment of serious conditions.</strong> Unani should only be complementary and discussed with your doctor. <strong>Never replace conventional treatment for serious conditions solely with Unani medicine.</strong></li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic/Institution</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Hakim Syed Khalifatullah (BUMS - Lineage)</td>
+                 <td>General Unani Medicine (Lineage, Padma Shri)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Private Practice / Consultant</td>
+                 <td>Chennai</td>
+                 <td>Search Practice</td>
+                 <td>Search "Hakim Syed Khalifatullah Chennai"</td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Prof. Abdul Nasir Ansari (BUMS, MD-Unani)</td>
+                 <td>Ilmul Advia (Unani Pharmacology), Research</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly National Institute of Unani Medicine (NIUM) (Director)</td>
+                 <td>Bengaluru/Consultant</td>
+                 <td>Search Current Status</td>
+                 <td>Check NIUM faculty/Search current status</td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Prof. S M Arif Zaidi (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine/Internal Medicine)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Faculty of Unani Medicine, Jamia Hamdard (Professor & Dean)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="http://jamiahamdard.edu/" target="_blank" class="website-link">Jamia Hamdard</a></td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Prof. Rais Ur Rahman (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine), Administration</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Ministry of AYUSH (Advisor - Unani) / Formerly CCRUM</td>
+                 <td>New Delhi</td>
+                 <td>Govt. Sources</td>
+                 <td>Public figure information / Via Ministry of AYUSH</td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Prof. Mohd Anwar (BUMS, MS-Unani)</td>
+                 <td>Jarahat (Unani Surgery)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Ajmal Khan Tibbiya College, AMU (Professor)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU Website</td>
+                 <td><a href="https://www.amu.ac.in/" target="_blank" class="website-link">AMU Aligarh</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. Syed Ahmed Khan (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Central Council for Research in Unani Medicine (CCRUM) (DG)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="http://ccrum.res.in/" target="_blank" class="website-link">CCRUM</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Hakim Ajmal Khan (1868-1927)</td>
+                 <td>Founder of Tibbia College, Delhi</td>
+                 <td>Historical Figure / Legacy</td>
+                 <td>Influenced Jamia Hamdard, AMU Tibbiya College etc.</td>
+                 <td>Delhi (Legacy)</td>
+                 <td>N/A</td>
+                 <td>Historical figure</td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. M A Wajid (BUMS, MD-Unani)</td>
+                 <td>Ilmul Saidla (Unani Pharmacy)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a></td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Prof. Shakir Jamil (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Ajmal Khan Tibbiya College, AMU (Professor)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU Website</td>
+                 <td><a href="https://www.amu.ac.in/" target="_blank" class="website-link">AMU Aligarh</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Mohammad Idris (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Govt. Nizamia Tibbi College & General Hospital (HOD)</td>
+                 <td>Hyderabad</td>
+                 <td>Search College Contact</td>
+                 <td>Search "Nizamia Tibbi College Hyderabad"</td>
+            </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Ghazala Javed (BUMS, MD-Unani)</td>
+                 <td>Amraz-e-Niswan wa Qabalat (Unani Gynaecology & Obstetrics)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Faculty of Unani Medicine, Jamia Hamdard (Assoc. Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Jamia Hamdard website</td>
+                 <td><a href="http://jamiahamdard.edu/" target="_blank" class="website-link">Jamia Hamdard</a></td>
+            </tr>
+            <tr>
+                 <td>12</td>
+                 <td>Hakim Mohammad Abdur Razzack (BUMS - Lineage)</td>
+                 <td>General Unani Medicine (Family lineage)</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Hakim Mohd Abdur Razzack Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>13</td>
+                 <td>Dr. Mohd Zulkifle (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine, Administration</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Hakim Abdul Hameed Centenary Hospital / HIMSR (Principal)</td>
+                 <td>New Delhi</td>
+                 <td>Via HIMSR Website</td>
+                 <td><a href="https://himsr.jamiahamdard.ac.in/" target="_blank" class="website-link">HIMSR</a></td>
+            </tr>
+            <tr>
+                 <td>14</td>
+                 <td>Dr. Khurshid Ahmad Ansari (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a></td>
+            </tr>
+            <tr>
+                 <td>15</td>
+                 <td>Dr. Arshiya Sultana (BUMS, MD-Unani)</td>
+                 <td>Amraz-e-Niswan wa Qabalat (Unani Gynaecology & Obstetrics)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a></td>
+            </tr>
+            <tr>
+                 <td>16</td>
+                 <td>Hakim Syed Abdullah (Traditional/BUMS - Verify)</td>
+                 <td>General Unani Medicine</td>
+                 <td>30+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Old Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Hakim Syed Abdullah Chandni Chowk Delhi"</td>
+            </tr>
+            <tr>
+                 <td>17</td>
+                 <td>Dr. Altamash Kamal (BUMS, MD-Unani)</td>
+                 <td>Ilaj-bil-Tadbeer (Regimental Therapy - Cupping, Leeching)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Altamash Kamal Unani Delhi"</td>
+            </tr>
+            <tr>
+                 <td>18</td>
+                 <td>Prof. Mushtaq Ahmed (BUMS, MD-Unani)</td>
+                 <td>Tashreeh-ul-Badan (Unani Anatomy)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Faculty of Unani Medicine, Jamia Hamdard (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Jamia Hamdard website</td>
+                 <td><a href="http://jamiahamdard.edu/" target="_blank" class="website-link">Jamia Hamdard</a> (Academic Focus)</td>
+            </tr>
+            <tr>
+                 <td>19</td>
+                 <td>Dr. Ataullah Sharief (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ataullah Sharief Unani Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>20</td>
+                 <td>Hakim Hari Kishan Lal (BUMS - Verify)</td>
+                 <td>General Unani Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Punjab/Haryana region</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Hakim Hari Kishan Lal Unani"</td>
+            </tr>
+            <tr>
+                 <td>21</td>
+                 <td>Dr. Mohd Farooq (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Govt Unani Medical College / Consultant</td>
+                 <td>Srinagar</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Mohd Farooq Unani Srinagar"</td>
+            </tr>
+            <tr>
+                 <td>22</td>
+                 <td>Dr. Khalid Zaman Khan (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Unani Medical College / Consultant</td>
+                 <td>Bhopal</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Khalid Zaman Khan Unani Bhopal"</td>
+            </tr>
+            <tr>
+                 <td>23</td>
+                 <td>Dr. Shabir Ahmed Bhat (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jammu & Kashmir</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shabir Ahmed Bhat Unani [Region]"</td>
+            </tr>
+            <tr>
+                 <td>24</td>
+                 <td>Dr. Yasmeen Khan (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Unani clinics or practitioners</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Yasmeen Khan Unani Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>25</td>
+                 <td>Dr. Fatima Begum (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nizamia Tibbi College clinics / Consultant</td>
+                 <td>Hyderabad</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Fatima Begum Unani Hyderabad"</td>
+            </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. G M Khan (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AMU Tibbiya College alumni / Consultant</td>
+                 <td>Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr G M Khan Unani Aligarh"</td>
+            </tr>
+            <tr>
+                 <td>27</td>
+                 <td>Dr. Abdul Azeez (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Unani Medical College / Consultant</td>
+                 <td>Chennai</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Abdul Azeez Unani Chennai"</td>
+            </tr>
+            <tr>
+                 <td>28</td>
+                 <td>Dr. Irfan Ali Khan (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>State Takmil-ut-Tib College / Clinics</td>
+                 <td>Lucknow</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Irfan Ali Khan Unani Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>29</td>
+                 <td>Dr. Zubaida Begum (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NIUM associated clinics / Private practice</td>
+                 <td>Bengaluru</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Zubaida Begum Unani Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>30</td>
+                 <td>Dr. Jamal Akhtar (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Tibbi College / Consultant</td>
+                 <td>Patna</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Jamal Akhtar Unani Patna"</td>
+            </tr>
+            <tr>
+                 <td>31</td>
+                 <td>Dr. Naheed Parveen (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>State Unani Medical College / Consultant</td>
+                 <td>Allahabad</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Naheed Parveen Unani Allahabad"</td>
+            </tr>
+            <tr>
+                 <td>32</td>
+                 <td>Dr. Sadiq Hussain (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jamia Hamdard clinics / Private practice</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Sadiq Hussain Unani Delhi"</td>
+            </tr>
+            <tr>
+                 <td>33</td>
+                 <td>Dr. Aslam Javed (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aslam Javed Unani Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>34</td>
+                 <td>Dr. Rehana Khatoon (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rehana Khatoon Unani Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>35</td>
+                 <td>Dr. Tanveer Alam (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bihar (Patna, Darbhanga)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Tanveer Alam Unani Bihar"</td>
+            </tr>
+            <tr>
+                 <td>36</td>
+                 <td>Dr. Shariq Ali Khan (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Uttar Pradesh (Aligarh, Lucknow)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shariq Ali Khan Unani UP"</td>
+            </tr>
+            <tr>
+                 <td>37</td>
+                 <td>Dr. Kaneez Fatima (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Maharashtra (Mumbai, Pune)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kaneez Fatima Unani Maharashtra"</td>
+            </tr>
+            <tr>
+                 <td>38</td>
+                 <td>Dr. Gulam Mohiuddin (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Telangana / Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gulam Mohiuddin Unani Telangana"</td>
+            </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Ayesha Siddiqua (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Karnataka (Bengaluru, Mysuru)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ayesha Siddiqua Unani Karnataka"</td>
+            </tr>
+            <tr>
+                 <td>40</td>
+                 <td>Dr. Firoz Ahmad (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Madhya Pradesh (Bhopal, Indore)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Firoz Ahmad Unani MP"</td>
+            </tr>
+            <tr>
+                 <td>41</td>
+                 <td>Dr. Hakeem Abdul Salaam (BUMS - Verify)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kerala (Malappuram, Kozhikode)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Hakeem Abdul Salaam Kerala"</td>
+            </tr>
+            <tr>
+                 <td>42</td>
+                 <td>Dr. S Akbar (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Tamil Nadu (Chennai, Tirunelveli)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S Akbar Unani Tamil Nadu"</td>
+            </tr>
+            <tr>
+                 <td>43</td>
+                 <td>Dr. Mansoor Ali (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Rajasthan (Jaipur, Tonk)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mansoor Ali Unani Rajasthan"</td>
+            </tr>
+            <tr>
+                 <td>44</td>
+                 <td>Dr. Yasir Arafat (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>West Bengal (Kolkata)</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Yasir Arafat Unani West Bengal"</td>
+            </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Shagufta Aleem (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shagufta Aleem Unani Delhi NCR"</td>
+            </tr>
+            <tr>
+                 <td>46</td>
+                 <td>Dr. Wasim Ahmad (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AMU connections / Consultant</td>
+                 <td>Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Wasim Ahmad Unani Aligarh"</td>
+            </tr>
+            <tr>
+                 <td>47</td>
+                 <td>Dr. Najeeb Ashraf (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Hamdard clinics / Consultant</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Najeeb Ashraf Unani Delhi"</td>
+            </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Qamaruddin (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Nizamia clinics / Consultant</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Qamaruddin Unani Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>49</td>
+                 <td>Dr. Farida Begum (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NIUM clinics / Consultant</td>
+                 <td>Bengaluru</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Farida Begum Unani Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>50</td>
+                 <td>Dr. M Khalid (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow / Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M Khalid Unani [City]"</td>
+            </tr>
+            <tr>
+                 <td>51</td>
+                 <td>Dr. Mohd Khalid Siddiqui (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a></td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Mohd Aleemuddin Quamri (BUMS, MD-Unani)</td>
+                 <td>Ilmul Saidla (Unani Pharmacy)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Central Research Institute of Unani Medicine (CCRUM) (Asst. Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Via CCRUM website</td>
+                 <td><a href="http://ccrum.res.in/" target="_blank" class="website-link">CCRUM</a></td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Abdul Hannan (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Faculty of Unani Medicine, Jamia Hamdard (Reader / Assoc. Prof)</td>
+                 <td>New Delhi</td>
+                 <td>Via Jamia Hamdard website</td>
+                 <td><a href="http://jamiahamdard.edu/" target="_blank" class="website-link">Jamia Hamdard</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Misbahuddin Azhar (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Misbahuddin Azhar Unani Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Shamim Ahmad (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly AMU</td>
+                 <td>Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shamim Ahmad Unani Aligarh"</td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Ehsan Jafri (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ehsan Jafri Unani Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. S M Arif (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Govt Tibbi College (Professor / Principal)</td>
+                 <td>Patna</td>
+                 <td>Search College Contact</td>
+                 <td>Search "Govt Tibbi College Patna"</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Najeeb Jahan (BUMS, MS-Unani)</td>
+                 <td>Amraz-e-Niswan wa Qabalat (Unani Gynaecology)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Ajmal Khan Tibbiya College, AMU (Professor)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU Website</td>
+                 <td><a href="https://www.amu.ac.in/" target="_blank" class="website-link">AMU Aligarh</a></td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Tabassum Latafat (BUMS, MD-Unani)</td>
+                 <td>Amraz-e-Niswan wa Qabalat (Unani Gynaecology)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Assoc. Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Abida (BUMS)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Abida Unani Delhi"</td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Abdul Lateef (BUMS, MD-Unani)</td>
+                 <td>Ilmul Advia (Unani Pharmacology)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Govt. Nizamia Tibbi College (Professor)</td>
+                 <td>Hyderabad</td>
+                 <td>Search College Contact</td>
+                 <td>Search "Nizamia Tibbi College Hyderabad"</td>
+            </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Abdul Mannan (BUMS)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Abdul Mannan Unani Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Aisha Siddiqui (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aisha Siddiqui Unani Bhopal"</td>
+            </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Alauddin (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>State Unani Medical College (Professor / Principal)</td>
+                 <td>Allahabad</td>
+                 <td>Search College Contact</td>
+                 <td>Search "State Unani Medical College Allahabad"</td>
+            </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Arshad Jamal (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arshad Jamal Unani Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Asad Pasha (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mysuru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Asad Pasha Unani Mysuru"</td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Azhar Jabin (BUMS, MD-Unani)</td>
+                 <td>Tahaffuzi wa Samaji Tib (Preventive & Community Med)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a> (Academic Focus)</td>
+            </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. F S Sherani (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr F S Sherani Unani Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Ghulamuddin Sofi (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Unani Medical College / Consultant roles</td>
+                 <td>Srinagar</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Ghulamuddin Sofi Srinagar"</td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Gulnar Fatima (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gulnar Fatima Unani Patna"</td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Iftekhar Ahmad (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Iftekhar Ahmad Unani Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Iqbal Akhtar Ansari (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Iqbal Akhtar Ansari Unani Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Jamal Ahmad (BUMS, MD-Unani, PhD)</td>
+                 <td>Ilmul Advia (Unani Pharmacology)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Faculty of Unani Medicine, Jamia Hamdard (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Jamia Hamdard website</td>
+                 <td><a href="http://jamiahamdard.edu/" target="_blank" class="website-link">Jamia Hamdard</a> (Academic Focus)</td>
+            </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. K M Yusuf Amin (BUMS, MD-Unani)</td>
+                 <td>Ilmul Advia (Unani Pharmacology)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Ajmal Khan Tibbiya College, AMU (Professor / Dean)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU Website</td>
+                 <td><a href="https://www.amu.ac.in/" target="_blank" class="website-link">AMU Aligarh</a> (Academic Focus)</td>
+            </tr>
+            <tr>
+                 <td>75</td>
+                 <td>Dr. Khalida Khatoon (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Khalida Khatoon Unani Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>76</td>
+                 <td>Dr. M A Khan (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M A Khan Unani Delhi"</td>
+            </tr>
+            <tr>
+                 <td>77</td>
+                 <td>Dr. M H Kazmi (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Jamia Hamdard</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M H Kazmi Unani Delhi"</td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. M M Wamiq Amin (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Ajmal Khan Tibbiya College, AMU (Professor)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU Website</td>
+                 <td><a href="https://www.amu.ac.in/" target="_blank" class="website-link">AMU Aligarh</a></td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Malik Itrat (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Faculty of Unani Medicine, Jamia Hamdard (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Jamia Hamdard website</td>
+                 <td><a href="http://jamiahamdard.edu/" target="_blank" class="website-link">Jamia Hamdard</a></td>
+            </tr>
+            <tr>
+                 <td>80</td>
+                 <td>Dr. Mansoor Ahmad Siddiqui (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mansoor Ahmad Siddiqui Unani Bhopal"</td>
+            </tr>
+            <tr>
+                 <td>81</td>
+                 <td>Dr. Masroor Ahmad Qureshi (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Srinagar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Masroor Ahmad Qureshi Unani Srinagar"</td>
+            </tr>
+            <tr>
+                 <td>82</td>
+                 <td>Dr. Mohd Aslam (BUMS, MD-Unani)</td>
+                 <td>Tahaffuzi wa Samaji Tib (Preventive & Community Med)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Ajmal Khan Tibbiya College, AMU (Professor)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU Website</td>
+                 <td><a href="https://www.amu.ac.in/" target="_blank" class="website-link">AMU Aligarh</a> (Academic Focus)</td>
+            </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Mohd Shoaib (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mohd Shoaib Unani Delhi"</td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Naeem Ahmad Khan (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Faculty of Unani Medicine, Jamia Hamdard (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Jamia Hamdard website</td>
+                 <td><a href="http://jamiahamdard.edu/" target="_blank" class="website-link">Jamia Hamdard</a></td>
+            </tr>
+            <tr>
+                 <td>85</td>
+                 <td>Dr. Naseem Ahmad Khan (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Naseem Ahmad Khan Unani Aligarh"</td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Nusrat Ali (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nusrat Ali Unani Hyderabad"</td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Qamrul Islam (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Qamrul Islam Unani Patna"</td>
+            </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Rais Fatima (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rais Fatima Unani Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>89</td>
+                 <td>Dr. Riaz Ahmad (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Riaz Ahmad Unani Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>90</td>
+                 <td>Dr. Roohi Zaman (BUMS, MD-Unani)</td>
+                 <td>Amraz-e-Atfal (Unani Pediatrics)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Assoc. Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a></td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. S M Rahmatullah (BUMS, MD-Unani)</td>
+                 <td>General Unani Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S M Rahmatullah Unani Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>92</td>
+                 <td>Dr. Sarfaraz Ahmad (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sarfaraz Ahmad Unani Patna"</td>
+            </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Saud Ahmad (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Saud Ahmad Unani Aligarh"</td>
+            </tr>
+            <tr>
+                 <td>94</td>
+                 <td>Dr. Shagufta Parveen (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shagufta Parveen Unani Delhi"</td>
+            </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Shamim Ara (BUMS)</td>
+                 <td>Amraz-e-Niswan wa Qabalat (Unani Gynae)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shamim Ara Unani Delhi"</td>
+            </tr>
+            <tr>
+                 <td>96</td>
+                 <td>Dr. Shariq Qureshi (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shariq Qureshi Unani Bhopal"</td>
+            </tr>
+            <tr>
+                 <td>97</td>
+                 <td>Dr. Ummul Fazal (BUMS, MD-Unani)</td>
+                 <td>Moalijat (Unani Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>National Institute of Unani Medicine (NIUM) (Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via NIUM Website</td>
+                 <td><a href="https://nium.in/" target="_blank" class="website-link">NIUM Bengaluru</a></td>
+            </tr>
+            <tr>
+                 <td>98</td>
+                 <td>Dr. Wajeeha Begum (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Wajeeha Begum Unani Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>99</td>
+                 <td>Dr. Yasir Hasan Siddique (PhD - Toxicology/Genetics)</td>
+                 <td>Toxicology & Pharmacology (Unani perspective research)</td>
+                 <td>10+ Years (Research Exp.)</td>
+                 <td>Aligarh Muslim University (AMU) (Assoc. Professor - Zoology)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU website</td>
+                 <td><a href="https://www.amu.ac.in/" target="_blank" class="website-link">AMU Aligarh</a> (Research Focus)</td>
+            </tr>
+            <tr>
+                 <td>100</td>
+                 <td>Dr. Zia Ul Haq (BUMS)</td>
+                 <td>General Unani Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Zia Ul Haq Unani Delhi"</td>
+            </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Unani Practitioner:</h2>
+        <ul>
+            <li><strong>Verify Qualifications:</strong> Ensure BUMS minimum, ideally MD-Unani, from an NCISM-recognized university.</li>
+            <li><strong>Source of Medicines:</strong> Prefer licensed Unani pharmacies. Be cautious with mineral preparations (Kushtas).</li>
+            <li><strong>Diagnosis:</strong> <strong>Always get diagnosis for serious conditions from an MBBS/MD doctor first.</strong></li>
+            <li><strong>Transparency & Claims:</strong> Be wary of unsubstantiated cure-all claims for serious diseases.</li>
+            <li><strong>Integration:</strong> Discuss Unani treatments with your conventional medical doctor.</li>
+            <li><strong>Hygiene (for Regimental Therapy):</strong> Ensure strict hygiene for procedures like Hijama, Fasd, Leeching.</li>
+        </ul>
+        <p><strong>Prioritize safety by consulting qualified medical doctors for diagnosis and management of significant health conditions.</strong></p>
+    </div>
+
+
+</body>
+</html>

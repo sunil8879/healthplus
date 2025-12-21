@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Gastroenterologists & Hepatologists in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+            --header-bg: #2ecc71;
+            --accent-color: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --table-header: #f1f8e9;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --bg-color: #f7f9fc;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--primary-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 176, 155, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #eafaf1;
+        }
+
+        td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #e67e22;
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #219150;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">隸</span> <!-- Stomach/Intestine Icon Placeholder -->
+        <h1>Top 100 Gastroenterologists & Hepatologists in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. Verify DM/DNB qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Gastroenterologist/Hepatologist:</h2>
+        <ul>
+            <li><strong>Symptoms & Condition:</strong> Identify issues like acidity, pain, jaundice, GI bleeding, diarrhea/constipation, liver disease, IBD, etc.</li>
+            <li><strong>Sub-specialty Need:</strong> Seek focused expertise for advanced endoscopy (ERCP, EUS), liver transplant evaluation, complex IBD, or pancreatic diseases.</li>
+            <li><strong>Diagnostic & Therapeutic Tools:</strong> Ensure access to endoscopes, ERCP/EUS capabilities, FibroScan, etc., if needed.</li>
+            <li><strong>Referral:</strong> Your GP can often provide a referral.</li>
+            <li><strong>Hospital Affiliation:</strong> Consider hospital reputation and facilities for procedures or admissions.</li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. D. Nageshwar Reddy (MD, DM, DSc, FRCP, FAMS)</td>
+                 <td>Therapeutic Endoscopy (ERCP, EUS), Pancreatology (World-renowned endoscopist, Padma Bhushan)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Asian Institute of Gastroenterology (AIG Hospitals) (Chairman & Founder)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aighospitals.com/" target="_blank" class="website-link">AIG Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Randhir Sud (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy, Liver Diseases, GI Oncology (Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Inst. of Digestive & Hepatobiliary Sciences)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. S K Sarin (MBBS, MD, DM, DSc)</td>
+                 <td>Hepatology (Liver Diseases, Portal Hypertension, Liver Cancer), Therapeutic Endoscopy (Padma Bhushan)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Institute of Liver and Biliary Sciences (ILBS) (Chancellor & Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.ilbs.in/" target="_blank" class="website-link">ILBS</a></td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Amit Maydeo (MS, FASGE)</td>
+                 <td>Therapeutic Endoscopy (ERCP, EUS, POEM), Pancreatology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Global Hospitals, Mumbai / Baldota Institute of Digestive Sciences (BIDS) (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Gourdas Choudhuri (MBBS, MD, DM, FACG)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD) / Formerly SGPGI</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Ajay Kumar (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Therapeutic Endoscopy</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Chairman - Institute for Digestive & Liver Diseases) / Formerly Fortis Escorts</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Rajesh Puri (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy (EUS, ERCP), Pancreatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Director - Gastroenterology) / Formerly Sir Ganga Ram</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Devendra Desai (MBBS, MD, DNB)</td>
+                 <td>General Gastroenterology, IBD, Hepatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Rupa Banerjee (MBBS, MD, DNB)</td>
+                 <td>Inflammatory Bowel Disease (IBD), General Gastroenterology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Asian Institute of Gastroenterology (AIG Hospitals) (Director - IBD Center)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aighospitals.com/" target="_blank" class="website-link">AIG Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Arvind Khurana (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy (EUS, ERCP), Gastroenterology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Director - Gastroenterology & Hepatology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Anil Arora (MBBS, MD, DM)</td>
+                 <td>Hepatology, General Gastroenterology, Therapeutic Endoscopy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman & HOD - Institute of Liver, Gastro & PBS)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Vineet Ahuja (MBBS, MD, DM)</td>
+                 <td>Inflammatory Bowel Disease (IBD), General Gastroenterology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Gastroenterology & Human Nutrition)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Mahesh Kumar Goenka (MBBS, MD, DM, FACG)</td>
+                 <td>Therapeutic Endoscopy, Pancreatology, General GI</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Director - Institute of Gastrosciences)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Pravin Rathi (MBBS, MD, DM)</td>
+                 <td>Hepatology, General Gastroenterology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Bombay Hospital (Director - Gastroenterology) / Formerly BYL Nair Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Ashwini Setya (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Therapeutic Endoscopy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj & Vaishali (Senior Consultant / Director)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Subrat K Acharya (MBBS, MD, DM, DSc)</td>
+                 <td>Hepatology (Liver Diseases)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Pro-Chancellor KIIT University / Formerly HOD Gastro, AIIMS Delhi / Consultant</td>
+                 <td>Consultant/Academic</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Subrat Acharya Hepatologist"</td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Yogesh Chawla (MBBS, MD, DM)</td>
+                 <td>Hepatology (Liver Diseases)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Former Director, PGI Chandigarh / Consultant roles</td>
+                 <td>Consultant/Chandigarh</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Yogesh Chawla Hepatologist"</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Akash Shukla (MBBS, MD, DM)</td>
+                 <td>Hepatology, Liver Transplantation Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir H. N. Reliance Foundation Hospital / Global Hospitals / Formerly KEM</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance</a> / <a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Vikas Singla (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy (ERCP, EUS), IBD, General GI</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (East Wing) (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Shobna Bhatia (MBBS, MD, DM)</td>
+                 <td>GI Motility Disorders, General Gastroenterology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Professor & Head, Seth GSMC & KEM Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shobna Bhatia Gastroenterologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Dr. Avnish Seth (MBBS, MD, DM)</td>
+                 <td>Gastroenterology & Hepatology, Transplant Hepatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Principal Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Lorance Peter (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Joy Varghese (MBBS, MD, DM)</td>
+                 <td>Hepatology, Liver Transplantation Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Gleneagles Global Health City (Director - Hepatology & Transplant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Manav Wadhawan (MBBS, MD, DM)</td>
+                 <td>Hepatology, Liver Transplantation Medicine, Therapeutic Endoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Director - Gastro & Hep) / Formerly Sir Ganga Ram</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Abhijit Chowdhury (MBBS, MD, DM, PhD, FRCP)</td>
+                 <td>Hepatology (Liver Diseases)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>IPGMER & SSKM Hospital (Professor & Head - Hepatology)</td>
+                 <td>Kolkata</td>
+                 <td>Via IPGMER/SSKM info</td>
+                 <td>Search IPGMER/SSKM Hepatology</td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. K R Palaniswamy (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Therapeutic Endoscopy</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Director - Inst. of Gastro & Liver Diseases)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Philip Abraham (MBBS, MD, DNB)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant Gastroenterologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. B S Ramakrishna (MBBS, MD, DM, PhD)</td>
+                 <td>Gastroenterology, Gut Microbiota, IBD</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>SRM Institutes for Medical Science (SIMS Hospital) (Director - Inst. of Gastro) / Formerly CMC Vellore</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://simshospitals.com/" target="_blank" class="website-link">SIMS Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Rakesh Aggarwal (MBBS, MD, DM)</td>
+                 <td>Gastroenterology, Hepatology (Viral Hepatitis Research)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Jawaharlal Institute of Postgraduate Medical Education & Research (JIPMER) (Director) / Formerly SGPGI</td>
+                 <td>Puducherry</td>
+                 <td>Via Website</td>
+                 <td><a href="https://jipmer.edu.in/" target="_blank" class="website-link">JIPMER</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Rajesh Sainani (MBBS, MD, DNB)</td>
+                 <td>Therapeutic Endoscopy, General Gastroenterology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jaslok Hospital and Research Centre (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Sreenivasa D. (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Ajay Choksi (MBBS, MD, MRCP)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Breach Candy Hospital / Saifee Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td>Check hospital websites</td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Amarender S Puri (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Director Professor & Head, G.B. Pant Hospital / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Practice</td>
+                 <td>Search "Dr Amarender Puri Gastroenterologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Naresh Bhat (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Aster CMI Hospital (Chief - Medical Gastroenterology / Director) / Formerly Columbia Asia</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.asterhospitals.in/hospitals/aster-cmi-hebbal-bengaluru" target="_blank" class="website-link">Aster CMI Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Roy Patankar (MS, FRCS)</td>
+                 <td>Surgical Gastroenterology, Laparoscopic Surgery (Works closely with Medical GI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Zen Multi Speciality Hospital (Director - Centre for Digestive & HPB Surgery)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://zenhospital.in/" target="_blank" class="website-link">Zen Hospital</a> (Note: Surgeon)</td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. C M Habibullah (1936-2013)</td>
+                 <td>Gastroenterology & Hepatology (Legendary figure)</td>
+                 <td>Legacy Figure</td>
+                 <td>Founder Director DCMS / Centre for Liver Research</td>
+                 <td>Hyderabad (Legacy)</td>
+                 <td>N/A</td>
+                 <td>His work continues in established centres</td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Usha Srinivas (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. J C Vij (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Emeritus Consultant) / Formerly Sir Ganga Ram</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Sundeep Shah (MBBS, MD, DM)</td>
+                 <td>Gastroenterology & Hepatology, Therapeutic Endoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Shalby Hospitals / Private Practice</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Shalby Website / Search</td>
+                 <td><a href="https://www.shalby.org/" target="_blank" class="website-link">Shalby Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Amitabh Jerath (MBBS, MD, DM)</td>
+                 <td>Gastroenterology & Hepatology, Therapeutic Endoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>41</td>
+                 <td>Dr. Manish Kak (MBBS, MD, DM)</td>
+                 <td>Gastroenterology & Hepatology, Transplant Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Mohan Prasad (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Therapeutic Endoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Yashoda Hospitals, Somajiguda (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.yashodahospitals.com/" target="_blank" class="website-link">Yashoda Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Rajkumar Wadhwa (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Narayana Health City (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Varghese Thomas (MBBS, MD, DM)</td>
+                 <td>Gastroenterology, Hepatology, Therapeutic Endoscopy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Aster Medcity (Senior Consultant / HOD)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Naveen Polavarapu (MBBS, MD, DM)</td>
+                 <td>Hepatology, Transplant Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant Hepatologist)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Jayanthi Venkataraman (MBBS, MD, DM, PhD)</td>
+                 <td>General Gastroenterology, IBD</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Gleneagles Global Health City (Senior Consultant) / Formerly Stanley Medical College</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Vivek Raj (MBBS, MD, DM)</td>
+                 <td>Gastroenterology, Hepatology, Therapeutic Endoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (West Wing) (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Ashish Kumar (MS, MCh - Surgical Gastro)</td>
+                 <td>Surgical Gastroenterology (Works closely with medical GI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman - Surgical Gastro & GI Oncology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a> (Note: Surgeon)</td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Sandeep K Jha (MBBS, MD, DM)</td>
+                 <td>Gastroenterology & Hepatology, Therapeutic Endoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Partha Pal (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Peerless Hospital (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://peerlesshospital.com/" target="_blank" class="website-link">Peerless Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Pankaj Puri (MBBS, MD, DM)</td>
+                 <td>Hepatology, Liver Transplantation Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Director - Gastro & Hepatology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Sanjay Kumar (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly Fortis Mohali / Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sanjay Kumar Gastroenterologist Chandigarh"</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Neeraj Nagaich (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy, General GI</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Senior Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Sunil Gupta (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunil Gupta Gastroenterologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Deepak Lahoti (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Therapeutic Endoscopy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Vishal Garg (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy, General GI</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Barjesh Chander Sharma (MBBS, MD, DM)</td>
+                 <td>Hepatology, Liver Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly GB Pant Hospital</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Barjesh Sharma Hepatologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Rakesh Tandon (MBBS, MD, PhD, FRCP)</td>
+                 <td>Pancreatology, General Gastroenterology (Veteran Educator)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Formerly AIIMS / Consultant roles (Pushpawati Singhania Hospital)</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rakesh Tandon Gastroenterologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Ajay Jain (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Sandeep Lakhtakia (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy (EUS), Pancreatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Asian Institute of Gastroenterology (AIG Hospitals) (Senior Consultant / Director - Endoscopy)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aighospitals.com/" target="_blank" class="website-link">AIG Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Amol Bapaye (MBBS, MD, DNB)</td>
+                 <td>Therapeutic Endoscopy (EUS, ERCP)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Deenanath Mangeshkar Hospital (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.dmhospital.org/" target="_blank" class="website-link">Deenanath Mangeshkar Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Raj Vigna Venugopal (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Mahesh Gupta (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Gaurav Patil (MBBS, MD, DNB)</td>
+                 <td>Gastroenterology & Hepatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Anant Dattatray Kulkarni (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jehangir Hospital (Senior Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jehangirhospital.com/" target="_blank" class="website-link">Jehangir Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>66</td>
+                 <td>Dr. Rajkumar P Wadhwa (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly KEM Hospital, Pune</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajkumar Wadhwa Pune"</td>
+            </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Ajay Kumar Jain (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Neeraj Saraf (MBBS, MD, DM)</td>
+                 <td>Hepatology, Liver Transplantation Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant - Hepatology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Piyush Ranjan (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, IBD</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Sanjoy Basu (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sanjoy Basu Gastroenterologist Kolkata"</td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Vijay Kumar Dutta (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Army Hospital R&R / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr V K Dutta Gastroenterologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Pankaj Kumar (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. B Ravi Shankar (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Therapeutic Endoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CARE Hospitals, Banjara Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.carehospitals.com/" target="_blank" class="website-link">CARE Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Sawan Bopanna (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, IBD</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>AIIMS (Additional Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Arvind Kumar (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Shobhit Kumar (MBBS, MD, DM)</td>
+                 <td>Gastroenterology & Hepatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Rajendra Desai (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajendra Desai Gastroenterologist Ahmedabad"</td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Vipul Roy Rathod (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy, General GI</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice/Hospital</td>
+                 <td>Search "Dr Vipul Roy Rathod Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Sudeep Khanna (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, GI Motility</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Rajeev Premnath (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Coimbatore</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajeev Premnath Gastroenterologist Coimbatore"</td>
+            </tr>
+            <tr>
+                 <td>81</td>
+                 <td>Dr. Kapil Sharma (MBBS, MD, DM)</td>
+                 <td>Therapeutic Endoscopy (EUS)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Prasanna Kumar Reddy (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Deepak Kumar Bhasin (MBBS, MD, DM, FAMS)</td>
+                 <td>Pancreatology, Therapeutic Endoscopy (Veteran)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly PGI Chandigarh / Consultant roles (Fortis Mohali)</td>
+                 <td>Mohali/Chandigarh</td>
+                 <td>Via Fortis Mohali / Search</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a> or search practice</td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Kunal Das (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Ashutosh Gupta (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashutosh Gupta Gastroenterologist Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Harish Kumar (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. M K Singh (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M K Singh Gastroenterologist Patna"</td>
+            </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. N Ravisankar (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Vijaya Group of Hospitals (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="http://vijayahospital.org/" target="_blank" class="website-link">Vijaya Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Saurabh Mukewar (MD, FASGE)</td>
+                 <td>Therapeutic Endoscopy (Advanced Procedures)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Asian Institute of Gastroenterology (AIG Hospitals) (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aighospitals.com/" target="_blank" class="website-link">AIG Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>90</td>
+                 <td>Dr. Sandeep Nijhawan (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Formerly SMS Medical College / Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sandeep Nijhawan Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Sharad Sureka (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Sudipta Ghosh (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sudipta Ghosh Gastroenterologist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>93</td>
+                 <td>Dr. Ushast Dhir (MS, MCh - Surgical Gastro)</td>
+                 <td>Surgical Gastroenterology (Related Field)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Consultant - Surgical GI & Liver Transplant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a> (Note: Surgeon)</td>
+            </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Vaibhav Patil (MBBS, MD, DNB)</td>
+                 <td>Gastroenterology & Hepatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>95</td>
+                 <td>Dr. Vikram Bhatia (MBBS, MD, DM)</td>
+                 <td>Hepatology, Liver Transplantation Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Senior Consultant Hepatologist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Vinay Kumaran (MS, FRCS)</td>
+                 <td>Surgical Gastroenterology & Liver Transplant (Related Field)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant & HOD)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a> (Note: Surgeon)</td>
+            </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Vishnu Vardhan Reddy (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Continental Hospitals (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://continentalhospitals.com/" target="_blank" class="website-link">Continental Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Yogesh Kumar Gupta (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>99</td>
+                 <td>Dr. Zaheer Ahmed Syed (MBBS, MD, DM)</td>
+                 <td>General Gastroenterology, Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>100</td>
+                 <td>Dr. Muktesh Sharma (MBBS, MD, DM)</td>
+                 <td>Gastroenterology & Hepatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Muktesh Sharma Gastroenterologist Lucknow"</td>
+            </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Gastroenterologist/Hepatologist:</h2>
+        <ul>
+            <li><strong>Symptoms & Condition:</strong> Identify issues like acidity, pain, jaundice, GI bleeding, diarrhea/constipation, liver disease, IBD, etc.</li>
+            <li><strong>Sub-specialty Need:</strong> Seek focused expertise for advanced endoscopy (ERCP, EUS), liver transplant evaluation, complex IBD, or pancreatic diseases.</li>
+            <li><strong>Diagnostic & Therapeutic Tools:</strong> Ensure access to endoscopes, ERCP/EUS capabilities, FibroScan, etc., if needed.</li>
+            <li><strong>Referral:</strong> Your GP can often provide a referral.</li>
+            <li><strong>Hospital Affiliation:</strong> Consider hospital reputation and facilities for procedures or admissions.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

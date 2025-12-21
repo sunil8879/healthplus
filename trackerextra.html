@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Health Tracker</title>
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ... (CSS remains mostly the same, added styles for result display) ... */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+      --accent-gradient: linear-gradient(to right, #11998e, #38ef7d);
+      --button-gradient: linear-gradient(45deg, #ff9966, #ff5e62);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-dark: #333;
+      --text-light: #666;
+      --highlight: #27ae60;
+    }
+
+    body {
+      background-image: var(--primary-gradient);
+      background-attachment: fixed;
+      color: var(--text-dark);
+      font-family: 'Poppins', sans-serif;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--highlight);
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    #datetime {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+      color: #555;
+      font-size: 1.1rem;
+      background: #f0f4f8;
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    form {
+      display: grid;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+      font-size: 1rem;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: var(--highlight);
+      border-radius: 50%;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      background-color: #fafafa;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--highlight);
+      outline: none;
+      box-shadow: 0 0 10px rgba(46, 204, 113, 0.2);
+      background-color: #fff;
+    }
+
+    small {
+      color: #999;
+      font-size: 0.75rem;
+      display: block;
+      text-align: right;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      background-image: var(--button-gradient);
+      color: white;
+      font-weight: 700;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      flex: 1;
+      max-width: 200px;
+    }
+
+    /* Distinct style for Fetch button */
+    #fetch-btn {
+        background-image: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+        box-shadow: 0 5px 15px rgba(0, 198, 255, 0.4);
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    button:active {
+      transform: translateY(-1px);
+    }
+
+    .home-link {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .home-link a {
+      text-decoration: none;
+      color: var(--highlight);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 5px 15px;
+      border: 2px solid var(--highlight);
+      border-radius: 30px;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .home-link a:hover {
+      background-color: var(--highlight);
+      color: white;
+    }
+    
+    /* Result Display Area */
+    #results-area {
+        margin-top: 30px;
+        text-align: left;
+    }
+    
+    .data-card {
+        background: #f9f9f9;
+        border-left: 5px solid var(--highlight);
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .data-card h3 { margin: 0 0 5px 0; font-size: 1rem; color: #333; }
+    .data-card p { margin: 0; font-size: 0.9rem; color: #666; }
+
+    @media (max-width: 600px) {
+      .container { padding: 20px; }
+      h1 { font-size: 2rem; }
+      .button-group { flex-direction: column; align-items: center; }
+      button { width: 100%; max-width: 100%; }
+    }
+  </style>
+
+  <!-- Firebase App -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Daily Health Tracker</h1>
+  <div id="datetime"></div>
+
+  <!-- Changed to normal form submission handling to utilize 'required' attributes -->
+  <form id="healthForm" onsubmit="event.preventDefault(); saveData();">
+
+    <div>
+        <label for="exercise">Exercise:</label>
+        <input type="text" id="exercise" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="yoga">Yoga:</label>
+        <input type="text" id="yoga" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="meditation">Meditation:</label>
+        <input type="text" id="meditation" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="walk">Walk:</label>
+        <input type="text" id="walk" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="sleepHours">Sleep Hours:</label>
+        <input type="text" id="sleepHours" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="junkFood">Junk Food:</label>
+        <input type="text" id="junkFood" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="dietPlan">Diet Plan:</label>
+        <input type="text" id="dietPlan" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="fruits">Fruits:</label>
+        <input type="text" id="fruits" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="outsideFood">Outside Food:</label>
+        <input type="text" id="outsideFood" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div>
+        <label for="boiledWater">Boiled Water:</label>
+        <input type="text" id="boiledWater" maxlength="100" required>
+        <small>Not more than 100 characters</small>
+    </div>
+
+    <div class="button-group">
+      <!-- Changed type to submit to trigger HTML validation -->
+      <button type="submit">Save</button> 
+      <button type="button" id="fetch-btn" onclick="fetchData()">Fetch</button>
+    </div>
+
+  </form>
+  
+  <div id="results-area"></div>
+
+  <div class="home-link">
+    <a href="sssnew1.html">Home Page</a>
+  </div>
+</div>
+
+<script>
+  // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyBaKBHL2iKnnvGY6HD6l4p7HsUKt3CchdI",
+    authDomain: "healthplus-6a769.firebaseapp.com",
+    projectId: "healthplus-6a769",
+    storageBucket: "healthplus-6a769.firebasestorage.app",
+    messagingSenderId: "841353217929",
+    appId: "1:841353217929:web:b76f08599cc7e8e1264358"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  // Show dynamic date and time
+  function updateDateTime() {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById('datetime').innerHTML = dateString + " " + timeString;
+  }
+  setInterval(updateDateTime, 1000); 
+
+  function saveData() {
+    const user = auth.currentUser;
+    
+    // Manual Check for empty fields (Double safety)
+    const inputs = document.querySelectorAll('#healthForm input[type="text"]');
+    let allFilled = true;
+    inputs.forEach(input => {
+        if(input.value.trim() === "") allFilled = false;
+    });
+
+    if (!user) {
+      alert('You must be logged in to save data.');
+      return;
+    }
+    
+    if (!allFilled) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    const data = {
+      exercise: document.getElementById('exercise').value,
+      yoga: document.getElementById('yoga').value,
+      meditation: document.getElementById('meditation').value,
+      walk: document.getElementById('walk').value,
+      sleepHours: document.getElementById('sleepHours').value,
+      junkFood: document.getElementById('junkFood').value,
+      dietPlan: document.getElementById('dietPlan').value,
+      fruits: document.getElementById('fruits').value,
+      outsideFood: document.getElementById('outsideFood').value,
+      boiledWater: document.getElementById('boiledWater').value,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      dateString: new Date().toLocaleDateString() // Readable date for fetching display
+    };
+
+    db.collection('users')
+      .doc(user.uid)
+      .collection('activities')
+      .add(data)
+      .then(() => {
+        alert('Data saved successfully!');
+        document.getElementById('healthForm').reset();
+      })
+      .catch(error => {
+        console.error('Error saving data: ', error);
+        alert('Failed to save data.');
+      });
+  }
+
+  function fetchData() {
+    const user = auth.currentUser;
+    const resultsArea = document.getElementById('results-area');
+    resultsArea.innerHTML = "<p style='text-align:center'>Loading...</p>";
+    
+    if (!user) {
+      alert('You must be logged in to fetch data.');
+      resultsArea.innerHTML = "";
+      return;
+    }
+
+    db.collection('users')
+      .doc(user.uid)
+      .collection('activities')
+      .orderBy('timestamp', 'desc')
+      .limit(3) // Limit to last 3 entries for display
+      .get()
+      .then(snapshot => {
+        resultsArea.innerHTML = "<h3>Recent Entries:</h3>";
+        if (snapshot.empty) {
+            resultsArea.innerHTML += "<p>No records found.</p>";
+            return;
+        }
+
+        snapshot.forEach(doc => {
+          const d = doc.data();
+          // Create a nice card for data instead of alert
+          const card = document.createElement('div');
+          card.className = 'data-card';
+          card.innerHTML = `
+            <h3>Date: ${d.dateString || 'Recent'}</h3>
+            <p><strong>Exercise:</strong> ${d.exercise}</p>
+            <p><strong>Diet:</strong> ${d.dietPlan}</p>
+            <p><strong>Sleep:</strong> ${d.sleepHours}</p>
+          `;
+          resultsArea.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+        resultsArea.innerHTML = "<p style='color:red'>Error loading data.</p>";
+      });
+  }
+
+  // --- AUTO LOGIN LOGIC ---
+  // To make it work immediately without a login screen for testing, 
+  // we keep this. If you want real security, remove this block.
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      console.log("User already logged in:", user.email);
+    } else {
+      console.log("No user logged in, attempting auto-login...");
+      auth.signInWithEmailAndPassword("testuser@example.com", "password123")
+        .then(() => console.log("Auto-login successful"))
+        .catch((error) => {
+            console.error("Auto-login failed", error);
+            // alert("Auto-login failed. Please ensure test user exists in Firebase.");
+        });
+    }
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Orthopaedists (Orthopedic Surgeons) in India</title>
+    <!-- Import Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Bone & Joint Inspired Palette */
+            --primary-blue: #0984e3;
+            --secondary-blue: #74b9ff;
+            --accent-orange: #e67e22;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-color: #f7f9fc;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --header-gradient: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(9, 132, 227, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Background Circles */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-orange);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--accent-orange);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "🦴";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(9, 132, 227, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #f0f8ff;
+        }
+
+        td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #e67e22; /* Orange accent */
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(230, 126, 34, 0.2);
+        }
+
+        a.website-link:hover {
+            background-color: #d35400;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">領</span> <!-- Bone Icon Placeholder -->
+        <h1>Top 100 Orthopaedists (Orthopedic Surgeons) in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. <strong>Verify MS/DNB/MCh qualifications & sub-specialty expertise independently.</strong></p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing an Orthopedic Surgeon:</h2>
+        <ul>
+            <li><strong>Sub-specialty is Crucial:</strong> Ensure expertise in Joint Replacement (Knee/Hip), Spine Surgery, Sports Medicine (Arthroscopy), Trauma, Pediatric Ortho, Hand Surgery, Ortho Oncology, etc.</li>
+            <li><strong>Diagnosis:</strong> Get a clear diagnosis first, possibly from a general orthopedist or physician.</li>
+            <li><strong>Experience & Volume:</strong> Higher volume often correlates with better outcomes for complex procedures like joint replacement or spine surgery.</li>
+            <li><strong>Hospital Facilities:</strong> Ensure the hospital has necessary infrastructure (ICU, rehab, OT setup).</li>
+            <li><strong>Second Opinion:</strong> Essential for major surgeries like joint replacement or complex spine procedures.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Ashok Rajgopal (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement Surgery (Knee & Hip - High Volume, Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Medanta / Fortis Escorts (Group Chairman)</td>
+                 <td>Gurugram/Delhi</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a> / <a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. S. K. S. Marya (MS - Ortho, MCh - Ortho, FRCS)</td>
+                 <td>Joint Replacement Surgery (Knee & Hip)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Chairman)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. Vikram I. Shah (MS - Ortho)</td>
+                 <td>Joint Replacement Surgery (Knee - "Zero Technique" Pioneer)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Shalby Hospitals (Founder Chairman & MD - Chain)</td>
+                 <td>Ahmedabad HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.shalby.org/" target="_blank" class="website-link">Shalby Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. Gurava Reddy (MS - Ortho)</td>
+                 <td>Joint Replacement Surgery (Hip & Knee), Robotic Joint Replacement</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sunshine Hospitals (Founder & MD)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sunshinehospitals.com/" target="_blank" class="website-link">Sunshine Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. H. S. Chhabra (MS - Ortho)</td>
+                 <td>Spine Surgery, Spinal Cord Injury Management</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Indian Spinal Injuries Centre (ISIC) (Chief of Spine Service & Medical Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.isiconline.org/" target="_blank" class="website-link">ISIC</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. Ram Chidambaram (MS - Ortho, FRCS)</td>
+                 <td>Spine Surgery (Minimally Invasive, Deformity)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. Sanjay Agarwala (MS - Ortho, MCh - Ortho)</td>
+                 <td>Joint Replacement, Orthopedic Oncology, Avascular Necrosis (AVN)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Head - Orthopedics & Traumatology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. Anant Joshi (MS - Ortho)</td>
+                 <td>Sports Medicine, Arthroscopy (Knee & Shoulder - Pioneer)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant at various hospitals (Breach Candy, Bhatia) / Own Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Dr Anant Joshi Sports Medicine Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. Abhay Nene (MS - Ortho, DNB - Ortho, Fellow Spine)</td>
+                 <td>Spine Surgery (Deformity Correction, Minimally Invasive)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital / Wockhardt Hospitals (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben</a> / <a href="https://www.wockhardthospitals.com/" target="_blank" class="website-link">Wockhardt</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Parthasarathy Srinivasan (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement Surgery (Hip & Knee)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>MIOT International (Founder of the institute)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.miotinternational.com/" target="_blank" class="website-link">MIOT International</a></td>
+            </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Yash Gulati (MS - Ortho, MCh - Ortho, FRCS)</td>
+                 <td>Joint Replacement (Knee & Hip), Spine Surgery (Padma Shri)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Thomas Chandy (MS - Ortho)</td>
+                 <td>Joint Replacement Surgery (Hip & Knee)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>HOSMAT Hospital (Founder & Chairman)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://hosmatnet.com/" target="_blank" class="website-link">HOSMAT Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Parag Sancheti (MS - Ortho, DNB - Ortho)</td>
+                 <td>Joint Replacement (Knee & Hip), Arthroscopy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sancheti Institute for Orthopaedics & Rehabilitation (Chairman & MD)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sanchetihospital.org/" target="_blank" class="website-link">Sancheti Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Pradeep Bhosale (MS - Ortho)</td>
+                 <td>Joint Replacement Surgery (Hip & Knee)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Director - Arthritis & Joint Replacement)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Gurinder Bedi (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement, Arthroscopy, Trauma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Hospital, Vasant Kunj (Director - Orthopedics & Joint Replacement)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Sanjay Desai (MS - Ortho, FRCS)</td>
+                 <td>Shoulder & Knee Surgery (Arthroscopy, Replacement)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Breach Candy Hospital / Bhatia Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites / Search</td>
+                 <td>Search "Dr Sanjay Desai Shoulder Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. S Vidyadhara (MS - Ortho, DNB - Ortho, FNB - Spine)</td>
+                 <td>Spine Surgery (Complex Deformity, Minimally Invasive)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (HOD & Senior Consultant Spine Surgeon)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Raju Vaishya (MS - Ortho, MCh - Ortho)</td>
+                 <td>Joint Replacement (Knee, Hip, Shoulder), Arthroscopy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. IPS Oberoi (MS - Ortho, MCh - Ortho)</td>
+                 <td>Joint Replacement (Knee, Hip, Shoulder), Arthroscopy (Knee & Shoulder)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Artemis Hospital (Head - Joint Replacement & Arthroscopy)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Clement Joseph (MS - Ortho, Fellow Shoulder Surg)</td>
+                 <td>Shoulder & Upper Limb Surgery, Arthroscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Prashanth Hospitals / Fortis Malar Hospital (Check primary) (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Search Hospital/Practice</td>
+                 <td>Search "Dr Clement Joseph Shoulder Chennai"</td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Ashok Shyam (MS - Ortho, DNB - Ortho)</td>
+                 <td>Orthopedics, Trauma, Research (Academic contributions)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sancheti Institute, Pune / Indian Orthopaedic Research Group (IORG) (Research Lead)</td>
+                 <td>Pune</td>
+                 <td>Via Sancheti Website / IORG</td>
+                 <td><a href="https://sanchetihospital.org/" target="_blank" class="website-link">Sancheti</a> / IORG</td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Bipin Theruvil (MS - Ortho, FRCS)</td>
+                 <td>Hip Surgery (Preservation, Replacement), Pelvic Trauma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Hemant Sharma (MS - Ortho, FRCS - Trauma & Orth)</td>
+                 <td>Sports Injuries, Arthroscopy (Knee, Shoulder, Ankle), Cartilage Repair</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals / Fortis Escorts (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Subir Jha (MS - Ortho, DNB - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Director - Ortho & Joint Replacement)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Jayant Sharma (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Arthroscopy (Shoulder, Knee), Sports Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh / BLK-Max Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> / <a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Manoj Miglani (MS - Ortho, Fellow Spine)</td>
+                 <td>Spine Surgery (Minimally Invasive)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Vasant Kunj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Deepak Joshi (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Sports Injuries, Arthroscopy (Knee & Shoulder)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. A Navaladi Shankar (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant / Director)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Rakesh Mahajan (MS - Ortho)</td>
+                 <td>Joint Replacement (Knee & Hip), Trauma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Rajesh Malhotra (MS - Ortho, FRCS)</td>
+                 <td>Trauma, Joint Replacement (Known academic leader)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>AIIMS (Professor & Head / Chief, Trauma Centre)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Dinshaw Pardiwala (MS - Ortho, DNB - Ortho, FRCS)</td>
+                 <td>Arthroscopy (Shoulder, Knee, Hip), Sports Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Director - Arthroscopy, Sports Ortho)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. R K Pandey (MS - Ortho)</td>
+                 <td>Joint Replacement, Trauma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Sandeep Singh (MS - Ortho, Fellow Foot & Ankle)</td>
+                 <td>Foot & Ankle Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Harish Puranik (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Arthroscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Attique Vasdev (MS - Ortho, Fellow Joint Replacement)</td>
+                 <td>Joint Replacement (Robotic), Arthroscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Pradeep K Singh (MS - Ortho, Fellow Hand Surgery)</td>
+                 <td>Hand & Microvascular Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Suryashil Ghag (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Global Hospitals (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Vivek Dahiya (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Arthroscopy (Knee & Shoulder), Sports Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Gurugram (Senior Consultant / Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Sharan Shivraj Patil (MS - Ortho, FRCS)</td>
+                 <td>Pediatric Orthopedics, Complex Reconstruction</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>SPARSH Hospital (Founder, Chairman & Chief Ortho Surgeon)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sparshhospital.com/" target="_blank" class="website-link">SPARSH Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Rajeev K Sharma (MS - Ortho)</td>
+                 <td>Joint Replacement (Knee & Hip)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. B R J Purohit (MS - Ortho, Fellow Spine)</td>
+                 <td>Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Vijay C Bose (MS - Ortho, FRCS)</td>
+                 <td>Hip Reconstruction & Replacement (Hip Resurfacing Pioneer)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>SIMS Hospital (SRM Institutes for Medical Science) (Joint Director)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://simshospitals.com/" target="_blank" class="website-link">SIMS Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Kaushal Malhan (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement (Hip & Knee - Robotic, Minimally Invasive)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mulund (Director - Orthopaedics & Joint Replacement)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Manish Samson (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement (Hip & Knee)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Raghav Dutt (MS - Ortho, Fellow Hand Surgery)</td>
+                 <td>Hand & Upper Limb Surgery, Microvascular Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Akhilesh Yadav (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Vaishali (Senior Consultant / Associate Director)</td>
+                 <td>Ghaziabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Jatinder Bir Singh Jaggi (MS - Ortho)</td>
+                 <td>Joint Replacement, Arthroscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant / Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Sanjeev Kumar Singh Marya (MS - Ortho)</td>
+                 <td>Pediatric Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Healthcare (multiple locations, check primary) (Senior Consultant)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Vikram Kadu (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Arthroscopy & Sports Medicine (Knee, Shoulder)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>KEM Hospital / Own Clinic</td>
+                 <td>Pune</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Dr Vikram Kadu Pune"</td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Ashit Shah (MS - Ortho)</td>
+                 <td>Joint Replacement (Knee & Hip), Trauma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Saifee Hospital / Breach Candy Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.saifeehospital.com/" target="_blank" class="website-link">Saifee</a> / Breach Candy</td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Lalit Maini (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Director - Orthopaedics)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Subhash Jangid (MS - Ortho, DNB - Ortho)</td>
+                 <td>Joint Replacement (Knee & Hip), Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. P Suryanarayan (MS - Ortho, Fellow Sports Med)</td>
+                 <td>Arthroscopy & Sports Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Ashok Kumar Singh (MS - Ortho, Fellow Spine)</td>
+                 <td>Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Senior Consultant Spine Surgeon)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Anil Arora (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant / HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Niraj Vora (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement (Hip & Knee)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Bellevue Hospital / Breach Candy Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Dr Niraj Vora Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. J A Pachore (MS - Ortho)</td>
+                 <td>Pediatric Orthopedics</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>SRCC Children's Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Via SRCC Website / Search</td>
+                 <td><a href="https://www.narayanahealth.org/hospitals/mumbai/srcc-childrens-hospital" target="_blank" class="website-link">SRCC</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Ameet Pispati (MS - Ortho, FRCS)</td>
+                 <td>Arthroscopy, Sports Medicine, Hip Preservation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jaslok Hospital / Breach Candy Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a> / Breach Candy</td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. K J Reddy (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Sunil Bhosale (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. R A Puranik (MS - Ortho)</td>
+                 <td>General Orthopedics, Trauma</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R A Puranik Orthopaedic Pune"</td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Prateek Gupta (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Arthroscopy & Sports Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Sanjai Kumar Srivastava (MS - Ortho)</td>
+                 <td>Joint Replacement, Trauma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Paras Hospitals (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Vivek Logani (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Arthroscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Chief - Joint Replacement & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Saurabh Kapoor (MS - Ortho)</td>
+                 <td>Joint Replacement, Trauma</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+              <tr>
+                 <td>66</td>
+                 <td>Dr. SKS Mathur (MS - Ortho)</td>
+                 <td>General Orthopedics, Trauma</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr SKS Mathur Orthopaedic Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Mudit Khanna (MS - Ortho, MCh - Ortho)</td>
+                 <td>Joint Replacement (Knee & Hip)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Wockhardt Hospitals, South Mumbai (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.wockhardthospitals.com/" target="_blank" class="website-link">Wockhardt Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. P S Ramani (MS, MCh - Neurosurgery, PhD, FRCS)</td>
+                 <td>Spine Surgery (Veteran figure - Neuro-Spinal)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Lilavati Hospital / Formerly Sion Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati Hospital</a> (Note: Neurosurgeon)</td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Satish Rudrappa (MS, MCh - Neurosurgery)</td>
+                 <td>Neuro-Spinal Surgery (Works closely with Ortho Spine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sakra World Hospital (Senior Consultant Neurosurgeon)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sakraworldhospital.com/" target="_blank" class="website-link">Sakra World Hospital</a> (Note: Neurosurgeon)</td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Thomas Kishen (MS - Ortho, Fellow Sports Med)</td>
+                 <td>Arthroscopy & Sports Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>71</td>
+                 <td>Dr. Dhananjay Gupta (MS - Ortho)</td>
+                 <td>Joint Replacement, Trauma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. S Rajasekaran (MS - Ortho, PhD, FRCS)</td>
+                 <td>Spine Surgery (Deformity - Pioneer, Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Ganga Hospital (Chairman - Dept of Orthopaedics & Spine Surgery)</td>
+                 <td>Coimbatore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.gangahospital.com/" target="_blank" class="website-link">Ganga Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Jayant Sampath (MS - Ortho, Fellow Ped Ortho)</td>
+                 <td>Pediatric Orthopedics, Limb Reconstruction</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Formerly Ganga Hospital, Coimbatore / Consultant roles</td>
+                 <td>Consultant</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Jayant Sampath Pediatric Ortho"</td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Mir Jawad Zar Khan (MS - Ortho, MCh - Ortho)</td>
+                 <td>Joint Replacement, Arthroscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Germanten Hospital / Century Hospital (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Mir Jawad Zar Khan Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Vineesh Mathur (MS - Ortho, Fellow Spine)</td>
+                 <td>Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant / Director - Spine Surgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+              <tr>
+                 <td>76</td>
+                 <td>Dr. Ashish Chaudhry (MS - Ortho, Fellow Shoulder Surg)</td>
+                 <td>Shoulder & Upper Limb Surgery, Arthroscopy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aakash Healthcare Super Speciality Hospital (Consultant)</td>
+                 <td>Dwarka, New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aakashhealthcare.com/" target="_blank" class="website-link">Aakash Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Ashok S Gavaskar (MS - Ortho, DNB - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Complex Trauma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Gleneagles Global Health City (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. C J Thakkar (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles at various hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr C J Thakkar Orthopaedic Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Manoj Kumar Khemani (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. R K Sharma (MS - Ortho)</td>
+                 <td>General Orthopedics, Trauma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. P C Jagadesh (MS - Ortho, Fellow Sports Med)</td>
+                 <td>Arthroscopy & Sports Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Malar Hospital (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Vibhore Singhal (MS - Ortho, Fellow Ped Ortho)</td>
+                 <td>Pediatric Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Anoop Jhurani (MS - Ortho)</td>
+                 <td>Joint Replacement (Robotic)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Senior Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Rakesh Kumar Singh (MS - Ortho)</td>
+                 <td>General Orthopedics, Trauma</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Vaibhav Bagaria (MS - Ortho, DNB - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Arthroscopy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir H. N. Reliance Foundation Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>86</td>
+                 <td>Dr. Sunil Kumar Gupta (MS - Ortho)</td>
+                 <td>Joint Replacement, Trauma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Sajan K Hegde (MS - Ortho)</td>
+                 <td>Spine Surgery (Veteran figure)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Consultant Spine Surgeon) / Formerly HOD</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Bhushan Nariani (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indian Spinal Injuries Centre (ISIC) (Director - Joint Replacement)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.isiconline.org/" target="_blank" class="website-link">ISIC</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Ramneek Mahajan (MS - Ortho)</td>
+                 <td>Joint Replacement (Robotic), Arthroscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Senior Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Raghavendra Mikilineni (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Arthroscopy & Sports Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Sunil G Kini (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Arthroscopy & Sports Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Alaric Aroojis (MS - Ortho, Fellow Ped Ortho)</td>
+                 <td>Pediatric Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital / Wadia Children's (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben</a> / <a href="https://www.wadiahospitals.org/" target="_blank" class="website-link">Wadia</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Hitesh Kubadia (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Hitesh Kubadia Orthopaedic Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Santosh Kumar Sahu (MS - Ortho, Fellow Arthroscopy)</td>
+                 <td>Arthroscopy & Sports Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Amite Pankaj Aggarwal (MS - Ortho, FNB - Spine)</td>
+                 <td>Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Ashutosh Jha (MS - Ortho)</td>
+                 <td>Joint Replacement, Trauma</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. N S Laud (MS - Ortho, FRCS)</td>
+                 <td>Joint Replacement, Trauma (Veteran Figure)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Laud Clinic / Shushrusha Hospital (Founder)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Laud Clinic Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Sandeep Patwardhan (MS - Ortho, Fellow Ped Ortho/Spine)</td>
+                 <td>Pediatric Orthopedics, Spine Deformity</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sancheti Institute (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sanchetihospital.org/" target="_blank" class="website-link">Sancheti Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Maninder Shah Singh (MS - Ortho)</td>
+                 <td>Joint Replacement, Trauma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indian Spinal Injuries Centre (ISIC) (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.isiconline.org/" target="_blank" class="website-link">ISIC</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Gaurav Rathore (MS - Ortho)</td>
+                 <td>Joint Replacement (Hip & Knee), Trauma</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jaypee Hospital (Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaypeehospital.com/" target="_blank" class="website-link">Jaypee Hospital</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing an Orthopedic Surgeon:</h2>
+        <ul>
+            <li><strong>Sub-specialty is Crucial:</strong> Ensure expertise in Joint Replacement (Knee/Hip), Spine Surgery, Sports Medicine (Arthroscopy), Trauma, Pediatric Ortho, Hand Surgery, Ortho Oncology, etc.</li>
+            <li><strong>Diagnosis:</strong> Get a clear diagnosis first, possibly from a general orthopedist or physician.</li>
+            <li><strong>Experience & Volume:</strong> Higher volume often correlates with better outcomes for complex procedures like joint replacement or spine surgery.</li>
+            <li><strong>Hospital Facilities:</strong> Ensure the hospital has necessary infrastructure (ICU, rehab, OT setup).</li>
+            <li><strong>Second Opinion:</strong> Essential for major surgeries like joint replacement or complex spine procedures.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

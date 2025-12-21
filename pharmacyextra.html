@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Plus | Top Pharmacy Chains</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00b894; /* Emerald Green */
+      --secondary: #0984e3; /* Medical Blue */
+      --dark: #1e293b;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      background-image: radial-gradient(circle at top right, rgba(0, 184, 148, 0.05), transparent),
+                        radial-gradient(circle at bottom left, rgba(9, 132, 227, 0.05), transparent);
+      color: var(--dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    /* --- HEADER --- */
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -1.5px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.tagline {
+      color: #64748b;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+      font-weight: 500;
+    }
+
+    /* --- LIST STYLING --- */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    li {
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    li:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 25px -5px rgba(0, 184, 148, 0.1);
+    }
+
+    li a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 25px 35px;
+      cursor: pointer;
+    }
+
+    li a::before {
+      content: '💊';
+      margin-right: 15px;
+      font-size: 1.5rem;
+    }
+
+    li a::after {
+      content: '↓';
+      font-size: 1rem;
+      color: var(--primary);
+      background: #e6f7f4;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    li:hover a::after {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* --- INFO PANEL --- */
+    .info {
+      display: none;
+      padding: 20px 35px 30px;
+      background: #f0fdf4; /* Very light green */
+      border-top: 1px solid #dcfce7;
+      text-align: left;
+      font-weight: 600;
+      color: #065f46;
+      font-size: 1rem;
+      line-height: 1.6;
+      animation: slideDown 0.4s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- MOBILE OPTIMIZATION --- */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      li a { padding: 20px; font-size: 1.1rem; }
+    }
+  </style>
+  <script>
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      const allInfo = document.querySelectorAll('.info');
+      
+      // Close others for a clean accordion effect
+      allInfo.forEach(el => {
+          if(el.id !== id) el.style.display = 'none';
+      });
+
+      // Toggle current
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Pharmacy Elite</h1>
+  <p class="tagline">India's Top 15 Trusted Pharmacy Chains</p>
+
+  <ul>
+    <li>
+      <a onclick="toggleInfo('apollo')">Apollo Pharmacy</a>
+      <div id="apollo" class="info">
+          <b>Scale:</b> 5000+ Stores <br>
+          <b>Network:</b> 1000+ Cities <br>
+          <b>Experience:</b> 35+ Years <br>
+          <b>Availability:</b> Offline Stores + 24/7 Online Delivery
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('medplus')">MedPlus</a>
+      <div id="medplus" class="info">
+          <b>Scale:</b> 3000+ Stores <br>
+          <b>Network:</b> 400+ Cities <br>
+          <b>Experience:</b> 18+ Years <br>
+          <b>Availability:</b> Offline + Online App Support
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('tata1mg')">Tata 1mg</a>
+      <div id="tata1mg" class="info">
+          <b>Scale:</b> Largest Digital Pharmacy <br>
+          <b>Network:</b> PAN India Service <br>
+          <b>Experience:</b> 9+ Years <br>
+          <b>Availability:</b> Pure Online Platform (E-pharmacy Leader)
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('pharmeasy')">PharmEasy</a>
+      <div id="pharmeasy" class="info">
+          <b>Scale:</b> Massive E-Health Ecosystem <br>
+          <b>Network:</b> 12,000+ Pin Codes <br>
+          <b>Experience:</b> 9+ Years <br>
+          <b>Availability:</b> Mobile App & Website Orders
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('netmeds')">Netmeds</a>
+      <div id="netmeds" class="info">
+          <b>Scale:</b> Reliance Group Subsidiary <br>
+          <b>Network:</b> PAN India Delivery <br>
+          <b>Experience:</b> 100+ Years (Legacy) / 10+ Years (Digital) <br>
+          <b>Availability:</b> Reliable Online Medicine Orders
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('guardian')">Guardian Pharmacy</a>
+      <div id="guardian" class="info">
+          <b>Scale:</b> 200+ Premium Outlets <br>
+          <b>Network:</b> 30+ Major Cities <br>
+          <b>Experience:</b> 15+ Years <br>
+          <b>Availability:</b> Focus on High-End Offline Retail
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('sanjeevani')">Sanjeevani Pharmacy</a>
+      <div id="sanjeevani" class="info">
+          <b>Scale:</b> 150+ Franchise Points <br>
+          <b>Network:</b> 50+ Cities <br>
+          <b>Experience:</b> 10+ Years <br>
+          <b>Availability:</b> Trusted Neighborhood Offline Presence
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('wellness')">Wellness Forever</a>
+      <div id="wellness" class="info">
+          <b>Scale:</b> 300+ Lifestyle Pharmacies <br>
+          <b>Network:</b> 40+ Cities (Strong West India Presence) <br>
+          <b>Experience:</b> 10+ Years <br>
+          <b>Availability:</b> Offline 24/7 Stores + Online Delivery
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('davaindia')">Davaindia</a>
+      <div id="davaindia" class="info">
+          <b>Scale:</b> 850+ Generic Medicine Hubs <br>
+          <b>Network:</b> 200+ Cities <br>
+          <b>Experience:</b> 6+ Years <br>
+          <b>Availability:</b> Largest Generic Medicine Retailer
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('frankross')">Frank Ross Pharmacy</a>
+      <div id="frankross" class="info">
+          <b>Scale:</b> 200+ Outlets <br>
+          <b>Network:</b> Heritage Brand in East India <br>
+          <b>Experience:</b> 115+ Years (Est. 1906) <br>
+          <b>Availability:</b> Deep Offline Trust + Online Service
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('healthglow')">Health & Glow</a>
+      <div id="healthglow" class="info">
+          <b>Scale:</b> 400+ Beauty & Wellness Stores <br>
+          <b>Network:</b> 50+ Cities <br>
+          <b>Experience:</b> 25+ Years <br>
+          <b>Availability:</b> Premium Offline Experience + App
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('myra')">Myra Medicines</a>
+      <div id="myra" class="info">
+          <b>Scale:</b> Acquired by Medlife/PharmEasy <br>
+          <b>Network:</b> Major Metros <br>
+          <b>Experience:</b> 6+ Years <br>
+          <b>Availability:</b> Merged Online Operations
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('sastasundar')">SastaSundar</a>
+      <div id="sastasundar" class="info">
+          <b>Scale:</b> 100+ Experience Centers <br>
+          <b>Network:</b> 20+ Cities <br>
+          <b>Experience:</b> 9+ Years <br>
+          <b>Availability:</b> Flipkart Health+ Partner
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('zeno')">Zeno Health</a>
+      <div id="zeno" class="info">
+          <b>Scale:</b> 150+ Generic Specialist Stores <br>
+          <b>Network:</b> 20+ Cities <br>
+          <b>Experience:</b> 6+ Years <br>
+          <b>Availability:</b> Focused on Affordable Healthcare
+      </div>
+    </li>
+
+    <li>
+      <a onclick="toggleInfo('trust')">Trust Chemists</a>
+      <div id="trust" class="info">
+          <b>Scale:</b> 300+ Trust Points <br>
+          <b>Network:</b> 60+ Cities <br>
+          <b>Experience:</b> 12+ Years <br>
+          <b>Availability:</b> Extensive Offline Neighborhood Network
+      </div>
+    </li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Psychiatrists in India</title>
+    <!-- Importing Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Mind/Brain Inspired Palette */
+            --primary-purple: #8e44ad;
+            --secondary-purple: #9b59b6;
+            --accent-teal: #1abc9c;
+            --text-dark: #2c3e50;
+            --text-light: #636e72;
+            --bg-color: #f3f0ff;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+            --header-gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Mind/Brain shapes */
+        .title-container::before {
+            content: '🧠';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -20px;
+            left: -20px;
+            transform: rotate(-15deg);
+        }
+        
+        .title-container::after {
+            content: '💭';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 6px solid var(--accent-teal);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-purple);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1bee7;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.2rem;
+            color: var(--accent-teal);
+            font-weight: bold;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(155, 89, 182, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--secondary-purple);
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #f3e5f5;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--accent-teal);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-teal);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(26, 188, 156, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #16a085;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">易</span> <!-- Brain Icon Placeholder -->
+        <h1>Top 100 Psychiatrists in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. Verify MD/DNB/MRCPsych qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Psychiatrist:</h2>
+        <ul>
+            <li><strong>Your Needs:</strong> Depression, anxiety, bipolar disorder, schizophrenia, addiction, OCD, PTSD, child behavior issues, geriatric mental health?</li>
+            <li><strong>Therapy vs. Medication:</strong> Psychiatrists (MDs) can prescribe medication; many also offer therapy, while others work with psychologists/counselors for therapy.</li>
+            <li><strong>Sub-specialty:</strong> Consider specialists in Child & Adolescent, Geriatric, Addiction, Forensic, or Consultation-Liaison Psychiatry for specific issues.</li>
+            <li><strong>Comfort Level:</strong> Crucial to find a psychiatrist you feel comfortable talking to openly.</li>
+            <li><strong>Referral:</strong> Your GP or a psychologist can often provide referrals.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic/Institution</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Pratima Murthy (MD - Psychiatry, PhD)</td>
+                 <td>Addiction Psychiatry, General Psychiatry (Director, NIMHANS)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>NIMHANS (Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Rakesh K. Chadda (MD - Psychiatry, FAMS)</td>
+                 <td>General Psychiatry, Community Psychiatry, Consultation-Liaison</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>AIIMS (Former HOD & Dean Academics)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Nimesh G. Desai (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Community Psychiatry, Disaster Mental Health</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Director, IHBAS / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Nimesh Desai Psychiatrist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Ajit Avasthi (MD - Psychiatry, FAMS)</td>
+                 <td>General Psychiatry, Marital & Psychosexual Disorders</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>PGI Chandigarh (Former HOD) / Fortis Hospital Mohali</td>
+                 <td>Chandigarh/Mohali</td>
+                 <td>Via PGI/Fortis Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI</a> / <a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Samir Parikh (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Mental Health Advocacy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Healthcare (Director - Mental Health & Behavioural Sciences)</td>
+                 <td>Gurugram (FMRI Base)</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Harish Shetty (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Community Mental Health</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Dr L H Hiranandani Hospital / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.hiranandanihospital.org/" target="_blank" class="website-link">Hiranandani</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Kersi Chavda (MD - Psychiatry, DPM)</td>
+                 <td>General Psychiatry, Adolescent Psychiatry</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Anjali Chhabria (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Mindtemple Clinic (Founder)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.mindtemple.in/" target="_blank" class="website-link">Mindtemple</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Achal Bhagat (MD - Psychiatry, MRCPsych)</td>
+                 <td>General Psychiatry, Psychotherapy, Community Mental Health</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals / Aashlok Hospital / Saarthak Mental Health</td>
+                 <td>New Delhi</td>
+                 <td>Via Apollo/Search Clinic</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / Search "Saarthak Mental Health Delhi"</td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Mohan Agashe (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Neuropsychiatry (Also renowned actor)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Professor, B.J. Medical College, Pune / Consultant roles</td>
+                 <td>Pune/Consultant</td>
+                 <td>Search Current Role</td>
+                 <td>Search current clinical affiliations</td>
+             </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Mathew Varghese (MD - Psychiatry, FRCPsych)</td>
+                 <td>Geriatric Psychiatry, General Psychiatry</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>NIMHANS (Former HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Rajesh Sagar (MD - Psychiatry)</td>
+                 <td>Child & Adolescent Psychiatry, General Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Savita Malhotra (MD - Psychiatry, PhD)</td>
+                 <td>Child & Adolescent Psychiatry</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>PGI Chandigarh (Professor Emeritus, Former Dean & HOD)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Jitendra Nagpal (MD - Pediatrics, DNB - Psychiatry)</td>
+                 <td>Child & Adolescent Psychiatry, School Mental Health</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Moolchand Hospital / Expressions India</td>
+                 <td>New Delhi</td>
+                 <td>Via Moolchand/Search Org</td>
+                 <td><a href="https://moolchandhealthcare.com/" target="_blank" class="website-link">Moolchand</a> / Search Expressions India</td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. R Thara (MD - Psychiatry, PhD)</td>
+                 <td>Schizophrenia Research, Community Psychiatry</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>SCARF (Schizophrenia Research Foundation) (Co-founder & Director)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://scarfindia.org/" target="_blank" class="website-link">SCARF India</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Anju Dhawan (MD - Psychiatry)</td>
+                 <td>Addiction Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>National Drug Dependence Treatment Centre (NDDTC), AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS NDDTC</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Yusuf Matcheswalla (MD - Psychiatry, DPM)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Masina Hospital (HOD) / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://masinahospital.com/" target="_blank" class="website-link">Masina Hospital</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Vihang Vahia (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Consultation-Liaison Psychiatry</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Breach Candy Hospital / Jaslok Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td>Breach Candy / <a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Sanjeev Jain (MD - Psychiatry, PhD)</td>
+                 <td>Molecular Psychiatry, Psychiatric Genetics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>NIMHANS (Senior Professor)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a> (Primarily Research)</td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Sameer Malhotra (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Stress Management, Psychotherapy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Director & HOD - Mental Health & Behavioural Sciences)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Sandeep Grover (MD - Psychiatry)</td>
+                 <td>Consultation-Liaison Psychiatry, General Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Lakshmi Vijayakumar (MD - Psychiatry, PhD)</td>
+                 <td>Suicide Prevention, General Psychiatry</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>SNEHA (Founder) / Consultant Psychiatrist</td>
+                 <td>Chennai</td>
+                 <td>Via SNEHA Website / Search</td>
+                 <td><a href="https://snehafoundation.in/" target="_blank" class="website-link">SNEHA India</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Sanjay Chugh (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr. Sanjay Chugh's Clinic</td>
+                 <td>New Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Sanjay Chugh Clinic Delhi"</td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Gorav Gupta (MD - Psychiatry)</td>
+                 <td>Addiction Psychiatry, Dual Diagnosis</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tulasi Healthcare (Psychiatric & Rehab Centres) (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.tulasihealthcare.com/" target="_blank" class="website-link">Tulasi Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Prabha S Chandra (MD - Psychiatry, FRCPsych)</td>
+                 <td>Perinatal Psychiatry, Women's Mental Health</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>NIMHANS (Professor & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Mrugesh Vaishnav (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Sexology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Samvedana Hospital / Private Practice (Past President, IPS)</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Mrugesh Vaishnav Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Alok Sarin (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy, History of Psychiatry</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sitaram Bhartia Institute of Science and Research (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sitarambhartia.org/" target="_blank" class="website-link">Sitaram Bhartia</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Rajiv Anand (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant Psychiatrist</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajiv Anand Psychiatrist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. T S Sathyanarayana Rao (MD - Psychiatry, DPM)</td>
+                 <td>General Psychiatry, Psychosexual Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>JSS Medical College & Hospital (Professor & HOD)</td>
+                 <td>Mysuru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://jsshospital.in/" target="_blank" class="website-link">JSS Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Shubhangi Parkar (MD - Psychiatry, DPM)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Dean & HOD, KEM Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Current Role</td>
+                 <td>Search current affiliation</td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Ajit Bhide (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>St. Martha's Hospital / Private Practice</td>
+                 <td>Bengaluru</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.stmarthashospital.org/" target="_blank" class="website-link">St. Martha's</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Jai Ranjan Ram (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Child & Adolescent Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals / Private Practice</td>
+                 <td>Kolkata</td>
+                 <td>Via Apollo Website / Search</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Pratap Sharan (MD - Psychiatry, PhD)</td>
+                 <td>General Psychiatry, Personality Disorders, Research</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. R C Jiloha (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly HOD, G.B. Pant Hospital / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search current affiliation</td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Vivek Benegal (MD - Psychiatry)</td>
+                 <td>Addiction Psychiatry, Neurobiology of Addiction</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>NIMHANS (Professor - Centre for Addiction Medicine)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Ashit Sheth (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Consultation-Liaison Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant Psychiatrist (Associated with various hospitals)</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashit Sheth Psychiatrist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Sandeep Vohra (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Stress Management</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals / Vohra Neuro Psychiatry Centre</td>
+                 <td>Delhi</td>
+                 <td>Via Apollo Website / Clinic</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / Search clinic</td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Sanjay Kumavat (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Consultation-Liaison Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Sabyasachi Mitra (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AMRI Hospitals / Private Practice</td>
+                 <td>Kolkata</td>
+                 <td>Via AMRI Website / Search</td>
+                 <td><a href="https://www.amrihospitals.in/" target="_blank" class="website-link">AMRI Hospitals</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Mahesh Gowda (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Spandana Health Care (Hospital & Rehab) (Founder & Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://spandanahealthcare.com/" target="_blank" class="website-link">Spandana Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Rajiv Mehta (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Sleep Disorders</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Vice Chairman - Psychiatry) / Formerly Medanta</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Ulhas Luktuke (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Geriatric Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant Psychiatrist</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ulhas Luktuke Psychiatrist Pune"</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Vishal Sawant (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Consultation-Liaison Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Minhaj Nasirabadi (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Neuropsychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Amit Sen (MD - Psychiatry)</td>
+                 <td>Child & Adolescent Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Children First (Mental Health Institute) (Founder Director)</td>
+                 <td>Delhi/Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://childrenfirstindia.com/" target="_blank" class="website-link">Children First</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. S Sudarshan (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Consultation-Liaison Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Cunningham Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Arti Anand (MA, MPhil - Clinical Psychology)</td>
+                 <td>Clinical Psychology (Therapy focus, works with psychiatrists)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Clinical Psychologist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a> (Note: Psychologist)</td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. B R Madhukar (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Malay Dave (MD - Psychiatry)</td>
+                 <td>General Psychiatry, De-addiction</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant Psychiatrist</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Malay Dave Psychiatrist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Alim Chandani (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant Psychiatrist</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Alim Chandani Psychiatrist Hyderabad"</td>
+             </tr>
+              <tr>
+                 <td>51</td>
+                 <td>Dr. Murali Raj (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Rajesh Parikh (MD - Psychiatry)</td>
+                 <td>Neuropsychiatry, Consultation-Liaison Psychiatry</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Director - Medical Research & Hon. Neuropsychiatrist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. G Venkatasubramanian (MD - Psychiatry, PhD)</td>
+                 <td>Schizophrenia Research, Neuroimaging in Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NIMHANS (Professor - Psychiatry)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a> (Primarily Research)</td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Mohan Sunil Kumar (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Stress Management</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. P K Singh (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P K Singh Psychiatrist Patna"</td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Sunil Mittal (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Cosmos Institute of Mental Health & Behavioural Sciences (CIMBS) (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://cimbs.in/" target="_blank" class="website-link">CIMBS</a></td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Puneet Dwivedi (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Ashish Kumar Mittal (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Child & Adolescent Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Columbia Asia (now Manipal) / Private Practice</td>
+                 <td>Gurugram</td>
+                 <td>Search Practice/Hospital</td>
+                 <td>Search "Dr Ashish Mittal Psychiatrist Gurgaon"</td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Soumitra Pathare (MD - Psychiatry, PhD)</td>
+                 <td>Mental Health Law & Policy, General Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Centre for Mental Health Law & Policy, ILS (Director)</td>
+                 <td>Pune</td>
+                 <td>Via Institute Website</td>
+                 <td><a href="https://cmhlp.org/" target="_blank" class="website-link">CMHLP</a> (Policy/Research focus)</td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Avinash De Sousa (MD - Psychiatry, DPM)</td>
+                 <td>General Psychiatry, Psychotherapy, Research</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles (Saifee, Raheja) / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Avinash De Sousa Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Shams Ahsan (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly KGMU Lucknow / Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Shams Ahsan Psychiatrist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Lakshmi Ravikanth (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Women's Mental Health</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Ashlesha Bagadia (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashlesha Bagadia Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Manoj Kumar Sharma (MPhil, PhD - Clinical Psychology)</td>
+                 <td>Technology Addiction, Clinical Psychology (Works with Psychiatrists)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>NIMHANS (Professor - Clinical Psychology, SHUT Clinic Head)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a> (Note: Psychologist)</td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Sudhir Kumar (MD, DM - Neurology)</td>
+                 <td>General Neurology (May see Neuropsychiatry cases)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant Neurologist)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> (Note: Neurologist)</td>
+             </tr>
+              <tr>
+                 <td>66</td>
+                 <td>Dr. R K Solanki (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>SMS Medical College (Professor & Head - Psychiatry)</td>
+                 <td>Jaipur</td>
+                 <td>Via College Info</td>
+                 <td>Search SMS Medical College faculty</td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Naren P Rao (MD - Psychiatry, PhD)</td>
+                 <td>Cognitive Neuropsychiatry, Schizophrenia</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NIMHANS (Additional Professor - Psychiatry)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Sandeep Govil (MD - Psychiatry)</td>
+                 <td>General Psychiatry, De-addiction</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sarvodaya Hospital (Consultant)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sarvodayahospital.com/" target="_blank" class="website-link">Sarvodaya Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Jyoti Sangle (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jyoti Sangle Psychiatrist Pune"</td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. O P Singh (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Community Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Academic affiliations</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr O P Singh Psychiatrist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Ravi Gupta (MD - Psychiatry)</td>
+                 <td>Sleep Medicine, Headache, Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AIIMS Rishikesh (Additional Professor - Psychiatry)</td>
+                 <td>Rishikesh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aiimsrishikesh.edu.in/" target="_blank" class="website-link">AIIMS Rishikesh</a></td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. Abhinav Tandon (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Abhinav Tandon Psychiatrist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Manish Jain (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Consultation-Liaison Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Shobhana Mittal (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shobhana Mittal Psychiatrist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Vipul Rastogi (MD - Psychiatry, MRCPsych)</td>
+                 <td>General Psychiatry, Neuropsychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+              <tr>
+                 <td>76</td>
+                 <td>Dr. N L N Moorthy (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Kovai Medical Center and Hospital (KMCH) (Senior Consultant)</td>
+                 <td>Coimbatore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kmchhospitals.com/" target="_blank" class="website-link">KMCH</a></td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Shabitabh Kumar (MD - Psychiatry)</td>
+                 <td>General Psychiatry, De-addiction</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras HMRI Hospital (Consultant)</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. P K Dalal (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>King George's Medical University (KGMU) (Professor & Head)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kgmu.org/" target="_blank" class="website-link">KGMU</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Rajiv Sharma (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajiv Sharma Psychiatrist Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Anita Gautam (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anita Gautam Psychiatrist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Milan Balakrishnan (MD - Psychiatry, DPM)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Masina Hospital / Bombay Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://masinahospital.com/" target="_blank" class="website-link">Masina</a> / <a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Vasant Mundra (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Sexology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vasant Mundra Psychiatrist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Satyakant Trivedi (MD - Psychiatry)</td>
+                 <td>General Psychiatry, De-addiction</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Satyakant Trivedi Psychiatrist Bhopal"</td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Neha Sharma (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. R K Singh (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R K Singh Psychiatrist Varanasi"</td>
+             </tr>
+              <tr>
+                 <td>86</td>
+                 <td>Dr. Sanjay Kumar Gupta (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Era Dutta (MD - Psychiatry, DPM)</td>
+                 <td>General Psychiatry, Child & Adolescent Psychiatry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Anandapur / Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Via Fortis Website / Search</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Rahul Chandhok (MD - Psychiatry)</td>
+                 <td>General Psychiatry, De-addiction</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj & Vaishali (Senior Consultant)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. A K Kala (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ludhiana</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr A K Kala Psychiatrist Ludhiana"</td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Poorbi Ghosh (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Poorbi Ghosh Psychiatrist Bengaluru"</td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Vishal Chhabra (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Addiction Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Parul Tank (MD - Psychiatry)</td>
+                 <td>General Psychiatry, Psychotherapy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital Mulund / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Via Fortis Website / Search</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Pankaj Kumar (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta Abdur Razzaque Ansari Memorial Hospital</td>
+                 <td>Ranchi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/ranchi/" target="_blank" class="website-link">Medanta Ranchi</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. S G Trivedi (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S G Trivedi Psychiatrist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Preeti Singh (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. C R J Khess (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Central Institute of Psychiatry (CIP) (Professor & Head)</td>
+                 <td>Ranchi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://cipranchi.nic.in/" target="_blank" class="website-link">CIP Ranchi</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Srikala Bharath (MD - Psychiatry)</td>
+                 <td>Child & Adolescent Psychiatry, Community Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>NIMHANS (Professor - Psychiatry)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Pawan Sharma (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pawan Sharma Psychiatrist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Vinod Kumar Sinha (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vinod Kumar Sinha Psychiatrist Patna"</td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Sameer Kumar (MD - Psychiatry)</td>
+                 <td>General Psychiatry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sameer Kumar Psychiatrist Lucknow"</td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a Psychiatrist:</h2>
+        <ul>
+            <li><strong>Your Needs:</strong> Depression, anxiety, bipolar disorder, schizophrenia, addiction, OCD, PTSD, child behavior issues, geriatric mental health?</li>
+            <li><strong>Therapy vs. Medication:</strong> Psychiatrists (MDs) can prescribe medication; many also offer therapy, while others work with psychologists/counselors for therapy.</li>
+            <li><strong>Sub-specialty:</strong> Consider specialists in Child & Adolescent, Geriatric, Addiction, Forensic, or Consultation-Liaison Psychiatry for specific issues.</li>
+            <li><strong>Comfort Level:</strong> Crucial to find a psychiatrist you feel comfortable talking to openly.</li>
+            <li><strong>Referral:</strong> Your GP or a psychologist can often provide referrals.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

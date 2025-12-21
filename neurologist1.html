@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Neurologists in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Palette */
+            --primary-purple: #8e44ad;
+            --secondary-purple: #9b59b6;
+            --accent-blue: #3498db;
+            --text-dark: #2c3e50;
+            --text-light: #636e72;
+            --bg-color: #f3e5f5;
+            --header-gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            text-align: center;
+            padding: 60px 20px 80px;
+            background: var(--header-gradient);
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative neuron-like circles */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            animation: pulse-ring 3s infinite;
+        }
+
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--primary-purple);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--primary-purple);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1bee7;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "🧠";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1em;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto 50px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(142, 68, 173, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: #f3e5f5;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #2980b9;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.5rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">易</span> <!-- Brain Icon Placeholder -->
+        <h1>Top 100 Neurologists in India</h1>
+        <p class="subtitle">A representative list of recognized specialists (Stroke, Epilepsy, Movement Disorders, etc.). Not an objective ranking. Verify DM/DNB qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Neurologist:</h2>
+        <ul>
+            <li><strong>Symptoms are Key:</strong> Headache, seizures, tremors/stiffness, weakness, numbness, dizziness, memory loss, vision changes, speech problems?</li>
+            <li><strong>Sub-specialty Relevance:</strong> Seek specific expertise for conditions like Parkinson's, MS, Epilepsy, Stroke, Myasthenia Gravis.</li>
+            <li><strong>Diagnostic Facilities:</strong> Ensure access to Neuroimaging (MRI/CT), EEG, EMG/NCS, and other specialized tests if needed.</li>
+            <li><strong>Multidisciplinary Team:</strong> Complex conditions benefit from centers with strong Neurosurgery, Neuroradiology, Neuropsychology, and Rehab departments.</li>
+            <li><strong>Second Opinion:</strong> Often recommended for chronic or complex neurological diagnoses.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. M. V. Padma Srivastava (MD, DM - Neurology, FAMS)</td>
+                 <td>Stroke Neurology, General Neurology (Padma Shri)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>AIIMS (Professor & Head of Department)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. P. Satishchandra (MD, DM - Neurology, FAMS)</td>
+                 <td>Epilepsy, General Neurology (Former Director, NIMHANS)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly NIMHANS / Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P Satishchandra Neurologist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Mohit Bhatt (MD, DM - Neurology)</td>
+                 <td>Movement Disorders (Parkinson's, Dystonia, DBS programming)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Director - Neurology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Manjari Tripathi (MD, DM - Neurology)</td>
+                 <td>Epilepsy, Sleep Disorders, General Neurology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Neurology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Vinay Goyal (MD, DM - Neurology)</td>
+                 <td>Movement Disorders, General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Director - Neurology) / Formerly AIIMS</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Kameshwar Prasad (MD, DM - Neurology, FRCP)</td>
+                 <td>Stroke Neurology, Evidence-Based Medicine</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Consultant roles / Formerly Head of Neurology, AIIMS</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kameshwar Prasad Neurologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Nirmal Surya (MD, DNB - Neurology)</td>
+                 <td>General Neurology, Epilepsy, Headache</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Surya Neuro Centre / Saifee Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Surya Neuro Centre Mumbai" / <a href="https://www.saifeehospital.com/" target="_blank" class="website-link">Saifee</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Sumit Singh (MD, DM - Neurology)</td>
+                 <td>Headache Disorders, Multiple Sclerosis, Neuromuscular Disorders</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Artemis Hospital (Director - Neurology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. H V Srinivas (MD, DM - Neurology)</td>
+                 <td>General Neurology, Movement Disorders (Veteran figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Consultant roles / Formerly NIMHANS (Emeritus Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr H V Srinivas Neurologist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Bhim Sen Singhal (MD, FRCP, FAMS)</td>
+                 <td>General Neurology (Pioneering figure, Padma Shri & B C Roy Awardee)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Bombay Hospital Institute of Medical Sciences (Director Emeritus)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. J D Mukherji (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke, Headache</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Director & HOD) / Formerly Army R&R</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. P N Renjen (MD, DM - Neurology)</td>
+                 <td>Stroke Neurology, Interventional Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. K M Hassan (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. S A Sangle (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jehangir Hospital / Private Practice</td>
+                 <td>Pune</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.jehangirhospital.com/" target="_blank" class="website-link">Jehangir</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. P R S K Chellani (MD, DM - Neurology)</td>
+                 <td>General Neurology, Headache</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Sanjeev V Thomas (MD, DM - Neurology, FRCP)</td>
+                 <td>Epilepsy (Particularly Women with Epilepsy)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Formerly Professor, SCTIMST, Trivandrum / Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Sanjeev V Thomas Neurologist Kerala"</td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Pramod Kumar Pal (MD, DM - Neurology)</td>
+                 <td>Movement Disorders, Ataxia</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>NIMHANS (Professor & HOD - Neurology)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Satish V Khadilkar (MD, DM - Neurology)</td>
+                 <td>Neuromuscular Disorders, General Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Bombay Hospital Institute of Medical Sciences (Dean / Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Debashish Chowdhury (MD, DM - Neurology)</td>
+                 <td>Stroke Neurology, Headache</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>G.B. Pant Institute (GIPMER) (Professor & HOD)</td>
+                 <td>Delhi</td>
+                 <td>Via GIPMER/MAMC info</td>
+                 <td>Search GIPMER Faculty</td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Vinit Suri (MD, DM - Neurology)</td>
+                 <td>Stroke Neurology, Neuro-critical Care</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Dr. U Meenakshisundaram (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>SRM Institutes for Medical Science (SIMS Hospital) (Director - Neurology)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://simshospitals.com/" target="_blank" class="website-link">SIMS Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Sudhir Shah (MD, DM - Neurology)</td>
+                 <td>General Neurology, Neurophilosophy (Padma Shri)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Sterling Hospitals / Private Practice</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.sterlinghospitals.com/" target="_blank" class="website-link">Sterling</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Gagandeep Singh (MD, DM - Neurology)</td>
+                 <td>Epilepsy, Neuro-infections</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dayanand Medical College & Hospital (DMCH) (Professor & Head)</td>
+                 <td>Ludhiana</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.dmch.edu/" target="_blank" class="website-link">DMCH Ludhiana</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Jayantee Kalita (MD, DM - Neurology)</td>
+                 <td>Neuro-infections, Stroke, General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Mukul Varma (MD, DM - Neurology)</td>
+                 <td>Headache, General Neurology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Mukund G Khetani (MD)</td>
+                 <td>General Neurology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Saifee Hospital / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.saifeehospital.com/" target="_blank" class="website-link">Saifee</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. S Ramnathan Iyer (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Madhuri Behari (MD, DM - Neurology)</td>
+                 <td>Movement Disorders, General Neurology</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Fortis Hospital, Vasant Kunj / Formerly HOD Neurology, AIIMS Delhi</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. K S Anand (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant Neurologist / Formerly KGMU</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K S Anand Neurologist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Annu Aggarwal (MD, DM - Neurology)</td>
+                 <td>Epilepsy, General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Dinesh Nayak (MD, DM - Neurology)</td>
+                 <td>Epilepsy Surgery Program (Neurologist side), Sleep Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Gleneagles Global Health City / Formerly Fortis Malar (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Shamsher Dwivedee (MD, DM - Neurology)</td>
+                 <td>General Neurology, Headache</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Vimhans PrimaMed Super Speciality Hospital (Chairman - Neurosciences)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://vimhansprimamed.com/" target="_blank" class="website-link">Vimhans PrimaMed</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Arun B Taly (MD, DNB - Neurology)</td>
+                 <td>Neurological Rehabilitation, Neuromuscular Disorders</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Professor & Head, NIMHANS / Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arun Taly Neurologist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Neera Chaudhry (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. R Lakshmi Narasimhan (MD, DM - Neurology)</td>
+                 <td>Stroke Neurology, General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Atanu Biswas (MD, DM - Neurology)</td>
+                 <td>Movement Disorders, General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>IPGMER & SSKM Hospital (Professor - Neurology)</td>
+                 <td>Kolkata</td>
+                 <td>Via IPGMER/SSKM info</td>
+                 <td>Search IPGMER/SSKM Faculty</td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Suresh Kumar (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. B Vengamma (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Sri Venkateswara Institute of Medical Sciences (SVIMS) (Director & Vice Chancellor)</td>
+                 <td>Tirupati</td>
+                 <td>Via Website</td>
+                 <td><a href="http://svimstpt.ap.nic.in/" target="_blank" class="website-link">SVIMS Tirupati</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Anand Kumar Saxena (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Sadanand V Shetty (MD, DNB - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Dr L H Hiranandani Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hiranandanihospital.org/" target="_blank" class="website-link">Hiranandani Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Thomas Mathew (MD, DM - Neurology)</td>
+                 <td>Cognitive Neurology, General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>St. John's Medical College Hospital (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.stjohns.in/hospital/" target="_blank" class="website-link">St. John's Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Aparna Gupta (MD, DNB - Neurology)</td>
+                 <td>Neuromuscular Disorders, General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Vikram Huded (MD, DM - Neurology, Fellow Interventional Neuro)</td>
+                 <td>Interventional Neurology (Stroke Thrombectomy)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Health City (Head - Interventional Neuro & Stroke)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Joy Desai (MD, DNB - Neurology)</td>
+                 <td>Epilepsy, General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Rajiv Anand (MD, DM - Neurology)</td>
+                 <td>General Neurology, Headache</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Lakshmi Lavanya Alapati (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Yashoda Hospitals, Somajiguda (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.yashodahospitals.com/" target="_blank" class="website-link">Yashoda Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Malla Bhaskara Rao (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Pravina Shah (MD)</td>
+                 <td>Epilepsy, Neurophysiology (EEG)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Formerly KEM Hospital, Mumbai / Emeritus Consultant</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pravina Shah Neurologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Vikram Sharma (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Geetha R Menon (MD, DM - Neurology)</td>
+                 <td>General Neurology, Movement Disorders</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Ashok Uppal (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Chandra Sekhar (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Apollo</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Chandra Sekhar Neurologist Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. P K Sethi (MD, FRCP)</td>
+                 <td>General Neurology (Veteran Figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Formerly Sir Ganga Ram Hospital / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P K Sethi Neurologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. M Netravathi (MD, DM - Neurology)</td>
+                 <td>Movement Disorders</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NIMHANS (Additional Professor - Neurology)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. M Gourie Devi (MD, DM - Neurology, FAMS)</td>
+                 <td>Neuromuscular Disorders (Veteran Figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Emeritus Professor / Consultant roles / Former Director NIMHANS</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M Gourie Devi Neurologist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Achal Kumar Srivastava (MD, DM - Neurology)</td>
+                 <td>Movement Disorders, Ataxia</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Neurology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Neetu Ramrakhiani (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Senior Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Praveen Kumar Gupta (MD, DM - Neurology)</td>
+                 <td>Stroke Neurology, Neuro-intervention (Overlap)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Principal Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Sita Jayalakshmi (MD, DM - Neurology)</td>
+                 <td>Epilepsy, General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Suresh Gupta (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Suresh Gupta Neurologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. R C Sharma (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R C Sharma Neurologist Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Sunil Kumar (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. A K Roy (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr A K Roy Neurologist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Aditya Chowti (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Millers Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Anaita Hegde (MD - Pediatrics, DNB - Pediatrics)</td>
+                 <td>Pediatric Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>SRCC Children's Hospital / Jaslok Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.narayanahealth.org/hospitals/mumbai/srcc-childrens-hospital" target="_blank" class="website-link">SRCC</a> / <a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a></td>
+             </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Anand Kumar (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Anuradha Batra (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Arabinda Mukherjee (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Arun Garg (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Asis Kumar Bhattacharya (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Asis Kumar Bhattacharya Neurologist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Ashok Panagariya (1950-2021)</td>
+                 <td>General Neurology (Influential figure, Padma Shri)</td>
+                 <td>Legacy Figure</td>
+                 <td>Formerly Principal SMS Medical College</td>
+                 <td>Jaipur (Legacy)</td>
+                 <td>N/A</td>
+                 <td>Legacy figure</td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. C C Chaubal (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr C C Chaubal Neurologist Pune"</td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Col. P K Sethi (MD, FRCP)</td>
+                 <td>General Neurology (Veteran figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Formerly Army R&R / Consultant roles (Apollo Delhi)</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P K Sethi Neurologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Deepti Vibha (MD, DM - Neurology)</td>
+                 <td>Stroke Neurology, Headache</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AIIMS (Additional Professor - Neurology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. G R K Sarma (MD, DM - Neurology)</td>
+                 <td>General Neurology, Epilepsy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Harsh Rastogi (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Hrishikesh Kumar (MD, DM - Neurology)</td>
+                 <td>Epilepsy, Sleep Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Institute of Neurosciences Kolkata (I-NK) (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.neurokolkata.org/" target="_blank" class="website-link">I-NK Kolkata</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Jimmy Lalkaka (MD, DNB - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. K K Sinha (MD, FRCP)</td>
+                 <td>General Neurology (Veteran Figure)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Formerly Ranchi Inst. of Neuropsychiatry / Consultant roles</td>
+                 <td>Ranchi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K K Sinha Neurologist Ranchi"</td>
+             </tr>
+            <tr>
+                 <td>80</td>
+                 <td>Dr. Kapil Vinayak (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+            <tr>
+                 <td>81</td>
+                 <td>Dr. Manish Sinha (MD, DM - Neurology)</td>
+                 <td>General Neurology, Stroke</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. M N Sivakumar (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M N Sivakumar Neurologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Neha Kapoor (MD, DM - Neurology)</td>
+                 <td>Epilepsy, General Neurology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. P S Mathur (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P S Mathur Neurologist Bhopal"</td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Prashant Makhija (MD, DNB - Neurology)</td>
+                 <td>Neuromuscular Disorders</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir H. N. Reliance Foundation Hospital / Bhatia Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance Hospital</a> / Bhatia Hospital</td>
+             </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. R Kannan (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Rahul Kulkarni (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Raja Gopal K V (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Rupam Borgohain (MD, DM - Neurology)</td>
+                 <td>Movement Disorders</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nizams Institute of Medical Sciences (NIMS) (Professor & Head)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nims.edu.in/" target="_blank" class="website-link">NIMS</a></td>
+             </tr>
+            <tr>
+                 <td>90</td>
+                 <td>Dr. S Aaron (MD, DM - Neurology)</td>
+                 <td>Neurology, Tropical Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Christian Medical College (CMC) (Professor)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+            <tr>
+                 <td>91</td>
+                 <td>Dr. S K Jain (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S K Jain Neurologist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Samhita Panda (MD, DM - Neurology)</td>
+                 <td>General Neurology, Movement Disorders</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly G.B. Pant Hospital, Delhi / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Samhita Panda Neurologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Sandeep Kumar Gupta (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+            <tr>
+                 <td>94</td>
+                 <td>Dr. Sanjeev Ravisaheb (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sanjeev Ravisaheb Neurologist Ahmedabad"</td>
+             </tr>
+            <tr>
+                 <td>95</td>
+                 <td>Dr. Shankar R (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Shreedhar Joshi (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jehangir Hospital (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jehangirhospital.com/" target="_blank" class="website-link">Jehangir Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Srinivas K (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Cunningham Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Subhash Kaul (MD, DM - Neurology)</td>
+                 <td>Stroke Neurology, Neuro-interventions</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nizams Institute of Medical Sciences (NIMS) (Professor & Head)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nims.edu.in/" target="_blank" class="website-link">NIMS</a></td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Sunil Kumar Singh (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunil Kumar Singh Neurologist Varanasi"</td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Tarun Mathur (MD, DM - Neurology)</td>
+                 <td>General Neurology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Jaipur (Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a Neurologist:</h2>
+        <ul>
+            <li><strong>Symptoms are Key:</strong> Headache, seizures, tremors/stiffness, weakness, numbness, dizziness, memory loss, vision changes, speech problems?</li>
+            <li><strong>Sub-specialty Relevance:</strong> Seek specific expertise for conditions like Parkinson's, MS, Epilepsy, Stroke, Myasthenia Gravis.</li>
+            <li><strong>Diagnostic Facilities:</strong> Ensure access to Neuroimaging (MRI/CT), EEG, EMG/NCS, and other specialized tests if needed.</li>
+            <li><strong>Multidisciplinary Team:</strong> Complex conditions benefit from centers with strong Neurosurgery, Neuroradiology, Neuropsychology, and Rehab departments.</li>
+            <li><strong>Second Opinion:</strong> Often recommended for chronic or complex neurological diagnoses.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

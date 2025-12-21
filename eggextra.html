@@ -1,0 +1,195 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Egg Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+  body {
+    margin: 0;
+    background: turquoise;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .title {
+    font-size: 3em;
+    margin-top: 50px;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .letter {
+    opacity: 0;
+    transform: scale(4) rotate(720deg) translateY(-300px);
+    animation: formTitle 1.2s ease-out forwards;
+  }
+
+  .letter:nth-child(n) {
+    animation-delay: calc(0.1s * var(--i));
+  }
+
+  @keyframes formTitle {
+    0% {
+      opacity: 0;
+      transform: scale(4) rotate(720deg) translateY(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+  }
+
+  model-viewer {
+    width: 400px;
+    height: 400px;
+    margin: 40px auto;
+    background-color: white; /* small box stays white */
+    border-radius: 15px; /* optional: smooth edges */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* optional: nice shadow */
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+
+  .arrow-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s;
+  }
+
+  .arrow-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .info-box {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="title">
+    <span class="letter" style="--i:1">E</span>
+    <span class="letter" style="--i:2">G</span>
+    <span class="letter" style="--i:3">G</span>
+    <span class="letter" style="--i:4">&nbsp;</span>
+    <span class="letter" style="--i:5">V</span>
+    <span class="letter" style="--i:6">I</span>
+    <span class="letter" style="--i:7">E</span>
+    <span class="letter" style="--i:8">W</span>
+    <span class="letter" style="--i:9">E</span>
+    <span class="letter" style="--i:10">R</span>
+  </div>
+
+  <model-viewer id="viewer"
+    src="media/chicken1.glb"
+    alt="dryfruit model"
+    auto-rotate
+    auto-rotate-delay="0"
+    disable-zoom
+    camera-controls
+    exposure="1"
+    ar
+    shadow-intensity="1"
+    style="background-color: white; border-radius: 20px;">
+  </model-viewer>
+
+  <div class="controls">
+    <button class="arrow-btn" onclick="showPrev()">←</button>
+    <button class="arrow-btn" onclick="showNext()">→</button>
+  </div>
+
+  <div id="info" class="info-box">Click the egg to view details</div>
+
+  <script>
+    const dryfruits = [
+      {
+        name: "Chicken Egg",
+        file: "media/chicken1.glb",
+        info: "Calories: 155 kcal<br>Nutrients: Rich in protein, vitamins B12 and D, supports muscle growth"
+      },
+      {
+        name: "Duck Egg",
+        file: "media/duck1.glb",
+        info: "Calories: 185 kcal<br>Nutrients: Higher in fat and cholesterol, good for energy and brain health"
+      },
+      {
+        name: "Quail Egg",
+        file: "media/quail1.glb",
+        info: "Calories: 158 kcal<br>Nutrients: Rich in iron, boosts immune system and improves metabolism"
+      },
+      {
+        name: "Goose Egg",
+        file: "media/goose1.glb",
+        info: "Calories: 185 kcal<br>Nutrients: High in protein, good source of omega-3 fatty acids"
+      },
+      {
+        name: "Turkey Egg",
+        file: "media/turkey1.glb",
+        info: "Calories: 171 kcal<br>Nutrients: Rich in selenium and riboflavin, supports immune function"
+      },
+      {
+        name: "Ostrich Egg",
+        file: "media/ostrich1.glb",
+        info: "Calories: 180 kcal<br>Nutrients: Very high in protein, ideal for muscle development and recovery"
+      }
+    ];
+
+    let current = 0;
+    const viewer = document.getElementById('viewer');
+    const infoBox = document.getElementById('info');
+
+    // Auto-rotation logic
+    let rotation = 0;
+    const speed = 65 / 60;
+
+    function rotateModel() {
+      rotation += speed;
+      viewer.cameraOrbit = `${rotation % 360}deg 75deg 2.5m`;
+      requestAnimationFrame(rotateModel);
+    }
+
+    viewer.addEventListener('load', rotateModel);
+
+    viewer.addEventListener('click', () => {
+      const egg = dryfruits[current];
+      infoBox.innerHTML = `<strong>${egg.name}</strong><br>${egg.info}`;
+    });
+
+    function showEggtype(index) {
+      current = (index + dryfruits.length) % dryfruits.length;
+      viewer.src = dryfruits[current].file;
+      infoBox.innerHTML = "Click the egg to view details";
+    }
+
+    function showNext() {
+      showEggtype(current + 1);
+    }
+
+    function showPrev() {
+      showEggtype(current - 1);
+    }
+  </script>
+</body>
+</html>

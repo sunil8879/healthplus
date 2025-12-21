@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food related Terminologies</title>
+    <!-- Importing Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --primary-gradient: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+        --secondary-gradient: linear-gradient(135deg, #fce38a 0%, #f38181 100%);
+        --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --header-bg: #222;
+        --card-bg: rgba(255, 255, 255, 0.95);
+        --text-color: #333;
+        --table-header-bg: #eafaf1;
+    }
+
+    body {
+        background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        color: var(--text-color);
+        font-family: 'Poppins', sans-serif;
+        padding: 40px 20px;
+        text-align: center;
+        margin: 0;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 50px;
+        background: -webkit-linear-gradient(#11998e, #38ef7d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        margin-top: 60px;
+        color: #2c3e50;
+        font-size: 2rem;
+        display: inline-block;
+        border-bottom: 4px solid #56ab2f;
+        padding-bottom: 10px;
+        position: relative;
+    }
+    
+    h2::before {
+        content: '🌿';
+        margin-right: 10px;
+    }
+
+    table {
+        width: 90%;
+        max-width: 1000px;
+        margin: 30px auto 60px auto;
+        border-collapse: separate;
+        border-spacing: 0;
+        background-color: var(--card-bg);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    table:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    th, td {
+        padding: 18px 25px;
+        text-align: left;
+        font-size: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    th {
+        background-image: var(--primary-gradient);
+        color: white;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+    }
+    
+    /* Specific gradients for different tables for variety */
+    h2:nth-of-type(2) + table th {
+        background-image: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+        color: #555;
+    }
+    
+    h2:nth-of-type(3) + table th {
+        background-image: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        color: #444;
+    }
+    
+    h2:nth-of-type(4) + table th {
+        background-image: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #fcfcfc;
+    }
+
+    tr:hover {
+        background-color: #f0fff4;
+        transition: background-color 0.3s ease;
+    }
+    
+    /* Enhance first column */
+    td:first-child {
+        font-weight: 600;
+        color: #27ae60;
+    }
+
+    /* Stylish 3D Buttons */
+    .button {
+        display: inline-block;
+        padding: 15px 35px;
+        margin: 30px 15px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+        background: var(--header-bg);
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-image: var(--accent-gradient);
+    }
+
+    .button:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+        table {
+            width: 100%;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>Food related Terminologies</h1>
+
+<h2>Whole Spices</h2>
+<table>
+<tr><th>Hindi Name</th><th>English Name</th><th>Health Uses</th></tr>
+<tr><td>Jeera</td><td>Cumin seeds</td><td>Aids digestion, rich in iron</td></tr>
+<tr><td>Saunf</td><td>Fennel seeds</td><td>Improves digestion, reduces bloating</td></tr>
+<tr><td>Ajwain</td><td>Carom seeds</td><td>Relieves indigestion, anti-inflammatory</td></tr>
+<tr><td>Rai / Sarson</td><td>Mustard seeds</td><td>Rich in selenium, helps in metabolism</td></tr>
+<tr><td>Methi Dana</td><td>Fenugreek seeds</td><td>Controls blood sugar, aids digestion</td></tr>
+<tr><td>Kali Mirch</td><td>Black pepper</td><td>Enhances nutrient absorption, antioxidant</td></tr>
+<tr><td>Laung</td><td>Clove</td><td>Relieves toothache, antiseptic</td></tr>
+<tr><td>Dalchini</td><td>Cinnamon</td><td>Regulates blood sugar, anti-diabetic</td></tr>
+<tr><td>Tej Patta</td><td>Bay leaf</td><td>Improves digestion, manages diabetes</td></tr>
+<tr><td>Elaichi (Chhoti)</td><td>Green cardamom</td><td>Aids digestion, freshens breath</td></tr>
+<tr><td>Elaichi (Badi)</td><td>Black cardamom</td><td>Respiratory health, digestion</td></tr>
+<tr><td>Javitri</td><td>Mace</td><td>Boosts appetite, anti-inflammatory</td></tr>
+<tr><td>Jaiphal</td><td>Nutmeg</td><td>Aids sleep, improves digestion</td></tr>
+<tr><td>Hing</td><td>Asafoetida</td><td>Relieves gas, antispasmodic</td></tr>
+</table>
+
+<h2>Ground Spices</h2>
+<table>
+<tr><th>Hindi Name</th><th>English Name</th><th>Health Uses</th></tr>
+<tr><td>Haldi</td><td>Turmeric</td><td>Anti-inflammatory, antioxidant</td></tr>
+<tr><td>Mirch Powder</td><td>Red chili powder</td><td>Boosts metabolism, rich in vitamin C</td></tr>
+<tr><td>Dhania Powder</td><td>Coriander powder</td><td>Good for digestion, anti-diabetic</td></tr>
+<tr><td>Jeera Powder</td><td>Cumin powder</td><td>Boosts immunity, digestion</td></tr>
+<tr><td>Garam Masala</td><td>Mixed spice blend</td><td>Improves digestion, adds warmth</td></tr>
+<tr><td>Amchur</td><td>Dry mango powder</td><td>Rich in vitamin C, aids digestion</td></tr>
+<tr><td>Kasuri Methi</td><td>Dried fenugreek leaves</td><td>Controls diabetes, improves flavor</td></tr>
+<tr><td>Chaat Masala</td><td>Tangy spice mix</td><td>Aids digestion, adds tanginess</td></tr>
+<tr><td>Kala Namak</td><td>Black salt</td><td>Aids digestion, cooling effect</td></tr>
+</table>
+
+<h2>Edible Seeds</h2>
+<table>
+<tr><th>Hindi Name</th><th>English Name</th><th>Health Uses</th></tr>
+<tr><td>Chia Beej</td><td>Chia Seeds</td><td>Omega-3, fiber, aids weight loss</td></tr>
+<tr><td>Alsi</td><td>Flax Seeds</td><td>Rich in fiber, heart health</td></tr>
+<tr><td>Til</td><td>Sesame Seeds</td><td>Calcium-rich, good for bones</td></tr>
+<tr><td>Sabja / Takmariya</td><td>Basil Seeds</td><td>Cooling, aids digestion</td></tr>
+<tr><td>Khus Khus</td><td>Poppy Seeds</td><td>Improves sleep, boosts energy</td></tr>
+<tr><td>Kaddu ke Beej</td><td>Pumpkin Seeds</td><td>Zinc-rich, boosts immunity</td></tr>
+<tr><td>Tarbooz ke Beej</td><td>Watermelon Seeds</td><td>Rich in magnesium, boosts energy</td></tr>
+<tr><td>Sunflower ke Beej</td><td>Sunflower Seeds</td><td>Vitamin E, skin health</td></tr>
+<tr><td>Kharbooja ke Beej</td><td>Musk Melon Seeds</td><td>Rich in protein, antioxidants</td></tr>
+<tr><td>Kalonji</td><td>Nigella Seeds</td><td>Immunity booster, anti-inflammatory</td></tr>
+<tr><td>Halim</td><td>Garden Cress Seeds</td><td>Iron-rich, good for anemia</td></tr>
+</table>
+
+<h2>Pulses</h2>
+<table>
+<tr><th>Hindi Name</th><th>English Name</th><th>Health Uses</th></tr>
+<tr><td>Arhar Dal</td><td>Pigeon Pea</td><td>Protein-rich, good for digestion</td></tr>
+<tr><td>Moong Dal</td><td>Green Gram</td><td>Light on stomach, high protein</td></tr>
+<tr><td>Masoor Dal</td><td>Red Lentil</td><td>Iron-rich, improves blood circulation</td></tr>
+<tr><td>Chana Dal</td><td>Bengal Gram</td><td>Protein, good for diabetes</td></tr>
+<tr><td>Urad Dal</td><td>Black Gram</td><td>Boosts energy, rich in iron</td></tr>
+<tr><td>Rajma</td><td>Kidney Beans</td><td>High in protein, aids muscle growth</td></tr>
+<tr><td>Kabuli Chana</td><td>Chickpeas</td><td>Fiber-rich, controls hunger</td></tr>
+<tr><td>Matar Dal</td><td>Yellow Peas</td><td>Rich in carbs, protein</td></tr>
+<tr><td>Lobiya</td><td>Black Eyed Peas</td><td>Good for heart, fiber-rich</td></tr>
+<tr><td>Kulthi Dal</td><td>Horse Gram</td><td>Weight loss, kidney health</td></tr>
+</table>
+
+</body>
+</html>

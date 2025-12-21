@@ -1,0 +1,127 @@
+Form Responses 1 : 189785295
+weight : 1107333205
+sugar : 1262741887
+BPlower : 1400359147
+BPupper  : 776772119
+temperature : 1032424553
+pulse : 937833649
+oxygen : 1526883204
+heamoglobin : 1184039697
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Dashboard</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333333;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666666;
+      margin-bottom: 60px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px; /* Horizontal gap between buttons */
+    }
+
+    .row-gap {
+      margin-bottom: 40px; /* Equal gap between all rows */
+    }
+
+    .dashboard-button {
+      background: linear-gradient(to bottom, #333333, #808080); /* black to grey gradient */
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 
+        inset 0 -3px 8px rgba(255, 255, 255, 0.4), /* Top light for bevel effect */
+        0 6px 15px rgba(0, 0, 0, 0.6); /* Bottom shadow for 3D effect */
+      width: 240px;
+      height: 70px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .dashboard-button:hover {
+      box-shadow:
+        inset 0 -3px 8px rgba(255, 255, 255, 0.6), /* Lightens top bevel on hover */
+        0 8px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow for deeper 3D effect */
+      transform: translateY(-2px); /* Lifts the button on hover */
+    }
+
+    .full-width {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>HEALTH DASHBOARD</h1>
+  <p>A guide to keep your Vitals in check.</p>
+ 
+  <p>For optimal chart viewing, 
+  1. Download the file to your local machine and sync using OneDrive or Google Drive.
+  2. Open with Excel Desktop (macros required) to access full functionality. 
+  3. Excel Online or Google Sheets won't support macros or advanced features. 
+  4. Note : Ensure macros are enabled for proper data refresh.
+</p>
+    <div class="button-container row-gap">
+    <a href="weightextra.xlsm" download style="text-decoration: none;">
+      <button class="dashboard-button">Weight (kgs)</button>
+    </a>
+    <a href="sugarextraxlsm" download style="text-decoration: none;">
+      <button class="dashboard-button">Sugar (mg/dl)</button>
+    </a>
+    <a href="BPupperextra.xlsm" download style="text-decoration: none;">
+      <button class="dashboard-button">BP-upper (mmHg)</button>
+    </a>
+  </div>
+
+  <div class="button-container row-gap">
+    <a href="BPlowerextra.xlsm" download style="text-decoration: none;">
+      <button class="dashboard-button">BP-lower (mmHg)</button>
+    </a>
+    <a href="temperatureextra.xlsm" download style="text-decoration: none;">
+      <button class="dashboard-button">Temperature (F)</button>
+    </a>
+    <a href="pulseextra.xlsm" download style="text-decoration: none;">
+      <button class="dashboard-button">Pulse Rate (Bpm)</button>
+    </a>
+  </div>
+
+  <div class="full-width">
+    <a href="oxygenextra.xlsm" download style="text-decoration: none;">
+      <button class="dashboard-button">Oxygen (%)</button>
+    </a>
+  </div>
+
+</body>
+</html>

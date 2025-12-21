@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 General Physicians / Internal Medicine Specialists in India</title>
+    <!-- Importing Google Fonts for a modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Color Palette */
+            --primary-gradient: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --header-bg: #2c3e50;
+            --card-bg: #ffffff;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --highlight: #0984e3;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Stylish Header --- */
+        .title-container {
+            background: var(--secondary-gradient);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative circle behind title */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.9);
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid #6c5ce7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: #6c5ce7;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #dfe6e9;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "➜";
+            color: #6c5ce7;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Spacing for card effect */
+        }
+
+        thead tr {
+            background-color: transparent;
+        }
+
+        th {
+            background: #6c5ce7; /* Fallback */
+            background: var(--secondary-gradient);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+        }
+
+        /* Rounded corners for the header row */
+        th:first-child { border-top-left-radius: var(--border-radius); border-bottom-left-radius: var(--border-radius); }
+        th:last-child { border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius); }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.2);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for data rows */
+        td:first-child { 
+            border-top-left-radius: var(--border-radius); 
+            border-bottom-left-radius: var(--border-radius);
+            font-weight: 700;
+            color: #6c5ce7;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        td:last-child { border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius); }
+
+        /* Styling for Name Column */
+        td:nth-child(2) {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        /* Styling for Specialty Column */
+        td:nth-child(3) {
+            color: #00b894; /* Greenish teal */
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: #00cec9;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 206, 201, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #00b894;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0, 184, 148, 0.4);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .title-container { padding: 40px 15px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .considerations { margin: 0 15px 40px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">⚕</span> <!-- Stethoscope Icon Placeholder -->
+        <h1>Top 100 General Physicians / Internal Medicine Specialists in India</h1>
+        <p class="subtitle">A representative list of recognized doctors. Not an objective ranking. Verify MD/DNB qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a General Physician / Internal Medicine Specialist:</h2>
+        <ul>
+            <li><strong>Primary Care vs. Specialist:</strong> Internists often serve as primary care doctors for adults, especially those with multiple health issues, and are skilled diagnosticians.</li>
+            <li><strong>Nature of Problem:</strong> Consider if you need chronic disease management, diagnosis of symptoms, routine check-ups, or acute illness care.</li>
+            <li><strong>Sub-specialty Interest:</strong> An Internist with focus in areas like diabetes, infectious diseases, or geriatrics might be beneficial for specific conditions.</li>
+            <li><strong>Communication & Approach:</strong> Choose a doctor you are comfortable with and who involves you in decisions.</li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Randeep Guleria (MD, DM - Pulm Med)</td>
+                 <td>Internal Medicine, Pulmonology, Sleep Medicine (Leads Institute)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Internal Med & Respiratory)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Anoop Misra (MD, FAMS)</td>
+                 <td>Internal Medicine, Diabetes & Metabolic Diseases</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis C-DOC (Chairman, Padma Shri)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortiscdoc.com/" target="_blank" class="website-link">Fortis C-DOC</a></td>
+            </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Farokh Udwadia (MD, FRCP, FAMS)</td>
+                 <td>General Medicine, Critical Care (Veteran Physician, Padma Bhushan)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Breach Candy Hospital / P.D. Hinduja Hospital (Emeritus Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Check Hospital Websites</td>
+                 <td>Breach Candy / <a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja</a></td>
+            </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. S P Byotra (MD, FRCP)</td>
+                 <td>General Medicine, Geriatrics</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman Emeritus - Medicine)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. V S Natarajan (MD, FRCP)</td>
+                 <td>Geriatric Medicine (Pioneer in India, Padma Shri)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Formerly Madras Medical College / Senior Citizens Bureau</td>
+                 <td>Chennai</td>
+                 <td>Search Practice</td>
+                 <td>Search "Dr V S Natarajan Geriatrician Chennai"</td>
+            </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Shashank R Joshi (MD, DM - Endo)</td>
+                 <td>Endocrinology, Diabetes, Internal Medicine (Padma Shri)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Lilavati Hospital / Joshi Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Clinic</td>
+                 <td><a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati</a> / Search Joshi Clinic</td>
+            </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. S K Sharma (MD, FAMS)</td>
+                 <td>Internal Medicine, Pulmonology</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant roles / Formerly HOD Medicine, AIIMS</td>
+                 <td>Delhi</td>
+                 <td>Search Practice</td>
+                 <td>Search "Dr S K Sharma Internal Medicine Delhi"</td>
+            </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. F D Dastur (MD)</td>
+                 <td>General Medicine, Infectious Diseases (Veteran figure)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant Physician)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Pratit Samdani (MD, FACP)</td>
+                 <td>General Medicine, Critical Care, Infectious Diseases</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Breach Candy / Jaslok / Saifee Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Check Hospital Websites</td>
+                 <td>Breach Candy / <a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a> / Saifee</td>
+            </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Hemant Thacker (MD)</td>
+                 <td>General Medicine, Cardio-Metabolic Diseases</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Breach Candy / Jaslok / Bhatia Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Check Hospital Websites</td>
+                 <td>Breach Candy / <a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a> / Bhatia</td>
+            </tr>
+            <tr>
+                 <td>11</td>
+                 <td>Dr. Rommel Tickoo (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Director - Internal Medicine)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>12</td>
+                 <td>Dr. Sandeep Budhiraja (MD)</td>
+                 <td>Internal Medicine, Clinical Administration</td>
+                 <td>25+ Years (Very Senior)</td>
+                 <td>Max Healthcare (Group Medical Director)</td>
+                 <td>Delhi/NCR (Group Role)</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>13</td>
+                 <td>Dr. Tarun Sahni (MD)</td>
+                 <td>Internal Medicine, Hyperbaric Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / Head - Hyperbaric)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>14</td>
+                 <td>Dr. Atul Kakar (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases, Rheumatology overlap</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Vice Chairman - Internal Medicine)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>15</td>
+                 <td>Dr. S Chatterjee (MD)</td>
+                 <td>Internal Medicine, Geriatrics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Abdul Ansari (MD, FCCM)</td>
+                 <td>General Medicine, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Director - Critical Care & HOD - Medicine)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. George A Mathew (MD)</td>
+                 <td>Internal Medicine, Medical Ethics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Lissy Hospital Kochi</td>
+                 <td>Kochi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr George Mathew Physician Kochi"</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Sushila Kataria (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Senior Director - Internal Medicine)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Nirmal Kumar Ganguly (MBBS, MD, DSc, FAMS)</td>
+                 <td>Microbiology, Public Health (Former DG, ICMR, Padma Bhushan)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Advisor/Consultant Roles</td>
+                 <td>National/Consultant</td>
+                 <td>N/A</td>
+                 <td>Public health figure (Microbiology focus)</td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Sudha Menon (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Dr. V Ramasubramanian (MBBS, MRCP, FIDSA)</td>
+                 <td>Infectious Diseases, Tropical Medicine (Manages complex IM cases)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Chennai / Capstone Clinic</td>
+                 <td>Chennai</td>
+                 <td>Via Hospital/Clinic</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://capstoneclinic.com/" target="_blank" class="website-link">Capstone Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Atul Gogia (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Behram Pardiwalla (MD)</td>
+                 <td>Internal Medicine, Critical Care</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Wockhardt Hospitals, South Mumbai (Head - Medicine/Critical Care)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.wockhardthospitals.com/" target="_blank" class="website-link">Wockhardt Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Amitabh Singh (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Sukumar Mukherjee (MD, FRCP)</td>
+                 <td>General Medicine (Highly respected veteran physician)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>CMRI (Calcutta Medical Research Institute) / Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Check Hospital/Practice</td>
+                 <td><a href="https://www.cmri.in/" target="_blank" class="website-link">CMRI</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Debasis Basu (MD)</td>
+                 <td>Internal Medicine, Diabetes & Endocrinology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. N Sathyabama (MD)</td>
+                 <td>Internal Medicine, Geriatrics</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Director & Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Sowmya Sathyendra (MD)</td>
+                 <td>General Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Christian Medical College (CMC) (Associate Professor)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Subhakar Kandi (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. B Hygriv Rao (MD)</td>
+                 <td>Internal Medicine, Critical Care</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Harshad Limaye (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Mahesh Mylarappa (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Health City (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Shankar M N (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Sheetal Chaurasia (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Whitefield / Formerly Fortis</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Rajan Saxena (MD)</td>
+                 <td>Internal Medicine, Critical Care</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Command Hospital</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajan Saxena Physician Pune"</td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Arindam Biswas (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Anandapur (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. M Vishnu Rao (MD)</td>
+                 <td>General Medicine, Diabetes</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Yashoda Hospitals, Somajiguda (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.yashodahospitals.com/" target="_blank" class="website-link">Yashoda Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. R Mala (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>MIOT International (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.miotinternational.com/" target="_blank" class="website-link">MIOT International</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Naveet Wig (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Medicine)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Col. S P S Grewal (MD)</td>
+                 <td>Internal Medicine, Geriatrics</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Army R&R Hospital / Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Verify Specific Affiliation</td>
+                 <td>Search "Dr SPS Grewal Physician Delhi"</td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Ashutosh Shukla (MD)</td>
+                 <td>Internal Medicine, Medical Administration</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Director & Medical Superintendent)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Raman Kumar (MBBS, DNB - Family Med)</td>
+                 <td>Family Medicine, Primary Care (Leader in Family Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Runs own clinic / President, Academy of Family Physicians of India (AFPI)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Raman Kumar Family Physician Delhi"</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. P L Tiwari (MD)</td>
+                 <td>Internal Medicine, Geriatrics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P L Tiwari Physician Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Monica Mahajan (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Healthcare (Shalimar Bagh & Gurgaon) (Senior Director)</td>
+                 <td>Delhi/Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Manoj Kumar (MD)</td>
+                 <td>Internal Medicine, Critical Care</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. S Wasir (MD)</td>
+                 <td>General Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S Wasir Physician Delhi"</td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Anil Bhoraskar (MD)</td>
+                 <td>Diabetes, Metabolic Diseases, Internal Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>SL Raheja Hospital / Asian Heart Institute / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Clinic</td>
+                 <td><a href="https://www.rahejahospital.com/" target="_blank" class="website-link">SL Raheja</a> / <a href="https://asianheartinstitute.org/" target="_blank" class="website-link">AHI</a> / Search Practice</td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Suranjit Chatterjee (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Rajesh Kumar Jha (MD)</td>
+                 <td>Internal Medicine, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajesh Kumar Jha Physician Patna"</td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Rakesh Pandit (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aakash Healthcare Super Speciality Hospital (Senior Consultant)</td>
+                 <td>Dwarka, New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aakashhealthcare.com/" target="_blank" class="website-link">Aakash Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Aditya Chowdary (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Ajay Gupta (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Amit Gupta (MD)</td>
+                 <td>Internal Medicine, Critical Care</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Batra Hospital & Medical Research Centre (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="http://www.batrahospitaldelhi.org/" target="_blank" class="website-link">Batra Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Amit Kumar (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras HMRI Hospital (Consultant)</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Anil Bansaal (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anil Bansaal Physician Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Aniruddha Dayama (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Nagpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aniruddha Dayama Nagpur"</td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Anita Mathew (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mulund (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Anuj Maheshwari (MD)</td>
+                 <td>Diabetes & Internal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles / Academic affiliations</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anuj Maheshwari Diabetologist Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Anurag Aggarwal (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Arun Mohanty (MD)</td>
+                 <td>General Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Bhubaneswar (Senior Consultant)</td>
+                 <td>Bhubaneswar</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Ashish Agarwal (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Ashutosh Sharma (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Atul Bhasin (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Avanindra Kumar (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Avanindra Kumar Physician Varanasi"</td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Aviroop Biswas (MD)</td>
+                 <td>Internal Medicine, Critical Care</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Peerless Hospital (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://peerlesshospital.com/" target="_blank" class="website-link">Peerless Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. B Chakravarty (MD)</td>
+                 <td>General Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr B Chakravarty Physician Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. B K Agarwal (MD)</td>
+                 <td>General Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr B K Agarwal Physician Patna"</td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. B Sesikeran (MD - Pathology)</td>
+                 <td>Pathology & Nutrition (Former Director NIN)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Director, NIN Hyderabad</td>
+                 <td>Hyderabad (Research)</td>
+                 <td>N/A</td>
+                 <td>Public Health/Research focus</td>
+            </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. C S Agarwal (MD)</td>
+                 <td>General Medicine</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr C S Agarwal Physician Delhi"</td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. D S Chadha (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr D S Chadha Physician Chandigarh"</td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Deepak Gupta (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Dharmendra Kumar (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Gautam Mukhopadhyay (MD)</td>
+                 <td>General Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gautam Mukhopadhyay Physician Kolkata"</td>
+            </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Girish C (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Gurpreet Singh Wander (MD, DM - Cardiology)</td>
+                 <td>Cardiology (Related Field - manages comorbidities)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Hero DMC Heart Institute (Chief Cardiologist)</td>
+                 <td>Ludhiana</td>
+                 <td>Via DMCH Website</td>
+                 <td><a href="https://www.dmch.edu/" target="_blank" class="website-link">DMCH Ludhiana</a> (Note: Cardiologist)</td>
+            </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Imtiaz Hasan (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras Hospitals (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Inder Maurya (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Ishwar Gilada (MD)</td>
+                 <td>Infectious Diseases (HIV Specialist)</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Unison Medicare / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Ishwar Gilada Mumbai" (Note: Infectious Disease focus)</td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. J K Gupta (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr J K Gupta Physician Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Kabir Sardana (MD - Dermatology)</td>
+                 <td>Dermatology (Related Field - systemic manifestations)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>RML Hospital (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via RML Hospital info</td>
+                 <td>Note: Dermatologist</td>
+            </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Kailash Chand (OBE, FRCP)</td>
+                 <td>Geriatric Medicine (UK Based - Policy influence)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>NHS UK / Policy Advisor (Honorary VP, BMA)</td>
+                 <td>UK based</td>
+                 <td>N/A</td>
+                 <td>Policy focus</td>
+            </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Krishan Kumar Aggarwal (1958-2021)</td>
+                 <td>Cardiology & Internal Medicine (Public Health Advocate)</td>
+                 <td>Legacy Figure (Padma Shri, Former IMA President)</td>
+                 <td>Legacy Figure</td>
+                 <td>Delhi (Legacy)</td>
+                 <td>N/A</td>
+                 <td>Legacy figure</td>
+            </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. M P Sharma (MD)</td>
+                 <td>Internal Medicine (Veteran figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M P Sharma Physician Delhi"</td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Mahuya Bhattacharya (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mahuya Bhattacharya Physician Kolkata"</td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Manisha Mishra (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Manoj Gupta (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Mrinal Sircar (MD, DM - Pulm Med)</td>
+                 <td>Pulmonology & Critical Care (Related Field)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Noida (Director - Pulmonology & Critical Care)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a> (Note: Pulmonologist)</td>
+            </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. Mukesh Mehra (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Gurugram (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. N N Singh (MD)</td>
+                 <td>General Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr N N Singh Physician Patna"</td>
+            </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. N Subramanian (MD)</td>
+                 <td>Internal Medicine, Infectious Diseases</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr N Subramanian Physician Chennai"</td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Nikhil Gupta (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sri Balaji Action Medical Institute (Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.actionhospital.com/" target="_blank" class="website-link">Action Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. P K Dutta (MD)</td>
+                 <td>General Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P K Dutta Physician Kolkata"</td>
+            </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Pankaj Singhri (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>94</td>
+                 <td>Dr. Pushkar Kumar (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras Hospitals (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>95</td>
+                 <td>Dr. Rajiv Gupta (MD)</td>
+                 <td>Internal Medicine, Diabetes</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajiv Gupta Physician Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Rajiv Ranjan (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ranchi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajiv Ranjan Physician Ranchi"</td>
+            </tr>
+            <tr>
+                 <td>97</td>
+                 <td>Dr. Rakesh Kumar Prasad (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rakesh Kumar Prasad Physician Patna"</td>
+            </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. S K Agarwal (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Allahabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S K Agarwal Physician Allahabad"</td>
+            </tr>
+            <tr>
+                 <td>99</td>
+                 <td>Dr. Sanjay Gupta (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>100</td>
+                 <td>Dr. Sanjay Sharma (MD)</td>
+                 <td>Internal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Jaipur (Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a General Physician / Internal Medicine Specialist:</h2>
+        <ul>
+            <li><strong>Primary Care vs. Specialist:</strong> Internists often serve as primary care doctors for adults, especially those with multiple health issues, and are skilled diagnosticians.</li>
+            <li><strong>Nature of Problem:</strong> Consider if you need chronic disease management, diagnosis of symptoms, routine check-ups, or acute illness care.</li>
+            <li><strong>Sub-specialty Interest:</strong> An Internist with focus in areas like diabetes, infectious diseases, or geriatrics might be beneficial for specific conditions.</li>
+            <li><strong>Communication & Approach:</strong> Choose a doctor you are comfortable with and who involves you in decisions.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

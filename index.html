@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus</title>
+
+    <!-- PWA Setup -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#27ae60">
+    <link rel="apple-touch-icon" href="./icon-192.png">
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #shatteredCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        #videoContainer {
+            visibility: hidden; /* Keep it hidden initially */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #tapButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            display: block;
+            z-index: 100; /* Ensure it is on top */
+        }
+        #tapButton img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shattered Glass Animation -->
+    <canvas id="shatteredCanvas"></canvas>
+    <!-- FIXED: Changed backslash to forward slash -->
+    <audio id="shatterSound" preload="auto" src="media/preview.mp3"></audio>
+
+    <!-- Video and Background Audio -->
+    <div id="videoContainer">
+        <!-- FIXED: Changed backslash to forward slash -->
+        <video id="introVideo" playsinline>
+            <source src="media/vecteezy.mp4" type="video/mp4">
+        </video>
+        <audio id="backgroundAudio" preload="auto" src="media/Zedge.mp3"></audio>
+    </div>
+
+    <!-- Speech Audio -->
+    <audio id="SpeechAudio" preload="auto" src="media/speech.mp3"></audio>
+
+    <!-- Tap Button -->
+    <button id="tapButton">
+        <img src="media/tap.png" alt="Tap to Continue">
+    </button>
+
+    <script>
+        window.onload = function() {
+            const canvas = document.getElementById('shatteredCanvas');
+            const ctx = canvas.getContext('2d');
+            const shatterSound = document.getElementById('shatterSound');
+            const videoContainer = document.getElementById('videoContainer');
+            const introVideo = document.getElementById('introVideo');
+            const backgroundAudio = document.getElementById('backgroundAudio');
+            const SpeechAudio = document.getElementById('SpeechAudio');
+            const tapButton = document.getElementById('tapButton');
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const shards = [];
+            let isShattering = false;
+
+            function createShards() {
+                for (let i = 0; i < 30; i++) {
+                    shards.push({
+                        x: canvas.width / 2,
+                        y: canvas.height / 2,
+                        size: Math.random() * 50 + 20,
+                        speedX: (Math.random() - 0.5) * 10,
+                        speedY: (Math.random() - 0.5) * 10,
+                        rotation: Math.random() * Math.PI * 2,
+                    });
+                }
+            }
+
+            function drawShards() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#40E0D0"; // Turquoise color
+                shards.forEach(shard => {
+                    ctx.save();
+                    ctx.translate(shard.x, shard.y);
+                    ctx.rotate(shard.rotation);
+                    ctx.fillRect(0, 0, shard.size, shard.size / 2);
+                    ctx.restore();
+                    shard.x += shard.speedX;
+                    shard.y += shard.speedY;
+                    shard.rotation += 0.05;
+                });
+                requestAnimationFrame(drawShards);
+            }
+
+            function startShatterEffect() {
+                isShattering = true;
+                tapButton.style.display = 'none'; // Hide button temporarily
+                shatterSound.play().catch(e => console.log("Autoplay blocked"));
+                createShards();
+                drawShards();
+                setTimeout(showIntroVideo, 3000); // 3 seconds delay before video
+            }
+
+            function showIntroVideo() {
+                canvas.style.display = "none";
+                videoContainer.style.visibility = "visible";
+                videoContainer.style.opacity = "1";
+
+                introVideo.play().catch(e => console.log("Video playback error", e));
+                backgroundAudio.play().catch(e => console.log("Audio playback error", e));
+
+                // Show the tap button after 8 seconds of video playback
+                setTimeout(() => {
+                    tapButton.style.display = 'block';
+                }, 8000);
+
+                // Stop video + audio after 9 seconds and then play speech audio
+                setTimeout(() => {
+                    if(!SpeechAudio.played.length) { // Only if not already played by click
+                         introVideo.pause();
+                         backgroundAudio.pause();           
+                         playSpeechAudio();
+                    }
+                }, 9000); 
+            }
+        
+            function playSpeechAudio() {
+                introVideo.pause();
+                backgroundAudio.pause();
+                
+                SpeechAudio.play().catch(e => console.log("Speech audio playback error", e));
+                
+                SpeechAudio.onended = function() {
+                    window.location.href = "mainextra.html";
+                };
+            }
+
+            // Consolidated Event Listener
+            tapButton.addEventListener("click", function() {
+                if (!isShattering) {
+                    // First Click: Start Shatter
+                    startShatterEffect();
+                } else if (videoContainer.style.visibility === "visible") {
+                    // Second Click (during video): Skip to Speech
+                    tapButton.style.display = 'none';
+                    playSpeechAudio();
+                }
+            });
+        };
+    </script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js');
+        });
+      }
+    </script>
+</body>
+</html>

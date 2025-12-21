@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 ENT Specialists (Otorhinolaryngologists) in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --header-bg: #6c5ce7;
+            --accent-color: #a29bfe;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --table-header: #fdcb6e;
+            --table-row-hover: #ffeaa7;
+            --bg-color: #f0f3f8;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--primary-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid #fdcb6e;
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: #d63031;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "👂";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1em;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--table-header);
+            color: #2d3436;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            font-weight: 700;
+            color: #6c5ce7;
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #f8f9fa;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #d63031;
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: #6c5ce7;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(108, 92, 231, 0.2);
+        }
+
+        a.website-link:hover {
+            background-color: #a29bfe;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon"></span> <!-- Ear Icon Placeholder -->
+        <h1>Top 100 ENT Specialists (Otorhinolaryngologists) in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. Verify MS/DNB qualifications independently.</p>
+    </div>
+
+     <div class="considerations">
+        <h2>Choosing an ENT Specialist:</h2>
+        <ul>
+            <li><strong>Identify Your Problem:</strong> Hearing loss, ear infections, dizziness, sinus issues, nasal blockage, allergies, voice change, throat pain, snoring, swallowing difficulty, neck lump, or suspected head/neck cancer?</li>
+            <li><strong>Sub-specialty Match:</strong> Seek focused expertise for cochlear implants, complex sinus/skull base surgery, voice problems, balance disorders, or cancer.</li>
+            <li><strong>Pediatric Needs:</strong> A Pediatric ENT specialist is often preferred for children.</li>
+            <li><strong>Diagnostic Facilities:</strong> Ensure access to Audiometry, Endoscopy (nasal, laryngeal), CT/MRI, possibly VNG or Stroboscopy.</li>
+            <li><strong>Surgical Expertise:</strong> Inquire about the surgeon's experience with specific procedures (FESS, Tympanoplasty, Tonsillectomy, Thyroidectomy, etc.).</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Kalpana Nagpal (MS - ENT, DNB)</td>
+                 <td>Robotic ENT Surgery, Cochlear Implants, General ENT</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. Ameet Kishore (MS - ENT, FRCS)</td>
+                 <td>Cochlear Implants, Otology, Neurotology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals / Adventis ENT Clinic</td>
+                 <td>New Delhi</td>
+                 <td>Via Website / Clinic</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / Search Adventis ENT Clinic Delhi</td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. K K Handa (MS - ENT, DNB)</td>
+                 <td>Laryngology (Voice), Phonosurgery, Head & Neck Surgery, Cochlear Implants</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - ENT & Head Neck Surgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. W.V.B.S. Ramalingam (MS - ENT)</td>
+                 <td>General ENT, Otology (Highly respected veteran figure)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly AIIMS / BLK-Max Super Speciality Hospital (Emeritus Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. Mohan Kameswaran (MS - ENT, DLO, FRCS)</td>
+                 <td>Cochlear Implants, Otology, Skull Base Surgery (Pioneer - Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Madras ENT Research Foundation (MERF) (MD & Chief ENT Surgeon)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="http://www.merf.org.in/" target="_blank" class="website-link">MERF</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. S P Dubey (MS - ENT)</td>
+                 <td>General ENT, Head & Neck Surgery (Veteran figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Formerly Director Professor MAMC / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S P Dubey ENT Delhi"</td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. Alok Thakar (MS - ENT)</td>
+                 <td>Head & Neck Surgery (Oncology), Skull Base Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor & HOD - ENT & Head Neck Surgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. Shalabh Sharma (MS - ENT, DNB)</td>
+                 <td>Cochlear Implants, Otology, Endoscopic Sinus Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman - ENT & Cochlear Implant Dept.)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. Sanjay Sachdeva (MS - ENT)</td>
+                 <td>Endoscopic Sinus Surgery (FESS), Skull Base Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Max Healthcare (Saket & Gurgaon) (Principal Director)</td>
+                 <td>Delhi/Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Vikas Agarwal (MS - ENT, DNB)</td>
+                 <td>Otology, Neurotology, Cochlear Implants</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>11</td>
+                 <td>Dr. Dillon D'Souza (MS - ENT, DOHNS)</td>
+                 <td>General ENT, Voice Disorders</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Jaslok Hospital / Breach Candy Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a> / Breach Candy</td>
+            </tr>
+            <tr>
+                 <td>12</td>
+                 <td>Dr. Milind Navalakhe (MS - ENT, DORL)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>13</td>
+                 <td>Dr. E C Vinaya Kumar (MS - ENT, DLO)</td>
+                 <td>Endoscopic Sinus Surgery, Skull Base Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>14</td>
+                 <td>Dr. H S Satish (MS - ENT)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>15</td>
+                 <td>Dr. Prathamesh Pai (MS, DNB, FAIS)</td>
+                 <td>Head & Neck Oncology Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor & Surgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+            </tr>
+            <tr>
+                 <td>16</td>
+                 <td>Dr. Shankar Medikeri (MS - ENT, DLO)</td>
+                 <td>Cochlear Implants, Otology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Medikeri's Super Speciality ENT Center (Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medikeri.com/" target="_blank" class="website-link">Medikeri ENT Center</a></td>
+            </tr>
+            <tr>
+                 <td>17</td>
+                 <td>Dr. Sumit Mrig (MS - ENT, DNB)</td>
+                 <td>Cochlear Implants, Otology, Neurotology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Principal Consultant & Head)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>18</td>
+                 <td>Dr. A G Pusalkar (MS - ENT, DORL)</td>
+                 <td>General ENT, Otology (Veteran Surgeon)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Bombay Hospital / Consultant Roles</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Website / Search</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> or search practice</td>
+            </tr>
+            <tr>
+                 <td>19</td>
+                 <td>Dr. E V Raman (MS - ENT)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>20</td>
+                 <td>Dr. Sunil Narayan Dutt (MS - ENT, DNB, FRCS)</td>
+                 <td>Otology, Neurotology, Skull Base Surgery, Cochlear Implants</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>21</td>
+                 <td>Dr. Anita Bhandari (MS - ENT)</td>
+                 <td>Neurotology, Vertigo, Skull Base Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anita Bhandari Neurotologist Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>22</td>
+                 <td>Dr. Suresh Singh Naruka (MS - ENT, DNB)</td>
+                 <td>Pediatric Otolaryngology, Cochlear Implants</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>23</td>
+                 <td>Dr. Rakesh Srivastava (MS - ENT)</td>
+                 <td>Head & Neck Oncology Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Consultant & Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>24</td>
+                 <td>Dr. Santosh S. (MS - ENT, DLO)</td>
+                 <td>General ENT, Rhinology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Narayana Health City (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+            </tr>
+            <tr>
+                 <td>25</td>
+                 <td>Dr. Ajay Doiphode (MS - ENT, DORL)</td>
+                 <td>Otology, Cochlear Implants</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ajay Doiphode ENT Pune"</td>
+            </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Madhuri Mehta (MS - ENT)</td>
+                 <td>General ENT, Voice Disorders</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>27</td>
+                 <td>Dr. Atul Kumar Mittal (MS - ENT)</td>
+                 <td>Endoscopic Sinus Surgery (FESS), Allergy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director - ENT)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>28</td>
+                 <td>Dr. Narayan Jayashankar (MS - ENT, DNB)</td>
+                 <td>Skull Base Surgery (Endoscopic), FESS, Anterior Skull Base</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nanavati Max Hospital / R N Cooper Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Nanavati Website / Search</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max</a> or search practice</td>
+            </tr>
+            <tr>
+                 <td>29</td>
+                 <td>Dr. Meenesh Juvekar (MS - ENT, DNB)</td>
+                 <td>Endoscopic Sinus Surgery, Skull Base Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Bombay Hospital / Fortis Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> / <a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a></td>
+            </tr>
+            <tr>
+                 <td>30</td>
+                 <td>Dr. Devendra Chaukar (MS, DNB)</td>
+                 <td>Head & Neck Oncology Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor & Surgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+            </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Jyoti Kumar (MS - ENT)</td>
+                 <td>Otology, Neurotology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Sachin Gandhi (MS - ENT, DNB)</td>
+                 <td>Laryngology, Voice Surgery, Airway Reconstruction</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Deenanath Mangeshkar Hospital (Senior Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.dmhospital.org/" target="_blank" class="website-link">Deenanath Mangeshkar Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Sanjiv Badhwar (MS - ENT, DORL)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital / Breach Candy Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben</a> / Breach Candy</td>
+            </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Deepak Sarin (MS - ENT, MCh - Head & Neck Oncology)</td>
+                 <td>Head & Neck Oncology Surgery, Robotic Surgery (Head & Neck)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Director - Head & Neck Oncology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+            <tr>
+                 <td>35</td>
+                 <td>Dr. Nishit Shah (MS - ENT)</td>
+                 <td>Endoscopic Sinus Surgery, Skull Base Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Ravi Nayar (MS - ENT)</td>
+                 <td>General ENT, Head & Neck Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Vikram Hospital / Formerly HOSMAT</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://vikramhospital.com/" target="_blank" class="website-link">Vikram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. B M Abrol (MS - ENT, FAMS)</td>
+                 <td>General ENT, Otology, Laryngology (Pioneer - 'Father of ENT in India')</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Formerly Director Professor MAMC / Consultant roles (Sir Ganga Ram)</td>
+                 <td>Delhi</td>
+                 <td>Check Current Status</td>
+                 <td>Legacy figure; check consulting status</td>
+             </tr>
+            <tr>
+                 <td>38</td>
+                 <td>Dr. Agneesh Pattel (MS - ENT, DNB)</td>
+                 <td>Otology, Neurotology, Cochlear Implants</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+            <tr>
+                 <td>39</td>
+                 <td>Dr. Ashim Desai (MS - ENT)</td>
+                 <td>Otology, Cochlear Implants</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles at various hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashim Desai ENT Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. N Shivakumar (MS - ENT)</td>
+                 <td>General ENT, Otology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Sunil Kathuria (MS - ENT)</td>
+                 <td>General ENT, Endoscopic Sinus Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Virendra Ghaisas (MS - ENT)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Deenanath Mangeshkar Hospital / Private Practice</td>
+                 <td>Pune</td>
+                 <td>Via Hospital/Search Clinic</td>
+                 <td><a href="https://www.dmhospital.org/" target="_blank" class="website-link">DMH</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Sanjeev Mohanty (MS - ENT, DNB)</td>
+                 <td>Head & Neck Surgery, Skull Base Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Satish Jain (MS - ENT)</td>
+                 <td>Allergy, Sinusitis, General ENT</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Jain ENT Hospital</td>
+                 <td>Jaipur</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Jain ENT Hospital Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Debashish Dutta Gupta (MS - ENT)</td>
+                 <td>General ENT, Head & Neck Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Debashish Dutta Gupta ENT Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Surendra Kumar (MS - ENT)</td>
+                 <td>General ENT, Otology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Rahul Modi (MS - ENT, DNB)</td>
+                 <td>Otology, Neurotology, Cochlear Implants</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles at various hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rahul Modi ENT Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Rajeev Kumar (MS - ENT)</td>
+                 <td>General ENT, Endoscopic Sinus Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajeev Kumar ENT Delhi"</td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Ashok Shenoy (MS - ENT)</td>
+                 <td>General ENT, Head & Neck Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>50</td>
+                 <td>Dr. Sultan Pradhan (MS, FRCS)</td>
+                 <td>Head & Neck Oncology Surgery (Veteran Surgeon)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>P.D. Hinduja Hospital / Prince Aly Khan Hospital (Consultant Surgical Oncologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja</a> / Prince Aly Khan</td>
+            </tr>
+            <tr>
+                 <td>51</td>
+                 <td>Dr. Ravi Meher (MS - ENT, DNB)</td>
+                 <td>Pediatric ENT, Airway Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Maulana Azad Medical College (MAMC) & Lok Nayak Hospital (Director Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via MAMC information</td>
+                 <td>Search MAMC Faculty</td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. B Khatri (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr B Khatri ENT Delhi"</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. A K Lahiri (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr A K Lahiri ENT Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Ajay Jain (MS - ENT)</td>
+                 <td>General ENT, Sinus Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Ajay Swaroop (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Alok Agarwal (MS - ENT)</td>
+                 <td>General ENT, Head & Neck Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Indraprastha (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Arvind Soni (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arvind Soni ENT Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Ashim Kumar Debnath (MS - ENT)</td>
+                 <td>General ENT, Otology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashim Debnath ENT Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Ashwin Boola (MS - ENT)</td>
+                 <td>General ENT, Rhinology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Atul Kumar Singh (MS - ENT)</td>
+                 <td>General ENT, Endoscopic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Bharath R (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Bhushan Kathuria (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Gurugram (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. B B Sethi (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr B B Sethi ENT Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Deepanjali S (MS - ENT)</td>
+                 <td>General ENT, Allergy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. G V S Rao (MS - ENT, DLO)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>66</td>
+                 <td>Dr. Gauri Mankekar (MS - ENT, DORL)</td>
+                 <td>Otology, Cochlear Implants</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Girish Anand (MS - ENT)</td>
+                 <td>General ENT, Sinus Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Girish Anand ENT Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Gurdeep Singh (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Harish T (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Harshad Nikte (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Navi Mumbai (Consultant)</td>
+                 <td>Navi Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Himani Indeewar (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. J M Hans (MS - ENT, FICS)</td>
+                 <td>Cochlear Implants, Otology (Veteran - Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Centre for Sight / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr J M Hans ENT Delhi"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Janak Shah (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Janak Shah ENT Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>74</td>
+                 <td>Dr. Jasveer Singh (MS - ENT)</td>
+                 <td>General ENT, Head & Neck Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Senior Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Kapil Sikka (MS - ENT)</td>
+                 <td>Head & Neck Surgery, Skull Base Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AIIMS (Additional Professor - ENT)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+            <tr>
+                 <td>76</td>
+                 <td>Dr. Kirti Jain (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Manoj Kumar (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. M P Sharma (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M P Sharma ENT Delhi"</td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Mudit Kapoor (MS - ENT)</td>
+                 <td>General ENT, Sinus Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Mukesh Kumar S (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mukesh Kumar ENT Patna"</td>
+            </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Nagendra Singh (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>82</td>
+                 <td>Dr. Neelam Vaid (MS - ENT, DORL)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Neelam Vaid ENT Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Nishchita (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Cunningham Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. P Vijaya Krishnan (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. P S Reddy (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P S Reddy ENT Hyderabad"</td>
+            </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Pragya Tripathi (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Prashant Sharma (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Priyanjana Sharma (MS - ENT)</td>
+                 <td>General ENT, Pediatric ENT</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Rahul Garg (MS - ENT)</td>
+                 <td>General ENT, Sinus Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Rajeev Puri (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Rajesh Kumar Bhardwaj (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajesh Bhardwaj ENT Chandigarh"</td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Ramadevi C (MS - ENT)</td>
+                 <td>General ENT, Otology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramadevi C ENT Chennai"</td>
+            </tr>
+            <tr>
+                 <td>93</td>
+                 <td>Dr. Rishi Gautam (MS - ENT, MCh - Head & Neck Surgery)</td>
+                 <td>Head & Neck Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Asian Institute of Medical Sciences (Consultant)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aimsindia.com/" target="_blank" class="website-link">AIMS Faridabad</a></td>
+            </tr>
+            <tr>
+                 <td>94</td>
+                 <td>Dr. Sarika Verma (MS - ENT)</td>
+                 <td>Laryngology, Voice Disorders</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Shashidhar T B (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Shomeshwar Singh (MS - ENT)</td>
+                 <td>Otology, Cochlear Implants</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shomeshwar Singh ENT Delhi"</td>
+            </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Smita Nagaonkar (MS - ENT)</td>
+                 <td>Otology, Hearing Implants</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Srikant J T (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Subhasish Saha (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Subhasish Saha ENT Kolkata"</td>
+            </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Vinod Kumar Shrivastava (MS - ENT)</td>
+                 <td>General ENT</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vinod Kumar Shrivastava ENT Lucknow"</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing an ENT Specialist:</h2>
+        <ul>
+            <li><strong>Identify Your Problem:</strong> Hearing loss, ear infections, dizziness, sinus issues, nasal blockage, allergies, voice change, throat pain, snoring, swallowing difficulty, neck lump, or suspected head/neck cancer?</li>
+            <li><strong>Sub-specialty Match:</strong> Seek focused expertise for cochlear implants, complex sinus/skull base surgery, voice problems, balance disorders, or cancer.</li>
+            <li><strong>Pediatric Needs:</strong> A Pediatric ENT specialist is often preferred for children.</li>
+            <li><strong>Diagnostic Facilities:</strong> Ensure access to Audiometry, Endoscopy (nasal, laryngeal), CT/MRI, possibly VNG or Stroboscopy.</li>
+            <li><strong>Surgical Expertise:</strong> Inquire about the surgeon's experience with specific procedures (FESS, Tympanoplasty, Tonsillectomy, Thyroidectomy, etc.).</li>
+        </ul>
+    </div>
+
+</body>
+</html>

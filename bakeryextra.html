@@ -1,0 +1,194 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bakery Products Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+  body {
+    margin: 0;
+    background: turquoise;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-top: 60px;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .letter {
+    opacity: 0;
+    transform: scale(3) rotate(540deg) translateY(-250px);
+    animation: formTitle 1.2s ease-out forwards;
+  }
+
+  .letter:nth-child(n) {
+    animation-delay: calc(0.08s * var(--i));
+  }
+
+  @keyframes formTitle {
+    0% {
+      opacity: 0;
+      transform: scale(3) rotate(540deg) translateY(-250px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+  }
+
+  model-viewer {
+    width: 400px;
+    height: 400px;
+    margin: 40px auto;
+    background-color: white; /* Small box stays white */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Optional: nice soft shadow */
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+
+  .arrow-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s;
+  }
+
+  .arrow-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .info-box {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="title">
+    <span class="letter" style="--i:1">B</span>
+    <span class="letter" style="--i:2">A</span>
+    <span class="letter" style="--i:3">K</span>
+    <span class="letter" style="--i:4">E</span>
+    <span class="letter" style="--i:5">R</span>
+    <span class="letter" style="--i:6">Y</span>
+    <span class="letter" style="--i:7"> </span>
+    <span class="letter" style="--i:8">F</span>
+    <span class="letter" style="--i:9">O</span>
+    <span class="letter" style="--i:10">O</span>
+    <span class="letter" style="--i:11">D</span>
+    <span class="letter" style="--i:12"> </span>
+    <span class="letter" style="--i:13">V</span>
+    <span class="letter" style="--i:14">I</span>
+    <span class="letter" style="--i:15">E</span>
+    <span class="letter" style="--i:16">W</span>
+    <span class="letter" style="--i:17">E</span>
+    <span class="letter" style="--i:18">R</span>
+  </div>
+
+  <model-viewer id="viewer"
+    src="media/white bread.glb"
+    alt="Bakery model"
+    auto-rotate
+    disable-zoom
+    camera-controls
+    ar
+    shadow-intensity="1">
+  </model-viewer>
+
+  <div class="controls">
+    <button class="arrow-btn" onclick="showPrev()">←</button>
+    <button class="arrow-btn" onclick="showNext()">→</button>
+  </div>
+
+  <div id="info" class="info-box">Click the bakery food to view details</div>
+
+  <script>
+    const bakeryfood = [
+      { name: "White Bread", file: "media/white bread.glb", info: "Calories: 265 kcal<br>Health Benefits: Quick energy source" },
+      { name: "Whole Wheat Bread", file: "media/whole wheat bread.glb", info: "Calories: 247 kcal<br>Health Benefits: Higher fiber content" },
+      { name: "Multigrain Bread", file: "media/muptigrainbread.glb", info: "Calories: 250 kcal<br>Health Benefits: Rich in fiber and protein" },
+      { name: "Baguette", file: "media/baguette(1).glb", info: "Calories: 270 kcal<br>Health Benefits: Low in fat" },
+      { name: "Croissant", file: "media/croissant.glb", info: "Calories: 406 kcal<br>Health Benefits: Rich in butter, high energy" },
+      { name: "Bagel", file: "media/bagel.glb", info: "Calories: 275 kcal<br>Health Benefits: Good source of carbohydrates" },
+      { name: "Muffin", file: "media/muffins.glb", info: "Calories: 377 kcal<br>Health Benefits: Contains fiber and vitamins" },
+      { name: "Cupcake", file: "media/cupcake.glb", info: "Calories: 405 kcal<br>Health Benefits: Boosts mood, rich in sugar" },
+      { name: "Donut", file: "media/donut.glb", info: "Calories: 452 kcal<br>Health Benefits: High sugar content, occasional treat" },
+      { name: "Pastry", file: "media/pastry1.glb", info: "Calories: 375 kcal<br>Health Benefits: Source of fats and sugar" },
+      { name: "Pretzel", file: "media/pretzel.glb", info: "Calories: 380 kcal<br>Health Benefits: Lower fat than fried snacks" },
+      { name: "Pita Bread", file: "media/pittsbread.glb", info: "Calories: 275 kcal<br>Health Benefits: Good fiber source, supports digestion" },
+      { name: "Cake", file: "media/cake.glb", info: "Calories: 350 kcal<br>Health Benefits: Provides carbohydrates, energy booster" },
+      { name: "Cheesecake", file: "media/cheesecake.glb", info: "Calories: 321 kcal<br>Health Benefits: Rich in fats, occasional treat" },
+      { name: "Brownie", file: "media/brownie.glb", info: "Calories: 466 kcal<br>Health Benefits: Rich in chocolate, energy-dense" },
+      { name: "Banana Bread", file: "media/bananabread.glb", info: "Calories: 326 kcal<br>Health Benefits: Rich in potassium, fiber" },
+      { name: "Zucchini Bread", file: "media/zucchini bread.glb", info: "Calories: 260 kcal<br>Health Benefits: Contains vegetables, high fiber" }
+    ];
+
+    let current = 0;
+    const viewer = document.getElementById('viewer');
+    const infoBox = document.getElementById('info');
+
+    function rotateModel() {
+      let rotation = 0;
+      const speed = 35 / 30;
+
+      function animate() {
+        rotation += speed;
+        viewer.cameraOrbit = `${rotation % 360}deg 75deg 2.5m`;
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    function showBakeryfoodType(index) {
+      current = (index + bakeryfood.length) % bakeryfood.length;
+      viewer.src = bakeryfood[current].file;
+      infoBox.innerHTML = "Click the bakery food to view details";
+    }
+
+    function showNext() {
+      showBakeryfoodType(current + 1);
+    }
+
+    function showPrev() {
+      showBakeryfoodType(current - 1);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      rotateModel();
+      showBakeryfoodType(current);
+
+      viewer.addEventListener('click', () => {
+        const item = bakeryfood[current];
+        infoBox.innerHTML = `<strong>${item.name}</strong><br>${item.info}`;
+      });
+    });
+  </script>
+
+</body>
+</html>

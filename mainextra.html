@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- PWA LINKS -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#27ae60">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
+  <title>Health Plus - Your Guide to a Healthier Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    :root {
+      --primary-color: #2a9d8f;
+      --secondary-color: #264653;
+      --accent-color: #e9c46a;
+      --bg-light: #f8f9fa;
+      --text-dark: #333;
+      --text-light: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    /* --- Navigation Bar --- */
+    .navbar {
+      display: flex;
+flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    .nav-logo img {
+      width: 40px;
+      margin-right: 10px;
+      animation: rotateLogo 5s linear infinite; 
+    }
+
+    @keyframes rotateLogo {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    #welcomeUser {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2898&auto=format&fit=crop) center/cover no-repeat;
+      color: var(--text-light);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .hero-cta {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(42, 157, 143, 0.4);
+    }
+    .hero-cta:hover {
+      background-color: #248a7e;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(42, 157, 143, 0.5);
+    }
+
+    /* --- General Section Styling --- */
+    .section {
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-color);
+      border-radius: 2px;
+    }
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 50px auto;
+    }
+
+    /* --- Features Section --- */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 50px;
+      text-align: left;
+    }
+    .feature-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    .feature-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .feature-card-header i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      background-color: #eaf6f5;
+      padding: 1rem;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: var(--secondary-color);
+    }
+    .feature-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .feature-card li {
+      margin-bottom: 0.75rem;
+    }
+    .feature-card a {
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+    .feature-card a:hover {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    .feature-card a::before {
+        content: '✓';
+        color: var(--primary-color);
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    /* --- Health Tip Section --- */
+    #health-tip-section {
+      background-color: var(--secondary-color);
+      color: var(--text-light);
+    }
+    #health-tip-section .section-title {
+        color: var(--text-light);
+    }
+    #health-tip-section .section-title::after {
+        background-color: var(--accent-color);
+    }
+    .tip-container {
+        max-width: 800px;
+        margin: 50px auto 0 auto;
+        padding: 2rem;
+        background: rgba(255,255,255,0.1);
+        border-left: 5px solid var(--accent-color);
+        border-radius: 0 8px 8px 0;
+        text-align: center;
+    }
+    #fact-text {
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: #fff;
+      padding: 40px 5%;
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+    .footer-copy {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links { display: none; } /* Or use a hamburger menu */
+        .hero h1 { font-size: 2.5rem; }
+        .hero p { font-size: 1.2rem; }
+    }
+
+    /* --- INSTALL BUTTON CSS --- */
+    #installBtn {
+      display: block; /* Hidden by default */
+      position: fixed; /* Keeps it floating when you scroll */
+  bottom: 20px;    /* Places it at the bottom */
+  right: 20px;     /* Places it at the right */
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      z-index: 99999;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column; /* Stack logo and buttons vertically */
+    height: auto;
+    padding: 10px;
+  }
+  .nav-links {
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+  </style>
+</head>
+<body>
+  
+<!-- Install Button -->
+<button id="installBtn">INSTALL APP</button>
+
+<!-- FIND <nav class="navbar"> AND REPLACE WITH THIS: -->
+<nav class="navbar">
+  <a href="#" class="nav-logo">
+    <img src="media/final.png" alt="Health Plus Logo" />
+    Health Plus
+  </a>
+  
+  <!-- This is the "Floated" Welcome Message -->
+  <div id="welcomeUser" style="font-weight: 700; color: #2a9d8f; font-size: 1.1rem;"></div>
+
+  <ul class="nav-links">
+    <li><a href="aboutextra.html">About</a></li>
+    <li><a href="contactextra.html">Contact</a></li>
+    
+    <!-- Added ID="loginBtn" to hide this when logged in -->
+    <li id="loginBtn"><a href="loginextra.html">Login/Signup</a></li>
+    
+    <!-- Logout Button (Hidden by default) -->
+    <li><a href="#" id="clientLogoutLink" style="display:none; color: white; background-color: #e74c3c;">Logout</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>Your Guide to a Healthier, Happier Life</h1>
+  <p>Get instant answers, track your health, and discover personalized wellness plans.</p>
+  <a href="openrouterextra.html" class="hero-cta">
+    <i class="fas fa-robot"></i> Ask Our Health AI
+  </a>
+</header>
+
+<main>
+
+<!-- MYTH BUSTERS SECTION -->
+<section id="myth-busters" class="section" style="background: #f0f2f5;">
+  <h2 class="section-title">Health Myth Busters</h2>
+  <p class="section-subtitle">Swipe to learn common health mistakes & facts.</p>
+  
+  <!-- Scrollable Container -->
+  <div class="myth-container" id="myth-card-container">
+    <!-- Cards will be injected here by JavaScript -->
+  </div>
+  
+  <p style="text-align:center; font-size:0.8rem; color:#888; margin-top:10px;">
+    <i class="fas fa-hand-point-up"></i> Swipe left/right to see more
+  </p>
+</section>
+
+<!-- CSS FOR MYTH CARDS -->
+<style>
+  .myth-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 5%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+  }
+  .myth-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+  }
+
+  .myth-card {
+    min-width: 280px;
+    max-width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 5px solid #e74c3c; /* Red for Myth */
+    border-bottom: 5px solid #27ae60; /* Green for Fact */
+    transition: transform 0.3s;
+  }
+  
+  .myth-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .myth-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #e74c3c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .myth-content {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    min-height: 60px; /* Uniform height */
+  }
+
+  .fact-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #27ae60;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .fact-content {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .myth-icon {
+    font-size: 2rem;
+    color: #ddd;
+    align-self: center;
+    margin-bottom: 15px;
+  }
+</style>
+
+<!-- ULTRA BODY MAP SECTION -->
+<section id="body-map-section" class="section">
+  <h2 class="section-title">Comprehensive Body Map</h2>
+  <p class="section-subtitle">Tap on ANY body part (from Head to Toe) to see diseases, symptoms, and cures.</p>
+  
+  <div class="map-container" style="display: flex; justify-content: center; position: relative;">
+    
+    <!-- THE LARGE INTERACTIVE SVG BODY (Max Width doubled to 600px) -->
+    <div class="body-graphic" style="position: relative; width: 100%; max-width: 600px;">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 1100" style="width: 100%; height: auto; filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.2));">
+        
+        <!-- --- SILHOUETTE --- -->
+        <!-- Skin Layer (Clickable for Skin Diseases) -->
+        <g id="organ-skin" class="organ-interactive" onclick="showOrganInfo('skin')">
+            <path d="M170,80 Q250,0 330,80 Q360,150 350,200 Q450,220 480,350 Q450,450 360,500 L360,750 Q360,950 310,1050 L280,1080 L190,1050 Q140,950 140,750 L140,500 Q50,450 20,350 Q50,220 150,200 Q140,150 170,80 Z" fill="#f5cdb6" stroke="#e0a385" stroke-width="3"/>
+            <text x="50" y="400" font-size="16" fill="#888">SKIN</text>
+        </g>
+
+        <!-- --- HEAD AREA --- -->
+        <!-- Brain -->
+        <g id="organ-brain" class="organ-interactive" onclick="showOrganInfo('brain')">
+            <path d="M200,80 Q250,50 300,80 Q310,110 300,140 Q250,160 200,140 Q190,110 200,80" fill="#ff7675" opacity="0.9"/>
+            <text x="250" y="100" font-size="12" text-anchor="middle" fill="white" font-weight="bold">BRAIN</text>
+        </g>
+        <!-- Eyes -->
+        <g id="organ-eyes" class="organ-interactive" onclick="showOrganInfo('eyes')">
+            <circle cx="225" cy="150" r="10" fill="white" stroke="#333"/>
+            <circle cx="225" cy="150" r="3" fill="black"/>
+            <circle cx="275" cy="150" r="10" fill="white" stroke="#333"/>
+            <circle cx="275" cy="150" r="3" fill="black"/>
+        </g>
+        <!-- Nose -->
+        <g id="organ-nose" class="organ-interactive" onclick="showOrganInfo('nose')">
+            <path d="M250,150 L240,180 L260,180 Z" fill="#e1b198"/>
+        </g>
+        <!-- Mouth/Throat -->
+        <g id="organ-throat" class="organ-interactive" onclick="showOrganInfo('throat')">
+            <ellipse cx="250" cy="200" rx="15" ry="5" fill="#d63031"/>
+        </g>
+        <!-- Ears -->
+        <g id="organ-ears" class="organ-interactive" onclick="showOrganInfo('ears')">
+            <ellipse cx="165" cy="160" rx="10" ry="20" fill="#f5cdb6" stroke="#cea086"/> <!-- Left -->
+            <ellipse cx="335" cy="160" rx="10" ry="20" fill="#f5cdb6" stroke="#cea086"/> <!-- Right -->
+        </g>
+
+        <!-- --- NECK AREA --- -->
+        <!-- Thyroid -->
+        <g id="organ-thyroid" class="organ-interactive" onclick="showOrganInfo('thyroid')">
+            <path d="M230,230 Q250,240 270,230 L270,245 Q250,255 230,245 Z" fill="#a29bfe"/>
+        </g>
+
+        <!-- --- CHEST AREA --- -->
+        <!-- Lungs -->
+        <g id="organ-lungs" class="organ-interactive" onclick="showOrganInfo('lungs')">
+            <path d="M190,260 Q170,350 190,420 Q240,420 245,300 Z" fill="#74b9ff"/> <!-- Left -->
+            <path d="M310,260 Q330,350 310,420 Q260,420 255,300 Z" fill="#74b9ff"/> <!-- Right -->
+            <text x="310" y="350" font-size="14" fill="white" font-weight="bold">LUNGS</text>
+        </g>
+        <!-- Heart -->
+        <g id="organ-heart" class="organ-interactive" onclick="showOrganInfo('heart')">
+            <path d="M240,320 Q230,300 250,290 Q270,300 260,340 Q250,350 240,320" fill="#d63031" stroke="white" stroke-width="2"/>
+        </g>
+
+        <!-- --- TORSO / DIGESTION --- -->
+        <!-- Liver -->
+        <g id="organ-liver" class="organ-interactive" onclick="showOrganInfo('liver')">
+             <path d="M190,430 Q250,420 300,440 Q290,480 250,470 Z" fill="#6ab04c"/>
+             <text x="230" y="450" font-size="12" fill="white" font-weight="bold">LIVER</text>
+        </g>
+        <!-- Stomach -->
+        <g id="organ-stomach" class="organ-interactive" onclick="showOrganInfo('stomach')">
+            <path d="M260,460 Q290,460 300,490 Q280,520 240,500 Q240,470 260,460" fill="#fdcb6e"/>
+            <text x="270" y="490" font-size="10" font-weight="bold">STOMACH</text>
+        </g>
+        <!-- Pancreas (Small sliver behind stomach) -->
+        <g id="organ-pancreas" class="organ-interactive" onclick="showOrganInfo('pancreas')">
+            <path d="M260,510 L310,500 L320,515 L270,525 Z" fill="#ffeaa7"/>
+        </g>
+        <!-- Kidneys (Represented as two beans) -->
+        <g id="organ-kidneys" class="organ-interactive" onclick="showOrganInfo('kidneys')">
+            <ellipse cx="200" cy="500" rx="15" ry="20" fill="#8e44ad"/>
+            <ellipse cx="300" cy="500" rx="15" ry="20" fill="#8e44ad"/>
+            <text x="150" y="510" font-size="12" fill="#8e44ad" font-weight="bold">KIDNEYS</text>
+        </g>
+        <!-- Intestines -->
+        <g id="organ-intestine" class="organ-interactive" onclick="showOrganInfo('intestine')">
+            <path d="M210,530 Q290,530 290,600 Q290,640 210,640 Q210,600 210,530" fill="#a29bfe"/>
+            <text x="250" y="580" text-anchor="middle" font-size="12" fill="white" font-weight="bold">INTESTINE</text>
+        </g>
+
+        <!-- --- LOWER BODY --- -->
+        <!-- Bladder -->
+        <g id="organ-bladder" class="organ-interactive" onclick="showOrganInfo('bladder')">
+            <path d="M230,650 Q250,640 270,650 Q270,680 230,680 Z" fill="#fab1a0"/>
+            <text x="290" y="670" font-size="10" fill="#555">BLADDER</text>
+        </g>
+
+        <!-- Joints (Knees) -->
+        <g id="organ-bones" class="organ-interactive" onclick="showOrganInfo('bones')">
+            <circle cx="190" cy="850" r="20" fill="#dfe6e9" stroke="#b2bec3" stroke-width="2"/>
+            <circle cx="310" cy="850" r="20" fill="#dfe6e9" stroke="#b2bec3" stroke-width="2"/>
+            <text x="250" y="855" text-anchor="middle" font-size="14" fill="#333" font-weight="bold">JOINTS/BONES</text>
+        </g>
+
+      </svg>
+      <p style="text-align:center; color:#555; font-weight:600; margin-top:10px;">(Tap on any organ to open the Medical Guide)</p>
+    </div>
+  </div>
+
+  <!-- MODAL POPUP (Hidden by default) -->
+  <div id="medical-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:99999; align-items:center; justify-content:center;">
+      <div style="background:white; width:90%; max-width:600px; max-height:80vh; overflow-y:auto; border-radius:15px; padding:25px; position:relative; animation: slideUp 0.3s ease;">
+          <span onclick="closeMedicalModal()" style="position:absolute; top:15px; right:20px; font-size:30px; cursor:pointer; color:#e74c3c;">&times;</span>
+          <h2 id="modal-title" style="color:#2a9d8f; border-bottom:2px solid #eee; padding-bottom:10px;">Organ Name</h2>
+          <div id="modal-content"></div>
+          <button onclick="closeMedicalModal()" style="width:100%; background:#2a9d8f; color:white; padding:15px; border:none; border-radius:8px; margin-top:20px; font-size:1rem; cursor:pointer;">Close Guide</button>
+      </div>
+  </div>
+</section>
+
+<!-- ANIMATION STYLE -->
+<style>
+    @keyframes slideUp { from {transform: translateY(50px); opacity:0;} to {transform: translateY(0); opacity:1;} }
+    .organ-interactive { cursor: pointer; transition: all 0.3s ease; opacity: 0.95; }
+    .organ-interactive:hover { opacity: 1; transform: scale(1.02); filter: drop-shadow(0 0 5px rgba(255,255,255,0.8)); }
+</style>
+
+<section id="emergency-section" class="section" style="background-color: #ffebee; border-bottom: 2px solid #e74c3c;">
+  <h2 class="section-title" style="color: #c0392b;">🚑 Emergency Zone</h2>
+  <p class="section-subtitle">Instant help when you need it most.</p>
+
+  <div class="emergency-container" style="max-width: 800px; margin: 0 auto;">
+    
+    <!-- PART 1: DIRECT GOVT HELPLINES (This provides value Maps doesn't) -->
+    <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap;">
+        <a href="tel:102" style="background-color: #c0392b; color: white; text-decoration: none; padding: 15px 25px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <i class="fas fa-phone-alt"></i> Call 102 (Ambulance)
+        </a>
+        <a href="tel:112" style="background-color: #2980b9; color: white; text-decoration: none; padding: 15px 25px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <i class="fas fa-phone-alt"></i> Call 112 (Emergency)
+        </a>
+    </div>
+
+    <h3 style="color: #555; margin-bottom: 15px;">Find Nearby Services</h3>
+
+    <!-- PART 2: THE MAP LOCATOR -->
+    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center;">
+      <input type="text" id="emergencyLocation" placeholder="Enter Area (e.g., Dadar, Mumbai)" 
+             style="padding: 12px; border: 2px solid #c0392b; border-radius: 5px; flex: 1; min-width: 200px;">
+      
+      <button onclick="useCurrentLocation()" style="background-color: #2c3e50; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer;">
+        <i class="fas fa-location-arrow"></i> Use GPS
+      </button>
+    </div>
+
+    <!-- Emergency Buttons -->
+    <div class="emergency-buttons" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+      
+      <button onclick="findEmergency('Hospitals')" style="background-color: #fff; border: 2px solid #c0392b; color: #c0392b; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        <i class="fas fa-hospital-alt"></i> Nearest Hospitals
+      </button>
+
+      <button onclick="findEmergency('24 hour Pharmacy')" style="background-color: #fff; border: 2px solid #27ae60; color: #27ae60; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        <i class="fas fa-pills"></i> Nearest Pharmacy
+      </button>
+
+      <button onclick="findEmergency('Ambulance Service')" style="background-color: #fff; border: 2px solid #f39c12; color: #f39c12; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        <i class="fas fa-ambulance"></i> Private Ambulance
+      </button>
+
+    </div>
+  </div>
+</section>
+  <section id="features" class="section">
+    <h2 class="section-title">Explore Our Features</h2>
+    <p class="section-subtitle">A complete toolkit for your wellness journey. From nutrition planning to tracking your progress, we have you covered.</p>
+    
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-card-header">
+                <i class="fas fa-utensils"></i>
+                <h3>Nutrition Tools</h3>
+            </div>
+            <ul>
+                <li><a href="dietextra.html">Meal Planner</a></li>
+                <li><a href="fruitextra.html">Fruit Calories & Nutrients</a></li>
+                <li><a href="vegextra.html">Vegetable Calories & Nutrients</a></li>
+                <li><a href="dryfruitextra.html">Dry Fruits Calories & Nutrients</a></li>
+                <li><a href="pulsesextra.html">Pulses Calories & Nutrients</a></li>
+                <li><a href="dairyextra.html">Dairy, Egg & Meat Nutrients</a></li>
+                <li><a href="fishextra.html">Fish varieties</a></li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-card-header">
+                <i class="fas fa-heart-pulse"></i>
+                <h3>Health & Wellness</h3>
+            </div>
+            <ul>
+                <li><a href="trackerextra.html">Health Trackers</a></li>
+                <li><a href="bmiextra.html">BMI Checker</a></li>
+                <li><a href="yogaextra.html">Yoga for Healing</a></li>
+                <li><a href="remedyextra.html">Home Remedies</a></li>
+                <li><a href="frequencyextra.html">Healing Frequencies</a></li>
+                <li><a href="metricsextra.html">View Logged Entries</a></li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-card-header">
+                <i class="fas fa-pills"></i>
+                <h3>Medical Information</h3>
+            </div>
+            <ul>
+                <li><a href="symptomsextra.html">Disease & Symptom Checker</a></li>
+                <li><a href="pathologyextra.html">Pathology Test Info</a></li>
+                <li><a href="doctorextra.html">Doctor's Directory</a></li>
+                <li><a href="hospitalextra.html">Hospitals in Tier I Cities</a></li>
+                <li><a href="pharmacyextra.html">Top Pharmacy Chains</a></li>
+                <li><a href="QnAextra.html">Health Q&A Section</a></li>
+<li><a href="lab_reports.html">Lab Report Analyzer</a></li>
+            </ul>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-card-header">
+                <i class="fas fa-book-open-reader"></i>
+                <h3>Recipes & Resources</h3>
+            </div>
+            <ul>
+                <li><a href="recipemainextra.html">Indian Recipes</a></li>
+                <li><a href="recipeletterextra.html">International Recipes</a></li>
+                <li><a href="blogsextra.html">Health & Wellness Blogs</a></li>
+                <li><a href="dashextra.html">Chart & Data Section</a></li>
+                <li><a href="terminologiesextra.html">Food Terminologies</a></li>
+            </ul>
+        </div>
+    </div>
+  </section>
+
+  <section id="health-tip-section" class="section">
+    <h2 class="section-title">Health Tip of the Day</h2>
+    <div class="tip-container">
+        <p id="fact-text">Loading amazing facts...</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacyextra.html">Privacy Statement</a>
+    <a href="disclaimerextra.html">Disclaimer</a>
+    <a href="aboutextra.html">About Us</a>
+    <a href="contactextra.html">Contact</a>
+  </div>
+  <p class="footer-copy">© 2025 Health Plus. All Rights Reserved.</p>
+</footer>
+
+<!-- SCRIPTS START HERE -->
+<script>
+
+/* --- MYTH BUSTERS LOGIC --- */
+
+const healthMyths = [
+    // --- DIET & FOOD ---
+    { myth: "Eating Ghee makes you fat.", fact: "Ghee contains healthy fats and vitamins A, D, E, K. In moderation, it aids digestion and weight loss." },
+    { myth: "Microwaving food causes cancer.", fact: "Microwaves use non-ionizing radiation which does not damage DNA or cause cancer. It actually preserves nutrients better than boiling." },
+    { myth: "Drinking water immediately after meals is bad.", fact: "It can dilute digestive enzymes slightly, but it doesn't cause major harm. Sipping water is fine." },
+    { myth: "Brown sugar is healthier than white sugar.", fact: "Both affect blood sugar levels similarly. Brown sugar just has a tiny bit of molasses." },
+    { myth: "Curd causes cold if eaten at night.", fact: "Curd is rich in probiotics and boosts immunity. It does not cause colds, though it may aggravate mucus in some people." },
+    { myth: "Bitter Gourd (Karela) cures diabetes.", fact: "It helps lower blood sugar, but it is NOT a cure. You still need medication and diet control." },
+    { myth: "Skipping breakfast helps weight loss.", fact: "Skipping meals slows metabolism and often leads to overeating later." },
+    { myth: "Carbohydrates make you fat.", fact: "Excess calories make you fat. Complex carbs (roti, oats) are essential for energy." },
+    { myth: "Eating sugar causes diabetes.", fact: "Diabetes is caused by insulin resistance and genetics. Sugar contributes to obesity, which is a risk factor, but not the direct cause." },
+    { myth: "Drinking milk after fish causes skin spots.", fact: "This is an ancient superstition (Vitiligo). There is no scientific evidence linking the two." },
+    { myth: "Desi eggs are more nutritious than white eggs.", fact: "The nutritional value is almost identical. Shell color depends on the hen's breed." },
+    { myth: "Green tea burns belly fat instantly.", fact: "It boosts metabolism slightly, but without exercise and diet, it won't melt fat." },
+    { myth: "Frozen vegetables are less healthy.", fact: "They are frozen at peak ripeness and often retain more vitamins than 'fresh' produce stored for days." },
+    { myth: "Honey is better than sugar for diabetics.", fact: "Honey raises blood sugar just like sugar. Use with caution." },
+    { myth: "Papaya causes miscarriage.", fact: "Fully ripe papaya is safe. Only semi-ripe or raw papaya (containing latex) should be avoided." },
+    
+    // --- LIFESTYLE & BODY ---
+    { myth: "Cracking knuckles causes arthritis.", fact: "It’s just gas bubbles popping in the fluid. It might weaken grip, but doesn't cause arthritis." },
+    { myth: "You lose most body heat through your head.", fact: "You lose heat from any exposed body part. Cover everything in winter!" },
+    { myth: "Sweating more means you burned more fat.", fact: "Sweat is water loss, not fat loss. You can burn fat without sweating heavily." },
+    { myth: "Reading in dim light damages eyes.", fact: "It causes eye strain and fatigue, but does not cause permanent damage." },
+    { myth: "Walking barefoot on grass improves eyesight.", fact: "It relaxes you, but there is no scientific link to correcting refractive errors." },
+    { myth: "Shaving makes hair grow back thicker.", fact: "It only feels coarser because the tapered tip is cut off. It doesn't change thickness." },
+    { myth: "You need 8 glasses of water a day.", fact: "Hydration needs vary by activity and climate. Drink when thirsty and check urine color." },
+    { myth: "Oiling hair stops hair fall.", fact: "Oil conditions the scalp but doesn't stop genetic hair loss. Excess oil can actually block pores." },
+    { myth: "Muscle turns to fat if you stop exercising.", fact: "Muscle and fat are different tissues. Muscle shrinks (atrophy) and fat cells grow, but one doesn't turn into the other." },
+    { myth: "Sleeping on the floor fixes back pain.", fact: "For some, it helps. For others, it worsens alignment. A medium-firm mattress is usually best." },
+
+    // --- MEDICINE & FIRST AID ---
+    { myth: "Apply butter or toothpaste on burns.", fact: "Never! This traps heat and causes infection. Run cool water over burns for 10-15 mins." },
+    { myth: "Antibiotics cure the cold and flu.", fact: "Antibiotics kill bacteria, not viruses. Colds are viral." },
+    { myth: "Tilt your head back during a nosebleed.", fact: "Dangerous! Blood can run down the throat. Lean forward and pinch the nose." },
+    { myth: "Vaccines cause autism.", fact: "Completely debunked. This study was fraudulent. Vaccines are safe." },
+    { myth: "Natural/Herbal means safe.", fact: "Arsenic is natural! Many herbs interact with medicines. Always consult a doctor." },
+    { myth: "Paracetamol cures fever.", fact: "It only reduces the temperature/symptom. It doesn't kill the virus/bacteria causing the fever." },
+    { myth: "You should starve a fever.", fact: "Your body burns more calories fighting infection. Eat light, nutritious food." },
+    { myth: "Rubbing alcohol cools down a fever.", fact: "It can be absorbed through skin and cause toxicity. Use lukewarm water sponging." },
+    { myth: "Wounds need air to heal.", fact: "Moist wounds heal faster and scar less. Keep them covered and clean." },
+    { myth: "If you feel better, stop antibiotics.", fact: "Always finish the course! Stopping early creates drug-resistant bacteria." },
+
+    // --- DISEASE SPECIFIC ---
+    { myth: "Only heavy smokers get lung cancer.", fact: "10-20% of lung cancer cases happen in non-smokers (pollution/genetics)." },
+    { myth: "Heart attacks only cause chest pain.", fact: "Women often experience jaw pain, back pain, or nausea instead of chest pain." },
+    { myth: "Depression is just sadness.", fact: "It is a chemical imbalance in the brain, not a mood choice." },
+    { myth: "High BP has obvious symptoms.", fact: "It's called the 'Silent Killer' because it often has NO symptoms until a stroke/heart attack." },
+    { myth: "Eating sugar causes worms.", fact: "Worms are caused by ingesting eggs from contaminated soil/food, not sugar." },
+    { myth: "Wearing glasses makes vision worse.", fact: "Glasses correct vision; they don't weaken eyes. Not wearing them strains eyes." },
+    { myth: "Using a laptop on your lap causes infertility.", fact: "The heat *might* affect sperm count temporarily in men, but it doesn't cause permanent infertility." },
+    { myth: "Canola oil is toxic.", fact: "Food-grade canola oil is safe and low in saturated fats." },
+    { myth: "Detox diets clean your body.", fact: "Your liver and kidneys detox your body 24/7. 'Detox' drinks are marketing gimmicks." },
+    { myth: "Gluten-free is healthier for everyone.", fact: "Only necessary if you have Celiac disease or gluten intolerance. Whole grains are good for others." },
+    { myth: "Egg yolks are bad for your heart.", fact: "They contain cholesterol, but dietary cholesterol has little impact on blood cholesterol for most people." },
+    { myth: "Salt is bad.", fact: "Your body needs salt for nerve function. Just avoid *excess* processed salt." },
+    { myth: "IV drips give instant energy.", fact: "Eating a balanced meal is better. IVs are for severe dehydration, not a quick fix." },
+    { myth: "Don't eat during an eclipse.", fact: "There is no scientific basis for food becoming toxic during an eclipse." },
+    { myth: "Pickles are bad for health.", fact: "Homemade pickles (fermented) have probiotics. Just watch the oil and salt content." }
+];
+
+// Function to Render Myths
+function loadMyths() {
+    const container = document.getElementById('myth-card-container');
+    if(!container) return;
+
+    let html = "";
+    healthMyths.forEach(item => {
+        html += `
+            <div class="myth-card">
+                <div class="myth-icon"><i class="fas fa-exclamation-circle"></i></div>
+                <div class="myth-label">MYTH</div>
+                <div class="myth-content">"${item.myth}"</div>
+                <div class="fact-label">FACT</div>
+                <div class="fact-content">${item.fact}</div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+// Call on load
+document.addEventListener('DOMContentLoaded', function() {
+    loadMyths();
+    // ... your other load functions
+});
+
+/* --- ULTRA BODY MAP LOGIC --- */
+
+/* --- REPLACING THE PREVIOUS organData VARIABLE --- */
+
+const organData = {
+    "brain": {
+        name: "🧠 Brain & Nervous System",
+        diseases: [
+            { title: "Migraine", symptoms: "Throbbing headache, light sensitivity, nausea.", prevention: "Sleep, hydration, stress management.", cure: "Pain relievers, Triptans, rest." },
+            { title: "Stroke", symptoms: "Face drooping, arm weakness, slurred speech.", prevention: "Control BP, quit smoking.", cure: "Emergency tPA drugs, rehabilitation." },
+            { title: "Paralysis", symptoms: "Loss of muscle function/sensation.", prevention: "Avoid injury, manage stroke risk.", cure: "Physiotherapy, occupational therapy." },
+            { title: "Epilepsy", symptoms: "Seizures, loss of awareness.", prevention: "Avoid head injury.", cure: "Anti-seizure meds, surgery." },
+            { title: "Alzheimer's / Dementia", symptoms: "Memory loss, confusion.", prevention: "Mental exercise, healthy diet.", cure: "Management meds (Donepezil)." },
+            { title: "Parkinson's", symptoms: "Tremors, slow movement, stiffness.", prevention: "Exercise, caffeine (maybe).", cure: "Levodopa, therapy." },
+            { title: "Multiple Sclerosis", symptoms: "Numbness, vision issues, fatigue.", prevention: "Vitamin D, no smoking.", cure: "Steroids, immunosuppressants." },
+            { title: "Bell's Palsy", symptoms: "Sudden facial droop.", prevention: "Viral control.", cure: "Steroids, eye care." },
+            { title: "Meningitis", symptoms: "Stiff neck, fever, headache.", prevention: "Vaccines (MenACWY).", cure: "Antibiotics, hospitalization." },
+            { title: "Concussion", symptoms: "Headache, confusion, dizziness.", prevention: "Helmet use.", cure: "Physical and mental rest." },
+            { title: "Vertigo", symptoms: "Spinning sensation, dizziness.", prevention: "Hydration.", cure: "Epley maneuver, meds." },
+            { title: "Mental Health (Depression/Anxiety)", symptoms: "Persistent sadness, worry, fatigue.", prevention: "Therapy, lifestyle balance.", cure: "CBT, Antidepressants." },
+            { title: "Schizophrenia/Bipolar", symptoms: "Hallucinations, mood swings.", prevention: "Early intervention.", cure: "Antipsychotics, mood stabilizers." },
+            { title: "ADHD / Autism", symptoms: "Focus issues / Social challenges.", prevention: "N/A (Genetic).", cure: "Therapy, behavioral support." }
+        ]
+    },
+    "eyes": {
+        name: "👁️ Eyes",
+        diseases: [
+            { title: "Cataracts", symptoms: "Cloudy vision, faded colors.", prevention: "Sunglasses (UV protection).", cure: "Surgery." },
+            { title: "Glaucoma", symptoms: "Tunnel vision, eye pain.", prevention: "Regular eye exams.", cure: "Eye drops, laser surgery." },
+            { title: "Macular Degeneration", symptoms: "Blurry central vision.", prevention: "Leafy greens, no smoking.", cure: "Vitamins, injections." },
+            { title: "Dry Eye Syndrome", symptoms: "Gritty sensation, redness.", prevention: "Blinking, hydration.", cure: "Artificial tears." }
+        ]
+    },
+    "ears": {
+        name: "👂 Ears",
+        diseases: [
+            { title: "Tinnitus", symptoms: "Ringing or buzzing in ears.", prevention: "Avoid loud noises.", cure: "Sound therapy, treating cause." },
+            { title: "Ear Infection (Otitis)", symptoms: "Ear pain, fever.", prevention: "Dry ears after swimming.", cure: "Antibiotics." }
+        ]
+    },
+    "nose": {
+        name: "👃 Nose & Sinus",
+        diseases: [
+            { title: "Sinusitis", symptoms: "Facial pain, congestion.", prevention: "Treat allergies.", cure: "Saline wash, antibiotics." },
+            { title: "Rhinitis / Allergies", symptoms: "Sneezing, runny nose.", prevention: "Avoid triggers.", cure: "Antihistamines." }
+        ]
+    },
+    "throat": {
+        name: "👄 Mouth & Throat",
+        diseases: [
+            { title: "Tonsillitis", symptoms: "Sore throat, swollen tonsils.", prevention: "Hygiene.", cure: "Antibiotics, saltwater gargle." },
+            { title: "Halitosis (Bad Breath)", symptoms: "Unpleasant odor.", prevention: "Oral hygiene, hydration.", cure: "Mouthwash, dental cleaning." },
+            { title: "Gum Disease", symptoms: "Bleeding gums.", prevention: "Flossing, brushing.", cure: "Deep cleaning." },
+            { title: "Whooping Cough", symptoms: "Severe hacking cough.", prevention: "Vaccine (DTaP).", cure: "Antibiotics." },
+            { title: "Scarlet Fever", symptoms: "Sore throat, red rash.", prevention: "Hygiene.", cure: "Antibiotics." }
+        ]
+    },
+    "thyroid": {
+        name: "🦋 Thyroid Gland",
+        diseases: [
+            { title: "Hypothyroidism", symptoms: "Fatigue, weight gain, cold.", prevention: "Iodine sufficiency.", cure: "Thyroxine hormone." },
+            { title: "Hyperthyroidism", symptoms: "Weight loss, rapid heart.", prevention: "N/A.", cure: "Anti-thyroid meds." },
+            { title: "Hashimoto's / Graves'", symptoms: "Autoimmune thyroid issues.", prevention: "Stress management.", cure: "Hormone therapy." }
+        ]
+    },
+    "lungs": {
+        name: "🫁 Lungs & Respiratory",
+        diseases: [
+            { title: "Asthma", symptoms: "Wheezing, breathlessness.", prevention: "Avoid triggers.", cure: "Inhalers." },
+            { title: "Pneumonia", symptoms: "Cough with phlegm, fever.", prevention: "Vaccines.", cure: "Antibiotics." },
+            { title: "Tuberculosis (TB)", symptoms: "Coughing blood, night sweats.", prevention: "BCG Vaccine.", cure: "Long-term antibiotics." },
+            { title: "COPD / Bronchitis", symptoms: "Chronic cough, mucus.", prevention: "Quit smoking.", cure: "Bronchodilators." },
+            { title: "Influenza / Swine Flu", symptoms: "Fever, body ache.", prevention: "Flu shot, hygiene.", cure: "Rest, antivirals." },
+            { title: "Covid-19", symptoms: "Fever, loss of taste/smell.", prevention: "Masks, vaccine.", cure: "Supportive care." },
+            { title: "Cystic Fibrosis", symptoms: "Thick mucus, lung infections.", prevention: "Genetic screening.", cure: "Chest therapy, enzymes." }
+        ]
+    },
+    "heart": {
+        name: "❤️ Heart & Blood",
+        diseases: [
+            { title: "Heart Disease", symptoms: "Chest pain, breathlessness.", prevention: "Diet, exercise.", cure: "Meds, surgery." },
+            { title: "Hypertension (High BP)", symptoms: "Headaches (Silent killer).", prevention: "Low salt.", cure: "ACE inhibitors." },
+            { title: "Low Blood Pressure", symptoms: "Dizziness, fainting.", prevention: "Hydration, salt.", cure: "Fluids, compression stockings." },
+            { title: "High Cholesterol", symptoms: "None (Detected by test).", prevention: "Low saturated fat.", cure: "Statins." },
+            { title: "Anemia", symptoms: "Fatigue, pale skin.", prevention: "Iron-rich diet.", cure: "Iron supplements." },
+            { title: "Sickle Cell / Thalassemia", symptoms: "Pain crises, fatigue.", prevention: "Genetic counseling.", cure: "Blood transfusions." },
+            { title: "Varicose Veins", symptoms: "Swollen, twisted veins.", prevention: "Exercise, elevation.", cure: "Compression, laser." }
+        ]
+    },
+    "liver": {
+        name: "🥃 Liver & Gallbladder",
+        diseases: [
+            { title: "Fatty Liver", symptoms: "Fatigue, abdominal discomfort.", prevention: "Weight loss.", cure: "Diet and exercise." },
+            { title: "Jaundice", symptoms: "Yellow skin/eyes.", prevention: "Hygiene.", cure: "Treat underlying cause." },
+            { title: "Hepatitis", symptoms: "Nausea, dark urine.", prevention: "Vaccines.", cure: "Antivirals." },
+            { title: "Cirrhosis", symptoms: "Fluid retention, bleeding.", prevention: "Avoid alcohol.", cure: "Transplant (severe)." },
+            { title: "Gallstones", symptoms: "Pain in upper right belly.", prevention: "Healthy weight.", cure: "Surgery (Cholecystectomy)." },
+            { title: "Hemochromatosis", symptoms: "Joint pain, fatigue.", prevention: "N/A (Genetic).", cure: "Phlebotomy (blood removal)." },
+            { title: "Alcohol Detox", symptoms: "Tremors, anxiety.", prevention: "Stop drinking.", cure: "Medical detox." }
+        ]
+    },
+    "stomach": {
+        name: "🥣 Stomach",
+        diseases: [
+            { title: "Gastritis / Indigestion", symptoms: "Burning ache, nausea.", prevention: "Avoid spicy food.", cure: "Antacids." },
+            { title: "Stomach Ulcers (H. Pylori)", symptoms: "Burning pain between meals.", prevention: "Hygiene.", cure: "Antibiotics, PPIs." },
+            { title: "GERD (Acid Reflux)", symptoms: "Heartburn.", prevention: "Don't lie down after eating.", cure: "Acid reducers." },
+            { title: "Hernia", symptoms: "Bulge in abdomen.", prevention: "Avoid heavy lifting.", cure: "Surgery." },
+            { title: "Food Poisoning", symptoms: "Vomiting, cramps.", prevention: "Food hygiene.", cure: "Fluids, rest." }
+        ]
+    },
+    "pancreas": {
+        name: "🧪 Pancreas",
+        diseases: [
+            { title: "Diabetes (Type 1/2)", symptoms: "Thirst, frequent urination.", prevention: "Diet, exercise.", cure: "Insulin, Metformin." },
+            { title: "Pancreatitis", symptoms: "Severe upper belly pain.", prevention: "Limit alcohol.", cure: "IV fluids, fasting." },
+            { title: "Hypoglycemia", symptoms: "Shaking, sweating.", prevention: "Regular meals.", cure: "Sugar/Glucose." },
+            { title: "Metabolic Syndrome", symptoms: "High BP, high sugar, belly fat.", prevention: "Lifestyle change.", cure: "Weight loss." }
+        ]
+    },
+    "kidneys": {
+        name: "🥜 Kidneys & Adrenals",
+        diseases: [
+            { title: "Kidney Stones", symptoms: "Severe side pain.", prevention: "Drink water.", cure: "Fluids, lithotripsy." },
+            { title: "Kidney Disease (CKD)", symptoms: "Swelling, fatigue.", prevention: "Control BP/Sugar.", cure: "Dialysis." },
+            { title: "Adrenal Fatigue/Addison's", symptoms: "Extreme fatigue, salt craving.", prevention: "Stress management.", cure: "Hormone replacement." },
+            { title: "Cushing's Syndrome", symptoms: "Weight gain, hump on back.", prevention: "Manage steroid use.", cure: "Surgery, meds." }
+        ]
+    },
+    "intestine": {
+        name: "🌭 Intestines",
+        diseases: [
+            { title: "IBS", symptoms: "Cramps, diarrhea/constipation.", prevention: "Fiber diet.", cure: "Diet changes, probiotics." },
+            { title: "Constipation / Flatulence", symptoms: "Hard stool, gas.", prevention: "Water, fiber.", cure: "Laxatives." },
+            { title: "Diarrhea / Dysentery", symptoms: "Loose/bloody stool.", prevention: "Clean water.", cure: "ORS, Antibiotics." },
+            { title: "Celiac Disease", symptoms: "Bloating after gluten.", prevention: "Avoid gluten.", cure: "Gluten-free diet." },
+            { title: "Crohn's / Colitis", symptoms: "Abdominal pain, weight loss.", prevention: "N/A.", cure: "Anti-inflammatories." },
+            { title: "Appendicitis", symptoms: "Sharp right lower belly pain.", prevention: "N/A.", cure: "Surgery." },
+            { title: "Piles (Hemorrhoids)", symptoms: "Rectal pain/bleeding.", prevention: "Fiber, water.", cure: "Creams, surgery." },
+            { title: "Leaky Gut / SIBO", symptoms: "Bloating, food sensitivity.", prevention: "Probiotics.", cure: "Diet (FODMAP), antibiotics." },
+            { title: "Cholera", symptoms: "Severe watery diarrhea.", prevention: "Clean water.", cure: "Rehydration salts." },
+            { title: "Typhoid", symptoms: "Fever, stomach pain.", prevention: "Vaccine.", cure: "Antibiotics." }
+        ]
+    },
+    "bladder": {
+        name: "💧 Bladder & Reproductive",
+        diseases: [
+            { title: "UTI (Cystitis)", symptoms: "Burning urination.", prevention: "Hygiene, water.", cure: "Antibiotics." },
+            { title: "Prostatitis", symptoms: "Pelvic pain, difficult urination.", prevention: "Hygiene.", cure: "Antibiotics." },
+            { title: "PCOS / Ovarian Cysts", symptoms: "Irregular periods, acne.", prevention: "Healthy weight.", cure: "Hormones, Metformin." },
+            { title: "Endometriosis / Fibroids", symptoms: "Heavy/painful periods.", prevention: "N/A.", cure: "Surgery, hormones." },
+            { title: "Menopause", symptoms: "Hot flashes.", prevention: "N/A.", cure: "HRT, lifestyle." },
+            { title: "Yeast Infection (Candida)", symptoms: "Itching, discharge.", prevention: "Probiotics.", cure: "Antifungals." },
+            { title: "Pregnancy / Lactation", symptoms: "N/A (Life stage).", prevention: "Prenatal care.", cure: "Nutrition." },
+            { title: "Infertility / ED", symptoms: "Difficulty conceiving.", prevention: "Healthy lifestyle.", cure: "IVF, meds." },
+            { title: "STIs", symptoms: "Discharge, pain.", prevention: "Protection.", cure: "Antibiotics/Antivirals." }
+        ]
+    },
+    "bones": {
+        name: "🦴 Bones & Joints",
+        diseases: [
+            { title: "Arthritis / Gout", symptoms: "Joint pain, swelling.", prevention: "Healthy weight.", cure: "Anti-inflammatories." },
+            { title: "Osteoporosis / Rickets", symptoms: "Weak/soft bones.", prevention: "Calcium, Vitamin D.", cure: "Supplements." },
+            { title: "Spondylitis / Sciatica", symptoms: "Back/leg pain.", prevention: "Posture.", cure: "Physio, painkillers." },
+            { title: "Frozen Shoulder", symptoms: "Stiff shoulder.", prevention: "Exercise.", cure: "Therapy." },
+            { title: "Fibromyalgia", symptoms: "Widespread pain.", prevention: "Stress reduction.", cure: "Meds, lifestyle." },
+            { title: "Carpal Tunnel", symptoms: "Wrist numbness.", prevention: "Ergonomics.", cure: "Splinting, surgery." },
+            { title: "Plantar Fasciitis", symptoms: "Heel pain.", prevention: "Good shoes.", cure: "Stretching, ice." },
+            { title: "Dengue / Chikungunya", symptoms: "Severe joint pain, fever.", prevention: "Mosquito control.", cure: "Fluids, rest." }
+        ]
+    },
+    "skin": {
+        name: "🤚 Skin & Systemic",
+        diseases: [
+            { title: "Eczema / Psoriasis", symptoms: "Itchy, red patches.", prevention: "Moisturize.", cure: "Creams, light therapy." },
+            { title: "Acne", symptoms: "Pimples.", prevention: "Hygiene.", cure: "Salicylic acid." },
+            { title: "Hives / Vitiligo", symptoms: "Welts / White patches.", prevention: "Avoid allergens.", cure: "Antihistamines / Creams." },
+            { title: "Shingles", symptoms: "Painful rash.", prevention: "Vaccine.", cure: "Antivirals." },
+            { title: "Measles / Rubella", symptoms: "Rash, fever.", prevention: "Vaccine (MMR).", cure: "Supportive care." },
+            { title: "Chickenpox", symptoms: "Itchy blisters.", prevention: "Vaccine.", cure: "Soothing lotion." },
+            { title: "Lupus", symptoms: "Butterfly rash, fatigue.", prevention: "Sun protection.", cure: "Immunosuppressants." },
+            { title: "Lyme Disease", symptoms: "Bullseye rash.", prevention: "Tick avoidance.", cure: "Antibiotics." },
+            { title: "Burns / Bedsores", symptoms: "Skin damage.", prevention: "Safety / Turning.", cure: "Wound care." },
+            { title: "Hair Fall", symptoms: "Thinning hair.", prevention: "Diet, gentle care.", cure: "Minoxidil, vitamins." }
+        ]
+    }
+};
+
+// 2. MODAL LOGIC
+function showOrganInfo(organKey) {
+    const modal = document.getElementById('medical-modal');
+    const titleEl = document.getElementById('modal-title');
+    const contentEl = document.getElementById('modal-content');
+    
+    const data = organData[organKey];
+    
+    if(!data) {
+        alert("Data coming soon for this organ!");
+        return;
+    }
+
+    // Set Title
+    titleEl.textContent = data.name;
+
+    // Build Content
+    let html = "";
+    data.diseases.forEach(d => {
+        html += `
+            <div style="background:#f8f9fa; padding:15px; margin-bottom:15px; border-left:5px solid #2a9d8f; border-radius:5px;">
+                <h3 style="margin-top:0; color:#e74c3c;">${d.title}</h3>
+                <p><strong>⚠️ Symptoms:</strong> ${d.symptoms}</p>
+                <p><strong>🛡️ Prevention:</strong> ${d.prevention}</p>
+                <p><strong>💊 Cure/Treatment:</strong> ${d.cure}</p>
+            </div>
+        `;
+    });
+
+    contentEl.innerHTML = html;
+    
+    // Show Modal
+    modal.style.display = "flex";
+}
+
+function closeMedicalModal() {
+    document.getElementById('medical-modal').style.display = "none";
+}
+
+// Close modal if clicked outside
+window.onclick = function(event) {
+    const modal = document.getElementById('medical-modal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+/* --- EMERGENCY FEATURE LOGIC --- */
+
+// 1. Function to get GPS Location
+function useCurrentLocation() {
+  const inputField = document.getElementById("emergencyLocation");
+  
+  if (!navigator.geolocation) {
+    alert("Geolocation is not supported by your browser.");
+    return;
+  }
+
+  inputField.value = "Locating...";
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      // Success
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      // We store the coordinates directly in the input for the search function to use
+      inputField.dataset.lat = lat;
+      inputField.dataset.lon = lon;
+      inputField.value = "Current Location Detected";
+      inputField.style.backgroundColor = "#e8f5e9"; // Light green to show success
+    },
+    (error) => {
+      // Error
+      inputField.value = "";
+      alert("Unable to retrieve your location. Please type your city name manually.");
+    }
+  );
+}
+
+// 2. Function to Trigger Search
+function findEmergency(category) {
+  const inputField = document.getElementById("emergencyLocation");
+  const manualLocation = inputField.value.trim();
+  const detectedLat = inputField.dataset.lat;
+  const detectedLon = inputField.dataset.lon;
+
+  let searchUrl = "";
+
+  if (manualLocation === "Current Location Detected" && detectedLat && detectedLon) {
+    // Scenario A: User used GPS Button -> Search near coordinates
+    // "category near me" is the most effective Google Maps query when GPS is active
+    searchUrl = `https://www.google.com/maps/search/${category}/@${detectedLat},${detectedLon},14z`;
+  } 
+  else if (manualLocation !== "" && manualLocation !== "Locating...") {
+    // Scenario B: User typed a city -> Search "Hospital near Mumbai"
+    searchUrl = `https://www.google.com/maps/search/${category}+near+${manualLocation}`;
+  } 
+  else {
+    // Scenario C: Empty Input
+    alert("Please enter a location or click 'Use GPS' first.");
+    return;
+  }
+
+  // Open in new tab (on mobile this opens the Maps App directly)
+  window.open(searchUrl, '_blank');
+}
+  
+   const funFacts = [
+    "Eating blueberries can boost brain health!",
+                "Drinking enough water helps maintain kidney function.",
+                "A handful of almonds daily can improve heart health.",
+                "Turmeric has anti-inflammatory properties and boosts immunity.",
+                "Dark chocolate in moderation is good for the heart.",
+                "Yoga helps reduce stress and improve flexibility.",
+                "Green tea is packed with antioxidants that help fight diseases.",
+                "Drinking enough water can boost metabolism and improve brain function.",
+                "Regular exercise reduces the risk of depression and anxiety.",
+                "Lack of sleep can lead to weight gain and lower immune function.",
+                "Deep breathing exercises can reduce stress and lower blood pressure.",
+                "The human body is about 60% water.",
+                "Walking 30 minutes a day can significantly reduce the risk of heart disease.",
+                "Laughter can boost immunity and reduce stress.",
+                "Spending time in nature improves mental health and reduces stress hormones.",
+                "The body burns calories even while digesting food (thermogenesis).",
+                "Proper posture can prevent back pain and improve breathing.",
+                "The body needs all three macronutrients (carbs, proteins, fats) for optimal health.",
+                "Dark chocolate (70%+ cocoa) is packed with antioxidants.",
+                "Fiber-rich foods help digestion and regulate blood sugar levels.",
+                "Skipping breakfast doesn’t necessarily slow metabolism but may lead to overeating later.",
+                "Protein-rich diets can help with weight loss by increasing satiety.",
+                "Too much salt can lead to high blood pressure and kidney issues.",
+                "Artificial sweeteners may affect gut bacteria and insulin sensitivity.",
+                "Vitamin D deficiency is linked to depression and weak bones.",
+                "Green tea can boost metabolism and support brain function.",
+                "Whole grains are more nutritious than refined grains.",
+                "Bananas are natural mood boosters due to tryptophan.",
+                "Avocados contain more potassium than bananas.",
+                "Carrots can help improve night vision due to Vitamin A.",
+                "Garlic has natural antibacterial and antiviral properties.",
+                "Berries are rich in antioxidants that protect against aging.",
+                "Tomatoes contain lycopene, which supports heart health.",
+                "Citrus fruits can help boost immunity due to high Vitamin C.",
+                "Leafy greens like spinach are rich in iron and folate.",
+                "Watermelon is 92% water, keeping you hydrated.",
+                "Broccoli contains compounds that may help prevent cancer.",
+                "Chia seeds are high in Omega-3 and fiber.",
+                "Turmeric has anti-inflammatory properties.",
+                "Almonds can help lower cholesterol levels.",
+                "Flaxseeds support heart health.",
+                "Quinoa is a complete protein source with all nine essential amino acids.",
+                "Ginger can help reduce nausea and inflammation.",
+                "Greek yogurt contains probiotics for gut health.",
+                "Coconut oil may boost brain function in Alzheimer's patients.",
+                "Honey has antibacterial properties and can soothe a sore throat.",
+                "Mushrooms are a natural source of Vitamin D.",
+                "Strength training helps build muscle and burn fat.",
+                "Drinking water before meals can reduce calorie intake.",
+                "High-intensity interval training (HIIT) is effective for fat burning.",
+                "Eating slowly can prevent overeating.",
+                "Chewing gum can reduce cravings and improve concentration.",
+                "Intermittent fasting can help with weight loss and improve metabolism.",
+                "Eating spicy foods can slightly boost metabolism.",
+                "Coconut water is a natural electrolyte drink.",
+                "Healthy fats (olive oil, nuts, fish) support weight loss.",
+                "Good sleep is essential for weight management.",
+                "Dehydration can cause headaches, fatigue, and confusion.",
+                "Coffee contains antioxidants and can improve brain function.",
+                "Alcohol disrupts sleep and dehydrates the body.",
+                "Too much caffeine can lead to anxiety and high blood pressure.",
+                "Lemon water aids digestion and boosts immunity.",
+                "Milk is a great source of calcium for strong bones.",
+                "Energy drinks can cause heart issues if consumed in excess.",
+                "Sugary drinks are linked to obesity and diabetes.",
+                "Green tea can improve brain function and fat burning.",
+                "Coconut water replenishes electrolytes better than sports drinks.",
+                "Omega-3 fatty acids help reduce inflammation and protect the heart.",
+                "Regular exercise strengthens the heart muscle.",
+                "Stress management is crucial for heart health.",
+                "High cholesterol increases the risk of heart disease.",
+                "Eating nuts can lower bad cholesterol (LDL).",
+                "Whole grains can improve heart health.",
+                "Too much sugar increases the risk of heart disease.",
+                "Red wine (in moderation) contains antioxidants beneficial for heart health.",
+                "Excessive sitting can raise the risk of heart disease.",
+                "Blood pressure control is key to heart health.",
+                "Omega-3s support brain function.",
+                "Socializing improves cognitive function and mental health.",
+                "Vitamin B12 deficiency can cause memory problems.",
+                "Music can reduce stress and enhance brain function.",
+                "Reading keeps the brain sharp.",
+                "Learning new skills builds brain connections.",
+                "Mindfulness and meditation improve focus and reduce stress.",
+                "Probiotics influence brain health via the gut-brain axis.",
+                "Dark leafy greens help slow cognitive decline.",
+                "Regular exercise improves memory and mental clarity.",
+                "Collagen supports skin elasticity and hydration.",
+                "Drinking enough water prevents dry skin.",
+                "Vitamin C boosts collagen production.",
+                "Sun protection is crucial for preventing skin aging.",
+                "Eating too much sugar can accelerate skin aging.",
+                "Omega-3s help maintain healthy skin.",
+                "Coconut oil can moisturize skin naturally.",
+                "Green tea can reduce acne.",
+                "Biotin supports hair growth.",
+                "Zinc is essential for healthy skin.",
+                "Exercise strengthens the immune system.",
+                "Getting enough sleep boosts immunity.",
+                "Handwashing is the best way to prevent infections.",
+                "Vitamin C-rich foods enhance immune response.",
+                "Elderberries are known for their antiviral properties.",
+                "Yogurt contains probiotics that support immunity.",
+                "Mushrooms can help strengthen immune defenses.",
+                "Garlic can prevent colds and flu.",
+                "Zinc supplements can reduce the duration of colds.",
+                "Chronic stress weakens the immune system.",
+                "Paralysis occurs when the nervous system is damaged, preventing muscle movement.",
+                "Stroke is the leading cause of paralysis worldwide.",
+                "Paralysis can be temporary (e.g., Bell’s palsy) or permanent.",
+                "Spinal cord injuries often result in permanent paralysis.",
+                "Paraplegia affects the legs, while quadriplegia affects all four limbs.",
+                "Physical therapy can help regain movement in some cases.",
+                "Stem cell research is exploring potential treatments for paralysis.",
+                "The human ear can hear sounds between 20 Hz and 20,000 Hz.",
+                "Earwax protects the ear from dirt and infections.",
+                "Loud noises can cause permanent hearing loss over time.",
+                "The smallest bone in the human body, the stapes, is in the ear.",
+                "Ears help with balance through the inner ear’s vestibular system.",
+                "Tinnitus (ringing in the ears) can be caused by stress or exposure to loud noises.",
+                "Cotton swabs should not be used inside the ear as they push wax deeper.",
+                "The nose filters about 20,000 liters of air daily.",
+                "Sneezing can reach speeds of 100 mph.",
+                "The sense of smell is closely linked to memory.",
+                "Deviated septum can cause breathing difficulties.",
+                "Nosebleeds are common due to the rich blood supply in the nasal cavity.",
+                "Sinus infections can cause headaches and facial pain.",
+                "A broken nose can affect breathing and sense of smell permanently.",
+                "The throat has three main parts: the pharynx, larynx, and trachea.",
+                "Tonsils help fight infections but may need removal if frequently inflamed.",
+                "Laryngitis can cause loss of voice.",
+                "The epiglottis prevents food from entering the airway during swallowing.",
+                "Acid reflux can damage the throat over time.",
+                "Sore throats are mostly caused by viral infections.",
+                "The kidneys filter about 50 gallons of blood daily.",
+                "One kidney is enough for survival if it’s healthy.",
+                "Kidney stones form from excess minerals in urine.",
+                "Chronic kidney disease can lead to dialysis or transplant.",
+                "High blood pressure can damage kidney function.",
+                "Too much salt increases kidney disease risk.",
+                "Drinking enough water helps prevent kidney stones.",
+                "The liver performs over 500 functions, including detoxifying the blood.",
+                "It regenerates even if 75% is removed.",
+                "Excess alcohol can cause cirrhosis, a severe liver disease.",
+                "Hepatitis is an infection that inflames the liver.",
+                "Fatty liver disease can occur due to obesity.",
+                "The liver stores vitamins A, D, E.",
+                "The lungs expand and contract over 20,000 times a day.",
+                "Smoking damages lung tissue permanently.",
+                "Asthma causes airway inflammation and breathing difficulty.",
+                "Lung capacity decreases with age.",
+                "The right lung has three lobes, while the left has two.",
+                "Carbon monoxide poisoning can stop oxygen from reaching cells.",
+                "Respiratory infections like pneumonia can be life-threatening.",
+                "The uterus can expand up to 500 times its normal size during pregnancy.",
+                "Endometriosis can cause extreme menstrual pain and infertility.",
+                "Cervical cancer is often caused by the HPV virus.",
+                "Polycystic Ovary Syndrome (PCOS) affects hormone balance and fertility.",
+                "Menstrual cycles last between 21-35 days on average.",
+                "Fibroids are common, non-cancerous uterine growths.",
+                "Normal blood pressure is 120/80 mmHg.",
+                "High blood pressure increases heart disease risk.",
+                "Stress can cause temporary blood pressure spikes.",
+                "Salt intake should be limited to prevent hypertension.",
+                "Low blood pressure can cause dizziness and fainting.",
+                "Exercise helps regulate blood pressure.",
+                "Hypertension is called a “silent killer” because it often has no symptoms.",
+                "Fevers help the body fight infections.",
+                "A fever over 104°F can be dangerous.",
+                "Sweating helps cool the body during fever.",
+                "Viruses and bacteria are the main causes of fever.",
+                "Fever is not a disease, but a symptom.",
+                "Aspirin should not be given to children with fevers due to Reye’s syndrome.",
+                "Many STDs show no symptoms at first.",
+                "HPV is the most common STD worldwide.",
+                "HIV attacks the immune system and can lead to AIDS.",
+                "Condoms help prevent STD transmission.",
+                "Syphilis can cause severe brain damage if untreated.",
+                "Chlamydia can lead to infertility.",
+                "Cancer cells grow uncontrollably.",
+                "Lung cancer is the deadliest worldwide.",
+                "Smoking causes at least 30% of all cancers.",
+                "Early detection improves survival rates.",
+                "Genetics play a role, but lifestyle factors matter too.",
+                "Chemotherapy kills fast-growing cancer cells.",
+                "Type 1 diabetes is autoimmune, while Type 2 is linked to lifestyle.",
+                "Uncontrolled diabetes can lead to blindness.",
+                "Sugar doesn’t directly cause diabetes, but excess weight increases risk.",
+                "Insulin regulates blood sugar.",
+                "Diabetic neuropathy causes nerve damage.",
+                "Exercise improves insulin sensitivity.",
+                "Bones regenerate throughout life.",
+                "Osteoporosis weakens bones, increasing fracture risk.",
+                "Vitamin D and calcium are essential for strong bones.",
+                "Arthritis causes joint inflammation.",
+                "Knee pain is one of the most common orthopaedic issues.",
+                "Weight-bearing exercises help prevent bone loss.",
+                "Eyes can detect 10 million colors.",
+                "Blue eyes are more sensitive to light.",
+                "The cornea has no blood supply.",
+                "20/20 vision means normal visual clarity.",
+                "Glaucoma can lead to blindness.",
+                "Too much screen time can cause eye strain.",
+                "UV rays damage eye cells."
+
+  ];
+
+  function rotateFacts() {
+    const factEl = document.getElementById("fact-text");
+    if (!factEl || funFacts.length === 0) return;
+    let i = 0;
+    factEl.textContent = funFacts[i];
+    i = (i + 1) % funFacts.length;
+
+    setInterval(() => {
+      factEl.textContent = funFacts[i];
+      i = (i + 1) % funFacts.length;
+    }, 5000);
+  }
+
+/* --- FIND THE "MAIN APP LOGIC" SECTION IN YOUR SCRIPT AND REPLACE IT WITH THIS: --- */
+
+document.addEventListener('DOMContentLoaded', function () {
+    rotateFacts(); // Keep your fun facts running
+ loadMyths();
+
+    // 1. Get Elements
+    const welcomeLabel = document.getElementById("welcomeUser");
+    const logoutLink = document.getElementById("clientLogoutLink");
+    const loginBtnLi = document.getElementById("loginBtn");
+    
+    // 2. Get User Data from Local Storage
+    const userName = localStorage.getItem("userName");
+
+    // 3. CHECK LOGIN STATUS
+    if (userName) {
+        // --- USER IS LOGGED IN ---
+        
+        // A. Show "Welcome Mr/Ms [Name]" (Persistent/Floating in Navbar)
+        welcomeLabel.textContent = `Welcome Mr/Ms ${userName}`;
+        
+        // B. Hide the Login Button
+        if (loginBtnLi) loginBtnLi.style.display = 'none';
+        
+        // C. Show the Logout Button
+        if (logoutLink) logoutLink.style.display = 'block';
+
+    } else {
+        // --- USER IS NOT LOGGED IN ---
+        welcomeLabel.textContent = "";
+        if (loginBtnLi) loginBtnLi.style.display = 'block';
+        if (logoutLink) logoutLink.style.display = 'none';
+    }
+
+    // 4. HANDLE LOGOUT CLICK
+    if (logoutLink) {
+        logoutLink.addEventListener("click", function(e) {
+            e.preventDefault();
+            
+            // A. Show the "Bye Bye" Message
+            alert(`Bye Bye Mr/Ms ${userName || "User"}!`);
+            
+            // B. Clear Data
+            localStorage.clear();
+            
+            // C. Reload Page to reset buttons
+            window.location.reload(); 
+        });
+    }
+});
+
+  // --- INSTALL BUTTON LOGIC (Now correctly inside script tag) ---
+// --- INSTALL BUTTON LOGIC ---
+  let deferredPrompt;
+  const installBtn = document.getElementById('installBtn');
+
+  // 1. Capture the event so we can trigger it later
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    console.log("App is ready to install!");
+  });
+
+  // 2. Handle the click event
+  installBtn.addEventListener('click', () => {
+    if (deferredPrompt) {
+      // Show the install prompt
+      deferredPrompt.prompt();
+      
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    } else {
+      // If the browser hasn't fired the event yet (or if already installed)
+      alert("Installation is not ready yet, or the app is already installed. Check the address bar icon!");
+    }
+  });
+
+  // 3. Log when installed (But we won't hide the button anymore per your request)
+  window.addEventListener('appinstalled', () => {
+    console.log('HealthPlus App Installed');
+    alert("Success! App is installed.");
+  });
+
+  // --- SERVICE WORKER LOGIC ---
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js');
+    });
+  }
+</script>
+</body>
+</html>

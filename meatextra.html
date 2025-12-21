@@ -1,0 +1,191 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meat Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #40E0D0; /* turquoise */
+      color: black; /* corrected */
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: bold; /* bold font */
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .title {
+      font-size: 3em;
+      margin-top: 50px;
+      letter-spacing: 0.1em;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .letter {
+      opacity: 0;
+      transform: scale(4) rotate(720deg) translateY(-300px);
+      animation: formTitle 1.2s ease-out forwards;
+    }
+
+    .letter:nth-child(n) {
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    @keyframes formTitle {
+      0% {
+        opacity: 0;
+        transform: scale(4) rotate(720deg) translateY(-300px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg) translateY(0);
+      }
+    }
+
+    model-viewer {
+      width: 400px;
+      height: 400px;
+      margin: 40px auto;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+
+    .arrow-btn {
+      font-size: 2rem;
+      cursor: pointer;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      transition: transform 0.2s;
+    }
+
+    .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .info-box {
+      background-color: white; /* small box background white */
+      font-size: 1.2rem;
+      font-weight: bold; /* bold */
+      color: black; /* font black */
+      margin-top: 20px;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+  <div class="title">
+    <span class="letter" style="--i:1">M</span>
+    <span class="letter" style="--i:2">E</span>
+    <span class="letter" style="--i:3">A</span>
+    <span class="letter" style="--i:4">T</span>
+    <span class="letter" style="--i:5">&nbsp;</span>
+    <span class="letter" style="--i:6">V</span>
+    <span class="letter" style="--i:7">I</span>
+    <span class="letter" style="--i:8">E</span>
+    <span class="letter" style="--i:9">W</span>
+    <span class="letter" style="--i:10">E</span>
+    <span class="letter" style="--i:11">R</span>
+  </div>
+
+  <model-viewer id="viewer"
+    src="media/chicken.glb"
+    alt="meat model"
+    auto-rotate
+    auto-rotate-delay="0"
+    disable-zoom
+    camera-controls
+    exposure="1"
+    ar
+    shadow-intensity="1"
+    style="background-color: white; border-radius: 20px;">
+  </model-viewer>
+
+  <div class="controls">
+    <button class="arrow-btn" onclick="showPrev()">←</button>
+    <button class="arrow-btn" onclick="showNext()">→</button>
+  </div>
+
+  <div id="info" class="info-box">Click the meat to view details</div>
+
+  <script>
+    const meat = [
+      {
+    "name": "Chicken",
+    "file": "media/chicken.glb",
+    "info": "Calories: 165 kcal<br>Nutrients: High in protein, promotes muscle growth"
+  },
+  {
+    "name": "Beef",
+    "file": "media/beef.glb",
+    "info": "Calories: 250 kcal<br>Nutrients: Rich in iron, prevents anemia"
+  },
+  {
+    "name": "Pork",
+    "file": "media/pork.glb",
+    "info": "Calories: 271 kcal<br>Nutrients: High in protein and fats, good energy source"
+  },
+  {
+    "name": "Lamb",
+    "file": "media/lamb.glb",
+    "info": "Calories: 294 kcal<br>Nutrients: Rich in iron and protein, supports metabolism"
+  },
+  {
+    "name": "Mutton",
+    "file": "media/mutton.glb",
+    "info": "Calories: 294 kcal<br>Nutrients: High in protein, strengthens bones"
+  }    ];
+
+    let current = 0;
+    const viewer = document.getElementById('viewer');
+    const infoBox = document.getElementById('info');
+
+    // Auto-rotation logic
+    let rotation = 0;
+    const speed = 35 / 30;
+
+    function rotateModel() {
+      rotation += speed;
+      viewer.cameraOrbit = `${rotation % 360}deg 75deg 2.5m`;
+      requestAnimationFrame(rotateModel);
+    }
+
+    viewer.addEventListener('load', rotateModel);
+
+    viewer.addEventListener('click', () => {
+      const meatItem = meat[current];
+      infoBox.innerHTML = `<strong>${meatItem.name}</strong><br>${meatItem.info}`;
+    });
+
+    function showMeattype(index) {
+      current = (index + meat.length) % meat.length;
+      viewer.src = meat[current].file;
+      infoBox.innerHTML = "Click the meat to view details";
+    }
+
+    function showNext() {
+      showMeattype(current + 1);
+    }
+
+    function showPrev() {
+      showMeattype(current - 1);
+    }
+  </script>
+</body>
+</html>

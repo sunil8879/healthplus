@@ -1,0 +1,230 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fish Viewer</title>
+  <!-- Model Viewer Script -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+  body {
+    margin: 0;
+    background: turquoise;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 50px; /* Added padding to ensure bottom content isn't cut off */
+  }
+
+  .title {
+    font-size: 3em;
+    margin-top: 50px;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .letter {
+    opacity: 0;
+    transform: scale(4) rotate(720deg) translateY(-300px);
+    animation: formTitle 1.2s ease-out forwards;
+  }
+
+  .letter:nth-child(n) {
+    animation-delay: calc(0.1s * var(--i));
+  }
+
+  @keyframes formTitle {
+    0% {
+      opacity: 0;
+      transform: scale(4) rotate(720deg) translateY(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+  }
+
+  model-viewer {
+    width: 400px;
+    height: 400px;
+    /* Added display: block so margin: auto works correctly */
+    display: block; 
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    /* Ensure controls are above other elements in stacking order */
+    position: relative; 
+    z-index: 10;
+  }
+
+  .arrow-btn {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(145deg, #2ecc71, #27ae60);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      box-shadow: 
+        0 6px #1e8449,
+        0 10px 20px rgba(0,0,0,0.2);
+      transition: all 0.1s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      outline: none;
+  }
+
+  .arrow-btn:hover {
+      background: linear-gradient(145deg, #27ae60, #2ecc71);
+      transform: translateY(-2px);
+      box-shadow: 
+        0 8px #1e8449, 
+        0 15px 25px rgba(0,0,0,0.3);
+  }
+
+  .arrow-btn:active {
+      transform: translateY(4px);
+      box-shadow: 
+        0 2px #1e8449,
+        0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  .info-box {
+      background-color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black;
+      margin-top: 20px;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="title">
+    <span class="letter" style="--i:1">F</span>
+    <span class="letter" style="--i:2">I</span>
+    <span class="letter" style="--i:3">S</span>
+    <span class="letter" style="--i:4">H</span>
+    <span class="letter" style="--i:5">&nbsp;</span>
+    <span class="letter" style="--i:6">V</span>
+    <span class="letter" style="--i:7">I</span>
+    <span class="letter" style="--i:8">E</span>
+    <span class="letter" style="--i:9">W</span>
+    <span class="letter" style="--i:10">E</span>
+    <span class="letter" style="--i:11">R</span>
+  </div>
+
+  <!-- IMPORTANT: Ensure closing tag is strictly here before controls -->
+  <model-viewer id="viewer"
+    src="media/pomfret1.glb"
+    alt="fish model"
+    auto-rotate
+    auto-rotate-delay="0"
+    disable-zoom
+    camera-controls
+    exposure="1"
+    ar
+    shadow-intensity="1"
+    style="background-color: white; border-radius: 20px;">
+  </model-viewer>
+
+  <div class="controls">
+    <button class="arrow-btn" onclick="showPrev()">PREVIOUS</button>
+    <button class="arrow-btn" onclick="showNext()">NEXT</button>
+  </div>
+
+  <div id="info" class="info-box">Click the fish to view details</div>
+
+  <script>
+    const fish = [
+      {
+        name: "Pomfret",
+        file: "media/pomfret1.glb",
+        info: "Calories: 105 kcal<br>Nutrients: Rich in Omega-3, good for heart health"
+      },
+      {
+        name: "King Fish",
+        file: "media/kingfish1.glb",
+        info: "Calories: 112 kcal<br>Nutrients: High protein, boosts muscle growth"
+      },
+      {
+        name: "Salmon",
+        file: "media/salmon1.glb",
+        info: "Calories: 206 kcal<br>Nutrients: Rich in Omega-3, reduces inflammation"
+      },
+      {
+        name: "Tuna",
+        file: "media/tuna1.glb",
+        info: "Calories: 144 kcal<br>Nutrients: High in protein, improves brain function"
+      },
+      {
+        name: "Sardines",
+        file: "media/sardines1.glb",
+        info: "Calories: 208 kcal<br>Nutrients: Rich in calcium and Omega-3, good for bones"
+      }
+    ];
+
+    let current = 0;
+    const viewer = document.getElementById('viewer');
+    const infoBox = document.getElementById('info');
+
+    // Auto-rotation logic
+    let rotation = 0;
+    const speed = 35 / 30;
+    let isRotating = true;
+
+    function rotateModel() {
+       if (!isRotating) return; 
+       rotation += speed;
+       // FIXED: Added backticks (`) for string interpolation
+       viewer.cameraOrbit = `${rotation % 360}deg 75deg 2.5m`;
+       requestAnimationFrame(rotateModel);
+    }
+
+    viewer.addEventListener('load', () => {
+      isRotating = true; 
+      rotateModel();
+    });
+
+    // Stop rotating when clicked and show info
+    viewer.addEventListener('click', () => {
+      isRotating = false; 
+      const fishItem = fish[current];
+      infoBox.innerHTML = `<strong>${fishItem.name}</strong><br>${fishItem.info}`;
+    });
+
+    function showFishtype(index) {
+      current = (index + fish.length) % fish.length;
+      viewer.src = fish[current].file;
+      infoBox.innerHTML = "Click the fish to view details";
+      isRotating = true; 
+      rotateModel();
+    }
+
+    function showNext() {
+      showFishtype(current + 1);
+    }
+
+    function showPrev() {
+      showFishtype(current - 1);
+    }
+  </script>
+</body>
+</html>

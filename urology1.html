@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Urologists in India</title>
+    <!-- Importing Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Palette */
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --highlight: #f1c40f;
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --bg-color: #fcfdfe;
+            --header-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 150, 255, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Background */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #fbecec;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "🔹";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.8rem;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #ebf5fb;
+        }
+
+        td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #d35400; /* Burnt Orange for contrast */
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #c0392b;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+         <span class="title-icon">溺</span> <!-- Kidney Icon Placeholder -->
+        <h1>Top 100 Urologists in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. Verify MS/MCh/DNB qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Urologist:</h2>
+        <ul>
+            <li><strong>Identify Your Condition:</strong> Kidney stones, prostate issues (BPH/cancer), bladder problems, male infertility, ED, kidney cancer, UTIs, pediatric urology needs?</li>
+            <li><strong>Sub-specialty Focus:</strong> Seek expertise in Uro-Oncology, Endourology (stones), Andrology, Reconstructive Urology, Female Urology, or Pediatric Urology for specific issues.</li>
+            <li><strong>Diagnosis:</strong> Get an accurate diagnosis first (GP, imaging, etc.).</li>
+            <li><strong>Hospital Facilities:</strong> Major surgeries (cancer, transplant, reconstruction) require hospitals with strong infrastructure (OT, ICU, Robotics if needed).</li>
+            <li><strong>Experience & Volume:</strong> Consider surgeon's experience and hospital volume for specific procedures.</li>
+            <li><strong>Second Opinion:</strong> Often wise for major diagnoses or surgeries.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. N P Gupta (MS, MCh - Urology, FAMS)</td>
+                 <td>Uro-Oncology, Robotic Surgery (Pioneer in Robotic Urology, Padma Shri)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Academics & Research Div. Urology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. Mahesh Desai (MS, FRCS)</td>
+                 <td>Endourology (Stones), Laparoscopy</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Muljibhai Patel Urological Hospital (MPUH) (Medical Director & Managing Trustee)</td>
+                 <td>Nadiad, Gujarat</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.mpuh.org/" target="_blank" class="website-link">MPUH</a></td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. Rajesh Ahlawat (MS, MCh - Urology, MNAMS)</td>
+                 <td>Robotic Surgery (Kidney Transplant, Urology Cancers)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Group Chairman - Urology & Renal Transplant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. Anant Kumar (MS, MCh - Urology, DNB - Urology)</td>
+                 <td>Uro-Oncology, Robotic Surgery, Renal Transplant</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Max Hospital, Saket (Chairman - Urology, Renal Transplant & Robotics)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. TB Yuvaraja (MS, MCh - Urology, DNB - Urology)</td>
+                 <td>Uro-Oncology (Robotic & Laparoscopic Surgery)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Head - Robotic Surgery & Uro-Oncology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. Rajeev Sood (MS, MCh - Urology)</td>
+                 <td>Andrology, Reconstructive Urology, Renal Transplant</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis Hospital, Vasant Kunj (Chairman - Urology) / Formerly Dean RML Hospital</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. Deepak Dubey (MS, MCh - Urology)</td>
+                 <td>Renal Transplantation, Laparoscopic & Robotic Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Head - Urology & Renal Transplant) / Formerly Apollo</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. Mohan Keshavamurthy (MS, MCh - Urology, FRCS)</td>
+                 <td>Renal Transplant, Robotic Surgery, Pediatric Urology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Hospital, Bannerghatta Road (Senior Director - Urology, Uro-Oncology, Andrology & Transplantation)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. Ravindra B Sabnis (MS, MCh - Urology)</td>
+                 <td>Endourology (Stones), Laparoscopy</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Muljibhai Patel Urological Hospital (MPUH) (Chairman & HOD - Urology)</td>
+                 <td>Nadiad, Gujarat</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.mpuh.org/" target="_blank" class="website-link">MPUH</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Amlesh Seth (MS, MCh - Urology)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor & HOD - Urology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Sudhir Khanna (MS, MCh - Urology)</td>
+                 <td>General Urology, Renal Transplant</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman - Urology & Renal Transplant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Mallikarjuna C. (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology, Renal Transplant</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Asian Institute of Nephrology and Urology (AINU) (Founder Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://ainu.care/" target="_blank" class="website-link">AINU</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Rakesh Kapoor (MS, MCh - Urology)</td>
+                 <td>Uro-Oncology</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor & Head)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Sanjay Rao P. (MS, DNB - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Health City (Senior Consultant - Urology & Renal Transplantation)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Ashish Sabharwal (MS, MCh - Urology)</td>
+                 <td>Robotic Prostatectomy, Uro-Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals / Blue Ribbon Prostate Clinic (Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Apollo/Clinic</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / Search clinic</td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Pankaj Maheshwari (MS, MCh - Urology)</td>
+                 <td>Endourology (Stones), Laparoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mulund (Director - Urology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Joseph Thachil (MS, FRCS - Urology)</td>
+                 <td>General Urology, Uro-Oncology (Veteran Urologist)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Formerly Apollo Hospitals, Chennai (Emeritus Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Search Current Status</td>
+                 <td>Search "Dr Joseph Thachil Urologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Hemant Pathak (MS, MCh - Urology)</td>
+                 <td>General Urology, Andrology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Percy Chibber (MS, MCh - Urology, DNB - Urology)</td>
+                 <td>Andrology, Reconstructive Urology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Bombay Hospital / Jaslok Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> / <a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Arvind P Ganpule (MS, DNB - Urology)</td>
+                 <td>Robotic Surgery, Laparoscopy, Uro-Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Muljibhai Patel Urological Hospital (MPUH) (Vice Chairman - Urology)</td>
+                 <td>Nadiad, Gujarat</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.mpuh.org/" target="_blank" class="website-link">MPUH</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Anil Agarwal (MS, MCh - Urology)</td>
+                 <td>Renal Transplant, General Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Noida (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Sanjay Pandey (MS, MCh - Urology)</td>
+                 <td>Reconstructive Urology (Urethral Stricture), Female Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Arun Kumar S. (MS, MCh - Urology, FRCS)</td>
+                 <td>Robotic Urology, Uro-Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Rajiv Yadav (MS, MCh - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Avanish Arora (MS, DNB - Urology)</td>
+                 <td>Renal Transplant, Laparoscopic Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Director - Urology & Renal Transplant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>26</td>
+                 <td>Dr. Santosh Kumar (MS, MCh - Pediatric Surgery, Fellow Ped Uro)</td>
+                 <td>Pediatric Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a> (Note: Ped Surgeon base)</td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Purnachandra Reddy K. (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Asian Institute of Nephrology and Urology (AINU) (Founder Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://ainu.care/" target="_blank" class="website-link">AINU</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. S K Pal (MS, MCh - Urology)</td>
+                 <td>General Urology, Uro-Oncology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Sharad Sagade (MS, DNB - Urology)</td>
+                 <td>General Urology, Renal Transplant</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Dilip Raja (MS, MCh - Urology)</td>
+                 <td>Andrology, Male Infertility</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant at various hospitals (Lilavati, Saifee)</td>
+                 <td>Mumbai</td>
+                 <td>Search Hospital Websites</td>
+                 <td>Search "Dr Dilip Raja Andrologist Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>31</td>
+                 <td>Dr. Rupin Shah (MS, MCh - Urology)</td>
+                 <td>Andrology (Male Infertility, Erectile Dysfunction)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Lilavati Hospital / Bhatia Hospital (Consultant Andrologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati</a> / Bhatia</td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Amit Ghose (MS, FRCS)</td>
+                 <td>General Urology, Uro-Oncology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Pranjal Modi (MS, PhD)</td>
+                 <td>Renal Transplantation (High Volume), Lap Donor Nephrectomy</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Institute of Kidney Diseases & Research Centre (IKDRC) / GUTS (VC/Professor)</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Website</td>
+                 <td><a href="http://www.ikdrc-its.org/" target="_blank" class="website-link">IKDRC</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Kim Mammen (MS, MCh - Pediatric Surgery, Fellow Ped Uro)</td>
+                 <td>Pediatric Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Christian Medical College (CMC) (Professor & Head - Ped Urology)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. George P Abraham (MS, MCh - Urology)</td>
+                 <td>General Urology, Renal Transplant</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Lakeshore Hospital (Senior Consultant / HOD)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://lakeshorehospital.com/" target="_blank" class="website-link">Lakeshore Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Venkatesh Krishnamoorthy (MS, FRCS)</td>
+                 <td>General Urology, Uro-Oncology, Renal Transplant</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>NU Hospitals (Founder Director & Chairman)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nuhospitals.com/" target="_blank" class="website-link">NU Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Anshuman Agarwal (MS, DNB - Urology, Fellow Uro-Onco/Robotics)</td>
+                 <td>Robotic Urology, Uro-Oncology, Renal Transplant</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Sanjay Kulkarni (MS, FRCS)</td>
+                 <td>Reconstructive Urology (Pioneer in Urethral Reconstruction)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Kulkarni Reconstructive Urology Center (Director)</td>
+                 <td>Pune</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Kulkarni Urology Center Pune"</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Sachin Kathuria (MS, DNB - Urology)</td>
+                 <td>Laparoscopic & Robotic Urology, Uro-Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant / Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Kandarp Parikh (MS, MCh - Urology)</td>
+                 <td>General Urology, Laparoscopic Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Shalby Hospitals / Private Practice</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Shalby Website / Search</td>
+                 <td><a href="https://www.shalby.org/" target="_blank" class="website-link">Shalby Hospitals</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Sujit Basu (MS, MCh - Urology)</td>
+                 <td>General Urology, Uro-Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Baldev Singh Aulakh (MS, MCh - Urology)</td>
+                 <td>Renal Transplant, Robotic Urology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Aykai Hospital (Director - Urology & Transplant Surgery)</td>
+                 <td>Ludhiana</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aykaihospital.com/" target="_blank" class="website-link">Aykai Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Vikas Agarwal (MS, MCh - Urology)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Aditya Pradhan (MS, DNB - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Antony Devasia (MS, MCh - Urology, Fellow Recon Uro)</td>
+                 <td>Reconstructive Urology, Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Christian Medical College (CMC) (Professor)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Hemendra N Shah (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Saifee Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.saifeehospital.com/" target="_blank" class="website-link">Saifee Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Datson George (MS, DNB - Urology)</td>
+                 <td>Renal Transplant, Laparoscopic Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant / HOD)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Anil Gulia (MS, MCh - Urology)</td>
+                 <td>Uro-Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Shailesh Raina (MS, MCh - Urology, Fellow Female Uro)</td>
+                 <td>Female Urology, Urodynamics, Reconstructive Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Director - Urology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Rajesh Taneja (MS, MCh - Urology)</td>
+                 <td>General Urology, Andrology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Ajit Saxena (MS, MCh - Urology, Fellow Andrology)</td>
+                 <td>Andrology, Male Infertility, Reconstructive Urology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Anil Varshney (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. Arvind Ajmera (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arvind Ajmera Urologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Ashish Nandwani (MS, DNB - Urology)</td>
+                 <td>Renal Transplant, Laparoscopic Urology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Ashutosh Singh (MS, MCh - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Ashwath Ram (MS, MCh - Urology)</td>
+                 <td>General Urology, Laparoscopic Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Ashwin Mallya (MS, DNB - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir H. N. Reliance Foundation Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Chandra Singh (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Chandra Singh Urologist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Chandrahas Deshmukh (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Deenanath Mangeshkar Hospital (Senior Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.dmhospital.org/" target="_blank" class="website-link">Deenanath Mangeshkar Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Deepak Kirpekar (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Ruby Hall Clinic (Senior Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Gautam Banga (MS, MCh - Urology, Fellow Andrology)</td>
+                 <td>Andrology, Reconstructive Urology (Urethral Stricture)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Centre for Urology & Andrology</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Gautam Banga Delhi"</td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Ginil Kumar P (MS, MCh - Urology, DNB - Urology)</td>
+                 <td>Laparoscopic & Robotic Urology, Renal Transplant</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Gagan Gautam (MS, MCh - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Director - Urologic Oncology & Robotic Surgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Harbinder Singh Pabla (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ludhiana</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr H S Pabla Urologist Ludhiana"</td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Hemant Tongaonkar (MS, FRCS)</td>
+                 <td>Uro-Oncology (Veteran Surgeon)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Chief, Uro-Oncology, Tata Memorial / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Hemant Tongaonkar Urologist Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>66</td>
+                 <td>Dr. Javed Quadri (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. K Chandrasekhar (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. K G Pillai (MS, MCh - Urology)</td>
+                 <td>General Urology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K G Pillai Urologist Kerala"</td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Kalpesh Shah (MS, MCh - Urology)</td>
+                 <td>General Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kalpesh Shah Urologist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Keyur Shah (MS, DNB - Urology)</td>
+                 <td>General Urology, Laparoscopic Urology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sterling Hospitals (Consultant)</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sterlinghospitals.com/" target="_blank" class="website-link">Sterling Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>71</td>
+                 <td>Dr. Kunal Sharma (MS, MCh - Urology)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. Madhav Sanzgiri (MS, MCh - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Mahesh Krishnaswamy (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Mandhir Kumar (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Manish Kumar Choudhary (MS, MCh - Urology)</td>
+                 <td>General Urology, Renal Transplant</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Manish Kumar Choudhary Urologist Patna"</td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Nachiket Vyas (MS, MCh - Pediatric Surgery, Fellow Ped Uro)</td>
+                 <td>Pediatric Urology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Bai Jerbai Wadia Hospital / Surya Hospitals (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.wadiahospitals.org/" target="_blank" class="website-link">Wadia</a> / Surya</td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. N Anandan (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Navin Kumar (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Senior Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Nikhil Khattar (MS, DNB - Urology, Fellow Female Uro)</td>
+                 <td>Female Urology, Urodynamics, Reconstructive Urology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Niren Rao (MS, DNB - Urology)</td>
+                 <td>Robotic Urology, Uro-Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>BLK-Max Hospital / Private Practice</td>
+                 <td>Delhi</td>
+                 <td>Via Max Website / Search</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max</a> or search practice</td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. Pankaj Joshi (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Pawan Kesarwani (MS, MCh - Urology)</td>
+                 <td>Renal Transplant, General Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Pawan Mehta (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pawan Mehta Urologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Prashant Mulawkar (MS, MCh - Urology)</td>
+                 <td>General Urology, Renal Transplant</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Global Hospitals (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Priyank Salecha (MS, MCh - Urology)</td>
+                 <td>General Urology, Laparoscopic Urology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Manipal Hospital, Jaipur (Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>86</td>
+                 <td>Dr. R Ganesan (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R Ganesan Urologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. R K Saran (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R K Saran Urologist Lucknow"</td>
+             </tr>
+              <tr>
+                 <td>88</td>
+                 <td>Dr. R Krishnan (MS, MCh - Urology)</td>
+                 <td>General Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Rajkumar Mathur (MS, MCh - Urology)</td>
+                 <td>General Urology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Indore</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajkumar Mathur Urologist Indore"</td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Ramalingam K (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sri Ramachandra Medical Centre (SRMC) (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sriramachandra.edu.in/medical-centre/" target="_blank" class="website-link">SRMC</a></td>
+             </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Sameer Trivedi (MS, MCh - Urology)</td>
+                 <td>Laparoscopic Urology, Renal Transplant</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sterling Hospitals (Consultant)</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sterlinghospitals.com/" target="_blank" class="website-link">Sterling Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Sanjay Sinha (MS, MCh - Urology, FRCS)</td>
+                 <td>Reconstructive Urology, Neuro-Urology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Santosh Patil (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Shailendra Kumar Singh (MS, MCh - Urology)</td>
+                 <td>General Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shailendra Kumar Singh Urologist Varanasi"</td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Shibaji Chattopadhyay (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shibaji Chattopadhyay Urologist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Shirish Yande (MS, MCh - Urology)</td>
+                 <td>General Urology (Veteran figure)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shirish Yande Pune"</td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Shrenik Shah (MS, MCh - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shrenik Shah Urologist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Sudarshan Shetty (MS, DNB - Urology)</td>
+                 <td>General Urology, Endourology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Cunningham Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Tarun Jindal (MS, MCh - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Tarun Jindal Uro-Oncology Delhi"</td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Uday Bhaskar (MS, MCh - Urology)</td>
+                 <td>General Urology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>CARE Hospitals, Banjara Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.carehospitals.com/" target="_blank" class="website-link">CARE Hospitals</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Urologist:</h2>
+        <ul>
+            <li><strong>Identify Your Condition:</strong> Kidney stones, prostate issues (BPH or cancer), bladder problems (cancer, incontinence), male infertility, erectile dysfunction, kidney cancer, urinary tract infections, or a child's urological condition?</li>
+            <li><strong>Sub-specialty Focus:</strong> For complex issues like cancer, reconstruction, infertility, or pediatric problems, seeking a urologist specializing in that specific area is highly recommended. Robotic surgery is a tool; look for expertise in treating your specific condition *using* robotics if applicable.</li>
+            <li><strong>Diagnosis:</strong> Get an accurate diagnosis first, possibly from a GP or general urologist, who can then refer you to the appropriate sub-specialist if needed.</li>
+            <li><strong>Hospital Facilities:</strong> Major surgeries (cancer, transplant, complex reconstruction) require hospitals with excellent infrastructure, ICU support, and multidisciplinary teams.</li>
+            <li><strong>Experience & Volume:</strong> Especially for surgical procedures, consider the surgeon's experience and the hospital's volume for that specific operation.</li>
+            <li><strong>Second Opinion:</strong> Often wise for major diagnoses like cancer or significant surgeries.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

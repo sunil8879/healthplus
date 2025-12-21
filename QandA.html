@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A Section</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333333;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666666;
+      margin-bottom: 60px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .dashboard-button {
+      background: linear-gradient(to bottom, #333333, #808080);
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dashboard-button:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Health Q&A</h1>
+  <p id="question"></p>
+  <p id="answer"></p>
+
+  <div class="button-container">
+    <button class="dashboard-button" id="prevButton">Previous</button>
+    <button class="dashboard-button" id="nextButton">Next</button>
+  </div>
+
+  <script>
+    let questions = [];
+    let currentIndex = 0;
+
+    // Load questions from questions.json file
+    fetch('questions.json')
+      .then(response => response.json())
+      .then(data => {
+        questions = data;
+        displayQuestion();
+      })
+      .catch(error => console.error('Error loading questions:', error));
+
+    // Function to display the current question and answer
+    function displayQuestion() {
+      const questionElement = document.getElementById('question');
+      const answerElement = document.getElementById('answer');
+
+      if (questions.length > 0) {
+        questionElement.innerHTML = questions[currentIndex].question;
+        answerElement.innerHTML = questions[currentIndex].answer;
+      }
+    }
+
+    // Next button functionality
+    document.getElementById('nextButton').addEventListener('click', function() {
+      if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        displayQuestion();
+      }
+    });
+
+    // Previous button functionality
+    document.getElementById('prevButton').addEventListener('click', function() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        displayQuestion();
+      }
+    });
+  </script>
+
+</body>
+</html>

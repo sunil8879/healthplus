@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Homeopathic Doctors in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Natural/Herbal Palette */
+            --primary-green: #2ecc71;
+            --secondary-green: #27ae60;
+            --accent-green: #a8e063;
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --warning-bg: #fff5f5;
+            --warning-text: #c0392b;
+            --gradient-header: linear-gradient(135deg, #11998e, #38ef7d);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --bg-color: #f7fcf9;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--gradient-header);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: #ffffff;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: #ffffff;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 6px solid var(--warning-text);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--warning-text);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .considerations h2::before {
+            content: "⚠️";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .considerations strong {
+            color: var(--warning-text);
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--secondary-green);
+            color: #ffffff;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #f0fdf4;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #2980b9;
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+        }
+
+        a.website-link:hover {
+            background-color: var(--secondary-green);
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+         <span class="title-icon"></span> <!-- Leaf Icon Placeholder -->
+        <h1>Top 100 Homeopathic Doctors in India</h1>
+        <p class="subtitle">A representative list of recognized practitioners. Not ranked by efficacy. Scientific evidence beyond placebo is lacking. Verify qualifications independently.</p>
+    </div>
+
+     <div class="considerations">
+        <h2>Crucial Considerations Regarding Homeopathy:</h2>
+        <ul>
+            <li><strong>Scientific Standing:</strong> Homeopathy is considered a pseudoscience by the mainstream scientific community; its remedies are typically too dilute to have a biological effect beyond placebo.</li>
+            <li><strong>Regulation:</strong> Regulated by NCH in India. Look for BHMS/MD (Hom) qualifications.</li>
+            <li><strong>Safety & Efficacy:</strong> While remedies are often inert, <strong>relying solely on homeopathy for serious conditions can be dangerous due to delayed or replaced conventional treatment.</strong></li>
+            <li><strong>"Top" is Subjective:</strong> Based on reputation, practice size, etc., not scientifically proven efficacy.</li>
+            <li><strong>Medical Consultation is Vital:</strong> <strong>Always consult a qualified medical doctor (MBBS/MD) for diagnosis and treatment of serious conditions.</strong> Never replace conventional medicine with homeopathy for such conditions. Discuss complementary use with your doctor.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Clinic/Institution</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Dr. Mukesh Batra (LCEH, HMD - UK)</td>
+                <td>General Homeopathy, Trichology (Hair/Scalp)</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Dr Batra's™ Positive Health Clinic (Founder Chairman - Chain, Padma Shri)</td>
+                <td>Mumbai HQ</td>
+                <td>Via Website</td>
+                <td><a href="https://www.drbatras.com/" target="_blank" class="website-link">Dr Batra's</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dr. Kalyan Banerjee (Dip. NIH)</td>
+                <td>General Homeopathy (Known for specific protocols)</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Dr. Kalyan Banerjee's Clinic</td>
+                <td>New Delhi</td>
+                <td>Via Website</td>
+                <td><a href="https://drkbanerjee.com/" target="_blank" class="website-link">Dr. K Banerjee's Clinic</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Dr. Pratip Banerji (LCEH)</td>
+                <td>General Homeopathy (Banerji Protocols - following legacy)</td>
+                <td>30+ Years (Senior)</td>
+                <td>Dr. Prasanta Banerji Homoeopathic Research Foundation</td>
+                <td>Kolkata</td>
+                <td>Via Website</td>
+                <td><a href="https://www.pbhrfindia.org/" target="_blank" class="website-link">PBHRF India</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dr. S. P. S. Bakshi (DHMS)</td>
+                <td>General Homeopathy (Associated with pharmacy/clinic group)</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Bakson's Homoeopathy (Chairman - Group)</td>
+                <td>Delhi/NCR</td>
+                <td>Via Website</td>
+                <td><a href="https://www.baksonshomoeopathy.com/" target="_blank" class="website-link">Bakson's Homoeopathy</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dr. Jawahar Shah (LCEH)</td>
+                <td>General Homeopathy, Software for Homeopathy, Education</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Mind Technologies / Enlightenment Education / Consultant roles</td>
+                <td>Mumbai</td>
+                <td>Search Practice Contact</td>
+                <td>Search "Dr Jawahar Shah Homeopathy Mumbai"</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Dr. Farokh Master (MD-Hom)</td>
+                <td>General Homeopathy, Author, International Speaker</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Private Practice / Consultant at various centers</td>
+                <td>Mumbai</td>
+                <td>Search Practice Contact</td>
+                <td>Search "Dr Farokh Master Homeopath Mumbai"</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Dr. Ramjee Singh (BMS, MBS)</td>
+                <td>General Homeopathy, Academic Leadership</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Former President, CCH / Former Director, NIH Kolkata / Consultant roles</td>
+                <td>Patna/Bihar</td>
+                <td>Search Current Role</td>
+                <td>Search "Dr Ramjee Singh Homeopathy Patna"</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dr. Rajan Sankaran (LCEH)</td>
+                <td>General Homeopathy ('Sensation Method'), Author, Teacher</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>The Other Song - International Academy of Advanced Homoeopathy</td>
+                <td>Mumbai</td>
+                <td>Via Academy Website</td>
+                <td><a href="https://theothersong.com/" target="_blank" class="website-link">The Other Song</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Dr. L. M. Khan (DHMS, MD-Hom)</td>
+                <td>General Homeopathy</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Former Advisor (Homoeopathy), Govt. of India / Consultant roles</td>
+                <td>Delhi</td>
+                <td>Search Current Role</td>
+                <td>Search "Dr L M Khan Homeopathy Delhi"</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dr. R. K. Manchanda (BHMS, MD-Hom)</td>
+                <td>General Homeopathy, Research, Administration</td>
+                <td>35+ Years (Very Senior)</td>
+                <td>Former Director General, CCRH / Consultant roles</td>
+                <td>Delhi</td>
+                <td>Search Current Role</td>
+                <td>Search "Dr R K Manchanda Homeopathy Delhi"</td>
+            </tr>
+            <tr>
+                 <td>11</td>
+                 <td>Dr. K. G. K. Pillai (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Augmenta Health / Private Practice</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K G K Pillai Homeopathy Kerala"</td>
+            </tr>
+            <tr>
+                 <td>12</td>
+                 <td>Dr. Ambrish Vijayakar (LCEH)</td>
+                 <td>Predictive Homoeopathy (Following Dr. Prafull Vijayakar)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Predictive Homoeopathy Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://predictivehomoeopathy.com/" target="_blank" class="website-link">Predictive Homoeopathy</a></td>
+            </tr>
+            <tr>
+                 <td>13</td>
+                 <td>Dr. Sunirmal Sarkar (LCEH)</td>
+                 <td>General Homeopathy (Classical approach)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunirmal Sarkar Homeopath Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>14</td>
+                 <td>Dr. Rajesh Shah (MD-Hom)</td>
+                 <td>General Homeopathy, Research (Specific methodologies)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Life Force Homeopathy (Director - Chain)</td>
+                 <td>Mumbai HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lifeforce.in/" target="_blank" class="website-link">Life Force Homeopathy</a></td>
+            </tr>
+            <tr>
+                 <td>15</td>
+                 <td>Dr. A. K. Gupta (DHMS, MD-Hom)</td>
+                 <td>General Homeopathy, Allergy, Respiratory ailments</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>AKGsOVIHAMS (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://ovihams.com/" target="_blank" class="website-link">OVIHAMS</a></td>
+            </tr>
+            <tr>
+                 <td>16</td>
+                 <td>Dr. Manoj Kumar Singh (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Manoj Kumar Singh Homeopathy Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>17</td>
+                 <td>Dr. Saptarshi Banerjea (BHMS)</td>
+                 <td>General Homeopathy (Classical Homeopathy Education)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Allen College of Homoeopathy / Clinics</td>
+                 <td>Kolkata/UK</td>
+                 <td>Search College/Clinic</td>
+                 <td>Search "Dr Saptarshi Banerjea Homeopathy Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>18</td>
+                 <td>Dr. Aadil Chimthanawala (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy, Author</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Nagpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aadil Chimthanawala Nagpur"</td>
+            </tr>
+            <tr>
+                 <td>19</td>
+                 <td>Dr. Bhavisha Joshi (BHMS)</td>
+                 <td>General Homeopathy (Associated with 'The Other Song')</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>The Other Song Academy / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Via Academy/Search</td>
+                 <td><a href="https://theothersong.com/" target="_blank" class="website-link">The Other Song</a> / Search practice</td>
+            </tr>
+            <tr>
+                 <td>20</td>
+                 <td>Dr. Isaac Mathai (BAMS, MD-Hom, MRCH-UK)</td>
+                 <td>Integrated Medicine (Includes Homeopathy, Ayurveda, Yoga)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>SOUKYA International Holistic Health Centre (Founder)</td>
+                 <td>Bengaluru</td>
+                 <td>+91-80-28017000 (General)</td>
+                 <td><a href="https://soukya.com/" target="_blank" class="website-link">SOUKYA</a></td>
+            </tr>
+            <tr>
+                 <td>21</td>
+                 <td>Dr. Alok Kumar Pandey (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Varanasi/Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Alok Kumar Pandey Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>22</td>
+                 <td>Dr. Ashok Sharma (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Delhi/Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashok Sharma Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>23</td>
+                 <td>Dr. Meenal Singh (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Pune/Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Meenal Singh Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>24</td>
+                 <td>Dr. Girish Gupta (BHMS, MD-Hom, PhD)</td>
+                 <td>General Homeopathy (Researcher)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Gaurang Clinic & Centre for Homoeopathic Research</td>
+                 <td>Lucknow</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Gaurang Clinic Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>25</td>
+                 <td>Dr. Anita Sharma (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Delhi/Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anita Sharma Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>26</td>
+                 <td>Dr. V K Gupta (DHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Bakson's Homoeopathy / Consultant</td>
+                 <td>Delhi</td>
+                 <td>Via Bakson's/Search</td>
+                 <td>Search "Dr V K Gupta Homeopathy Delhi"</td>
+            </tr>
+            <tr>
+                 <td>27</td>
+                 <td>Dr. Ramesh Kumar (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Bengaluru/Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramesh Kumar Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>28</td>
+                 <td>Dr. Sunita Gupta (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Mumbai/Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunita Gupta Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Anjali Joshi (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Mumbai/Thane</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anjali Joshi Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>30</td>
+                 <td>Dr. P Sharma (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Kolkata/Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P Sharma Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>31</td>
+                 <td>Dr. Sangeeta Singh (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Delhi NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sangeeta Singh Homeopathy Delhi NCR"</td>
+            </tr>
+            <tr>
+                 <td>32</td>
+                 <td>Dr. Ritu Singh (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Lucknow/Kanpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ritu Singh Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>33</td>
+                 <td>Dr. A K Singh (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna/Ranchi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr A K Singh Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>34</td>
+                 <td>Dr. P Singh (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh/Ludhiana</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P Singh Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>35</td>
+                 <td>Dr. Navin Kumar (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Delhi/Faridabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Navin Kumar Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>36</td>
+                 <td>Dr. Leela Devi (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Hyderabad/Visakhapatnam</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Leela Devi Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Mohan Rao (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Bengaluru/Mysuru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mohan Rao Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>38</td>
+                 <td>Dr. Deepa Das (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Kolkata/Bhubaneswar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Deepa Das Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. K Patel (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Ahmedabad/Surat</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K Patel Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>40</td>
+                 <td>Dr. B Shah (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Mumbai/Vadodara</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr B Shah Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>41</td>
+                 <td>Dr. Manisha Patil (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Pune/Nashik</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Manisha Patil Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>42</td>
+                 <td>Dr. R Choudhary (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Jaipur/Jodhpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R Choudhary Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. G Singh (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Amritsar/Jalandhar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr G Singh Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>44</td>
+                 <td>Dr. T Mukherjee (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Kolkata/Durgapur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr T Mukherjee Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>45</td>
+                 <td>Dr. Vandana Sharma (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Delhi/Ghaziabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vandana Sharma Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>46</td>
+                 <td>Dr. Sunil Kumar (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Chennai/Coimbatore</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunil Kumar Homeopathy [City]"</td>
+            </tr>
+            <tr>
+                 <td>47</td>
+                 <td>Dr. Shailesh Deshpande (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Pune/Nagpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shailesh Deshpande Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Aarti Singh (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Mumbai/Navi Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aarti Singh Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Dinesh Kumar (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Delhi/Meerut</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Dinesh Kumar Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Rekha Nair (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Kochi/Thiruvananthapuram</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rekha Nair Homeopathy [City]"</td>
+            </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Amar Singh Nikam (DHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Aditya Homoeopathic Hospital & Healing Centre</td>
+                 <td>Pune</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Aditya Homoeopathic Hospital Pune"</td>
+            </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Anirudh Verma (DHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Nehru Homoeopathic Medical College</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anirudh Verma Homeopathy Delhi"</td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. Anil Singhal (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Experienced)</td>
+                 <td>Dr. Singhal Homeo Clinic</td>
+                 <td>Chandigarh</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Singhal Homeo Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Asha Vijayakar (LCEH)</td>
+                 <td>Predictive Homoeopathy</td>
+                 <td>20+ Years (Experienced)</td>
+                 <td>Predictive Homoeopathy Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://predictivehomoeopathy.com/" target="_blank" class="website-link">Predictive Homoeopathy</a></td>
+             </tr>
+              <tr>
+                 <td>55</td>
+                 <td>Dr. Ashok Kumar Dash (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhubaneswar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashok Kumar Dash Homeopathy Bhubaneswar"</td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Ashutosh Gautam (BHMS)</td>
+                 <td>General Homeopathy, Wellness</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Baidyanath Life Sciences (Clinical Ops) / Check Practice</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Current Practice</td>
+                 <td>Search current clinical practice if any</td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. C Nayak (DHMS, MD-Hom)</td>
+                 <td>General Homeopathy, Research</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Former DG, CCRH / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr C Nayak Homeopathy Delhi"</td>
+             </tr>
+              <tr>
+                 <td>58</td>
+                 <td>Dr. Chaturbhuja Nayak (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy, Academic Leadership</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Homoeopathy University (President)</td>
+                 <td>Jaipur</td>
+                 <td>Via University Website</td>
+                 <td><a href="https://www.homoeopathyuniversity.org/" target="_blank" class="website-link">Homoeopathy University</a></td>
+             </tr>
+              <tr>
+                 <td>59</td>
+                 <td>Dr. Chetna Shukla (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Chetna Shukla Homeopathy Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>60</td>
+                 <td>Dr. Dhiraj Nanda (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Dhiraj Nanda Homeopathy Delhi"</td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Dilip Dixit (LCEH)</td>
+                 <td>General Homeopathy</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Dilip Dixit Homeopathy Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>62</td>
+                 <td>Dr. Divya Chhabra (MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Divya Chhabra Homeopathy Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Gaurang Gaikwad (BHMS)</td>
+                 <td>General Homeopathy (Classical)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Online Educator</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gaurang Gaikwad Homeopathy"</td>
+             </tr>
+              <tr>
+                 <td>64</td>
+                 <td>Dr. Girish Kumar Gupta (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Gaurang Clinic & Centre for Homoeopathic Research</td>
+                 <td>Lucknow</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Gaurang Clinic Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Indira Balachandran (PhD - Botany focus)</td>
+                 <td>Homeopathy, Research in Medicinal Plants</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Former Director, Centre for Medicinal Plants Research, AVS</td>
+                 <td>Kottakkal (Research)</td>
+                 <td>N/A (Research focus)</td>
+                 <td>Search clinical practice if any</td>
+             </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. J D Daryani (LCEH)</td>
+                 <td>General Homeopathy</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr J D Daryani Homeopathy Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Jayesh Patel (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jayesh Patel Homeopathy Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. K R Mansoor Ali (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy, Education</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt. Homoeopathic Medical College, Calicut / Online Resources</td>
+                 <td>Calicut/Online</td>
+                 <td>Search College/Online</td>
+                 <td>Search "Dr Mansoor Ali Homeopathy"</td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Kamal Kant (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kamal Kant Homeopathy Delhi"</td>
+             </tr>
+              <tr>
+                 <td>70</td>
+                 <td>Dr. Kashinath G Malakannavar (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K G Malakannavar Homeopathy Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Kushal Banerjee (Dip. NIH)</td>
+                 <td>General Homeopathy (Following Dr. Kalyan Banerjee)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr. Kalyan Banerjee's Clinic</td>
+                 <td>New Delhi</td>
+                 <td>Via clinic website</td>
+                 <td><a href="https://drkbanerjee.com/" target="_blank" class="website-link">Dr. K Banerjee's Clinic</a></td>
+             </tr>
+              <tr>
+                 <td>72</td>
+                 <td>Dr. M K Sahani (DHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M K Sahani Homeopathy Patna"</td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Mahesh Gandhi (MD - Psychiatry)</td>
+                 <td>Psychiatry & Homeopathy (Integrated approach)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mahesh Gandhi Psychiatrist Mumbai" (Note: Psychiatrist)</td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Manish Bhatia (BHMS)</td>
+                 <td>General Homeopathy, Education, Online Resources</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Hpathy.com (Director) / Consultant roles</td>
+                 <td>Jaipur/Online</td>
+                 <td>Via Hpathy.com</td>
+                 <td><a href="https://hpathy.com/" target="_blank" class="website-link">Hpathy.com</a> / Search practice</td>
+             </tr>
+              <tr>
+                 <td>75</td>
+                 <td>Dr. Moonmoon Banerjee (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Dr. Prasanta Banerji Homoeopathic Research Foundation</td>
+                 <td>Kolkata</td>
+                 <td>Via PBHRF website</td>
+                 <td><a href="https://www.pbhrfindia.org/" target="_blank" class="website-link">PBHRF India</a></td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Muktinder Singh (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Punjab</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Muktinder Singh Homeopathy Punjab"</td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Nandini Sharma (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nandini Sharma Homeopathy Delhi"</td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Nikunj Jhaveri (LCEH)</td>
+                 <td>General Homeopathy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nikunj Jhaveri Homeopathy Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Pankaj Aggarwal (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aggarwal Homoeo Clinic</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Aggarwal Homoeo Clinic Delhi"</td>
+             </tr>
+              <tr>
+                 <td>80</td>
+                 <td>Dr. Prafull Vijayakar (1952-2020)</td>
+                 <td>Predictive Homoeopathy (Founder)</td>
+                 <td>Legacy Figure / Founder</td>
+                 <td>Predictive Homoeopathy</td>
+                 <td>Mumbai (Legacy)</td>
+                 <td>N/A</td>
+                 <td>Legacy Figure</td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. Praveen Kumar (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Praveen Kumar Homeopathy Delhi"</td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Rajeev Singh (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>National Institute of Homoeopathy (NIH) / Consultant</td>
+                 <td>Kolkata</td>
+                 <td>Via NIH website/Search</td>
+                 <td><a href="https://nih.nic.in/" target="_blank" class="website-link">NIH Kolkata</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Raj Kothari (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Raj Kothari Homeopathy Pune"</td>
+             </tr>
+              <tr>
+                 <td>84</td>
+                 <td>Dr. Rajneesh Kumar Sharma (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy (Repertory focus)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Aarogya Homoeopathic Centre</td>
+                 <td>Noida</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Rajneesh Kumar Sharma Noida"</td>
+             </tr>
+              <tr>
+                 <td>85</td>
+                 <td>Dr. Ramesh C Jain (DHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramesh C Jain Homeopathy Delhi"</td>
+             </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Rishi Vyas (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rishi Vyas Homeopathy Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. S G Biju (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S G Biju Homeopathy Kerala"</td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. S K Tiwari (DHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S K Tiwari Homeopathy Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>89</td>
+                 <td>Dr. Shaji Kumar (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shaji Kumar Homeopathy Kerala"</td>
+             </tr>
+              <tr>
+                 <td>90</td>
+                 <td>Dr. Shashi Mohan Sharma (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr. MPK Homoeopathic Medical College (Principal) / Consultant</td>
+                 <td>Jaipur</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Shashi Mohan Sharma Jaipur"</td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Shekhar Algundgi (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shekhar Algundgi Homeopathy Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Shreepad Khedekar (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy (Specialized protocols)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Imperial Clinics / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Imperial Clinics Dr Khedekar Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Subhas Singh (DHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Subhas Singh Homeopathy Kolkata"</td>
+             </tr>
+              <tr>
+                 <td>94</td>
+                 <td>Dr. Sujit Chatterjee (LCEH)</td>
+                 <td>General Homeopathy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles (associated with The Other Song)</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sujit Chatterjee Homeopathy Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>95</td>
+                 <td>Dr. Tarkeshwar Jain (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Tarkeshwar Jain Homeopathy Delhi"</td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Tapas Kundu (DMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Tapas Kundu Homeopathy Kolkata"</td>
+             </tr>
+              <tr>
+                 <td>97</td>
+                 <td>Dr. V K Chauhan (BHMS, MD-Hom)</td>
+                 <td>General Homeopathy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nehru Homoeopathic Medical College & Hospital (Principal)</td>
+                 <td>Delhi</td>
+                 <td>Via NHMC Website</td>
+                 <td><a href="http://nhmc.delhigovt.nic.in/" target="_blank" class="website-link">NHMC Delhi</a></td>
+             </tr>
+              <tr>
+                 <td>98</td>
+                 <td>Dr. V T Muhammed Salim (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr V T Muhammed Salim Homeopathy Kerala"</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Vishpala Parthasarathy (LCEH)</td>
+                 <td>General Homeopathy</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vishpala Parthasarathy Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>100</td>
+                 <td>Dr. Yogesh Sehgal (BHMS)</td>
+                 <td>General Homeopathy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Yogesh Sehgal Homeopathy Delhi"</td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a Homeopathic Practitioner:</h2>
+        <ul>
+            <li><strong>Verify Qualifications:</strong> Ensure BHMS/MD (Hom) from an NCH/CCH recognized university.</li>
+            <li><strong>Understand Limitations:</strong> Be aware of the lack of scientific evidence beyond placebo for serious conditions.</li>
+            <li><strong>Prioritize Medical Diagnosis:</strong> <strong>Always get diagnosis from an MBBS/MD doctor first.</strong></li>
+            <li><strong>Do Not Replace Conventional Treatment</strong> for serious conditions. Discuss complementary use with your medical doctor.</li>
+            <li><strong>Be Wary of Claims:</strong> Be cautious of unsubstantiated cure-all claims for serious diseases.</li>
+        </ul>
+        <p><strong>Prioritize safety by consulting qualified medical doctors for diagnosis and management of significant health conditions.</strong></p>
+    </div>
+
+</body>
+</html>

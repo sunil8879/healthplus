@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Ayurvedic Doctors (Vaidyas) in India</title>
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --secondary-green: #5c8d55;
+            --accent-gold: #d4af37;
+            --bg-cream: #f9f7f2;
+            --text-dark: #2c3e50;
+            --text-light: #5a6b7c;
+            --white: #ffffff;
+            --warning-red: #c0392b;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            background-image: radial-gradient(#e0e5d9 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: linear-gradient(135deg, var(--primary-green), #1a3c17);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 6px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-container::before {
+            content: "☘";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 300px;
+            opacity: 0.05;
+            color: var(--white);
+            transform: rotate(20deg);
+        }
+
+        .title-icon {
+            font-size: 48px;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0 0 15px 0;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        p.subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: var(--white);
+            max-width: 1000px;
+            margin: -30px auto 40px auto;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            border-left: 5px solid var(--warning-red);
+        }
+
+        .considerations h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .considerations li::before {
+            content: "•";
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .considerations strong {
+            color: var(--warning-red);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 50px auto;
+            border-collapse: separate;
+            border-spacing: 0 10px; /* Creates space between rows */
+        }
+
+        thead th {
+            background-color: var(--primary-green);
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 18px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        thead th:first-child { border-radius: 8px 0 0 8px; }
+        thead th:last-child { border-radius: 0 8px 8px 0; }
+
+        tbody tr {
+            background-color: var(--white);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(45, 90, 39, 0.15);
+            z-index: 5;
+            position: relative;
+        }
+
+        td {
+            padding: 15px 18px;
+            vertical-align: middle;
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Styling the rounded corners for rows */
+        td:first-child {
+            border-left: 1px solid #f0f0f0;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-align: center;
+            background-color: rgba(45, 90, 39, 0.05);
+        }
+
+        td:last-child {
+            border-right: 1px solid #f0f0f0;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        /* Specific Column Tweaks */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--secondary-green);
+            font-style: italic;
+        }
+
+        /* Links */
+        a.website-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: var(--white);
+            color: var(--primary-green);
+            border: 1px solid var(--primary-green);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        a.website-link:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(45, 90, 39, 0.3);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.5rem; }
+            .considerations { margin: 20px; }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+             h1 { font-size: 2rem; }
+             .title-container { padding: 40px 15px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">☘</span> <!-- Simple Unicode symbol for Ayurveda/Wellness -->
+        <h1>Top 100 Ayurvedic Doctors (Vaidyas) in India</h1>
+        <p class="subtitle">A representative list of highly regarded specialists. Not an objective ranking. Verify details & qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Crucial Considerations Regarding Ayurveda in India:</h2>
+        <ul>
+            <li><strong>Regulation:</strong> Ayurveda is regulated by NCISM. Qualified practitioners hold BAMS/MD (Ayurveda) degrees.</li>
+            <li><strong>Scientific Standing & Integration:</strong> Rigorous scientific validation (by modern standards) is lacking for many classical treatments. Integration with modern medicine requires caution.</li>
+            <li><strong>Safety & Quality:</strong> Medicine quality can vary; potential contaminants exist. Use reputable sources and inform your medical doctor.</li>
+            <li><strong>"Top" is Subjective:</strong> Recognition is based on experience, affiliations, etc., not proven outcomes compared to conventional medicine.</li>
+            <li><strong>Medical Consultation is Vital:</strong> <strong>Always consult a qualified medical doctor (MBBS/MD) for diagnosis and treatment of serious conditions.</strong> Ayurveda should only be complementary and discussed with your doctor. <strong>Never replace conventional treatment for serious conditions solely with Ayurveda.</strong></li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic/Institution</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Vaidya Devendra Triguna (BAMS - Lineage)</td>
+                <td>General Ayurveda, Pulse Diagnosis (Nadi Pariksha)</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Private Practice (Padma Bhushan awardee)</td>
+                <td>New Delhi</td>
+                <td>Search Practice</td>
+                <td>Search "Vaidya Devendra Triguna Delhi"</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dr. P. Madhavankutty Varier (BAMS)</td>
+                <td>General Ayurveda (Managing Trustee of major institution)</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Kottakkal Arya Vaidya Sala (Managing Trustee)</td>
+                <td>Kottakkal, Kerala</td>
+                <td>Via Website</td>
+                <td><a href="https://www.aryavaidyasala.com/" target="_blank" class="website-link">Arya Vaidya Sala</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Vaidya Rajesh Kotecha (BAMS, MD-Ayurveda)</td>
+                <td>General Ayurveda, Policy & Administration (Secy, AYUSH)</td>
+                <td>30+ Years (Very Senior)</td>
+                <td>Ministry of AYUSH, Govt. of India (Padma Shri)</td>
+                <td>New Delhi</td>
+                <td>Govt. Sources</td>
+                <td>Public figure information</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dr. Partap Chauhan (BAMS)</td>
+                <td>General Ayurveda, Telemedicine, Wellness</td>
+                <td>30+ Years (Senior)</td>
+                <td>Jiva Ayurveda (Founder Director - Chain)</td>
+                <td>Faridabad HQ</td>
+                <td>Via Website</td>
+                <td><a href="https://www.jiva.com/" target="_blank" class="website-link">Jiva Ayurveda</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dr. Tanuja Nesari (BAMS, MD-Ayurveda, PhD)</td>
+                <td>General Ayurveda, Administration</td>
+                <td>25+ Years (Senior)</td>
+                <td>All India Institute of Ayurveda (AIIA) (Director)</td>
+                <td>New Delhi</td>
+                <td>Via Website</td>
+                <td><a href="https://aiia.gov.in/" target="_blank" class="website-link">AIIA</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Dr. Sanjeev Rastogi (BAMS, MD-Ayurveda)</td>
+                <td>Kaya Chikitsa (Internal Medicine), Rheumatology (Ayurvedic view)</td>
+                <td>25+ Years (Senior)</td>
+                <td>State Ayurvedic College & Hospital / Consultant roles</td>
+                <td>Lucknow</td>
+                <td>Search Practice</td>
+                <td>Search "Dr Sanjeev Rastogi Ayurveda Lucknow"</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Dr. Nitin Agrawal (BAMS, MD-Ayurveda)</td>
+                <td>Panchakarma, General Ayurveda</td>
+                <td>20+ Years (Senior)</td>
+                <td>Bliss Ayurveda Clinics (Director - Chain)</td>
+                <td>New Delhi</td>
+                <td>Via Website</td>
+                <td><a href="https://blissayurveda.com/" target="_blank" class="website-link">Bliss Ayurveda</a></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dr. Smita Naram (BAMS)</td>
+                <td>Pulse Diagnosis (Nadi Pariksha), Detoxification (Ayushakti Method)</td>
+                <td>30+ Years (Senior)</td>
+                <td>Ayushakti Ayurved Health Centre (Co-Founder - Chain)</td>
+                <td>Mumbai HQ</td>
+                <td>Via Website</td>
+                <td><a href="https://www.ayushakti.com/" target="_blank" class="website-link">Ayushakti</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Dr. S. N. Gupta (BAMS, MD-Ayurveda)</td>
+                <td>Shalya Tantra (Ano-rectal, Ksharsutra focus)</td>
+                <td>40+ Years (Very Senior)</td>
+                <td>Formerly National Institute of Ayurveda (NIA), Jaipur / Consultant roles</td>
+                <td>Jaipur</td>
+                <td>Search Practice</td>
+                <td>Search "Dr S N Gupta Ayurveda Jaipur"</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dr. P. Ram Manohar (BAMS)</td>
+                <td>Ayurvedic Research, Clinical Practice</td>
+                <td>25+ Years (Senior)</td>
+                <td>Amrita Centre for Advanced Research in Ayurveda (ACARA) (Research Director)</td>
+                <td>Kerala</td>
+                <td>Via University Website</td>
+                <td><a href="https://www.amrita.edu/center/amrita-center-advanced-research-ayurveda-acara/" target="_blank" class="website-link">Amrita University ACARA</a></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Dr. G. G. Gangadharan (BAMS)</td>
+                <td>General Ayurveda, Wellness, Ethno-medicine</td>
+                <td>30+ Years (Senior)</td>
+                <td>Ramaiah Indic Specialty Ayurveda Restoration Hospital (Director)</td>
+                <td>Bengaluru</td>
+                <td>+91-80-22183456 (General)</td>
+                <td><a href="https://www.ramaiahindicayurveda.com/" target="_blank" class="website-link">Ramaiah Ayurveda</a></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Dr. Issac Mathai (BAMS, MD-Hom, MRCH-UK)</td>
+                <td>Integrated Medicine (Ayurveda, Homeopathy, Yoga)</td>
+                <td>30+ Years (Senior)</td>
+                <td>SOUKYA International Holistic Health Centre (Founder)</td>
+                <td>Bengaluru</td>
+                <td>+91-80-28017000 (General)</td>
+                <td><a href="https://soukya.com/" target="_blank" class="website-link">SOUKYA</a></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Dr. Mukesh D. Jain (BAMS)</td>
+                <td>Panchakarma, General Ayurveda</td>
+                <td>25+ Years (Senior)</td>
+                <td>Consultant roles</td>
+                <td>Mumbai</td>
+                <td>Search Practice Contact</td>
+                <td>Search "Dr Mukesh D Jain Ayurveda Mumbai"</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Dr. Manoj K. Das (BAMS, MD-Ayurveda)</td>
+                <td>Kayachikitsa (Internal Medicine), Diabetes (Ayurvedic view)</td>
+                <td>25+ Years (Senior)</td>
+                <td>National Institute of Ayurveda (NIA) (Professor / Consultant)</td>
+                <td>Jaipur</td>
+                <td>+91-141-2631516 (General)</td>
+                <td><a href="https://nia.nic.in/" target="_blank" class="website-link">NIA Jaipur</a></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Dr. C. D. Siby (BAMS)</td>
+                <td>General Ayurveda, Panchakarma</td>
+                <td>20+ Years (Senior)</td>
+                <td>AyurVAID Hospitals (Chief Physician - Chain)</td>
+                <td>Bengaluru HQ</td>
+                <td>Via Website</td>
+                <td><a href="https://www.ayurvaid.com/" target="_blank" class="website-link">AyurVAID</a></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Dr. M. R. Vasudevan Nampoothiri (BAMS)</td>
+                <td>Kayachikitsa (Internal Medicine), Neurological disorders (Ayurvedic view)</td>
+                <td>30+ Years (Senior)</td>
+                <td>Sreedhareeyam Ayurvedic Eye Hospital & Research Centre (Director)</td>
+                <td>Kerala</td>
+                <td>+91-484-2476666 (General)</td>
+                <td><a href="https://sreedhareeyam.com/" target="_blank" class="website-link">Sreedhareeyam</a></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Dr. K. Rajagopalan (BAMS)</td>
+                <td>General Ayurveda (Classical approach)</td>
+                <td>35+ Years (Senior)</td>
+                <td>Private Practice (associated with traditional schools)</td>
+                <td>Kerala</td>
+                <td>Search Practice Contact</td>
+                <td>Search "Vaidya K Rajagopalan Kerala"</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Dr. Mahesh Vyas (BAMS, MD-Ayurveda, PhD)</td>
+                <td>Kayachikitsa, Academic Leadership</td>
+                <td>25+ Years (Senior)</td>
+                <td>All India Institute of Ayurveda (AIIA) (Dean & Professor)</td>
+                <td>New Delhi</td>
+                <td>Via Website</td>
+                <td><a href="https://aiia.gov.in/" target="_blank" class="website-link">AIIA</a></td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Dr. V. Franklin (BAMS)</td>
+                <td>Panchakarma, Wellness</td>
+                <td>30+ Years (Senior)</td>
+                <td>Dr. Franklin's Panchakarma Institute & Research Centre (Director)</td>
+                <td>Kerala</td>
+                <td>Search Institute Contact</td>
+                <td>Search "Dr Franklin Panchakarma Kerala"</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Dr. Pratibha Shah (BAMS, MD-Ayurveda, MPH)</td>
+                <td>General Ayurveda, Women's Health</td>
+                <td>20+ Years (Experienced)</td>
+                <td>Private Practice / Online consultations</td>
+                <td>USA/India</td>
+                <td>Via Website/Search</td>
+                <td>Search "Dr Pratibha Shah Ayurveda"</td>
+            </tr>
+            <tr>
+                 <td>21</td>
+                 <td>Dr. Nisha Manikantan (BAMS)</td>
+                 <td>General Ayurveda, Wellness (Associated with Sri Sri Tattva)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sri Sri Tattva Panchakarma (Chief Consultant / Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://srisritattvapanchakarma.com/" target="_blank" class="website-link">Sri Sri Tattva Panchakarma</a></td>
+            </tr>
+            <tr>
+                 <td>22</td>
+                 <td>Dr. Jayant Deopujari (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda, Policy & Administration (Chairman, NCISM)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>National Commission for Indian System of Medicine (NCISM) (Chairman)</td>
+                 <td>Delhi</td>
+                 <td>Via NCISM</td>
+                 <td>Public figure information / Via NCISM</td>
+            </tr>
+            <tr>
+                 <td>23</td>
+                 <td>Dr. Vikram Chauhan (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda, Herbal Formulations</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Planet Ayurveda (Founder / MD - Clinic & Pharmacy)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.planetayurveda.com/" target="_blank" class="website-link">Planet Ayurveda</a></td>
+            </tr>
+            <tr>
+                 <td>24</td>
+                 <td>Dr. Avinash Lele (BAMS, MS-Ayurveda)</td>
+                 <td>Shalya Tantra (Ano-rectal specialization), Ksharsutra</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Private Practice</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Avinash Lele Ayurveda Pune"</td>
+            </tr>
+            <tr>
+                 <td>25</td>
+                 <td>Dr. Gopikrishna S. (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kottakkal Arya Vaidya Sala network / Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Via AVS Network</td>
+                 <td>Via Arya Vaidya Sala network or search name + Kerala</td>
+            </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Sanjeev Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Hospital AYUSH departments (e.g., Sir Ganga Ram) / Consultant</td>
+                 <td>Delhi</td>
+                 <td>Search Hospital Dept</td>
+                 <td>Search "Dr Sanjeev Sharma Ayurveda Delhi"</td>
+            </tr>
+            <tr>
+                 <td>27</td>
+                 <td>Dr. Meenakshi Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>National Institute of Ayurveda (NIA) / Private clinics</td>
+                 <td>Jaipur</td>
+                 <td>Search NIA or Clinic</td>
+                 <td>Search "Dr Meenakshi Sharma Ayurveda Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>28</td>
+                 <td>Dr. Anup Thakar (BAMS, MD-Ayurveda, PhD)</td>
+                 <td>Panchakarma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>IPGT&RA, Gujarat Ayurved University (Director)</td>
+                 <td>Jamnagar</td>
+                 <td>Via GAU Website</td>
+                 <td><a href="http://www.ayurveduniversity.edu.in/" target="_blank" class="website-link">Gujarat Ayurved University</a></td>
+            </tr>
+            <tr>
+                 <td>29</td>
+                 <td>Dr. M P Singh (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Faculty of Ayurveda, IMS-BHU / Clinics</td>
+                 <td>Varanasi</td>
+                 <td>Search BHU or Clinic</td>
+                 <td>Search "Dr M P Singh Ayurveda Varanasi"</td>
+            </tr>
+            <tr>
+                 <td>30</td>
+                 <td>Dr. P K Prajapati (BAMS, MD-Ayurveda, PhD)</td>
+                 <td>Rasashastra & Bhaishajya Kalpana (Ayurvedic Pharmaceutics)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>All India Institute of Ayurveda (AIIA) (Professor)</td>
+                 <td>Delhi</td>
+                 <td>Via AIIA Website</td>
+                 <td><a href="https://aiia.gov.in/" target="_blank" class="website-link">AIIA</a> (Academic/Pharma focus)</td>
+            </tr>
+            <tr>
+                 <td>31</td>
+                 <td>Dr. K Nishteswar (BAMS, MD-Ayurveda, PhD)</td>
+                 <td>Dravyaguna (Ayurvedic Pharmacology)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>IPGT&RA, GAU, Jamnagar (Professor)</td>
+                 <td>Jamnagar</td>
+                 <td>Via GAU Website</td>
+                 <td><a href="http://www.ayurveduniversity.edu.in/" target="_blank" class="website-link">Gujarat Ayurved University</a> (Academic focus)</td>
+            </tr>
+            <tr>
+                 <td>32</td>
+                 <td>Dr. Rajesh Kumar Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Rajiv Gandhi Govt. PG Ayurvedic College, Paprola / Consultant</td>
+                 <td>Himachal Pradesh</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Rajesh Kumar Sharma Ayurveda HP"</td>
+            </tr>
+            <tr>
+                 <td>33</td>
+                 <td>Dr. Suresh Kumar (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Ayurvedic College Patiala / Consultant</td>
+                 <td>Patiala</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Suresh Kumar Ayurveda Patiala"</td>
+            </tr>
+            <tr>
+                 <td>34</td>
+                 <td>Dr. Anita Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Podar Ayurvedic College / Clinics</td>
+                 <td>Mumbai</td>
+                 <td>Search College or Clinic</td>
+                 <td>Search "Dr Anita Sharma Ayurveda Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>35</td>
+                 <td>Dr. Manasi Deshpande (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Tilak Ayurved Mahavidyalaya / Clinics</td>
+                 <td>Pune</td>
+                 <td>Search College or Clinic</td>
+                 <td>Search "Dr Manasi Deshpande Ayurveda Pune"</td>
+            </tr>
+            <tr>
+                 <td>36</td>
+                 <td>Dr. Jyoti Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Govt Ayurvedic College / Clinics</td>
+                 <td>Bengaluru</td>
+                 <td>Search College or Clinic</td>
+                 <td>Search "Dr Jyoti Sharma Ayurveda Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>37</td>
+                 <td>Dr. Prashanth Shetty (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>SDM Ayurveda College Udupi/Hassan / Clinics</td>
+                 <td>Mangalore area</td>
+                 <td>Search College or Clinic</td>
+                 <td>Search "Dr Prashanth Shetty Ayurveda Mangalore"</td>
+            </tr>
+            <tr>
+                 <td>38</td>
+                 <td>Dr. Arun Kumar (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Ayurvedic College / Clinics</td>
+                 <td>Chennai</td>
+                 <td>Search College or Clinic</td>
+                 <td>Search "Dr Arun Kumar Ayurveda Chennai"</td>
+            </tr>
+            <tr>
+                 <td>39</td>
+                 <td>Dr. Deepa Kumari (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Govt Ayurvedic College / Clinics</td>
+                 <td>Hyderabad</td>
+                 <td>Search College or Clinic</td>
+                 <td>Search "Dr Deepa Kumari Ayurveda Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>40</td>
+                 <td>Dr. Sachin Kumar (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Uttarakhand Ayurved University / Patanjali clinics</td>
+                 <td>Haridwar</td>
+                 <td>Search University or Clinic</td>
+                 <td>Search "Dr Sachin Kumar Ayurveda Haridwar"</td>
+            </tr>
+            <tr>
+                 <td>41</td>
+                 <td>Dr. Rakesh Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rakesh Sharma Ayurveda Delhi NCR"</td>
+            </tr>
+            <tr>
+                 <td>42</td>
+                 <td>Dr. Sunita Mishra (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Gopabandhu Ayurveda Mahavidyalaya / Consultant</td>
+                 <td>Bhubaneswar</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Sunita Mishra Ayurveda Bhubaneswar"</td>
+            </tr>
+            <tr>
+                 <td>43</td>
+                 <td>Dr. Gopal Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Dhanwantari Ayurvedic College / Consultant</td>
+                 <td>Ujjain</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Gopal Sharma Ayurveda Ujjain"</td>
+            </tr>
+            <tr>
+                 <td>44</td>
+                 <td>Dr. Lakshmi Priya (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Govt Ayurveda College Trivandrum / Consultant</td>
+                 <td>Thiruvananthapuram</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Lakshmi Priya Ayurveda Trivandrum"</td>
+            </tr>
+            <tr>
+                 <td>45</td>
+                 <td>Dr. B R Patel (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>J S Ayurveda Mahavidyalaya / Consultant</td>
+                 <td>Nadiad</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr B R Patel Ayurveda Nadiad"</td>
+            </tr>
+            <tr>
+                 <td>46</td>
+                 <td>Dr. Varsha Saxena (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AyurVAID / Jiva clinics / Consultant</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Affiliation</td>
+                 <td>Search "Dr Varsha Saxena Ayurveda Delhi"</td>
+            </tr>
+            <tr>
+                 <td>47</td>
+                 <td>Dr. Vinod Kumar Gupta (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Associations with pharmacies/clinics</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vinod Kumar Gupta Ayurveda Delhi"</td>
+            </tr>
+            <tr>
+                 <td>48</td>
+                 <td>Dr. Snehalatha SN (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>JSS Ayurveda Medical College / Consultant</td>
+                 <td>Mysuru</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Snehalatha SN Ayurveda Mysuru"</td>
+            </tr>
+            <tr>
+                 <td>49</td>
+                 <td>Dr. Shailesh Mallya (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Major clinics / Consultant</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Affiliation</td>
+                 <td>Search "Dr Shailesh Mallya Ayurveda Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>50</td>
+                 <td>Dr. Hitesh Kumar Shah (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Akhandanand Ayurvedic College / Clinics</td>
+                 <td>Ahmedabad</td>
+                 <td>Search College or Clinic</td>
+                 <td>Search "Dr Hitesh Kumar Shah Ayurveda Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>51</td>
+                 <td>Dr. Prerak Shah (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Prerak Shah Ayurveda Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Abhimanyu Kumar (BAMS, MD-Ayurveda, PhD)</td>
+                 <td>Kayachikitsa, Academic Admin</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sarvepalli Radhakrishnan University (VC) / Formerly Director AIIA</td>
+                 <td>Bhopal</td>
+                 <td>University Contact</td>
+                 <td>University role / Search practice</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. B R Ramakrishna (BAMS, MS-Ayurveda)</td>
+                 <td>Shalya Tantra (Ayurvedic Surgery)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly SDM College of Ayurveda, Udupi / Consultant roles</td>
+                 <td>Udupi/Consultant</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr B R Ramakrishna Ayurveda Udupi"</td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Bheema Bhat (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine), Neurology (Ayurvedic view)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>SDM Ayurveda Hospital (Medical Superintendent)</td>
+                 <td>Hassan</td>
+                 <td>Via SDM Hassan website</td>
+                 <td><a href="https://sdmayurveda.com/sdm-ayurveda-hospital-hassan/" target="_blank" class="website-link">SDM Hospital Hassan</a></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Brahmanand Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Brahmanand Sharma Ayurveda Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. D C Katoch (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda, Policy</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Former Advisor (Ayurveda), Ministry of AYUSH / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search current role</td>
+                 <td>Search current status</td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. D Sudhakar (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr D Sudhakar Ayurveda Chennai"</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Dinesh Katoch (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda, Panchakarma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Dinesh Katoch Ayurveda Delhi"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Hetal Dave (BAMS, MD-Ayurveda)</td>
+                 <td>Stri Roga & Prasuti Tantra (Gynaecology & Obstetrics)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>IPGT&RA, Gujarat Ayurved University (Assoc. Professor)</td>
+                 <td>Jamnagar</td>
+                 <td>Via GAU Website</td>
+                 <td><a href="http://www.ayurveduniversity.edu.in/" target="_blank" class="website-link">Gujarat Ayurved University</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Ishwar N Pujar (BAMS, MD-Ayurveda)</td>
+                 <td>Panchakarma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Hubli/Dharwad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ishwar Pujar Ayurveda Hubli"</td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. J L N Sastry (BAMS, MD-Ayurveda, PhD)</td>
+                 <td>Dravyaguna (Pharmacology), Industry R&D</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Dabur R&D</td>
+                 <td>Industry/Consultant</td>
+                 <td>Search current role</td>
+                 <td>Primarily Research/Industry focus</td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Job Sudarshan (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Job Sudarshan Ayurveda Kerala"</td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. K V Rajagopalan (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K V Rajagopalan Ayurveda Chennai"</td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. K V Krishnan Namboodiri (BAMS)</td>
+                 <td>Netra Chikitsa (Ayurvedic Ophthalmology)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nelliakkattu Mana Ayurveda Vaidyasala (Chief Physician)</td>
+                 <td>Kerala</td>
+                 <td>Search Institute Contact</td>
+                 <td>Search Nelliakkattu Mana</td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Kalpana Bhavre (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kalpana Bhavre Ayurveda Pune"</td>
+            </tr>
+            <tr>
+                 <td>66</td>
+                 <td>Dr. Kuldeep Raj (BAMS, MD-Ayurveda)</td>
+                 <td>Shalya Tantra (Ano-rectal, Ksharsutra)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Ch. Brahm Prakash Ayurved Charak Sansthan (Assoc. Professor)</td>
+                 <td>Delhi</td>
+                 <td>Via CBPACS website</td>
+                 <td><a href="http://cbpacs.com/" target="_blank" class="website-link">CBPACS Delhi</a></td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Lakshmi Narayan Shenoy (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mangalore</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Lakshmi Narayan Shenoy Ayurveda Mangalore"</td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Madan Kumar (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Madan Kumar Ayurveda Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Mahesh Kumar Sharma (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mahesh Kumar Sharma Ayurveda Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>70</td>
+                 <td>Dr. Manohar Gundeti (BAMS)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Nagpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Manohar Gundeti Ayurveda Nagpur"</td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Meera Kulkarni (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda, Women's Health</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Meera Kulkarni Ayurveda Pune"</td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. N V Krishnamurthy (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mysuru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr N V Krishnamurthy Ayurveda Mysuru"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Narayanan Nambi (BAMS)</td>
+                 <td>Visha Chikitsa (Toxicology), Dermatology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>SNA Oushadhasala & Nursing Home (Chief Physician)</td>
+                 <td>Thrissur</td>
+                 <td>+91-487-2334172 (General)</td>
+                 <td><a href="https://www.snaayurveda.com/" target="_blank" class="website-link">SNA Oushadhasala</a></td>
+            </tr>
+            <tr>
+                 <td>74</td>
+                 <td>Dr. Neelesh Korde (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Neelesh Korde Ayurveda Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. P Hemantha Kumar (BAMS, MD-Ayurveda)</td>
+                 <td>Panchakarma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>SDM College of Ayurveda (Professor / HOD)</td>
+                 <td>Udupi</td>
+                 <td>Via SDM Udupi website</td>
+                 <td><a href="https://sdmayurveda.com/" target="_blank" class="website-link">SDM Ayurveda Udupi</a></td>
+            </tr>
+            <tr>
+                 <td>76</td>
+                 <td>Dr. P K Mohanlal (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles / Pankajakasthuri Herbals</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P K Mohanlal Kerala"</td>
+            </tr>
+            <tr>
+                 <td>77</td>
+                 <td>Dr. Parameshwarappa S Byadgi (BAMS, MD-Ayurveda, PhD)</td>
+                 <td>Vikriti Vigyan (Ayurvedic Pathology/Diagnosis)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Faculty of Ayurveda, IMS-BHU (Professor / HOD)</td>
+                 <td>Varanasi</td>
+                 <td>Via BHU website</td>
+                 <td><a href="https://www.bhu.ac.in/Site/DepartmentHome/1_2_16_Main-Home" target="_blank" class="website-link">BHU Ayurveda</a> (Academic focus)</td>
+            </tr>
+            <tr>
+                 <td>78</td>
+                 <td>Dr. Pavana J (BAMS, MS-Ayurveda)</td>
+                 <td>Prasuti Tantra & Stri Roga (Gynaecology & Obstetrics)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AyurVAID Hospitals (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via AyurVAID website</td>
+                 <td><a href="https://www.ayurvaid.com/" target="_blank" class="website-link">AyurVAID</a></td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Pooja Sabharwal (BAMS)</td>
+                 <td>General Ayurveda, Wellness</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Online</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pooja Sabharwal Ayurveda Delhi"</td>
+            </tr>
+            <tr>
+                 <td>80</td>
+                 <td>Dr. Pradeep Sharma (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Haridwar / Rishikesh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pradeep Sharma Ayurveda Haridwar"</td>
+            </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Pushpa Sharma (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pushpa Sharma Ayurveda Delhi"</td>
+            </tr>
+            <tr>
+                 <td>82</td>
+                 <td>Dr. R Govind Reddy (BAMS)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R Govind Reddy Ayurveda Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>83</td>
+                 <td>Dr. R M Mehta (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R M Mehta Ayurveda Ahmedabad"</td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Rahul Gupta (BAMS, MS-Ayurveda)</td>
+                 <td>Shalya Tantra (Ano-rectal)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rahul Gupta Ayurveda Delhi Ksharsutra"</td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Rajkala P Patil (BAMS, MD-Ayurveda, PhD)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Tilak Ayurved Mahavidyalaya (Professor / Dean)</td>
+                 <td>Pune</td>
+                 <td>Via Tilak College website</td>
+                 <td><a href="http://www.tilakayurved.org/" target="_blank" class="website-link">Tilak Ayurved Mahavidyalaya</a> (Academic focus)</td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Ramachandra Reddy (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramachandra Reddy Ayurveda Bengaluru"</td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Ravishankar Pervaje (BAMS, MD-Ayurveda)</td>
+                 <td>Panchakarma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>SDM College of Ayurveda & Hospital (Principal / Senior Physician)</td>
+                 <td>Hassan</td>
+                 <td>Via SDM Hassan website</td>
+                 <td><a href="https://sdmayurveda.com/sdm-ayurveda-hospital-hassan/" target="_blank" class="website-link">SDM Hospital Hassan</a></td>
+            </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. Rekha Prabhu (BAMS)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mangalore</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rekha Prabhu Ayurveda Mangalore"</td>
+            </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. S Gopakumar (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Govt Ayurveda College Trivandrum / Consultant roles</td>
+                 <td>Thiruvananthapuram</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S Gopakumar Ayurveda Trivandrum"</td>
+            </tr>
+            <tr>
+                 <td>90</td>
+                 <td>Dr. S K Singh (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S K Singh Ayurveda Varanasi"</td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Sandeep Singh (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sandeep Singh Ayurveda Delhi"</td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Santosh Kumar Bhatted (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>All India Institute of Ayurveda (AIIA) (Assoc. Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via AIIA website</td>
+                 <td><a href="https://aiia.gov.in/" target="_blank" class="website-link">AIIA</a></td>
+            </tr>
+            <tr>
+                 <td>93</td>
+                 <td>Dr. Sarita Sharma (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sarita Sharma Ayurveda Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Satish Sharma (BAMS)</td>
+                 <td>Panchakarma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Haridwar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Satish Sharma Panchakarma Haridwar"</td>
+            </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Shabnam Ali (BAMS)</td>
+                 <td>General Ayurveda</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shabnam Ali Ayurveda Aligarh"</td>
+            </tr>
+            <tr>
+                 <td>96</td>
+                 <td>Dr. Shreevathsa M H (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Govt Ayurveda Medical College, Mysuru / Consultant</td>
+                 <td>Mysuru</td>
+                 <td>Search College or Practice</td>
+                 <td>Search "Dr Shreevathsa Ayurveda Mysuru"</td>
+            </tr>
+            <tr>
+                 <td>97</td>
+                 <td>Dr. Sonica Krishan (BAMS, MD-Ayurveda)</td>
+                 <td>General Ayurveda, Wellness, Author</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice / Online</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sonica Krishan Chandigarh"</td>
+            </tr>
+            <tr>
+                 <td>98</td>
+                 <td>Dr. T Sreekumar (BAMS, MS-Ayurveda)</td>
+                 <td>Shalya Tantra (Ayurvedic Surgery)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Govt Ayurveda College Trivandrum / Consultant roles</td>
+                 <td>Thiruvananthapuram</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr T Sreekumar Ayurveda Trivandrum"</td>
+            </tr>
+            <tr>
+                 <td>99</td>
+                 <td>Dr. Tanmay Goswami (BAMS, MD-Ayurveda)</td>
+                 <td>Kayachikitsa (Internal Medicine)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Tanmay Goswami Ayurveda Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>100</td>
+                 <td>Dr. Usha Sharma (BAMS)</td>
+                 <td>General Ayurveda, Women's Health</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Usha Sharma Ayurveda Delhi"</td>
+            </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing an Ayurvedic Practitioner:</h2>
+        <ul>
+            <li><strong>Verify Qualifications:</strong> Ensure BAMS minimum, ideally MD-Ayurveda, from an NCISM-recognized university.</li>
+            <li><strong>Type of Practice:</strong> Choose based on need (Classical, Panchakarma, Specialty, Wellness).</li>
+            <li><strong>Source of Medicines:</strong> Prefer reputable, licensed pharmacies. Inquire about quality control.</li>
+            <li><strong>Diagnosis:</strong> <strong>Get diagnosis for serious conditions from an MBBS/MD doctor first.</strong></li>
+            <li><strong>Transparency & Claims:</strong> Be wary of cure-all claims. Seek transparency on plans, costs, outcomes.</li>
+            <li><strong>Integration:</strong> Discuss Ayurvedic treatments with your conventional doctor.</li>
+            <li><strong>Hygiene (for Panchakarma):</strong> Ensure high hygiene standards for therapies.</li>
+        </ul>
+        <p><strong>Prioritize safety by consulting qualified medical doctors for diagnosis and management of significant health conditions.</strong></p>
+    </div>
+
+
+</body>
+</html>

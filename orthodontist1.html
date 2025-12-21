@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Orthodontists in India</title>
+    <!-- Importing Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Dental/Medical Inspired Palette */
+            --primary-blue: #3498db;
+            --secondary-blue: #2980b9;
+            --accent-teal: #1abc9c;
+            --text-dark: #2c3e50;
+            --text-light: #636e72;
+            --bg-color: #f7f9fc;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+            --header-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Stylish Header --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Elements */
+        .title-container::before {
+            content: "🦷";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -30px;
+            left: -30px;
+            transform: rotate(-20deg);
+        }
+        
+        .title-container::after {
+            content: "✨";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            color: white;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 6px solid var(--accent-teal);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1f5fe;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-teal);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .considerations strong {
+            color: #e74c3c; /* Red for important warnings */
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #ebf5fb;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--accent-teal);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-teal);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(26, 188, 156, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #16a085;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">醴</span> <!-- Tooth Icon Placeholder -->
+        <h1>Top 100 Orthodontists in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. <strong>Verify MDS (Orthodontics) qualification independently.</strong></p>
+    </div>
+
+     <div class="considerations">
+        <h2>Choosing an Orthodontist:</h2>
+        <ul>
+            <li><strong>Credentials:</strong> <strong>Verify the orthodontist holds an MDS degree in Orthodontics & Dentofacial Orthopedics.</strong> BDS is not sufficient for specialization.</li>
+            <li><strong>Experience:</strong> Look for experience relevant to your needs (adults, children, specific appliances like aligners, lingual braces).</li>
+            <li><strong>Consultation:</strong> Discuss treatment options, duration, costs, risks, and view before/after photos of similar cases.</li>
+            <li><strong>Technology:</strong> If interested in aligners or digital scanning, confirm clinic experience.</li>
+            <li><strong>Clinic Environment:</strong> Choose a comfortable clinic with professional staff for long-term treatment.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Ajay Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Healthcare (Saket) (Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Neeraj Verma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aligners, Lingual)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals (Indraprastha, Delhi) / The Dental Roots clinic (Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website / Clinic</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://thedentalroots.com/" target="_blank" class="website-link">The Dental Roots</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Rajesh Koppikar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Own Practice (Dr. Koppikar's Clinic) / Consultant at Breach Candy</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Rajesh Koppikar Orthodontist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. N R Krishnaswamy (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Research, Clinical Practice)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Ragas Dental College & Hospital (Professor & Head) / Private Practice (Past Pres IOS)</td>
+                 <td>Chennai</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr N R Krishnaswamy Orthodontist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Jayesh Rahalkar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jayesh Rahalkar Orthodontist Pune"</td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. K. Sadashiva Shetty (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Cleft Orthodontics)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Bapuji Dental College, Davangere (Dean & Prof) / Consultant roles</td>
+                 <td>Consultant</td>
+                 <td>Search Current Status</td>
+                 <td>Search "Dr K Sadashiva Shetty Orthodontist"</td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Sridevi Padmanabhan (BDS, MDS - Orthodontics, PhD)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aligners, Research)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Saveetha Dental College and Hospitals (Professor)</td>
+                 <td>Chennai</td>
+                 <td>Via College Website</td>
+                 <td><a href="https://saveethadental.com/" target="_blank" class="website-link">Saveetha Dental College</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Chetan Jayade (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Lingual Orthodontics)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Chetan Jayade Orthodontist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Viral Parekh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aligners, Smile Design)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Designer Smiles / Consultant at various clinics</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Designer Smiles Dr Viral Parekh Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Sanjay Labh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aligners)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Labh Dental Clinic & Orthodontic Centre / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Labh Dental Clinic Delhi"</td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. Praveen Shetty (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Nair Hospital Dental College</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Praveen Shetty Orthodontist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Vivek Saggar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Rohan Jagtap (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jagtap Orthodontic Clinic / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Jagtap Orthodontic Clinic Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Ritu Duggal (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly Clove Dental (CCO) / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Affiliation</td>
+                 <td>Check current affiliations</td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Girish P V (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Lingual, Aligners)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Private Practice / Formerly faculty at dental colleges</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Girish PV Orthodontist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Prashant Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Prashant Gupta Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Rajaganesh G (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles / Academic affiliations</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajaganesh G Orthodontist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. C Deepak (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Lingual Orthodontics)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Deepak Dental Clinic / Academic affiliations</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Deepak Dental Clinic Chennai"</td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Sneh Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Pulkit Aggarwal (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aligners)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Illusion Aligners (Clinical Head) / Private practice</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pulkit Aggarwal Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Dr. Rafi Romano (DMD, MSc - Orthodontics)</td>
+                 <td>Orthodontics (Lingual Orthodontics Pioneer - International)</td>
+                 <td>25+ Years (Very Senior)</td>
+                 <td>Conducts courses/workshops in India</td>
+                 <td>International/Visiting</td>
+                 <td>N/A</td>
+                 <td>Search name + India courses</td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Puneet Batra (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Cleft Orthodontics, Surgical Ortho)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal College of Dental Sciences (MCODS) (Professor & Head)</td>
+                 <td>Manipal</td>
+                 <td>Via College Website</td>
+                 <td><a href="https://manipal.edu/mcodes-manipal.html" target="_blank" class="website-link">MCODS Manipal</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Jignesh Kothari (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Lingual, Aligners)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jignesh Kothari Orthodontist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Arvinder Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Private Practice / Academic Roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arvinder Singh Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Shreyas Rao (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aligners)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Private Practice (Perfect Smile Orthodontics)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Perfect Smile Orthodontics Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Manu Rana (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Gurugram</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Manu Rana Orthodontist Gurgaon"</td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Ashish Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashish Gupta Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. R K Bali (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R K Bali Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Vandana Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vandana Kumar Orthodontist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Sameer Patil (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private Practice</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sameer Patil Orthodontist Pune"</td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. S P Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>KGMU / Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search KGMU or Practice</td>
+                 <td>Search "Dr S P Singh Orthodontist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Meera Verma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Hospital affiliations (Max, Apollo, Fortis) / Consultant</td>
+                 <td>Delhi</td>
+                 <td>Search Hospital or Practice</td>
+                 <td>Search "Dr Meera Verma Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Prashant Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Dental colleges / Major clinics</td>
+                 <td>Patna</td>
+                 <td>Search Clinic/College</td>
+                 <td>Search "Dr Prashant Singh Orthodontist Patna"</td>
+             </tr>
+              <tr>
+                 <td>34</td>
+                 <td>Dr. Amit Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ranchi/Jamshedpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Amit Kumar Orthodontist [City]"</td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Sneha Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Major clinics or hospitals</td>
+                 <td>Jaipur</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Dr Sneha Sharma Orthodontist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Harpreet Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ludhiana/Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Harpreet Singh Orthodontist [City]"</td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Priyanka Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo / Maxivision dental clinics / Consultant</td>
+                 <td>Hyderabad</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Dr Priyanka Sharma Orthodontist Hyderabad"</td>
+             </tr>
+              <tr>
+                 <td>38</td>
+                 <td>Dr. Arun Kumar G (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Ragas / Saveetha / Private clinics</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic/College</td>
+                 <td>Search "Dr Arun Kumar G Orthodontist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Bhavna Ahuja (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Chains like My Dentist, Sabka Dentist / Consultant (Verify Specialist)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic & Verify MDS</td>
+                 <td>Search "Dr Bhavna Ahuja Orthodontist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Gaurav Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Chains like Clove Dental, Axiss Dental / Consultant (Verify Specialist)</td>
+                 <td>Delhi NCR</td>
+                 <td>Search Clinic & Verify MDS</td>
+                 <td>Search "Dr Gaurav Gupta Orthodontist Delhi NCR"</td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Swati Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Ruby Hall Clinic / Jehangir dental depts / Consultant</td>
+                 <td>Pune</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Swati Gupta Orthodontist Pune"</td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Karthik K S (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal / Narayana dental depts / Consultant</td>
+                 <td>Bengaluru</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Karthik K S Orthodontist Bengaluru"</td>
+             </tr>
+              <tr>
+                 <td>43</td>
+                 <td>Dr. Deepa Nair (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aster / Lakeshore dental depts / Consultant</td>
+                 <td>Kochi</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Deepa Nair Orthodontist Kochi"</td>
+             </tr>
+              <tr>
+                 <td>44</td>
+                 <td>Dr. Anjali Raj (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Govt Dental College / Private clinics</td>
+                 <td>Thiruvananthapuram</td>
+                 <td>Search Clinic/College</td>
+                 <td>Search "Dr Anjali Raj Orthodontist Trivandrum"</td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Mohan Patel (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Shalby / Sterling dental depts / Consultant</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Mohan Patel Orthodontist Ahmedabad"</td>
+             </tr>
+              <tr>
+                 <td>46</td>
+                 <td>Dr. Shruti Shah (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Vadodara/Surat</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shruti Shah Orthodontist [City]"</td>
+             </tr>
+              <tr>
+                 <td>47</td>
+                 <td>Dr. Rohit Saxena (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal/Indore</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rohit Saxena Orthodontist [City]"</td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Lakshmi Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Visakhapatnam</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Lakshmi Sharma Orthodontist Visakhapatnam"</td>
+             </tr>
+              <tr>
+                 <td>49</td>
+                 <td>Dr. Arjun Rao (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>MCODS / AJ Institute affiliations / Consultant</td>
+                 <td>Mangalore</td>
+                 <td>Search Clinic/College</td>
+                 <td>Search "Dr Arjun Rao Orthodontist Mangalore"</td>
+             </tr>
+              <tr>
+                 <td>50</td>
+                 <td>Dr. Varun Pratap Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta / Fortis / Artemis dental / Consultant</td>
+                 <td>Gurugram</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Varun Pratap Singh Orthodontist Gurugram"</td>
+             </tr>
+              <tr>
+                 <td>51</td>
+                 <td>Dr. Abhishek Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Abhishek Gupta Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Adit Shah (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Adit Shah Orthodontist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. Akshay Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Akshay Sharma Orthodontist Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Ankur Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ankur Gupta Orthodontist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Ankur Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ankur Singh Orthodontist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Ankita Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ankita Gupta Orthodontist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Archana Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Academic affiliations / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice/College</td>
+                 <td>Search "Dr Archana Singh Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Arundeep Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal College of Dental Sciences (MCODS), Manipal / Consultant</td>
+                 <td>Manipal</td>
+                 <td>Via MCODS Manipal website</td>
+                 <td><a href="https://manipal.edu/mcodes-manipal.html" target="_blank" class="website-link">MCODS Manipal</a></td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Ashish Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashish Singh Orthodontist Patna"</td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Ashwin Kumar B P (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Ashwini B R (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashwini B R Orthodontist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Bhavna Kararia (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Deepti Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Deepti Singh Orthodontist Pune"</td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Divya Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Gurugram</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Divya Sharma Orthodontist Gurgaon"</td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Gaurav Kumar Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gaurav Kumar Sharma Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Harsh Vardhan Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Harsh Vardhan Singh Orthodontist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Hiten Kalra (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Jinesh Shah (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jinesh Shah Orthodontist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Jyothindra Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Academic affiliations / Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Practice/College</td>
+                 <td>Search "Dr Jyothindra Kumar Orthodontist Kerala"</td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. K G Nair (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kochi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K G Nair Orthodontist Kochi"</td>
+             </tr>
+              <tr>
+                 <td>71</td>
+                 <td>Dr. K V S Prasad (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>72</td>
+                 <td>Dr. Karishma Jaradi (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aesthetics focus)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Dentzz Dental Care Centres (associated)</td>
+                 <td>Mumbai</td>
+                 <td>Via Dentzz Website</td>
+                 <td><a href="https://www.dentzz.com/" target="_blank" class="website-link">Dentzz Dental</a></td>
+             </tr>
+              <tr>
+                 <td>73</td>
+                 <td>Dr. Manisha Mishra (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Mayank Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mayank Sharma Orthodontist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Mohd Tariq (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr. Z.A. Dental College, AMU (Professor)</td>
+                 <td>Aligarh</td>
+                 <td>Via AMU Website</td>
+                 <td><a href="https://www.amu.ac.in/department/orthodontics-and-dentofacial-orthopaedics" target="_blank" class="website-link">AMU Orthodontics</a></td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Monika Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Monika Gupta Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. N Santhosh Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>78</td>
+                 <td>Dr. Navreet Singh Sandhu (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles / Academic affiliations</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice/College</td>
+                 <td>Search "Dr Navreet Singh Sandhu Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Nitin Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nitin Sharma Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Nitya Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. P Kishore Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P Kishore Kumar Orthodontist Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Padmalatha K (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Pankaj Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Prabhu N (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Prabhu N Orthodontist Chennai"</td>
+             </tr>
+              <tr>
+                 <td>85</td>
+                 <td>Dr. Pradeep Kumar Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pradeep Kumar Singh Orthodontist Varanasi"</td>
+             </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Priyanka Kapoor (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Indraprastha (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Puneet Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Puneet Sharma Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. R S Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R S Kumar Orthodontist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. R K Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R K Sharma Orthodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Rakesh Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rakesh Sharma Orthodontist Jaipur"</td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Ravi Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ravi Kumar Orthodontist Hyderabad"</td>
+             </tr>
+              <tr>
+                 <td>92</td>
+                 <td>Dr. Sachin Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Samir Dutta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Samir Dutta Orthodontist Kolkata"</td>
+             </tr>
+              <tr>
+                 <td>94</td>
+                 <td>Dr. Sandeep Tandon (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Academic affiliations / Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice/College</td>
+                 <td>Search "Dr Sandeep Tandon Orthodontist Lucknow"</td>
+             </tr>
+              <tr>
+                 <td>95</td>
+                 <td>Dr. Sanjeev Kumar Verma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>King George's Medical University (KGMU) (Professor)</td>
+                 <td>Lucknow</td>
+                 <td>Via KGMU website</td>
+                 <td><a href="https://www.kgmu.org/" target="_blank" class="website-link">KGMU</a></td>
+             </tr>
+              <tr>
+                 <td>96</td>
+                 <td>Dr. Satinder Pal Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles / Academic affiliations</td>
+                 <td>Punjab</td>
+                 <td>Search Practice/College</td>
+                 <td>Search "Dr Satinder Pal Singh Orthodontist Punjab"</td>
+             </tr>
+              <tr>
+                 <td>97</td>
+                 <td>Dr. Saurabh Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Shipra Gupta (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>99</td>
+                 <td>Dr. Siddharth Shetty (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Siddharth Shetty Orthodontist Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>100</td>
+                 <td>Dr. Sonali Mahajan (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sonali Mahajan Orthodontist Pune"</td>
+             </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing an Orthodontist:</h2>
+        <ul>
+            <li><strong>Verify Qualifications:</strong> Ensure the practitioner holds an MDS degree in Orthodontics & Dentofacial Orthopedics.</li>
+            <li><strong>Experience:</strong> Look for experience relevant to your needs (adults, children, specific appliances like aligners).</li>
+            <li><strong>Consultation:</strong> Discuss treatment options, duration, costs, risks, and view before/after photos of similar cases.</li>
+            <li><strong>Technology:</strong> If interested in aligners or digital scanning, confirm clinic experience.</li>
+            <li><strong>Clinic Environment:</strong> Choose a comfortable clinic with professional staff for long-term treatment.</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

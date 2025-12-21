@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Dentists in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            --accent-gradient: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%);
+            --header-bg: #2b32b2;
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --white: #ffffff;
+            --bg-color: #f0f4f8;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            --hover-shadow: 0 15px 30px rgba(0, 114, 255, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 60px 20px 80px;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 114, 255, 0.3);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: var(--white);
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid #00c6ff;
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: #0072ff;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .considerations li {
+            margin-bottom: 0;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .considerations li::before {
+            content: "✦";
+            color: #00c6ff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-image: var(--primary-gradient);
+            color: var(--white);
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        tbody tr {
+            background-color: var(--white);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px) scale(1.005);
+            box-shadow: var(--hover-shadow);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px 15px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Styling the rounded corners of the rows */
+        td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 700;
+            color: #0072ff;
+            font-size: 1.2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, #f9fbff, #f0f4ff);
+        }
+
+        td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Specialty Column Styling */
+        td:nth-child(3) {
+            color: #00c6ff;
+            font-weight: 500;
+        }
+
+        /* Name Column Styling */
+        td:nth-child(2) {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-image: var(--accent-gradient);
+            color: #0b4a3c;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(67, 233, 123, 0.3);
+            transition: transform 0.2s;
+        }
+
+        a.website-link:hover {
+            transform: scale(1.05);
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .title-container { padding-bottom: 60px; }
+            .considerations { width: 90%; margin-top: -30px; }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            th, td {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">醴</span> <!-- Tooth Icon Placeholder -->
+        <h1>Top 100 Dentists in India</h1>
+        <p class="subtitle">A representative list of recognized dentists and specialists. Not an objective ranking. Verify BDS/MDS qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Dentist:</h2>
+        <ul>
+            <li><strong>Identify Your Need:</strong> General check-up, cleaning, root canal (Endodontist), braces (Orthodontist), implants/dentures (Prosthodontist), gum treatment (Periodontist), extraction (Oral Surgeon), child care (Pedodontist)?</li>
+            <li><strong>Credentials:</strong> Look for BDS (basic degree) and MDS (Master's degree for specialists in a specific branch).</li>
+            <li><strong>Clinic vs. Hospital:</strong> Choose based on preference and complexity of the required treatment.</li>
+            <li><strong>Consultation:</strong> Discuss concerns, treatment plan, costs, and feel comfortable with the dentist's approach.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Sandesh Mayekar (BDS, MS - Tufts USA)</td>
+                 <td>Aesthetic & Restorative Dentistry</td>
+                 <td>35+ Years (Very Senior Pioneer)</td>
+                 <td>Own Practice (Dr. Sandesh Mayekar's Advanced Dentistry Centre)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr. Sandesh Mayekar Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Mahesh Verma (BDS, MDS - Prosthodontics, MBA)</td>
+                 <td>Prosthodontics</td>
+                 <td>35+ Years (Very Senior - VC GGSIPU; Ex-MAIDS Director, Padma Shri)</td>
+                 <td>Formerly MAIDS, Delhi / Private Practice (Dental Health Centre)</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search current practice details</td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Ashok Karad (BDS, MDS - Prosthodontics)</td>
+                 <td>Implantology & Prosthodontics (Dental Education focus)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Smile Care Clinic (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.smilecareindia.com/" target="_blank" class="website-link">Smile Care</a> / Search "Dr Ashok Karad Smile Care"</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Ajay Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Healthcare (Director)</td>
+                 <td>Saket, New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Neeraj Verma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics & Dentofacial Orthopedics (Aligners, Lingual)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals (Indraprastha, Delhi) / The Dental Roots clinic (Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website / Clinic</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://thedentalroots.com/" target="_blank" class="website-link">The Dental Roots</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Gunaseelan Rajan (BDS, MDS - OMFS, FDSRCS)</td>
+                 <td>Oral & Maxillofacial Surgery (Implants, Jaw Reconstruction)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Rajan Dental Institute (Director)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rajandental.com/" target="_blank" class="website-link">Rajan Dental</a></td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Porus Turner (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics & Implantology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Own Practice (Dr. Turner's Specialty Dental Centers)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Porus Turner Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Suchetan Pradhan (BDS, MDS - Prosthodontics)</td>
+                 <td>Cosmetic Dentistry & Implantology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Pradhan Dental Centre</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.pradhandentalcentre.com/" target="_blank" class="website-link">Pradhan Dental Centre</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Nilanjan Mitra (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. A. Kumarswamy (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics & Implantology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant / HOD)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Rajiv Verma (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics (Crowns, Bridges, Implants)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Consultant / Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Aman Ahuja (BDS, MDS - Endodontics)</td>
+                 <td>Endodontics (Root Canal Specialist) & Microscopic Dentistry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Cosmodent India (Founder - Chain)</td>
+                 <td>Delhi/Gurugram/Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cosmodentindia.com/" target="_blank" class="website-link">Cosmodent India</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Shantanu Jaradi (BDS, MDS - Prosthodontics)</td>
+                 <td>Aesthetic Dentistry & Prosthodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dentzz Dental Care Centres (associated Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Dentzz Website / Search</td>
+                 <td><a href="https://www.dentzz.com/" target="_blank" class="website-link">Dentzz Dental</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Rajesh Koppikar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Own Practice (Dr. Koppikar's Clinic) / Consultant Breach Candy</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Rajesh Koppikar Orthodontist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Praful Bali (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Healthcare (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Uday Mukherjee (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Anandapur (Senior Consultant / HOD)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Sridhar Shetty (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly MCODS Manipal/Mangalore (Dean/Professor) / Consultant</td>
+                 <td>Mangalore/Consultant</td>
+                 <td>Check MCODS / Search</td>
+                 <td>Check MCODS or search private practice</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Sanjay Jain (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry (Pedodontics)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Healthcare (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Leena Rawal (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics (Gum Specialist)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Own practice / Consultant (e.g., Indraprastha Apollo)</td>
+                 <td>Delhi</td>
+                 <td>Search Practice/Hospital</td>
+                 <td>Search "Dr Leena Rawal Periodontist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Anupam Pasricha (BDS, MDS - Endodontics)</td>
+                 <td>Endodontics (Root Canal Specialist)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Healthcare (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Dr. Anil Kohli (BDS, MDS - Endodontics)</td>
+                 <td>Endodontics & Conservative Dentistry</td>
+                 <td>40+ Years (Very Senior - Padma Bhushan / Padma Shri awardee)</td>
+                 <td>Own Practice (Dr. Kohli's Dental Clinic)</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Anil Kohli Dental Clinic Delhi"</td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. K. V. Arun (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Ragas Dental College (Professor) / Apollo Hospitals (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Apollo Website / Search</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Chethan Kumar (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics & Maxillofacial Prosthetics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Vivek Saggar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Ashish Kakar (BDS, MDS - Periodontics)</td>
+                 <td>Implantology & Periodontics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Own Practice (Dr. Kakar's Dental Centre)</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Ashish Kakar Dental Centre Delhi"</td>
+             </tr>
+            <tr>
+                 <td>26</td>
+                 <td>Dr. Ratnadeep Patil (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics & Implantology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Smile Care Expert Dental Centre (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Smile Care Ratnadeep Patil Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>27</td>
+                 <td>Dr. Ramesh Shankar (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics & Implantology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo White Dental / Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic/Practice</td>
+                 <td>Search "Dr Ramesh Shankar Periodontist Chennai"</td>
+            </tr>
+            <tr>
+                 <td>28</td>
+                 <td>Dr. Ashok Dhoble (BDS)</td>
+                 <td>General Dentistry (Leadership role)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indian Dental Association (Hon. Secretary General) / Private Practice</td>
+                 <td>Mumbai/National</td>
+                 <td>Via IDA / Search Practice</td>
+                 <td>Search "Dr Ashok Dhoble IDA"</td>
+            </tr>
+            <tr>
+                 <td>29</td>
+                 <td>Dr. Arun Setia (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>30</td>
+                 <td>Dr. Sarika Chaudhry Solanki (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics & Implantology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Director - Dental)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>31</td>
+                 <td>Dr. N S Yadav (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>32</td>
+                 <td>Dr. Gaurav Sharma (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Indraprastha (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>33</td>
+                 <td>Dr. Ajay Kakar (BDS, MDS - Periodontics)</td>
+                 <td>Implantology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant Implantologist roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ajay Kakar Implantologist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>34</td>
+                 <td>Dr. Sameep Shetty (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>35</td>
+                 <td>Dr. Priyank Sethi (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics (Digital Dentistry)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sethi Dental Clinic / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Sethi Dental Clinic Delhi"</td>
+            </tr>
+            <tr>
+                 <td>36</td>
+                 <td>Dr. Madhu Hariharan (BDS, MDS - Endodontics)</td>
+                 <td>Endodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>37</td>
+                 <td>Dr. Neha Garg (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>38</td>
+                 <td>Dr. Prashant Bhalla (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>39</td>
+                 <td>Dr. Akshay Rathi (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics & Implantology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Rathi Dental Center / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Rathi Dental Center Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>40</td>
+                 <td>Dr. Rajiv Kumar Chugh (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>41</td>
+                 <td>Dr. P D Joshi (BDS, MDS - Oral Medicine & Radiology)</td>
+                 <td>Oral Medicine & Radiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Govt Dental College Mumbai / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P D Joshi Oral Medicine Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>42</td>
+                 <td>Dr. Shalini Kapoor (BDS, MDS - Endodontics)</td>
+                 <td>Endodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>43</td>
+                 <td>Dr. S P Singh (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Academic affiliations / Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice/College</td>
+                 <td>Search "Dr S P Singh OMFS Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>44</td>
+                 <td>Dr. Ritu Sharma (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Indraprastha (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>45</td>
+                 <td>Dr. Mona Kakar (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr. Kakar's Dental Centre</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Ashish Kakar Dental Centre Delhi" (Shares clinic)</td>
+            </tr>
+            <tr>
+                 <td>46</td>
+                 <td>Dr. Ateksha Bhardwaj Khanna (BDS, MDS - Endodontics)</td>
+                 <td>Endodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>The Dental Roots clinic / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Via Clinic Website</td>
+                 <td><a href="https://thedentalroots.com/" target="_blank" class="website-link">The Dental Roots</a></td>
+            </tr>
+            <tr>
+                 <td>47</td>
+                 <td>Dr. Rajkumar N (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Professor / Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice/College</td>
+                 <td>Search "Dr Rajkumar N Prosthodontist Chennai"</td>
+            </tr>
+            <tr>
+                 <td>48</td>
+                 <td>Dr. Gunjan Kumar (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>49</td>
+                 <td>Dr. Smriti Malhotra (BDS, MDS - Endodontics)</td>
+                 <td>Conservative Dentistry & Endodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>50</td>
+                 <td>Dr. Prashant Tripathi (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics & Implantology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Nidhi Gupta	(BDS, MDS - Conservative & Endodontics)</td>
+                 <td>Endodontics, Aesthetic Dentistry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Puneet Ahuja (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics, Implantology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Ahuja Dental Clinic</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Ahuja Dental Clinic Delhi"</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. S M Sharma (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S M Sharma OMFS Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. T M Udani (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr T M Udani Orthodontist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Anandakrishna G N (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics, Implantology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Deepak Victor (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Diksha Tahilramani Batra (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics, Smile Design</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>The Smile Studio / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "The Smile Studio Diksha Batra Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Gaurav Kumar (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gaurav Kumar Pedodontist Delhi"</td>
+            </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Himanshu Aeran (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics, Implantology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Seema Dental College & Hospital (Principal/Director) / Consultant</td>
+                 <td>Rishikesh</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Himanshu Aeran Rishikesh"</td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. J K Sinha (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr J K Sinha Orthodontist Patna"</td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Komal Majumdar (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics, Aesthetic Dentistry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Komal Majumdar Prosthodontist Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. L K Surekha	(BDS, MDS - Periodontics)</td>
+                 <td>Periodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Meetika Mukherjee (BDS, MDS - Conservative & Endodontics)</td>
+                 <td>Endodontics, Restorative Dentistry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Anandapur (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Mohan Kumar P (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. N K Aggarwal (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr N K Aggarwal Prosthodontist Delhi"</td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Nitin Ahuja (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics, Implantology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nitin Ahuja Periodontist Chandigarh"</td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. P C Gupta (BDS, MDS - Conservative & Endodontics)</td>
+                 <td>Endodontics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P C Gupta Endodontist Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Poonam Sharma (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Rajesh Bansal (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajesh Bansal OMFS Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>70</td>
+                 <td>Dr. Ramesh Sharma (BDS, MDS - Oral Pathology)</td>
+                 <td>Oral Pathology & Microbiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Academic / Diagnostic roles</td>
+                 <td>Check Location</td>
+                 <td>Search Academic Profile</td>
+                 <td>Search "Dr Ramesh Sharma Oral Pathologist India" (Primarily Academic/Lab)</td>
+            </tr>
+            <tr>
+                 <td>71</td>
+                 <td>Dr. Ravindra Kumar (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Ritu Gupta (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Clinics</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ritu Gupta Pedodontist Delhi"</td>
+            </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. S B Sethi (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S B Sethi Prosthodontist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>74</td>
+                 <td>Dr. Sachin Sarode (BDS, MDS - Oral Pathology)</td>
+                 <td>Oral Pathology, Oncology Diagnosis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr. D. Y. Patil Dental College & Hospital (Professor/Reader)</td>
+                 <td>Pune</td>
+                 <td>Via College Website</td>
+                 <td><a href="http://dental.dpu.edu.in/" target="_blank" class="website-link">DY Patil Dental</a> (Academic/Pathology)</td>
+            </tr>
+            <tr>
+                 <td>75</td>
+                 <td>Dr. Sadashiv Shetty K	(BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>(Duplicate, listed as #6 - Replace)
+                 **Replacement: Dr. Sahil Mogla** (BDS, MDS - Conservative & Endodontics)	Endodontics	10+ Years	Consultant roles	Delhi NCR	Search Practice	Search "Dr Sahil Mogla Endodontist Delhi"</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+            </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Sameer Kaura (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics, Implantology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Clinics</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sameer Kaura Periodontist Chandigarh"</td>
+            </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Sandhya Jain (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics, Maxillofacial Prosthetics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sandhya Jain Prosthodontist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>78</td>
+                 <td>Dr. Sanjana Rajput (BDS, MDS - Oral Medicine & Radiology)</td>
+                 <td>Oral Medicine, Radiology, TMJ Disorders</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sanjana Rajput Oral Medicine Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Santosh Kumar (BDS, MDS - Conservative & Endodontics)</td>
+                 <td>Endodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Santosh Kumar Endodontist Patna"</td>
+            </tr>
+            <tr>
+                 <td>80</td>
+                 <td>Dr. Shail Jaggi	(BDS, MDS - Conservative & Endodontics)</td>
+                 <td>Endodontics, Aesthetic Dentistry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jaggi Dental Clinic / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Jaggi Dental Clinic Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>81</td>
+                 <td>Dr. Shameek Mukherjee (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shameek Mukherjee Orthodontist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>82</td>
+                 <td>Dr. Shashi Kumar (BDS, MDS - Oral Surgery)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shashi Kumar OMFS Bengaluru"</td>
+            </tr>
+            <tr>
+                 <td>83</td>
+                 <td>Dr. Shilpa Shetty (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shilpa Shetty Prosthodontist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>84</td>
+                 <td>Dr. Sneha Divekar (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sneha Divekar Pedodontist Pune"</td>
+            </tr>
+            <tr>
+                 <td>85</td>
+                 <td>Dr. Sonali Bassi (BDS, MDS - Oral Surgery)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Soumyadeep Ghosh (BDS, MDS - Conservative & Endodontics)</td>
+                 <td>Endodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Soumyadeep Ghosh Endodontist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>87</td>
+                 <td>Dr. Sucheta Vanarse (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sucheta Vanarse Periodontist Pune"</td>
+            </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. Sunil Gupta (BDS, MDS - Oral Surgery)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunil Gupta OMFS Delhi"</td>
+            </tr>
+            <tr>
+                 <td>89</td>
+                 <td>Dr. Taruna Sharma (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Taruna Sharma Prosthodontist Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Toshi Srivastava (BDS, MDS - Conservative & Endodontics)</td>
+                 <td>Endodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Toshi Srivastava Endodontist Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Usha Mohan Das (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Chennai (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. V K Gupta (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr V K Gupta Prosthodontist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>93</td>
+                 <td>Dr. Vikas Gowd (BDS, MDS - Prosthodontics)</td>
+                 <td>Prosthodontics, Implantology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr Gowds Dental Hospital (Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Clinic Website</td>
+                 <td><a href="https://drgowd.com/" target="_blank" class="website-link">Dr Gowds Dental</a></td>
+            </tr>
+            <tr>
+                 <td>94</td>
+                 <td>Dr. Vikram Shetty (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery, Craniofacial</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nitte University / Consultant roles</td>
+                 <td>Mangalore</td>
+                 <td>Via University/Search</td>
+                 <td>Search "Dr Vikram Shetty OMFS Mangalore"</td>
+            </tr>
+            <tr>
+                 <td>95</td>
+                 <td>Dr. Vineeta Singh (BDS, MDS - Orthodontics)</td>
+                 <td>Orthodontics</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vineeta Singh Orthodontist Varanasi"</td>
+            </tr>
+            <tr>
+                 <td>96</td>
+                 <td>Dr. Vishnu Bhat (BDS, MDS - Pedodontics)</td>
+                 <td>Pediatric Dentistry</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal College of Dental Sciences (MCODS), Manipal (Professor)</td>
+                 <td>Manipal</td>
+                 <td>Via College Website</td>
+                 <td><a href="https://manipal.edu/mcodes-manipal.html" target="_blank" class="website-link">MCODS Manipal</a></td>
+            </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Vivek Sharma (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics, Implantology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vivek Sharma Periodontist Chandigarh"</td>
+            </tr>
+            <tr>
+                 <td>98</td>
+                 <td>Dr. Yashoda R (BDS, MDS - Oral Pathology)</td>
+                 <td>Oral Pathology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Academic / Diagnostic roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Academic Profile</td>
+                 <td>Search "Dr Yashoda R Oral Pathologist Bengaluru" (Primarily Academic/Lab)</td>
+            </tr>
+            <tr>
+                 <td>99</td>
+                 <td>Dr. Yusuf Chunawala (BDS, MDS - Periodontics)</td>
+                 <td>Periodontics, Implantology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Yusuf Chunawala Periodontist Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Z H Khan (BDS, MDS - OMFS)</td>
+                 <td>Oral & Maxillofacial Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Aligarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Z H Khan OMFS Aligarh"</td>
+            </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Dentist:</h2>
+        <ul>
+            <li><strong>Identify Your Need:</strong> General check-up, cleaning, root canal (Endodontist), braces (Orthodontist), implants/dentures (Prosthodontist), gum treatment (Periodontist), extraction (Oral Surgeon), child care (Pedodontist)?</li>
+            <li><strong>Credentials:</strong> Look for BDS (basic degree) and MDS (Master's degree for specialists in a specific branch).</li>
+            <li><strong>Clinic vs. Hospital:</strong> Choose based on preference and complexity of the required treatment.</li>
+            <li><strong>Consultation:</strong> Discuss concerns, treatment plan, costs, and feel comfortable with the dentist's approach.</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

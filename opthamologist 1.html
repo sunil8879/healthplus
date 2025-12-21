@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Ophthalmologists (Eye Specialists) in India</title>
+    <!-- Importing Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vision/Eye Care Inspired Palette */
+            --primary-blue: #3498db;
+            --secondary-blue: #2980b9;
+            --accent-cyan: #00cec9;
+            --text-dark: #2c3e50;
+            --text-light: #636e72;
+            --bg-color: #f0f8ff;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+            --header-gradient: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Stylish Header --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(9, 132, 227, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Iris/Pupil shapes */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            animation: blink 4s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 6px solid var(--accent-cyan);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1f5fe;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "👁️";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1em;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #e3f2fd;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--accent-cyan);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-cyan);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 206, 201, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #00b894;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon"></span> <!-- Eye Icon Placeholder -->
+        <h1>Top 100 Ophthalmologists (Eye Specialists) in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. Verify MS/DNB/FRCS qualifications independently.</p>
+    </div>
+
+     <div class="considerations">
+        <h2>Choosing an Ophthalmologist:</h2>
+        <ul>
+            <li><strong>Your Condition:</strong> Cataract, Glaucoma, Retina issue (Diabetic Retinopathy, Macular Degeneration), Cornea problem, LASIK/Refractive Surgery need, Squint (Strabismus), Pediatric eye issue, Oculoplasty (eyelid/orbit)?</li>
+            <li><strong>Sub-specialist:</strong> Seek specific expertise (Retina Specialist, Glaucoma Specialist, Cornea Specialist, etc.) for complex conditions.</li>
+            <li><strong>Diagnostic & Surgical Technology:</strong> Inquire about available technology (OCT, Fundus Camera, Lasers, Phaco machines, Femtosecond Laser) if needed.</li>
+            <li><strong>Hospital/Centre Reputation:</strong> Consider the eye hospital or clinic's facilities and reputation.</li>
+            <li><strong>Referral:</strong> Optometrists or general ophthalmologists often provide referrals.</li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic/Institution</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Gullapalli N Rao (MD)</td>
+                 <td>Cornea, Eye Banking (Founder of LVPEI)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>L V Prasad Eye Institute (LVPEI) (Founder & Distinguished Chair)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lvpei.org/" target="_blank" class="website-link">LVPEI</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. S. S. Badrinath (MS, FRCS, FACS) (1940-2023)</td>
+                 <td>Vitreo-Retinal Surgery (Founder of Sankara Nethralaya)</td>
+                 <td>Legacy Figure (Padma Bhushan)</td>
+                 <td>Sankara Nethralaya (Founder)</td>
+                 <td>Chennai (Legacy)</td>
+                 <td>N/A</td>
+                 <td><a href="https://www.sankaranethralaya.org/" target="_blank" class="website-link">Sankara Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Lingam Gopal (MS, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>National University Hospital (Singapore) / Formerly Sankara Nethralaya</td>
+                 <td>Singapore/Visiting</td>
+                 <td>Check SN Status</td>
+                 <td>Check Sankara Nethralaya faculty/visiting consultants</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Mahipal S Sachdev (MS, MNAMS)</td>
+                 <td>Cataract & Refractive Surgery (LASIK, Phaco), Cornea (Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Centre For Sight (Chairman & MD - Group Founder)</td>
+                 <td>New Delhi HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Amar Agarwal (MS, FRCS, FRCOphth)</td>
+                 <td>Cataract Surgery (Pioneering techniques), Refractive Surgery</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Dr. Agarwal's Eye Hospital (Chairman - Group)</td>
+                 <td>Chennai HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.dragarwal.com/" target="_blank" class="website-link">Dr. Agarwal's Eye Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Taraprasad Das (MS, DNB, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery, Uveitis</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>L V Prasad Eye Institute (LVPEI) (Vice-Chair)</td>
+                 <td>Hyderabad/Bhubaneswar</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lvpei.org/" target="_blank" class="website-link">LVPEI</a></td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Santosh G Honavar (MD, FACS)</td>
+                 <td>Ocular Oncology, Oculoplasty</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Centre For Sight (Director - Ophthalmic Plastic Surgery & Ocular Oncology) / Formerly LVPEI</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Rohit Shetty (MS, FRCS)</td>
+                 <td>Cornea, Cataract & Refractive Surgery, Keratoconus</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Narayana Nethralaya (Vice Chairman)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayananethralaya.org/" target="_blank" class="website-link">Narayana Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Harsh Vardhan (MBBS, MS - ENT)</td>
+                 <td>Public Health aspects of Ophthalmology (Former Health Minister)</td>
+                 <td>Senior Political Leader</td>
+                 <td>Public Service / Formerly practicing ENT Surgeon</td>
+                 <td>Delhi</td>
+                 <td>N/A</td>
+                 <td>Public figure information (ENT by training)</td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Rajendra Prasad (Legacy)</td>
+                 <td>Cornea, Cataract & Refractive Surgery (Center named after him)</td>
+                 <td>Legacy Figure</td>
+                 <td>Dr Rajendra Prasad Centre for Ophthalmic Sciences, AIIMS (Founder)</td>
+                 <td>New Delhi (Legacy)</td>
+                 <td>N/A</td>
+                 <td><a href="https://www.aiims.edu/rpcentre/" target="_blank" class="website-link">RP Centre, AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Atul Kumar (MS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Chief, RP Centre, AIIMS / Consultant (Centre for Sight / Apollo)</td>
+                 <td>Delhi</td>
+                 <td>Check Hospital Websites</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">CFS</a> / <a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Namrata Sharma (MS, DNB, FRCS)</td>
+                 <td>Cornea, Cataract & Refractive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Dr Rajendra Prasad Centre, AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/rpcentre/" target="_blank" class="website-link">RP Centre, AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Cyrus M Shroff (MS)</td>
+                 <td>Cataract & Anterior Segment Surgery</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Shroff Eye Centre (Medical Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.shroffeyecentre.com/" target="_blank" class="website-link">Shroff Eye Centre</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Keiki R Mehta (MS, DOMS, FRCS)</td>
+                 <td>Cataract & Refractive Surgery (IOLs, LASIK Pioneer - Padma Shri)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Mehta International Eye Institute (Surgical Director)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Mehta International Eye Institute Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Tatyarao P Lahane (MS)</td>
+                 <td>Cataract Surgery (High Volume - Padma Shri)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Dean JJ Hospital / Public Service / Associated hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Search Current Role</td>
+                 <td>Public figure in Maharashtra healthcare</td>
+             </tr>
+              <tr>
+                 <td>16</td>
+                 <td>Dr. S Natarajan (MS, DO, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery (Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Aditya Jyot Eye Hospital (Chairman & MD)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.adityajyoteyehospital.org/" target="_blank" class="website-link">Aditya Jyot Eye Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Rajan Shah (MS, DOMS)</td>
+                 <td>Cataract Surgery, Glaucoma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. K Bhujang Shetty (MS)</td>
+                 <td>Cataract Surgery, General Ophthalmology (Founder)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Narayana Nethralaya (Founder & Chairman)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayananethralaya.org/" target="_blank" class="website-link">Narayana Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Mohan Rajan (MS, DO)</td>
+                 <td>Cataract & Refractive Surgery, Cornea</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Rajan Eye Care Hospital (Chairman & Medical Director)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rajaneyecare.com/" target="_blank" class="website-link">Rajan Eye Care Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Jyotirmay Biswas (MS, FRCPath)</td>
+                 <td>Uveitis, Ocular Pathology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Sankara Nethralaya (Former Director - Uveitis & Ocular Pathology)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sankaranethralaya.org/" target="_blank" class="website-link">Sankara Nethralaya</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Virender Sangwan (MS)</td>
+                 <td>Cornea, Limbal Stem Cell Transplantation</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr Shroff's Charity Eye Hospital (Director - Innovations) / Formerly LVPEI</td>
+                 <td>Delhi</td>
+                 <td>Via Website / Search</td>
+                 <td><a href="https://sceh.net/" target="_blank" class="website-link">Dr Shroff's Charity Eye Hospital</a> or search current affiliation</td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Partha Biswas (MS, DO)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>B B Eye Foundation (Director)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bbeyefoundation.com/" target="_blank" class="website-link">B B Eye Foundation</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Subhendu Boral (MS, DO)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Barun Kumar Nayak (MS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Consultant / Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Om Parkash Sharma (MS)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Centre For Sight (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+              <tr>
+                 <td>26</td>
+                 <td>Dr. Arun Kumar Jain (MS)</td>
+                 <td>Glaucoma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Anita Sethi (MS, DNB, FRCS)</td>
+                 <td>Oculoplasty, Orbital Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Ramamurthy Dandapani (MS, DO)</td>
+                 <td>Cataract & Refractive Surgery (High Volume)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>The Eye Foundation (Chairman - Group)</td>
+                 <td>Coimbatore HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.theeyefoundation.com/" target="_blank" class="website-link">The Eye Foundation</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Murali Ariga (MS, DO)</td>
+                 <td>Cataract Surgery, General Ophthalmology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Swamy Eye Clinic / Apollo Spectra Hospitals</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Swamy Eye Clinic Chennai" / Apollo Spectra</td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Nikhil Nasta (MS, DOMS)</td>
+                 <td>Cataract & Refractive Surgery (LASIK)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>i-Sight Eye Care & Surgery (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "i-Sight Eye Care Nikhil Nasta Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Pravin Krishna Vaddavalli (MS, Fellow Cornea/Refractive)</td>
+                 <td>Cornea, Cataract & Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>L V Prasad Eye Institute (LVPEI) (Senior Consultant / Head - Refractive)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lvpei.org/" target="_blank" class="website-link">LVPEI</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Rishi Mohan (MD, DNB)</td>
+                 <td>Glaucoma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>MM Eyetech Institute (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://mmeyetech.com/" target="_blank" class="website-link">MM Eyetech</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. T S Surendran (MS, DO)</td>
+                 <td>Pediatric Ophthalmology & Strabismus (Squint)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Sankara Nethralaya (Former HOD)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sankaranethralaya.org/" target="_blank" class="website-link">Sankara Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. J K Reddy (MS, DO)</td>
+                 <td>Pediatric Ophthalmology & Strabismus</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Neo Retina Eye Care / Maxivision Eye Hospital</td>
+                 <td>Hyderabad</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Neo Retina Eye Care Hyderabad" / Maxivision</td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Kumar J Doctor (MS, DOMS)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Doctor Eye Institute (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.doctoreyeinstitute.com/" target="_blank" class="website-link">Doctor Eye Institute</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Sonu Goel (MS)</td>
+                 <td>Cataract & Refractive Surgery, Glaucoma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Centre For Sight (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Manisha Agarwal (MS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr Shroff's Charity Eye Hospital (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sceh.net/" target="_blank" class="website-link">Dr Shroff's Charity Eye Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Debraj Shome (MS, DNB, FACS, Fellow Oculoplasty)</td>
+                 <td>Oculoplasty & Facial Plastic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>The Esthetic Clinics / Apollo Spectra Hospitals (Director/Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Clinic/Hospital</td>
+                 <td><a href="https://www.theestheticclinic.com/" target="_blank" class="website-link">The Esthetic Clinics</a> / Apollo Spectra</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Paresh A Shah (MS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Sri Ganesh (MS, DNB)</td>
+                 <td>Cataract & Refractive Surgery, Keratoconus</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nethradhama Super Speciality Eye Hospital (Founder & CMD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nethradhama.org/" target="_blank" class="website-link">Nethradhama</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Quresh Maskati (MS, DOMS, FICS)</td>
+                 <td>Cornea, Cataract & Refractive Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Saifee Hospital / Maskati Eye Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Clinic</td>
+                 <td><a href="https://www.saifeehospital.com/" target="_blank" class="website-link">Saifee</a> / Search "Maskati Eye Clinic Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Vinay Nangia (MS, FRCS)</td>
+                 <td>Glaucoma, Neuro-Ophthalmology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Suraj Eye Institute (Director)</td>
+                 <td>Nagpur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://surajeye.org/" target="_blank" class="website-link">Suraj Eye Institute</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Rajiv Raman (MS, DNB)</td>
+                 <td>Vitreo-Retinal Surgery, Diabetic Retinopathy Research</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sankara Nethralaya (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sankaranethralaya.org/" target="_blank" class="website-link">Sankara Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Suven Bhattacharjee (MS, Fellow Cornea)</td>
+                 <td>Cornea, Cataract & Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Nethralaya (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayananethralaya.org/" target="_blank" class="website-link">Narayana Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Himanshu Mehta (MS, DOMS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>The Vission Eye Center / Lilavati Hospital (Director/Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "The Vission Eye Center Mumbai" / <a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Ritika Sachdev (MS, Fellow Refractive)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Centre For Sight (Additional Director - Medical Services)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Harshul Tak (MS, Fellow Glaucoma)</td>
+                 <td>Glaucoma</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jaypee Hospital (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaypeehospital.com/" target="_blank" class="website-link">Jaypee Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Pradeep Sharma (MS)</td>
+                 <td>Pediatric Ophthalmology, Strabismus, Neuro-Ophthalmology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr Rajendra Prasad Centre, AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/rpcentre/" target="_blank" class="website-link">RP Centre, AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Kavita Rao (MS, Fellow Oculoplasty)</td>
+                 <td>Oculoplasty, Orbital & Lacrimal Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aditya Jyot Eye Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.adityajyoteyehospital.org/" target="_blank" class="website-link">Aditya Jyot Eye Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Gaurav Luthra (MS, DNB)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Drishti Eye Centre (Director)</td>
+                 <td>Dehradun</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Drishti Eye Centre Dehradun"</td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Jeevan S Titiyal (MD)</td>
+                 <td>Cornea, Refractive Surgery (Keratoconus, LASIK)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr Rajendra Prasad Centre, AIIMS (Professor - Cornea & Refractive)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/rpcentre/" target="_blank" class="website-link">RP Centre, AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Ajay Aurora (MS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. Sathyan Parthasarathi (MS, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Shreyas Ramamurthy (MS, DNB)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>The Eye Foundation (Medical Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.theeyefoundation.com/" target="_blank" class="website-link">The Eye Foundation</a></td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Vinod Kumar Agarwal (MS)</td>
+                 <td>Glaucoma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr Shroff's Charity Eye Hospital (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sceh.net/" target="_blank" class="website-link">Dr Shroff's Charity Eye Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Rashmin Gandhi (MS, DNB, FRCS)</td>
+                 <td>Pediatric Ophthalmology, Neuro-Ophthalmology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Centre For Sight (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Rajesh Sinha (MD)</td>
+                 <td>Cornea, Refractive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Dr Rajendra Prasad Centre, AIIMS (Professor - Cornea)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/rpcentre/" target="_blank" class="website-link">RP Centre, AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Hardeep Singh (MS)</td>
+                 <td>Glaucoma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Centre For Sight (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Kim Ramasamy (MS, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery (Diabetic Retinopathy)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Aravind Eye Hospital, Madurai (Chief Medical Officer & Head - Retina)</td>
+                 <td>Madurai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aravind.org/" target="_blank" class="website-link">Aravind Eye Care System</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Hemalini Samant (MS, Fellow Oculoplasty)</td>
+                 <td>Oculoplasty, Orbital Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Hemalini Samant Oculoplasty Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Santanu Mitra (MS, DO)</td>
+                 <td>Cataract Surgery, General Ophthalmology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Parveen Sen (MS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Swati Ravani (MS)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Swati Ravani Ophthalmologist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Aniruddha Maiti (MS, Fellow Retina)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aniruddha Maiti Retina Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Sudipto Pakrasi (MS)</td>
+                 <td>Cataract Surgery, Glaucoma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Director - Ophthalmology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Ramesh Kekunnaya (MS, Fellow Ped Ophth)</td>
+                 <td>Pediatric Ophthalmology, Strabismus, Neuro-Ophthalmology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>L V Prasad Eye Institute (LVPEI) (Head - Ped Ophth, Strabismus & Neuro-Ophth)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lvpei.org/" target="_blank" class="website-link">LVPEI</a></td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Nishant Kumar (MS, Fellow Retina)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Deependra V Singh (MS, Fellow Uvea)</td>
+                 <td>Uveitis, Ocular Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Senior Consultant / Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Jagat Ram (MS)</td>
+                 <td>Cataract Surgery (Former Director, PGI)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly PGI Chandigarh / Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Jagat Ram Ophthalmologist Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Muralidhar N S (MS)</td>
+                 <td>General Ophthalmology, Cataract Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Aditya Neog (MS, Fellow Retina)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Guwahati</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aditya Neog Retina Guwahati"</td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. P Vijayalakshmi (MS, DNB)</td>
+                 <td>Pediatric Ophthalmology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Aravind Eye Hospital, Madurai (Chief - Ped Ophth & Adult Strabismus)</td>
+                 <td>Madurai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aravind.org/" target="_blank" class="website-link">Aravind Eye Care System</a></td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Chaitra Jayadev (MS, Fellow Cornea)</td>
+                 <td>Cornea, Refractive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Narayana Nethralaya (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayananethralaya.org/" target="_blank" class="website-link">Narayana Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Partha Sarathi Majumder (MS, Fellow Glaucoma)</td>
+                 <td>Glaucoma</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Kasturi Bhattacharjee (MS, Fellow Oculoplasty)</td>
+                 <td>Oculoplasty, Orbital Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sri Sankaradeva Nethralaya (Senior Consultant)</td>
+                 <td>Guwahati</td>
+                 <td>Via Website</td>
+                 <td><a href="https://ssnguwahati.org/" target="_blank" class="website-link">Sri Sankaradeva Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Nikhil Choudhari (MS, Fellow Retina)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Nagpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nikhil Choudhari Retina Nagpur"</td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Krishna Prasad R (MS)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Prasad Netralaya Udupi / Mangalore</td>
+                 <td>Udupi/Mangalore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://prasadnetralaya.com/" target="_blank" class="website-link">Prasad Netralaya</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Anirban Chakraborty (MS, Fellow Glaucoma)</td>
+                 <td>Glaucoma</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>B B Eye Foundation (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bbeyefoundation.com/" target="_blank" class="website-link">B B Eye Foundation</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Raja Narayanan (MS, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery, Uveitis</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>L V Prasad Eye Institute (LVPEI) (Senior Consultant / Head - Clinical Research)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lvpei.org/" target="_blank" class="website-link">LVPEI</a></td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Santhan Gopal K S (MS, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. Shaloo Bageja (MS, Fellow Oculoplasty)</td>
+                 <td>Oculoplasty</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Jatin Ashar (MS, DNB, FICO)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Mumbai Eye Care / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Mumbai Eye Care Jatin Ashar"</td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Tinku Bali Razdan (MS, DNB)</td>
+                 <td>Refractive Surgery (LASIK, SMILE), Cataract</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital / EyeRetina Hospital (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website / Clinic</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">SGRH</a> / <a href="https://eyeretinahospitals.com/" target="_blank" class="website-link">EyeRetina</a></td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Rengaraj Venkatesh (MS)</td>
+                 <td>Glaucoma (High Volume Surgeon)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Aravind Eye Hospital, Pondicherry (Chief Medical Officer)</td>
+                 <td>Pondicherry</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aravind.org/" target="_blank" class="website-link">Aravind Eye Care System</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Somdutt Prasad (MS, FRCSEd)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AMRI Hospitals / Private Practice</td>
+                 <td>Kolkata</td>
+                 <td>Via Website / Search</td>
+                 <td><a href="https://www.amrihospitals.in/" target="_blank" class="website-link">AMRI</a> / Search practice</td>
+             </tr>
+              <tr>
+                 <td>86</td>
+                 <td>Dr. Digvijay Singh (MS)</td>
+                 <td>Cataract & Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Noble Eye Care (Director)</td>
+                 <td>Gurugram</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Noble Eye Care Gurugram"</td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Bipasha Mukherjee (MS, Fellow Neuro-Ophth/Oculoplasty)</td>
+                 <td>Neuro-Ophthalmology, Orbit & Oculoplasty</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sankara Nethralaya, Kolkata (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sankaranethralaya.org/" target="_blank" class="website-link">Sankara Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Muna Bhende (MS, DNB, FRCS)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sankara Nethralaya (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sankaranethralaya.org/" target="_blank" class="website-link">Sankara Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Subina Narang (MS)</td>
+                 <td>Cornea, Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Professor - Ophthalmology)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Arulmozhi Varman (MS)</td>
+                 <td>General Ophthalmology, Cataract Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Uma Eye Clinic (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.umaeyeclinic.com/" target="_blank" class="website-link">Uma Eye Clinic</a></td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Vinay S Pillai (MS, Fellow Glaucoma)</td>
+                 <td>Glaucoma</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Chaithanya Eye Hospital (Consultant)</td>
+                 <td>Thiruvananthapuram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://chaithanya.org/" target="_blank" class="website-link">Chaithanya Eye Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. N S D Raju (MS)</td>
+                 <td>General Ophthalmology, Cataract Surgery (Veteran figure)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Maxivision Eye Hospital (Founder)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxivisioneyehospital.com/" target="_blank" class="website-link">Maxivision</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Harsh Kumar (MS)</td>
+                 <td>Glaucoma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Centre For Sight (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Somshekar N (MS, Fellow Retina)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Narayana Nethralaya (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayananethralaya.org/" target="_blank" class="website-link">Narayana Nethralaya</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Rohit Saxena (MD)</td>
+                 <td>Pediatric Ophthalmology, Neuro-Ophthalmology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Dr Rajendra Prasad Centre, AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/rpcentre/" target="_blank" class="website-link">RP Centre, AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Vishal Agarwal (MS, Fellow Retina)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Dr Agarwal's Eye Hospital (Group)</td>
+                 <td>Multi-city</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.dragarwal.com/" target="_blank" class="website-link">Dr. Agarwal's Eye Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Bhaskar Srinivasan (MS, Fellow Cornea)</td>
+                 <td>Cornea, Refractive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Pradeep S (MS)</td>
+                 <td>General Ophthalmology, Cataract Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Preetam Samant (MS, DNB, FICO)</td>
+                 <td>Vitreo-Retinal Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Sumita Sharma (MS, Fellow Ped Ophth)</td>
+                 <td>Pediatric Ophthalmology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Centre For Sight (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.centreforsight.net/" target="_blank" class="website-link">Centre For Sight</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing an Ophthalmologist:</h2>
+        <ul>
+            <li><strong>Your Condition:</strong> Cataract, Glaucoma, Retina issue (Diabetic Retinopathy, Macular Degeneration), Cornea problem, LASIK/Refractive Surgery need, Squint (Strabismus), Pediatric eye issue, Oculoplasty (eyelid/orbit)?</li>
+            <li><strong>Sub-specialist:</strong> Seek specific expertise (Retina Specialist, Glaucoma Specialist, Cornea Specialist, etc.) for complex conditions.</li>
+            <li><strong>Diagnostic & Surgical Technology:</strong> Inquire about available technology (OCT, Fundus Camera, Lasers, Phaco machines, Femtosecond Laser) if needed.</li>
+            <li><strong>Hospital/Centre Reputation:</strong> Consider the eye hospital or clinic's facilities and reputation.</li>
+            <li><strong>Referral:</strong> Optometrists or general ophthalmologists often provide referrals.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

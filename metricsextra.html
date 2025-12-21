@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tracker</title>
+    <!-- Import Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Modern & Colorful Styling */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --secondary-gradient: linear-gradient(45deg, #FF6B6B, #556270);
+            --form-bg: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --highlight: #38ef7d;
+            --delete-color: #ff4757;
+        }
+
+        body {
+            /* Animated Colorful Background */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        h1, h2 {
+            color: #444;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: -webkit-linear-gradient(#e73c7e, #23a6d5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        /* Form Styling */
+        .entry-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px dashed var(--highlight);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .entry-form:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input[type="number"],
+        .form-group input[type="date"],
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .form-group .bp-input {
+             width: calc(50% - 15px);
+             display: inline-block;
+        }
+        
+        .form-group .bp-separator {
+             display: inline-block;
+             width: 20px;
+             text-align: center;
+             font-weight: bold;
+             font-size: 1.5rem;
+             vertical-align: middle;
+             color: #23a6d5;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #23a6d5;
+            box-shadow: 0 0 10px rgba(35, 166, 213, 0.2);
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        button {
+            background-image: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin: 5px;
+            box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(56, 239, 125, 0.6);
+            background-image: linear-gradient(45deg, #38ef7d, #11998e);
+        }
+
+        button[type="submit"] {
+             width: 100%;
+        }
+
+        button.clear-btn {
+             background-image: linear-gradient(45deg, #ff4757, #ff6b81);
+             box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+             font-size: 0.9rem;
+             padding: 10px 20px;
+        }
+        
+        button.clear-btn:hover {
+             transform: translateY(-2px);
+             background-image: linear-gradient(45deg, #ff6b81, #ff4757);
+        }
+
+        /* Log Display Table */
+        #log-display {
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        #log-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px; /* Spacing between rows */
+            margin-top: 15px;
+        }
+
+        #log-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #555;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        #log-table td {
+            background-color: white;
+            padding: 15px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            vertical-align: middle;
+        }
+
+        /* Rounded corners for first and last cells in row */
+        #log-table td:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        #log-table td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        #log-table button {
+            background-image: none;
+            background-color: transparent;
+            color: var(--delete-color);
+            padding: 5px 10px;
+            border: 1px solid var(--delete-color);
+            box-shadow: none;
+            font-size: 0.8rem;
+            margin: 0;
+            width: auto;
+        }
+
+        #log-table button:hover {
+            background-color: var(--delete-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+        }
+
+        /* Hide specific input groups initially */
+        .input-group { display: none; animation: fadeIn 0.5s; }
+        .input-group.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 20px; margin: 20px auto; }
+            .form-group .bp-input { width: 100%; display: block; margin-bottom: 5px; }
+            .form-group .bp-separator { display: none; }
+            
+            /* Responsive Table (Card View) */
+            #log-table, #log-table thead, #log-table tbody, #log-table th, #log-table td, #log-table tr { 
+                display: block; 
+            }
+            #log-table thead tr { 
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            #log-table tr { 
+                margin-bottom: 15px; 
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            #log-table td { 
+                border: none;
+                border-bottom: 1px solid #eee; 
+                position: relative;
+                padding-left: 50%; 
+                text-align: right;
+            }
+            #log-table td:before { 
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                width: 45%; 
+                padding-right: 10px; 
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 600;
+                content: attr(data-label); /* Requires JS update or manual headers if desired, for now just stacking */
+            }
+            /* Simplified mobile view without headers for now as content is preserved */
+             #log-table td { text-align: left; padding: 10px; border-radius: 0; box-shadow: none; }
+             #log-table tr { box-shadow: 0 2px 5px rgba(0,0,0,0.1); background: white; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Health Tracker</h1>
+
+        <!-- Entry Form -->
+        <form id="health-entry-form" class="entry-form">
+            <h2>Log New Entry</h2>
+
+            <div class="form-group">
+                <label for="entry-type">Metric Type:</label>
+                <select id="entry-type" name="entry-type" required>
+                    <option value="" disabled selected>-- Select Metric --</option>
+                    <option value="weight">Weight</option>
+                    <option value="sugar">Blood Sugar</option>
+                    <option value="bp">Blood Pressure</option>
+                    <option value="sleep">Sleep</option>
+                    <option value="water">Water Intake</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                 <label for="entry-date">Date:</label>
+                 <input type="date" id="entry-date" name="entry-date" required>
+            </div>
+
+            <!-- Metric Specific Inputs (Initially Hidden) -->
+            <div id="weight-inputs" class="input-group form-group">
+                <label for="weight-value">Weight (kg):</label>
+                <input type="number" id="weight-value" name="weight-value" step="0.1" placeholder="e.g., 70.5">
+            </div>
+
+            <div id="sugar-inputs" class="input-group">
+                 <div class="form-group">
+                     <label for="sugar-value">Blood Sugar (mg/dL):</label>
+                     <input type="number" id="sugar-value" name="sugar-value" step="1" placeholder="e.g., 95">
+                 </div>
+                <div class="form-group">
+                    <label for="sugar-timing">Timing:</label>
+                    <select id="sugar-timing" name="sugar-timing">
+                        <option value="Fasting">Fasting</option>
+                        <option value="Before Meal">Before Meal</option>
+                        <option value="After Meal">After Meal (approx 2h)</option>
+                        <option value="Random">Random</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="bp-inputs" class="input-group form-group">
+                <label for="bp-systolic">Blood Pressure (Systolic / Diastolic mmHg):</label>
+                <div>
+                    <input type="number" id="bp-systolic" name="bp-systolic" class="bp-input" placeholder="Systolic (e.g., 120)">
+                    <span class="bp-separator">/</span>
+                    <input type="number" id="bp-diastolic" name="bp-diastolic" class="bp-input" placeholder="Diastolic (e.g., 80)">
+                </div>
+            </div>
+
+            <div id="sleep-inputs" class="input-group form-group">
+                <label for="sleep-duration">Sleep Duration (hours):</label>
+                <input type="number" id="sleep-duration" name="sleep-duration" step="0.1" placeholder="e.g., 7.5">
+                 <!-- Optional: Add quality later if needed -->
+                 <!-- <label for="sleep-quality">Quality (1-5):</label> -->
+                 <!-- <input type="number" id="sleep-quality" name="sleep-quality" min="1" max="5"> -->
+            </div>
+
+            <div id="water-inputs" class="input-group form-group">
+                <label for="water-intake">Water Intake (ml):</label>
+                <input type="number" id="water-intake" name="water-intake" step="50" placeholder="e.g., 2000">
+            </div>
+            <!-- End Metric Specific Inputs -->
+
+
+            <div class="form-actions">
+                <button type="submit">Log Entry</button>
+            </div>
+        </form>
+
+        <!-- Log Display Area -->
+        <div id="log-display">
+            <h2>Logged Entries</h2>
+             <p style="text-align:center; font-size: 0.9em; color: #555;">
+                (Data is stored locally in your browser. Clearing browser data will delete entries.)
+             </p>
+            <table id="log-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Notes</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="log-table-body">
+                    <!-- Log entries will be populated here by JavaScript -->
+                </tbody>
+            </table>
+             <div class="form-actions">
+                 <button type="button" id="clear-data-btn" class="clear-btn">Clear All Entries</button>
+             </div>
+        </div>
+
+    </div><!-- /container -->
+
+    <script>
+        const entryForm = document.getElementById('health-entry-form');
+        const entryTypeSelect = document.getElementById('entry-type');
+        const entryDateInput = document.getElementById('entry-date');
+        const logTableBody = document.getElementById('log-table-body');
+        const clearDataBtn = document.getElementById('clear-data-btn');
+        const metricInputGroups = document.querySelectorAll('.input-group'); // Get all specific input groups
+
+        const STORAGE_KEY = 'healthTrackerData';
+
+        // --- Functions ---
+
+        // Function to get data from Local Storage
+        function getStoredData() {
+            const data = localStorage.getItem(STORAGE_KEY);
+            return data ? JSON.parse(data) : []; // Return empty array if nothing stored
+        }
+
+        // Function to save data to Local Storage
+        function saveData(data) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        // Function to display entries in the table
+        function displayEntries() {
+            const data = getStoredData();
+            logTableBody.innerHTML = ''; // Clear existing table rows
+
+            // Sort data by date, newest first
+            data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+
+            if (data.length === 0) {
+                 logTableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No entries yet.</td></tr>';
+                 return;
+            }
+
+            data.forEach((entry, index) => {
+                const row = logTableBody.insertRow();
+                let valueDisplay = '';
+                let notesDisplay = '';
+
+                // Format display based on entry type
+                switch(entry.type) {
+                    case 'weight':
+                        valueDisplay = `${entry.value} kg`;
+                        break;
+                    case 'sugar':
+                        valueDisplay = `${entry.value} mg/dL`;
+                        notesDisplay = `Timing: ${entry.timing || 'N/A'}`;
+                        break;
+                    case 'bp':
+                        valueDisplay = `${entry.systolic} / ${entry.diastolic} mmHg`;
+                        break;
+                    case 'sleep':
+                        valueDisplay = `${entry.value} hours`;
+                        // notesDisplay = entry.quality ? `Quality: ${entry.quality}/5` : ''; // If quality is added
+                        break;
+                    case 'water':
+                        valueDisplay = `${entry.value} ml`;
+                        break;
+                    default:
+                        valueDisplay = entry.value; // Fallback
+                }
+
+                row.innerHTML = `
+                    <td>${entry.date}</td>
+                    <td>${entry.type.charAt(0).toUpperCase() + entry.type.slice(1)}</td> {/* Capitalize type */}
+                    <td>${valueDisplay}</td>
+                    <td>${notesDisplay}</td>
+                    <td><button onclick="deleteEntry(${index})">Delete</button></td>
+                `;
+            });
+        }
+
+         // Function to delete a specific entry
+         function deleteEntry(indexToDelete) {
+             let data = getStoredData();
+             // Since we display sorted (newest first), we need to find the actual item to delete
+             // Re-sorting by date guarantees consistency with the display order before splicing
+             data.sort((a, b) => new Date(b.date) - new Date(a.date));
+             data.splice(indexToDelete, 1); // Remove the item at the clicked index
+             saveData(data); // Save the modified array
+             displayEntries(); // Refresh the table
+         }
+
+        // Function to show/hide relevant input fields based on selected type
+        function toggleMetricInputs() {
+            const selectedType = entryTypeSelect.value;
+            metricInputGroups.forEach(group => {
+                if (group.id === `${selectedType}-inputs`) {
+                    group.classList.add('active');
+                    // Set required attributes dynamically maybe? Or rely on JS validation
+                } else {
+                    group.classList.remove('active');
+                }
+            });
+        }
+
+        // --- Event Listeners ---
+
+        // Show/hide inputs when metric type changes
+        entryTypeSelect.addEventListener('change', toggleMetricInputs);
+
+        // Handle form submission
+        entryForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent page reload
+
+            const type = entryTypeSelect.value;
+            const date = entryDateInput.value;
+
+            if (!type || !date) {
+                alert('Please select a metric type and date.');
+                return;
+            }
+
+            let newEntry = { type, date };
+            let isValid = true;
+
+            // Get values based on selected type
+            switch(type) {
+                case 'weight':
+                    const weightValue = document.getElementById('weight-value').value;
+                    if (!weightValue) { isValid = false; break; }
+                    newEntry.value = parseFloat(weightValue);
+                    break;
+                case 'sugar':
+                    const sugarValue = document.getElementById('sugar-value').value;
+                    const sugarTiming = document.getElementById('sugar-timing').value;
+                    if (!sugarValue) { isValid = false; break; }
+                    newEntry.value = parseInt(sugarValue);
+                    newEntry.timing = sugarTiming;
+                    break;
+                case 'bp':
+                    const bpSystolic = document.getElementById('bp-systolic').value;
+                    const bpDiastolic = document.getElementById('bp-diastolic').value;
+                    if (!bpSystolic || !bpDiastolic) { isValid = false; break; }
+                    newEntry.systolic = parseInt(bpSystolic);
+                    newEntry.diastolic = parseInt(bpDiastolic);
+                    break;
+                case 'sleep':
+                    const sleepDuration = document.getElementById('sleep-duration').value;
+                    if (!sleepDuration) { isValid = false; break; }
+                    newEntry.value = parseFloat(sleepDuration);
+                    // newEntry.quality = parseInt(document.getElementById('sleep-quality').value) || null; // If quality added
+                    break;
+                case 'water':
+                    const waterIntake = document.getElementById('water-intake').value;
+                    if (!waterIntake) { isValid = false; break; }
+                    newEntry.value = parseInt(waterIntake);
+                    break;
+                default:
+                    isValid = false; // Should not happen if dropdown is working
+            }
+
+            if (!isValid) {
+                alert(`Please fill in all required fields for ${type}.`);
+                return;
+            }
+
+            // Add entry to storage
+            const data = getStoredData();
+            data.push(newEntry);
+            saveData(data);
+
+            // Refresh display and clear form (optional)
+            displayEntries();
+            // entryForm.reset(); // Resets the whole form including dropdown
+            // Clear specific fields instead:
+            document.getElementById('entry-date').value = ''; // Clear date
+             const activeInputs = document.querySelectorAll(`#${type}-inputs input, #${type}-inputs select`);
+             activeInputs.forEach(input => input.value = ''); // Clear active metric inputs
+             entryTypeSelect.value = ''; // Reset dropdown
+             toggleMetricInputs(); // Hide metric inputs
+
+
+            console.log("Entry logged:", newEntry);
+        });
+
+        // Handle Clear All Data button
+        clearDataBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to delete ALL entries? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                displayEntries(); // Refresh the (now empty) table
+            }
+        });
+
+
+        // --- Initial Load ---
+        // Set default date to today
+        entryDateInput.valueAsDate = new Date();
+        // Initial display of entries on page load
+        displayEntries();
+        // Ensure correct inputs are shown/hidden initially (in case of browser refresh)
+        toggleMetricInputs();
+
+    </script>
+
+</body>
+</html>

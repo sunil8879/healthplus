@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus | Specialist Directory</title>
+    <!-- Modern high-end font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00b894; /* Emerald Green */
+            --secondary: #00d2ff; /* Sky Blue */
+            --dark-bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.5);
+        }
+
+        body {
+          background-color: var(--dark-bg);
+          background-image: 
+            radial-gradient(at 0% 0%, rgba(0, 184, 148, 0.15) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(0, 210, 255, 0.15) 0px, transparent 50%);
+          color: #f1f5f9;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          text-align: center;
+          margin: 0;
+          padding: 60px 20px;
+          min-height: 100vh;
+        }
+
+        /* --- HEADER SECTION --- */
+        .title-container {
+            margin-bottom: 70px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(0, 184, 148, 0.3));
+        }
+
+        h1 {
+          font-size: 3.5rem;
+          font-weight: 800;
+          margin: 0;
+          letter-spacing: -2px;
+          background: linear-gradient(to right, #fff, #94a3b8);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+          font-size: 1.2rem;
+          color: #94a3b8;
+          margin-top: 10px;
+          font-weight: 400;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        /* --- BUTTON GRID --- */
+        .button-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+          gap: 25px;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .dashboard-button {
+          background: var(--card-bg);
+          backdrop-filter: blur(12px);
+          color: white;
+          padding: 30px 20px;
+          font-size: 0.95rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 24px;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* The Animated Glow Effect */
+        .dashboard-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--primary));
+            animation: rotateGlow 4s linear infinite;
+            opacity: 0;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        .dashboard-button:hover {
+          transform: translateY(-10px) scale(1.03);
+          border-color: var(--primary);
+          color: var(--primary);
+          box-shadow: 0 20px 40px rgba(0, 184, 148, 0.2);
+          background: rgba(30, 41, 59, 0.8);
+        }
+
+        .dashboard-button:hover::after {
+            opacity: 0.3;
+        }
+
+        .dashboard-button b {
+            z-index: 2;
+        }
+
+        /* --- DECORATIVE ELEMENTS --- */
+        @keyframes rotateGlow {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .button-container { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .dashboard-button { padding: 15px 10px; min-height: 80px; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">✦</span>
+        <h1>Health Plus Experts</h1>
+        <p class="tagline">World-Class Medical Specialists</p>
+    </div>
+
+    <div class="button-container">
+        <!-- Row 1 -->
+        <button class="dashboard-button" onclick="window.location.href='Anaesthesiologist1.html';"><b>ANESTHESIOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='ayurveda1.html';"><b>AYURVEDA</b></button>
+        <button class="dashboard-button" onclick="window.location.href='bariatric1.html';"><b>BARIATRIC SURGEON</b></button>
+        <button class="dashboard-button" onclick="window.location.href='cardiologist1.html';"><b>CARDIOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='chiropracter1.html';"><b>CHIROPRACTOR</b></button>
+        <button class="dashboard-button" onclick="window.location.href='dentist1.html';"><b>DENTIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='dermatologist1.html';"><b>DERMATOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='dietician1.html';"><b>DIETITIAN</b></button>
+
+        <!-- Row 2 -->
+        <button class="dashboard-button" onclick="window.location.href='ENT1.html';"><b>ENT SPECIALIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='gastroenterologist1.html';"><b>GASTROENTEROLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='general Physician1.html';"><b>GENERAL PHYSICIAN</b></button>
+        <button class="dashboard-button" onclick="window.location.href='gynaecologist1.html';"><b>GYNAECOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='haemotology1.html';"><b>HEMATOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='homeopathic1.html';"><b>HOMEOPATH</b></button>
+        <button class="dashboard-button" onclick="window.location.href='immunologist1.html';"><b>IMMUNOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='infertility1.html';"><b>INFERTILITY SPECIALIST</b></button>
+
+        <!-- Row 3 -->
+        <button class="dashboard-button" onclick="window.location.href='nephrologist1.html';"><b>NEPHROLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='neurologist1.html';"><b>NEUROLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='neurosurgeon 1.html';"><b>NEUROSURGEON</b></button>
+        <button class="dashboard-button" onclick="window.location.href='oncology1.html';"><b>ONCOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='opthamologist1.html';"><b>OPHTHALMOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='orthodontist1.html';"><b>ORTHODONTIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='orthopaedist1.html';"><b>ORTHOPAEDIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='paediatrician1.html';"><b>PAEDIATRICIAN</b></button>
+
+        <!-- Row 4 -->
+        <button class="dashboard-button" onclick="window.location.href='physiotherapist1.html';"><b>PHYSIOTHERAPIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='plasticSurgeon1.html';"><b>PLASTIC SURGEON</b></button>
+        <button class="dashboard-button" onclick="window.location.href='psychiatarist1.html';"><b>PSYCHIATRIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='pulmonologist1.html';"><b>PULMONOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='radiologist1.html';"><b>RADIOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='rheumatologist 1.html';"><b>RHEUMATOLOGIST</b></button>
+        <button class="dashboard-button" onclick="window.location.href='unani1.html';"><b>UNANI DOCTOR</b></button>
+        <button class="dashboard-button" onclick="window.location.href='urology1.html';"><b>UROLOGIST</b></button>
+
+    </div>
+
+</body>
+</html>

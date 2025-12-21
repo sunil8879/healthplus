@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Cardiologists in India</title>
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #ff416c;
+            --secondary-red: #ff4b2b;
+            --heart-red: #e74c3c;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --bg-tint: #fff5f5;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --gradient-header: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+        }
+
+        body {
+            background-color: var(--bg-tint);
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            /* Subtle heart beat background pattern */
+            background-image: radial-gradient(#ffdde1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--gradient-header);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(255, 65, 108, 0.3);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-container::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: heartbeat 1.5s infinite;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+            border-top: 6px solid var(--primary-red);
+        }
+
+        .considerations h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--secondary-red);
+            margin-top: 0;
+            border-bottom: 2px solid #ffecec;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.6;
+        }
+
+        .considerations li::before {
+            content: "♥";
+            color: var(--primary-red);
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 50px;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--text-dark);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            padding: 18px 15px;
+            text-align: left;
+            border: none;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 30px rgba(255, 65, 108, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px 15px;
+            vertical-align: middle;
+            border: none;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        /* Styling the row edges */
+        td:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            font-weight: 800;
+            color: var(--primary-red);
+            font-size: 1.1rem;
+            text-align: center;
+            background-color: #fffbfb;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 700;
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #555;
+            font-style: italic;
+        }
+
+        td:nth-child(4) { /* Experience */
+            font-weight: 600;
+            color: var(--secondary-red);
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background: var(--gradient-header);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+            transition: transform 0.2s;
+        }
+
+        a.website-link:hover {
+            transform: scale(1.05);
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .considerations { width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">❤️</span> <!-- Heart Icon Placeholder -->
+        <h1>Top 100 Cardiologists & Cardiac Surgeons in India</h1>
+        <p class="subtitle">A representative list of highly regarded specialists. Not an objective ranking. Verify details independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Cardiologist:</h2>
+        <ul>
+            <li><strong>Sub-specialty:</strong> Identify if you need an Interventional Cardiologist (stents), Electrophysiologist (rhythm), Non-invasive Cardiologist (diagnosis), Cardiac Surgeon (surgery), or Pediatric Cardiologist.</li>
+            <li><strong>Condition:</strong> Match the doctor's expertise to your specific condition (e.g., coronary artery disease, heart failure, arrhythmia, valve disease).</li>
+            <li><strong>Experience & Volume:</strong> For complex procedures, consider the surgeon's/cardiologist's experience and hospital volume.</li>
+            <li><strong>Hospital Facilities:</strong> Ensure the hospital has appropriate facilities (Cath Lab, ICU, OT, Cardiac Rehab).</li>
+            <li><strong>Second Opinion:</strong> Often recommended for major diagnoses or procedures.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Ashok Seth (MBBS, MD, DM, FRCP, FACC, FESC)</td>
+                 <td>Interventional Cardiology (Pioneer in Angioplasty, Limca Record Holder for procedures)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Fortis Escorts Heart Institute (Chairman)</td>
+                 <td>Okhla, New Delhi</td>
+                 <td>+91-11-47135000 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Devi Prasad Shetty (MBBS, MS, FRCS)</td>
+                 <td>Cardiac Surgery (Focus on affordable cardiac care, leads major group)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Narayana Health (Chairman)</td>
+                 <td>Bengaluru</td>
+                 <td>1860-208-0208 (General)</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Tejas Patel (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology (Pioneer in Transradial technique, Padma Shri)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Apex Heart Institute (Chairman)</td>
+                 <td>Ahmedabad</td>
+                 <td>+91-79-26424200 (General)</td>
+                 <td><a href="http://www.apexheart.in/" target="_blank" class="website-link">Apex Heart Institute</a></td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Ramakanta Panda (MBBS, MCh - CTVS)</td>
+                 <td>Cardiovascular Thoracic Surgery (Specializes in high-risk bypass, redo surgeries, Padma Bhushan)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Asian Heart Institute (VC & MD)</td>
+                 <td>Mumbai</td>
+                 <td>1800-266-1066 / +91-22-66986666 (General)</td>
+                 <td><a href="https://asianheartinstitute.org/" target="_blank" class="website-link">Asian Heart Institute</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. K. K. Talwar (MBBS, MD, DM, FACC)</td>
+                 <td>Cardiology & Electrophysiology (Expert in Arrhythmias, Pacemakers, Padma Bhushan)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Max Healthcare (Chairman - Cardiac Sciences)</td>
+                 <td>Saket, New Delhi</td>
+                 <td>+91-11-26515050 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Subhash Chandra (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology (Complex Angioplasties)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>1800-102-5555 (General)</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Samuel Mathew Kalarickal (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology (Pioneer in various interventions in South India)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Director)</td>
+                 <td>Chennai</td>
+                 <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Viveka Kumar (MBBS, MD, DM, FACC, FESC)</td>
+                 <td>Interventional Cardiology, Electrophysiology (Structural Heart Disease, TAVI expert)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Director)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-26515050 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Praveen Chandra (MBBS, MD, DM, FACC)</td>
+                 <td>Interventional Cardiology (Coronary & Structural Interventions, CTO expert)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Interventional Cardiology)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4141414 (General)</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. T. S. Kler (MBBS, MD, DM, FRCP)</td>
+                 <td>Electrophysiology, Interventional Cardiology (Pioneer in EP in India, Padma Bhushan)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Chairman)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4962200 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. Ajit Mullasari (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology (Complex Angioplasty, IVUS)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Madras Medical Mission (Director - Cardiology)</td>
+                 <td>Chennai</td>
+                 <td>+91-44-26565961 (General)</td>
+                 <td><a href="https://madrasmedicalmission.org/" target="_blank" class="website-link">Madras Medical Mission</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. J. S. Duggal (MBBS, MD, FACC)</td>
+                 <td>Non-Invasive Cardiology, Clinical Cardiology (Preventive focus)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Director)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-26515050 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. C. N. Manjunath (MBBS, MD, DM)</td>
+                 <td>Cardiology (Heads major public heart institute, Known for high volume work)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Sri Jayadeva Institute of Cardiovascular Sciences and Research (Director)</td>
+                 <td>Bengaluru</td>
+                 <td>+91-80-26781500 (General)</td>
+                 <td><a href="http://www.jayadevacardiology.com/" target="_blank" class="website-link">Jayadeva Institute</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Ashwin B Mehta (MBBS, MD, DM, FACC, FESC)</td>
+                 <td>Interventional Cardiology (Pioneer figure in Mumbai)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Jaslok Hospital (Director - Cardiology)</td>
+                 <td>Mumbai</td>
+                 <td>1800-210-9999 (General)</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. S. K. Sinha (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Paras Hospitals (Director)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4585555 (General)</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Anil Kumar (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Director)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-43033333 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. K. Sarat Chandra (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Brian Pinto (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Holy Family Hospital / Nanavati Max (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Check respective hospital numbers</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max</a> / Holy Family</td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Ravi Kasliwal (MBBS, MD, DM)</td>
+                 <td>Clinical & Preventive Cardiology (Echocardiography Expert)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Clinical & Preventive)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4141414 (General)</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Jamshed Dalal (MBBS, MD, DM, PhD)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Director - Cardiac Sciences)</td>
+                 <td>Mumbai</td>
+                 <td>+91-22-42696969 (General)</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Ulhas Pandurangi (MBBS, MD, DM)</td>
+                 <td>Electrophysiology (Arrhythmia Specialist, Ablation)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Madras Medical Mission (Senior Consultant)</td>
+                 <td>Chennai</td>
+                  <td>+91-44-26565961 (General)</td>
+                 <td><a href="https://madrasmedicalmission.org/" target="_blank" class="website-link">Madras Medical Mission</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. K. P. Balakrishnan (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Billroth Hospitals (Senior Consultant / Director)</td>
+                 <td>Chennai</td>
+                  <td>+91-44-24991717 (General)</td>
+                 <td><a href="https://billrothhospitals.com/" target="_blank" class="website-link">Billroth Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. A B Gopalamurugan (MBBS, MD, DM, MRCP)</td>
+                 <td>Electrophysiology & Interventional Cardiology (Complex Ablations, Device Implantation)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                  <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Monotosh Panja (MBBS, MD, DM, FRCP)</td>
+                 <td>Interventional Cardiology (Veteran Figure in East India)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Apollo Multispeciality Hospitals, Kolkata (Chief Cardiologist)</td>
+                 <td>Kolkata</td>
+                  <td>+91-33-23203040 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Rabin Chakraborty (MBBS, MD, DM, FRCP)</td>
+                 <td>Interventional Cardiology & Electrophysiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Medica Superspecialty Hospital (Senior Consultant / Vice Chairman)</td>
+                 <td>Kolkata</td>
+                  <td>+91-33-66520000 (General)</td>
+                 <td><a href="https://www.medicahospitals.in/" target="_blank" class="website-link">Medica Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Saumitra Ray (MBBS, MD, DM, FRCP)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Hospital, Anandapur (Senior Consultant / HOD)</td>
+                 <td>Kolkata</td>
+                  <td>+91-33-66284444 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Anoop K Ganjoo (MBBS, MS, MCh)</td>
+                 <td>Cardiovascular & Thoracic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / HOD)</td>
+                 <td>New Delhi</td>
+                  <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>28</td>
+                 <td>Dr. Ajay Kaul (MBBS, MS, MCh)</td>
+                 <td>Cardiac Surgery (Adult & Pediatric, Complex Valve Repair)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Fortis Hospital, Noida (Chairman - Cardiac Sciences)</td>
+                 <td>Noida</td>
+                  <td>+91-120-4300222 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>29</td>
+                 <td>Dr. Ganesh K Mani (MBBS, MS, MCh, FRCS)</td>
+                 <td>Cardiothoracic & Vascular Surgery (High Volume Surgeon)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Chairman)</td>
+                 <td>New Delhi</td>
+                  <td>+91-11-71212121 (General)</td>
+                  <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Z. S. Meharwal (MBBS, MS, MCh)</td>
+                 <td>Cardiovascular Surgery (CABG, Valve Surgery)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Fortis Escorts Heart Institute (Director & HOD)</td>
+                 <td>New Delhi</td>
+                  <td>+91-11-47135000 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Rajneesh Kapoor (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology (Complex Interventions, TAVI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Vice Chairman - Interventional Cardiology)</td>
+                 <td>Gurugram</td>
+                  <td>+91-124-4141414 (General)</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Yugal Kishore Mishra (MBBS, MS, MCh, PhD)</td>
+                 <td>Cardiac Surgery (Robotic & Minimally Invasive, CABG)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Manipal Hospital, Dwarka (Chief of Clinical Services & Head of Cardiac Sciences)</td>
+                 <td>New Delhi</td>
+                  <td>+91-11-49674967 (General)</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Naresh Trehan (MBBS, Diplomate - Surgery & CTS)</td>
+                 <td>Cardiovascular and Cardiothoracic Surgery (Founder Medanta, Padma Bhushan)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman & MD)</td>
+                 <td>Gurugram</td>
+                  <td>+91-124-4141414 (General)</td>
+                  <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. G. Sengottuvelu (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology (Complex Coronary & Structural, TAVI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant / Apollo Lead IC)</td>
+                 <td>Chennai</td>
+                 <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Sanjay Mittal (MBBS, MD, DM)</td>
+                 <td>Clinical Cardiology & Non-Invasive Cardiology (Preventive Focus)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Senior Director)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4141414 (General)</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Vanita Arora (MBBS, MD, DM)</td>
+                 <td>Electrophysiology (Arrhythmia Specialist, Pacemakers, ICDs)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Delhi / Max Hospital (Senior Consultant / Director)</td>
+                 <td>Delhi</td>
+                  <td>Check respective hospital numbers</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max</a></td>
+             </tr>
+              <tr>
+                 <td>37</td>
+                 <td>Dr. Anand Rao (MBBS, MS, MCh)</td>
+                 <td>Cardiac Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant / HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>1800-102-5555 (General)</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>38</td>
+                 <td>Dr. Rajiv Agarwal (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Director)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-26515050 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Nitish Naik (MBBS, MD, DM)</td>
+                 <td>Cardiology (Interventional & Clinical)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-26588500 (AIIMS General)</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+              <tr>
+                 <td>40</td>
+                 <td>Dr. Ambuj Roy (MBBS, MD, DM)</td>
+                 <td>Cardiology (Preventive, Clinical Research, Heart Failure)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-26588500 (AIIMS General)</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Yash Lokhandwala (MBBS, MD, DM)</td>
+                 <td>Electrophysiology (Complex Arrhythmias, Ablation)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital / Breach Candy Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Check respective hospital numbers</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja</a> / Breach Candy</td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Manojkumar S Nair (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Aster Medcity (Senior Consultant / HOD)</td>
+                 <td>Kochi</td>
+                 <td>+91-484-6699999 (General)</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Anil Dattatraya Bhatia (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Ruby Hall Clinic (Director - Cardiology)</td>
+                 <td>Pune</td>
+                 <td>+91-20-66455100 (General)</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. D. S. Gambhir (MBBS, MD, DM, FACC)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Kailash Group of Hospitals (Group Director - Cardiology)</td>
+                 <td>Noida/Delhi</td>
+                 <td>+91-120-2444444 (Noida Sector 27)</td>
+                 <td><a href="http://www.kailashhealthcare.com/" target="_blank" class="website-link">Kailash Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Pratap C. Rath (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>46</td>
+                 <td>Dr. Vijay Dikshit (MBBS, MS, MCh)</td>
+                 <td>Cardiothoracic Surgery (Valve repair, CABG)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Chief Cardiac Surgeon)</td>
+                 <td>Hyderabad</td>
+                 <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>47</td>
+                 <td>Dr. R. Anantharaman (MBBS, MD, DM)</td>
+                 <td>Non-Invasive Cardiology (Echocardiography)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Kauvery Hospital (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>+91-44-40006000 (General)</td>
+                 <td><a href="https://www.kauveryhospital.com/" target="_blank" class="website-link">Kauvery Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Sameer Dani (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo CVHF Heart Institute (Director - Cardiovascular Sciences)</td>
+                 <td>Ahmedabad</td>
+                  <td>+91-79-66701800 (General)</td>
+                  <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Nikhil Kumar (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4962200 (General)</td>
+                  <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Hemant Madan (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Narayana Superspeciality Hospital (Senior Consultant & Director)</td>
+                 <td>Gurugram</td>
+                  <td>+91-80-67506880 (Central Inquiry)</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Manoj Kumar (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-43033333 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Sanjeeb Roy (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Anandapur</td>
+                 <td>Kolkata</td>
+                 <td>+91-33-66284444 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. Vinod Sharma (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology, Electrophysiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>National Heart Institute (HOD)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-46606600 (General)</td>
+                 <td><a href="https://www.nationalheartinstitute.com/" target="_blank" class="website-link">National Heart Institute</a></td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Rajiv Passey (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-42254000 (General)</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. R. R. Kasliwal (MBBS, MD, DM)</td>
+                 <td>Non-Invasive Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Vineet Bhatia (MBBS, MD, FNB - Ped Card)</td>
+                 <td>Pediatric Cardiology</td>
+                 <td>15+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-26515050 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Manish Bansal (MBBS, MD, DM, FACC)</td>
+                 <td>Non-Invasive Cardiology (Echocardiography specialist)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Senior Consultant / Director)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4141414 (General)</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Neeraj Bhalla (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-30403040 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Ripen Gupta (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Shalimar Bagh (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-66422222 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Mukharjee Madhavan (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Aster Medcity (Senior Consultant)</td>
+                 <td>Kochi</td>
+                  <td>+91-484-6699999 (General)</td>
+                  <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Sunil Kumar Agarwal (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Director & HOD)</td>
+                 <td>New Delhi</td>
+                  <td>+91-11-45302222 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Suresh Kumar R (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                  <td>1860-500-1066 (General)</td>
+                  <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>63</td>
+                 <td>Dr. J P S Sawhney (MBBS, MD, DM, FACC)</td>
+                 <td>Clinical & Preventive Cardiology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman - Dept of Cardiology)</td>
+                 <td>New Delhi</td>
+                  <td>+91-11-42254000 (General)</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>64</td>
+                 <td>Dr. Anil Dhall (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sarvodaya Hospital, Faridabad (Director - Cardiovascular Sciences)</td>
+                 <td>Faridabad</td>
+                  <td>+91-129-4194444 (General)</td>
+                 <td><a href="https://www.sarvodayahospital.com/" target="_blank" class="website-link">Sarvodaya Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>65</td>
+                 <td>Dr. V Rajasekhar (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                  <td>1860-500-1066 (General)</td>
+                  <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>66</td>
+                 <td>Dr. Abhijit Vilas Kulkarni (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jehangir Hospital (Consultant)</td>
+                 <td>Pune</td>
+                  <td>+91-20-66819999 (General)</td>
+                 <td><a href="https://www.jehangirhospital.com/" target="_blank" class="website-link">Jehangir Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Arvind Sethi (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Delhi Heart & Lung Institute / Private Practice</td>
+                 <td>New Delhi</td>
+                  <td>Search Clinic Contact</td>
+                 <td>Search "Dr Arvind Sethi Cardiologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. S C Manchanda (MBBS, MD, DM, FAMS)</td>
+                 <td>Preventive Cardiology (Lifestyle focus, Padma Shri)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-42254000 (General)</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Subhendu Mandal (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                  <td>Search Practice Contact</td>
+                 <td>Search "Dr Subhendu Mandal Cardiologist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Girish M P (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>1800-102-5555 (General)</td>
+                  <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>71</td>
+                 <td>Dr. R B Singh (MBBS, MD, FCCP)</td>
+                 <td>Preventive Cardiology, Epidemiology (Research Focus)</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Halberg Hospital & Research Institute</td>
+                 <td>Moradabad</td>
+                 <td>Search Institute Contact</td>
+                 <td>Search "Dr R B Singh Cardiologist Moradabad"</td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. D K Jhamb (MBBS, MD, DM)</td>
+                 <td>Non-Invasive Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>1860-500-1066 (General)</td>
+                  <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>73</td>
+                 <td>Dr. K K Kapur (MBBS, MD, FICA)</td>
+                 <td>Clinical Cardiology</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K K Kapur Cardiologist Delhi"</td>
+             </tr>
+              <tr>
+                 <td>74</td>
+                 <td>Dr. Suman Bhandari (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology, Vascular Interventions</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Escorts Heart Institute (Director - Vascular Surgery)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-47135000 (General)</td>
+                  <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Shirish Hiremath (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Ruby Hall Clinic (Director - Cath Lab)</td>
+                 <td>Pune</td>
+                  <td>+91-20-66455100 (General)</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Nitin Burkule (MBBS, MD, DM)</td>
+                 <td>Non-Invasive Cardiology (Echocardiography)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jupiter Hospital, Thane / Formerly KEM Hospital</td>
+                 <td>Thane/Mumbai</td>
+                 <td>+91-22-21725555 (Thane General)</td>
+                 <td><a href="https://www.jupiterhospital.com/" target="_blank" class="website-link">Jupiter Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Sadanand R Shetty (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>S L Raheja Hospital (A Fortis Associate)</td>
+                 <td>Mumbai</td>
+                  <td>+91-22-66529999 (General)</td>
+                 <td><a href="https://www.rahejahospital.com/" target="_blank" class="website-link">SL Raheja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Sanjeev Kumar (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Director)</td>
+                 <td>New Delhi</td>
+                  <td>+91-11-43033333 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. P K Hazra (MBBS, MD, DM)</td>
+                 <td>Clinical Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>AMRI Hospitals</td>
+                 <td>Kolkata</td>
+                  <td>+91-33-66229900 (Dhakuria General)</td>
+                  <td><a href="https://www.amrihospitals.in/" target="_blank" class="website-link">AMRI Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Pradeep Kumar D (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Narayana Health City</td>
+                 <td>Bengaluru</td>
+                  <td>1860-208-0208 (General)</td>
+                  <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Amit Sharma (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Paras Hospitals (Associate Director)</td>
+                 <td>Gurugram</td>
+                 <td>+91-124-4585555 (General)</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. N N Khanna (MBBS, MD, DM)</td>
+                 <td>Clinical Cardiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                  <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. V Jacob Jose (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Lakeshore Hospital (Senior Consultant / HOD)</td>
+                 <td>Kochi</td>
+                  <td>+91-484-2701032 (General)</td>
+                 <td><a href="https://lakeshorehospital.com/" target="_blank" class="website-link">Lakeshore Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Anand Pandey (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                  <td>+91-11-49674967 (General)</td>
+                  <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Chandra Mohan V (MBBS, MD, DM)</td>
+                 <td>Clinical Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                  <td>Search Practice Contact</td>
+                  <td>Search "Dr Chandra Mohan V Cardiologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Anupam Jena (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>+91-40-44885000 (General)</td>
+                  <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. U Kaul (MBBS, DM, FRCP, FACC)</td>
+                 <td>Interventional Cardiology (Veteran)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Batra Hospital & Medical Research Centre (Executive Director & Dean)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-29958747 (General)</td>
+                  <td><a href="http://www.batrahospitaldelhi.org/" target="_blank" class="website-link">Batra Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Harsh Wardhan (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-71212121 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Sanjeev Chaudhary (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mohali (Director - Cardiology)</td>
+                 <td>Mohali</td>
+                  <td>+91-172-4692222 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Rahul Gupta (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                  <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Vishal Rastogi (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Escorts Heart Institute (Senior Consultant / HOD)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-47135000 (General)</td>
+                  <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Pradeep Gadge (MBBS, MD, Dip. Diabetology)</td>
+                 <td>Diabetology (Related field, manages cardiac risk)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Gadge Diabetes Centre / Consultant Roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Pradeep Gadge Mumbai" (Note: Diabetologist)</td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Sameer Shrivastava (MBBS, MD, DM)</td>
+                 <td>Non-Invasive Cardiology (CT Angio Expert)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Escorts Heart Institute (Head - Non-Invasive Cardiology)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-47135000 (General)</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Ashish Chauhan (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-30403040 (General)</td>
+                  <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. D K Gambhir (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Kailash Hospital (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>+91-120-2444444 (Noida Sector 27)</td>
+                 <td><a href="http://www.kailashhealthcare.com/" target="_blank" class="website-link">Kailash Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Sreekanth B Shetty (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sakra World Hospital (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>+91-80-49694969 (General)</td>
+                  <td><a href="https://www.sakraworldhospital.com/" target="_blank" class="website-link">Sakra World Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Rajeev Rathi (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>+91-11-66422222 (General)</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Suman Chakraborty (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medica Superspecialty Hospital (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>+91-33-66520000 (General)</td>
+                  <td><a href="https://www.medicahospitals.in/" target="_blank" class="website-link">Medica Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>99</td>
+                 <td>Dr. Vijay Kumar S (MBBS, MD, DM)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>1860-500-1066 (General)</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. A Sreenivas Kumar (MBBS, MD, DM, FACC)</td>
+                 <td>Interventional Cardiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                  <td>1860-500-1066 (General)</td>
+                  <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a Cardiologist:</h2>
+        <ul>
+            <li><strong>Sub-specialty:</strong> Identify if you need an Interventional Cardiologist (stents), Electrophysiologist (rhythm), Non-invasive Cardiologist (diagnosis), Cardiac Surgeon (surgery), or Pediatric Cardiologist.</li>
+            <li><strong>Condition:</strong> Match the doctor's expertise to your specific condition (e.g., coronary artery disease, heart failure, arrhythmia, valve disease).</li>
+            <li><strong>Experience & Volume:</strong> For complex procedures, consider the surgeon's/cardiologist's experience and hospital volume.</li>
+            <li><strong>Hospital Facilities:</strong> Ensure the hospital has appropriate facilities (Cath Lab, ICU, OT, Cardiac Rehab).</li>
+            <li><strong>Second Opinion:</strong> Often recommended for major diagnoses or procedures.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

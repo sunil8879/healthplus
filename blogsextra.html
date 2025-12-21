@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Blogs Section</title>
+    <!-- Importing Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Color Palette */
+            --primary-gradient: linear-gradient(135deg, #FF6B6B 0%, #556270 100%);
+            --header-bg-1: #FF9A9E;
+            --header-bg-2: #FECFEF;
+            --header-bg-3: #a18cd1;
+            --header-bg-4: #fbc2eb;
+            --header-bg-5: #84fab0;
+            --header-bg-6: #8fd3f4;
+            --text-color: #333;
+            --link-color: #007bff;
+            --hover-color: #ff4757;
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-gradient);
+            background-attachment: fixed; /* Parallax effect */
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* Container for better layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling (The clickable bars) */
+        header {
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Unique Gradients for Each Header */
+        header:nth-of-type(1) { background: linear-gradient(to right, var(--header-bg-1), var(--header-bg-2)); }
+        header:nth-of-type(2) { background: linear-gradient(to right, var(--header-bg-3), var(--header-bg-4)); }
+        header:nth-of-type(3) { background: linear-gradient(to right, var(--header-bg-5), var(--header-bg-6)); }
+
+        header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Plus icon for interaction indication */
+        header::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        header.active::after {
+            transform: rotate(45deg); /* Turn to X when open */
+        }
+
+        /* Links Container Styling */
+        .links {
+            display: none;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 0 0 15px 15px; /* Round bottom corners */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: -5px; /* Connect visually to header */
+            margin-bottom: 10px;
+            border: none;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        /* Grid layout for links */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        /* Individual Link Item Styling */
+        .link-item {
+            margin: 0; /* Reset */
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+            border-left: 4px solid transparent; /* Accent border on hover */
+        }
+
+        .link-item:hover {
+            background: #fff;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left-color: var(--hover-color);
+        }
+
+        /* Anchor Tag Styling */
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: block; /* Make whole box clickable area */
+            width: 100%;
+            height: 100%;
+        }
+
+        a:hover {
+            color: var(--hover-color);
+            text-decoration: none; /* Removed underline for cleaner look */
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .link-grid { grid-template-columns: 1fr; } /* Stack links on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to the Blogs Section</h1>
+
+        <header onclick="toggleLinks('health-wellness-links', this)">
+            Health and Wellness
+        </header>
+        <div class="links" id="health-wellness-links">
+            <div class="link-grid">
+                <div class="link-item"><a href="https://www.healthline.com/nutrition">Healthline Nutrition</a></div>
+                <div class="link-item"><a href="https://www.eatright.org/">Academy of Nutrition and Dietetics</a></div>
+                <div class="link-item"><a href="https://www.forksoverknives.com/">Forks Over Knives</a></div>
+                <div class="link-item"><a href="https://www.dietdoctor.com/">Diet Doctor</a></div>
+                <div class="link-item"><a href="https://www.loveandlemons.com/">Love and Lemons</a></div>
+                <div class="link-item"><a href="https://www.healthyseasonalrecipes.com/">Healthy Seasonal Recipes</a></div>
+                <div class="link-item"><a href="https://www.thehealthyfoodie.com/">The Healthy Foodie</a></div>
+                <div class="link-item"><a href="https://www.spoonforkbacon.com/">Spoon Fork Bacon</a></div>
+                <div class="link-item"><a href="https://www.eatingwell.com/">EatingWell</a></div>
+                <div class="link-item"><a href="https://www.thekitchn.com/">The Kitchn</a></div>
+                <div class="link-item"><a href="https://www.cookinglight.com/">Cooking Light</a></div>
+                <div class="link-item"><a href="https://www.skinnytaste.com/">Skinny Taste</a></div>
+                <div class="link-item"><a href="https://www.fabfitfun.com/">FabFitFun</a></div>
+                <div class="link-item"><a href="https://www.nourishedkitchen.com/">Nourished Kitchen</a></div>
+                <div class="link-item"><a href="https://www.kitchentreaty.com/">Kitchen Treaty</a></div>
+                <div class="link-item"><a href="https://www.eatwell101.com/">Eatwell101</a></div>
+                <div class="link-item"><a href="https://www.ambitiouskitchen.com/">Ambitious Kitchen</a></div>
+                <div class="link-item"><a href="https://www.mediterraneanliving.com/">Mediterranean Living</a></div>
+                <div class="link-item"><a href="https://www.sweetpeasandsaffron.com/">Sweet Peas and Saffron</a></div>
+                <div class="link-item"><a href="https://cookieandkate.com/">Cookie and Kate</a></div>
+            </div>
+        </div>
+
+        <header onclick="toggleLinks('fashion-lifestyle-links', this)">
+            Fashion and Lifestyle
+        </header>
+        <div class="links" id="fashion-lifestyle-links">
+            <div class="link-grid">
+                <div class="link-item"><a href="https://www.manrepeller.com/">Man Repeller</a></div>
+                <div class="link-item"><a href="https://www.whowhatwear.com/">Who What Wear</a></div>
+                <div class="link-item"><a href="https://www.stylecaster.com/">StyleCaster</a></div>
+                <div class="link-item"><a href="https://www.refinery29.com/">Refinery29</a></div>
+                <div class="link-item"><a href="https://www.popsugar.com/">POPSUGAR</a></div>
+                <div class="link-item"><a href="https://www.byrdie.com/">Byrdie</a></div>
+                <div class="link-item"><a href="https://www.harpersbazaar.com/">Harper's Bazaar</a></div>
+                <div class="link-item"><a href="https://www.elle.com/">Elle</a></div>
+                <div class="link-item"><a href="https://www.vogue.com/">Vogue</a></div>
+                <div class="link-item"><a href="https://www.cosmopolitan.com/">Cosmopolitan</a></div>
+                <div class="link-item"><a href="https://www.glamour.com/">Glamour</a></div>
+                <div class="link-item"><a href="https://www.fashionista.com/">Fashionista</a></div>
+                <div class="link-item"><a href="https://www.thekitchn.com/">The Kitchn</a></div>
+                <div class="link-item"><a href="https://www.apartmenttherapy.com/">Apartment Therapy</a></div>
+                <div class="link-item"><a href="https://www.housebeautiful.com/">House Beautiful</a></div>
+                <div class="link-item"><a href="https://www.bhg.com/">Better Homes & Gardens</a></div>
+                <div class="link-item"><a href="https://www.countryliving.com/">Country Living</a></div>
+            </div>
+        </div>
+
+        <header onclick="toggleLinks('fitness-nutrition-links', this)">
+            Fitness and Nutrition
+        </header>
+        <div class="links" id="fitness-nutrition-links">
+            <div class="link-grid">
+                <!-- Duplicated links from Header 1 have been removed -->
+                <!-- Only the correct links for Fitness and Nutrition remain -->
+                <div class="link-item"><a href="https://www.100daysofrealfood.com/">100 Days of Real Food</a></div>
+                <div class="link-item"><a href="https://www.thepioneerwoman.com/">The Pioneer Woman</a></div>
+                <div class="link-item"><a href="https://www.healthyfood.com/">Healthy Food</a></div>
+                <div class="link-item"><a href="https://www.nutrition.gov/">Nutrition.gov</a></div>
+                <div class="link-item"><a href="https://www.fitfoodiefinds.com/">Fit Foodie Finds</a></div>
+                <div class="link-item"><a href="https://www.smittenkitchen.com/">Smitten Kitchen</a></div>
+                <div class="link-item"><a href="https://www.verywellfit.com/">Verywell Fit</a></div>
+                <div class="link-item"><a href="https://www.fitsugar.com/">FitSugar</a></div>
+                <div class="link-item"><a href="https://www.nutritionstripped.com/">Nutrition Stripped</a></div>
+                <div class="link-item"><a href="https://www.eatthis.com/">Eat This, Not That!</a></div>
+                <div class="link-item"><a href="https://www.cleananddelicious.com/">Clean & Delicious</a></div>
+                <div class="link-item"><a href="https://www.bbcgoodfood.com/">BBC Good Food</a></div>
+                <div class="link-item"><a href="https://www.simplyrecipes.com/">Simply Recipes</a></div>
+                <div class="link-item"><a href="https://www.health.com/">Health.com</a></div>
+                <div class="link-item"><a href="https://www.wellandgood.com/">Well+Good</a></div>
+                <!-- Extra closing </div> tag has been removed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLinks(id, headerElement) {
+            const linksDiv = document.getElementById(id);
+            
+            // Toggle the clicked section
+            if (linksDiv.style.display === "none" || linksDiv.style.display === "") {
+                linksDiv.style.display = "block";
+                headerElement.classList.add('active'); // Add active class for styling/rotation
+            } else {
+                linksDiv.style.display = "none";
+                headerElement.classList.remove('active'); // Remove active class
+            }
+        }
+    </script>
+</body>
+</html>

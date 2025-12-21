@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Plus | Symptom Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00b894;
+      --secondary: #0984e3;
+      --dark-bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      background-image: radial-gradient(at 0% 0%, rgba(0, 184, 148, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(108, 92, 231, 0.1) 0px, transparent 50%);
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(15px);
+      padding: 25px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 800;
+      font-size: 2.2rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .search-box {
+      margin-top: 20px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 15px 25px;
+      border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    #searchInput:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(0, 184, 148, 0.2);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 100px;
+    }
+
+    .disease-item {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      margin-bottom: 12px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: 0.3s all ease;
+      overflow: hidden;
+    }
+
+    .disease-item:hover {
+      transform: translateX(10px);
+      border-color: var(--primary);
+    }
+
+    .disease-header {
+      padding: 20px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .disease-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .index-circle {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .status-icon {
+        font-size: 1.2rem;
+        color: var(--primary);
+        transition: 0.3s;
+    }
+
+    .symptoms-content {
+      display: none;
+      padding: 0 25px 20px 70px;
+      color: #94a3b8;
+      font-weight: 600;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 15px;
+    }
+
+    .symptoms-label {
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .active .status-icon { transform: rotate(45deg); color: #ef4444; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Health Plus Symptoms</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" onkeyup="filterResults()" placeholder="Search from 253 conditions...">
+  </div>
+</header>
+
+<div class="container">
+  <div id="diseaseList">
+    <!-- 1-50 -->
+    <div class="disease-item" onclick="toggleS('s1', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">1</span> Acne</div><div class="status-icon">+</div></div>
+      <div id="s1" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pimples, Oily skin, Scars</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s2', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">2</span> Acute Kidney Injury</div><div class="status-icon">+</div></div>
+      <div id="s2" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Decreased urine, Swelling, Confusion</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s3', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">3</span> Addison's Disease</div><div class="status-icon">+</div></div>
+      <div id="s3" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Weight loss, Low BP</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s4', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">4</span> ADHD</div><div class="status-icon">+</div></div>
+      <div id="s4" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Inattention, Hyperactivity, Impulsivity</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s5', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">5</span> Allergic Rhinitis</div><div class="status-icon">+</div></div>
+      <div id="s5" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sneezing, Nasal congestion, Itchy eyes</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s6', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">6</span> Alport Syndrome</div><div class="status-icon">+</div></div>
+      <div id="s6" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Hearing loss, Hematuria, Eye issues</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s7', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">7</span> ALS</div><div class="status-icon">+</div></div>
+      <div id="s7" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Muscle weakness, Twitching, Difficulty speaking/swallowing</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s8', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">8</span> Alzheimer's Disease</div><div class="status-icon">+</div></div>
+      <div id="s8" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Memory loss, Confusion, Personality changes</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s9', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">9</span> Amyloidosis (renal)</div><div class="status-icon">+</div></div>
+      <div id="s9" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Swelling, Proteinuria, Weight loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s10', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">10</span> Anemia</div><div class="status-icon">+</div></div>
+      <div id="s10" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Pale skin, Shortness of breath</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s11', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">11</span> Andropause</div><div class="status-icon">+</div></div>
+      <div id="s11" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Mood changes, Decreased energy, Hot flashes</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s12', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">12</span> Angina Pectoris</div><div class="status-icon">+</div></div>
+      <div id="s12" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Chest pain/pressure, Pain radiating to arms/neck, Shortness of breath</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s13', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">13</span> Anorchia</div><div class="status-icon">+</div></div>
+      <div id="s13" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Absent testes, Delayed puberty, Infertility</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s14', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">14</span> Anxiety Disorder</div><div class="status-icon">+</div></div>
+      <div id="s14" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Excessive worry, Restlessness, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s15', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">15</span> Appendicitis</div><div class="status-icon">+</div></div>
+      <div id="s15" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Lower right abdominal pain, Nausea, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s16', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">16</span> Arrhythmia</div><div class="status-icon">+</div></div>
+      <div id="s16" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Palpitations, Dizziness, Fainting</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s17', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">17</span> Asthenozoospermia</div><div class="status-icon">+</div></div>
+      <div id="s17" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Low sperm motility, Infertility</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s18', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">18</span> Asthma</div><div class="status-icon">+</div></div>
+      <div id="s18" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Shortness of breath, Wheezing, Chest tightness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s19', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">19</span> Azoospermia</div><div class="status-icon">+</div></div>
+      <div id="s19" class="symptoms-content"><span class="symptoms-label">Symptoms</span>No sperm in semen, Infertility</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s20', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">20</span> Balanitis</div><div class="status-icon">+</div></div>
+      <div id="s20" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Redness, Itching, Discharge from penis</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s21', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">21</span> Bartter Syndrome</div><div class="status-icon">+</div></div>
+      <div id="s21" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Dehydration, Low potassium, Cramps</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s22', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">22</span> Bell's Palsy</div><div class="status-icon">+</div></div>
+      <div id="s22" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sudden facial weakness, Drooping eyelid/mouth, Drooling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s23', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">23</span> BPH</div><div class="status-icon">+</div></div>
+      <div id="s23" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Weak urine stream, Hesitancy, Urgency</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s25', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">25</span> Bipolar Disorder</div><div class="status-icon">+</div></div>
+      <div id="s25" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Mood swings (mania/depression), Energy changes</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s26', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">26</span> Bladder Cancer</div><div class="status-icon">+</div></div>
+      <div id="s26" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Blood in urine, Painful urination</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s27', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">27</span> Bladder Infection</div><div class="status-icon">+</div></div>
+      <div id="s27" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Frequent urination, Pain, Blood in urine</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s29', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">29</span> Breast Cancer</div><div class="status-icon">+</div></div>
+      <div id="s29" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Lump, Skin changes, Nipple discharge</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s30', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">30</span> Bronchitis</div><div class="status-icon">+</div></div>
+      <div id="s30" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Cough, Mucus production, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s31', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">31</span> Carpal Tunnel</div><div class="status-icon">+</div></div>
+      <div id="s31" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Hand numbness, Weakness, Pain radiating up arm</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s32', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">32</span> Cataract</div><div class="status-icon">+</div></div>
+      <div id="s32" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Cloudy vision, Light sensitivity</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s33', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">33</span> Celiac Disease</div><div class="status-icon">+</div></div>
+      <div id="s33" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Diarrhea, Bloating, Weight loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s34', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">34</span> Cervical Cancer</div><div class="status-icon">+</div></div>
+      <div id="s34" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Bleeding after intercourse, Pelvic pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s35', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">35</span> Chickenpox</div><div class="status-icon">+</div></div>
+      <div id="s35" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Itchy rash, Fever, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s36', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">36</span> Chlamydia</div><div class="status-icon">+</div></div>
+      <div id="s36" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Painful urination, Lower abdominal pain, Discharge</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s37', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">37</span> CKD</div><div class="status-icon">+</div></div>
+      <div id="s37" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Edema, High BP</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s38', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">38</span> Chronic Renal Failure</div><div class="status-icon">+</div></div>
+      <div id="s38" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Anemia, Loss of appetite</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s39', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">39</span> Cirrhosis</div><div class="status-icon">+</div></div>
+      <div id="s39" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Jaundice, Abdominal swelling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s40', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">40</span> Color Blindness</div><div class="status-icon">+</div></div>
+      <div id="s40" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Difficulty distinguishing colors</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s41', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">41</span> Colorectal Cancer</div><div class="status-icon">+</div></div>
+      <div id="s41" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Change in bowel habits, Rectal bleeding, Abdominal pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s42', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">42</span> Common Cold</div><div class="status-icon">+</div></div>
+      <div id="s42" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sneezing, Runny nose, Sore throat</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s43', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">43</span> Conjunctivitis</div><div class="status-icon">+</div></div>
+      <div id="s43" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Red eyes, Itching, Discharge</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s44', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">44</span> COPD</div><div class="status-icon">+</div></div>
+      <div id="s44" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Persistent cough, Shortness of breath, Wheezing</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s45', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">45</span> COVID-19</div><div class="status-icon">+</div></div>
+      <div id="s45" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Cough, Fever, Loss of taste or smell</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s46', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">46</span> Crohn's Disease</div><div class="status-icon">+</div></div>
+      <div id="s46" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Abdominal pain, Diarrhea, Weight loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s47', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">47</span> Croup</div><div class="status-icon">+</div></div>
+      <div id="s47" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Barking cough, Hoarseness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s48', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">48</span> Cryptorchidism</div><div class="status-icon">+</div></div>
+      <div id="s48" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Undescended testicle, Infertility risk</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s49', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">49</span> Cushing's Syndrome</div><div class="status-icon">+</div></div>
+      <div id="s49" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Weight gain, Moon face, High BP</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s50', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">50</span> Cystitis</div><div class="status-icon">+</div></div>
+      <div id="s50" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Urgency, Painful urination, Pressure</div>
+    </div>
+    <!-- 51-100 -->
+    <div class="disease-item" onclick="toggleS('s51', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">51</span> Dandruff</div><div class="status-icon">+</div></div>
+      <div id="s51" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Flaky scalp, Itching, Dryness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s52', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">52</span> Dengue Fever</div><div class="status-icon">+</div></div>
+      <div id="s52" class="symptoms-content"><span class="symptoms-label">Symptoms</span>High fever, Severe headache, Joint/muscle pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s53', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">53</span> Depression</div><div class="status-icon">+</div></div>
+      <div id="s53" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Persistent sadness, Loss of interest, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s54', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">54</span> Diabetes Mellitus</div><div class="status-icon">+</div></div>
+      <div id="s54" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Excessive thirst, Frequent urination, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s55', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">55</span> Diabetes Type 1</div><div class="status-icon">+</div></div>
+      <div id="s55" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Frequent urination, Thirst, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s56', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">56</span> Diabetes Type 2</div><div class="status-icon">+</div></div>
+      <div id="s56" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Blurred vision, Slow healing, Numbness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s57', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">57</span> Diabetic Nephropathy</div><div class="status-icon">+</div></div>
+      <div id="s57" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Proteinuria, Edema, High BP</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s58', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">58</span> Diabetic Retinopathy</div><div class="status-icon">+</div></div>
+      <div id="s58" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Blurred vision, Floaters, Vision loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s59', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">59</span> Diphtheria</div><div class="status-icon">+</div></div>
+      <div id="s59" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sore throat, Fever, Thick coating in throat</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s60', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">60</span> Diverticulitis</div><div class="status-icon">+</div></div>
+      <div id="s60" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Lower left abdominal pain, Fever, Nausea</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s61', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">61</span> Dry Eye Syndrome</div><div class="status-icon">+</div></div>
+      <div id="s61" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Burning, Blurry vision, Gritty feeling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s62', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">62</span> Eczema</div><div class="status-icon">+</div></div>
+      <div id="s62" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Itchy skin, Dry patches, Inflammation</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s63', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">63</span> Dermatitis</div><div class="status-icon">+</div></div>
+      <div id="s63" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Dry skin, Itching, Inflammation</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s64', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">64</span> Endometriosis</div><div class="status-icon">+</div></div>
+      <div id="s64" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pelvic pain, Painful periods, Infertility</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s65', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">65</span> Epididymitis</div><div class="status-icon">+</div></div>
+      <div id="s65" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Scrotal pain, Swelling, Discharge</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s66', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">66</span> Epiglottitis</div><div class="status-icon">+</div></div>
+      <div id="s66" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Difficulty breathing, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s67', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">67</span> Epilepsy</div><div class="status-icon">+</div></div>
+      <div id="s67" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Seizures, Confusion, Loss of awareness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s68', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">68</span> Epispadias</div><div class="status-icon">+</div></div>
+      <div id="s68" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Urethral opening on top, Incontinence</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s69', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">69</span> Erectile Dysfunction</div><div class="status-icon">+</div></div>
+      <div id="s69" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Trouble maintaining erection, Low libido</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s70', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">70</span> Impotence</div><div class="status-icon">+</div></div>
+      <div id="s70" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Inability to maintain erection, Stress, Low libido</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s71', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">71</span> Fabry Disease</div><div class="status-icon">+</div></div>
+      <div id="s71" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pain, Skin lesions, Kidney issues</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s72', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">72</span> Fanconi Syndrome</div><div class="status-icon">+</div></div>
+      <div id="s72" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Growth delay, Bone pain, Urinary losses</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s73', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">73</span> Fatty Liver (NAFLD)</div><div class="status-icon">+</div></div>
+      <div id="s73" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Upper right abdominal discomfort</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s74', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">74</span> Fibromyalgia</div><div class="status-icon">+</div></div>
+      <div id="s74" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Widespread pain, Fatigue, Sleep problems</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s75', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">75</span> Food Poisoning</div><div class="status-icon">+</div></div>
+      <div id="s75" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Nausea, Vomiting, Diarrhea</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s76', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">76</span> Fournier's Gangrene</div><div class="status-icon">+</div></div>
+      <div id="s76" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Severe pain, Fever, Blackened skin</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s77', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">77</span> Fractures</div><div class="status-icon">+</div></div>
+      <div id="s77" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pain, Swelling, Deformity</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s78', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">78</span> Gallstones</div><div class="status-icon">+</div></div>
+      <div id="s78" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Upper right abdominal pain, Nausea, Indigestion</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s79', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">79</span> Gastroenteritis</div><div class="status-icon">+</div></div>
+      <div id="s79" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Diarrhea, Vomiting, Stomach cramps</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s80', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">80</span> Genital Herpes</div><div class="status-icon">+</div></div>
+      <div id="s80" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sores/blisters on genitals, Itching/pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s81', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">81</span> GERD (Acid Reflux)</div><div class="status-icon">+</div></div>
+      <div id="s81" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Heartburn, Regurgitation, Chest pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s82', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">82</span> Germ Cell Tumor</div><div class="status-icon">+</div></div>
+      <div id="s82" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Mass in testes, Chest pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s83', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">83</span> Gestational Diabetes</div><div class="status-icon">+</div></div>
+      <div id="s83" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Increased thirst, Fatigue, Frequent urination</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s84', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">84</span> Gitelman Syndrome</div><div class="status-icon">+</div></div>
+      <div id="s84" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Muscle weakness, Salt craving, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s85', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">85</span> Glaucoma</div><div class="status-icon">+</div></div>
+      <div id="s85" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Eye pain, Vision loss, Halos around lights</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s86', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">86</span> Glomerulonephritis</div><div class="status-icon">+</div></div>
+      <div id="s86" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Swelling, High BP, Foamy urine</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s87', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">87</span> Goiter</div><div class="status-icon">+</div></div>
+      <div id="s87" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Neck swelling, Hoarseness, Coughing</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s88', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">88</span> Gonorrhea</div><div class="status-icon">+</div></div>
+      <div id="s88" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Burning urination, Thick discharge, Pelvic pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s89', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">89</span> Arthritis</div><div class="status-icon">+</div></div>
+      <div id="s89" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sudden joint pain, Redness, Swelling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s90', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">90</span> Gout</div><div class="status-icon">+</div></div>
+      <div id="s90" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sudden joint pain, Swelling, Redness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s91', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">91</span> Gynecomastia</div><div class="status-icon">+</div></div>
+      <div id="s91" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Breast swelling in men, Tenderness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s92', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">92</span> Hearing Loss</div><div class="status-icon">+</div></div>
+      <div id="s92" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Muffled speech, Asking for repeats</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s93', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">93</span> Heart Attack</div><div class="status-icon">+</div></div>
+      <div id="s93" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Chest pain, Shortness of breath, Nausea</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s94', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">94</span> Heart Failure</div><div class="status-icon">+</div></div>
+      <div id="s94" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Shortness of breath, Fatigue, Swelling in legs</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s95', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">95</span> Hematuria</div><div class="status-icon">+</div></div>
+      <div id="s95" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Red/brown urine, Pain, Urgency</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s96', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">96</span> Hemorrhoids (Piles)</div><div class="status-icon">+</div></div>
+      <div id="s96" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Rectal bleeding, Itching, Pain during BM</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s97', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">97</span> Hepatitis A</div><div class="status-icon">+</div></div>
+      <div id="s97" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Abdominal pain, Jaundice</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s98', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">98</span> Hepatitis B</div><div class="status-icon">+</div></div>
+      <div id="s98" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Joint pain, Jaundice, Dark urine</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s99', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">99</span> Hepatitis C</div><div class="status-icon">+</div></div>
+      <div id="s99" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Abdominal swelling, Jaundice</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s100', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">100</span> Hives (Urticaria)</div><div class="status-icon">+</div></div>
+      <div id="s100" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Raised itchy welts, Redness, Swelling</div>
+    </div>
+    <!-- 101-150 -->
+    <div class="disease-item" onclick="toggleS('s101', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">101</span> HIV/AIDS</div><div class="status-icon">+</div></div>
+      <div id="s101" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Flu-like symptoms, Weight loss, Night sweats</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s102', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">102</span> Hydrocele</div><div class="status-icon">+</div></div>
+      <div id="s102" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Scrotal swelling, Discomfort, Heaviness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s103', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">103</span> Hydronephrosis A</div><div class="status-icon">+</div></div>
+      <div id="s103" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Flank pain, Nausea, Urinary difficulty</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s104', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">104</span> Hydronephrosis B</div><div class="status-icon">+</div></div>
+      <div id="s104" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Painful urination, Nausea, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s105', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">105</span> Hyperglycemia</div><div class="status-icon">+</div></div>
+      <div id="s105" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Dry mouth, Nausea, Frequent urination</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s106', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">106</span> Hyperprolactinemia</div><div class="status-icon">+</div></div>
+      <div id="s106" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Low libido, Infertility, Breast enlargement</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s107', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">107</span> Hypertension</div><div class="status-icon">+</div></div>
+      <div id="s107" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Headache, Dizziness, Blurred vision</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s108', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">108</span> Hypertensive Nephropathy</div><div class="status-icon">+</div></div>
+      <div id="s108" class="symptoms-content"><span class="symptoms-label">Symptoms</span>High BP, Headaches, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s109', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">109</span> Hyperthyroidism</div><div class="status-icon">+</div></div>
+      <div id="s109" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Weight loss, Anxiety, Rapid heartbeat</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s110', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">110</span> Hypoglycemia</div><div class="status-icon">+</div></div>
+      <div id="s110" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Shakiness, Sweating, Confusion</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s111', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">111</span> Hypogonadism</div><div class="status-icon">+</div></div>
+      <div id="s111" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Reduced libido, Muscle loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s112', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">112</span> Hypospadias</div><div class="status-icon">+</div></div>
+      <div id="s112" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Abnormal opening, Curved penis</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s113', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">113</span> Hypothyroidism</div><div class="status-icon">+</div></div>
+      <div id="s113" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Weight gain, Cold intolerance</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s114', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">114</span> Infertility</div><div class="status-icon">+</div></div>
+      <div id="s114" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Inability to conceive, Irregular cycles</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s115', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">115</span> Influenza (Flu)</div><div class="status-icon">+</div></div>
+      <div id="s115" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fever, Chills, Muscle aches</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s116', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">116</span> Insomnia</div><div class="status-icon">+</div></div>
+      <div id="s116" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Trouble sleeping, Daytime drowsiness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s117', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">117</span> Interstitial Cystitis A</div><div class="status-icon">+</div></div>
+      <div id="s117" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Bladder pressure, Pelvic pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s118', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">118</span> Interstitial Cystitis B</div><div class="status-icon">+</div></div>
+      <div id="s118" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pelvic pain, Urinary urgency</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s119', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">119</span> IBS</div><div class="status-icon">+</div></div>
+      <div id="s119" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Abdominal pain, Bloating, Bowel changes</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s120', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">120</span> Kidney Failure A</div><div class="status-icon">+</div></div>
+      <div id="s120" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Swelling, Confusion</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s121', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">121</span> Kidney Infection</div><div class="status-icon">+</div></div>
+      <div id="s121" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fever, Back pain, Nausea</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s122', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">122</span> Kidney Stones A</div><div class="status-icon">+</div></div>
+      <div id="s122" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Severe back pain, Blood in urine</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s123', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">123</span> Kidney Stones B</div><div class="status-icon">+</div></div>
+      <div id="s123" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Severe pain, Nausea, Blood in urine</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s124', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">124</span> Laryngitis</div><div class="status-icon">+</div></div>
+      <div id="s124" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Hoarseness, Sore throat, Dry cough</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s125', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">125</span> Leukemia</div><div class="status-icon">+</div></div>
+      <div id="s125" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Frequent infections, Easy bruising</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s126', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">126</span> Leydig Cell Tumor</div><div class="status-icon">+</div></div>
+      <div id="s126" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Breast growth, Low libido, Mass in testicle</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s127', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">127</span> Low Testosterone</div><div class="status-icon">+</div></div>
+      <div id="s127" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Low libido, Depression</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s128', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">128</span> Lung Cancer</div><div class="status-icon">+</div></div>
+      <div id="s128" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Persistent cough, Chest pain, Weight loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s129', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">129</span> Lupus A</div><div class="status-icon">+</div></div>
+      <div id="s129" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Joint pain, Butterfly rash</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s130', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">130</span> Lupus B</div><div class="status-icon">+</div></div>
+      <div id="s130" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Joint pain, Butterfly rash</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s131', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">131</span> Lupus Nephritis</div><div class="status-icon">+</div></div>
+      <div id="s131" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Joint pain, Swelling, High BP</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s132', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">132</span> Lyme Disease</div><div class="status-icon">+</div></div>
+      <div id="s132" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Rash (bull's-eye), Fever, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s133', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">133</span> Lymphoma</div><div class="status-icon">+</div></div>
+      <div id="s133" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Swollen lymph nodes, Fever, Night sweats</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s134', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">134</span> Macular Degeneration</div><div class="status-icon">+</div></div>
+      <div id="s134" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Blurry central vision, Distortion</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s135', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">135</span> Malaria</div><div class="status-icon">+</div></div>
+      <div id="s135" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fever, Chills, Sweating</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s136', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">136</span> Male Infertility</div><div class="status-icon">+</div></div>
+      <div id="s136" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Low sperm count, Hormonal issues</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s137', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">137</span> Male Urethral Stricture</div><div class="status-icon">+</div></div>
+      <div id="s137" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Weak stream, Incomplete urination</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s138', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">138</span> Measles</div><div class="status-icon">+</div></div>
+      <div id="s138" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Rash, Fever, Cough</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s139', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">139</span> Medullary Sponge Kidney</div><div class="status-icon">+</div></div>
+      <div id="s139" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Hematuria, UTIs, Kidney stones</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s140', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">140</span> Melanoma</div><div class="status-icon">+</div></div>
+      <div id="s140" class="symptoms-content"><span class="symptoms-label">Symptoms</span>New mole, Color changes, Bleeding</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s141', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">141</span> Meniere’s Disease</div><div class="status-icon">+</div></div>
+      <div id="s141" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Vertigo, Tinnitus, Ear pressure</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s142', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">142</span> Meningitis</div><div class="status-icon">+</div></div>
+      <div id="s142" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Severe headache, Stiff neck, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s143', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">143</span> Menopause</div><div class="status-icon">+</div></div>
+      <div id="s143" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Hot flashes, Mood swings, Sleep problems</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s144', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">144</span> Migraine</div><div class="status-icon">+</div></div>
+      <div id="s144" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Throbbing headache, Nausea, Sensitivity to light</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s145', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">145</span> Mononucleosis</div><div class="status-icon">+</div></div>
+      <div id="s145" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Sore throat, Swollen glands</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s146', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">146</span> Multiple Sclerosis</div><div class="status-icon">+</div></div>
+      <div id="s146" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Numbness, Fatigue, Vision problems</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s147', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">147</span> Mumps</div><div class="status-icon">+</div></div>
+      <div id="s147" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Swollen cheeks, Fever, Headache</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s148', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">148</span> Myasthenia Gravis</div><div class="status-icon">+</div></div>
+      <div id="s148" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Droopy eyelids, Double vision, Muscle weakness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s149', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">149</span> Narcolepsy</div><div class="status-icon">+</div></div>
+      <div id="s149" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sudden sleep attacks, Hallucinations</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s150', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">150</span> Nephrogenic Diabetes</div><div class="status-icon">+</div></div>
+      <div id="s150" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Excess urination, Thirst, Dehydration</div>
+    </div>
+    <!-- 151-200 -->
+    <div class="disease-item" onclick="toggleS('s151', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">151</span> Nephrolithiasis</div><div class="status-icon">+</div></div>
+      <div id="s151" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Severe pain, Hematuria, Vomiting</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s152', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">152</span> Nephrotic Syndrome</div><div class="status-icon">+</div></div>
+      <div id="s152" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Swelling, Proteinuria, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s153', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">153</span> Neurogenic Bladder</div><div class="status-icon">+</div></div>
+      <div id="s153" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Incontinence, Retention, Frequency</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s154', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">154</span> Nonseminoma</div><div class="status-icon">+</div></div>
+      <div id="s154" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Rapidly growing lump, Back pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s155', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">155</span> Norovirus</div><div class="status-icon">+</div></div>
+      <div id="s155" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Vomiting, Diarrhea, Stomach cramps</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s156', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">156</span> OCD</div><div class="status-icon">+</div></div>
+      <div id="s156" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Obsessions, Repetitive behaviors, Anxiety</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s157', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">157</span> Oligospermia</div><div class="status-icon">+</div></div>
+      <div id="s157" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Low sperm count, Infertility</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s158', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">158</span> Orchitis</div><div class="status-icon">+</div></div>
+      <div id="s158" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Testicle swelling, Fever, Pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s159', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">159</span> Osteoarthritis A</div><div class="status-icon">+</div></div>
+      <div id="s159" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Joint pain, Stiffness, Swelling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s160', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">160</span> Osteoarthritis B</div><div class="status-icon">+</div></div>
+      <div id="s160" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Joint pain, Stiffness, Bone spurs</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s161', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">161</span> Osteoporosis</div><div class="status-icon">+</div></div>
+      <div id="s161" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fragile bones, Height loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s162', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">162</span> Otitis Media</div><div class="status-icon">+</div></div>
+      <div id="s162" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Ear pain, Fever, Hearing loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s163', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">163</span> Ovarian Cyst</div><div class="status-icon">+</div></div>
+      <div id="s163" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Bloating, Painful intercourse, Pelvic pressure</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s164', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">164</span> Overactive Bladder</div><div class="status-icon">+</div></div>
+      <div id="s164" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Urgency, Frequency, Nocturia</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s165', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">165</span> Paraphimosis</div><div class="status-icon">+</div></div>
+      <div id="s165" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Trapped foreskin, Swelling, Pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s166', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">166</span> Parkinson's Disease</div><div class="status-icon">+</div></div>
+      <div id="s166" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Tremors, Slowed movement, Balance problems</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s167', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">167</span> Pelvic Inflammatory Disease</div><div class="status-icon">+</div></div>
+      <div id="s167" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Abdominal pain, Fever, Discharge</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s168', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">168</span> Penile Cancer</div><div class="status-icon">+</div></div>
+      <div id="s168" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Lump on penis, Foul-smelling discharge</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s169', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">169</span> Penile Fracture</div><div class="status-icon">+</div></div>
+      <div id="s169" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Popping sound, Swelling, Severe pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s170', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">170</span> Peripheral Artery Disease</div><div class="status-icon">+</div></div>
+      <div id="s170" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Leg pain when walking, Numbness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s171', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">171</span> Peyronie's Disease</div><div class="status-icon">+</div></div>
+      <div id="s171" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Curved erection, Pain, ED</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s172', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">172</span> Pharyngitis</div><div class="status-icon">+</div></div>
+      <div id="s172" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sore throat, Painful swallowing</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s173', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">173</span> Pheochromocytoma</div><div class="status-icon">+</div></div>
+      <div id="s173" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Headaches, Sweating, High BP</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s174', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">174</span> Phimosis</div><div class="status-icon">+</div></div>
+      <div id="s174" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Tight foreskin, Painful urination</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s175', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">175</span> Pneumonia</div><div class="status-icon">+</div></div>
+      <div id="s175" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fever, Productive cough, Chest pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s176', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">176</span> Polio</div><div class="status-icon">+</div></div>
+      <div id="s176" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Paralysis, Muscle weakness, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s177', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">177</span> Polycystic Kidney A</div><div class="status-icon">+</div></div>
+      <div id="s177" class="symptoms-content"><span class="symptoms-label">Symptoms</span>High BP, Back pain, Enlarged kidneys</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s178', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">178</span> Polycystic Kidney B</div><div class="status-icon">+</div></div>
+      <div id="s178" class="symptoms-content"><span class="symptoms-label">Symptoms</span>High BP, Back pain, Enlarged abdomen</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s179', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">179</span> PCOS</div><div class="status-icon">+</div></div>
+      <div id="s179" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Irregular periods, Acne, Weight gain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s180', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">180</span> Posterior Urethral Valves</div><div class="status-icon">+</div></div>
+      <div id="s180" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Urine blockage, Infection, Swelling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s181', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">181</span> PTSD</div><div class="status-icon">+</div></div>
+      <div id="s181" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Flashbacks, nightmares, Hypervigilance</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s182', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">182</span> Premature Ejaculation</div><div class="status-icon">+</div></div>
+      <div id="s182" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Ejaculation before desired</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s183', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">183</span> Priapism</div><div class="status-icon">+</div></div>
+      <div id="s183" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Painful erection, Lasting >4 hours</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s184', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">184</span> Prostate Cancer A</div><div class="status-icon">+</div></div>
+      <div id="s184" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Frequent urination, Weak flow</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s185', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">185</span> Prostate Cancer B</div><div class="status-icon">+</div></div>
+      <div id="s185" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Urinary issues, Back pain, Weight loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s186', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">186</span> Prostate Enlargement</div><div class="status-icon">+</div></div>
+      <div id="s186" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Frequent urination, Weak stream</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s187', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">187</span> Prostatitis A</div><div class="status-icon">+</div></div>
+      <div id="s187" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pelvic pain, Painful urination, Chills</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s188', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">188</span> Prostatitis B</div><div class="status-icon">+</div></div>
+      <div id="s188" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pelvic pain, Painful urination, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s189', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">189</span> Prostatitis C</div><div class="status-icon">+</div></div>
+      <div id="s189" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pelvic pain, Difficulty urinating, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s190', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">190</span> Proteinuria</div><div class="status-icon">+</div></div>
+      <div id="s190" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Foamy urine, Swelling, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s191', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">191</span> Psoriasis A</div><div class="status-icon">+</div></div>
+      <div id="s191" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Red patches, Itching, Scaly skin</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s192', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">192</span> Psoriasis B</div><div class="status-icon">+</div></div>
+      <div id="s192" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Scaly skin, Red patches, Itching</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s193', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">193</span> Pulmonary Embolism</div><div class="status-icon">+</div></div>
+      <div id="s193" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sudden shortness of breath, Chest pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s194', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">194</span> Renal Artery Stenosis</div><div class="status-icon">+</div></div>
+      <div id="s194" class="symptoms-content"><span class="symptoms-label">Symptoms</span>High BP, Kidney dysfunction, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s195', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">195</span> Renal Cell Carcinoma</div><div class="status-icon">+</div></div>
+      <div id="s195" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Blood in urine, Flank pain, Lump</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s196', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">196</span> Renal Cyst</div><div class="status-icon">+</div></div>
+      <div id="s196" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Flank pain, Blood in urine, High BP</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s197', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">197</span> Renal Failure</div><div class="status-icon">+</div></div>
+      <div id="s197" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Low urine output, Swelling, Confusion</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s198', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">198</span> Renal Trauma</div><div class="status-icon">+</div></div>
+      <div id="s198" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Flank pain, Hematuria, Shock</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s199', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">199</span> Renal Tubular Acidosis</div><div class="status-icon">+</div></div>
+      <div id="s199" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Weakness, Bone pain, Growth retardation</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s200', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">200</span> Restless Legs</div><div class="status-icon">+</div></div>
+      <div id="s200" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Leg discomfort, Urge to move, Sleep disruption</div>
+    </div>
+    <!-- 201-253 -->
+    <div class="disease-item" onclick="toggleS('s201', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">201</span> Rheumatoid Arthritis A</div><div class="status-icon">+</div></div>
+      <div id="s201" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Joint stiffness, Swelling, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s202', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">202</span> Rheumatoid Arthritis B</div><div class="status-icon">+</div></div>
+      <div id="s202" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Joint swelling, Morning stiffness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s203', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">203</span> Ringworm</div><div class="status-icon">+</div></div>
+      <div id="s203" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Circular rash, Itching, Redness</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s204', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">204</span> Rosacea</div><div class="status-icon">+</div></div>
+      <div id="s204" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Facial redness, Visible vessels, Pimples</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s205', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">205</span> Rubella</div><div class="status-icon">+</div></div>
+      <div id="s205" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Rash, Mild fever, Swollen glands</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s206', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">206</span> Scabies</div><div class="status-icon">+</div></div>
+      <div id="s206" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Itching, Rash, Sores</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s207', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">207</span> Schizophrenia</div><div class="status-icon">+</div></div>
+      <div id="s207" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Hallucinations, Delusions, Disorganized thinking</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s208', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">208</span> Sciatica</div><div class="status-icon">+</div></div>
+      <div id="s208" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Lower back pain, Leg tingling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s209', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">209</span> Scrotal Lymphedema</div><div class="status-icon">+</div></div>
+      <div id="s209" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Swollen scrotum, Heaviness, Infection</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s210', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">210</span> Seminal Vesiculitis</div><div class="status-icon">+</div></div>
+      <div id="s210" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Painful ejaculation, Blood in semen</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s211', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">211</span> Seminoma</div><div class="status-icon">+</div></div>
+      <div id="s211" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Testicular lump, Pain, Swelling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s212', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">212</span> Sertoli Cell Tumor</div><div class="status-icon">+</div></div>
+      <div id="s212" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Painless mass, Hormonal imbalance</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s213', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">213</span> Shingles</div><div class="status-icon">+</div></div>
+      <div id="s213" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Painful rash, Blisters, Itching</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s214', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">214</span> Sinusitis</div><div class="status-icon">+</div></div>
+      <div id="s214" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Facial pain, Nasal congestion, Headache</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s215', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">215</span> Sleep Apnea</div><div class="status-icon">+</div></div>
+      <div id="s215" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Snoring, Pauses in breathing, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s216', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">216</span> Spinal Cord Injury</div><div class="status-icon">+</div></div>
+      <div id="s216" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Loss of sensation, Loss of movement</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s217', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">217</span> Strep Throat</div><div class="status-icon">+</div></div>
+      <div id="s217" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sore throat, Fever, Swollen lymph nodes</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s218', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">218</span> Stroke</div><div class="status-icon">+</div></div>
+      <div id="s218" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Facial droop, Weakness, Slurred speech</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s219', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">219</span> Stye</div><div class="status-icon">+</div></div>
+      <div id="s219" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Red lump on eyelid edge, Swelling, Tearing</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s220', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">220</span> Sunburn</div><div class="status-icon">+</div></div>
+      <div id="s220" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Redness, Pain, Peeling skin</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s221', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">221</span> Syphilis</div><div class="status-icon">+</div></div>
+      <div id="s221" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Chancre sore, Rash, Organ damage</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s222', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">222</span> Tendinitis</div><div class="status-icon">+</div></div>
+      <div id="s222" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Pain near joint, Stiffness, Swelling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s223', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">223</span> Teratozoospermia</div><div class="status-icon">+</div></div>
+      <div id="s223" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Abnormal sperm shape, Infertility</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s224', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">224</span> Testicular Cancer A</div><div class="status-icon">+</div></div>
+      <div id="s224" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Lump in testicle, Discomfort, Swelling</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s225', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">225</span> Testicular Cancer B</div><div class="status-icon">+</div></div>
+      <div id="s225" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Lump in testicle, Heaviness, Pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s226', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">226</span> Testicular Torsion</div><div class="status-icon">+</div></div>
+      <div id="s226" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sudden scrotal pain, Swelling, Nausea</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s227', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">227</span> Tetanus</div><div class="status-icon">+</div></div>
+      <div id="s227" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Muscle stiffness, Difficulty swallowing</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s228', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">228</span> Thalassaemia</div><div class="status-icon">+</div></div>
+      <div id="s228" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Fatigue, Pale skin, Slow growth</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s229', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">229</span> Thyroid Cancer</div><div class="status-icon">+</div></div>
+      <div id="s229" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Neck lump, Voice changes, Swallowing difficulty</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s230', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">230</span> Tinnitus</div><div class="status-icon">+</div></div>
+      <div id="s230" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Ringing in ears, Hearing loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s231', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">231</span> Tonsillitis</div><div class="status-icon">+</div></div>
+      <div id="s231" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Sore throat, Swollen tonsils, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s232', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">232</span> Trigeminal Neuralgia</div><div class="status-icon">+</div></div>
+      <div id="s232" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Severe facial pain, Episodes last seconds</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s233', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">233</span> Tuberculosis</div><div class="status-icon">+</div></div>
+      <div id="s233" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Persistent cough, Night sweats, Weight loss</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s234', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">234</span> Ulcer</div><div class="status-icon">+</div></div>
+      <div id="s234" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Abdominal pain, Nausea, Bloating</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s235', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">235</span> Ulcerative Colitis</div><div class="status-icon">+</div></div>
+      <div id="s235" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Bloody diarrhea, Abdominal cramps</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s236', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">236</span> Urachal Anomalies</div><div class="status-icon">+</div></div>
+      <div id="s236" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Umbilical drainage, Pain, Mass</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s237', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">237</span> Uremia</div><div class="status-icon">+</div></div>
+      <div id="s237" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Nausea, Confusion, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s238', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">238</span> Urethral Cancer</div><div class="status-icon">+</div></div>
+      <div id="s238" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Bleeding, Discharge, Painful urination</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s239', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">239</span> Urethral Stricture</div><div class="status-icon">+</div></div>
+      <div id="s239" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Decreased flow, Straining, UTIs</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s240', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">240</span> Urethritis</div><div class="status-icon">+</div></div>
+      <div id="s240" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Burning sensation, Discharge, Itching</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s241', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">241</span> Urinary Fistula</div><div class="status-icon">+</div></div>
+      <div id="s241" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Leakage, Odor, Infection</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s242', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">242</span> Urinary Incontinence A</div><div class="status-icon">+</div></div>
+      <div id="s242" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Involuntary leakage, Urgency</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s243', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">243</span> Urinary Incontinence B</div><div class="status-icon">+</div></div>
+      <div id="s243" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Leakage, Urgency, Frequent urination</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s244', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">244</span> Urinary Retention</div><div class="status-icon">+</div></div>
+      <div id="s244" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Difficulty urinating, Full bladder</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s245', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">245</span> UTI A</div><div class="status-icon">+</div></div>
+      <div id="s245" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Burning urination, Frequent urge, Cloudy urine</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s246', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">246</span> UTI B</div><div class="status-icon">+</div></div>
+      <div id="s246" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Burning urination, Cloudy urine, Urgency</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s247', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">247</span> Uterine Fibroids</div><div class="status-icon">+</div></div>
+      <div id="s247" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Heavy periods, Back pain, Pelvic pain</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s248', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">248</span> Varicocele</div><div class="status-icon">+</div></div>
+      <div id="s248" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Dull ache, Enlarged veins, Infertility</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s249', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">249</span> Vertigo</div><div class="status-icon">+</div></div>
+      <div id="s249" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Spinning sensation, Nausea</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s250', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">250</span> Vesicoureteral Reflux</div><div class="status-icon">+</div></div>
+      <div id="s250" class="symptoms-content"><span class="symptoms-label">Symptoms</span>UTIs, Bedwetting, Fever</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s251', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">251</span> Vitiligo</div><div class="status-icon">+</div></div>
+      <div id="s251" class="symptoms-content"><span class="symptoms-label">Symptoms</span>White patches, Skin depigmentation</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s252', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">252</span> Whooping Cough</div><div class="status-icon">+</div></div>
+      <div id="s252" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Severe coughing, Vomiting, Fatigue</div>
+    </div>
+    <div class="disease-item" onclick="toggleS('s253', this)">
+      <div class="disease-header"><div class="disease-name"><span class="index-circle">253</span> Wilms Tumor</div><div class="status-icon">+</div></div>
+      <div id="s253" class="symptoms-content"><span class="symptoms-label">Symptoms</span>Abdominal mass, Fever, Nausea</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleS(id, el) {
+    const content = document.getElementById(id);
+    const isOpen = el.classList.contains('active');
+    
+    document.querySelectorAll('.symptoms-content').forEach(s => s.style.display = "none");
+    document.querySelectorAll('.disease-item').forEach(i => i.classList.remove('active'));
+
+    if (!isOpen) {
+      content.style.display = "block";
+      el.classList.add('active');
+    }
+  }
+
+  function filterResults() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toUpperCase();
+    const items = document.getElementsByClassName('disease-item');
+
+    for (let i = 0; i < items.length; i++) {
+      const text = items[i].innerText.toUpperCase();
+      items[i].style.display = text.includes(filter) ? "" : "none";
+    }
+  }
+</script>
+
+</body>
+</html>

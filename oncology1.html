@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Oncologists (Cancer Specialists) in India</title>
+    <!-- Importing Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Cancer Awareness Inspired Palette */
+            --primary-purple: #8e44ad; /* General Cancer Awareness */
+            --secondary-purple: #9b59b6;
+            --accent-pink: #e91e63; /* Breast Cancer Awareness */
+            --accent-blue: #3498db; /* Prostate Cancer Awareness */
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --bg-color: #f8f9fa;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            --hover-transform: translateY(-5px);
+            --header-gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Stylish Header --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Ribbons */
+        .title-container::before {
+            content: "🎗️";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -20px;
+            left: -20px;
+            transform: rotate(-20deg);
+        }
+        
+        .title-container::after {
+            content: "🎗️";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(20deg);
+        }
+
+        .title-icon {
+            font-size: 60px;
+            color: white;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 6px solid var(--accent-pink);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--primary-purple);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f3e5f5;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-pink);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(142, 68, 173, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--secondary-purple);
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #f3e5f5;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--accent-pink);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #2980b9;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon"></span> <!-- Ribbon Icon Placeholder -->
+        <h1>Top 100 Oncologists (Cancer Specialists) in India</h1>
+        <p class="subtitle">A representative list including Medical, Surgical & Radiation Oncologists. Not an objective ranking. Verify MD/DM/MS/MCh/DNB qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing an Oncologist:</h2>
+        <ul>
+            <li><strong>Type of Oncologist:</strong> Medical (chemo, immuno), Surgical (removes tumors), Radiation (radiotherapy), or specialized (Gynae, Uro, Pediatric, etc.)? Your primary doctor or initial consult will guide this.</li>
+            <li><strong>Cancer Type Expertise:</strong> Ensure the oncologist has experience with your specific type and stage of cancer.</li>
+            <li><strong>Hospital Infrastructure:</strong> Comprehensive cancer centers offer integrated care (surgery, radiation, medical oncology, pathology, radiology, support services).</li>
+            <li><strong>Multidisciplinary Team (Tumor Board):</strong> Complex cases benefit from discussion among specialists.</li>
+            <li><strong>Research & Clinical Trials:</strong> Major centers may offer access to clinical trials.</li>
+            <li><strong>Second Opinion:</strong> Highly recommended, especially for complex diagnoses or treatment plans.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                 <td>1</td>
+                 <td>Dr. Ashok Vaid (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology & Hematology (Solid Tumors, Lymphoma/Myeloma, Padma Shri)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Medical & Precision Oncology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. Vinod Raina (MD, FRCP)</td>
+                 <td>Medical Oncology & Hemato-Oncology (Lymphoma, Myeloma)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Executive Director - Oncology) / Formerly AIIMS</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. Hari Menon (MD, DM - Medical Oncology)</td>
+                 <td>Hemato-Oncology (Myeloma, Lymphoma), BMT</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Cytecare Cancer Hospitals (Senior Consultant / Director - Oncology) / Formerly Tata Memorial</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://cytecare.com/" target="_blank" class="website-link">Cytecare</a></td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. S H Advani (MD, FICP, FAMS)</td>
+                 <td>Medical Oncology & Hematology (Veteran Pioneer, Padma Bhushan)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>S L Raheja Hospital (A Fortis Associate) / Consultant Roles (Formerly TMH)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.rahejahospital.com/" target="_blank" class="website-link">SL Raheja</a> / Search practice</td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. Sabhyata Gupta (MS, DNB, FICOG)</td>
+                 <td>Gynecologic Oncology, Robotic & Laparoscopic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Chairperson - Gynae Oncology & Robotic Surgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. TB Yuvaraja (MS, MCh - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology (Robotic & Laparoscopic Surgery)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Head - Robotic Surgery & Uro-Oncology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. Prathamesh Pai (MS, DNB, FAIS)</td>
+                 <td>Head & Neck Oncology Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor & Surgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. Rakesh Kumar (MD, DNB - Nuclear Medicine)</td>
+                 <td>Nuclear Medicine (PET-CT, Molecular Imaging - Supports Oncology)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor & Head - Nuclear Medicine)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a> (Note: Nuclear Medicine)</td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. Meenakshi Thakur (MD - Radiology)</td>
+                 <td>Onco-Radiology, Breast Imaging, Women's Imaging</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor & Radiologist / Director - Radiology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a> (Note: Radiologist)</td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Tejinder Kataria (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology (CyberKnife, SBRT)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Chairperson - Radiation Oncology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Amita Mahajan (MD - Pediatrics, Fellow Ped Hem-Onc)</td>
+                 <td>Pediatric Oncology & Hematology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. P Jagannath (MS, FACS, FAMS)</td>
+                 <td>Surgical Oncology (HPB, GI Oncology - Veteran)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Lilavati Hospital / Dr Jagannath's Clinic (Chairman - Surgical Oncology) / Formerly TMH</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Clinic</td>
+                 <td><a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati</a> / Search Clinic</td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. P K Julka (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly HOD AIIMS / Max Healthcare (Principal Director)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Gauri Kapur (MD - Pediatrics, Fellow Ped Hem-Onc)</td>
+                 <td>Pediatric Oncology & Hematology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Rajiv Gandhi Cancer Institute & Research Centre (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rgcirc.org/" target="_blank" class="website-link">RGCI</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Harit Chaturvedi (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Head & Neck, Breast)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Max Healthcare (Chairman - Max Institute of Cancer Care)</td>
+                 <td>Delhi/NCR (Group Role)</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Rakesh Chopra (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Aakash Healthcare Super Speciality Hospital (Chairman - Oncology) / Formerly Artemis</td>
+                 <td>Dwarka, New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aakashhealthcare.com/" target="_blank" class="website-link">Aakash Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Rama Joshi (MS, DNB, MCh - Gynae Oncology)</td>
+                 <td>Gynecologic Oncology, Robotic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Principal Director / HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Subodh Pandey (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology (Stereotactic Radiosurgery)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Anupam Sachdeva (MD - Pediatrics, FICP)</td>
+                 <td>Pediatric Hematology & Oncology, BMT</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Director - Pediatric Hematology & Oncology, BMT)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Sanjay Sharma (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (GI, Thoracic)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Formerly AIIMS / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Sanjay Sharma Surgical Oncologist Delhi"</td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Bidhu K Mohanti (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly AIIMS / Fortis Memorial Research Institute (FMRI) (Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Sudeep Gupta (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology (Breast Cancer focus, Research)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor / Director - ACTREC)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Kapil Kumar (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Thoracic, GI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Director - Surgical Oncology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Deepak Sarin (MS - ENT, MCh - Head & Neck Oncology)</td>
+                 <td>Head & Neck Oncology Surgery, Robotic Surgery (Head & Neck)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Director - Head & Neck Oncology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Purna Kurkure (MD - Pediatrics, Fellow Ped Oncology)</td>
+                 <td>Pediatric Oncology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>SRCC Children's Hospital / Formerly Head, Tata Memorial Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via SRCC Website</td>
+                 <td><a href="https://www.narayanahealth.org/hospitals/mumbai/srcc-childrens-hospital" target="_blank" class="website-link">SRCC</a></td>
+             </tr>
+              <tr>
+                 <td>26</td>
+                 <td>Dr. Rajendra Badwe (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Breast Cancer focus - Director TMH)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Sameer Tulpule (MD, DNB - Med Onco)</td>
+                 <td>Hemato-Oncology (Lymphoma, Myeloma, Leukemia), BMT</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Gagan Gautam (MS, MCh - Urology, Fellow Uro-Onco)</td>
+                 <td>Uro-Oncology, Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Director - Urologic Oncology & Robotic Surgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Senthil Rajappa (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology & Hemato-Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Basavatarakam Indo American Cancer Hospital (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.induscancer.com/" target="_blank" class="website-link">Indo American Cancer Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Vedant Kabra (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Breast, GI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Dwarka (HOD & Director - Surgical Oncology) / Formerly Fortis</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Reena Nair (MD, DM - Medical Oncology)</td>
+                 <td>Hemato-Oncology (Lymphoma, Myeloma)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Tata Medical Center (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.tmckolkata.com/" target="_blank" class="website-link">Tata Medical Center</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Surender Kumar Dabas (MS, DNB - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Head & Neck, Robotic Surgery)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Shyam Aggarwal (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman - Dept of Medical Oncology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. P P Bapsy (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Apollo Hospitals, Various Locations (Senior Consultant)</td>
+                 <td>Chennai/Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Sapna Nangia (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology (Proton Therapy, Stereotactic)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant, Proton Therapy Center)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Sandip Shah (MD, DM - Medical Oncology)</td>
+                 <td>Hemato-Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>HCG Cancer Centre (Senior Consultant)</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://hcgoncology.com/" target="_blank" class="website-link">HCG Cancer Centre</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. W V B S Ramalingam</td>
+                 <td>(Duplicate, listed under ENT - Replace)
+                 **Replacement: Dr. Wasim Abbas** (MS, MCh - Surgical Oncology)	Surgical Oncology	15+ Years	Consultant roles	Lucknow	Search Practice	Search "Dr Wasim Abbas Surgical Oncologist Lucknow"</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Shubham Garg (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Robotic Surgery)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Anil Heroor (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Thoracic, GI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mulund / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Via Website / Search</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> / Search practice</td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. B S Ajai Kumar (MD, FACRO)</td>
+                 <td>Radiation Oncology (Founder of HCG Chain)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>HCG Cancer Centre (Chairman & CEO - Group)</td>
+                 <td>Bengaluru HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://hcgoncology.com/" target="_blank" class="website-link">HCG Cancer Centre</a></td>
+             </tr>
+              <tr>
+                 <td>41</td>
+                 <td>Dr. Ian Pinto (MD, DNB - Med Onco)</td>
+                 <td>Medical Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jaslok Hospital and Research Centre (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. G K Rath (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology (Veteran figure, Former Head NCI)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Head, National Cancer Institute (NCI), AIIMS / Consultant</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr G K Rath Radiation Oncologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Meenu Walia (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Healthcare (Patparganj & Vaishali) (Director - Medical Oncology)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Purvish M Parikh (MD, PhD, FICP)</td>
+                 <td>Medical Oncology & Hematology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly TMH</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Purvish Parikh Oncologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Shaleen Kumar (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Institute of Cancer Care, Saket (Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Shishir Shetty (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (GI, HPB)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Navi Mumbai / Fortis Hiranandani (Director/Consultant)</td>
+                 <td>Navi Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Sudip Raina (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Health City (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Suresh Advani</td>
+                 <td>(Duplicate, listed as #4 - Replace)
+                 **Replacement: Dr. Suresh H Basanna** (MS, MCh - Surgical Oncology)	Surgical Oncology	15+ Years	Consultant roles	Bengaluru	Search Practice	Search "Dr Suresh H Basanna Surgical Oncologist Bengaluru"</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. T Raja (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Chennai (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Tapaswini Pradhan (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Ajay Gogia (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AIIMS (Additional Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Amish Vora (MD, DNB - Med Onco)</td>
+                 <td>Medical Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Formerly Max Healthcare / Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Amish Vora Medical Oncologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Amit Agarwal (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (GI, Thoracic)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Amit Bhargava</td>
+                 <td>(Duplicate, listed under Bariatric - Replace)
+                 **Replacement: Dr. Ankur Bahl** (MD, DM - Medical Oncology)	Medical Oncology	15+ Years	Fortis Memorial Research Institute (FMRI) (Senior Consultant)	Gurugram	Via Website	<a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Anil Kumar Anand (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj & Vaishali (Director)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Anshuman Kumar (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Head & Neck, Thoracic)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Dharamshila Narayana Superspeciality Hospital (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Arvind Kumar</td>
+                 <td>(Duplicate, listed under Gastro - Replace)
+                 **Replacement: Dr. Aruna Nambirajan** (MD - Pathology)	Onco-Pathology (Lung Cancer focus)	15+ Years	AIIMS (Additional Professor)	New Delhi	Via Website	<a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a> (Note: Pathologist)</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Arun Goel (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arun Goel Surgical Oncologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Ashwin L K R	(MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Bhawna Sirohi (MD, MRCP - UK)</td>
+                 <td>Medical Oncology (GI, Breast)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Proton Cancer Centre / Consultant roles (Formerly Max/Balco)</td>
+                 <td>Chennai/Delhi</td>
+                 <td>Via Apollo Website / Search</td>
+                 <td><a href="https://proton.apollohospitals.com/" target="_blank" class="website-link">Apollo Proton</a> / Search current role</td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Boman Dhabhar (MD - Internal Med)</td>
+                 <td>Medical Oncology & Hematology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Wockhardt Hospitals / Breach Candy Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.wockhardthospitals.com/" target="_blank" class="website-link">Wockhardt</a> / Breach Candy</td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Chandragouda Dodagoudar (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Chetan E R P (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>HCG Cancer Centre (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://hcgoncology.com/" target="_blank" class="website-link">HCG Cancer Centre</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Ganapathi Bhat</td>
+                 <td>(Duplicate, listed as #63 Hematologist - Replace)
+                 **Replacement: Dr. Ganga Ram** (MD - Radiation Oncology)	Radiation Oncology	20+ Years	Consultant roles	Jaipur	Search Practice	Search "Dr Ganga Ram Radiation Oncologist Jaipur"</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Gurunath Kilara (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly HCG / Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Gurunath Kilara Bengaluru"</td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Indoo Ammbulkar (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>HCG Cancer Centre (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://hcgoncology.com/" target="_blank" class="website-link">HCG Cancer Centre</a></td>
+            </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. J K Singh (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Paras HMRI Hospital (Chairman - Oncology) / Formerly Mahavir Cancer Sansthan</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Kanchan Kaur (MS, DNB - Gen Surg)</td>
+                 <td>Breast Surgery (Onco-Surgery focus)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Associate Director - Breast Services)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Kaustav Talapatra (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kaustav Talapatra Medical Oncologist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>70</td>
+                 <td>Dr. Kirti Chadha (MD - Pathology)</td>
+                 <td>Onco-Pathology, Molecular Pathology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Metropolis Healthcare (Chief Scientific Officer)</td>
+                 <td>Mumbai (Lab based)</td>
+                 <td>Via Metropolis Website</td>
+                 <td><a href="https://www.metropolisindia.com/" target="_blank" class="website-link">Metropolis</a> (Lab/Admin Focus)</td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Kumar Prabhash (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology (Lung Cancer focus)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor - Medical Oncology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. Manish Singhal (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Minish Jain (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Ruby Hall Clinic (Senior Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. M V Reddy (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. N K Pandey (MS, FACS, FICS)</td>
+                 <td>General & Laparoscopic Surgery (Admin role - related to Oncology center)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Asian Institute of Medical Sciences (Chairman & MD - Padma Shri)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aimsindia.com/" target="_blank" class="website-link">AIMS Faridabad</a> (Admin/General Surg focus)</td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. P S Dattatreya (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Omega Hospitals (Director - Medical Oncology)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://omegahospitals.com/" target="_blank" class="website-link">Omega Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Poonam Patil (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Purna Chandra Das (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhubaneswar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Purna Chandra Das Radiation Oncologist Bhubaneswar"</td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Raja Sundaram (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (GI, Peritoneal Malignancies)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Gleneagles Global Health City / Apollo Hospitals (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles</a> / <a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a></td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Rakesh Jalali (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology (Neuro-Oncology, Proton Therapy)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Proton Cancer Centre (Medical Director & Head) / Formerly TMH</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://proton.apollohospitals.com/" target="_blank" class="website-link">Apollo Proton</a></td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. Ramanan V K (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramanan V K Surgical Oncologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Ranjan Kumar Mohapatra (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Bhubaneswar (Senior Consultant)</td>
+                 <td>Bhubaneswar</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Sabyasachi Parida (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Sachin Gupta (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Sandeep Nayak P (MS, DNB - Surgical Oncology, MRCS)</td>
+                 <td>Surgical Oncology (Robotic Surgery, GI, Head & Neck)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Bannerghatta Road / MACS Clinic</td>
+                 <td>Bengaluru</td>
+                 <td>Via Fortis Website / Clinic</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> / Search MACS Clinic</td>
+             </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Sanjeev Kumar Sharma</td>
+                 <td>(Listed under Hematologist - Replace)
+                 **Replacement: Dr. Sanjit Kumar Agrawal** (MD - Radiation Oncology)	Radiation Oncology	15+ Years	Consultant roles	Raipur	Search Practice	Search "Dr Sanjit Kumar Agrawal Radiation Oncologist Raipur"</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Sarbani Laskar (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology (Head & Neck, Pediatric)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Satish Kumar Sharma (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Satish Kumar Sharma Radiation Oncologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Saurabh Gupta (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Vaishali (Consultant)</td>
+                 <td>Ghaziabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Selvi Radhakrishnan (MD, DGO)</td>
+                 <td>Gynecologic Oncology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Chennai Breast Centre / Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Selvi Radhakrishnan Chennai"</td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Shabber Zaveri (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (Robotic, Thoracic)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Shaleen Agarwal (MS, MCh - GI Surgery)</td>
+                 <td>Surgical Gastroenterology & GI Oncology (Related field)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Indraprastha (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> (Note: GI Surgeon)</td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Shyam Shrivastava (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology (Veteran figure)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Head, Tata Memorial Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Shyam Shrivastava Radiation Oncologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Somnath Soragaon (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Soumya Bhattacharya (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Subhash Gupta (MS, FRCS)</td>
+                 <td>Liver Transplant & HPB Surgery (Related Field - deals with liver cancer surgery)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Healthcare (Chairman - CLBS)</td>
+                 <td>Saket, New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a> (Note: Transplant Surgeon)</td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Sunandan Sharma (MD - Radiation Oncology)</td>
+                 <td>Radiation Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunandan Sharma Radiation Oncologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Suresh Singhvi (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (GI, HPB)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Suresh Singhvi Surgical Oncologist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Ullas Batra (MD, DM - Medical Oncology)</td>
+                 <td>Medical Oncology (Thoracic, Head & Neck)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Rajiv Gandhi Cancer Institute & Research Centre (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rgcirc.org/" target="_blank" class="website-link">RGCI</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. V P Singh</td>
+                 <td>(Duplicate, listed under Physio/Anesthesia - Replace)
+                 **Replacement: Dr. Vashishtha Patel** (MS, MCh - Surgical Oncology)	Surgical Oncology	10+ Years	Consultant roles	Ahmedabad	Search Practice	Search "Dr Vashishtha Patel Surgical Oncologist Ahmedabad"</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing an Oncologist:</h2>
+        <ul>
+            <li><strong>Type of Oncologist:</strong> Medical (chemo, immuno), Surgical (removes tumors), Radiation (radiotherapy), or specialized (Gynae, Uro, Pediatric, etc.)? Your primary doctor or initial consult will guide this.</li>
+            <li><strong>Cancer Type Expertise:</strong> Ensure the oncologist has experience with your specific type and stage of cancer.</li>
+            <li><strong>Hospital Infrastructure:</strong> Comprehensive cancer centers offer integrated care (surgery, radiation, medical oncology, pathology, radiology, support services).</li>
+            <li><strong>Multidisciplinary Team (Tumor Board):</strong> Complex cases benefit from discussion among specialists.</li>
+            <li><strong>Research & Clinical Trials:</strong> Major centers may offer access to clinical trials.</li>
+            <li><strong>Second Opinion:</strong> Highly recommended, especially for complex diagnoses or treatment plans.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

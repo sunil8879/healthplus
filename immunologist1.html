@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Immunologists & Related Specialists in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Palette */
+            --primary-blue: #4a90e2;
+            --secondary-blue: #357abd;
+            --accent-purple: #9b59b6;
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --bg-color: #f4f8fb;
+            --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative DNA Helix Animation */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            border: 5px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: spin 10s linear infinite;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-purple);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--accent-purple);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f3e5f5;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "🔬";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto 50px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(74, 144, 226, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--accent-purple);
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: #f8f9fa;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--secondary-blue);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-purple);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(155, 89, 182, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #8e44ad;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.5rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+         <span class="title-icon">溺</span> <!-- DNA/Microscope Icon Placeholder -->
+        <h1>Top 100 Immunologists & Related Specialists in India</h1>
+        <p class="subtitle">A representative list including Clinical Immunologists, Rheumatologists, Allergists & PID experts. Not an objective ranking. Verify DM/DNB/PhD qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing an Immunologist or Related Specialist:</h2>
+        <ul>
+            <li><strong>Correct Specialist:</strong> Rheumatologists for autoimmune diseases; PID specialists for recurrent infections; Allergists for allergies; Transplant team for transplant immunology. Clinical Immunology is often integrated within these.</li>
+            <li><strong>Condition Focus:</strong> Match specialist's expertise (SLE, RA, Vasculitis, PID, Asthma, etc.) to your condition.</li>
+            <li><strong>Diagnostic Needs:</strong> Ensure access to specialized blood tests, allergy testing, genetic testing if required.</li>
+            <li><strong>Treatment Approach:</strong> Discuss options (immunosuppression, biologics, IVIG, allergy management).</li>
+            <li><strong>Referral:</strong> GPs or other specialists often refer to the appropriate expert.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic/Institution</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Amita Aggarwal (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology, Rheumatology (SLE, Pediatric)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor & Head)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Debashish Danda (MD, DM - Clinical Immunology, FRCP)</td>
+                 <td>Clinical Immunology, Rheumatology (SLE, Vasculitis)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Christian Medical College (CMC) (Professor & Head)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Rohini Handa (MD, FRCP)</td>
+                 <td>Rheumatology & Clinical Immunology (RA, Spondyloarthritis)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant, Past Pres APLAR/IRA)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Ramnath Misra (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology, Rheumatology (SLE, Vasculitis)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>KIMS Hospitals (Consultant) / Formerly HOD SGPGI</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Surjit Singh (MD - Pediatrics, Fellow - Ped Imm/Rheum)</td>
+                 <td>Pediatric Clinical Immunology & Rheumatology</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>PGI Chandigarh (Professor & Head - Ped Allergy/Immunology Unit)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Manisha Madkaikar (MD - Pathology, PhD)</td>
+                 <td>Primary Immunodeficiencies (PID), Hematology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>ICMR-National Institute of Immunohaematology (NIIH) (Director Grade Scientist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://niih.org.in/" target="_blank" class="website-link">NIIH</a> (Research/Diagnosis Focus)</td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Mukesh Desai (MD - Pediatrics, DCH)</td>
+                 <td>Pediatric Immunology & Rheumatology, Allergy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Jaslok Hospital / Wadia Children's Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a> / <a href="https://www.wadiahospitals.org/" target="_blank" class="website-link">Wadia</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Ashok Kumar (MD, DM - Clinical Immunology)</td>
+                 <td>Rheumatology & Clinical Immunology (RA, SLE)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Director - Rheumatology) / Formerly AIIMS</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Ranjana Minz (MD - Pathology)</td>
+                 <td>Immunopathology (Lab diagnosis of immune disorders)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Professor & Head, PGI Chandigarh / Consultant roles</td>
+                 <td>Consultant</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Ranjana Minz Immunopathology" (Lab Focused)</td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Pravin Hissaria (MD, FRACP)</td>
+                 <td>Clinical Immunology, Allergy, Rheumatology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles Australia / Formerly Jaslok Hospital, Mumbai</td>
+                 <td>Australia/Consultant</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Pravin Hissaria" for current status/location</td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. Vineeta Shobha (MD, DM - Neurology)</td>
+                 <td>Neuro-immunology, SLE, Vasculitis (Neurologist with immunology focus)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>NIMHANS (Professor - Neurology)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a> (Note: Neurologist)</td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Sagar Bhattad (MD - Pediatrics, Fellow - Ped Imm/Rheum)</td>
+                 <td>Pediatric Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aster CMI Hospital (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.asterhospitals.in/hospitals/aster-cmi-hebbal-bengaluru" target="_blank" class="website-link">Aster CMI Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. S Chandrashekara (MD, DNB - Medicine)</td>
+                 <td>Rheumatology & Immunology, Research</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>ChanRe Rheumatology & Immunology Center & Research (Medical Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://chanre.com/" target="_blank" class="website-link">ChanRe RICR</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Uma Kumar (MD, DM - Clinical Immunology)</td>
+                 <td>Rheumatology & Clinical Immunology (RA, SLE)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor & Head - Rheumatology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Raj Kumar (MD - Respiratory Med)</td>
+                 <td>Allergy, Asthma, Applied Immunology (Pulmonologist focus)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly VPCI / Consultant Roles (Max Hospital, etc.)</td>
+                 <td>Delhi</td>
+                 <td>Search Current Affiliation</td>
+                 <td>Search current affiliation or via hospital websites</td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Nikhil Kulkarni (MD - Pediatrics, Fellow - Allergy/Immunology)</td>
+                 <td>Allergy, Asthma, Clinical Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nikhil Kulkarni Allergist Pune"</td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. A N Malaviya (MD, FRCP)</td>
+                 <td>Rheumatology & Clinical Immunology (Veteran figure, pioneer)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Formerly Head, AIIMS / Consultant roles (ISIC, etc.)</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr A N Malaviya Rheumatologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Sapan Pandya (MD, DNB - Medicine, Fellow Rheum)</td>
+                 <td>Rheumatology & Clinical Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Zydus Hospitals / Private Practice</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Zydus Website / Search</td>
+                 <td><a href="https://www.zydushospitals.com/" target="_blank" class="website-link">Zydus Hospitals</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Sakir Ahmed (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology (SLE, Vasculitis)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kalinga Institute of Medical Sciences (KIMS) (Consultant)</td>
+                 <td>Bhubaneswar</td>
+                 <td>Via Website</td>
+                 <td><a href="https://kims.kiit.ac.in/" target="_blank" class="website-link">KIMS Bhubaneswar</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Ashish Jacob Mathew (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology (Vasculitis, SLE)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Amrita Institute of Medical Sciences (AIMS) (Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.amritahospitals.org/" target="_blank" class="website-link">AIMS Kochi</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. V K Vinod (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr V K Vinod Rheumatologist Kerala"</td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Padmanabha Shenoy (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology, Musculoskeletal Ultrasound</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>CARE (Centre for Arthritis & Rheumatism Excellence) (Director) / Consultant</td>
+                 <td>Kochi</td>
+                 <td>Via CARE Website</td>
+                 <td><a href="https://carehospital.in/" target="_blank" class="website-link">CARE Kochi</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Liza Rajasekhar (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology (SLE, Scleroderma)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Nizams Institute of Medical Sciences (NIMS) (Professor & Head)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nims.edu.in/" target="_blank" class="website-link">NIMS</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Aman Sharma (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology (Vasculitis)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. S V Seshan (MD - Pathology)</td>
+                 <td>Renal Pathology, Immunofluorescence (Pathologist focus)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly major hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S V Seshan Pathologist Mumbai" (Lab Focused)</td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Anju Gupta (MD - Pediatrics, Fellow Ped Imm/Hem)</td>
+                 <td>Pediatric Immunodeficiency & Hematology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anju Gupta Pediatric Immunologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Wiqar Shaikh (MD, FCCP)</td>
+                 <td>Allergy, Asthma, Immunology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles at various hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Wiqar Shaikh Allergist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. A B Singh (PhD - Botany)</td>
+                 <td>Aerobiology, Allergy & Immunology (Veteran researcher)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly CSIR-IGIB, Delhi / VPCI (Emeritus Scientist)</td>
+                 <td>Delhi (Research)</td>
+                 <td>Search Current Role</td>
+                 <td>Primarily Research Focused</td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Neeraj Gupta (MD - Pediatrics, Fellow Ped Pulm/Allergy)</td>
+                 <td>Pediatric Allergy, Immunology & Pulmonology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Prasanna Kumar (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Prasanna Kumar Rheumatologist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Suma Balan (MD - Pediatrics, DNB - Ped, Fellow Ped Rheum)</td>
+                 <td>Pediatric Rheumatology & Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Amrita Institute (AIMS) (Professor)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.amritahospitals.org/" target="_blank" class="website-link">AIMS Kochi</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Anupama Kumar (MD - Pediatrics, Fellow Ped Allergy/Imm)</td>
+                 <td>Pediatric Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Max, Apollo)</td>
+                 <td>Delhi</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Anupama Kumar Pediatric Immunologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Vikas Agarwal (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Sharath Kumar (MD, DNB - Medicine, Fellow Rheum/Imm)</td>
+                 <td>Rheumatology, Allergy & Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Raja Narendra (MD - Resp Med, Fellow Allergy/Imm)</td>
+                 <td>Allergy & Clinical Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Raja Narendra Allergist Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. B R Das (PhD - Biochemistry)</td>
+                 <td>Immunology Testing Focus (Lab Head)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>SRL Diagnostics (Group Head - Research & Development)</td>
+                 <td>Mumbai/National</td>
+                 <td>Via SRL Website</td>
+                 <td><a href="https://www.srlworld.com/" target="_blank" class="website-link">SRL Diagnostics</a> (Lab/Admin focus)</td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Anita Mathew (MD, DNB - Medicine, Fellow Rheum)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mulund (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Sanjeev Sharma (MD, DM - Clinical Immunology)</td>
+                 <td>Rheumatology & Clinical Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Archana Babu (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Apollo, Kauvery)</td>
+                 <td>Chennai</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Archana Babu Immunologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Sumeet Basu (MD, DM - Rheumatology)</td>
+                 <td>Rheumatology & Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Apollo, Fortis)</td>
+                 <td>Kolkata</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Sumeet Basu Rheumatologist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Prasanta Padhan (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>KIMS, Bhubaneswar (Associate Professor)</td>
+                 <td>Bhubaneswar</td>
+                 <td>Via Website</td>
+                 <td><a href="https://kims.kiit.ac.in/" target="_blank" class="website-link">KIMS Bhubaneswar</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. P C Jacob (MD - Resp Med, Fellow Allergy/Imm)</td>
+                 <td>Allergy & Clinical Immunology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles (e.g., Lakeshore, Aster)</td>
+                 <td>Kerala</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr P C Jacob Allergist Kerala"</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Mahendra Patel (MD)</td>
+                 <td>Immunology/Rheumatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Sterling, Zydus)</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Mahendra Patel Immunologist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Geeta Sagar (MD, DNB - Medicine)</td>
+                 <td>Clinical Immunology/Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Ruby Hall, Jehangir)</td>
+                 <td>Pune</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Geeta Sagar Immunologist Pune"</td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Arvind Soni (MD, DM - Clinical Immunology)</td>
+                 <td>Rheumatology & Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Fortis, Manipal)</td>
+                 <td>Jaipur</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Arvind Soni Rheumatologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Mamatha Reddy (MD, DM - Rheumatology)</td>
+                 <td>Immunology/Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Manipal, Fortis)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Mamatha Reddy Immunologist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Neetu Jain (MD - Pediatrics, Fellow Ped Allergy/Imm)</td>
+                 <td>Pediatric Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., SRCC, Jupiter)</td>
+                 <td>Mumbai</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Neetu Jain Pediatric Immunologist Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>48</td>
+                 <td>Dr. Rakesh Kumar Gupta (MD - Resp Med)</td>
+                 <td>Allergy & Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Max, Sir Ganga Ram)</td>
+                 <td>Delhi</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Rakesh Kumar Gupta Allergist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Shailendra Singh (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (Non-SGPGI)</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shailendra Singh Immunologist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Sunita Singh (MD, DM - Rheumatology)</td>
+                 <td>Rheumatology & Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Paras, AIIMS Patna)</td>
+                 <td>Patna</td>
+                 <td>Search Hospital Affiliation</td>
+                 <td>Search "Dr Sunita Singh Rheumatologist Patna"</td>
+             </tr>
+              <tr>
+                 <td>51</td>
+                 <td>Dr. Rohitas Sharma (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Aditya K Aggarwal (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. Apurva Khare (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Apurva Khare Rheumatologist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Arun Kumar Gupta (MD - Resp Med)</td>
+                 <td>Allergy & Asthma Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arun Kumar Gupta Allergist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Ashok Kumar Singh (MD)</td>
+                 <td>Internal Medicine (May see Immunology cases)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashok Kumar Singh Physician Patna" (Verify Immunology focus)</td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. B N Dubey (PhD - Immunology related)</td>
+                 <td>Immunology Research</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Academic Institutions (e.g., BHU)</td>
+                 <td>Varanasi (Research)</td>
+                 <td>Search Academic Profile</td>
+                 <td>Research focus</td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Biman Saikia (MD - Pathology, DNB)</td>
+                 <td>Immunopathology (Lab Diagnosis)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Professor - Immunopathology)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a> (Lab Focused)</td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Chandan Das (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Chandan Das Rheumatologist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Chandrashekhar T (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Deepak Kumar (MD - Resp Med)</td>
+                 <td>Allergy & Asthma Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Deepak Kumar Allergist Delhi"</td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Deepti Sharma (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Deepti Sharma Rheumatologist Pune"</td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Dhiraj Bhattad (MD - Pediatrics, Fellow Ped Imm/Rheum)</td>
+                 <td>Pediatric Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Nagpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Dhiraj Bhattad Pediatric Immunologist Nagpur"</td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. G R Sethi (MD - Pediatrics)</td>
+                 <td>Pediatric Allergy & Pulmonology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Gauri Khurana (MD, DNB - Medicine)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gauri Khurana Rheumatologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Hari Lakshman (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Hari Lakshman Rheumatologist Chennai"</td>
+             </tr>
+              <tr>
+                 <td>66</td>
+                 <td>Dr. Indira Ghosh (PhD - Immunology related)</td>
+                 <td>Immunology Research</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Academic Institutions</td>
+                 <td>Various (Research)</td>
+                 <td>Search Academic Profile</td>
+                 <td>Research focus</td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Jayesh Kumar Patel (MD)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jayesh Patel Rheumatologist Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Jyotsna Joshi (MD - Resp Med)</td>
+                 <td>Pulmonology (Manages related immune lung diseases)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jyotsna Joshi Pulmonologist Mumbai" (Note: Pulmonologist)</td>
+             </tr>
+              <tr>
+                 <td>69</td>
+                 <td>Dr. K Vinod Kumar (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K Vinod Kumar Rheumatologist Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Kalpana Luthra (PhD - Biochemistry)</td>
+                 <td>Immunology Research (HIV focus)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Biochemistry)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a> (Note: Primarily Research)</td>
+             </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Mitali Mukerji (PhD - Genomics)</td>
+                 <td>Genomics & Immunology Research</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CSIR-Institute of Genomics and Integrative Biology (IGIB) (Chief Scientist)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.igib.res.in/" target="_blank" class="website-link">IGIB</a> (Note: Primarily Research)</td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. Mohan Kumar (MD - Resp Med)</td>
+                 <td>Allergy & Asthma Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mohan Kumar Allergist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. N K Singh (MD)</td>
+                 <td>Internal Medicine (May see Immunology cases)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Allahabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr N K Singh Physician Allahabad" (Verify Immunology focus)</td>
+             </tr>
+              <tr>
+                 <td>74</td>
+                 <td>Dr. Niharika Aggarwal (MD - Pediatrics, Fellow Allergy/Imm)</td>
+                 <td>Pediatric Allergy & Immunology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Lady Hardinge Medical College / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Affiliation</td>
+                 <td>Search "Dr Niharika Aggarwal Pediatric Allergist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Pankaj Sharma (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pankaj Sharma Rheumatologist Jaipur"</td>
+             </tr>
+              <tr>
+                 <td>76</td>
+                 <td>Dr. Pradeepta Kumar Sethy (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhubaneswar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P K Sethy Rheumatologist Bhubaneswar"</td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Pragya Sharma (MD, DNB - Medicine)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Prakash Kumar B (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Pramod Joshi (MD)</td>
+                 <td>Internal Medicine (Manages complex cases)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pramod Joshi Physician Mumbai" (Verify Immunology focus)</td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Purnima Sharma (MBBS, Diploma - Allergy/Asthma)</td>
+                 <td>Allergy & Clinical Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Purnima Sharma Allergist Delhi"</td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. R N Sarkar (MD - Tropical Med)</td>
+                 <td>Allergy & Immunology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R N Sarkar Allergist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Rahul Sharma (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rahul Sharma Rheumatologist Chandigarh"</td>
+             </tr>
+              <tr>
+                 <td>83</td>
+                 <td>Dr. Raj Kumar Sharma (MD - Resp Med)</td>
+                 <td>Allergy & Asthma Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Raj Kumar Sharma Allergist Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Rajat Saxena (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajat Saxena Rheumatologist Pune"</td>
+             </tr>
+              <tr>
+                 <td>85</td>
+                 <td>Dr. Ramakant Sharma (MD)</td>
+                 <td>Internal Medicine (May see Immunology cases)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramakant Sharma Physician Jaipur" (Verify Immunology focus)</td>
+             </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Ravi David (MD - Pediatrics, Fellow Allergy/Imm)</td>
+                 <td>Allergy & Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>St. John's Medical College Hospital (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.stjohns.in/hospital/" target="_blank" class="website-link">St. John's Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>87</td>
+                 <td>Dr. Revathi S (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Rita Christopher (MD - Biochemistry)</td>
+                 <td>Clinical Biochemistry (Lab Tests for Immunology)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>St. John's Medical College Hospital (Professor - Biochem)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.stjohns.in/medicalcollege/" target="_blank" class="website-link">St. John's</a> (Lab Focused)</td>
+             </tr>
+              <tr>
+                 <td>89</td>
+                 <td>Dr. S Ghosh (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S Ghosh Rheumatologist Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Sandhya Pulijala (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Yashoda Hospitals, Secunderabad (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.yashodahospitals.com/" target="_blank" class="website-link">Yashoda Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Sanjeev Miglani (MD - Pediatrics)</td>
+                 <td>Pediatric Allergy & Immunology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sanjeev Miglani Pediatric Allergist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Sarath Chandra Mouli V (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Satyendra Kumar Singh (MD)</td>
+                 <td>Internal Medicine (May see Immunology cases)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Satyendra Kumar Singh Physician Varanasi" (Verify Immunology focus)</td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Shiva Kumar (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mysuru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shiva Kumar Rheumatologist Mysuru"</td>
+             </tr>
+              <tr>
+                 <td>95</td>
+                 <td>Dr. Sonia Manglick (MD, DNB - Medicine)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Sudhir Gupta (MD, PhD - Immunology, USA)</td>
+                 <td>Immunology (US Based - Influential Researcher)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>University of California, Irvine (Distinguished Professor)</td>
+                 <td>USA (International Expert)</td>
+                 <td>N/A</td>
+                 <td><a href="https://www.uci.edu/" target="_blank" class="website-link">UCI Website</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Sunil Kumar K (MD - Resp Med)</td>
+                 <td>Allergy & Asthma Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunil Kumar K Allergist Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Swapnil Kulkarni (MD, DM - Rheumatology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Swapnil Kulkarni Rheumatologist Pune"</td>
+             </tr>
+              <tr>
+                 <td>99</td>
+                 <td>Dr. Varun Dhir (MD, DM - Clinical Immunology)</td>
+                 <td>Clinical Immunology & Rheumatology</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>PGI Chandigarh (Assistant Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Yogesh Singh (MD - Resp Med)</td>
+                 <td>Allergy & Immunology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Yogesh Singh Allergist Patna"</td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing an Immunologist or Related Specialist:</h2>
+        <ul>
+            <li><strong>Correct Specialist:</strong> Rheumatologists for autoimmune diseases; PID specialists for recurrent infections; Allergists for allergies; Transplant team for transplant immunology. Clinical Immunology is often integrated within these.</li>
+            <li><strong>Condition Focus:</strong> Match specialist's expertise (SLE, RA, Vasculitis, PID, Asthma, etc.) to your condition.</li>
+            <li><strong>Diagnostic Needs:</strong> Ensure access to specialized blood tests, allergy testing, genetic testing if required.</li>
+            <li><strong>Treatment Approach:</strong> Discuss options (immunosuppression, biologics, IVIG, allergy management).</li>
+            <li><strong>Referral:</strong> GPs or other specialists often refer to the appropriate expert.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

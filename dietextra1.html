@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Plans</title>
+  <!-- Import Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Vibrant Color Palette */
+      --primary-gradient: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);
+      --button-gradient: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-color: #333;
+      --accent-color: #ff6b6b;
+      --highlight-color: #48dbfb;
+    }
+
+    body {
+      background-image: var(--primary-gradient);
+      background-attachment: fixed;
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    /* Container Styling */
+    #search-container {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Input Styling */
+    input[type="text"], input[type="date"] {
+      display: block;
+      padding: 15px 20px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      outline: none;
+      transition: transform 0.3s ease;
+    }
+
+    input:focus {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Button Styling */
+    button {
+      background-image: var(--button-gradient);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      width: 100%;
+      max-width: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(250, 112, 154, 0.6);
+    }
+
+    button:active {
+      transform: translateY(-1px);
+    }
+
+    /* Meal Plan Card Styling */
+    .meal-plan {
+      border: none;
+      padding: 40px;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      text-align: left;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .meal-plan h2 {
+      margin-top: 0;
+      color: var(--accent-color);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      border-bottom: 3px solid var(--highlight-color);
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .meal-plan h3 {
+      color: #555;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Day Plan Styling */
+    .day-plan {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      border-left: 5px solid var(--highlight-color);
+      transition: transform 0.3s ease;
+    }
+
+    .day-plan:hover {
+      transform: translateX(10px);
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .day-plan h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--accent-color);
+      font-size: 1.3rem;
+    }
+
+    .food-list {
+      margin-bottom: 8px;
+      font-weight: 400;
+      color: #555;
+    }
+
+    /* Highlight Recommended/Unrecommended */
+    .meal-plan p strong {
+      color: var(--accent-color);
+      font-size: 1.1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      #search-container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      button {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Enter disease name">
+    <button id="search-button">Search</button>
+    <button id="save-button">Save Record</button>
+    <button id="fetch-button">Fetch Record</button>
+
+  </div>
+
+  <div id="meal-plans-container">
+    <div class="meal-plan hidden" data-disease="heart disease">
+      <h2>Heart Disease Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>heart, hypertension, coronary artery disease, atrial fibrillation, angina, peripheral artery disease, thrombosis, aneurysm, arrhythmia</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with berries and walnuts</p>
+        <p class="food-list">Lunch: Grilled chicken salad with spinach</p>
+        <p class="food-list">Dinner: Baked salmon with quinoa and broccoli</p>
+        <p class="food-list">Snack: Apple slices with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Whole grain toast with avocado</p>
+        <p class="food-list">Lunch: Lentil soup with a side of whole grain bread</p>
+        <p class="food-list">Dinner: Stir-fried tofu with mixed vegetables</p>
+        <p class="food-list">Snack: Carrot sticks with hummus</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach, banana, and almond milk</p>
+        <p class="food-list">Lunch: Quinoa salad with chickpeas, cucumbers, and tomatoes</p>
+        <p class="food-list">Dinner: Turkey meatballs with spaghetti squash</p>
+        <p class="food-list">Snack: Handful of mixed nuts</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Greek yogurt with honey and fresh fruit</p>
+        <p class="food-list">Lunch: Grilled shrimp salad with mixed greens</p>
+        <p class="food-list">Dinner: Stuffed bell peppers with brown rice and lean ground turkey</p>
+        <p class="food-list">Snack: Celery sticks with peanut butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs with spinach and tomatoes</p>
+        <p class="food-list">Lunch: Vegetable wrap with hummus and fresh veggies</p>
+        <p class="food-list">Dinner: Baked cod with sweet potatoes and asparagus</p>
+        <p class="food-list">Snack: Berries with a sprinkle of chia seeds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Chia seed pudding with almond milk and fruit</p>
+        <p class="food-list">Lunch: Black bean soup with a side salad</p>
+        <p class="food-list">Dinner: Grilled chicken with roasted Brussels sprouts</p>
+        <p class="food-list">Snack: Cucumber slices with tzatziki sauce</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with assorted toppings</p>
+        <p class="food-list">Lunch: Quinoa and kale salad with lemon dressing</p>
+        <p class="food-list">Dinner: Vegetable stir-fry with tofu and brown rice</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Spinach, Kale, Berries, Salmon, Garlic, Quinoa</p>
+      <p><strong>Unrecommended Foods:</strong> Processed snacks, Sugary foods, Excessive alcohol</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="cancer">
+      <h2>Cancer Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"cancer", "breast cancer", "lung cancer", "prostate cancer", "colorectal cancer"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Green smoothie with spinach and banana</p>
+        <p class="food-list">Lunch: Quinoa salad with mixed vegetables</p>
+        <p class="food-list">Dinner: Baked salmon with roasted sweet potatoes</p>
+        <p class="food-list">Snack: Sliced apple with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Oatmeal topped with berries and a sprinkle of cinnamon</p>
+        <p class="food-list">Lunch: Lentil soup with a side of whole grain bread</p>
+        <p class="food-list">Dinner: Grilled chicken with broccoli and brown rice</p>
+        <p class="food-list">Snack: Carrot sticks with hummus</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Greek yogurt with honey and sliced strawberries</p>
+        <p class="food-list">Lunch: Spinach salad with strawberries and walnuts</p>
+        <p class="food-list">Dinner: Stir-fried tofu with mixed vegetables</p>
+        <p class="food-list">Snack: Handful of walnuts</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Whole grain toast with avocado and a poached egg</p>
+        <p class="food-list">Lunch: Chickpea salad with cucumbers, tomatoes, and parsley</p>
+        <p class="food-list">Dinner: Grilled shrimp with vegetable kebabs</p>
+        <p class="food-list">Snack: Berries with Greek yogurt</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Smoothie with kale, mango, and flaxseeds</p>
+        <p class="food-list">Lunch: Vegetable stir-fry with brown rice</p>
+        <p class="food-list">Dinner: Baked chicken with Brussels sprouts and carrots</p>
+        <p class="food-list">Snack: Celery sticks with peanut butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Chia pudding topped with fresh fruit</p>
+        <p class="food-list">Lunch: Vegetable soup with lentils</p>
+        <p class="food-list">Dinner: Turkey meatballs with whole grain pasta</p>
+        <p class="food-list">Snack: Sliced apple with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with assorted toppings</p>
+        <p class="food-list">Lunch: Quinoa bowl with black beans and avocado</p>
+        <p class="food-list">Dinner: Baked cod with steamed asparagus</p>
+        <p class="food-list">Snack: Air-popped popcorn with nutritional yeast</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Broccoli, Berries, Green tea, Garlic, Olive oil</p>
+      <p><strong>Unrecommended Foods:</strong> Processed foods, Sugary snacks, Excessive alcohol</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="skin disease">
+      <h2>Skin Disease Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"skin", "eczema", "psoriasis", "acne"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach, banana, and almond milk</p>
+        <p class="food-list">Lunch: Quinoa salad with chickpeas and cucumbers</p>
+        <p class="food-list">Dinner: Baked chicken with steamed broccoli</p>
+        <p class="food-list">Snack: Carrot sticks with hummus</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Oatmeal topped with blueberries</p>
+        <p class="food-list">Lunch: Lentil soup with carrots and celery</p>
+        <p class="food-list">Dinner: Grilled salmon with quinoa</p>
+        <p class="food-list">Snack: Apple slices with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Greek yogurt with honey and blueberries</p>
+        <p class="food-list">Lunch: Vegetable stir-fry with tofu</p>
+        <p class="food-list">Dinner: Stuffed peppers with brown rice and beans</p>
+        <p class="food-list">Snack: Handful of almonds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding topped with berries</p>
+        <p class="food-list">Lunch: Spinach salad with grilled chicken</p>
+        <p class="food-list">Dinner: Baked cod with roasted vegetables</p>
+        <p class="food-list">Snack: Celery sticks with peanut butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with assorted toppings</p>
+        <p class="food-list">Lunch: Vegetable soup with lentils</p>
+        <p class="food-list">Dinner: Turkey meatballs with whole grain pasta</p>
+        <p class="food-list">Snack: Sliced apple with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs with spinach</p>
+        <p class="food-list">Lunch: Chickpea salad with cucumbers and tomatoes</p>
+        <p class="food-list">Dinner: Vegetable soup with lentils</p>
+        <p class="food-list">Snack: Sliced cucumber with tzatziki sauce</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with chia seeds</p>
+        <p class="food-list">Lunch: Grilled chicken salad with mixed greens</p>
+        <p class="food-list">Dinner: Stir-fried tofu with mixed vegetables</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Avocado, Blueberries, Fish, Olive oil, Leafy greens</p>
+      <p><strong>Unrecommended Foods:</strong> Dairy products, Processed foods, High-sugar snacks</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="diabetes">
+      <h2>Diabetes Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"diabetes", "type 1", "type 2", "gestational diabetes"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal topped with chia seeds</p>
+        <p class="food-list">Lunch: Grilled chicken salad with spinach</p>
+        <p class="food-list">Dinner: Baked salmon with broccoli</p>
+        <p class="food-list">Snack: Apple slices with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach, banana, and almond milk</p>
+        <p class="food-list">Lunch: Quinoa salad with chickpeas</p>
+        <p class="food-list">Dinner: Stir-fried tofu with mixed vegetables</p>
+        <p class="food-list">Snack: Carrot sticks with hummus</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Greek yogurt with honey and berries</p>
+        <p class="food-list">Lunch: Lentil soup with carrots</p>
+        <p class="food-list">Dinner: Grilled chicken with brown rice</p>
+        <p class="food-list">Snack: Handful of almonds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding topped with fruit</p>
+        <p class="food-list">Lunch: Vegetable stir-fry with quinoa</p>
+        <p class="food-list">Dinner: Baked cod with roasted vegetables</p>
+        <p class="food-list">Snack: Celery sticks with peanut butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs with spinach</p>
+        <p class="food-list">Lunch: Chickpea salad with tomatoes</p>
+        <p class="food-list">Dinner: Grilled shrimp with asparagus</p>
+        <p class="food-list">Snack: Greek yogurt with honey</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with assorted toppings</p>
+        <p class="food-list">Lunch: Vegetable wrap with hummus</p>
+        <p class="food-list">Dinner: Stir-fried tofu with brown rice</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with chia seeds</p>
+        <p class="food-list">Lunch: Spinach salad with grilled chicken</p>
+        <p class="food-list">Dinner: Vegetable soup with lentils</p>
+        <p class="food-list">Snack: Handful of walnuts</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Leafy greens, Berries, Lean proteins, Healthy fats</p>
+      <p><strong>Unrecommended Foods:</strong> Sugary snacks, White bread, High-sugar foods</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="paralysis">
+      <h2>Paralysis Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"paralysis", "hemiplegia", "paraplegia", "quadriplegia"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach and banana</p>
+        <p class="food-list">Lunch: Quinoa salad with chickpeas</p>
+        <p class="food-list">Dinner: Baked chicken with broccoli</p>
+        <p class="food-list">Snack: Apple slices with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Oatmeal topped with walnuts</p>
+        <p class="food-list">Lunch: Lentil soup with a side salad</p>
+        <p class="food-list">Dinner: Grilled salmon with asparagus</p>
+        <p class="food-list">Snack: Carrot sticks with hummus</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Greek yogurt with honey and berries</p>
+        <p class="food-list">Lunch: Chickpea salad with cucumbers</p>
+        <p class="food-list">Dinner: Stir-fried tofu with brown rice</p>
+        <p class="food-list">Snack: Handful of walnuts</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding topped with fruit</p>
+        <p class="food-list">Lunch: Vegetable wrap with whole-grain</p>
+        <p class="food-list">Dinner: Baked cod with sweet potatoes</p>
+        <p class="food-list">Snack: Celery sticks with peanut butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs with spinach</p>
+        <p class="food-list">Lunch: Tuna salad with whole-grain crackers</p>
+        <p class="food-list">Dinner: Turkey meatballs with zucchini noodles</p>
+        <p class="food-list">Snack: Berries with a sprinkle of flaxseeds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with assorted toppings</p>
+        <p class="food-list">Lunch: Black bean soup with a side salad</p>
+        <p class="food-list">Dinner: Grilled chicken with roasted vegetables</p>
+        <p class="food-list">Snack: Cucumber slices with dill dip</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with almond milk</p>
+        <p class="food-list">Lunch: Quinoa and kale salad with lemon dressing</p>
+        <p class="food-list">Dinner: Lentil curry with brown rice</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> High-fiber foods, Antioxidant-rich foods, Lean proteins</p>
+      <p><strong>Unrecommended Foods:</strong> Processed foods, High-sodium foods, Sugary drinks</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="kidney disease">
+      <h2>Kidney Disease Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"kidney", "chronic kidney disease", "kidney stones"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Cooked oatmeal with fruit</p>
+        <p class="food-list">Lunch: Salad with grilled chicken</p>
+        <p class="food-list">Dinner: Baked fish with green beans</p>
+        <p class="food-list">Snack: Apple slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Cream of wheat</p>
+        <p class="food-list">Lunch: Turkey and lettuce wrap</p>
+        <p class="food-list">Dinner: Lentil soup</p>
+        <p class="food-list">Snack: Grapes</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: English muffin with jam</p>
+        <p class="food-list">Lunch: Quinoa salad with vegetables</p>
+        <p class="food-list">Dinner: Chicken stir-fry</p>
+        <p class="food-list">Snack: Rice cakes</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Toast with unsalted butter</p>
+        <p class="food-list">Lunch: Tuna salad sandwich</p>
+        <p class="food-list">Dinner: Vegetarian chili</p>
+        <p class="food-list">Snack: Pears</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs</p>
+        <p class="food-list">Lunch: Leftovers from dinner</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Cranberry juice</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Bagel with cream cheese</p>
+        <p class="food-list">Lunch: Chicken salad sandwich</p>
+        <p class="food-list">Dinner: Pasta with vegetables</p>
+        <p class="food-list">Snack: Sherbet</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Pancakes with syrup</p>
+        <p class="food-list">Lunch: Turkey wrap</p>
+        <p class="food-list">Dinner: Vegetable curry</p>
+        <p class="food-list">Snack: Popsicle</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Low-sodium foods, Phosphorus-controlled foods, Potassium-controlled foods</p>
+      <p><strong>Unrecommended Foods:</strong> High-sodium foods, High-phosphorus foods, High-potassium foods</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="liver disease">
+      <h2>Liver Disease Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"liver", "fatty liver", "hepatitis"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with berries</p>
+        <p class="food-list">Lunch: Salad with grilled chicken</p>
+        <p class="food-list">Dinner: Baked fish with vegetables</p>
+        <p class="food-list">Snack: Apple slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Yogurt with fruit</p>
+        <p class="food-list">Lunch: Turkey sandwich</p>
+        <p class="food-list">Dinner: Lentil soup</p>
+        <p class="food-list">Snack: Carrot sticks</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach</p>
+        <p class="food-list">Lunch: Quinoa salad</p>
+        <p class="food-list">Dinner: Chicken stir-fry</p>
+        <p class="food-list">Snack: Handful of almonds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Toast with avocado</p>
+        <p class="food-list">Lunch: Salad with tuna</p>
+        <p class="food-list">Dinner: Vegetarian chili</p>
+        <p class="food-list">Snack: Celery sticks</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs</p>
+        <p class="food-list">Lunch: Leftovers from dinner</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Berries</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Chia pudding</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken</p>
+        <p class="food-list">Snack: Cucumber slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl</p>
+        <p class="food-list">Lunch: Turkey wrap</p>
+        <p class="food-list">Dinner: Vegetable curry</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> High-fiber foods, Low-fat foods, Easily digestible foods</p>
+      <p><strong>Unrecommended Foods:</strong> Alcohol, High-fat foods, Processed foods</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="respiratory disease">
+      <h2>Respiratory Disease Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"respiratory", "asthma", "COPD"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with fruit</p>
+        <p class="food-list">Lunch: Salad with grilled chicken</p>
+        <p class="food-list">Dinner: Baked fish with vegetables</p>
+        <p class="food-list">Snack: Apple slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Yogurt with honey</p>
+        <p class="food-list">Lunch: Turkey sandwich</p>
+        <p class="food-list">Dinner: Lentil soup</p>
+        <p class="food-list">Snack: Carrot sticks</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with ginger</p>
+        <p class="food-list">Lunch: Quinoa salad</p>
+        <p class="food-list">Dinner: Chicken stir-fry</p>
+        <p class="food-list">Snack: Handful of almonds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Toast with avocado</p>
+        <p class="food-list">Lunch: Salad with tuna</p>
+        <p class="food-list">Dinner: Vegetarian chili</p>
+        <p class="food-list">Snack: Celery sticks</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs</p>
+        <p class="food-list">Lunch: Leftovers from dinner</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Berries</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Chia pudding</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken</p>
+        <p class="food-list">Snack: Cucumber slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl</p>
+        <p class="food-list">Lunch: Turkey wrap</p>
+        <p class="food-list">Dinner: Vegetable curry</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Antioxidant-rich foods, Omega-3 fatty acids, Anti-inflammatory foods</p>
+      <p><strong>Unrecommended Foods:</strong> Processed foods, Dairy products (for some), Sulfites</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="gastrointestinal">
+      <h2>Gastrointestinal Conditions Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"gastrointestinal", "IBS", "Crohn's disease", "ulcerative colitis", "GERD"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with cooked fruit</p>
+        <p class="food-list">Lunch: Chicken and rice soup</p>
+        <p class="food-list">Dinner: Baked cod with sweet potatoes</p>
+        <p class="food-list">Snack: Banana</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach</p>
+        <p class="food-list">Lunch: Turkey and avocado wrap</p>
+        <p class="food-list">Dinner: Lentil soup</p>
+        <p class="food-list">Snack: Rice cakes</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Eggs with toast</p>
+        <p class="food-list">Lunch: Tuna salad sandwich</p>
+        <p class="food-list">Dinner: Chicken and vegetable stir-fry</p>
+        <p class="food-list">Snack: Yogurt</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia seed pudding</p>
+        <p class="food-list">Lunch: Salad with grilled fish</p>
+        <p class="food-list">Dinner: Baked chicken with carrots</p>
+        <p class="food-list">Snack: Applesauce</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Rice cereal with milk</p>
+        <p class="food-list">Lunch: Leftovers from dinner</p>
+        <p class="food-list">Dinner: Salmon with quinoa</p>
+        <p class="food-list">Snack: Cantaloupe</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Pancakes</p>
+        <p class="food-list">Lunch: Chicken salad sandwich</p>
+        <p class="food-list">Dinner: Pasta with olive oil and vegetables</p>
+        <p class="food-list">Snack: Cottage cheese</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with almond milk</p>
+        <p class="food-list">Lunch: Turkey and lettuce wrap</p>
+        <p class="food-list">Dinner: Vegetable and tofu curry</p>
+        <p class="food-list">Snack: Grapes</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Easily digestible foods, Low-fiber options (if needed), Hydrating fluids</p>
+      <p><strong>Unrecommended Foods:</strong> Trigger foods (vary by individual), High-fat foods, Spicy foods</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="neurological">
+      <h2>Neurological Conditions Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"neurological", "neuro", "Alzheimer's", "Parkinson's", "multiple sclerosis", "epilepsy"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with berries and nuts</p>
+        <p class="food-list">Lunch: Salad with salmon</p>
+        <p class="food-list">Dinner: Chicken and vegetable stir-fry</p>
+        <p class="food-list">Snack: Greek yogurt with fruit</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach and avocado</p>
+        <p class="food-list">Lunch: Lentil soup with whole-grain bread</p>
+        <p class="food-list">Dinner: Baked cod with roasted vegetables</p>
+        <p class="food-list">Snack: Handful of walnuts</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Eggs with whole-wheat toast</p>
+        <p class="food-list">Lunch: Tuna salad with whole-grain crackers</p>
+        <p class="food-list">Dinner: Turkey meatballs with zucchini noodles</p>
+        <p class="food-list">Snack: Berries with chia seeds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding with fruit</p>
+        <p class="food-list">Lunch: Vegetable wrap with hummus</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Celery sticks with almond butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with toppings</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken with quinoa</p>
+        <p class="food-list">Snack: Cucumber slices with dill dip</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Whole-grain pancakes with fruit</p>
+        <p class="food-list">Lunch: Chicken salad sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Vegetable curry with brown rice</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with berries</p>
+        <p class="food-list">Lunch: Spinach salad with grilled shrimp</p>
+        <p class="food-list">Dinner: Vegetable and tofu stir-fry</p>
+        <p class="food-list">Snack: Edamame</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Omega-3 fatty acids, Antioxidant-rich foods, Whole grains</p>
+      <p><strong>Unrecommended Foods:</strong> Saturated fats, Processed foods, High-sugar items</p>
+    </div>
+
+
+
+    <div class="meal-plan hidden" data-disease="nose conditions">
+      <h2>Nose Conditions Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"nose", "rhinitis", "sinusitis", "nasal congestion"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with honey</p>
+        <p class="food-list">Lunch: Chicken broth-based soup</p>
+        <p class="food-list">Dinner: Steamed fish with ginger</p>
+        <p class="food-list">Snack: Herbal tea with lemon</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with anti-inflammatory ingredients</p>
+        <p class="food-list">Lunch: Turkey and avocado sandwich on soft bread</p>
+        <p class="food-list">Dinner: Chicken and vegetable stew</p>
+        <p class="food-list">Snack: Honey lozenges</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs</p>
+        <p class="food-list">Lunch: Creamy vegetable soup</p>
+        <p class="food-list">Dinner: Baked chicken with mashed sweet potatoes</p>
+        <p class="food-list">Snack: Fruit popsicle</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Warm cereal with milk</p>
+        <p class="food-list">Lunch: Tuna salad on soft bread</p>
+        <p class="food-list">Dinner: Salmon with steamed spinach</p>
+        <p class="food-list">Snack: Ginger tea</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Broth-based soup</p>
+        <p class="food-list">Lunch: Leftovers from dinner</p>
+        <p class="food-list">Dinner: Chicken and rice</p>
+        <p class="food-list">Snack: Jello</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Soft cooked cereal</p>
+        <p class="food-list">Lunch: Soft sandwich with lean protein</p>
+        <p class="food-list">Dinner: Pureed vegetable soup</p>
+        <p class="food-list">Snack: Smoothies</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Warm oatmeal</p>
+        <p class="food-list">Lunch: Creamy soup</p>
+        <p class="food-list">Dinner: Soft fish with mashed vegetables</p>
+        <p class="food-list">Snack: Pudding</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Hydrating fluids, Warm liquids, Anti-inflammatory foods</p>
+      <p><strong>Unrecommended Foods:</strong> Dairy (for some), Irritating foods, Alcohol</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="fever">
+      <h2>Fever Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"fever", "high temperature"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Broth-based soup</p>
+        <p class="food-list">Lunch: Clear broth</p>
+        <p class="food-list">Dinner: Rice porridge</p>
+        <p class="food-list">Snack: Herbal tea</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Fruit smoothie</p>
+        <p class="food-list">Lunch: Light vegetable soup</p>
+        <p class="food-list">Dinner: Mashed sweet potatoes</p>
+        <p class="food-list">Snack: Coconut water</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Oatmeal</p>
+        <p class="food-list">Lunch: Chicken noodle soup</p>
+        <p class="food-list">Dinner: Scrambled eggs</p>
+        <p class="food-list">Snack: Popsicle</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Toast with honey</p>
+        <p class="food-list">Lunch: Light salad</p>
+        <p class="food-list">Dinner: Baked fish</p>
+        <p class="food-list">Snack: Fruit juice</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Rice porridge</p>
+        <p class="food-list">Lunch: Broth-based soup</p>
+        <p class="food-list">Dinner: Mashed potatoes</p>
+        <p class="food-list">Snack: Herbal tea</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Fruit smoothie</p>
+        <p class="food-list">Lunch: Light vegetable soup</p>
+        <p class="food-list">Dinner: Soft cooked rice</p>
+        <p class="food-list">Snack: Coconut water</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Oatmeal</p>
+        <p class="food-list">Lunch: Chicken noodle soup</p>
+        <p class="food-list">Dinner: Scrambled eggs</p>
+        <p class="food-list">Snack: Popsicle</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Hydrating fluids, Easily digestible foods, Vitamin-rich foods</p>
+      <p><strong>Unrecommended Foods:</strong> Heavy meals, Processed foods, Sugary drinks</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="bronchitis">
+      <h2>Bronchitis Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"bronchitis", "cough", "chest congestion"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with berries</p>
+        <p class="food-list">Lunch: Chicken noodle soup</p>
+        <p class="food-list">Dinner: Steamed vegetables with fish</p>
+        <p class="food-list">Snack: Ginger tea</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach</p>
+        <p class="food-list">Lunch: Lentil soup</p>
+        <p class="food-list">Dinner: Chicken and vegetable stir-fry</p>
+        <p class="food-list">Snack: Honey and lemon drink</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Eggs with whole-wheat toast</p>
+        <p class="food-list">Lunch: Tuna salad sandwich</p>
+        <p class="food-list">Dinner: Baked salmon with sweet potatoes</p>
+        <p class="food-list">Snack: Fruit salad</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding with fruit</p>
+        <p class="food-list">Lunch: Vegetable wrap with hummus</p>
+        <p class="food-list">Dinner: Chicken and vegetable stew</p>
+        <p class="food-list">Snack: Herbal tea with honey</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with toppings</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken with quinoa</p>
+        <p class="food-list">Snack: Warm broth</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Whole-grain pancakes with fruit</p>
+        <p class="food-list">Lunch: Chicken salad sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Vegetable curry with brown rice</p>
+        <p class="food-list">Snack: Ginger candies</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with berries</p>
+        <p class="food-list">Lunch: Spinach salad with grilled shrimp</p>
+        <p class="food-list">Dinner: Vegetable and tofu stir-fry</p>
+        <p class="food-list">Snack: Fruit juice</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Hydrating fluids, Anti-inflammatory foods, Vitamin C sources</p>
+      <p><strong>Unrecommended Foods:</strong> Dairy (for some), Processed foods, Sugary drinks</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="urology">
+      <h2>Urology Conditions Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"urology", "UTI", "kidney stones", "bladder issues"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal</p>
+        <p class="food-list">Lunch: Salad with light protein</p>
+        <p class="food-list">Dinner: Baked fish with vegetables</p>
+        <p class="food-list">Snack: Watermelon</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Yogurt</p>
+        <p class="food-list">Lunch: Turkey sandwich</p>
+        <p class="food-list">Dinner: Lentil soup</p>
+        <p class="food-list">Snack: Cranberry juice</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Smoothie</p>
+        <p class="food-list">Lunch: Quinoa salad</p>
+        <p class="food-list">Dinner: Chicken stir-fry</p>
+        <p class="food-list">Snack: Pears</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Toast with avocado</p>
+        <p class="food-list">Lunch: Salad with tuna</p>
+        <p class="food-list">Dinner: Vegetarian chili</p>
+        <p class="food-list">Snack: Herbal tea</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Eggs</p>
+        <p class="food-list">Lunch: Leftovers from dinner</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Blueberries</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Chia pudding</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken</p>
+        <p class="food-list">Snack: Cucumber slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl</p>
+        <p class="food-list">Lunch: Turkey wrap</p>
+        <p class="food-list">Dinner: Vegetable curry</p>
+        <p class="food-list">Snack: Water</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Hydrating fluids, Fiber-rich foods, Antioxidant sources</p>
+      <p><strong>Unrecommended Foods:</strong> Irritating foods (caffeine, alcohol), High-sodium foods, Sugary drinks</p>
+    </div>
+
+
+
+  
+
+    <div class="meal-plan hidden" data-disease="arthritis">
+      <h2>Arthritis Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"arthritis", "osteoarthritis", "rheumatoid arthritis"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with berries</p>
+        <p class="food-list">Lunch: Salad with grilled chicken</p>
+        <p class="food-list">Dinner: Baked salmon with vegetables</p>
+        <p class="food-list">Snack: Almonds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach</p>
+        <p class="food-list">Lunch: Lentil soup</p>
+        <p class="food-list">Dinner: Chicken stir-fry</p>
+        <p class="food-list">Snack: Greek yogurt</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Eggs with whole-wheat toast</p>
+        <p class="food-list">Lunch: Tuna salad sandwich</p>
+        <p class="food-list">Dinner: Turkey meatballs with zucchini noodles</p>
+        <p class="food-list">Snack: Berries</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding with fruit</p>
+        <p class="food-list">Lunch: Vegetable wrap</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Celery sticks with peanut butter</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken with quinoa</p>
+        <p class="food-list">Snack: Cucumber slices with dill dip</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Whole-grain pancakes with fruit</p>
+        <p class="food-list">Lunch: Chicken salad sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Vegetable curry with brown rice</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with berries</p>
+        <p class="food-list">Lunch: Spinach salad with grilled shrimp</p>
+        <p class="food-list">Dinner: Vegetable and tofu stir-fry</p>
+        <p class="food-list">Snack: Edamame</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Omega-3 fatty acids, Antioxidant-rich foods, Whole grains</p>
+      <p><strong>Unrecommended Foods:</strong> Processed foods, Sugary foods, Saturated fats</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="orthopedic conditions">
+      <h2>Orthopedic Conditions Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"orthopedic", "bone health", "fractures", "ostoporosis"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Yogurt with fruit</p>
+        <p class="food-list">Lunch: Salad with lean protein</p>
+        <p class="food-list">Dinner: Baked chicken with vegetables</p>
+        <p class="food-list">Snack: Cheese stick</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with milk</p>
+        <p class="food-list">Lunch: Turkey sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Lentil soup with whole-grain bread</p>
+        <p class="food-list">Snack: Almonds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with calcium-rich ingredients</p>
+        <p class="food-list">Lunch: Tuna salad with whole-grain crackers</p>
+        <p class="food-list">Dinner: Salmon with broccoli</p>
+        <p class="food-list">Snack: Greek yogurt</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Fortified cereal with milk</p>
+        <p class="food-list">Lunch: Vegetable wrap with cheese</p>
+        <p class="food-list">Dinner: Chicken and vegetable stir-fry</p>
+        <p class="food-list">Snack: Orange</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Scrambled eggs with cheese</p>
+        <p class="food-list">Lunch: Leftovers from dinner</p>
+        <p class="food-list">Dinner: Turkey and vegetable chili</p>
+        <p class="food-list">Snack: Milk</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: French toast made with fortified bread</p>
+        <p class="food-list">Lunch: Chicken salad sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Pasta with meat sauce and vegetables</p>
+        <p class="food-list">Snack: Cottage cheese</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with fortified milk</p>
+        <p class="food-list">Lunch: Spinach salad with hard-boiled eggs</p>
+        <p class="food-list">Dinner: Vegetable lasagna</p>
+        <p class="food-list">Snack: Fortified yogurt</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Calcium-rich foods, Vitamin D sources, Protein sources</p>
+      <p><strong>Unrecommended Foods:</strong> Excessive caffeine, High-sodium foods, Processed foods</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="gynecological conditions">
+      <h2>Gynecological Conditions Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"gynecological", "women's health", "menstruation", "PCOS"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with fruit and nuts</p>
+        <p class="food-list">Lunch: Salad with grilled chicken</p>
+        <p class="food-list">Dinner: Baked fish with vegetables</p>
+        <p class="food-list">Snack: Fruit</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with greens</p>
+        <p class="food-list">Lunch: Lentil soup</p>
+        <p class="food-list">Dinner: Chicken stir-fry with brown rice</p>
+        <p class="food-list">Snack: Yogurt</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Eggs with whole-wheat toast</p>
+        <p class="food-list">Lunch: Tuna salad sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Turkey meatballs with zucchini noodles</p>
+        <p class="food-list">Snack: Berries</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding with fruit</p>
+        <p class="food-list">Lunch: Vegetable wrap with hummus</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Nuts</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl with toppings</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken with quinoa</p>
+        <p class="food-list">Snack: Seeds</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Whole-grain pancakes with fruit</p>
+        <p class="food-list">Lunch: Chicken salad sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Vegetable curry with brown rice</p>
+        <p class="food-list">Snack: Dark chocolate</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with berries</p>
+        <p class="food-list">Lunch: Spinach salad with grilled shrimp</p>
+        <p class="food-list">Dinner: Vegetable and tofu stir-fry</p>
+        <p class="food-list">Snack: Edamame</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Iron-rich foods, Calcium sources, Fiber</p>
+      <p><strong>Unrecommended Foods:</strong> Processed foods, High-fat foods, Excessive caffeine</p>
+    </div>
+
+    <div class="meal-plan hidden" data-disease="high blood pressure">
+      <h2>High Blood Pressure Meal Plan</h2>
+      <h3>Keywords:</h3>
+      <p>"high blood pressure", "hypertension"</p>
+      <h3>Weekly Meal Plan:</h3>
+      <div class="day-plan">
+        <h4>Monday:</h4>
+        <p class="food-list">Breakfast: Oatmeal with berries</p>
+        <p class="food-list">Lunch: Salad with grilled chicken</p>
+        <p class="food-list">Dinner: Baked salmon with vegetables</p>
+        <p class="food-list">Snack: Apple slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Tuesday:</h4>
+        <p class="food-list">Breakfast: Smoothie with spinach</p>
+        <p class="food-list">Lunch: Lentil soup</p>
+        <p class="food-list">Dinner: Chicken stir-fry</p>
+        <p class="food-list">Snack: Banana</p>
+      </div>
+      <div class="day-plan">
+        <h4>Wednesday:</h4>
+        <p class="food-list">Breakfast: Eggs with whole-wheat toast</p>
+        <p class="food-list">Lunch: Tuna salad sandwich</p>
+        <p class="food-list">Dinner: Turkey meatballs with zucchini noodles</p>
+        <p class="food-list">Snack: Berries</p>
+      </div>
+      <div class="day-plan">
+        <h4>Thursday:</h4>
+        <p class="food-list">Breakfast: Chia pudding with fruit</p>
+        <p class="food-list">Lunch: Vegetable wrap</p>
+        <p class="food-list">Dinner: Salmon with asparagus</p>
+        <p class="food-list">Snack: Carrot sticks</p>
+      </div>
+      <div class="day-plan">
+        <h4>Friday:</h4>
+        <p class="food-list">Breakfast: Smoothie bowl</p>
+        <p class="food-list">Lunch: Black bean soup</p>
+        <p class="food-list">Dinner: Grilled chicken with quinoa</p>
+        <p class="food-list">Snack: Cucumber slices</p>
+      </div>
+      <div class="day-plan">
+        <h4>Saturday:</h4>
+        <p class="food-list">Breakfast: Whole-grain pancakes with fruit</p>
+        <p class="food-list">Lunch: Chicken salad sandwich on whole-grain bread</p>
+        <p class="food-list">Dinner: Vegetable curry with brown rice</p>
+        <p class="food-list">Snack: Air-popped popcorn</p>
+      </div>
+      <div class="day-plan">
+        <h4>Sunday:</h4>
+        <p class="food-list">Breakfast: Overnight oats with berries</p>
+        <p class="food-list">Lunch: Spinach salad with grilled shrimp</p>
+        <p class="food-list">Dinner: Vegetable and tofu stir-fry</p>
+        <p class="food-list">Snack: Edamame</p>
+      </div>
+      <p><strong>Recommended Foods:</strong> Low-sodium foods, Potassium-rich foods, Magnesium sources</p>
+      <p><strong>Unrecommended Foods:</strong> High-sodium foods, Processed foods, Saturated fats</p>
+    </div>
+
+<div class="meal-plan hidden" data-disease="sexually transmitted infections">
+  <h2>Sexually Transmitted Infections (STIs) Meal Plan</h2>
+  <h3>Keywords:</h3>
+  <p>"sexually transmitted infections", "STIs", "STDs"</p>
+  <h3>Weekly Meal Plan:</h3>
+  <div class="day-plan">
+    <h4>Monday:</h4>
+    <p class="food-list">Breakfast: Yogurt with probiotics</p>
+    <p class="food-list">Lunch: Salad with lean protein</p>
+    <p class="food-list">Dinner: Baked fish with vegetables</p>
+    <p class="food-list">Snack: Fruit</p>
+  </div>
+  <div class="day-plan">
+    <h4>Tuesday:</h4>
+    <p class="food-list">Breakfast: Smoothie with antioxidants</p>
+    <p class="food-list">Lunch: Turkey sandwich on whole-grain bread</p>
+    <p class="food-list">Dinner: Lentil soup</p>
+    <p class="food-list">Snack: Nuts and seeds</p>
+  </div>
+  <div class="day-plan">
+    <h4>Wednesday:</h4>
+    <p class="food-list">Breakfast: Eggs with whole-wheat toast</p>
+    <p class="food-list">Lunch: Tuna salad with whole-grain crackers</p>
+    <p class="food-list">Dinner: Chicken and vegetable stir-fry</p>
+    <p class="food-list">Snack: Greek yogurt</p>
+  </div>
+  <div class="day-plan">
+    <h4>Thursday:</h4>
+    <p class="food-list">Breakfast: Chia pudding with berries</p>
+    <p class="food-list">Lunch: Vegetable wrap with hummus</p>
+    <p class="food-list">Dinner: Salmon with asparagus</p>
+    <p class="food-list">Snack: Citrus fruits</p>
+  </div>
+  <div class="day-plan">
+    <h4>Friday:</h4>
+    <p class="food-list">Breakfast: Smoothie bowl with toppings</p>
+    <p class="food-list">Lunch: Black bean soup</p>
+    <p class="food-list">Dinner: Grilled chicken with quinoa</p>
+    <p class="food-list">Snack: Ginger tea</p>
+  </div>
+  <div class="day-plan">
+    <h4>Saturday:</h4>
+    <p class="food-list">Breakfast: Whole-grain pancakes with fruit</p>
+    <p class="food-list">Lunch: Chicken salad sandwich on whole-grain bread</p>
+    <p class="food-list">Dinner: Vegetable curry with brown rice</p>
+    <p class="food-list">Snack: Dark chocolate</p>
+  </div>
+  <div class="day-plan">
+    <h4>Sunday:</h4>
+    <p class="food-list">Breakfast: Overnight oats with berries</p>
+    <p class="food-list">Lunch: Spinach salad with grilled shrimp</p>
+    <p class="food-list">Dinner: Vegetable and tofu stir-fry</p>
+    <p class="food-list">Snack: Edamame</p>
+  </div>
+  <p><strong>Recommended Foods:</strong> Probiotics, Antioxidants, Vitamin C, Zinc</p>
+  <p><strong>Unrecommended Foods:</strong> Processed foods, Sugary drinks, Excessive alcohol</p>
+</div>
+
+
+
+
+
+<script>
+  document.getElementById("search-button").addEventListener("click", function () {
+    let searchValue = document.getElementById("search-input").value.toLowerCase().trim();
+    let mealPlans = document.querySelectorAll(".meal-plan");
+
+    mealPlans.forEach(function (plan) {
+      plan.classList.add("hidden"); // Hide all plans initially
+      let disease = plan.getAttribute("data-disease").toLowerCase();
+
+      // **Extracting keywords from paragraph and checking if searchValue matches**
+      let keywordsText = plan.querySelector("h3 + p").innerText.toLowerCase();
+      let keywordsArray = keywordsText.replace(/"/g, "").split(",").map(k => k.trim()); // **Yellow: Fixing keyword matching**
+
+      if (disease.includes(searchValue) || keywordsArray.includes(searchValue)) {
+        plan.classList.remove("hidden");
+      }
+    });
+  });
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey:  "AIzaSyBaKBHL2iKnnvGY6HD6l4p7Hs UKt3CchdI",
+authDomain: "healthplus-6a769.firebaseapp. com",
+projectId: "healthplus-6a769",
+storageBucket: "healthplus-6a769. firebasestorage.app",
+messagingSenderId: "841353217929",
+appId: "1:841353217929:web: b76f08599cc7e8e1264358"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  document.getElementById("save-button").addEventListener("click", () => {
+    const visiblePlan = document.querySelector(".meal-plan:not(.hidden)");
+    if (!visiblePlan) return alert("No meal plan visible to save.");
+    const disease = visiblePlan.getAttribute("data-disease");
+    const html = visiblePlan.innerHTML;
+    const today = new Date().toISOString().split("T")[0];
+    db.collection("mealPlans").add({ disease, html, date: today })
+      .then(() => alert("Record saved to Firestore."))
+      .catch(err => {
+        console.error("Save error:", err);
+        alert("Error saving record.");
+      });
+  });
+
+  document.getElementById("fetch-button").addEventListener("click", () => {
+    const input = document.createElement("input");
+    input.type = "date";
+    input.style = "display:block;margin:10px auto;";
+    document.body.appendChild(input);
+
+    input.addEventListener("change", () => {
+      const selectedDate = input.value;
+      db.collection("mealPlans").where("date", "==", selectedDate).get()
+        .then(snapshot => {
+          if (snapshot.empty) {
+            alert("No records found for selected date.");
+            return;
+          }
+          const container = document.getElementById("meal-plans-container");
+          container.innerHTML = "";
+          snapshot.forEach(doc => {
+            const div = document.createElement("div");
+            div.className = "meal-plan";
+            div.innerHTML = doc.data().html;
+            container.appendChild(div);
+          });
+        }).catch(err => console.error("Fetch error:", err));
+      document.body.removeChild(input);
+    });
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dairy products Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+  body {
+    margin: 0;
+    background: turquoise;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .title {
+    font-size: 3em;
+    margin-top: 50px;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .letter {
+    opacity: 0;
+    transform: scale(4) rotate(720deg) translateY(-300px);
+    animation: formTitle 1.2s ease-out forwards;
+  }
+
+  .letter:nth-child(n) {
+    animation-delay: calc(0.1s * var(--i));
+  }
+
+  @keyframes formTitle {
+    0% {
+      opacity: 0;
+      transform: scale(4) rotate(720deg) translateY(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+  }
+
+  model-viewer {
+    width: 400px;
+    height: 400px;
+    margin: 40px auto;
+    background-color: white; /* Small box background white */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* optional: soft shadow */
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+
+.arrow-btn {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(145deg, #2ecc71, #27ae60); /* 3D Green Gradient */
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px; /* Rounded pill shape */
+      box-shadow: 
+        0 6px #1e8449, /* Darker green bottom shadow for 3D depth */
+        0 10px 20px rgba(0,0,0,0.2); /* Soft drop shadow */
+      transition: all 0.1s ease; /* Snappy click animation */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      outline: none;
+    }
+
+    .arrow-btn:hover {
+      background: linear-gradient(145deg, #27ae60, #2ecc71); /* Subtle color shift */
+      transform: translateY(-2px); /* Slight lift on hover */
+      box-shadow: 
+        0 8px #1e8449, 
+        0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    .arrow-btn:active {
+      transform: translateY(4px); /* Push down effect */
+      box-shadow: 
+        0 2px #1e8449, /* Reduced shadow to simulate press */
+        0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    .info-box {
+      background-color: white; /* white background for small box */
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black; /* black font inside small box */
+      margin-top: 20px;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+  <div class="title">
+    <span class="letter" style="--i:1">D</span>
+    <span class="letter" style="--i:2">A</span>
+    <span class="letter" style="--i:3">I</span>
+    <span class="letter" style="--i:4">R</span>
+    <span class="letter" style="--i:5">Y</span>
+    <span class="letter" style="--i:6">R</span>
+    <span class="letter" style="--i:7">F</span>
+    <span class="letter" style="--i:7">O</span>
+    <span class="letter" style="--i:7">O</span>
+    <span class="letter" style="--i:7">D</span>
+    <span class="letter" style="--i:8">&nbsp;</span>
+    <span class="letter" style="--i:9">V</span>
+    <span class="letter" style="--i:10">I</span>
+    <span class="letter" style="--i:11">E</span>
+    <span class="letter" style="--i:12">W</span>
+    <span class="letter" style="--i:13">E</span>
+    <span class="letter" style="--i:14">R</span>
+  </div>
+
+  <model-viewer id="viewer"
+    src="media/whole milk.glb"
+    alt="Dairy model"
+    auto-rotate
+    disable-zoom
+    camera-controls
+    exposure="1"
+    ar
+    shadow-intensity="1"
+    style="background-color: white; border-radius: 20px;">
+  </model-viewer>
+
+<div class="controls">
+    <button class="arrow-btn" onclick="showPrev()">PREVIOUS</button>
+    <button class="arrow-btn" onclick="showNext()">NEXT</button>
+  </div>
+
+  <div id="info" class="info-box">Click the poultry food to view details</div>
+
+  <script>
+    const dairyfood = [
+     {
+    "name": "Whole milk",
+    "file": "media/whole milk.glb",
+    "info": "Calories: 61 kcal<br>Nutrients: Rich in calcium, good for bones, source of protein and vitamin D"
+  },
+  {
+    "name": "Skimmed Milk",
+    "file": "media/skimmed milk.glb",
+    "info": "Calories: 34 kcal<br>Nutrients: Low in fat, good for weight management, high in calcium"
+  },
+  {
+    "name": "Paneer (Cottage Cheese)",
+    "file": "media/paneer.glb",
+    "info": "Calories: 321 kcal<br>Nutrients: High in protein, good for muscle building, rich in calcium"
+  },
+  {
+    "name": "Curd (Yogurt)",
+    "file": "media/curd.glb",
+    "info": "Calories: 98 kcal<br>Nutrients: Supports digestion, rich in probiotics, boosts immunity"
+  },
+  {
+    "name": "Yogurt",
+    "file": "media/yogurt.glb",
+    "info": "Calories: 59 kcal<br>Nutrients: Higher protein content, good for gut health, supports weight loss"
+  },
+  {
+    "name": "Ghee",
+    "file": "media/ghee.glb",
+    "info": "Calories: 899 kcal<br>Nutrients: Rich in healthy fats, improves digestion, good for brain function"
+  },
+  {
+    "name": "Butter",
+    "file": "media/butter.glb",
+    "info": "Calories: 717 kcal<br>Nutrients: Source of healthy fats, contains fat-soluble vitamins, boosts energy"
+  },
+  {
+    "name": "Cheese (Cheddar)",
+    "file": "media/cheese.glb",
+    "info": "Calories: 402 kcal<br>Nutrients: High in protein and calcium, good for bone health"
+  },
+  {
+    "name": "Mozzarella Cheese",
+    "file": "media/mozzarella.glb",
+    "info": "Calories: 280 kcal<br>Nutrients: Good source of protein, lower in fat than other cheeses"
+  },
+  {
+    "name": "Parmesan Cheese",
+    "file": "media/parmesan.glb",
+    "info": "Calories: 431 kcal<br>Nutrients: Rich in calcium and phosphorus, good for bone health"
+  },
+  {
+    "name": "Cream",
+    "file": "media/cream.glb",
+    "info": "Calories: 345 kcal<br>Nutrients: High in fat, used for cooking, adds flavor"
+  },
+  {
+    "name": "Whey Protein",
+    "file": "media/whey.glb",
+    "info": "Calories: 100 kcal<br>Nutrients: Supports muscle growth, high in protein"
+  },
+  {
+    "name": "Condensed Milk",
+    "file": "media/condensed milk.glb",
+    "info": "Calories: 321 kcal<br>Nutrients: High in sugar, used in desserts, provides energy"
+  },
+  {
+    "name": "Evaporated Milk",
+    "file": "media/evaporated milk.glb",
+    "info": "Calories: 135 kcal<br>Nutrients: Good source of calcium, used for cooking"
+  },
+  {
+    "name": "Buttermilk",
+    "file": "media/buttermilk.glb",
+    "info": "Calories: 40 kcal<br>Nutrients: Low in fat, good for digestion, rich in probiotics"
+  },
+ 
+  {
+    "name": "Sour Cream",
+    "file": "media/sourcream.glb",
+    "info": "Calories: 193 kcal<br>Nutrients: Adds flavor, contains probiotics, good for digestion"
+  },
+  {
+    "name": "Ice Cream",
+    "file": "media/icecream.glb",
+    "info": "Calories: 207 kcal<br>Nutrients: High in sugar, provides energy, contains calcium"
+  },
+  {
+    "name": "Malted Milk",
+    "file": "media/malted milk.glb",
+    "info": "Calories: 90 kcal<br>Nutrients: Rich in vitamins and minerals, boosts energy"
+  }
+    ];
+
+    let current = 0;
+    const viewer = document.getElementById('viewer');
+    const infoBox = document.getElementById('info');
+
+    // Rotate the model manually since cameraOrbit can't be animated via attribute
+    let rotation = 0;
+    const speed = 35 / 30;
+  let isRotating = true; 
+
+    function rotateModel() {
+   if (!isRotating) return;
+      rotation += speed;
+      viewer.cameraOrbit = `${rotation % 360}deg 75deg 2.5m`;
+      requestAnimationFrame(rotateModel);
+    }
+
+    // Start rotating when a model loads
+    viewer.addEventListener('load', () => {
+      isRotating = true; 
+      rotateModel();
+    });
+
+    viewer.addEventListener('click', () => {
+      isRotating = false; // STOP ROTATION HERE
+      const dairyfoods = dairyfood[current];
+      infoBox.innerHTML = `<strong>${dairyfoods.name}</strong><br>${dairyfoods.info}`;
+    });
+
+
+
+
+    function showDairyfoodType(index) {
+      current = (index + dairyfood.length) % dairyfood.length;
+      viewer.src =dairyfood[current].file;
+      infoBox.innerHTML = "Click the dairyfood to view details";
+  isRotating = true; 
+      rotateModel();
+    }
+
+    function showNext() {
+      showDairyfoodType(current + 1);
+    }
+
+    function showPrev() {
+      showDairyfoodType(current - 1);
+    }
+  </script>
+</body>
+</html>

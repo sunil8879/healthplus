@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Healing Frequencies</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+      --button-bg: linear-gradient(45deg, #FF512F 0%, #DD2476 51%, #FF512F 100%);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-color: #333;
+      --shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      min-height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .container {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      max-width: 900px;
+      width: 100%;
+      color: var(--text-color);
+    }
+
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      border-radius: 50px;
+      background-image: var(--button-bg);
+      background-size: 200% auto;
+      color: white;
+      transition: 0.5s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background-position: right center; /* change the direction of the change here */
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    #description {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      min-height: 30px; /* To prevent layout shift */
+      color: #555;
+      padding: 15px;
+      border-left: 5px solid #DD2476;
+      background: #f9f9f9;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    #playerContainer {
+      margin-top: 30px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: black;
+      max-width: 100%;
+    }
+
+    iframe {
+      border: none;
+      display: block; /* Remove bottom space */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .btn { padding: 10px 15px; font-size: 14px; }
+      .container { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Healing Frequency Player</h1>
+  
+  <div class="container">
+    <div class="btn-container">
+      <button class="btn" onclick="playFrequency('174')">174 Hz</button>
+      <button class="btn" onclick="playFrequency('258')">258 Hz</button>
+      <button class="btn" onclick="playFrequency('333')">333 Hz</button>
+      <button class="btn" onclick="playFrequency('396')">396 Hz</button>
+      <button class="btn" onclick="playFrequency('417')">417 Hz</button>
+      <button class="btn" onclick="playFrequency('432')">432 Hz</button>
+      <button class="btn" onclick="playFrequency('528')">528 Hz</button>
+      <button class="btn" onclick="playFrequency('639')">639 Hz</button>
+      <button class="btn" onclick="playFrequency('741')">741 Hz</button>
+      <button class="btn" onclick="playFrequency('852')">852 Hz</button>
+      <button class="btn" onclick="playFrequency('963')">963 Hz</button>
+    </div>
+
+    <div id="description">Select a frequency to begin healing...</div>
+    <div id="playerContainer"></div>
+  </div>
+
+  <script>
+    const frequencyData = {
+      "174": {
+        url: "sSSXSFFd4Ek",
+        desc: "174 Hz relieves pain, stress, and tension, promoting a sense of safety and grounding."
+      },
+      "258": {
+        url: "025XPR0wBg4",
+        desc: "258 Hz aids in chakra balancing and promotes calmness and healing."
+      },
+      "333": {
+        url: "w1KvYCzjoks",
+        desc: "333 Hz helps align your mind, body, and soul with higher frequencies."
+      },
+      "396": {
+        url: "Nv07q-SFgNc",
+        desc: "396 Hz liberates fear and guilt, promoting emotional healing and inner strength."
+      },
+      "417": {
+        url: "KsMqhVfUC9w",
+        desc: "417 Hz facilitates change, removes negativity, and clears past trauma."
+      },
+      "432": {
+        url: "_xcfFQS2hsU",
+        desc: "432 Hz is known as the natural tuning of the universe, promoting peace, harmony, and clarity."
+      },
+      "528": {
+        url: "-2S_nbvz1t0",
+        desc: "528 Hz is the frequency of love and DNA repair, fostering transformation and miracles."
+      },
+      "639": {
+        url: "5T_QxR8aclQ",
+        desc: "639 Hz enhances communication, understanding, and emotional healing in relationships."
+      },
+      "741": {
+        url: "j9Mzyf_B8rQ",
+        desc: "741 Hz awakens intuition and promotes cleansing of toxins and negativity."
+      },
+      "852": {
+        url: "q2TV__iUn54",
+        desc: "852 Hz returns spiritual order and helps you connect with your higher self."
+      },
+      "963": {
+        url: "mhkF7brLQ-U",
+        desc: "963 Hz awakens crown chakra, deepens spiritual connection, and promotes oneness."
+      }
+    };
+
+    function playFrequency(freq) {
+      const data = frequencyData[freq];
+      document.getElementById("description").textContent = `${freq} Hz - ${data.desc}`;
+      document.getElementById("playerContainer").innerHTML = `
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/${data.url}?autoplay=1&loop=1&playlist=${data.url}"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus | Top 100 Anesthesiologists</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00b894;
+            --secondary: #0984e3;
+            --dark-bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f1f5f9;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 184, 148, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(9, 132, 227, 0.15) 0px, transparent 50%);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- HERO HEADER --- */
+        .hero-section {
+            text-align: center;
+            padding: 100px 20px 80px;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-icon {
+            font-size: 60px;
+            display: inline-block;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px var(--primary));
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 850px;
+            margin: 25px auto 0;
+            line-height: 1.6;
+        }
+
+        /* --- CONTAINER --- */
+        .main-container {
+            max-width: 1500px;
+            margin: 40px auto;
+            padding: 0 20px 100px;
+        }
+
+        /* --- CALLOUT CARD --- */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        /* --- TABLE STYLE --- */
+        .table-wrapper {
+            background: var(--card-bg);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-x: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1200px;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 25px 20px;
+            text-align: left;
+            font-size: 0.8rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+            vertical-align: top;
+            color: #cbd5e1;
+        }
+
+        tr:hover {
+            background: rgba(0, 184, 148, 0.05);
+        }
+
+        .s-no { font-weight: 800; color: var(--primary); }
+
+        .website-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--primary);
+            padding: 6px 14px;
+            border-radius: 10px;
+            transition: 0.3s;
+            display: inline-block;
+            font-size: 0.85rem;
+        }
+
+        .website-link:hover {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 184, 148, 0.4);
+        }
+
+        .hospital-phone {
+            font-family: monospace;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* --- FOOTER --- */
+        .footer-guidelines {
+            border-left: 6px solid var(--secondary);
+            background: rgba(9, 132, 227, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .hero-section { padding: 60px 15px; }
+            .glass-card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <span class="hero-icon">💉</span>
+        <h1>Top 100 Anesthesiologists</h1>
+        <p class="subtitle">A premier directory of highly regarded Anesthesiologists & Critical Care Specialists in India. Excellence in Perioperative Care and Pain Management.</p>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="glass-card considerations">
+            <h2><span>📋</span> Critical Considerations:</h2>
+            <ul>
+                <li>Anesthesiologists are crucial members of surgical and critical care teams, often working behind the scenes.</li>
+                <li>Patients usually don't choose their anesthesiologist directly; they are assigned by the hospital/surgical team.</li>
+                <li>Expertise in sub-specialties (Cardiac, Neuro, Pediatric, Obstetric, Pain, Critical Care) is important for complex cases.</li>
+                <li>This list is based on leadership roles, institutional affiliations, and recognition within the specialty.</li>
+            </ul>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Specialist Name & Education</th>
+                        <th>Specialty & Biodata</th>
+                        <th>Exp.</th>
+                        <th>Affiliated Hospital</th>
+                        <th>Address (City)</th>
+                        <th>Hospital Phone</th>
+                        <th>Contact Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="s-no">1</td>
+                        <td><strong>Dr. Yatin Mehta</strong><br><small>MBBS, MD, FRCA</small></td>
+                        <td>Critical Care Medicine, Anesthesiology (Leads major dept)</td>
+                        <td>35+ Years</td>
+                        <td>Medanta - The Medicity (Chairman)</td>
+                        <td>Gurugram</td>
+                        <td class="hospital-phone">+91-124-4141414</td>
+                        <td><a href="https://www.medanta.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">2</td>
+                        <td><strong>Dr. Vijaya Gottumukkala</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology, Pain Management (Onco-Anesthesia)</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles, Hyderabad</td>
+                        <td>Hyderabad</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Vijaya Gottumukkala"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">3</td>
+                        <td><strong>Dr. Muralidhar Joshi</strong><br><small>MBBS, MD, DNB</small></td>
+                        <td>Pain Management Pioneer</td>
+                        <td>30+ Years</td>
+                        <td>Virinchi Hospitals (HOD Pain)</td>
+                        <td>Hyderabad</td>
+                        <td class="hospital-phone">+91-40-46999999</td>
+                        <td>Search "Joshi's Institute of Pain"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">4</td>
+                        <td><strong>Dr. Baljit Singh</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Intensive Care</td>
+                        <td>30+ Years</td>
+                        <td>Max Hospital, Saket (Senior Director & Head)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26515050</td>
+                        <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">5</td>
+                        <td><strong>Dr. Pravin Amin</strong><br><small>MBBS, MD, FCCM</small></td>
+                        <td>Critical Care Medicine Head</td>
+                        <td>35+ Years</td>
+                        <td>Bombay Hospital Institute (Head)</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-22067676</td>
+                        <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">6</td>
+                        <td><strong>Dr. Rajiv Chawla</strong><br><small>MBBS, MD</small></td>
+                        <td>Critical Care, Pulmonology, Sleep Medicine</td>
+                        <td>30+ Years</td>
+                        <td>Max Hospital, Saket (Principal Director & HOD)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26515050</td>
+                        <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">7</td>
+                        <td><strong>Dr. Arunaloka Chakrabarti</strong><br><small>MBBS, MD, FAMS</small></td>
+                        <td>Medical Mycology (Supports Critical Care)</td>
+                        <td>30+ Years</td>
+                        <td>PGI Chandigarh (Professor & Head)</td>
+                        <td>Chandigarh</td>
+                        <td class="hospital-phone">+91-172-2747585</td>
+                        <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">8</td>
+                        <td><strong>Dr. Dilip Pawar</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia & Neurocritical Care</td>
+                        <td>25+ Years</td>
+                        <td>NIMHANS (Professor & Head)</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">+91-80-26995000</td>
+                        <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">9</td>
+                        <td><strong>Dr. Anjan Trikha</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology, Pain Management, Critical Care</td>
+                        <td>35+ Years</td>
+                        <td>Formerly AIIMS, New Delhi</td>
+                        <td>Delhi</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Anjan Trikha"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">10</td>
+                        <td><strong>Dr. J V Divatia</strong><br><small>MBBS, MD, FCCM</small></td>
+                        <td>Critical Care Medicine, Anesthesiology</td>
+                        <td>35+ Years</td>
+                        <td>Tata Memorial Hospital (Professor & Head)</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-24177000</td>
+                        <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">11</td>
+                        <td><strong>Dr. Pradeep Bhatia</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology, Pain Management</td>
+                        <td>25+ Years</td>
+                        <td>AIIMS Jodhpur (Professor & Head)</td>
+                        <td>Jodhpur</td>
+                        <td class="hospital-phone">+91-291-2740741</td>
+                        <td><a href="https://aiimsjodhpur.edu.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">12</td>
+                        <td><strong>Dr. Atul P Kulkarni</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology, Obstetric Anesthesia</td>
+                        <td>20+ Years</td>
+                        <td>Fernandez Hospital (Formerly)</td>
+                        <td>Hyderabad</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Atul Kulkarni"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">13</td>
+                        <td><strong>Dr. Sunil T Pandya</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia & Critical Care</td>
+                        <td>30+ Years</td>
+                        <td>Jaslok Hospital and Research Centre (Director)</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">1800-210-9999</td>
+                        <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">14</td>
+                        <td><strong>Dr. G D Puri</strong><br><small>MBBS, MD, PhD</small></td>
+                        <td>Cardiac Anesthesia, Critical Care</td>
+                        <td>35+ Years</td>
+                        <td>Formerly PGI Chandigarh / Fortis Mohali</td>
+                        <td>Mohali</td>
+                        <td class="hospital-phone">+91-172-4692222</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">15</td>
+                        <td><strong>Dr. Ganga Prasad</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia & Neurocritical Care</td>
+                        <td>25+ Years</td>
+                        <td>Apollo Hospitals, Greams Road (Head)</td>
+                        <td>Chennai</td>
+                        <td class="hospital-phone">1860-500-1066</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">16</td>
+                        <td><strong>Dr. M K Arora</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>30+ Years</td>
+                        <td>Max Hospital, Patparganj & Vaishali (Director)</td>
+                        <td>Delhi/NCR</td>
+                        <td class="hospital-phone">+91-11-43033333</td>
+                        <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">17</td>
+                        <td><strong>Dr. S Bala Bhaskar</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology, Airway Management</td>
+                        <td>25+ Years</td>
+                        <td>Vijaya Group of Hospitals, Chennai</td>
+                        <td>Chennai</td>
+                        <td class="hospital-phone">+91-44-66646664</td>
+                        <td><a href="http://vijayahospital.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">18</td>
+                        <td><strong>Dr. Rebecca Jacob</strong><br><small>MBBS, MD</small></td>
+                        <td>Pediatric Anesthesia</td>
+                        <td>25+ Years</td>
+                        <td>Christian Medical College (CMC) (Head)</td>
+                        <td>Vellore</td>
+                        <td class="hospital-phone">+91-416-2281000</td>
+                        <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">19</td>
+                        <td><strong>Dr. Rakesh Garg</strong><br><small>MBBS, MD, DNB</small></td>
+                        <td>Onco-Anesthesia, Pain Management</td>
+                        <td>15+ Years</td>
+                        <td>AIIMS, New Delhi (Professor)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26588500</td>
+                        <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">20</td>
+                        <td><strong>Dr. Zulfiqar Ali</strong><br><small>MBBS, DA, DNB</small></td>
+                        <td>Critical Care Medicine, Anesthesiology</td>
+                        <td>20+ Years</td>
+                        <td>Nanavati Max Hospital (Senior Consultant & Head)</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-26267500</td>
+                        <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">21</td>
+                        <td><strong>Dr. Subhash Kulkarni</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia & Neurocritical Care</td>
+                        <td>20+ Years</td>
+                        <td>Kokilaben Dhirubhai Ambani Hospital</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-42696969</td>
+                        <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">22</td>
+                        <td><strong>Dr. Kapil Kumar</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>25+ Years</td>
+                        <td>Fortis Escorts Heart Institute (Director)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-47135000</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">23</td>
+                        <td><strong>Dr. P N Jain</strong><br><small>MBBS, MD</small></td>
+                        <td>Pain Management (Cancer Pain focus)</td>
+                        <td>30+ Years</td>
+                        <td>Formerly Head, Pain Clinic, Tata Memorial</td>
+                        <td>Mumbai</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr P N Jain Pain Management"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">24</td>
+                        <td><strong>Dr. Naman Shastri</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Sterling Hospitals (Director & Head)</td>
+                        <td>Ahmedabad</td>
+                        <td class="hospital-phone">+91-79-40011111</td>
+                        <td><a href="https://www.sterlinghospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">25</td>
+                        <td><strong>Dr. Murali Chakravarthy</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia & Critical Care</td>
+                        <td>30+ Years</td>
+                        <td>Fortis Hospital, Bannerghatta (Chairman)</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">+91-80-66214444</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">26</td>
+                        <td><strong>Dr. V P Singh</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology, Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Delhi/NCR</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr V P Singh"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">27</td>
+                        <td><strong>Dr. Preet Mohinder Singh</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia, Airway Management</td>
+                        <td>15+ Years</td>
+                        <td>AIIMS, New Delhi (Additional Professor)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26588500</td>
+                        <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">28</td>
+                        <td><strong>Dr. Anil Karlekar</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>30+ Years</td>
+                        <td>Sir Ganga Ram Hospital (Director)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-42254000</td>
+                        <td><a href="https://sgrh.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">29</td>
+                        <td><strong>Dr. Sheila Nainan Myatra</strong><br><small>MBBS, MD</small></td>
+                        <td>Critical Care Medicine, Anesthesiology</td>
+                        <td>20+ Years</td>
+                        <td>Tata Memorial Hospital (TMH) (Consultant)</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-24177000</td>
+                        <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">30</td>
+                        <td><strong>Dr. Deepak Tempe</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia (Veteran Figure)</td>
+                        <td>40+ Years</td>
+                        <td>Formerly Dean, G.B. Pant Hospital</td>
+                        <td>Delhi</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Deepak Tempe"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">31</td>
+                        <td><strong>Dr. B Radhakrishnan</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>25+ Years</td>
+                        <td>Apollo Hospitals, Greams Road (HOD)</td>
+                        <td>Chennai</td>
+                        <td class="hospital-phone">1860-500-1066</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">32</td>
+                        <td><strong>Dr. Srinivas M.</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Manipal Hospital, Old Airport Road (HOD)</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">1800-102-5555</td>
+                        <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">33</td>
+                        <td><strong>Dr. Mridula Pawar</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Specialist</td>
+                        <td>20+ Years</td>
+                        <td>P.D. Hinduja Hospital & MRC (Senior Consultant)</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-67668181</td>
+                        <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">34</td>
+                        <td><strong>Dr. Kailash Kothari</strong><br><small>MBBS, MD, FIPP</small></td>
+                        <td>Pain Management, Anesthesiology</td>
+                        <td>20+ Years</td>
+                        <td>Consultant roles at various hospitals</td>
+                        <td>Mumbai</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Kailash Kothari"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">35</td>
+                        <td><strong>Dr. Bibhukalyani Das</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Apollo Multispeciality Hospitals</td>
+                        <td>Kolkata</td>
+                        <td class="hospital-phone">+91-33-23203040</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">36</td>
+                        <td><strong>Dr. Madan Mohan Maddali</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles, Hyderabad</td>
+                        <td>Hyderabad</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Madan Mohan Maddali"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">37</td>
+                        <td><strong>Dr. Venkatesh D R</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Apollo Hospitals, Bannerghatta Road</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">+91-80-26304050</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">38</td>
+                        <td><strong>Dr. Ashutosh Singh</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Fortis Escorts Hospital, Okhla (Head)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-47135000</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">39</td>
+                        <td><strong>Dr. Venkat Raman</strong><br><small>MBBS, MD</small></td>
+                        <td>Critical Care Medicine, Anesthesiology</td>
+                        <td>15+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Coimbatore</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Venkat Raman Coimbatore"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">40</td>
+                        <td><strong>Dr. V R C Tandan</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>30+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Jaipur</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr V R C Tandan"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">41</td>
+                        <td><strong>Dr. Jayashree Sood</strong><br><small>MBBS, MD, PhD</small></td>
+                        <td>Anesthesiology, Pain Management</td>
+                        <td>30+ Years</td>
+                        <td>Sir Ganga Ram Hospital (HOD)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-42254000</td>
+                        <td><a href="https://sgrh.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">42</td>
+                        <td><strong>Dr. Ranjith B S</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>15+ Years</td>
+                        <td>Narayana Health City (Consultant)</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">1860-208-0208</td>
+                        <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">43</td>
+                        <td><strong>Dr. Chitra Rekha</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>KIMS Hospitals (Senior Consultant)</td>
+                        <td>Secunderabad</td>
+                        <td class="hospital-phone">+91-40-44885000</td>
+                        <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">44</td>
+                        <td><strong>Dr. Satish M S</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Aster Medcity (Consultant)</td>
+                        <td>Kochi</td>
+                        <td class="hospital-phone">+91-484-6699999</td>
+                        <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">45</td>
+                        <td><strong>Dr. Pankaj Kundra</strong><br><small>MBBS, MD</small></td>
+                        <td>Airway Management Specialist</td>
+                        <td>25+ Years</td>
+                        <td>JIPMER (Professor & Head)</td>
+                        <td>Puducherry</td>
+                        <td class="hospital-phone">+91-413-2296000</td>
+                        <td><a href="https://jipmer.edu.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">46</td>
+                        <td><strong>Dr. Reshma P Kulkarni</strong><br><small>MBBS, MD</small></td>
+                        <td>Pediatric Anesthesia</td>
+                        <td>15+ Years</td>
+                        <td>Wadia Children's Hospital</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-24146965</td>
+                        <td><a href="https://www.wadiahospitals.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">47</td>
+                        <td><strong>Dr. Devalina Mitra</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia Specialist</td>
+                        <td>15+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Kolkata</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Devalina Mitra"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">48</td>
+                        <td><strong>Dr. Suman S Karanth</strong><br><small>MBBS, MD</small></td>
+                        <td>Critical Care Medicine Head</td>
+                        <td>15+ Years</td>
+                        <td>Manipal Hospital, Old Airport Road</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">1800-102-5555</td>
+                        <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">49</td>
+                        <td><strong>Dr. Manish Sharma</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiologist & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Delhi/NCR</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Manish Sharma"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">50</td>
+                        <td><strong>Dr. Indrani Gill</strong><br><small>MBBS, MD</small></td>
+                        <td>Obstetric Anesthesia Specialist</td>
+                        <td>20+ Years</td>
+                        <td>Sir Ganga Ram Hospital (Senior)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-42254000</td>
+                        <td><a href="https://sgrh.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">51</td>
+                        <td><strong>Dr. Anil Kumar Jain</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Max Hospital, Saket</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26515050</td>
+                        <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">52</td>
+                        <td><strong>Dr. Aparna Date</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology, Pain Management</td>
+                        <td>15+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Pune</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Aparna Date"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">53</td>
+                        <td><strong>Dr. Arun Kumar</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Head</td>
+                        <td>25+ Years</td>
+                        <td>Apollo Hospitals, Greams Road</td>
+                        <td>Chennai</td>
+                        <td class="hospital-phone">1860-500-1066</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">54</td>
+                        <td><strong>Dr. Asha Tyagi</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>30+ Years</td>
+                        <td>Formerly Lady Hardinge Medical College</td>
+                        <td>Delhi</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Asha Tyagi"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">55</td>
+                        <td><strong>Dr. Ashish Kumar Sharma</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>15+ Years</td>
+                        <td>Fortis Escorts Heart Institute</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-47135000</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">56</td>
+                        <td><strong>Dr. Ashok Kumar Saxena</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>30+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Lucknow</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Ashok Kumar Saxena"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">57</td>
+                        <td><strong>Dr. Balakrishnan K</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>20+ Years</td>
+                        <td>Apollo Hospitals, Greams Road</td>
+                        <td>Chennai</td>
+                        <td class="hospital-phone">1860-500-1066</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">58</td>
+                        <td><strong>Dr. Chandan Kumar Dey</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Apollo Multispeciality Hospitals</td>
+                        <td>Kolkata</td>
+                        <td class="hospital-phone">+91-33-23203040</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">59</td>
+                        <td><strong>Dr. Chitra Rajeswari S</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Senior Consultant</td>
+                        <td>20+ Years</td>
+                        <td>Apollo Hospitals, Jubilee Hills</td>
+                        <td>Hyderabad</td>
+                        <td class="hospital-phone">1860-500-1066</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">60</td>
+                        <td><strong>Dr. Deb P Sarkar</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia Specialist</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Kolkata</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Deb P Sarkar"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">61</td>
+                        <td><strong>Dr. Deepak Malviya</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia Specialist</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles / Formerly KGMU</td>
+                        <td>Lucknow</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Deepak Malviya"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">62</td>
+                        <td><strong>Dr. Dhanashri Chonkar</strong><br><small>MBBS, MD</small></td>
+                        <td>Obstetric Anesthesia</td>
+                        <td>15+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Mumbai</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Dhanashri Chonkar"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">63</td>
+                        <td><strong>Dr. Dinesh K S</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Manipal Hospital, Old Airport Road</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">1800-102-5555</td>
+                        <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">64</td>
+                        <td><strong>Dr. Gargi Nariani</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Consultant</td>
+                        <td>15+ Years</td>
+                        <td>P.D. Hinduja Hospital & MRC</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-67668181</td>
+                        <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">65</td>
+                        <td><strong>Dr. Gautam Kumar</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Paras HMRI Hospital</td>
+                        <td>Patna</td>
+                        <td class="hospital-phone">+91-612-7107788</td>
+                        <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">66</td>
+                        <td><strong>Dr. Geeta P Parikh</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Specialist</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Ahmedabad</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Geeta P Parikh"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">67</td>
+                        <td><strong>Dr. Hemant Bhagat</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia & Neurocritical Care</td>
+                        <td>20+ Years</td>
+                        <td>PGI Chandigarh (Professor)</td>
+                        <td>Chandigarh</td>
+                        <td class="hospital-phone">+91-172-2747585</td>
+                        <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">68</td>
+                        <td><strong>Dr. Hemlata</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Senior Consultant</td>
+                        <td>20+ Years</td>
+                        <td>Sir Ganga Ram Hospital</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-42254000</td>
+                        <td><a href="https://sgrh.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">69</td>
+                        <td><strong>Dr. J S Bhargava</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Consultant</td>
+                        <td>30+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Jaipur</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr J S Bhargava"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">70</td>
+                        <td><strong>Dr. Jayant Kumar</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Manipal Hospital, Dwarka</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-49674967</td>
+                        <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">71</td>
+                        <td><strong>Dr. Joseph M J</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Lakeshore Hospital</td>
+                        <td>Kochi</td>
+                        <td class="hospital-phone">+91-484-2701032</td>
+                        <td><a href="https://lakeshorehospital.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">72</td>
+                        <td><strong>Dr. Kajal Jain</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Consultant</td>
+                        <td>15+ Years</td>
+                        <td>Medanta - The Medicity</td>
+                        <td>Gurugram</td>
+                        <td class="hospital-phone">+91-124-4141414</td>
+                        <td><a href="https://www.medanta.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">73</td>
+                        <td><strong>Dr. Kanhaiya Kumar Singh</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Patna</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr K K Singh"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">74</td>
+                        <td><strong>Dr. Kavita Sandhu</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Senior Consultant</td>
+                        <td>20+ Years</td>
+                        <td>Fortis Hospital, Mohali</td>
+                        <td>Mohali</td>
+                        <td class="hospital-phone">+91-172-4692222</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">75</td>
+                        <td><strong>Dr. Madhujeet Gupta</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Pain Management</td>
+                        <td>15+ Years</td>
+                        <td>Artemis Hospital</td>
+                        <td>Gurugram</td>
+                        <td class="hospital-phone">+91-124-4588888</td>
+                        <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">76</td>
+                        <td><strong>Dr. Mahesh N</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>15+ Years</td>
+                        <td>Manipal Hospital, Old Airport Road</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">1800-102-5555</td>
+                        <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">77</td>
+                        <td><strong>Dr. Manisha Mishra</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Consultant</td>
+                        <td>15+ Years</td>
+                        <td>Max Hospital, Saket</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26515050</td>
+                        <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">78</td>
+                        <td><strong>Dr. Manju Sharma</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Specialist</td>
+                        <td>25+ Years</td>
+                        <td>Sir Ganga Ram Hospital</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-42254000</td>
+                        <td><a href="https://sgrh.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">79</td>
+                        <td><strong>Dr. Manoj Kamal</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Fortis Escorts Hospital, Jaipur</td>
+                        <td>Jaipur</td>
+                        <td class="hospital-phone">+91-141-2547000</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">80</td>
+                        <td><strong>Dr. Monica Khetarpal</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Consultant</td>
+                        <td>15+ Years</td>
+                        <td>Kokilaben Dhirubhai Ambani Hospital</td>
+                        <td>Mumbai</td>
+                        <td class="hospital-phone">+91-22-42696969</td>
+                        <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">81</td>
+                        <td><strong>Dr. Mukul Chandra Kapoor</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia Expert</td>
+                        <td>30+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Delhi/NCR</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Mukul Kapoor"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">82</td>
+                        <td><strong>Dr. Nandita Deb</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Apollo Multispeciality Hospitals</td>
+                        <td>Kolkata</td>
+                        <td class="hospital-phone">+91-33-23203040</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">83</td>
+                        <td><strong>Dr. Neena Jain</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Expert</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Jaipur</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Neena Jain"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">84</td>
+                        <td><strong>Dr. Nidhi Bhatnagar</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia Professor</td>
+                        <td>20+ Years</td>
+                        <td>AIIMS, New Delhi (Professor)</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26588500</td>
+                        <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">85</td>
+                        <td><strong>Dr. Nikhil Gupta</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Fortis Memorial Research Institute (FMRI)</td>
+                        <td>Gurugram</td>
+                        <td class="hospital-phone">+91-124-4962200</td>
+                        <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">86</td>
+                        <td><strong>Dr. Niraj Kumar</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Paras Hospitals</td>
+                        <td>Gurugram</td>
+                        <td class="hospital-phone">+91-124-4585555</td>
+                        <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">87</td>
+                        <td><strong>Dr. P S Nagaraja</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia & Neurocritical Care</td>
+                        <td>25+ Years</td>
+                        <td>NIMHANS, Bengaluru</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">+91-80-26995000</td>
+                        <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">88</td>
+                        <td><strong>Dr. Partha Dasgupta</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia Specialist</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Kolkata</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Partha Dasgupta"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">89</td>
+                        <td><strong>Dr. Prashant Kumar</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Manipal Hospital, Dwarka</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-49674967</td>
+                        <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">90</td>
+                        <td><strong>Dr. Priyamvadha R</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Specialist</td>
+                        <td>20+ Years</td>
+                        <td>Apollo Hospitals, Greams Road</td>
+                        <td>Chennai</td>
+                        <td class="hospital-phone">1860-500-1066</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">91</td>
+                        <td><strong>Dr. Raj Bahadur Singh</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology Expert</td>
+                        <td>25+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Lucknow</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Raj Bahadur Singh"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">92</td>
+                        <td><strong>Dr. Rajesh M C</strong><br><small>MBBS, MD</small></td>
+                        <td>Cardiac Anesthesia</td>
+                        <td>15+ Years</td>
+                        <td>Narayana Health City</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">1860-208-0208</td>
+                        <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">93</td>
+                        <td><strong>Dr. Rajni Bassi</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>BLK-Max Super Speciality Hospital</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-30403040</td>
+                        <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">94</td>
+                        <td><strong>Dr. Ramachandra K K</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Aster Medcity</td>
+                        <td>Kochi</td>
+                        <td class="hospital-phone">+91-484-6699999</td>
+                        <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">95</td>
+                        <td><strong>Dr. Ranganathan Iyer</strong><br><small>MBBS, MD</small></td>
+                        <td>Neuroanesthesia Expert</td>
+                        <td>20+ Years</td>
+                        <td>Consultant roles</td>
+                        <td>Mumbai</td>
+                        <td>Search Practice</td>
+                        <td>Search "Dr Ranganathan Iyer"</td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">96</td>
+                        <td><strong>Dr. Ravi Raj</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>KIMS Hospitals</td>
+                        <td>Secunderabad</td>
+                        <td class="hospital-phone">+91-40-44885000</td>
+                        <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">97</td>
+                        <td><strong>Dr. Sachin Gupta</strong><br><small>MBBS, MD, FIPP</small></td>
+                        <td>Pain Management Specialist</td>
+                        <td>15+ Years</td>
+                        <td>Max Hospital, Saket</td>
+                        <td>New Delhi</td>
+                        <td class="hospital-phone">+91-11-26515050</td>
+                        <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">98</td>
+                        <td><strong>Dr. Shailaja S T</strong><br><small>MBBS, MD</small></td>
+                        <td>Obstetric Anesthesia Specialist</td>
+                        <td>20+ Years</td>
+                        <td>Cloudnine Group of Hospitals</td>
+                        <td>Bengaluru</td>
+                        <td>Via Website</td>
+                        <td><a href="https://www.cloudninecare.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">99</td>
+                        <td><strong>Dr. Shaji Mathew</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>20+ Years</td>
+                        <td>Lisie Hospital</td>
+                        <td>Kochi</td>
+                        <td class="hospital-phone">+91-484-2755000</td>
+                        <td><a href="https://lisiehospital.org/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                    <tr>
+                        <td class="s-no">100</td>
+                        <td><strong>Dr. Shashikiran H N</strong><br><small>MBBS, MD</small></td>
+                        <td>Anesthesiology & Critical Care</td>
+                        <td>15+ Years</td>
+                        <td>Apollo Hospitals, Bannerghatta Road</td>
+                        <td>Bengaluru</td>
+                        <td class="hospital-phone">+91-80-26304050</td>
+                        <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">VISIT SITE</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="glass-card footer-guidelines" style="margin-top: 50px;">
+            <h2>💡 Medical Team Insights:</h2>
+            <ul>
+                <li><strong>Hospital Reputation:</strong> High-quality anesthesia care is usually provided in institutions with NABH accreditation.</li>
+                <li><strong>Surgeon’s Team:</strong> Experienced surgeons often work with a dedicated team of anesthesiologists for better patient outcomes.</li>
+                <li><strong>Communication:</strong> Your Pre-Anesthesia Check-up (PAC) is the best time to discuss allergy history or past surgery concerns.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

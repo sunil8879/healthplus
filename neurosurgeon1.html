@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Neurosurgeons in India</title>
+    <!-- Import Google Fonts for a modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Palette */
+            --primary-blue: #3498db;
+            --secondary-blue: #2980b9;
+            --accent-green: #2ecc71;
+            --dark-bg: #2c3e50;
+            --light-bg: #ecf0f1;
+            --text-color: #333333;
+            --white: #ffffff;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+            --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            background-color: #f4f6f8;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background-image: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: var(--white);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative circles */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: var(--white);
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-green);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "🧠";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .considerations strong {
+            color: var(--secondary-blue);
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+        }
+
+        th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        tbody tr {
+            background-color: var(--white);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.2);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Styling for the first column (S.No) */
+        td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+
+        /* Styling for the last column */
+        td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Highlight Doctor Name */
+        td:nth-child(2) {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 1.05rem;
+        }
+
+        /* Highlight Specialty */
+        td:nth-child(3) {
+            color: #8e44ad; /* Purple accent */
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-green);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(46, 204, 113, 0.4);
+        }
+
+        a.website-link:hover {
+            background-color: #27ae60;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .title-container { padding-bottom: 60px; }
+            .considerations { width: 90%; margin-top: -30px; }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            th, td {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">喙</span> <!-- Brain Icon Placeholder -->
+        <h1>Top 100 Neurosurgeons in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. <strong>Verify MCh/DNB qualifications & sub-specialty expertise independently.</strong></p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Neurosurgeon:</h2>
+        <ul>
+            <li><strong>Sub-specialty is Crucial:</strong> Ensure surgeon has significant experience in the <strong>specific type</strong> of surgery needed (e.g., complex spine, pituitary tumor, aneurysm, DBS).</li>
+            <li><strong>Diagnosis:</strong> Obtain a clear diagnosis confirmed by imaging (MRI/CT) and neurological assessment first.</li>
+            <li><strong>Team Approach:</strong> Look for hospitals with strong neurosciences departments including neuro-anesthesia, neurology, critical care, radiology.</li>
+            <li><strong>Technology:</strong> Availability of specific technology (robotics, navigation, Gamma Knife/CyberKnife) might be important for certain procedures.</li>
+            <li><strong>Experience & Volume:</strong> Inquire about the surgeon's and hospital's volume for your specific procedure.</li>
+            <li><strong>Second Opinion:</strong> Essential for major brain or spine surgery. Seek opinions from specialists in your condition.</li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. B. K. Misra (MS, MCh - Neurosurgery, FICS)</td>
+                 <td>Vascular Neurosurgery, Skull Base Surgery, Brain Tumors (Gamma Knife)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Head of Dept - Neurosurgery & Gamma Knife)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. V. S. Mehta (MS, MCh - Neurosurgery, FAMS)</td>
+                 <td>Brain Stem Surgery, Brain Tumors, Brachial Plexus Surgery (Padma Shri)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Paras Hospitals (Chairman - Neurosciences) / Formerly Chief, AIIMS Delhi</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. Rana Patir (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Skull Base Surgery, Spine Surgery</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Chairman - Neurosurgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. Alok Gupta (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Skull Base Surgery, Spine Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Artemis Hospital (Director - Neurosurgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. Paresh K. Doshi (MS, MCh - Neurosurgery)</td>
+                 <td>Functional Neurosurgery (DBS for Parkinson's, Epilepsy Surgery), Stereotactic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Director - Neurosurgery / Head - Stereotactic & Functional)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. Suresh Sankla (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Vascular Neurosurgery, Skull Base Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Global Hospitals / Saifee Hospital (Senior Consultant / Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global</a> / <a href="https://www.saifeehospital.com/" target="_blank" class="website-link">Saifee</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. K. Sridhar (MS, MCh - Neurosurgery, FRCS)</td>
+                 <td>Spine Surgery, Neuro-Oncology, Skull Base Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Gleneagles Global Health City (Director - Neuro & Spine Surgery) / Formerly Apollo</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. Aditya Gupta (MBBS, MCh - Neurosurgery, Fellowship)</td>
+                 <td>Brain Tumor Surgery (CyberKnife), Spine Surgery, DBS, Epilepsy Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Artemis Hospital (Director - Neurosurgery & CyberKnife Centre)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. Sandeep Vaishya (MS, MCh - Neurosurgery)</td>
+                 <td>Brachial Plexus Surgery, Spine Surgery, Brain Tumor Surgery (Gamma Knife)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Executive Director) / Formerly Max Saket</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Ravi Gopal Varma (MBBS, MCh - Neurosurgery)</td>
+                 <td>Functional Neurosurgery (DBS, Epilepsy), Stereotactic Radiosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Aster CMI Hospital (Lead Consultant / Chief of Neurosciences) / Formerly Apollo</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.asterhospitals.in/hospitals/aster-cmi-hebbal-bengaluru" target="_blank" class="website-link">Aster CMI Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. Sumit Sinha (MS, MCh - Neurosurgery)</td>
+                 <td>Minimally Invasive Spine Surgery, Brachial Plexus Surgery, Neurotrauma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Paras Hospitals (Director - Spine & Neurosurgery) / Formerly AIIMS Trauma Centre</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Raj Kumar (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery, Hydrocephalus</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor & HOD)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Deepu Banerji (MS, MCh - Neurosurgery)</td>
+                 <td>Skull Base Surgery, Acoustic Neuroma, Brain Tumors</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Senior Consultant) / Formerly Fortis Mulund</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Atul Goel (MS, MCh - Neurosurgery)</td>
+                 <td>Craniovertebral Junction Surgery, Skull Base Surgery, Brain Tumors (Highly innovative)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>KEM Hospital (Professor & HOD) / Consultant at Bombay Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> / KEM Faculty search</td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Alok Ranjan (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery (Minimally Invasive), Brain Tumors</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant) / Formerly Narayana Bengaluru</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Manas Panigrahi (MS, MCh - Neurosurgery)</td>
+                 <td>Epilepsy Surgery, Skull Base Surgery, Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Ari G Chacko (MBBS, MCh - Neurosurgery)</td>
+                 <td>Skull Base Surgery, Pituitary Tumors, Vascular Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Christian Medical College (CMC) (Professor & Head - Unit II)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Sunil K Gupta (MS, MCh - Neurosurgery)</td>
+                 <td>Neurotrauma, Spine Surgery, General Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor & HOD)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Abhaya Kumar (MS, MCh - Neurosurgery)</td>
+                 <td>Epilepsy Surgery, Pediatric Neurosurgery, Brain Tumors</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Vernon Velho (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery (Minimally Invasive), Neurotrauma</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Director & HOD)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Paritosh Pandey (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Skull Base Surgery, Endoscopic Neurosurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. B. Indira Devi (MS, MCh - Neurosurgery)</td>
+                 <td>Neurotrauma, General Neurosurgery</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>NIMHANS (Former Senior Professor & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Siddharth Ghosh (MS, MCh - Neurosurgery, FRCS)</td>
+                 <td>Brain Tumor Surgery, Spine Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Roopesh Kumar V R (MBBS, MCh - Neurosurgery)</td>
+                 <td>Endoscopic Skull Base Surgery, Pituitary Tumors</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Keki Turel (MS, FICS)</td>
+                 <td>Brain Tumor Surgery, General Neurosurgery (Highly experienced veteran)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Bombay Hospital (Consultant Neurosurgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Nitin Dange (MS, MCh - Neurosurgery, Fellow Neurointervention)</td>
+                 <td>Vascular Neurosurgery (Aneurysms, AVMs - Endovascular & Surgical)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Global Hospitals (Senior Consultant - Interventional Neurosurgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Trimurti D Nadkarni (MS, MCh - Neurosurgery)</td>
+                 <td>Pediatric Neurosurgery, Brain Tumors</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Professor & Head, Sion Hospital / Consultant Roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Trimurti Nadkarni Neurosurgeon Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Rajendra Prasad (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, Minimally Invasive Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Sudheer Kumar Tyagi (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, Brain Tumor Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. H V Srinivas (MD, DM - Neurology)</td>
+                 <td>General Neurology & Neurosurgery (Veteran figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Consultant roles / Formerly NIMHANS (Emeritus Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr H V Srinivas Neurologist Bengaluru"</td>
+             </tr>
+              <tr>
+                 <td>31</td>
+                 <td>Dr. Vikas Gupta (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, Endoscopic Brain Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Shalimar Bagh (Director & HOD - Neurosurgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Rajagopalan Krishnan (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery (Complex Deformity, Minimally Invasive), Neuro-oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Director - Neurosurgery & Spine Surgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Harsh Jain (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hiranandani Hospital, Vashi / Formerly Medica Kolkata</td>
+                 <td>Navi Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Dattatraya Muzumdar (MS, MCh - Neurosurgery)</td>
+                 <td>Pediatric Neurosurgery, Epilepsy Surgery, Neuro-oncology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KEM Hospital (Professor) / Consultant at SRCC Children's Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via SRCC/KEM</td>
+                 <td><a href="https://www.narayanahealth.org/hospitals/mumbai/srcc-childrens-hospital" target="_blank" class="website-link">SRCC</a> / KEM faculty search</td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Mazda Turel (MBBS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Skull Base Surgery, Vascular Neurosurgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Wockhardt Hospitals, South Mumbai (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.wockhardthospitals.com/" target="_blank" class="website-link">Wockhardt Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Ganesh Veerabhadraiah (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Cunningham Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. S N Shenoy (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Lakeshore Hospital (Senior Consultant / HOD)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://lakeshorehospital.com/" target="_blank" class="website-link">Lakeshore Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. L N Tripathy (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Praveen MR (MBBS, MCh - Neurosurgery)</td>
+                 <td>Pediatric Neurosurgery, General Neurosurgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Anandh Balasubramaniam (MBBS, MCh - Neurosurgery)</td>
+                 <td>Endoscopic Neurosurgery (Brain & Spine), Skull Base Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Yashoda Hospitals, Secunderabad / Formerly Apollo Chennai</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.yashodahospitals.com/" target="_blank" class="website-link">Yashoda Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>41</td>
+                 <td>Dr. Sanjeev Dua (MS, MCh - Neurosurgery)</td>
+                 <td>Minimally Invasive Spine Surgery, Brain Tumor Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Noida (Director - Neurosurgery)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Chandramouli B A (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Neuro-oncology (Veteran Surgeon)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant roles / Formerly Manipal, Vikram Hospitals (Emeritus Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Chandramouli BA Neurosurgeon Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Nishant Shrivastava (MS, MCh - Neurosurgery)</td>
+                 <td>Vascular Neurosurgery, Brain Tumor Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Dhaval Shukla (MS, MCh - Neurosurgery)</td>
+                 <td>Neurotrauma, Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NIMHANS (Professor - Neurosurgery)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Subodh Raju (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery (Minimally Invasive), Brain Tumors</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Jaydev Panchwagh (MS, MCh - Neurosurgery)</td>
+                 <td>Minimally Invasive Spine Surgery, Endoscopic Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Synapse Brain and Spine Foundation (Director)</td>
+                 <td>Pune</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Synapse Brain Spine Pune"</td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Mukesh Pandey (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Vaishali (Senior Consultant)</td>
+                 <td>Ghaziabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Sachin Kandhari (MS - Ortho, Fellow Spine Surgery)</td>
+                 <td>Spine Surgery (Minimally Invasive, Deformity)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jehangir Hospital / Sahyadri Hospitals (Consultant Neurosurgeon & Spine)</td>
+                 <td>Pune</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.jehangirhospital.com/" target="_blank" class="website-link">Jehangir</a> / <a href="https://sahyadrihospital.com/" target="_blank" class="website-link">Sahyadri</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. R C Mishra (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Paras HMRI Hospital (Director & HOD - Neurosurgery)</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Anand Subramaniam (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. G N K Reddy (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Sunil Kutty (MBBS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Navi Mumbai (Consultant)</td>
+                 <td>Navi Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Anirban Deep Banerjee (MS, MCh - Neurosurgery, Fellow Neurointervention)</td>
+                 <td>Vascular Neurosurgery, Stroke Intervention</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Mathew Abraham (MBBS, MCh - Neurosurgery)</td>
+                 <td>Brachial Plexus Surgery, Peripheral Nerve Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Formerly Lakeshore Hospital</td>
+                 <td>Kochi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mathew Abraham Neurosurgeon Kochi"</td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Sudhir Dubey (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Minimally Invasive Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Neurosurgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. N K Venkataramana (MBBS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Spine Surgery (Veteran Figure)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Brains Super Speciality Hospital (Founder Chairman & Chief Neurosurgeon)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.brainshospital.com/" target="_blank" class="website-link">Brains Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Sudesh Prabhu (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Vikram Karmarkar (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery (Minimally Invasive)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jehangir Hospital (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jehangirhospital.com/" target="_blank" class="website-link">Jehangir Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Harshad Purandare (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Harshad Purandare Neurosurgeon Pune"</td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Ravi Mohan Rao (MS, MCh - Neurosurgery)</td>
+                 <td>Vascular Neurosurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Lilavati Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. B S Sharma (MS, MCh - Neurosurgery)</td>
+                 <td>Acoustic Neuroma, Skull Base Surgery, Brain Tumors</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly HOD, AIIMS / Consultant roles (Paras Hospitals)</td>
+                 <td>Delhi/Gurugram</td>
+                 <td>Via Paras Website / Search</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras</a> / Search "Dr B S Sharma Neurosurgeon Delhi"</td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Arun Saroha (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, Brain Tumor Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Gurgaon & Saket (Director & Head)</td>
+                 <td>Gurugram/Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Sanjeev Gupta (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Noida (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Yashbir Dewan (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Neurotrauma</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Principal Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. H P Singh (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr H P Singh Neurosurgeon Patna"</td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. S S Kale (MS, MCh - Neurosurgery)</td>
+                 <td>Brain Tumor Surgery, Epilepsy Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Neurosurgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. A K Singh (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Uday Andar (MS, MCh - Neurosurgery, FRCS)</td>
+                 <td>Pediatric Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>SRCC Children's Hospital / Breach Candy Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.narayanahealth.org/hospitals/mumbai/srcc-childrens-hospital" target="_blank" class="website-link">SRCC</a> / Breach Candy</td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Prakash Singh (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>70</td>
+                 <td>Dr. Rajendra S V (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Sachin A Borkar (MBBS, MCh - Neurosurgery)</td>
+                 <td>Minimally Invasive Brain & Spine Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>AIIMS (Associate Professor - Neurosurgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. M K Singh (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M K Singh Neurosurgeon Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Sudhir Kumar Srivastava (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>74</td>
+                 <td>Dr. S C Sharma (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S C Sharma Neurosurgeon Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Dilip Kiyawat (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sahyadri Hospitals (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sahyadrihospital.com/" target="_blank" class="website-link">Sahyadri Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Sunil Shah (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunil Shah Neurosurgeon Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>77</td>
+                 <td>Dr. Ashis Pathak (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, Minimally Invasive Brain Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant / HOD)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Manoj Kumar (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Vikas Naik (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Goa (Consultant)</td>
+                 <td>Goa</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>80</td>
+                 <td>Dr. Sharan Srinivasan (MBBS, DNB - Neurosurgery)</td>
+                 <td>Functional Neurosurgery (Stereotactic Radiosurgery, DBS)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jain Institute of Movement Disorders & Stereotactic Neurosurgery (JMD&SN)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search JMD&SN clinic or Bhagwan Mahaveer Jain Hospital</td>
+            </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Bipin S Walia (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery (Minimally Invasive)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Principal Director & Head - Neurosurgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Sachin Rai (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sachin Rai Neurosurgeon Varanasi"</td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Harsh Deora (MBBS, MCh - Neurosurgery)</td>
+                 <td>Minimally Invasive Brain & Spine Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Harsh Deora Neurosurgeon Bengaluru"</td>
+             </tr>
+            <tr>
+                 <td>84</td>
+                 <td>Dr. Amitabh Ray (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery, Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AMRI Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.amrihospitals.in/" target="_blank" class="website-link">AMRI Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Girish Menon (MBBS, MCh - Neurosurgery, FRCS)</td>
+                 <td>Vascular Neurosurgery, Skull Base Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sree Chitra Tirunal Institute (SCTIMST) (Professor)</td>
+                 <td>Trivandrum</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sctimst.ac.in/" target="_blank" class="website-link">SCTIMST</a></td>
+             </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. S S Prabhu (MS, MCh - Neurosurgery)</td>
+                 <td>Neuro-Oncology, Spine Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor & Neurosurgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+             </tr>
+            <tr>
+                 <td>87</td>
+                 <td>Dr. R P Singh (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R P Singh Neurosurgeon Patna"</td>
+            </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. Nirmal Kumar (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Raghu Samala (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Sameer Paltewar (MS, MCh - Neurosurgery)</td>
+                 <td>Pediatric Neurosurgery, Endoscopic Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Nagpur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sameer Paltewar Nagpur"</td>
+             </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Vikram M Shivappagoudar (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. N K Singh (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Allahabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr N K Singh Neurosurgeon Allahabad"</td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Lokendra Singh (MS, MCh - Neurosurgery)</td>
+                 <td>Spine Surgery, General Neurosurgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Prakash Khetan (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Prakash Khetan Neurosurgeon Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Aadil Chagla (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KEM Hospital (Professor & Head) / Consultant at Bombay Hospital</td>
+                 <td>Mumbai</td>
+                 <td>Via Bombay Hospital / KEM</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> / KEM faculty search</td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. G V Satyanarayana (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Sukhdeep Singh Jhawar (MS, MCh - Neurosurgery)</td>
+                 <td>Minimally Invasive & Endoscopic Spine Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. A K Banerji (MS, FAMS)</td>
+                 <td>Neurosurgery (Legendary figure, Pioneer)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Formerly AIIMS / Founder VIMHANS (Emeritus Professor)</td>
+                 <td>Delhi (Legacy)</td>
+                 <td>N/A</td>
+                 <td>Legacy figure</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Sanjay Mongia (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hiranandani Hospital, Vashi (Consultant)</td>
+                 <td>Navi Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Ashutosh Kumar (MS, MCh - Neurosurgery)</td>
+                 <td>General Neurosurgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras HMRI Hospital (Consultant)</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a Neurosurgeon:</h2>
+        <ul>
+            <li><strong>Sub-specialty is Crucial:</strong> Ensure surgeon has significant experience in the <strong>specific type</strong> of surgery needed (e.g., complex spine, pituitary tumor, aneurysm, DBS).</li>
+            <li><strong>Diagnosis:</strong> Obtain a clear diagnosis confirmed by imaging (MRI/CT) and neurological assessment first.</li>
+            <li><strong>Team Approach:</strong> Look for hospitals with strong neurosciences departments including neuro-anesthesia, neurology, critical care, radiology.</li>
+            <li><strong>Technology:</strong> Availability of specific technology (robotics, navigation, Gamma Knife/CyberKnife) might be important for certain procedures.</li>
+            <li><strong>Experience & Volume:</strong> Inquire about the surgeon's and hospital's volume for your specific procedure.</li>
+            <li><strong>Second Opinion:</strong> Essential for major brain or spine surgery. Seek opinions from specialists in your condition.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

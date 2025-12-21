@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Nephrologists (Kidney Specialists) in India</title>
+    <!-- Import Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Palette */
+            --primary-orange: #ff7e5f;
+            --secondary-orange: #feb47b;
+            --accent-blue: #0984e3;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-color: #fcf4f1;
+            --gradient-header: linear-gradient(135deg, #ff9966, #ff5e62);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--gradient-header);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Bubbles */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-blue);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(9, 132, 227, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #fff6f0;
+        }
+
+        td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #d35400;
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(255, 126, 95, 0.2);
+        }
+
+        a.website-link:hover {
+            background-color: var(--accent-blue);
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">溺</span> <!-- Kidney Icon Placeholder (Using DNA icon as a proxy) -->
+        <h1>Top 100 Nephrologists (Kidney Specialists) in India</h1>
+        <p class="subtitle">A representative list of recognized specialists. Not an objective ranking. Verify DM/DNB qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Nephrologist:</h2>
+        <ul>
+            <li><strong>Identify Your Condition:</strong> CKD, AKI, hypertension-related kidney issues, diabetic nephropathy, kidney stones, protein/blood in urine, need for dialysis, or transplant evaluation?</li>
+            <li><strong>Sub-specialty:</strong> Seek focused expertise for transplant, complex glomerular diseases, pediatric kidney issues, or interventional nephrology.</li>
+            <li><strong>Dialysis Needs:</strong> Consider the proximity and reputation of associated dialysis centers.</li>
+            <li><strong>Transplant Program:</strong> Evaluate hospital's transplant program experience and outcomes (involves nephrologists & surgeons).</li>
+            <li><strong>Hospital Facilities:</strong> Ensure adequate diagnostics (labs, imaging, biopsy) and support services.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Hospital Phone Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Vijay Kher (MD, DM - Nephrology, FASN)</td>
+                 <td>Renal Transplantation, General Nephrology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Nephrology & Renal Transplant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. Georgi Abraham (MD, FRCP)</td>
+                 <td>General Nephrology, Peritoneal Dialysis, Transplantation (PD Pioneer)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Madras Medical Mission (Professor / Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://madrasmedicalmission.org/" target="_blank" class="website-link">Madras Medical Mission</a></td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. Shyam Bihari Bansal (MD, DM - Nephrology)</td>
+                 <td>Renal Transplantation, Glomerular Diseases, General Nephrology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Director - Nephrology & Kidney Transplant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. Sanjiv Jasuja (MD, DM - Nephrology)</td>
+                 <td>Clinical Nephrology, Dialysis, Transplantation</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. Alan F Almeida (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Consultant Nephrologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. Sunil Prakash (MD, DM - Nephrology)</td>
+                 <td>Renal Transplantation, Hemodialysis, General Nephrology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. M M Bahadur (MD)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Jaslok Hospital / Bombay Hospital (Consultant Nephrologist)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a> / <a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. A K Bhalla (MD, DM - Nephrology)</td>
+                 <td>Renal Transplantation, Dialysis, General Nephrology</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman & HOD - Nephrology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. Jatin Kothari (MD, DNB - Nephrology)</td>
+                 <td>Renal Transplantation, Interventional Nephrology, Peritoneal Dialysis</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC / Apex Kidney Care (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Clinic Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja</a> / <a href="https://apexkidneycare.com/" target="_blank" class="website-link">Apex Kidney Care</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Rajan Ravichandran (MD, FRCP)</td>
+                 <td>Preventive Nephrology, General Nephrology, Dialysis</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>MIOT International (Director) / Sapiens Health Foundation (Founder)</td>
+                 <td>Chennai</td>
+                 <td>Via MIOT Website / Foundation</td>
+                 <td><a href="https://www.miotinternational.com/" target="_blank" class="website-link">MIOT International</a> / Sapiens</td>
+            </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Vivekanand Jha (MD, DM - Nephrology, PhD, FRCP)</td>
+                 <td>Clinical Nephrology, Research (Global Kidney Health)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>The George Institute India (Exec. Director) / Prof. Oxford / Formerly PGI</td>
+                 <td>Delhi/Global</td>
+                 <td>Via Institute Website</td>
+                 <td><a href="https://www.georgeinstitute.org.in/" target="_blank" class="website-link">George Institute India</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Dinesh Khullar (MD, DM - Nephrology)</td>
+                 <td>Renal Transplantation, Dialysis, Clinical Nephrology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Chairman - Nephrology & Renal Transplant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Sanjay Kumar Agarwal (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, CKD Management</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor & HOD - Nephrology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. V Tamilarasi (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Viswanath Billa (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Bombay Hospital / Apex Kidney Care (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Clinic Website</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> / <a href="https://apexkidneycare.com/" target="_blank" class="website-link">Apex Kidney Care</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Sanjeev Gulati (MD, DM - Nephrology, FASN)</td>
+                 <td>Pediatric Nephrology, General Nephrology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Principal Director) / Formerly SGPGI</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. H Sudarshan Ballal (MD, FRCP)</td>
+                 <td>General Nephrology, Transplantation (Chairman, Manipal Hospitals)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Manipal Hospitals (Chairman - Group)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Lloyd Vincent (MD, DM - Nephrology)</td>
+                 <td>Clinical Nephrology, Transplantation, Critical Care Nephrology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Narayana Health City (Senior Consultant & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Deepak Shankar Ray (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>RN Tagore Institute (RTIICS), Kolkata (Narayana Health) (Sr Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Narayana Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Gokulnath (MD, DM - Nephrology)</td>
+                 <td>Renal Transplantation, General Nephrology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>St. John's Medical College Hospital (Senior Consultant & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.stjohns.in/hospital/" target="_blank" class="website-link">St. John's Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Dr. Jitendra Kumar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Asian Institute of Medical Sciences (Director - Nephrology)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aimsindia.com/" target="_blank" class="website-link">AIMS Faridabad</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Ashwini Kumar (MD, DNB - Nephrology)</td>
+                 <td>Interventional Nephrology, Dialysis Access, Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. P Soundararajan (MD, DM - Nephrology)</td>
+                 <td>Renal Transplantation, Dialysis, General Nephrology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Director - Nephrology)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Haresh Patel (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Formerly Jaslok Hospital / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Haresh Patel Nephrologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Shrirang Bichu (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Critical Care Nephrology, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Bombay Hospital / Jaslok Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a> / <a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. V S Reddy (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Ravi Andrews (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Dilip M Babu (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NU Hospitals (Founder Director / Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nuhospitals.com/" target="_blank" class="website-link">NU Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Umesh Khanna (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis (Key figure Apex Kidney Care)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant at various hospitals / Apex Kidney Care (Founder)</td>
+                 <td>Mumbai</td>
+                 <td>Via Apex Website</td>
+                 <td><a href="https://apexkidneycare.com/" target="_blank" class="website-link">Apex Kidney Care</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Siddini Vittal Rao (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Nizams Institute (NIMS), Hyderabad / Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Siddini Vittal Rao Nephrologist Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Sishir Gang (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Mulund (Director - Nephrology & Transplant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Vinay Malhotra (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. S Padmanabhan (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Malar Hospital (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Narayan Prasad (MD, DM - Nephrology)</td>
+                 <td>Glomerular Diseases, Renal Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Bharat Shah (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Glomerular Diseases</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Global Hospitals, Mumbai / Institute of Renal Sciences (Founder Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Global Website</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Abhay Sadre (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Ruby Hall Clinic (Senior Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Mukut Minz (MS, DNB - Urology, Fellow Transplant Surg)</td>
+                 <td>Renal Transplant Surgery (Works closely with Nephrologists)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fortis Hospital, Mohali (Director - Transplant Surgery) / Formerly PGI</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a> (Note: Surgeon)</td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Manish Jain (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jaslok Hospital and Research Centre (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Valentine Lobo (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>KEM Hospital, Pune (Professor & HOD) / Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search College/Practice</td>
+                 <td>Search "Dr Valentine Lobo Nephrologist Pune"</td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. HK Aggarwal (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor - Nephrology)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Pranaw Kumar Jha (MD, DM - Nephrology)</td>
+                 <td>Interventional Nephrology, Dialysis Access Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket / Formerly Fortis Vasant Kunj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Vijay Gupta (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Hypertension</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant Nephrologist</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vijay Gupta Nephrologist Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Salil Jain (MD, DNB - Nephrology)</td>
+                 <td>Clinical Nephrology, Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Arvind C (MD - Pediatrics, Fellow Ped Nephro)</td>
+                 <td>Pediatric Nephrology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sagar Hospitals / Formerly Manipal Hospital (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Sagar Website / Search</td>
+                 <td><a href="https://www.sagarhospitals.in/" target="_blank" class="website-link">Sagar Hospitals</a> or search current affiliation</td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Aditi Sinha (MD - Pediatrics, DM - Nephrology)</td>
+                 <td>Pediatric Nephrology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>AIIMS (Associate Professor - Pediatric Nephrology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Kishore T A (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Tarun Kumar Saha (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Sharad Sheth (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital / Kokilaben Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati</a> / <a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Suresh Sankar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly Fortis Malar / Consultant Roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Suresh Sankar Nephrologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Vivek Kute (MD, DM - Nephrology)</td>
+                 <td>Renal Transplantation (High Volume)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Institute of Kidney Diseases & Research Centre (IKDRC) (Professor)</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Website</td>
+                 <td><a href="http://www.ikdrc-its.org/" target="_blank" class="website-link">IKDRC</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. P P Varma (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Army R&R Hospital / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P P Varma Nephrologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Abhijit Taraphder (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Alok Jain (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Alok Jain Nephrologist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Anup Kumar (MS, MCh - Urology)</td>
+                 <td>Urology & Renal Transplant (Surgeon, works with Nephro team)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Safdarjung Hospital (Head - Urology & Renal Transplant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Safdarjung Info</td>
+                 <td>Note: Surgeon</td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Arvind Kumar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arvind Kumar Nephrologist Patna"</td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Arpita Roy Choudhury (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Anandapur (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Ashish Sharma (MS, MCh - Urology, Fellow Transplant)</td>
+                 <td>Renal Transplant Surgery (Related Field)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Professor - Renal Transplant Surgery)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a> (Note: Surgeon)</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Ashok Kriplani (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Bombay Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashok Kriplani Nephrologist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Basant Kumar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras HMRI Hospital (Consultant)</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Bhavesh Vora (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Asian Heart Institute / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Via AHI Website / Search</td>
+                 <td><a href="https://asianheartinstitute.org/" target="_blank" class="website-link">Asian Heart Institute</a> or search practice</td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. C M Thiagarajan (MD, DM - Nephrology)</td>
+                 <td>General Nephrology (Veteran figure)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr C M Thiagarajan Chennai"</td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Deepa Jayaram (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Deepak Jain (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Deodatta Chafekar (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jupiter Hospital (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jupiterhospital.com/" target="_blank" class="website-link">Jupiter Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Gaurav Sagar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Critical Care Nephrology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Hardik Shah (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Hardik Shah Nephrologist Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Harsh Kumar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Harsh Kumar Nephrologist Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Himanshu Verma (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Indra Kumar Sharma (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr I K Sharma Nephrologist Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Izidore Savio D'Silva (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kasturba Medical College (KMC) Hospital</td>
+                 <td>Mangalore</td>
+                 <td>Via KMC/Manipal Website</td>
+                 <td><a href="https://manipal.edu/kmc-mangalore.html" target="_blank" class="website-link">KMC Mangalore</a></td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. K P Suresh Kumar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Lisie Hospital (Senior Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://lisiehospital.org/" target="_blank" class="website-link">Lisie Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Krishna Patil (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Krishna Patil Nephrologist Pune"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Madan Mohan B (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Manish D Rathi (MD, DM - Nephrology)</td>
+                 <td>Glomerular Diseases, Clinical Nephrology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Assistant Professor - Nephrology)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Mohan Rajapurkar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis (Key figure MPUH)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Muljibhai Patel Urological Hospital (MPUH) (Senior Consultant)</td>
+                 <td>Nadiad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.mpuh.org/" target="_blank" class="website-link">MPUH</a></td>
+            </tr>
+            <tr>
+                 <td>76</td>
+                 <td>Dr. Mukesh Shete (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>77</td>
+                 <td>Dr. N Chellappa (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr N Chellappa Nephrologist Chennai"</td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Pankaj Kumar Sonar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pankaj Sonar Nephrologist Bhopal"</td>
+            </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Paras Dedhia (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apex Kidney Care / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Via Apex Website</td>
+                 <td><a href="https://apexkidneycare.com/" target="_blank" class="website-link">Apex Kidney Care</a></td>
+            </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Pavitra Kumar (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Prashant C Dheerendra (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Narayana Health City (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+            </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. R K Sharma (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis, Transplantation</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Director / Professor)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+            </tr>
+            <tr>
+                 <td>83</td>
+                 <td>Dr. Rahul Grover (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>84</td>
+                 <td>Dr. Raja Ramchandran (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Glomerular Diseases</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Professor - Nephrology)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+            </tr>
+            <tr>
+                 <td>85</td>
+                 <td>Dr. Rajesh Aggarwal (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Rajkumar K (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>87</td>
+                 <td>Dr. Ravi Kumar J (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. Reetesh Sharma (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jaypee Hospital (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaypeehospital.com/" target="_blank" class="website-link">Jaypee Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>89</td>
+                 <td>Dr. Rudra Prasad (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rudra Prasad Nephrologist Patna"</td>
+            </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Sachin Soni (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Sairam P N (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aster CMI Hospital (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.asterhospitals.in/hospitals/aster-cmi-hebbal-bengaluru" target="_blank" class="website-link">Aster CMI Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Sandeep Bhurke (MD, DNB - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jupiter Hospital, Thane (Consultant)</td>
+                 <td>Thane</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jupiterhospital.com/" target="_blank" class="website-link">Jupiter Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>93</td>
+                 <td>Dr. Satish Rao (MD)</td>
+                 <td>General Nephrology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Satish Rao Nephrologist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>94</td>
+                 <td>Dr. Saurabh Pokhariyal (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Senior Consultant & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Shailesh Gupta (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Transplantation</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Shiv Kumar Singh (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shiv Kumar Singh Nephrologist Varanasi"</td>
+            </tr>
+            <tr>
+                 <td>97</td>
+                 <td>Dr. Siddhartha Bhattacharya (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Siddhartha Bhattacharya Nephrologist Kolkata"</td>
+            </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Sishir Kumar Mandal (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Peerless Hospital (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://peerlesshospital.com/" target="_blank" class="website-link">Peerless Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Sunil Kumar K (MD, DM - Nephrology)</td>
+                 <td>General Nephrology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. T S Harshith (MD, DM - Nephrology)</td>
+                 <td>General Nephrology, Dialysis</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Nephrologist:</h2>
+        <ul>
+            <li><strong>Identify Your Condition:</strong> CKD, AKI, hypertension-related kidney issues, diabetic nephropathy, kidney stones (often co-managed with urologists), protein/blood in urine, electrolyte imbalance, need for dialysis, or kidney transplant evaluation?</li>
+            <li><strong>Sub-specialty:</strong> For transplant, complex glomerular diseases, pediatric kidney issues, or specific procedures, seek a nephrologist with that focus.</li>
+            <li><strong>Dialysis Needs:</strong> If requiring dialysis, consider the proximity and reputation of the dialysis center associated with the nephrologist.</li>
+            <li><strong>Transplant Program:</strong> If considering transplant, evaluate the experience and outcomes of the hospital's transplant program (which involves both nephrologists and transplant surgeons).</li>
+            <li><strong>Hospital Facilities:</strong> Ensure the hospital has adequate diagnostic capabilities (labs, imaging, biopsy) and support services (dietitian, social worker).</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

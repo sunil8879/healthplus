@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus | Elite Hospital Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00b894;
+            --secondary: #0984e3;
+            --dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 184, 148, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(9, 132, 227, 0.15) 0px, transparent 50%);
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            padding: 80px 20px 60px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to right, #00b894, #00d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        #city-links {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        #city-links a {
+            padding: 12px 24px;
+            background: var(--glass);
+            color: #cbd5e1;
+            text-decoration: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #city-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3);
+            border-color: transparent;
+        }
+
+        #hospital-display-area {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .hospital-list {
+            display: none;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        .hospital-list h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .hospital-entry {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: left;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hospital-entry:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .hospital-entry h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary);
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .hospital-entry p {
+            margin: 5px 0;
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .hospital-entry strong { color: #f1f5f9; }
+
+        .verify-badge {
+            float: right;
+            background: rgba(0, 184, 148, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .disclaimer {
+            margin: 100px auto 50px;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(231, 76, 60, 0.05);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            color: #ef4444;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .hospital-entry h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Health Plus Elite</h1>
+    <p>Network of Excellence • Reputable Hospitals in India</p>
+</header>
+
+<nav id="city-links">
+    <a onclick="showHospitals('mumbai-hospitals')">MUMBAI</a>
+    <a onclick="showHospitals('bengaluru-hospitals')">BENGALURU</a>
+    <a onclick="showHospitals('delhi-hospitals')">NEW DELHI</a>
+    <a onclick="showHospitals('hyderabad-hospitals')">HYDERABAD</a>
+    <a onclick="showHospitals('chennai-hospitals')">CHENNAI</a>
+    <a onclick="showHospitals('kolkata-hospitals')">KOLKATA</a>
+    <a onclick="showHospitals('ahmedabad-hospitals')">AHMEDABAD</a>
+    <a onclick="showHospitals('noida-hospitals')">NOIDA</a>
+</nav>
+
+<div id="hospital-display-area">
+
+    <!-- MUMBAI SECTION -->
+    <div id="mumbai-hospitals" class="hospital-list">
+        <h2>Mumbai Institutions</h2>
+        <div class="hospital-entry">
+            <span class="verify-badge">OFFICIAL PARTNER</span>
+            <h3>Bombay Hospital & Medical Research Centre</h3>
+            <p><strong>Address:</strong> 12, Marine Lines, Mumbai - 400020</p>
+            <p><strong>Contact:</strong> +91-22-22067676</p>
+            <p><strong>Email:</strong> info@bombayhospital.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Breach Candy Hospital Trust</h3>
+            <p><strong>Address:</strong> 60 A, Bhulabhai Desai Road, Breach Candy, Mumbai - 400026</p>
+            <p><strong>Contact:</strong> +91-22-23671888 / 23672888</p>
+            <p><strong>Email:</strong> info@breachcandyhospital.org</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Hospital (Mulund)</h3>
+            <p><strong>Address:</strong> Mulund Goregaon Link Road, Mulund West, Mumbai - 400078</p>
+            <p><strong>Contact:</strong> +91-22-43654365 / 67994444</p>
+            <p><strong>Email:</strong> enquiries@fortishealthcare.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Global Hospitals (Parel)</h3>
+            <p><strong>Address:</strong> 35, Dr. E Borges Road, Parel, Mumbai - 400012</p>
+            <p><strong>Contact:</strong> +91-22-67670101</p>
+            <p><strong>Email:</strong> anquiries.mumbai@globalhospitalsindia.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Hiranandani Hospital (Powai)</h3>
+            <p><strong>Address:</strong> Hill Side Avenue, Hiranandani Gardens, Powai, Mumbai - 400076</p>
+            <p><strong>Contact:</strong> +91-22-25763300</p>
+            <p><strong>Email:</strong> wecare@hiranandanihospital.org</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Jaslok Hospital & Research Centre</h3>
+            <p><strong>Address:</strong> 15, Dr. Deshmukh Marg, Pedder Road, Mumbai - 400026</p>
+            <p><strong>Contact:</strong> +91-22-66573333 / 30093333</p>
+            <p><strong>Email:</strong> info@jaslokhospital.net</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>King Edward Memorial (KEM) Hospital</h3>
+            <p><strong>Address:</strong> Acharya Donde Marg, Parel, Mumbai - 400012</p>
+            <p><strong>Contact:</strong> +91-22-24107000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Kokilaben Dhirubhai Ambani Hospital</h3>
+            <p><strong>Address:</strong> Rao Saheb Achutrao Patwardhan Marg, Four Bungalows, Andheri (W), Mumbai - 400053</p>
+            <p><strong>Contact:</strong> +91-22-30666666</p>
+            <p><strong>Email:</strong> contact.kh@relianceada.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Lilavati Hospital & Research Centre</h3>
+            <p><strong>Address:</strong> A-791, Bandra Reclamation, Bandra (W), Mumbai - 400050</p>
+            <p><strong>Contact:</strong> +91-22-26751000 / 26568000</p>
+            <p><strong>Email:</strong> info@lilavatihospital.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Nanavati Max Super Speciality Hospital</h3>
+            <p><strong>Address:</strong> S V Road, Vile Parle West, Mumbai - 400056</p>
+            <p><strong>Contact:</strong> +91-22-68360000</p>
+            <p><strong>Email:</strong> marketing@nanavatihospital.org</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>P. D. Hinduja National Hospital</h3>
+            <p><strong>Address:</strong> Veer Savarkar Marg, Mahim, Mumbai - 400016</p>
+            <p><strong>Contact:</strong> +91-22-24452222</p>
+            <p><strong>Email:</strong> info@hindujahospital.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Saifee Hospital</h3>
+            <p><strong>Address:</strong> 15/17, Maharshi Karve Road, Mumbai - 400004</p>
+            <p><strong>Contact:</strong> +91-22-67570111</p>
+            <p><strong>Email:</strong> write@saifeehospital.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>SL Raheja Hospital</h3>
+            <p><strong>Address:</strong> Raheja Rugnalaya Marg, Mahim West, Mumbai - 400016</p>
+            <p><strong>Contact:</strong> +91-22-66529999</p>
+            <p><strong>Email:</strong> info@rahejahospital.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Tata Memorial Hospital</h3>
+            <p><strong>Address:</strong> Dr. E Borges Road, Parel, Mumbai - 400012</p>
+            <p><strong>Contact:</strong> +91-22-24177000</p>
+            <p><strong>Email:</strong> msoffice@tmc.gov.in</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Wockhardt Hospitals</h3>
+            <p><strong>Address:</strong> 1877, Dr Anand Rao Nair Road, Mumbai Central - 400011</p>
+            <p><strong>Contact:</strong> +91-22-61784444</p>
+        </div>
+    </div>
+
+    <!-- BENGALURU SECTION -->
+    <div id="bengaluru-hospitals" class="hospital-list">
+        <h2>Bengaluru Institutions</h2>
+        <div class="hospital-entry">
+            <h3>Apollo Hospitals (Bannerghatta Road)</h3>
+            <p><strong>Address:</strong> 154/11, Bannerghatta Road, Opp. IIMB, Bengaluru - 560076</p>
+            <p><strong>Contact:</strong> +91-80-26304050</p>
+            <p><strong>Email:</strong> customercare_bangalore@apollohospitals.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Aster CMI Hospital</h3>
+            <p><strong>Address:</strong> #43/2, New Airport Road, Hebbal, Bengaluru - 560092</p>
+            <p><strong>Contact:</strong> +91-80-43420100</p>
+            <p><strong>Email:</strong> info.astercmi@asterhospital.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Bangalore Baptist Hospital</h3>
+            <p><strong>Address:</strong> Bellary Road, Hebbal, Bengaluru - 560024</p>
+            <p><strong>Contact:</strong> +91-80-22024700</p>
+            <p><strong>Email:</strong> info@bbh.org.in</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Cloudnine Hospital (Old Airport Road)</h3>
+            <p><strong>Address:</strong> 115, HAL Airport Rd, Bengaluru - 560017</p>
+            <p><strong>Contact:</strong> 1860 108 9999</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Columbia Asia Hospital (Hebbal)</h3>
+            <p><strong>Address:</strong> Bellary Road, Hebbal, Bengaluru - 560024</p>
+            <p><strong>Contact:</strong> +91-80-41791000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Hospital (Bannerghatta Road)</h3>
+            <p><strong>Address:</strong> 154/9, Bannerghatta Road, Bengaluru - 560076</p>
+            <p><strong>Contact:</strong> +91-80-66214444</p>
+            <p><strong>Email:</strong> care.bng@fortishealthcare.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Hospital (Cunningham Road)</h3>
+            <p><strong>Address:</strong> 14, Cunningham Road, Vasanth Nagar, Bengaluru - 560052</p>
+            <p><strong>Contact:</strong> +91-80-41994444</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Kidwai Memorial Institute of Oncology</h3>
+            <p><strong>Address:</strong> Dr. M.H Marigowda Road, Bengaluru - 560029</p>
+            <p><strong>Contact:</strong> +91-80-26094000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Manipal Hospital (HAL Airport Road)</h3>
+            <p><strong>Address:</strong> 98, HAL Airport Road, Bengaluru - 560017</p>
+            <p><strong>Contact:</strong> 1800 102 5555</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Narayana Health City</h3>
+            <p><strong>Address:</strong> #258/A, Bommasandra Industrial Area, Bengaluru - 560099</p>
+            <p><strong>Contact:</strong> 186 0208 0208</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>NIMHANS</h3>
+            <p><strong>Address:</strong> Hosur Road, Bengaluru - 560029</p>
+            <p><strong>Contact:</strong> +91-80-26995000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sagar Hospitals (Jayanagar)</h3>
+            <p><strong>Address:</strong> Jayanagar, Bengaluru - 560041</p>
+            <p><strong>Contact:</strong> +91-80-42888888</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sakra World Hospital</h3>
+            <p><strong>Address:</strong> Devarabeesanahalli, Varthur Hobli, Bengaluru - 560103</p>
+            <p><strong>Contact:</strong> +91-80-49694969</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>St. John's Medical College Hospital</h3>
+            <p><strong>Address:</strong> Sarjapur Road, Koramangala, Bengaluru - 560034</p>
+            <p><strong>Contact:</strong> +91-80-22065000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Vikram Hospital</h3>
+            <p><strong>Address:</strong> No.71/1, Millers Road, Bengaluru - 560052</p>
+            <p><strong>Contact:</strong> +91-80-45004500</p>
+        </div>
+    </div>
+
+    <!-- NEW DELHI SECTION -->
+    <div id="delhi-hospitals" class="hospital-list">
+        <h2>New Delhi Institutions</h2>
+        <div class="hospital-entry">
+            <h3>AIIMS</h3>
+            <p><strong>Address:</strong> Ansari Nagar, New Delhi - 110029</p>
+            <p><strong>Contact:</strong> +91-11-26588500</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Apollo Hospitals (Indraprastha)</h3>
+            <p><strong>Address:</strong> Delhi Mathura Road, Sarita Vihar, New Delhi - 110076</p>
+            <p><strong>Contact:</strong> +91-11-26925858</p>
+            <p><strong>Email:</strong> info@apollohospitalsdelhi.com</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>BLK-Max Super Speciality Hospital</h3>
+            <p><strong>Address:</strong> Pusa Road, Rajinder Nagar, New Delhi - 110005</p>
+            <p><strong>Contact:</strong> +91-11-30403040</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Escorts Heart Institute</h3>
+            <p><strong>Address:</strong> Okhla Road, New Delhi - 110025</p>
+            <p><strong>Contact:</strong> +91-11-47135000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Memorial Research Institute (FMRI)</h3>
+            <p><strong>Address:</strong> Sector - 44, Gurugram - 122002</p>
+            <p><strong>Contact:</strong> +91-124-4962200</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Holy Family Hospital</h3>
+            <p><strong>Address:</strong> Okhla Road, New Delhi - 110025</p>
+            <p><strong>Contact:</strong> +91-11-26845900</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Institute of Liver and Biliary Sciences (ILBS)</h3>
+            <p><strong>Address:</strong> D-1, Vasant Kunj, New Delhi - 110070</p>
+            <p><strong>Contact:</strong> +91-11-46300000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Max Healthcare Hospital (Saket)</h3>
+            <p><strong>Address:</strong> Saket, New Delhi - 110017</p>
+            <p><strong>Contact:</strong> +91-11-26515050</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Max Smart Super Speciality Hospital</h3>
+            <p><strong>Address:</strong> Mandir Marg, Saket, New Delhi - 110017</p>
+            <p><strong>Contact:</strong> +91-11-71212121</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Medanta - The Medicity</h3>
+            <p><strong>Address:</strong> Sector 38, Gurugram, Haryana - 122001</p>
+            <p><strong>Contact:</strong> +91-124-4141414</p>
+            <p><strong>Email:</strong> info@medanta.org</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Moolchand Hospital</h3>
+            <p><strong>Address:</strong> Lajpat Nagar III, New Delhi - 110024</p>
+            <p><strong>Contact:</strong> +91-11-42000000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Safdarjung Hospital</h3>
+            <p><strong>Address:</strong> Ansari Nagar East, New Delhi - 110029</p>
+            <p><strong>Contact:</strong> +91-11-26165060</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sir Ganga Ram Hospital</h3>
+            <p><strong>Address:</strong> Rajinder Nagar, New Delhi - 110060</p>
+            <p><strong>Contact:</strong> +91-11-25750000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>St. Stephen's Hospital</h3>
+            <p><strong>Address:</strong> Tis Hazari, Delhi - 110054</p>
+            <p><strong>Contact:</strong> +91-11-23966021</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Venkateshwar Hospital</h3>
+            <p><strong>Address:</strong> Dwarka, New Delhi - 110075</p>
+            <p><strong>Contact:</strong> +91-11-48555555</p>
+        </div>
+    </div>
+
+    <!-- HYDERABAD SECTION -->
+    <div id="hyderabad-hospitals" class="hospital-list">
+        <h2>Hyderabad Institutions</h2>
+        <div class="hospital-entry">
+            <h3>Apollo Hospitals (Jubilee Hills)</h3>
+            <p><strong>Address:</strong> Road No 72, Jubilee Hills, Hyderabad - 500033</p>
+            <p><strong>Contact:</strong> 1860 500 1066</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Apollo Hospitals (Secunderabad)</h3>
+            <p><strong>Address:</strong> Secunderabad - 500017</p>
+            <p><strong>Contact:</strong> +91-40-27718888</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Asian Institute of Gastroenterology (AIG)</h3>
+            <p><strong>Address:</strong> Mindspace Rd, Gachibowli, Hyderabad - 500032</p>
+            <p><strong>Contact:</strong> +91-40-42444222</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Basavatarakam Indo American Cancer Hospital</h3>
+            <p><strong>Address:</strong> Road No 14, Banjara Hills, Hyderabad - 500034</p>
+            <p><strong>Contact:</strong> +91-40-23551235</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Care Hospitals</h3>
+            <p><strong>Address:</strong> Road No 1, Banjara Hills, Hyderabad - 500034</p>
+            <p><strong>Contact:</strong> +91-40-30418888</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Continental Hospitals</h3>
+            <p><strong>Address:</strong> Financial District, Nanakramguda, Hyderabad - 500032</p>
+            <p><strong>Contact:</strong> +91-40-67000000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>KIMS Hospitals</h3>
+            <p><strong>Address:</strong> Minister Rd, Secunderabad - 500003</p>
+            <p><strong>Contact:</strong> +91-40-44885000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>LV Prasad Eye Institute</h3>
+            <p><strong>Address:</strong> Banjara Hills, Hyderabad - 500034</p>
+            <p><strong>Contact:</strong> +91-40-30612345</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Medicover Hospitals (HITEC City)</h3>
+            <p><strong>Address:</strong> HITEC City, Hyderabad - 500081</p>
+            <p><strong>Contact:</strong> 040-6833-4455</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>NIMS</h3>
+            <p><strong>Address:</strong> Punjagutta, Hyderabad - 500082</p>
+            <p><strong>Contact:</strong> +91-40-23489000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Rainbow Children's Hospital</h3>
+            <p><strong>Address:</strong> Road No 2, Banjara Hills, Hyderabad - 500034</p>
+            <p><strong>Contact:</strong> +91-40-44665555</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sunshine Hospitals</h3>
+            <p><strong>Address:</strong> Secunderabad - 500003</p>
+            <p><strong>Contact:</strong> +91-40-44550000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Virinchi Hospitals</h3>
+            <p><strong>Address:</strong> Banjara Hills, Hyderabad - 500028</p>
+            <p><strong>Contact:</strong> +91-40-46999999</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Yashoda Hospitals (Somajiguda)</h3>
+            <p><strong>Address:</strong> Raj Bhavan Road, Hyderabad - 500082</p>
+            <p><strong>Contact:</strong> +91-40-45674567</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Yashoda Hospitals (Malakpet)</h3>
+            <p><strong>Address:</strong> Nalgonda X Roads, Hyderabad - 500036</p>
+            <p><strong>Contact:</strong> +91-40-45674567</p>
+        </div>
+    </div>
+
+    <!-- CHENNAI SECTION -->
+    <div id="chennai-hospitals" class="hospital-list">
+        <h2>Chennai Institutions</h2>
+        <div class="hospital-entry">
+            <h3>Apollo Hospitals (Greams Road)</h3>
+            <p><strong>Address:</strong> No 21, Greams Lane, Chennai - 600006</p>
+            <p><strong>Contact:</strong> +91-44-28290200</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Apollo Speciality Hospitals (OMR)</h3>
+            <p><strong>Address:</strong> Semmancheri, Chennai - 600119</p>
+            <p><strong>Contact:</strong> +91-44-33221111</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Billroth Hospitals</h3>
+            <p><strong>Address:</strong> RA Puram, Chennai - 600030</p>
+            <p><strong>Contact:</strong> +91-44-23741111</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Chettinad Super Speciality Hospital</h3>
+            <p><strong>Address:</strong> Kelambakkam, Chennai - 603103</p>
+            <p><strong>Contact:</strong> +91-44-47411000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>CMC Vellore</h3>
+            <p><strong>Address:</strong> IDA Scudder Road, Vellore - 632004</p>
+            <p><strong>Contact:</strong> +91-416-2281000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Malar Hospital</h3>
+            <p><strong>Address:</strong> Adyar, Chennai - 600020</p>
+            <p><strong>Contact:</strong> +91-44-42892222</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Gleneagles Global Health City</h3>
+            <p><strong>Address:</strong> Perumbakkam, Chennai - 600100</p>
+            <p><strong>Contact:</strong> +91-44-44777000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Rajiv Gandhi Govt General Hospital</h3>
+            <p><strong>Address:</strong> Park Town, Chennai - 600003</p>
+            <p><strong>Contact:</strong> +91-44-25305000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Kauvery Hospital (Alwarpet)</h3>
+            <p><strong>Address:</strong> No. 81, TTK Road, Chennai - 600018</p>
+            <p><strong>Contact:</strong> +91-44-40006000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>MIOT International</h3>
+            <p><strong>Address:</strong> Manapakkam, Chennai - 600089</p>
+            <p><strong>Contact:</strong> +91-44-42002288</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sankara Nethralaya</h3>
+            <p><strong>Address:</strong> No 41, College Road, Chennai - 600006</p>
+            <p><strong>Contact:</strong> +91-44-28271616</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>SIMS Hospital</h3>
+            <p><strong>Address:</strong> Vadapalani, Chennai - 600026</p>
+            <p><strong>Contact:</strong> +91-44-20002001</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sri Ramachandra Medical Centre (SRMC)</h3>
+            <p><strong>Address:</strong> Porur, Chennai - 600116</p>
+            <p><strong>Contact:</strong> +91-44-45928500</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Vijaya Hospital</h3>
+            <p><strong>Address:</strong> Vadapalani, Chennai - 600026</p>
+            <p><strong>Contact:</strong> +91-44-66646664</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>VS Hospitals (Cancer Care)</h3>
+            <p><strong>Address:</strong> Chetpet, Chennai - 600031</p>
+            <p><strong>Contact:</strong> +91-44-42002000</p>
+        </div>
+    </div>
+
+    <!-- KOLKATA SECTION -->
+    <div id="kolkata-hospitals" class="hospital-list">
+        <h2>Kolkata Institutions</h2>
+        <div class="hospital-entry">
+            <h3>AMRI Hospitals (Dhakuria)</h3>
+            <p><strong>Address:</strong> Dhakuria, Kolkata - 700029</p>
+            <p><strong>Contact:</strong> +91-33-66800000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>AMRI Hospitals (Mukundapur)</h3>
+            <p><strong>Address:</strong> Purbalok, Kolkata - 700099</p>
+            <p><strong>Contact:</strong> +91-33-66066000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>AMRI Hospitals (Salt Lake)</h3>
+            <p><strong>Address:</strong> Sector III, Kolkata - 700098</p>
+            <p><strong>Contact:</strong> +91-33-66147700</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Apollo Gleneagles Hospitals</h3>
+            <p><strong>Address:</strong> Canal Circular Road, Kolkata - 700054</p>
+            <p><strong>Contact:</strong> +91-33-23203040</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Belle Vue Clinic</h3>
+            <p><strong>Address:</strong> 9, Loudon Street, Kolkata - 700017</p>
+            <p><strong>Contact:</strong> +91-33-22872321</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Calcutta Medical Research Institute (CMRI)</h3>
+            <p><strong>Address:</strong> Alipore, Kolkata - 700027</p>
+            <p><strong>Contact:</strong> +91-33-30903090</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Desun Hospital and Heart Institute</h3>
+            <p><strong>Address:</strong> E M Bypass, Kolkata - 700107</p>
+            <p><strong>Contact:</strong> +91-9013090130</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Hospital (Anandapur)</h3>
+            <p><strong>Address:</strong> E M Bypass Road, Kolkata - 700107</p>
+            <p><strong>Contact:</strong> +91-33-66284444</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Institute of Neurosciences (I-NK)</h3>
+            <p><strong>Address:</strong> A J C Bose Road, Kolkata - 700017</p>
+            <p><strong>Contact:</strong> +91-33-40309999</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Medica Superspecialty Hospital</h3>
+            <p><strong>Address:</strong> Mukundapur, Kolkata - 700099</p>
+            <p><strong>Contact:</strong> +91-33-66520000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Narayana Superspeciality (Howrah)</h3>
+            <p><strong>Address:</strong> Andul Road, Howrah - 711103</p>
+            <p><strong>Contact:</strong> 186 0208 0208</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Peerless Hospital</h3>
+            <p><strong>Address:</strong> E M Bypass, Kolkata - 700094</p>
+            <p><strong>Contact:</strong> +91-33-40111222</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>RTIICS</h3>
+            <p><strong>Address:</strong> Mukundapur, Kolkata - 700099</p>
+            <p><strong>Contact:</strong> 186 0208 0208</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>SSKM Hospital</h3>
+            <p><strong>Address:</strong> A J C Bose Rd, Kolkata - 700020</p>
+            <p><strong>Contact:</strong> +91-33-22041100</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Woodlands Multispeciality Hospital</h3>
+            <p><strong>Address:</strong> Alipore Road, Kolkata - 700027</p>
+            <p><strong>Contact:</strong> +91-33-40337000</p>
+        </div>
+    </div>
+
+    <!-- AHMEDABAD SECTION -->
+    <div id="ahmedabad-hospitals" class="hospital-list">
+        <h2>Ahmedabad Institutions</h2>
+        <div class="hospital-entry">
+            <h3>Apollo Hospitals (Sabarmati)</h3>
+            <p><strong>Address:</strong> Gandhinagar Link Rd, Ahmedabad - 382428</p>
+            <p><strong>Contact:</strong> +91-79-66701800</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Apollo CBCC Cancer Care</h3>
+            <p><strong>Address:</strong> Bhat GIDC Estate, Ahmedabad - 382428</p>
+            <p><strong>Contact:</strong> +91-79-66701888</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>CIMS Hospital (Care Institute)</h3>
+            <p><strong>Address:</strong> Sola, Ahmedabad - 380060</p>
+            <p><strong>Contact:</strong> +91-79-27712771</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Civil Hospital Ahmedabad</h3>
+            <p><strong>Address:</strong> Asarwa, Ahmedabad - 380016</p>
+            <p><strong>Contact:</strong> +91-79-22683721</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>GCS Medical College & Hospital</h3>
+            <p><strong>Address:</strong> Naroda Road, Ahmedabad - 380025</p>
+            <p><strong>Contact:</strong> +91-79-66048000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>HCG Cancer Centre</h3>
+            <p><strong>Address:</strong> Sola Road, Ahmedabad - 380060</p>
+            <p><strong>Contact:</strong> +91-79-40010101</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>KD Hospital</h3>
+            <p><strong>Address:</strong> Vaishno Devi Circle, Ahmedabad - 382421</p>
+            <p><strong>Contact:</strong> +91-79-66770000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Marengo CIMS Hospital</h3>
+            <p><strong>Address:</strong> Sola, Ahmedabad - 380060</p>
+            <p><strong>Contact:</strong> +91-79-27712771</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Narayana Multispeciality Hospital</h3>
+            <p><strong>Address:</strong> Rakhial, Ahmedabad - 380023</p>
+            <p><strong>Contact:</strong> 186 0208 0208</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>SAL Hospital</h3>
+            <p><strong>Address:</strong> Drive-In Road, Ahmedabad - 380054</p>
+            <p><strong>Contact:</strong> +91-79-66115000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Shalby Multi-Specialty Hospitals</h3>
+            <p><strong>Address:</strong> S G Highway, Ahmedabad - 380015</p>
+            <p><strong>Contact:</strong> +91-79-40203000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sheth V.S. General Hospital</h3>
+            <p><strong>Address:</strong> Ellisbridge, Ahmedabad - 380006</p>
+            <p><strong>Contact:</strong> +91-79-26577621</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Sterling Hospital</h3>
+            <p><strong>Address:</strong> Memnagar, Ahmedabad - 380052</p>
+            <p><strong>Contact:</strong> +91-79-40011111</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>UN Mehta Institute of Cardiology</h3>
+            <p><strong>Address:</strong> Civil Hospital Campus, Ahmedabad - 380016</p>
+            <p><strong>Contact:</strong> +91-79-22684281</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Zydus Hospitals</h3>
+            <p><strong>Address:</strong> S G Highway, Ahmedabad - 380054</p>
+            <p><strong>Contact:</strong> +91-79-66190000</p>
+        </div>
+    </div>
+
+    <!-- NOIDA SECTION -->
+    <div id="noida-hospitals" class="hospital-list">
+        <h2>Noida Institutions</h2>
+        <div class="hospital-entry">
+            <h3>Apollo Hospitals</h3>
+            <p><strong>Address:</strong> Sector 26, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-4012000</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Cloudnine Hospital</h3>
+            <p><strong>Address:</strong> Sector 51, Noida - 201301</p>
+            <p><strong>Contact:</strong> 1860 108 9999</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>District Government Hospital (GIMS)</h3>
+            <p><strong>Address:</strong> Greater Noida - 201310</p>
+            <p><strong>Contact:</strong> +91-120-2341738</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Felix Hospital</h3>
+            <p><strong>Address:</strong> Sector 137, Noida - 201305</p>
+            <p><strong>Contact:</strong> +91-8882500500</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Fortis Hospital</h3>
+            <p><strong>Address:</strong> Sector 62, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-4300222</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>IndoGulf Hospital</h3>
+            <p><strong>Address:</strong> Sector 19, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-4752222</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Jaypee Hospital</h3>
+            <p><strong>Address:</strong> Sector-128, Noida - 201304</p>
+            <p><strong>Contact:</strong> +91-120-4122222</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Kailash Hospital & Heart Institute</h3>
+            <p><strong>Address:</strong> Sector 27, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-2444444</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Manas Hospital</h3>
+            <p><strong>Address:</strong> Sector 34, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-4096700</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Max Multi Speciality Centre</h3>
+            <p><strong>Address:</strong> Sector 19, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-6629999</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Metro Hospital & Heart Institute</h3>
+            <p><strong>Address:</strong> Sector 11, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-4366666</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Prakash Hospital</h3>
+            <p><strong>Address:</strong> Sector 33, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-2505555</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Surbhi Hospital</h3>
+            <p><strong>Address:</strong> Sector 110, Noida - 201304</p>
+            <p><strong>Contact:</strong> +91-9810059606</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Tripathi Hospital</h3>
+            <p><strong>Address:</strong> Sector 12, Noida - 201301</p>
+            <p><strong>Contact:</strong> +91-120-2511111</p>
+        </div>
+        <div class="hospital-entry">
+            <h3>Yatharth Super Speciality Hospital</h3>
+            <p><strong>Address:</strong> Greater Noida - 201308</p>
+            <p><strong>Contact:</strong> +91-120-2397777</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="disclaimer">
+    ⚠️ IMPORTANT DISCLAIMER: This directory is provided for educational and informational purposes only. Hospital details, contact numbers, and emails change frequently. BMX10 Health Plus does not officially endorse any specific institution. Please verify all information directly with the hospital's official administration before visiting.
+</div>
+
+<script>
+    function showHospitals(cityId) {
+        document.querySelectorAll('.hospital-list').forEach(function(list) {
+            list.style.display = 'none';
+        });
+        var selectedList = document.getElementById(cityId);
+        if (selectedList) {
+            selectedList.style.display = 'block';
+        }
+    }
+    // Set default view to Mumbai on load
+    window.onload = function() { showHospitals('mumbai-hospitals'); };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Meals by First Letter</title>
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(135deg, #fce38a 0%, #f38181 100%);
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  h2 {
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  input[type="text"] {
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    outline: none;
+    transition: transform 0.3s;
+  }
+
+  input[type="text"]:focus {
+    transform: scale(1.05);
+  }
+
+  button {
+    padding: 15px 30px;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: none;
+    background-color: #333;
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: translateY(-3px) scale(1.05);
+    background-image: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
+    color: #e44d26;
+  }
+
+  #results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .meal-card {
+    border: none;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .meal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  }
+
+  h3 {
+    color: #e44d26;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  p {
+    color: #555;
+    margin: 5px 0;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff4757;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  a:hover {
+    background-color: #ff6b81;
+  }
+</style>
+</head>
+<body>
+
+  <h2>Search Meals by First Letter</h2>
+  <label for="letter">Enter the first letter (A-Z):</label>
+  <input type="text" id="letter" maxlength="1" placeholder="e.g., C" />
+  <button onclick="searchMeals()">Search</button>
+
+  <div id="results"></div>
+
+  <script>
+    async function searchMeals() {
+      const letter = document.getElementById("letter").value.trim().toLowerCase();
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+
+      if (!letter || !/^[a-z]$/.test(letter)) {
+        resultsDiv.innerHTML = "<p style='color: white; font-size: 1.2rem; font-weight: bold;'>Please enter a single letter (A-Z).</p>";
+        return;
+      }
+
+      try {
+        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`);
+        const data = await response.json();
+
+        if (!data.meals) {
+          resultsDiv.innerHTML = `<p style='color: white; font-size: 1.2rem; font-weight: bold;'>No meals found for the letter '${letter.toUpperCase()}'.</p>`;
+          return;
+        }
+
+        data.meals.forEach(meal => {
+          const mealDiv = document.createElement("div");
+          mealDiv.className = "meal-card";
+          mealDiv.innerHTML = `
+            <h3>${meal.strMeal}</h3>
+            <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+            <p><strong>Category:</strong> ${meal.strCategory}</p>
+            <p><strong>Area:</strong> ${meal.strArea}</p>
+            <a href="${meal.strYoutube}" target="_blank">Watch on YouTube</a>
+          `;
+          resultsDiv.appendChild(mealDiv);
+        });
+
+      } catch (error) {
+        resultsDiv.innerHTML = "<p style='color: white; font-size: 1.2rem; font-weight: bold;'>Error fetching meals. Please try again later.</p>";
+        console.error(error);
+      }
+    }
+  </script>
+
+</body>
+</html>

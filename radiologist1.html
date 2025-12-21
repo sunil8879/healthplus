@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Radiologists & Related Specialists in India</title>
+    <!-- Importing Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* X-Ray / Tech Inspired Palette */
+            --primary-blue: #000000;
+            --secondary-blue: #34495e;
+            --accent-cyan: #00cec9;
+            --highlight-neon: #81ecec;
+            --text-dark: #2c3e50;
+            --text-light: #636e72;
+            --bg-color: #f7f9fb;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+            --header-gradient: linear-gradient(135deg, #000000 0%, #434343 100%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative "Scan Lines" */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 206, 201, 0.1) 4px,
+                rgba(0, 206, 201, 0.1) 6px
+            );
+            pointer-events: none;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--accent-cyan);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); text-shadow: 0 0 10px var(--accent-cyan); }
+            50% { transform: scale(1.1); text-shadow: 0 0 20px var(--accent-cyan); }
+            100% { transform: scale(1); text-shadow: 0 0 10px var(--accent-cyan); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-cyan);
+            border-bottom: 5px solid var(--primary-blue);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "☢️";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1em;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--secondary-blue);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 206, 201, 0.15);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #ecf0f1;
+            font-size: 1.1rem;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #00b894;
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-cyan);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 206, 201, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: var(--secondary-blue);
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon"></span> <!-- Camera Icon Placeholder -->
+        <h1>Top 100 Radiologists & Related Specialists in India</h1>
+        <p class="subtitle">A representative list including Diagnostic & Interventional Radiology, Neuroradiology, Nuclear Medicine etc. Not an objective ranking. Verify MD/DNB/DM qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing Radiology Services:</h2>
+        <ul>
+            <li><strong>Sub-specialty Expertise:</strong> Crucial for complex scans (Neuro MRI, Cardiac CT, PET-CT, MSK MRI, Breast Imaging). Ensure the interpreting radiologist has relevant expertise.</li>
+            <li><strong>Interventional Radiology:</strong> A separate procedural field. Choose based on expertise in specific interventions (biopsy, embolization, angioplasty).</li>
+            <li><strong>Technology:</strong> Scanner quality (MRI Tesla strength, CT slice count, Digital X-ray) impacts image detail.</li>
+            <li><strong>Accreditation:</strong> Look for accredited centers (NABH/NABL).</li>
+            <li><strong>Referring Doctor's Input:</strong> Your doctor often recommends trusted centers/radiologists.</li>
+            <li><strong>Patient Interaction:</strong> Primarily for Interventional Radiology procedures; diagnostic reports go to the referring doctor.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Diagnostic Center</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                 <td>1</td>
+                 <td>Dr. Harsh Mahajan (MD, FACR)</td>
+                 <td>General Radiology, MRI, CT (Founder of major diagnostic chain, Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Mahajan Imaging (Founder & Chief Radiologist - Chain) / Consultant</td>
+                 <td>Delhi HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://mahajanimaging.com/" target="_blank" class="website-link">Mahajan Imaging</a></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                 <td>Dr. N. Khandelwal (MD, FICR)</td>
+                 <td>General Radiology, Interventional Radiology (Former Director, PGI)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly PGI Chandigarh (Director & HOD Radiology) / Consultant roles</td>
+                 <td>Chandigarh/Consultant</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr N Khandelwal Radiologist Chandigarh"</td>
+            </tr>
+            <tr>
+                 <td>3</td>
+                 <td>Dr. Rakesh Kumar (MD, DNB - Nuclear Medicine)</td>
+                 <td>Nuclear Medicine (PET-CT, Molecular Imaging)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor & Head - Nuclear Medicine)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a> (Note: Nuclear Medicine)</td>
+            </tr>
+            <tr>
+                 <td>4</td>
+                 <td>Dr. Bhavin Jankharia (MD, FRCR)</td>
+                 <td>Musculoskeletal (MSK) Radiology, Chest Radiology</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Jankharia Imaging / Piramal Swasthya (Director / Consultant) / Formerly President IRIA</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://jankharia.com/" target="_blank" class="website-link">Jankharia Imaging</a></td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                 <td>Dr. Deepak Patkar (MD, DNB - Radiology)</td>
+                 <td>Neuroradiology, Head & Neck Imaging</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Director - Medical Services & Head Radiology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>6</td>
+                 <td>Dr. T B S Buxi (MD)</td>
+                 <td>CT & MRI Imaging, General Radiology</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman - Dept of CT & MRI)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>7</td>
+                 <td>Dr. Mathew Cherian (MD, DM - Neuroradiology)</td>
+                 <td>Interventional Neuroradiology (Stroke, Aneurysms - Pioneer)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Consultant roles / Formerly Lakeshore Hospital</td>
+                 <td>Kochi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mathew Cherian Interventional Neurologist Kochi"</td>
+            </tr>
+            <tr>
+                 <td>8</td>
+                 <td>Dr. Meenakshi Thakur (MD - Radiology)</td>
+                 <td>Onco-Radiology, Breast Imaging, Women's Imaging</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor & Radiologist / Director - Radiology)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+            </tr>
+            <tr>
+                 <td>9</td>
+                 <td>Dr. M S Sandhu (MD)</td>
+                 <td>General Radiology, Interventional Radiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor & Head - Radiodiagnosis & Imaging)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+            </tr>
+            <tr>
+                 <td>10</td>
+                 <td>Dr. Arun Kumar Gupta (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology, Interventional Neuroradiology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly HOD Neuroimaging, AIIMS, Delhi / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Arun Kumar Gupta Neuroradiologist Delhi"</td>
+            </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Shuvro Roy Choudhury (MD, FRCR)</td>
+                 <td>Interventional Radiology (Oncology, Hepatobiliary)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Tata Medical Center (Senior Consultant & Head - Interventional Radiology)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.tmckolkata.com/" target="_blank" class="website-link">Tata Medical Center</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Raju Sharma (MD)</td>
+                 <td>Body Imaging (Abdominal/GI Radiology)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Radiodiagnosis)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Bijal Jankharia (MD, DNB - Radiology)</td>
+                 <td>Breast Imaging, Women's Imaging</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Jankharia Imaging / Piramal Swasthya (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://jankharia.com/" target="_blank" class="website-link">Jankharia Imaging</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Rose Dawn Bharath (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>NIMHANS (Professor & HOD - Neuroimaging & Interventional Radiology)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. S P S Grewal (MD, FRCR)</td>
+                 <td>Interventional Radiology (Vascular & Non-Vascular)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Senior Director - Interventional Radiology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Shyam Kumar N K (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology, Interventional Neuroradiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Christian Medical College (CMC) (Professor & Head - Radiology)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Anjali Prakash (MD)</td>
+                 <td>General Radiology, Body Imaging</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sanjay Gandhi Postgraduate Institute (SGPGI) (Professor & HOD)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgpgims.org.in/" target="_blank" class="website-link">SGPGI</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Paramjeet Singh (MD)</td>
+                 <td>Neuroradiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor - Radiodiagnosis & Imaging)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Ajit Yadav (MD, DNB - Radiology)</td>
+                 <td>Interventional Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Abhishek Mahajan (MD, DNB - Radiology)</td>
+                 <td>Onco-Radiology (Neuro & Head Neck)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor - Radiodiagnosis & IR)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Dr. Viral Shah (MD, DNB - Radiology)</td>
+                 <td>Musculoskeletal (MSK) Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Shailesh Gaikwad (MD)</td>
+                 <td>Neuroradiology, Interventional Neuroradiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Neuroradiology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Ashu Seith Bhalla (MD)</td>
+                 <td>Body Imaging, Trauma Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (JPN Apex Trauma Centre) (Professor - Radiodiagnosis)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Anurag Sharma (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Director - Neuroradiology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Avinash Sharma (MD)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD - Neuro Radiology)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Akshay Baheti (MD, DNB - Radiology)</td>
+                 <td>Abdominal Radiology, Interventional Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Chandrajit Prasad (MD, DM - Neuroradiology)</td>
+                 <td>Neuroimaging & Interventional Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NIMHANS (Professor - Neuroimaging & IR)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Sanjiv Sharma (MD)</td>
+                 <td>Cardiac Imaging (CT/MRI)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Cardiac Radiology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Harini Chintapalli (MD)</td>
+                 <td>General Radiology, Body Imaging</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Sudarshan K L (MD)</td>
+                 <td>General Radiology, Neuroradiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>31</td>
+                 <td>Dr. Amar Mukund (MD, DNB - Radiology, Fellow IR)</td>
+                 <td>Interventional Radiology (Hepatobiliary, Oncology)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Pankaj Mehta (MD, DNB - Radiology, Fellow IR)</td>
+                 <td>Interventional Radiology (Vascular & Non-Vascular)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Global Hospitals / Jaslok Hospital (Senior Consultant IR)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global</a> / <a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Kushaljit Singh Sodhi (MD, DNB - Radiology)</td>
+                 <td>Pediatric Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Professor - Radiodiagnosis & Imaging)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Anju Shukla (MD)</td>
+                 <td>Pediatric Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Christian Medical College (CMC) (Professor - Radiology)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. S B Sharma (MD, DRM - Nuclear Med)</td>
+                 <td>Nuclear Medicine (PET-CT)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant & Head)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> (Note: Nuclear Medicine)</td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Subhash Wangnoo (MD, DRM - Nuclear Med)</td>
+                 <td>Nuclear Medicine (PET-CT, Thyroid Therapy)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> (Note: Nuclear Medicine)</td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Ishita Sen (MD, DNB - Nuclear Med)</td>
+                 <td>Nuclear Medicine (PET-CT, Oncology)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a> (Note: Nuclear Medicine)</td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. C S Pant (MD)</td>
+                 <td>General Radiology (Veteran Figure)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Formerly Maulana Azad Medical College (Director Professor) / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr C S Pant Radiologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Jyoti Kumar (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>NIMHANS (Additional Professor - Neuroimaging & IR)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nimhans.ac.in/" target="_blank" class="website-link">NIMHANS</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Aparna Irodi (MD)</td>
+                 <td>Body Imaging (Abdominal/GI/GU Radiology)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Christian Medical College (CMC) (Professor - Radiology)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Roy Santosham (MD)</td>
+                 <td>Thoracic Radiology (Chest Imaging)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly Professor CMC Vellore / Consultant roles</td>
+                 <td>Chennai</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Roy Santosham Radiologist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Ankit Govil (MD, DNB - Radiology)</td>
+                 <td>Musculoskeletal (MSK) Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Mahajan Imaging / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Via Website / Search</td>
+                 <td><a href="https://mahajanimaging.com/" target="_blank" class="website-link">Mahajan Imaging</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Aditya Daftary (MD, DNB - Radiology)</td>
+                 <td>Musculoskeletal (MSK) Radiology, Sports Imaging</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Formerly Jaslok</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aditya Daftary MSK Radiologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Sanjay Pai K (MD)</td>
+                 <td>General Radiology, Body Imaging</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Millers Road (Senior Consultant & HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Sapna Puppala (MD)</td>
+                 <td>Breast Imaging, Women's Imaging</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Natasha Singh (MD)</td>
+                 <td>General Radiology, Musculoskeletal Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Mahajan Imaging (Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://mahajanimaging.com/" target="_blank" class="website-link">Mahajan Imaging</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Yashwant Kumar (MD, DNB - Radiology, Fellow IR)</td>
+                 <td>Interventional Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Senior Consultant & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Abhinav Singhal (MD, DNB - Nuclear Med)</td>
+                 <td>Nuclear Medicine (PET-CT, Oncology)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a> (Note: Nuclear Medicine)</td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Shilpa Sankhe (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shilpa Sankhe Neuroradiologist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Raju K George (MD)</td>
+                 <td>General Radiology, Body Imaging</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Aster Medcity (Senior Consultant & HOD)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Ankur Shah (MD, DNB - Radiology)</td>
+                 <td>Musculoskeletal (MSK) Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jankharia Imaging</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://jankharia.com/" target="_blank" class="website-link">Jankharia Imaging</a></td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Arvind Kumar (MD)</td>
+                 <td>General Radiology, Ultrasound</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arvind Kumar Radiologist Patna"</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Asutosh Dave (MD)</td>
+                 <td>Neuroradiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Asutosh Dave Neuroradiologist Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Chirag Ahuja (MD)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Associate Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. C S Sharma (MD)</td>
+                 <td>General Radiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr C S Sharma Radiologist Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Dayanand K L (MD)</td>
+                 <td>Interventional Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant IR)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Deb K Roy (MD)</td>
+                 <td>General Radiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Deb K Roy Radiologist Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Deepa Nadkarni (MD)</td>
+                 <td>General Radiology, Women's Imaging</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Deepa Nadkarni Radiologist Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Dhananjaya K L (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. G R K Sharma (MD)</td>
+                 <td>Interventional Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>61</td>
+                 <td>Dr. Gaurav Kumar (MD)</td>
+                 <td>Interventional Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Girish Warawdekar (MD)</td>
+                 <td>Interventional Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Lilavati Hospital / Global Hospitals (Senior Consultant IR)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati</a> / <a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Gyan Chand (MD)</td>
+                 <td>Interventional Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jaypee Hospital (Consultant IR)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaypeehospital.com/" target="_blank" class="website-link">Jaypee Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Hemant A Deshmukh (MD)</td>
+                 <td>General Radiology (Dean of KEM)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Seth GSMC & KEM Hospital (Dean / Professor & Head Radiology)</td>
+                 <td>Mumbai</td>
+                 <td>Via KEM Info</td>
+                 <td>Primarily Admin/Academic</td>
+            </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. J S Rana (MD)</td>
+                 <td>Interventional Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>66</td>
+                 <td>Dr. Jitendra Sharma (MD)</td>
+                 <td>General Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jitendra Sharma Radiologist Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Jyoti Arora (MD)</td>
+                 <td>General Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. K Ramyasri (MD)</td>
+                 <td>General Radiology, Women's Imaging</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. K S Shaji (MD)</td>
+                 <td>General Radiology, Body Imaging</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Aster Medcity (Senior Consultant & HOD)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Kishore Kumar (MD)</td>
+                 <td>General Radiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kishore Kumar Radiologist Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>71</td>
+                 <td>Dr. Kunal Khanna (MD, DNB - Radiology, Fellow IR)</td>
+                 <td>Interventional Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Madan Mohan Gupta (MD)</td>
+                 <td>General Radiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Madan Mohan Gupta Radiologist Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>73</td>
+                 <td>Dr. Mahesh Prakash (MD)</td>
+                 <td>Body Imaging, MSK Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+            </tr>
+            <tr>
+                 <td>74</td>
+                 <td>Dr. Manavalan K (MD)</td>
+                 <td>General Radiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>75</td>
+                 <td>Dr. Manisha Jana (MD)</td>
+                 <td>Pediatric Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>AIIMS (Additional Professor - Radiodiagnosis)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Manoj K Gupta (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>77</td>
+                 <td>Dr. Mohammed Ashfaq (MD)</td>
+                 <td>General Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Mukul Bhargava (MD)</td>
+                 <td>General Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Jaipur (Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. N R K Moorthy (MD)</td>
+                 <td>General Radiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>80</td>
+                 <td>Dr. Nilesh Mehta (MD, DNB - Radiology, Fellow IR)</td>
+                 <td>Interventional Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nilesh Mehta Interventional Radiologist Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>81</td>
+                 <td>Dr. Nishant Aditya (MD, DM - Neuroradiology)</td>
+                 <td>Interventional Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. P K Sharma (MD)</td>
+                 <td>General Radiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr P K Sharma Radiologist Patna"</td>
+            </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Prasanna S (MD, DM - Neuroradiology)</td>
+                 <td>Interventional Neuroradiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>84</td>
+                 <td>Dr. Priya Chudgar (MD)</td>
+                 <td>Women's Imaging, Breast Imaging</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Priya Chudgar Radiologist Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Puneet Bhargava (MD - Univ of Wash)</td>
+                 <td>Abdominal Imaging (US Based - Collaborations)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>University of Washington, USA (Professor)</td>
+                 <td>USA (International Expert)</td>
+                 <td>N/A</td>
+                 <td>UW Medicine Website</td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Pushpinder S Khera (MD)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Associate Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. R C Choudhary (MD)</td>
+                 <td>General Radiology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R C Choudhary Radiologist Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>88</td>
+                 <td>Dr. Raghuram K (MD, DM - Interventional Radiology)</td>
+                 <td>Interventional Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Health City (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+            </tr>
+            <tr>
+                 <td>89</td>
+                 <td>Dr. Rajat Jain (MD, DNB - Radiology, Fellow IR)</td>
+                 <td>Interventional Radiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Rajesh Gothi (MD)</td>
+                 <td>General Radiology, Ultrasound</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajesh Gothi Radiologist Delhi"</td>
+            </tr>
+            <tr>
+                 <td>91</td>
+                 <td>Dr. Rashmi Pyasi (MD, DNB - Radiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>92</td>
+                 <td>Dr. Ravi H V (MD, DM - Neuroradiology)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Sameer Vyas (MD)</td>
+                 <td>Neuroradiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>PGI Chandigarh (Professor)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Sangeet Ghai (MD, FRCR)</td>
+                 <td>Abdominal Radiology (Prostate MRI)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>University of Toronto, Canada (Professor)</td>
+                 <td>Canada (Influential in India)</td>
+                 <td>N/A</td>
+                 <td>UHN/UofT Websites</td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Sanjay Dhawan (MD)</td>
+                 <td>General Radiology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sanjay Dhawan Radiologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Sanjay Sharma (MD, DNB - Radiology)</td>
+                 <td>Interventional Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor - IR)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+            <tr>
+                 <td>97</td>
+                 <td>Dr. Santosh Joseph (MD)</td>
+                 <td>Interventional Radiology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sree Chitra Tirunal Institute (SCTIMST) (Professor)</td>
+                 <td>Trivandrum</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sctimst.ac.in/" target="_blank" class="website-link">SCTIMST</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Sharad Maheshwari (MD)</td>
+                 <td>General Radiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>99</td>
+                 <td>Dr. Shiba Kalyan Biswal (MD - Stanford)</td>
+                 <td>Musculoskeletal (MSK) Radiology (US Based - Collaborations)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Stanford University, USA (Professor)</td>
+                 <td>USA (International Expert)</td>
+                 <td>N/A</td>
+                 <td>Stanford Medicine Website</td>
+            </tr>
+            <tr>
+                 <td>100</td>
+                 <td>Dr. Smriti Hari (MD)</td>
+                 <td>Breast Imaging</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Radiodiagnosis)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing Radiology Services:</h2>
+        <ul>
+            <li><strong>Sub-specialty Expertise:</strong> Crucial for complex scans (Neuro MRI, Cardiac CT, PET-CT, MSK MRI, Breast Imaging). Ensure the interpreting radiologist has relevant expertise.</li>
+            <li><strong>Interventional Radiology:</strong> A separate procedural field. Choose based on expertise in specific interventions (biopsy, embolization, angioplasty).</li>
+            <li><strong>Technology:</strong> Scanner quality impacts image detail.</li>
+            <li><strong>Accreditation:</strong> Look for accredited centers (NABH/NABL).</li>
+            <li><strong>Referring Doctor's Input:</strong> Your doctor often recommends trusted centers/radiologists.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

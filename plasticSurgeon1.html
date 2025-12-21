@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Plastic Surgeons in India</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Cosmetic Surgery Inspired Palette */
+            --primary-pink: #fd79a8;
+            --secondary-pink: #e84393;
+            --accent-teal: #00cec9;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-color: #fce4ec; /* Light pinkish background */
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+            --header-gradient: linear-gradient(135deg, #a29bfe 0%, #ff7675 100%);
+        }
+
+        body {
+            background-color: #fff0f5;
+            background-image: radial-gradient(#ffe4e1 2px, transparent 2px);
+            background-size: 30px 30px;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Stylish Header --- */
+        .title-container {
+            background: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(232, 67, 147, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Shapes */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morph 5s infinite;
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 7s infinite reverse;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-teal);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-pink);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffeaa7;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .considerations strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--secondary-pink);
+            background-image: linear-gradient(135deg, #e84393 0%, #fd79a8 100%);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(232, 67, 147, 0.15);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 700;
+            color: var(--secondary-pink);
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #fff0f6;
+        }
+
+        td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #6c5ce7;
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-teal);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 206, 201, 0.3);
+        }
+
+        a.website-link:hover {
+            background-color: #00b894;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { width: 85%; margin-top: -30px; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">✂️</span> <!-- Scissors Icon Placeholder -->
+        <h1>Top 100 Plastic Surgeons in India</h1>
+        <p class="subtitle">A representative list of recognized specialists (Cosmetic & Reconstructive). Not an objective ranking. Verify MCh/DNB qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Plastic Surgeon:</h2>
+        <ul>
+            <li><strong>Board Certification:</strong> Ensure surgeon holds M.Ch. (Plastic Surgery) or DNB (Plastic Surgery). Membership in IAAPS/APSI is a good sign.</li>
+            <li><strong>Specialty Match:</strong> Choose expertise relevant to your desired procedure (Facial Plastic, Breast Surgery, Body Contouring, Rhinoplasty, Reconstructive).</li>
+            <li><strong>Experience & Photos:</strong> Ask about experience with the specific procedure and review before/after photos of their actual patients.</li>
+            <li><strong>Hospital Accreditation:</strong> Ensure surgery is performed in an accredited facility with proper safety protocols.</li>
+            <li><strong>Consultation:</strong> Discuss goals, realistic expectations, risks, recovery, and costs thoroughly. Ensure comfort and trust.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Debraj Shome (MS, DNB, FACS, Fellow Oculoplasty/Facial Plastic)</td>
+                 <td>Facial Plastic Surgery, Oculoplastic Surgery, Cosmetic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>The Esthetic Clinics (Director - Chain) / Apollo Spectra Hospitals</td>
+                 <td>Mumbai HQ/Multi-city</td>
+                 <td>Via Clinic Website</td>
+                 <td><a href="https://www.theestheticclinic.com/" target="_blank" class="website-link">The Esthetic Clinics</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Sunil Kalda (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery, Hair Transplant, Reconstructive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Kalda Plastic Surgery Centre (Director) / Formerly President, IAAPS</td>
+                 <td>Nagpur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kalda.co.in/" target="_blank" class="website-link">Kalda Centre</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Ashok Gupta (MS, MCh - Plastic Surgery, FICS)</td>
+                 <td>Reconstructive Microsurgery, Cosmetic Surgery</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly Director, Bombay Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashok Gupta Plastic Surgeon Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Aditya Agarwal (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery, Breast Surgery, Body Contouring</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Milind Wagh (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic Surgery (Face, Breast, Body), Non-surgical aesthetics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Hiranandani Hospital / Dr Wagh's Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital/Clinic</td>
+                 <td><a href="https://www.hiranandanihospital.org/" target="_blank" class="website-link">Hiranandani</a> / Search clinic</td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Rajan Tondon (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Plastic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Formerly Fortis Healthcare / Private Practice</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajan Tondon Plastic Surgeon Delhi"</td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Lokesh Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery (Rhinoplasty, Facelift, Breast), Reconstructive Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Prabha Yadav (MS, MCh - Plastic Surgery)</td>
+                 <td>Reconstructive Surgery (Post-Cancer, Trauma), Microvascular Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Tata Memorial Hospital (TMH) (Professor & Head)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://tmc.gov.in/" target="_blank" class="website-link">Tata Memorial Centre</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Anil Behl (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Plastic Surgery</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Senior Director & HOD) / Formerly Army R&R</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Richie Gupta (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Plastic Surgery, Maxillofacial Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Dr. Rakesh Khazanchi (MS, MCh - Plastic Surgery)</td>
+                 <td>Reconstructive Microsurgery, Aesthetic Surgery</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Medanta - The Medicity (Chairman - Plastic Surgery) / Formerly AIIMS</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. S Raja Sabapathy (MS, MCh - Plastic Surgery)</td>
+                 <td>Hand Surgery, Reconstructive Microsurgery (Pioneer - Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Ganga Hospital (Chairman - Dept of Plastic Surgery, Hand & Microsurgery)</td>
+                 <td>Coimbatore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.gangahospital.com/" target="_blank" class="website-link">Ganga Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Sameer Karkhanis (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery (Facial Aesthetics, Breast, Body Contouring)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Centre for Cosmetic & Reconstructive Surgery / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Sameer Karkhanis Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Sunil Richardson (BDS, MDS - OMFS, Fellow Craniofacial)</td>
+                 <td>Maxillofacial Surgery, Craniofacial Surgery, Facial Plastic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Richardson Hospital (Director) / Consultant roles globally</td>
+                 <td>Nagercoil/Global</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.facesurgeon.in/" target="_blank" class="website-link">Richardson Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Vinod Vij (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery, Hair Transplant</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis Hiranandani Vashi / Apollo Spectra Mumbai / Clinique Aesthetica</td>
+                 <td>Mumbai/Navi Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Clinique Aesthetica Dr Vinod Vij Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Vipul Nanda (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic Surgery (Face, Breast, Body), Reconstructive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Artemis Hospital (Senior Director & Head - Cosmetic & Plastic Surgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Sanjay Parashar (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery (Liposuction, Body Contouring), Hair Transplant</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Cocoona Centre for Aesthetic Transformation (Founder)</td>
+                 <td>Dubai/India</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cocoona.ae/" target="_blank" class="website-link">Cocoona Clinic</a> (Check India locations)</td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Mukund Jagannathan (MS, MCh - Plastic Surgery)</td>
+                 <td>Cleft Lip & Palate, Craniofacial Surgery, Aesthetic Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly HOD, LTMMC & Sion Hospital / KJ Somaiya Hospital / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice/Hospital</td>
+                 <td>Search "Dr Mukund Jagannathan Plastic Surgeon Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Satish A Gupte (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Santosh Bhatia (MS, MCh - Plastic Surgery, Fellow Hand)</td>
+                 <td>Hand Surgery, Microsurgery, General Plastic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Karthik Ram (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic Surgery (Face, Breast, Body), Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road / Chennai Plastic Surgery clinic</td>
+                 <td>Chennai</td>
+                 <td>Via Apollo/Clinic Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="http://www.chennaiplasticsurgery.org/" target="_blank" class="website-link">Chennai Plastic Surgery</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Rajeev B Ahuja (MS, MCh - Plastic Surgery)</td>
+                 <td>Burn Reconstruction, General Plastic Surgery</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Formerly HOD Burns & Plastic, Lok Nayak Hospital & MAMC / Consultant Roles</td>
+                 <td>Delhi</td>
+                 <td>Search Current Role</td>
+                 <td>Search "Dr Rajeev Ahuja Plastic Surgeon Delhi"</td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. J S P Bajaj (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Ajaya Kashyap (MD, FACS - USA Board Certified)</td>
+                 <td>Cosmetic Surgery (Breast, Body Contouring, Facial)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>KAS Medical Center / MedSpa (Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.drkashyap.com/" target="_blank" class="website-link">KAS Medical Center</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Anil Kumar Murarka (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>26</td>
+                 <td>Dr. Quazi G Ahmad (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. K S Sivakumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. S M Balaji (BDS, MDS - OMFS, PhD)</td>
+                 <td>Oral & Maxillofacial Surgery, Cleft Lip/Palate (Related field)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Balaji Dental and Craniofacial Hospital (Director)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.smbalaji.com/" target="_blank" class="website-link">Balaji Hospital</a> (Note: Maxillofacial Surgeon)</td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Chetan Satish (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery (Rhinoplasty, Breast, Body Contouring)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>People Tree Hospitals / Private Practice</td>
+                 <td>Bengaluru</td>
+                 <td>Via Hospital/Search</td>
+                 <td><a href="https://peopletreehospitals.com/" target="_blank" class="website-link">People Tree</a> / Search practice</td>
+             </tr>
+              <tr>
+                 <td>30</td>
+                 <td>Dr. Venkat Ramakrishnan (FRCS - Plast, UK Based)</td>
+                 <td>Breast Reconstruction, Aesthetic Breast Surgery (Influential in India via workshops)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant Plastic Surgeon (UK)</td>
+                 <td>UK/Visiting India</td>
+                 <td>Search UK Practice</td>
+                 <td>Search name for UK practice / India workshops</td>
+             </tr>
+              <tr>
+                 <td>31</td>
+                 <td>Dr. Manoj Khanna (MS, MCh - Plastic Surgery)</td>
+                 <td>Hair Transplant, Cosmetic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Enhance Clinics (Founder - Chain) / Consultant roles</td>
+                 <td>Kolkata/Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.enhanceclinics.in/" target="_blank" class="website-link">Enhance Clinics</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. S C Sood (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Shrirang Pandit (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Pandit Clinic / Consultant roles</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.panditclinic.com/" target="_blank" class="website-link">Pandit Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Parag Telang (MS, MCh - Plastic Surgery, Fellow Ear Recon)</td>
+                 <td>Cosmetic Surgery (Facial, Breast), Ear Reconstruction</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Designer Bodyz Clinic (Director) / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.designerbodyz.com/" target="_blank" class="website-link">Designer Bodyz</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Aamod Rao (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery, Body Contouring</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Aamod Rao Plastic Surgeon Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Jayanth Kumar V (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Lakshyajit D Dhami (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery, Hair Transplant</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles (Nanavati Max etc.) / Vasudhan Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Vasudhan Clinic Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Shilpi Bhadani (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic Surgery, Hair Transplant</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>SB Aesthetics Clinic (Director)</td>
+                 <td>Gurugram</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "SB Aesthetics Gurugram"</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Sunil Kumar Gupta (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. K Ramachandran (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>41</td>
+                 <td>Dr. Vinay Jacob (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Plastic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vinay Jacob Plastic Surgeon Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Anup Dhir (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery (Facial Aesthetics, Male Aesthetics)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Spectra Hospitals / Private Practice</td>
+                 <td>New Delhi</td>
+                 <td>Via Apollo Spectra / Search</td>
+                 <td><a href="https://www.apollospectra.com/" target="_blank" class="website-link">Apollo Spectra</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. R K Seth (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R K Seth Plastic Surgeon Delhi"</td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Rashmi Taneja (MS, MCh - Plastic Surgery)</td>
+                 <td>Cleft Lip/Palate, Craniofacial Surgery, Aesthetic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Hospital, Vasant Kunj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Sandip Jain (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Indore</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sandip Jain Plastic Surgeon Indore"</td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Nilesh Satbhai (MS, MCh - Plastic Surgery, Fellow Hand/Micro)</td>
+                 <td>Hand Surgery, Microsurgery, Brachial Plexus Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Global Hospitals / Lilavati Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global</a> / <a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Viral Desai (MS, MCh - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery, Hair Transplant</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>DHI India / CPLSS clinic (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via DHI / Search Clinic</td>
+                 <td><a href="https://www.dhiindia.com/" target="_blank" class="website-link">DHI India</a> or search CPLSS clinic</td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Arindam Sarkar (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Plastic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Arindam Sarkar Plastic Surgeon Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Ashutosh Misra (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Madhukumar M G (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Plastic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>M S Ramaiah Memorial Hospital (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://msrmh.com/" target="_blank" class="website-link">M S Ramaiah Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>51</td>
+                 <td>Dr. Sameer Prabhakar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Rajat Gupta (MS, DNB - Plastic Surgery)</td>
+                 <td>Cosmetic Surgery (Breast, Body Contouring)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Skinnovation Clinics / Rajat Gupta Plastic Surgery (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Clinic Websites</td>
+                 <td><a href="https://skinnovationclinics.com/" target="_blank" class="website-link">Skinnovation</a> / <a href="https://drrajatgupta.com/" target="_blank" class="website-link">Rajat Gupta</a></td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. Deepak Kalia (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. R K Mishra (MS, MCh - Plastic Surgery)</td>
+                 <td>Microsurgery, General Plastic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly KGMU</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R K Mishra Plastic Surgeon Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Manoj Johar (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj & Vaishali (Director)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Avtar Singh Bath (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant / HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Shahin Nooreyezdan (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Anil Tibrewala (MS, MCh - Plastic Surgery)</td>
+                 <td>Hand Surgery, Microsurgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anil Tibrewala Hand Surgeon Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Bheem S Nanda (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Chetan Malhotra (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Shalimar Bagh (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Debabrata Sen (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Debabrata Sen Plastic Surgeon Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Dwarakesh T P (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Ganesh Kumar Manoharan (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Greams Road (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Girish A C (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Hari Mohan (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic Surgery (Veteran Figure)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Formerly KGMU / Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Hari Mohan Plastic Surgeon Lucknow"</td>
+             </tr>
+              <tr>
+                 <td>66</td>
+                 <td>Dr. Hari Singh (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Hari Singh Plastic Surgeon Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Hardik D Dodia (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Jaya Maheshwari (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jaya Maheshwari Plastic Surgeon Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Kapil Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. M S Venkatesh (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr M S Venkatesh Plastic Surgeon Bengaluru"</td>
+             </tr>
+              <tr>
+                 <td>71</td>
+                 <td>Dr. Mahendra Singh (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Mahendra Singh Plastic Surgeon Patna"</td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. Manish Nanda (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Asian Institute of Medical Sciences (Senior Consultant)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aimsindia.com/" target="_blank" class="website-link">AIMS Faridabad</a></td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Navin Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Nitin Sharma (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nitin Sharma Plastic Surgeon Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Pankaj Mehta (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Pankaj Mehta Plastic Surgeon Ahmedabad"</td>
+             </tr>
+              <tr>
+                 <td>76</td>
+                 <td>Dr. Pankaj Tiwari (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Pradeep Sethi (MBBS - Hair Transplant Surgeon)</td>
+                 <td>Hair Transplant (Related Field - Surgeon)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Eugenix Hair Sciences (Co-Founder)</td>
+                 <td>Delhi/Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://eugenix.in/" target="_blank" class="website-link">Eugenix</a> (Note: Hair Transplant Focus)</td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Prashant K Agrawal (MS, MCh - Plastic Surgery)</td>
+                 <td>Reconstructive Microsurgery, Maxillofacial</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Bombay Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bombayhospital.com/" target="_blank" class="website-link">Bombay Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Priyadarshi Ranjan (MS, DNB - Urology)</td>
+                 <td>Urology & Transplant (Related Field)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Senior Consultant)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a> (Note: Primarily Urology)</td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Raghav Mantri (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Jaipur (Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. Rahul Dalal (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jupiter Hospital (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jupiterhospital.com/" target="_blank" class="website-link">Jupiter Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Rajan Verma (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Rajat Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajat Kumar Plastic Surgeon Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Rajesh Rajput (Dermatologist - Hair Transplant Focus)</td>
+                 <td>Hair Transplant (Dermatologist/Surgeon)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles / Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Rajesh Rajput Hair Transplant Mumbai" (Note: Hair Transplant focus)</td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Rakesh Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>86</td>
+                 <td>Dr. Rakesh Sharma (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Ravi Kumar Mahajan (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ludhiana</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ravi Kumar Mahajan Ludhiana"</td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Rishiraj Yadav (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rishiraj Yadav Plastic Surgeon Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. S K Bhatnagar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic Surgery (Veteran)</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S K Bhatnagar Plastic Surgeon Delhi"</td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Sachin Chavre (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aster Medcity (Consultant)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Sameer Kulkarni (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sahyadri Hospitals (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sahyadrihospital.com/" target="_blank" class="website-link">Sahyadri Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Sanjeev Kumar Gupta (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor - Plastic Surgery)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Santosh Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Paras HMRI Hospital (Consultant)</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Saurabh Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Shivakumar K T (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Shobha Chamania (MS, MCh - Plastic Surgery)</td>
+                 <td>Burn Reconstruction</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Choithram Hospital & Research Centre (Director - Burns & Plastic)</td>
+                 <td>Indore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://choithramhospital.org/" target="_blank" class="website-link">Choithram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Srikanth V (MS, MCh - Plastic Surgery)</td>
+                 <td>Aesthetic & Reconstructive Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Surendra Kumar Chawla (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S K Chawla Plastic Surgeon Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Sushil Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Reconstructive Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sushil Kumar Plastic Surgeon Varanasi"</td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Vijay Kumar (MS, MCh - Plastic Surgery)</td>
+                 <td>General Plastic & Cosmetic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Yashoda Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.yashodahospitals.com/" target="_blank" class="website-link">Yashoda Hospitals</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+        <h2>Choosing a Plastic Surgeon:</h2>
+        <ul>
+            <li><strong>Board Certification:</strong> Ensure surgeon holds M.Ch. (Plastic Surgery) or DNB (Plastic Surgery). Membership in IAAPS/APSI is a good sign.</li>
+            <li><strong>Specialty Match:</strong> Choose expertise relevant to your desired procedure (Facial Plastic, Breast Surgery, Body Contouring, Rhinoplasty, Reconstructive).</li>
+            <li><strong>Experience & Photos:</strong> Ask about experience with the specific procedure and review before/after photos of their actual patients.</li>
+            <li><strong>Hospital Accreditation:</strong> Ensure surgery is performed in an accredited facility with proper safety protocols.</li>
+            <li><strong>Consultation:</strong> Discuss goals, realistic expectations, risks, recovery, and costs thoroughly. Ensure comfort and trust.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Gynaecologists & Obstetricians in India</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #ff6b81;
+            --secondary-pink: #ff4757;
+            --accent-purple: #74b9ff;
+            --text-dark: #2f3542;
+            --text-light: #57606f;
+            --bg-gradient: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            --header-gradient: linear-gradient(to right, #ff9ff3, #feca57);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --hover-transform: translateY(-5px);
+        }
+
+        body {
+            background-image: var(--bg-gradient);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            text-align: center;
+            padding: 60px 20px 80px;
+            background: linear-gradient(135deg, #e91e63 0%, #ff6b81 100%);
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--secondary-pink);
+        }
+
+        .considerations h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-pink);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffeaa7;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .considerations li::before {
+            content: "✿";
+            color: var(--secondary-pink);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto 50px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates card effect */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--secondary-pink);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 71, 87, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(1) { /* S.No */
+            font-weight: 700;
+            color: var(--secondary-pink);
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: #fff0f3;
+        }
+
+        td:nth-child(2) { /* Doctor Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #e84393;
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: #74b9ff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(116, 185, 255, 0.4);
+        }
+
+        a.website-link:hover {
+            background-color: #0984e3;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .considerations { margin-top: -20px; width: 85%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">♀</span> <!-- Venus Symbol Placeholder -->
+        <h1>Top 100 Gynaecologists & Obstetricians in India</h1>
+        <p class="subtitle">A representative list of recognized specialists (OB-GYN, IVF, Gynae Oncology). Not an objective ranking. Verify MD/MS/DNB qualifications independently.</p>
+    </div>
+
+     <div class="considerations">
+        <h2>Choosing a Gynaecologist:</h2>
+        <ul>
+            <li><strong>Your Needs:</strong> Routine check-ups, pregnancy care (low/high-risk), infertility treatment, specific surgery (laparoscopic, robotic), or treatment for conditions like PCOS, fibroids, cancer?</li>
+            <li><strong>Sub-specialty:</strong> Consider specialists in High-Risk Obstetrics, Infertility (IVF), Gynae Oncology, Urogynaecology, or Minimally Invasive Surgery if needed.</li>
+            <li><strong>Comfort Level:</strong> Choose a doctor you feel comfortable discussing personal health matters with.</li>
+            <li><strong>Hospital Affiliation:</strong> Consider the hospital's reputation, facilities (NICU, OT), and insurance coverage.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Firuza Parikh (MD, DGO, FCPS)</td>
+                 <td>IVF & Infertility Specialist, Genetics</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Director - Assisted Repro & Genetics)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Hrishikesh Pai (MD, FRCOG)</td>
+                 <td>IVF & Infertility, Gynecological Endoscopy</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Bloom IVF Group (Scientific Director/Consultant) / Lilavati, Fortis etc.</td>
+                 <td>Mumbai/Delhi etc.</td>
+                 <td>Via Bloom IVF/Hospital</td>
+                 <td><a href="https://www.bloomivf.com/" target="_blank" class="website-link">Bloom IVF</a> / Hospital websites</td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Kamini A. Rao (MD, DGO, FRCOG)</td>
+                 <td>Reproductive Medicine, IVF & Infertility, Fetal Medicine (Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Milann - The Fertility Center (Founder & Medical Director - Chain)</td>
+                 <td>Bengaluru HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.milann.co.in/" target="_blank" class="website-link">Milann</a></td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Nandita Palshetkar (MD, FCPS)</td>
+                 <td>IVF & Infertility Specialist, Laparoscopic Surgery</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Bloom IVF Group (Director/Consultant) / Lilavati, Fortis etc.</td>
+                 <td>Mumbai/Delhi etc.</td>
+                 <td>Via Bloom IVF/Hospital</td>
+                 <td><a href="https://www.bloomivf.com/" target="_blank" class="website-link">Bloom IVF</a> / Hospital websites</td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Duru Shah (MD, FRCOG)</td>
+                 <td>Gynecology, Adolescent Health, Menopause Management</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Own Practice (Gynaecworld) / Breach Candy Hospital (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic/Hospital</td>
+                 <td>Search "Dr Duru Shah Gynaecworld Mumbai" / Breach Candy</td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Sabhyata Gupta (MS, DNB, FICOG)</td>
+                 <td>Gynecologic Oncology, Robotic & Laparoscopic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Medanta - The Medicity (Chairperson - Gynae Oncology & Robotic Surgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Urvashi Prasad Jha (MD, MRCOG)</td>
+                 <td>High-Risk Obstetrics, Laparoscopic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Gurugram (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Sonia Naik (MS, DNB)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Gita Ganguly Mukherjee (MD, FRCOG)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals / Woodlands Hospital</td>
+                 <td>Kolkata</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / Woodlands</td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Jaideep Malhotra (MD, FICOG)</td>
+                 <td>Infertility & IVF, Laparoscopic Surgery, Reproductive Endocrinology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Rainbow IVF / Art Fertility Clinics / Malhotra Nursing Home</td>
+                 <td>Agra/Multi-city</td>
+                 <td>Search Clinic/Chain</td>
+                 <td>Search "Rainbow IVF Agra" / <a href="https://www.artfertilityclinics.com/" target="_blank" class="website-link">Art Fertility</a></td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. Narendra Malhotra (MD, FICOG)</td>
+                 <td>Obstetrics & Gynecology, Ultrasound, Fetal Medicine</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Malhotra Nursing & Maternity Home / Rainbow IVF</td>
+                 <td>Agra</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Malhotra Nursing Home Agra"</td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. R K Sharma (MD, FRCOG)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Sushma Sinha (MD, FICOG)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Anuradha Kapur (MD, MRCOG)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Smart Super Speciality Hospital, Saket (Senior Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Jayashree Sundar (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant / HOD)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Pratima Rajan (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Seema Sharma (MD, DNB)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Cloudnine Hospital, Sector 14, Gurugram (Senior Consultant / Director - Academics)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cloudninecare.com/" target="_blank" class="website-link">Cloudnine Care</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Shanthala Thuppanna (MS, DNB)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Malleshwaram (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Uma Ram (MD, DGO, FRCOG)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Seethapathy Clinic & Hospital (Director / Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Uma Ram Seethapathy Clinic Chennai"</td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Rama Joshi (MS, DNB, MCh - Gynae Oncology)</td>
+                 <td>Gynecologic Oncology, Robotic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Principal Director / HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Ranjana Sharma (MD, FRCOG)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant / HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. Manjula Anagani (MD, DGO, FICOG)</td>
+                 <td>Minimally Invasive Gynecology (Laparoscopy), High-Risk Obstetrics (Padma Shri)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Maxcure / Care Hospitals / Own Clinic (Founder/Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Check Hospital/Clinic</td>
+                 <td>Check hospital websites or search "Dr Manjula Anagani Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Rekha Bhandari (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant / Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Veena Bhat (MD, FICOG)</td>
+                 <td>Obstetrics & Gynecology, Gynecologic Laparoscopic Surgeon</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Artemis Hospital (Senior Consultant / Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. B K Rana (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Shalimar Bagh (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Sharda Jain (MD, FICOG)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>40+ Years (Very Senior)</td>
+                 <td>Life Care Centre / Pushpanjali Crosslay Hospital (Director)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Sharda Jain Life Care Centre Delhi"</td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Puneet K. Kochhar (MD)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Rooma Sinha (MD, MRCOG)</td>
+                 <td>Gynecological Endoscopy & Robotic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Consultant / HOD)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Padmapriya Vivek (MD, DGO, DNB)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Gleneagles Global Health City (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Anjali Kumar (MD)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CK Birla Hospital / Artemis Hospital (Director/Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Hospital Websites / Search</td>
+                 <td><a href="https://www.ckbirlahospitals.com/" target="_blank" class="website-link">CK Birla</a> / <a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis</a> or search "Dr Anjali Kumar Gurgaon"</td>
+             </tr>
+              <tr>
+                 <td>31</td>
+                 <td>Dr. Rakhi Gupta (MD, DNB)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis La Femme, Greater Kailash II (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Geetha Balsarkar (MD, DGO, FCPS)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nowrosjee Wadia Maternity Hospital (Professor) / Own Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital / Search Clinic</td>
+                 <td><a href="https://www.wadiahospitals.org/" target="_blank" class="website-link">Wadia Hospital</a> / Search "Dr Geetha Balsarkar Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Sheila Mehra (MD, FRCOG)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Moolchand Hospital (Founder Director, Dept of OBGYN)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://moolchandhealthcare.com/" target="_blank" class="website-link">Moolchand Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Pooja Mehta (MD, DNB)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Paras Hospitals (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Lakshmi Ratna (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Rainbow Hospitals, Banjara Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rainbowhospitals.in/" target="_blank" class="website-link">Rainbow Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Manisha Singh (MS, DNB)</td>
+                 <td>Obstetrics & Gynecology, Infertility, Laparoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Anita Kant (MD, FRCOG)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Asian Institute of Medical Sciences (Senior Director & HOD)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aimsindia.com/" target="_blank" class="website-link">AIMS Faridabad</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Mukesh Gupta (MD, DNB)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Le Nest Hospital / Cloudnine Hospital, Malad/Mumbai (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Cloudnine Website / Search</td>
+                 <td><a href="https://www.cloudninecare.com/" target="_blank" class="website-link">Cloudnine</a> or search "Dr Mukesh Gupta Le Nest"</td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Jayanthi Mala (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Cradle / Apollo Hospitals, Jubilee Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Ameet Patki (MD, DGO)</td>
+                 <td>Reproductive Medicine & Surgery (IVF), Endoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fertility Associates / Patki Hospital (Director/Consultant)</td>
+                 <td>Mumbai/Pune</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Ameet Patki Fertility Associates"</td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Ila Gupta (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Ferticity IVF & Fertility Clinics (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://ferticity.com/" target="_blank" class="website-link">Ferticity</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Abha Majumdar (MD, FRCOG)</td>
+                 <td>IVF & Infertility, Reproductive Medicine</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Director & HOD - Centre of IVF)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Madhu Srivastava (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis La Femme, Greater Kailash II (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Bindu N. (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Aruna Kalra (MD, DNB, MNAMS)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CK Birla Hospital (Director & Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.ckbirlahospitals.com/" target="_blank" class="website-link">CK Birla Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Nupur Gupta (MD, DNB)</td>
+                 <td>Obstetrics & Gynecology, Fetal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & Unit Head)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Anjila Aneja (MD)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis La Femme / Fortis Escorts Hospital, Okhla (Director & HOD)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Evita Fernandez (MD, FRCOG)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Fernandez Hospital (Chairperson - Known for quality maternity care)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fernandezhospital.com/" target="_blank" class="website-link">Fernandez Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Prathima Reddy (MD, MRCOG)</td>
+                 <td>Obstetrics & Gynecology, Fetal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis La Femme / SPARSH Hospital for Women & Children (Director/Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> / <a href="https://www.sparshhospital.com/" target="_blank" class="website-link">SPARSH</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Sarita Sukhija (MS, MCh - Gynae Oncology)</td>
+                 <td>Gynecologic Oncology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Nutan Agarwal (MD, PhD, FICOG)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Nozer Sheriar (MD, FRCOG)</td>
+                 <td>Obstetrics & Gynecology (Advocacy, FIGO role)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Consultant roles at various hospitals (Hinduja, Breach Candy)</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Nozer Sheriar Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. B S Ramamurthy (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Malvika Sabharwal (MD, DGO)</td>
+                 <td>Laparoscopic Gynae Surgery, Urogynaecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Spectra / Jeewan Mala Hospital (Director/Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Search Hospital/Clinic</td>
+                 <td>Search "Dr Malvika Sabharwal Delhi"</td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Sita Rajan (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Columbia Asia (now Manipal) / Private Practice</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice/Hospital</td>
+                 <td>Search "Dr Sita Rajan Gynecologist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. Shobha Gudi (MD, DGO)</td>
+                 <td>Infertility & IVF Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Gudi IVF Centre (Medical Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Gudi IVF Centre Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Jayam Kannan (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Usha Srivastava (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Manju Khemani (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Sushma Kaul (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Madhu Goel (MD)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis La Femme, Greater Kailash II (Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Jyoti Bhaskar (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Cloudnine Hospital / Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Via Cloudnine / Search</td>
+                 <td><a href="https://www.cloudninecare.com/" target="_blank" class="website-link">Cloudnine</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Sangeeta Gomes (MD, DNB)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Motherhood Hospital / Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Via Motherhood Website / Search</td>
+                 <td><a href="https://www.motherhoodindia.com/" target="_blank" class="website-link">Motherhood</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. Sudeshna Ray (MD, DGO, MRCOG)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. R P Soonawala (MD, FRCS)</td>
+                 <td>Obstetrics & Gynecology (Veteran figure)</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Breach Candy Hospital (Emeritus Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Check Hospital Website</td>
+                 <td>Search "Dr R P Soonawala Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Alka Sinha (MS)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. Sunita Chandra (MD)</td>
+                 <td>Infertility & IVF Specialist</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Rajdeep Fertility Centre (Director)</td>
+                 <td>Lucknow</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Rajdeep Fertility Centre Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Sweta Gupta (MD, DNB, MRCOG)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles (e.g., Medicover, formerly Max/Fortis)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Current Affiliation</td>
+                 <td>Search "Dr Sweta Gupta Gynecologist Delhi"</td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Anuradha Sharma (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Saritha Shetty (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Cradle / Apollo Hospitals</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Meenakshi Ahuja (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Fortis La Femme, Greater Kailash II (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. Suhasini Inamdar (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Motherhood Hospital (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.motherhoodindia.com/" target="_blank" class="website-link">Motherhood</a></td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Manju Gupta (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Lakshmi V K (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Yashoda Hospitals, Secunderabad (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.yashodahospitals.com/" target="_blank" class="website-link">Yashoda Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Reena Wani (MD, DNB)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Leela Bhagavan (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Manipal Hospital, Old Airport Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Sonal Panchal (MD, DGO)</td>
+                 <td>Infertility & IVF Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Dr Panchal's fertility Clinic (Director)</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Panchal Fertility Ahmedabad"</td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. M Sreedevi (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>KIMS Hospitals (Senior Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Geeth Monnappa (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology, High-Risk Pregnancy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis La Femme / Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Via Fortis Website / Search</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Neeru Gera (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Gurugram (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. Sumita Prabhakar (MD)</td>
+                 <td>Obstetrics & Gynecology, Laparoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Clinic</td>
+                 <td>Dehradun</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Sumita Prabhakar Dehradun"</td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Shashi Bala (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Patparganj (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Suchitra Pandit (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital / Surya Hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben</a> / Surya</td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Meeta Sharma (MS)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Jaipur (Senior Consultant)</td>
+                 <td>Jaipur</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Pooja Sharma (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+              <tr>
+                 <td>86</td>
+                 <td>Dr. Anu Vij (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Motherhood Hospital (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.motherhoodindia.com/" target="_blank" class="website-link">Motherhood</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. S K Das (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Vimee Bindra (MS, DNB, Fellow Gynae Endoscopy)</td>
+                 <td>Gynecologic Endoscopy & Robotic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Hospitals (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Anjali Chaudhary (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Manisha Kumar (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Lady Hardinge Medical College (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via LHMC Information</td>
+                 <td>Academic/Govt Hospital Role</td>
+             </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Anita Sabharwal (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Rinku Sengupta Dhar (MD, MRCOG)</td>
+                 <td>Obstetrics & Gynecology, Fetal Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Rainbow Hospitals (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rainbowhospitals.in/" target="_blank" class="website-link">Rainbow Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Mukta Kapila (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Director & HOD)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Sadhna Kala (MS)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Apollo Cradle / Moolchand Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Hospital Websites</td>
+                 <td>Apollo Cradle / <a href="https://moolchandhealthcare.com/" target="_blank" class="website-link">Moolchand</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Astha Dayal (MS, DNB)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Anjana Singh (MD)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Madhavi Reddy (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Motherhood Hospital (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.motherhoodindia.com/" target="_blank" class="website-link">Motherhood</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Priya Ganesh Kumar (MD, DGO)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kauvery Hospital (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kauveryhospital.com/" target="_blank" class="website-link">Kauvery Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Seema Jain (MS)</td>
+                 <td>Obstetrics & Gynecology</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Shalimar Bagh (Director - Obstetrics & Gynaecology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Anita Kaul (MD, Fellow Fetal Med UK)</td>
+                 <td>Fetal Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Centre for Fetal Medicine / Indraprastha Apollo Hospitals (Clinical Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Gynaecologist:</h2>
+        <ul>
+            <li><strong>Your Needs:</strong> Routine check-ups, pregnancy care (low/high-risk), infertility treatment, specific surgery (laparoscopic, robotic), or treatment for conditions like PCOS, fibroids, cancer?</li>
+            <li><strong>Sub-specialty:</strong> Consider specialists in High-Risk Obstetrics, Infertility (IVF), Gynae Oncology, Urogynaecology, or Minimally Invasive Surgery if needed.</li>
+            <li><strong>Comfort Level:</strong> Choose a doctor you feel comfortable discussing personal health matters with.</li>
+            <li><strong>Hospital Affiliation:</strong> Consider the hospital's reputation, facilities (NICU, OT), and insurance coverage.</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

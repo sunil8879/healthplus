@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Bariatric & Metabolic Surgeons in India</title>
+    <!-- Importing Google Fonts for a Premium Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant "Fabulous" Palette */
+            --primary-gradient: linear-gradient(135deg, #3B2667 10%, #BC78EC 100%);
+            --header-gradient: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+            --accent-color: #DA22FF; 
+            --text-dark: #2c3e50;
+            --text-light: #546e7a;
+            --bg-color: #f3f4f8;
+            --white: #ffffff;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            --hover-shadow: 0 15px 30px rgba(151, 51, 238, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Hero Header Section --- */
+        .title-container {
+            background-image: var(--primary-gradient);
+            padding: 80px 20px 100px 20px;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: -40px; /* Overlap effect */
+        }
+
+        .title-icon {
+            font-size: 60px;
+            color: rgba(255,255,255,0.2);
+            display: block;
+            margin-bottom: 10px;
+            animation: pulse 3s infinite;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        p.subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: 15px;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: var(--white);
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid #9733EE;
+        }
+
+        .considerations h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: #3B2667;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .considerations li {
+            margin-bottom: 10px;
+            background: #fdfaff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #BC78EC;
+        }
+
+        .considerations strong {
+            color: #9733EE;
+        }
+
+        /* --- Fabulous Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates floating card effect */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-image: var(--header-gradient);
+            color: var(--white);
+            padding: 20px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+            border: none;
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tr {
+            background-color: transparent;
+        }
+
+        /* The Card Row */
+        tbody tr {
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: var(--hover-shadow);
+            z-index: 10;
+        }
+
+        td {
+            padding: 20px;
+            border: none;
+            vertical-align: middle;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            border-top: 1px solid transparent; /* Fix for border collapse */
+        }
+
+        /* Rounded corners for rows */
+        tbody td:first-child {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #BC78EC;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        tbody td:last-child {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Name Column Styling */
+        tbody td:nth-child(2) {
+            color: #3B2667;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+        }
+
+        /* Specialty Column Styling */
+        tbody td:nth-child(3) {
+            color: #e91e63; /* Pinkish red for specialty */
+            font-weight: 600;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-image: var(--header-gradient);
+            background-size: 200% auto;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(151, 51, 238, 0.3);
+            transition: 0.5s;
+        }
+
+        a.website-link:hover {
+            background-position: right center; /* change the direction of the change here */
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Zebra striping logic replacement */
+        tr:nth-child(even) {
+            background-color: var(--white); /* Resetting original zebra */
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.1); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 0.2; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .title-container { padding-bottom: 60px; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 20px;
+            }
+            
+            .considerations ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon">⚔</span> <!-- Crossed Swords/Scalpel Icon Placeholder -->
+        <h1>Top 100 Bariatric & Metabolic Surgeons in India</h1>
+        <p class="subtitle">A representative list of highly regarded specialists. Not an objective ranking. Verify details & qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Bariatric Surgeon:</h2>
+        <ul>
+            <li><strong>Credentials & Experience:</strong> Look for surgeons with specific fellowship training (Bariatric/MAS) and high volume experience. Membership in OSSI or IFSO is a good sign.</li>
+            <li><strong>Hospital Accreditation:</strong> Choose surgeons operating in accredited facilities with good infrastructure (ICU, etc.).</li>
+            <li><strong>Multidisciplinary Team:</strong> Ensure the program offers comprehensive care involving dietitians, psychologists, physicians, etc.</li>
+            <li><strong>Procedures Offered:</strong> Discuss which procedure is suitable (Sleeve, Bypass, etc.) and confirm surgeon's proficiency.</li>
+            <li><strong>Long-Term Follow-up:</strong> Understand the clinic's protocol for lifelong follow-up.</li>
+            <li><strong>Consultation:</strong> Discuss goals, risks, benefits, alternatives, and ensure comfort with the surgeon and team.</li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                <td>1</td>
+                <td>Dr. Muffazal Lakdawala (MS, FICS)</td>
+                <td>Bariatric Surgery, Minimal Access Surgery (MAS), Robotic Surgery (Pioneer & High Volume)</td>
+                <td>20+ Years (Very Senior)</td>
+                <td>Sir H. N. Reliance Foundation Hospital / CODS (Founder), Mumbai</td>
+                <td>Mumbai</td>
+                <td>Via Website / Clinic</td>
+                <td><a href="https://codsindia.com/" target="_blank" class="website-link">CODS</a> / <a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance Hospital</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dr. Pradeep Chowbey (MS, FRCS, FICS)</td>
+                <td>Minimal Access, Metabolic & Bariatric Surgery (Laparoscopy Pioneer - Padma Shri)</td>
+                <td>35+ Years (Very Senior)</td>
+                <td>Max Healthcare (Chairman - MAS, Metabolic & Bariatric Surgery)</td>
+                <td>Saket & Gurgaon</td>
+                <td>Via Website</td>
+                <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Dr. Ramen Goel (MS, FICS)</td>
+                <td>Bariatric Surgery, Metabolic Surgery, Laparoscopic Surgery</td>
+                <td>25+ Years (Very Senior)</td>
+                <td>Wockhardt Hospitals, South Mumbai / Center for Metabolic Surgery (CMS)</td>
+                <td>Mumbai</td>
+                <td>Via Website / Clinic</td>
+                <td><a href="https://www.wockhardthospitals.com/" target="_blank" class="website-link">Wockhardt</a> / Search CMS Mumbai</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dr. Arun Prasad (MS, FRCS)</td>
+                <td>Bariatric Surgery, Robotic Surgery, Thoracoscopic Surgery</td>
+                <td>30+ Years (Senior)</td>
+                <td>Indraprastha Apollo Hospitals (Senior Consultant - Surg Gastro & Bariatric)</td>
+                <td>New Delhi</td>
+                <td>1860-500-1066 (General)</td>
+                <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dr. Shashank Shah (MS, FAIS, FICS)</td>
+                <td>Bariatric Surgery, Laparoscopic Surgery, Diabetes Surgery</td>
+                <td>25+ Years (Senior)</td>
+                <td>Laparo Obeso Centre (Director - LOCSI) / Ruby Hall Clinic</td>
+                <td>Pune</td>
+                <td>Via LOC Website / Hospital</td>
+                <td><a href="http://laparoobeso.com/" target="_blank" class="website-link">Laparo Obeso Centre</a> / <a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Dr. Surendra Ugale (MS, FICS)</td>
+                <td>Bariatric Surgery, Metabolic Surgery, Advanced Laparoscopy</td>
+                <td>30+ Years (Very Senior)</td>
+                <td>Formerly KIMS Hospitals, Hyderabad / Consultant roles</td>
+                <td>Hyderabad/Consultant</td>
+                <td>Search Practice Contact</td>
+                <td>Search "Dr Surendra Ugale Bariatric Hyderabad"</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Dr. Mohit Bhandari (MS, FICS, FRCS)</td>
+                <td>Robotic Bariatric Surgery, Endoscopic Sleeve Gastroplasty</td>
+                <td>15+ Years (Experienced)</td>
+                <td>Mohak Bariatrics & Robotics / Sri Aurobindo Medical College</td>
+                <td>Indore</td>
+                <td>Via Website</td>
+                <td><a href="https://www.mohakbariatrics.com/" target="_blank" class="website-link">Mohak Bariatrics</a></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dr. Atul N C Peters (MS, FNB - MAS)</td>
+                <td>Minimal Access, Bariatric & Metabolic Surgery, Robotic Surgery</td>
+                <td>20+ Years (Senior)</td>
+                <td>Max Smart Super Speciality Hospital, Saket (Director) / Formerly Fortis</td>
+                <td>New Delhi</td>
+                <td>Via Website</td>
+                <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Dr. Abhay Agrawal (MS, DNB - Surg Gastro)</td>
+                <td>Bariatric Surgery, Laparoscopic GI Surgery</td>
+                <td>15+ Years (Experienced)</td>
+                <td>Kokilaben Dhirubhai Ambani Hospital (Senior Consultant)</td>
+                <td>Mumbai</td>
+                <td>Via Website</td>
+                <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dr. Raj Palaniappan (MS, FRCS)</td>
+                <td>Bariatric Surgery, Laparoscopic Surgery</td>
+                <td>20+ Years (Senior)</td>
+                <td>Apollo Hospitals, Chennai / Dr Raj Bariatric & GI Surgery Clinic</td>
+                <td>Chennai</td>
+                <td>Via Website / Clinic</td>
+                <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> / Search clinic</td>
+            </tr>
+            <tr>
+                 <td>11</td>
+                 <td>Dr. Parveen Bhatia (MS, FICS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Chairman - Institute of MAS, Metabolic & Bariatric)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>12</td>
+                 <td>Dr. Deep Goel (MS, DNB, MNAMS)</td>
+                 <td>Bariatric Surgery, Minimal Access & Robotic GI Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>BLK-Max Super Speciality Hospital (Director - MAS, Bariatric & Surg Gastro)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>13</td>
+                 <td>Dr. Manish Motwani (MS, FICS)</td>
+                 <td>Bariatric Surgery, Laparoscopic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aastha Health Care / Consultant at major hospitals</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Aastha Health Care Dr Manish Motwani Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>14</td>
+                 <td>Dr. Rajat Goel (MS, DNB - Gen Surg)</td>
+                 <td>Minimal Access, Metabolic & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Primus Super Speciality Hospital (Senior Consultant & Head) / Formerly PSRI</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.primushospital.com/" target="_blank" class="website-link">Primus Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>15</td>
+                 <td>Dr. Jaydeep H Palep (MS, DNB, FRCS)</td>
+                 <td>Laparoscopic & Robotic GI Surgery, Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Nanavati Max Super Speciality Hospital (Senior Consultant GI Surgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nanavatimaxhospital.org/" target="_blank" class="website-link">Nanavati Max Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>16</td>
+                 <td>Dr. Nandakishore Dukkipati (MS, DNB - Surg Gastro, FACS)</td>
+                 <td>Bariatric Surgery, Surgical Gastroenterology, Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KIMS Hospitals / Livlife Hospitals (Chief / Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website / Clinic</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS</a> / <a href="https://livlifehospitals.com/" target="_blank" class="website-link">Livlife</a></td>
+            </tr>
+            <tr>
+                 <td>17</td>
+                 <td>Dr. Vivek Bindal (MS, FNB - MAS, FACS)</td>
+                 <td>Minimal Access, Bariatric & Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Vaishali & Patparganj (Head - Max Inst. of MAS, Bariatric & Robotic)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>18</td>
+                 <td>Dr. Ashish Vashistha (MS, FICS)</td>
+                 <td>Minimal Access Surgery, Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Hospital, Gurugram (Director & HOD - MAS, Bariatric & General Surgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>19</td>
+                 <td>Dr. Randeep Wadhawan (MS, FICS, FAIS)</td>
+                 <td>Minimal Access GI, Bariatric & Laparoscopic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Manipal Hospital, Dwarka (Director & Head) / Formerly Fortis Vasant Kunj</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>20</td>
+                 <td>Dr. Shivaram H V (MS, FICS, FACS)</td>
+                 <td>Surgical Gastroenterology, Bariatric Surgery, Robotic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Aster CMI Hospital (Chief - GI & Bariatric Surgery) / Formerly Columbia Asia</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.asterhospitals.in/hospitals/aster-cmi-hebbal-bengaluru" target="_blank" class="website-link">Aster CMI Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>21</td>
+                 <td>Dr. Tulip Chamany (MS, DNB)</td>
+                 <td>Bariatric Surgery, Laparoscopic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>22</td>
+                 <td>Dr. Sandeep Sabnis (MS, DNB - Surg Gastro)</td>
+                 <td>Laparoscopic & Robotic GI Surgery, Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jehangir Hospital / Ruby Hall Clinic (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.jehangirhospital.com/" target="_blank" class="website-link">Jehangir</a> / <a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall</a></td>
+            </tr>
+            <tr>
+                 <td>23</td>
+                 <td>Dr. Rajesh Khullar (MS, FICS)</td>
+                 <td>Minimal Access, Bariatric & Robotic Surgery</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Max Healthcare (Saket) (Chairman - MAS, Bariatric & GI Oncology)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>24</td>
+                 <td>Dr. Ramen Dutta (MS)</td>
+                 <td>Laparoscopic & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant at various hospitals</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramen Dutta Laparoscopic Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>25</td>
+                 <td>Dr. Praveen Raj (MS, DNB - Surg Gastro, MRCS)</td>
+                 <td>Bariatric Surgery, Metabolic Surgery, Advanced Laparoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>GEM Hospital & Research Centre (Senior Consultant / HOD)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gemhospital.com/" target="_blank" class="website-link">GEM Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Sarfaraz J Baig (MS, MRCS, FICS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Belle Vue Clinic / CMRI / Fortis Hospital (Director/Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Hospital Websites</td>
+                 <td>Search "Digestive Surgery Clinic Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>27</td>
+                 <td>Dr. G Moinoddin (MS, FICS)</td>
+                 <td>Bariatric Surgery, Laparoscopic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>28</td>
+                 <td>Dr. Anirudh Vij (MS, MCh - GI Surgery)</td>
+                 <td>Liver Transplant & HPB Surgery, Bariatric Surgery (Complex GI)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Consultant - GI, HPB & Liver Transplant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>29</td>
+                 <td>Dr. Amrit Nasta (MS, DNB, MRCS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Dr L H Hiranandani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hiranandanihospital.org/" target="_blank" class="website-link">Hiranandani Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>30</td>
+                 <td>Dr. Ashish Bhanot (MS, FNB - MAS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Spectra Hospitals / Aum Clinics</td>
+                 <td>New Delhi</td>
+                 <td>Via Website / Clinic</td>
+                 <td><a href="https://www.apollospectra.com/" target="_blank" class="website-link">Apollo Spectra</a> / Search Aum Clinics</td>
+            </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. Sunil Sharma (MS, FICS)</td>
+                 <td>Laparoscopic & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles / Formerly Fortis Escorts Jaipur</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sunil Sharma Bariatric Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>32</td>
+                 <td>Dr. Priyadarshan K (MS, MCh - GI Surgery)</td>
+                 <td>Minimal Access, GI & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Lakeshore Hospital (Consultant Surgeon)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://lakeshorehospital.com/" target="_blank" class="website-link">Lakeshore Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>33</td>
+                 <td>Dr. Aditya Kulkarni (MS, DNB - Surg Gastro)</td>
+                 <td>Bariatric Surgery, Laparoscopic GI Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant Surgeon)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>34</td>
+                 <td>Dr. Sukhvinder Singh Saggu (MS, FICS)</td>
+                 <td>Minimal Access, Bariatric & GI Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Spectra Hospitals / C K Birla Hospital</td>
+                 <td>Delhi</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.apollospectra.com/" target="_blank" class="website-link">Apollo Spectra</a> / <a href="https://www.ckbirlahospitals.com/" target="_blank" class="website-link">CK Birla</a></td>
+            </tr>
+            <tr>
+                 <td>35</td>
+                 <td>Dr. Manish Khaitan (MS)</td>
+                 <td>Bariatric & Metabolic Surgery, Advanced Laparoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>KD Hospital / Nobesity Bariatric Center (Director)</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Website / Clinic</td>
+                 <td><a href="https://www.kdhospital.co.in/" target="_blank" class="website-link">KD Hospital</a> / <a href="https://nobesity.in/" target="_blank" class="website-link">Nobesity</a></td>
+            </tr>
+            <tr>
+                 <td>36</td>
+                 <td>Dr. Anish Nagpal (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Associated with Mohak Bariatrics</td>
+                 <td>Indore</td>
+                 <td>Via Mohak Bariatrics / Search</td>
+                 <td><a href="https://www.mohakbariatrics.com/" target="_blank" class="website-link">Mohak Bariatrics</a> or search practice</td>
+            </tr>
+            <tr>
+                 <td>37</td>
+                 <td>Dr. Sharad Sharma (MS, MCh - GI Surgery)</td>
+                 <td>Laparoscopic GI, HPB & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj & Vaishali (Senior Consultant)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>38</td>
+                 <td>Dr. Lokesh Kumar Garg (MS, FNB - MAS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Jayashree Todkar (MS, FICS)</td>
+                 <td>Laparoscopic Bariatric & Metabolic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>JT Obesity Solutions / Consultant at various hospitals</td>
+                 <td>Pune</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "JT Obesity Solutions Pune"</td>
+            </tr>
+            <tr>
+                 <td>40</td>
+                 <td>Dr. Om Tantia (MS, FICS, FRCS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>ILS Hospitals (Senior Consultant / HOD)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.ilshospitals.com/" target="_blank" class="website-link">ILS Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>41</td>
+                 <td>Dr. Amit Bhargava (MS, FICS)</td>
+                 <td>Bariatric Surgery, Minimal Access Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Consultant Surgeon)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. S K Reddy (MS, MCh - GI Surgery)</td>
+                 <td>Surgical Gastroenterology & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CARE Hospitals, Banjara Hills (Senior Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.carehospitals.com/" target="_blank" class="website-link">CARE Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>43</td>
+                 <td>Dr. Deepak Subramanian (MS, MCh - GI Surgery)</td>
+                 <td>Minimal Access GI & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Malar Hospital (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. B Ramana (MS, DNB, FRCS)</td>
+                 <td>Minimal Access GI, HPB & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Maxcure Hospitals / Sunshine Hospitals (Check current primary) (Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Check Hospital Websites</td>
+                 <td>Search "Dr B Ramana Bariatric Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>45</td>
+                 <td>Dr. Ashish Dey (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Anandapur (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. K N Srivastava (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>47</td>
+                 <td>Dr. Mriganka Shekhar Sharma (MS, FNB - MAS)</td>
+                 <td>Minimal Access, GI & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>48</td>
+                 <td>Dr. Paritosh S Gupta (MS, FICS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Senior Consultant)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Kamal Gupta (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kamal Gupta Bariatric Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Tehemton E Udwadia (MS, FRCS, FAMS)</td>
+                 <td>General & Laparoscopic Surgery (Pioneer, 'Father of Laparoscopy in India')</td>
+                 <td>50+ Years (Very Senior)</td>
+                 <td>Breach Candy Hospital / P.D. Hinduja Hospital (Emeritus Consultant - Padma Bhushan)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td>Legacy Figure (General Lap Pioneer)</td>
+            </tr>
+            <tr>
+                 <td>51</td>
+                 <td>Dr. Sudhir Kalhan (MS, FICS)</td>
+                 <td>Minimal Access, GI & Bariatric Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant / Chairman - Institute of MAS)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Manish Baijal (MS, FNB - MAS)</td>
+                 <td>Minimal Access, Bariatric & Robotic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Healthcare (Multiple locations) (Senior Consultant / Director)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Ashish Mittal (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ashish Mittal Bariatric Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. S P Singh (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr S P Singh Bariatric Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Deborshi Sharma (MS, MRCS)</td>
+                 <td>Minimal Access, GI & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Consultant Surgeon)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Digvijay Singh Bedi (MS, FICS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>W Pratiksha Hospital (Director - MAS & Bariatric Surgery)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.pratikshahospitals.com/" target="_blank" class="website-link">W Pratiksha Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Ramen Haloi (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Guwahati</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ramen Haloi Bariatric Guwahati"</td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Neeraj Kumar (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Neeraj Kumar Bariatric Patna"</td>
+            </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Vishal Soni (MS, FIAGES)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Vishal Soni Bariatric Ahmedabad"</td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Parag Patel (MS, FICS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Shalby Hospitals / Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.shalby.org/" target="_blank" class="website-link">Shalby Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>61</td>
+                 <td>Dr. Sandeep Kumar Mandal (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhubaneswar</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sandeep Mandal Bariatric Bhubaneswar"</td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Kapil Kochhar (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Spectra Hospitals / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollospectra.com/" target="_blank" class="website-link">Apollo Spectra</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Mridul Malhotra (MS, FNB - MAS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Asian Institute of Medical Sciences (Consultant Surgeon)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://aimsindia.com/" target="_blank" class="website-link">AIMS Faridabad</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Rajesh Bhojwani (MS, DNB - Surg Gastro)</td>
+                 <td>Minimal Access, GI & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajesh Bhojwani Bariatric Jaipur"</td>
+            </tr>
+            <tr>
+                 <td>65</td>
+                 <td>Dr. Amit Garg (MS, FICS, FALS)</td>
+                 <td>Minimal Access, Bariatric & Robotic Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Clinic</td>
+                 <td>Mohali/Chandigarh</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Amit Garg Bariatric Mohali"</td>
+            </tr>
+            <tr>
+                 <td>66</td>
+                 <td>Dr. Rajat Kumar Gupta (MS, FNB - MAS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajat Kumar Gupta Bariatric Delhi"</td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Tarun Mittal (MS, FICS)</td>
+                 <td>Minimal Access, GI & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Sumit Shah (MS, DNB - Gen Surg, Fellow Bariatric)</td>
+                 <td>Laparoscopic & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Ruby Hall Clinic (Consultant Surgeon)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Neha Shah (MBBS, DNB - Gen Surg, Fellow Bariatric)</td>
+                 <td>Bariatric Surgery (Team member/Consultant)</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Consultant roles (Possibly associated with Dr Shashank Shah)</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Neha Shah Bariatric Pune"</td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Saurabh Dixit (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bhopal</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Saurabh Dixit Bariatric Bhopal"</td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Aparna Govil Bhasker (MS, FICS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Saifee Hospital / Namaha Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Aparna Govil Bhasker Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>72</td>
+                 <td>Dr. Abhishek Tiwari (MS, MCh - GI Surgery)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant Surgeon)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Anil Sharma (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Anil Sharma Bariatric Delhi"</td>
+            </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Atul Sharma (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant Surgeon)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>75</td>
+                 <td>Dr. Bhavin Patel (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Surat</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Bhavin Patel Bariatric Surat"</td>
+            </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Chirag Patel (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Vadodara</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Chirag Patel Bariatric Vadodara"</td>
+            </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Durjoy Lahiri (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Kolkata</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Durjoy Lahiri Bariatric Kolkata"</td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Gaurav Bansal (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ludhiana</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Gaurav Bansal Bariatric Ludhiana"</td>
+            </tr>
+            <tr>
+                 <td>79</td>
+                 <td>Dr. Harsh Sheth (MS, DNB - Surg Gastro)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Saifee Hospital / Bhatia Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td>Search "Dr Harsh Sheth Bariatric Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Hemant Kumar (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Hemant Kumar Bariatric Patna"</td>
+            </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Imran Khan (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Imran Khan Bariatric Hyderabad"</td>
+            </tr>
+            <tr>
+                 <td>82</td>
+                 <td>Dr. K K Singh (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr K K Singh Bariatric Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Kaushal Yadav (MS, MCh - Surgical Oncology)</td>
+                 <td>Surgical Oncology (May do Bariatric for cancer pts)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Gurugram (Senior Consultant Surgical Oncologist)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a> (Verify Bariatric focus)</td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Lohith U (MS, DNB - Gen Surg)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Old Airport Road (Consultant Surgeon)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>85</td>
+                 <td>Dr. M Manisegaran (MS, FRCS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Greams Road (Senior Consultant Surgeon)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>86</td>
+                 <td>Dr. Mayank Madan (MS, FNB - MAS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>CK Birla Hospital (Consultant Surgeon)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.ckbirlahospitals.com/" target="_blank" class="website-link">CK Birla Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Nikhil Agnihotri (MS, DNB, MNAMS)</td>
+                 <td>Minimal Access, Bariatric & Robotic Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Consultant Surgeon)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Nitin Jha (MS, FNB - MAS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Consultant Surgeon)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Piyush Kumar (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras HMRI Hospital (Consultant Surgeon)</td>
+                 <td>Patna</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>90</td>
+                 <td>Dr. Ponnambalam Raman (MS, FRCS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals (Senior Consultant Surgeon)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Puneet Gupta (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Puneet Gupta Bariatric Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Ravi Shankar Singh (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Varanasi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Ravi Shankar Singh Bariatric Varanasi"</td>
+            </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Sachin Kukreja (MS, FICS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sachin Kukreja Bariatric Delhi"</td>
+            </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Satish Pattanshetti (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hubli/Belgaum</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Satish Pattanshetti Bariatric"</td>
+            </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Saurabh Kumar (MS, MCh - GI Surgery)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta Hospital (Consultant Surgeon)</td>
+                 <td>Lucknow</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/lucknow/" target="_blank" class="website-link">Medanta Lucknow</a></td>
+            </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Shabeer Ahmed S I (MS, DNB - Surg Gastro)</td>
+                 <td>Minimal Access, GI & Bariatric Surgery</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Aster Medcity (Senior Consultant Surgeon)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+            </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Sudhir Kumar Rawal (MS, MCh - Uro Oncology)</td>
+                 <td>Uro-Oncology (May operate on obese pts)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Rajiv Gandhi Cancer Institute (Medical Director & Chief, Uro-Genital Oncology)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rgcirc.org/" target="_blank" class="website-link">RGCI</a> (Verify Bariatric focus)</td>
+            </tr>
+            <tr>
+                 <td>98</td>
+                 <td>Dr. Tarun Singhal (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Tarun Singhal Bariatric Ahmedabad"</td>
+            </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. U P Singh (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr U P Singh Bariatric Lucknow"</td>
+            </tr>
+            <tr>
+                 <td>100</td>
+                 <td>Dr. Yogesh Agarwal (MS)</td>
+                 <td>Minimal Access & Bariatric Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Consultant Surgeon)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Bariatric Surgeon:</h2>
+        <ul>
+            <li><strong>Credentials & Experience:</strong> Look for surgeons with specific fellowship training (Bariatric/MAS) and high volume experience. Membership in OSSI or IFSO is a good sign.</li>
+            <li><strong>Hospital Accreditation:</strong> Choose surgeons operating in accredited facilities with good infrastructure (ICU, etc.).</li>
+            <li><strong>Multidisciplinary Team:</strong> Ensure the program offers comprehensive care involving dietitians, psychologists, physicians, etc.</li>
+            <li><strong>Procedures Offered:</strong> Discuss which procedure is suitable (Sleeve, Bypass, etc.) and confirm surgeon's proficiency.</li>
+            <li><strong>Long-Term Follow-up:</strong> Understand the clinic's protocol for lifelong follow-up.</li>
+            <li><strong>Consultation:</strong> Discuss goals, risks, benefits, alternatives, and ensure comfort with the surgeon and team.</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

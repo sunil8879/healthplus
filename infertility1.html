@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Infertility Specialists in India</title>
+    <!-- Importing Google Fonts for a stylish look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Pastel Palette for Baby/Pregnancy Theme */
+            --primary-color: #ff9a9e;
+            --secondary-color: #fecfef;
+            --accent-blue: #a18cd1;
+            --accent-green: #84fab0;
+            --text-dark: #4a4a4a;
+            --text-light: #777777;
+            --white: #ffffff;
+            --gradient-bg: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            --header-gradient: linear-gradient(to right, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --hover-shadow: 0 15px 30px rgba(255, 154, 158, 0.2);
+        }
+
+        body {
+            background-image: var(--gradient-bg);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Stylish Header --- */
+        .title-container {
+            background-image: var(--header-gradient);
+            padding: 60px 20px 80px;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative circles */
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+        
+        .title-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: var(--white);
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-blue);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "♥";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows */
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        th {
+            background-color: var(--accent-blue);
+            background-image: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
+            color: var(--white);
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+        th:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+        tbody tr {
+            background-color: var(--white);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Rounded corners for rows */
+        td:first-child {
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 1.1rem;
+            background-color: #fff0f5; /* Light pink tint */
+        }
+
+        td:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* Specific Column Styling */
+        td:nth-child(2) { /* Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: #8e44ad;
+            font-weight: 500;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--accent-green);
+            background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            color: #2d3436;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        a.website-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .title-container { padding-bottom: 60px; }
+            .considerations { width: 90%; margin-top: -30px; }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            th, td {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+         <span class="title-icon"></span> <!-- Baby Icon Placeholder -->
+        <h1>Top 100 Infertility Specialists in India</h1>
+        <p class="subtitle">A representative list of recognized IVF/Reproductive Medicine specialists. Not an objective ranking. Verify MD/MS/DNB/Fellowship qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing an Infertility Specialist:</h2>
+        <ul>
+            <li><strong>Diagnosis:</strong> Understand the cause(s) of infertility (male/female factor, unexplained).</li>
+            <li><strong>Sub-specialty Match:</strong> Ensure expertise relevant to your situation (PCOS, endometriosis, low sperm count, recurrent miscarriage).</li>
+            <li><strong>Clinic Success Rates:</strong> Inquire about IVF/ICSI success rates (live birth rates per transfer), interpreting cautiously based on patient demographics.</li>
+            <li><strong>Technology & Lab:</strong> The quality of the IVF lab and experience of embryologists are crucial.</li>
+            <li><strong>Communication & Approach:</strong> Choose a team you are comfortable with, who explain procedures clearly.</li>
+            <li><strong>Cost & Transparency:</strong> Understand the costs involved for consultations, tests, and procedures.</li>
+        </ul>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Doctor Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Hospital/Clinic</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Dr. Firuza Parikh (MD, DGO, FCPS)</td>
+                 <td>IVF & Infertility Specialist, Genetics</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Jaslok Hospital and Research Centre (Director - Assisted Repro & Genetics)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Hrishikesh Pai (MD, FRCOG)</td>
+                 <td>IVF & Infertility, Gynecological Endoscopy</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Bloom IVF Group (Scientific Director/Consultant) / Lilavati, Fortis etc.</td>
+                 <td>Mumbai/Delhi etc.</td>
+                 <td>Via Bloom IVF/Hospital</td>
+                 <td><a href="https://www.bloomivf.com/" target="_blank" class="website-link">Bloom IVF</a> / Hospital websites</td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Dr. Nandita Palshetkar (MD, FCPS)</td>
+                 <td>IVF & Infertility Specialist, Laparoscopic Surgery</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Bloom IVF Group (Director/Consultant) / Lilavati, Fortis etc.</td>
+                 <td>Mumbai/Delhi etc.</td>
+                 <td>Via Bloom IVF/Hospital</td>
+                 <td><a href="https://www.bloomivf.com/" target="_blank" class="website-link">Bloom IVF</a> / Hospital websites</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Dr. Kamini A. Rao (MD, DGO, FRCOG)</td>
+                 <td>Reproductive Medicine, IVF & Infertility, Fetal Medicine (Padma Shri)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Milann - The Fertility Center (Founder & Medical Director - Chain)</td>
+                 <td>Bengaluru HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.milann.co.in/" target="_blank" class="website-link">Milann</a></td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Dr. Abha Majumdar (MD, FRCOG)</td>
+                 <td>IVF & Infertility, Reproductive Medicine</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Sir Ganga Ram Hospital (Director & HOD - Centre of IVF)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Dr. Jaideep Malhotra (MD, FICOG)</td>
+                 <td>Infertility & IVF, Laparoscopic Surgery, Reproductive Endocrinology</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Rainbow IVF / Art Fertility Clinics / Malhotra Nursing Home</td>
+                 <td>Agra/Multi-city</td>
+                 <td>Search Clinic/Chain</td>
+                 <td>Search "Rainbow IVF Agra" / <a href="https://www.artfertilityclinics.com/" target="_blank" class="website-link">Art Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Narendra Malhotra (MD, FICOG)</td>
+                 <td>Obstetrics & Gynecology with focus on Infertility & Ultrasound</td>
+                 <td>35+ Years (Senior)</td>
+                 <td>Malhotra Nursing & Maternity Home / Rainbow IVF</td>
+                 <td>Agra</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Malhotra Nursing Home Agra"</td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Dr. Sonia Malik (MD, DGO)</td>
+                 <td>IVF & Infertility, Reproductive Endocrinology</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Southend Fertility & IVF Centre (Founder & Director)</td>
+                 <td>New Delhi/Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.southendivf.com/" target="_blank" class="website-link">Southend Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Ila Gupta (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist, Reproductive Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Ferticity IVF & Fertility Clinics (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://ferticity.com/" target="_blank" class="website-link">Ferticity</a></td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. B N Chakravarty (MD, DGO, FRCOG)</td>
+                 <td>Reproductive Medicine & Infertility (Pioneer in Eastern India)</td>
+                 <td>45+ Years (Very Senior)</td>
+                 <td>Institute of Reproductive Medicine (IRM) (Director)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="http://www.irmkolkata.com/" target="_blank" class="website-link">IRM Kolkata</a></td>
+             </tr>
+              <tr>
+                 <td>11</td>
+                 <td>Dr. Ameet Patki (MD, DGO)</td>
+                 <td>Reproductive Medicine & Surgery (IVF), Endoscopy</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fertility Associates / Patki Hospital (Director/Consultant)</td>
+                 <td>Mumbai/Pune</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Ameet Patki Fertility Associates"</td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Dr. Mukesh Agrawal (MD, DGO)</td>
+                 <td>IVF & Infertility, Male Infertility, Endoscopy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Aarush IVF & Endoscopy Centre (Scientific Director / Founder)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aarushivf.com/" target="_blank" class="website-link">Aarush IVF</a></td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Dr. Manika Khanna (MBBS, MD, DAGE - Germany)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Gaudium IVF & Gynae Solutions (Founder & Director - Chain)</td>
+                 <td>Delhi HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.gaudiumivf.com/" target="_blank" class="website-link">Gaudium IVF</a></td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Shweta Mittal Gupta (MS, DNB, Fellow Repro Med)</td>
+                 <td>IVF & Infertility, Reproductive Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Sandeep Talwar (MD, DNB)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly associated with major IVF centres (Check current practice)</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sandeep Talwar IVF Delhi"</td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Dr. Kuldeep Jain (MS, Dip. Gynae Endoscopy - Germany)</td>
+                 <td>IVF & Infertility, Laparoscopic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>KJIVF & Laparoscopy Centre (Director / Founder)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kjivf.com/" target="_blank" class="website-link">KJIVF</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Surveen Ghumman Sindhu (MD, DNB)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Multi Speciality Centre, Panchsheel Park (Director & HOD - IVF)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Dr. Rishma Dhillon Pai (MD, DNB, FRCOG)</td>
+                 <td>Infertility, IVF, Endoscopy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Jaslok Hospital / Lilavati Hospital (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Hospital Websites</td>
+                 <td><a href="https://www.jaslokhospital.net/" target="_blank" class="website-link">Jaslok</a> / <a href="https://www.lilavatihospital.com/" target="_blank" class="website-link">Lilavati</a></td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Dr. Pankaj Talwar (MD, DNB, Fellow Repro Med)</td>
+                 <td>IVF & Infertility, Male Infertility, Fertility Preservation</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CK Birla Hospital / Birla Fertility & IVF (Head)</td>
+                 <td>Gurugram/Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://birlafertility.com/" target="_blank" class="website-link">Birla Fertility & IVF</a></td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Kaberi Banerjee (MD, MRCOG)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Advance Fertility and Gynecology Centre (Medical Director / Founder)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.advancefertility.in/" target="_blank" class="website-link">Advance Fertility</a></td>
+             </tr>
+              <tr>
+                 <td>21</td>
+                 <td>Dr. Priya Kannan (MS, DNB, Fellow Repro Med)</td>
+                 <td>Reproductive Medicine, Fertility Preservation</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>GarbhaGudi IVF Centre (Founder) / Associated with hospitals</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://garbhagudi.com/" target="_blank" class="website-link">GarbhaGudi IVF</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Dr. N. Pandiyan (MD, DGO, PhD - Andrology)</td>
+                 <td>Andrology & Male Infertility, Reproductive Medicine</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Chettinad Hospital & Research Institute (Professor Emeritus) / Formerly Apollo</td>
+                 <td>Chennai</td>
+                 <td>Via Hospital Website / Search</td>
+                 <td><a href="https://care.chettinadhealthcity.com/" target="_blank" class="website-link">Chettinad Hospital</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Aniruddha Malpani (MD)</td>
+                 <td>IVF & Infertility (Patient empowerment focus)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Malpani Infertility Clinic (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.drmalpani.com/" target="_blank" class="website-link">Malpani Infertility Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Gautam Khastgir (MD, FRCOG)</td>
+                 <td>IVF & Infertility, Reproductive Medicine</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>BIRTH Clinic (Bengal Infertility & Reproductive Therapy Hospital) (Director)</td>
+                 <td>Kolkata</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "BIRTH Clinic Kolkata"</td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Dr. Devika Gunasheela (MD, DGO, Fellow Repro Med)</td>
+                 <td>IVF & Infertility, Laparoscopic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Gunasheela Surgical & Maternity Hospital (Director)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gunasheela.com/" target="_blank" class="website-link">Gunasheela Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>26</td>
+                 <td>Dr. Rajul Tyagi (MS, DNB)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Fertility / Indraprastha Apollo Hospitals (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Apollo Website/Fertility</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo</a> / <a href="https://www.apollofertility.com/" target="_blank" class="website-link">Apollo Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Chandralekha (MD, DGO)</td>
+                 <td>Reproductive Medicine, IVF</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Iswarya Fertility Centres (Director - Group)</td>
+                 <td>Chennai HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://iswaryafertility.com/" target="_blank" class="website-link">Iswarya Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Ashwini S (MS, DNB, Fellow Repro Med)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Milann - The Fertility Center (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.milann.co.in/" target="_blank" class="website-link">Milann</a></td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Dr. Manisha Singh (MS, DNB)</td>
+                 <td>Obstetrics & Gynecology, Infertility, Laparoscopy</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Bannerghatta Road (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Dr. Padmapriya Vivek (MD, DGO, DNB)</td>
+                 <td>Obstetrics & Gynecology, Infertility</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Gleneagles Global Health City (Senior Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gleneaglesglobalhospitals.com/" target="_blank" class="website-link">Gleneagles Global</a></td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. M Gouri Devi (MD, DGO)</td>
+                 <td>Reproductive Medicine & Infertility</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>The Birthplace Hospital / Gouri Hospitals (Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Search Hospital Contact</td>
+                 <td>Search "The Birthplace Hospital Hyderabad" or "Gouri Hospitals Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Fessy Louis T. (MD, DGO)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>CRAFT Hospital & Research Centre (Senior Consultant)</td>
+                 <td>Kerala</td>
+                 <td>Via Website</td>
+                 <td><a href="https://craftivf.com/" target="_blank" class="website-link">CRAFT Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Dr. Sunita Tandulwadkar (MD, DGO)</td>
+                 <td>IVF & Infertility, Endoscopy</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Ruby Hall Clinic (Chief IVF Consultant & Endoscopist)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Beena Muktesh (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Cloudnine Fertility (Director / Clinical Head)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cloudninecare.com/" target="_blank" class="website-link">Cloudnine Care</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Dr. Kedar Ganla (MD, DNB)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly HOD LTMG Sion Hospital / Private Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Kedar Ganla IVF Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Nirmala Sadasivam (MD, DGO)</td>
+                 <td>Reproductive Medicine, IVF</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>GG Hospital</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gghospital.in/" target="_blank" class="website-link">GG Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Dr. Samundi Sankari (MD, DGO, PhD)</td>
+                 <td>Reproductive Medicine, IVF</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Srushti Fertility Research Centre & Women's Hospital (Director)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.srushtihospital.com/" target="_blank" class="website-link">Srushti Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Jayesh Amin (MD)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Wings IVF Group (Director - Chain)</td>
+                 <td>Gujarat HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://wingsivf.com/" target="_blank" class="website-link">Wings IVF</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Dr. Rajeshwari (MD, DGO, DNB)</td>
+                 <td>Reproductive Medicine, IVF</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Fertility (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Manipal Fertility</td>
+                 <td><a href="https://manipalfertility.com/" target="_blank" class="website-link">Manipal Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Parul Katiyar (MS, DNB, Fellow Repro Med)</td>
+                 <td>Fertility & IVF Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nova IVF Fertility (Senior Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.novaivffertility.com/" target="_blank" class="website-link">Nova IVF Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>41</td>
+                 <td>Dr. Sulbha Arora (MD, DNB)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nova IVF Fertility (Senior Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.novaivffertility.com/" target="_blank" class="website-link">Nova IVF Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Dr. Indrani Lodh (MS)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Urvaraa IVF Fertility Center (Senior Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://urvaraaivf.com/" target="_blank" class="website-link">Urvaraa IVF</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Dr. Yuvaraj (MS, DNB, Fellow Repro Med)</td>
+                 <td>Reproductive Medicine & Surgery</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Milann - The Fertility Center (Senior Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.milann.co.in/" target="_blank" class="website-link">Milann</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Dr. Roya Rozati (MD, DGO)</td>
+                 <td>Reproductive Medicine, IVF, Genetics</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>MHRT Hospital & Research Centre (Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Search Hospital Contact</td>
+                 <td>Search "MHRT Hospital Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Avinash Phadke (MD - Pathology)</td>
+                 <td>IVF & Infertility (Lab/Pathology Lead)</td>
+                 <td>35+ Years (Very Senior)</td>
+                 <td>Associated with IVF lab setups / Phadke Labs (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Search Lab/Consulting roles</td>
+                 <td>Search "Dr Avinash Phadke IVF Mumbai" (Pathologist)</td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Ragini Agrawal (MS, FICOG)</td>
+                 <td>IVF & Infertility, Laparoscopic Surgery</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>W Pratiksha Hospital (Senior Consultant / Director)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.pratikshahospitals.com/" target="_blank" class="website-link">W Pratiksha Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Hema Divakar (MD, FRCOG)</td>
+                 <td>OB-GYN with focus on Women's Health & Infertility advocacy</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Divakars Speciality Hospital / ARTIST Asia (FOGSI Past Pres)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Hospital/Org Website</td>
+                 <td><a href="https://divakarshospital.com/" target="_blank" class="website-link">Divakars Hospital</a> / ARTIST Asia</td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Dr. Sadhana Ghaisas (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Ghaisas IVF Centre (Director)</td>
+                 <td>Pune</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Ghaisas IVF Centre Pune"</td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Jatin Shah (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Mumbai Fertility Clinic & IVF Center (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Mumbai Fertility Clinic Jatin Shah"</td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Dr. Neena Malhotra (MD, DNB, PhD)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Professor)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>51</td>
+                 <td>Dr. Puneet Rana Arora (MS, DNB, MRCOG)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Formerly Bourn Hall Clinic / Consultant roles</td>
+                 <td>Gurugram/Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Puneet Rana Arora IVF Gurgaon"</td>
+             </tr>
+             <tr>
+                 <td>52</td>
+                 <td>Dr. Jayant Mehta (MD, DGO)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly Lilavati Hospital / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Jayant Mehta IVF Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>53</td>
+                 <td>Dr. G L Sindhwani (MS, MCh - Urology)</td>
+                 <td>Andrology, Male Infertility (Urologist focus)</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr G L Sindhwani Andrologist Delhi" (Note: Urologist)</td>
+             </tr>
+             <tr>
+                 <td>54</td>
+                 <td>Dr. Anjali Malpani (MD)</td>
+                 <td>IVF & Infertility</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Malpani Infertility Clinic (Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.drmalpani.com/" target="_blank" class="website-link">Malpani Infertility Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>55</td>
+                 <td>Dr. Suman Singh (MD, DNB)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>56</td>
+                 <td>Dr. M R Sreeja (MS, DNB, Fellow Repro Med)</td>
+                 <td>Reproductive Medicine, IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>KIMS Hospitals (Consultant)</td>
+                 <td>Secunderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kimshospitals.com/" target="_blank" class="website-link">KIMS Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>57</td>
+                 <td>Dr. Bindu Garg (MD)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Neelkanth Hospitals Pvt Ltd / World Infertility & IVF Centre (Director)</td>
+                 <td>Gurgaon/Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Neelkanth IVF Gurgaon"</td>
+             </tr>
+             <tr>
+                 <td>58</td>
+                 <td>Dr. Sushma Ved (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly Fortis La Femme / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sushma Ved IVF Delhi"</td>
+             </tr>
+             <tr>
+                 <td>59</td>
+                 <td>Dr. Rama Devi (MD, DGO)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr Rama's Institute for Fertility (Medical Director)</td>
+                 <td>Hyderabad</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Rama Institute Fertility Hyderabad"</td>
+             </tr>
+             <tr>
+                 <td>60</td>
+                 <td>Dr. Rita Bakshi (MD)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>International Fertility Centre (Founder & Chairperson - Chain)</td>
+                 <td>Delhi HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.internationalfertilitycentre.com/" target="_blank" class="website-link">IFC</a></td>
+             </tr>
+              <tr>
+                 <td>61</td>
+                 <td>Dr. Geeta Baruah Nath (MD)</td>
+                 <td>IVF & Infertility, Laparoscopic Surgery</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Artemis Hospital / Formerly Apollo Cradle</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>62</td>
+                 <td>Dr. Arvind Vaid (MD)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indira IVF Hospital (Chief IVF Consultant - Group Role)</td>
+                 <td>Multi-city</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.indiraivf.com/" target="_blank" class="website-link">Indira IVF</a></td>
+             </tr>
+             <tr>
+                 <td>63</td>
+                 <td>Dr. Priti Gupta (MS, DNB)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>First Step IVF Clinic / Consultant roles</td>
+                 <td>New Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "First Step IVF Delhi"</td>
+             </tr>
+             <tr>
+                 <td>64</td>
+                 <td>Dr. N S Kameshwari (MD, DGO)</td>
+                 <td>Reproductive Medicine, IVF</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Rainbow Hospitals (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rainbowhospitals.in/" target="_blank" class="website-link">Rainbow Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Dr. Nalini Mahajan (MD)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Mother & Child Hospital / Mahajan IVF Centre</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Mahajan IVF Centre Delhi"</td>
+             </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Mangala Devi K R (MS, DNB, Fellow Repro Med)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Fertility (Consultant)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://manipalfertility.com/" target="_blank" class="website-link">Manipal Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>67</td>
+                 <td>Dr. K D Nayar (MD)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Akanksha IVF Centre (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Akanksha IVF Centre Delhi"</td>
+             </tr>
+             <tr>
+                 <td>68</td>
+                 <td>Dr. Anoop Gupta (MD, PhD)</td>
+                 <td>Male Infertility, IVF</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Delhi IVF & Fertility Research Centre (Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.delhi-ivf.com/" target="_blank" class="website-link">Delhi IVF</a></td>
+             </tr>
+             <tr>
+                 <td>69</td>
+                 <td>Dr. Gunjan Gupta Govil (MD, DNB)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Gunjan IVF World (Founder & Director - Chain)</td>
+                 <td>Ghaziabad HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://gunjanivfworld.com/" target="_blank" class="website-link">Gunjan IVF World</a></td>
+             </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. R G Patel (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Patel Hospital & IVF Centre (Director)</td>
+                 <td>Surat</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Patel IVF Centre Surat"</td>
+             </tr>
+              <tr>
+                 <td>71</td>
+                 <td>Dr. Shivani Sachdev Gour (MD, DNB, MRCOG)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>SCI IVF Hospital / SCI Healthcare (Founder & Director)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sciivf.com/" target="_blank" class="website-link">SCI Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Dr. Sudha Tandon (MD, DGO)</td>
+                 <td>IVF & Infertility Specialist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly W Pratiksha / Consultant roles</td>
+                 <td>Gurugram</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Sudha Tandon IVF Gurgaon"</td>
+             </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Leena N S (MS, Fellow Repro Med)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Columbia Asia (now Manipal) / Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Current Affiliation</td>
+                 <td>Search "Dr Leena N S IVF Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. S K Wangnoo (MD, DM - Endocrinology)</td>
+                 <td>Endocrinology (Related field - manages hormonal aspects)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Senior Consultant Endocrinologist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a> (Note: Endocrinologist)</td>
+             </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Swati Allahbadia (MD, DNB)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Rotunda - The Center for Human Reproduction (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://iwannagetpregnant.com/" target="_blank" class="website-link">Rotunda</a></td>
+             </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Rajul Agarwal (MS)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Jaipur</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rajul Agarwal IVF Jaipur"</td>
+             </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Sunita Arora (MD)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Bloom IVF Centre, Fortis La Femme</td>
+                 <td>Delhi</td>
+                 <td>Via Fortis Website / Bloom</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis</a> / <a href="https://www.bloomivf.com/" target="_blank" class="website-link">Bloom IVF</a></td>
+             </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. M N Parikh (Legacy Figure)</td>
+                 <td>IVF & Infertility Specialist (Pioneer)</td>
+                 <td>Legacy Figure</td>
+                 <td>Founder of Parikh Hospital (Closed)</td>
+                 <td>Mumbai (Legacy)</td>
+                 <td>N/A</td>
+                 <td>Legacy figure</td>
+             </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Usha M Kumar (MD)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Hospital, Saket (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>80</td>
+                 <td>Dr. Bhavana Banga (MS, DNB, Fellow Repro Med)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Gurugram / Apollo Cradle</td>
+                 <td>Gurugram</td>
+                 <td>Via Max/Apollo Cradle</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max</a> / <a href="https://www.apollocradle.com/" target="_blank" class="website-link">Apollo Cradle</a></td>
+             </tr>
+              <tr>
+                 <td>81</td>
+                 <td>Dr. Parul Aggarwal (MS, DNB)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Patparganj (Associate Director)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Pooja Bajaj (MD)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Indira IVF (Role within group)</td>
+                 <td>Multi-city</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.indiraivf.com/" target="_blank" class="website-link">Indira IVF</a></td>
+             </tr>
+             <tr>
+                 <td>83</td>
+                 <td>Dr. Uma Maheshwari (MD, DGO)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nova IVF Fertility (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.novaivffertility.com/" target="_blank" class="website-link">Nova IVF Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Ritu Hinduja (MD, DNB)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Nova IVF Fertility (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.novaivffertility.com/" target="_blank" class="website-link">Nova IVF Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Aswati Nair (MS, DNB, Fellow Repro Med)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Nova IVF Fertility (Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.novaivffertility.com/" target="_blank" class="website-link">Nova IVF Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Nidhi Sharma (MS, DNB)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medicover Fertility (Consultant)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medicoverfertility.in/" target="_blank" class="website-link">Medicover Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Aditi Dani (MD, DNB)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Ruby Hall Clinic (Consultant)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://rubyhall.com/" target="_blank" class="website-link">Ruby Hall Clinic</a></td>
+             </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Suparna Banerjee (MD, DGO)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Institute of Reproductive Medicine (IRM) (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="http://www.irmkolkata.com/" target="_blank" class="website-link">IRM Kolkata</a></td>
+             </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Rashmi Sharma (MS, DNB)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Origyn IVF & Fertility (Clinical Director)</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Origyn IVF Delhi"</td>
+             </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Jyoti Bali (MD, DGO)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Baby Soon IVF & Fertility Centre (Medical Director)</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Baby Soon IVF Delhi"</td>
+             </tr>
+              <tr>
+                 <td>91</td>
+                 <td>Dr. Samit Sekhar (PhD - Embryology)</td>
+                 <td>Andrology & Male Infertility</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kiran Infertility Centre (Consultant Embryologist / Andrologist)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://kiranivfgenetic.com/" target="_blank" class="website-link">KIC</a> (Embryologist focus)</td>
+             </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Shweta Singh (MD, DGO)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Shweta Singh IVF Lucknow"</td>
+             </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Richa Jagtap (MD, DNB)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Nova IVF Fertility (Clinical Director)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.novaivffertility.com/" target="_blank" class="website-link">Nova IVF Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Ratnaboli Bhattacharya (MS)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Dr. Parul Arora (MS)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Parul Arora IVF Chandigarh"</td>
+             </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Dr. Kanchi Khurana (MS, DNB)</td>
+                 <td>IVF & Fertility Specialist</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Indira IVF (Role within group)</td>
+                 <td>Multi-city</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.indiraivf.com/" target="_blank" class="website-link">Indira IVF</a></td>
+             </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Dr. Runa Acharya (MD, DGO)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Apollo Fertility (Consultant)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollofertility.com/" target="_blank" class="website-link">Apollo Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. Neeta Singh (MD)</td>
+                 <td>IVF & Reproductive Medicine</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Patna</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Neeta Singh IVF Patna"</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Dr. Madhupriya (MD, DNB)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Oasis Fertility (Consultant)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://oasisindia.in/" target="_blank" class="website-link">Oasis Fertility</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Dr. Shreya Sarkar (MS, DNB)</td>
+                 <td>Reproductive Medicine & IVF</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Cloudnine Fertility (Consultant)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cloudninecare.com/" target="_blank" class="website-link">Cloudnine Care</a></td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div class="considerations">
+       <h2>Choosing an Infertility Specialist:</h2>
+        <ul>
+            <li><strong>Diagnosis:</strong> Understand the potential cause(s) of infertility (male factor, female factor, unexplained).</li>
+            <li><strong>Sub-specialty Match:</strong> Does the specialist have expertise relevant to your specific situation (e.g., PCOS, endometriosis, low sperm count, recurrent miscarriage)?</li>
+            <li><strong>Clinic Success Rates:</strong> Inquire about the clinic's success rates for procedures like IVF/ICSI, but interpret these cautiously as they depend heavily on patient demographics. Look for live birth rates per embryo transfer.</li>
+            <li><strong>Technology & Lab:</strong> The quality of the IVF lab is crucial. Look for established centers with experienced embryologists.</li>
+            <li><strong>Communication & Approach:</strong> Choose a doctor and clinic team you feel comfortable with, who explain procedures clearly and address your concerns.</li>
+            <li><strong>Cost & Transparency:</strong> Understand the costs involved for consultations, tests, and procedures.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

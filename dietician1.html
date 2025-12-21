@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Dietitians & Nutritionists in India</title>
+    <!-- Importing Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Vibrant Color Palette */
+            --primary-green: #2ecc71;
+            --secondary-green: #27ae60;
+            --accent-orange: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --bg-off-white: #f9fbfd;
+            --white: #ffffff;
+            --gradient-header: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --hover-shadow: 0 15px 30px rgba(46, 204, 113, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-off-white);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- Header Section --- */
+        .title-container {
+            background: var(--gradient-header);
+            padding: 60px 20px 80px;
+            text-align: center;
+            color: var(--white);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(86, 171, 47, 0.3);
+            margin-bottom: -40px; /* Overlap effect */
+            position: relative;
+        }
+
+        .title-icon {
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- Considerations Card --- */
+        .considerations {
+            background: var(--white);
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--accent-orange);
+        }
+
+        .considerations h2 {
+            font-size: 1.5rem;
+            color: var(--accent-orange);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .considerations ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .considerations li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .considerations li::before {
+            content: "✦";
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Creates space between rows like cards */
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        th {
+            background-color: var(--secondary-green);
+            color: var(--white);
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+        }
+
+        th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+        th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+
+        tbody tr {
+            background-color: var(--white);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+            z-index: 10;
+            position: relative;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Styling for specific columns */
+        td:first-child { /* S.No */
+            font-weight: 700;
+            color: var(--primary-green);
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            font-size: 1.1rem;
+            background-color: #f0fff4; /* Light green tint */
+        }
+
+        td:nth-child(2) { /* Practitioner Name */
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        td:nth-child(3) { /* Specialty */
+            color: var(--accent-orange);
+            font-weight: 500;
+        }
+
+        td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Link Styling */
+        a.website-link {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+        }
+
+        a.website-link:hover {
+            background-color: var(--secondary-green);
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            h1 { font-size: 2rem; }
+            .considerations { margin-top: -20px; width: 90%; }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <span class="title-icon"></span> <!-- Green Apple Icon Placeholder -->
+        <h1>Top 100 Dietitians & Nutritionists in India</h1>
+        <p class="subtitle">A representative list of recognized professionals. Not an objective ranking. Verify RD/MSc/PhD qualifications independently.</p>
+    </div>
+
+    <div class="considerations">
+        <h2>Choosing a Dietitian/Nutritionist:</h2>
+        <ul>
+            <li><strong>Your Goal:</strong> Weight management, managing medical conditions (diabetes, renal disease), sports performance, child nutrition, general wellness?</li>
+            <li><strong>Credentials:</strong> Look for Registered Dietitian (RD), MSc (Nutrition/Dietetics), PhD (Nutrition), or specific certifications (CDE, Sports Nutrition).</li>
+            <li><strong>Specialization:</strong> Choose someone whose expertise aligns with your specific needs.</li>
+            <li><strong>Approach:</strong> Clinical, evidence-based, holistic, specific diets? Ensure qualified and safe practices.</li>
+            <li><strong>Consultation:</strong> Discuss goals, approach, and ensure comfort with the practitioner.</li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Practitioner Name & Education</th>
+                <th>Specialty & Biodata</th>
+                <th>Years of Experience</th>
+                <th>Affiliated Clinic/Hospital</th>
+                <th>Address (City/Area)</th>
+                <th>Contact Number</th>
+                <th>Website / Contact Source</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>Rujuta Diwekar (PG - Sports Science & Nutrition)</td>
+                 <td>Nutrition & Exercise Science (Traditional foods focus)</td>
+                 <td>20+ Years (Very Well-Known)</td>
+                 <td>Own Practice / Online Programs</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rujutadiwekar.com/" target="_blank" class="website-link">Rujuta Diwekar</a></td>
+             </tr>
+             <tr>
+                 <td>2</td>
+                 <td>Dr. Shikha Sharma (MBBS)</td>
+                 <td>Preventive Health, Weight Management, Vedique Nutrition</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Dr. Shikha's Nutrihealth Systems (Founder - Chain)</td>
+                 <td>Delhi HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://drshikhasharma.com/" target="_blank" class="website-link">Dr. Shikha's Nutrihealth</a></td>
+             </tr>
+             <tr>
+                 <td>3</td>
+                 <td>Ishi Khosla (MSc - Food & Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management, Wellness, Diabetes</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>The Weight Monitor clinic / Whole Foods India (Founder)</td>
+                 <td>Delhi</td>
+                 <td>Via Website / Search</td>
+                 <td><a href="https://theweightmonitor.com/" target="_blank" class="website-link">The Weight Monitor</a> / Search Whole Foods</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Pooja Makhija (MSc - Food Science & Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management, Eating Disorders</td>
+                 <td>15+ Years (Well-Known)</td>
+                 <td>Nourish Clinic</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Nourish Pooja Makhija Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Anjali Mukerjee (Nutritionist)</td>
+                 <td>Health Total (Integrated approach - Nutrition, Ayurveda, Homeopathy)</td>
+                 <td>30+ Years (Very Senior)</td>
+                 <td>Health Total (Founder & Director - Chain)</td>
+                 <td>Mumbai HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.health-total.com/" target="_blank" class="website-link">Health Total</a></td>
+             </tr>
+             <tr>
+                 <td>6</td>
+                 <td>Ryan Fernando (MSc - Food Biotechnology, Sports Nutrition Cert.)</td>
+                 <td>Sports Nutrition, Clinical Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Qua Nutrition Clinics (Chief Nutritionist / Founder - Chain)</td>
+                 <td>Bengaluru HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://quanutrition.com/" target="_blank" class="website-link">Qua Nutrition</a></td>
+             </tr>
+             <tr>
+                 <td>7</td>
+                 <td>Dr. Charu Dua (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition (Critical Care, Diabetes, Renal)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Healthcare (Patparganj) (Head - Nutrition & Dietetics)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>8</td>
+                 <td>Ritika Samaddar (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition (Diabetes, Weight Management, Critical Care)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Healthcare (Saket) (Regional Head - Dietetics)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>9</td>
+                 <td>Dr. Eileen Canday (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition (Critical Care, Gastroenterology, Diabetes)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sir H. N. Reliance Foundation Hospital (Head - Nutrition & Dietetics)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rfhospital.org/" target="_blank" class="website-link">Reliance Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>10</td>
+                 <td>Dr. Dharini Krishnan (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Therapeutic Diets, Weight Management</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Own Practice / Formerly Hospital Consultant / Author</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Dharini Krishnan Dietitian Chennai"</td>
+             </tr>
+             <tr>
+                 <td>11</td>
+                 <td>Sheela Krishnaswamy (MSc - Nutrition, RD)</td>
+                 <td>Wellness Nutrition, Diabetes Management, Corporate Wellness</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Nutrition Awareness (Director, Past National President, IDA)</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Sheela Krishnaswamy Nutritionist Bengaluru"</td>
+             </tr>
+             <tr>
+                 <td>12</td>
+                 <td>Madhuri Ruia (Nutritionist, Pilates Expert)</td>
+                 <td>Weight Management, Fitness Nutrition</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Integym / Own Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Madhuri Ruia Integym Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>13</td>
+                 <td>Neha Chandna (MSc - Dietetics, RD)</td>
+                 <td>Weight Management, Clinical Nutrition, Sports Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Own Practice (NC Nutrition) / Online Consultations</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "NC Nutrition Neha Chandna Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>14</td>
+                 <td>Dr. Anita Jatana (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition (Oncology, Critical Care)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Indraprastha Apollo Hospitals (Chief Dietitian)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>15</td>
+                 <td>Dr. Zamurrud Patel (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition (Weight Management, Diabetes, Cardiac)</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Global Hospitals (Chief Dietitian)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.globalhospitalsmumbai.com/" target="_blank" class="website-link">Global Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>16</td>
+                 <td>Swati Bhushan (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Chief Dietitian)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>17</td>
+                 <td>Dr. Bhuvaneshwari Shankar (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Therapeutic Diets</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Apollo Hospitals Group (Group Chief Dietitian)</td>
+                 <td>Chennai (Base)</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>18</td>
+                 <td>Kanchan Patwardhan (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management, Gut Health</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kanchan's House of Health & Nutrition (Founder) / Online</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Kanchan Patwardhan Nutritionist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>19</td>
+                 <td>Shiny Surendran (MSc - Nutrition, Sports Nutrition Cert.)</td>
+                 <td>Sports Nutrition, Weight Management, Wellness</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Own Practice / Consultant to Athletes</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Shiny Surendran Nutritionist Chennai"</td>
+             </tr>
+             <tr>
+                 <td>20</td>
+                 <td>Dr. Nupur Krishnan (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Bio-Logics Nutrition Clinic (Director / Founder)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Bio-Logics Nutrition Clinic Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>21</td>
+                 <td>Hetal Shah (MSc - Nutrition, RD)</td>
+                 <td>Pediatric Nutrition, Maternal Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Rainbow Children's Hospital (Senior Pediatric Nutritionist)</td>
+                 <td>Hyderabad (Check branch)</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.rainbowhospitals.in/" target="_blank" class="website-link">Rainbow Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>22</td>
+                 <td>Mitalee D R (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>P.D. Hinduja Hospital & MRC (Head Of Department - Dietetics)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hindujahospital.com/" target="_blank" class="website-link">Hinduja Hospital</a></td>
+             </tr>
+             <tr>
+                 <td>23</td>
+                 <td>Dr. Shweta Khandelwal (PhD - Public Health Nutrition)</td>
+                 <td>Public Health Nutrition, Research</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Public Health Foundation of India (PHFI) (Head - Nutrition Research)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://phfi.org/" target="_blank" class="website-link">PHFI</a> (Primarily Research)</td>
+             </tr>
+             <tr>
+                 <td>24</td>
+                 <td>Dr. Jagmeet Madan (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Public Health Nutrition, Diabetes</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Sir Vithaldas Thackersey College (SVT), SNDT Univ (Principal/Professor, National President, IDA) / Consultant</td>
+                 <td>Mumbai</td>
+                 <td>Search College/Practice</td>
+                 <td>Academic figure / Search practice details</td>
+             </tr>
+             <tr>
+                 <td>25</td>
+                 <td>Deepshikha Agarwal (Nutritionist)</td>
+                 <td>Weight Management, Diet & Wellness Consultant</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Deepexclusive Diet Clinic (Founder) / Online</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Deepexclusive Diet Clinic Mumbai"</td>
+             </tr>
+              <tr>
+                 <td>26</td>
+                 <td>Suman Agarwal (Nutritionist)</td>
+                 <td>Weight Management, Nutrition Consultant</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Selfcare by Suman Agarwal (Founder / Author)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Selfcare Suman Agarwal Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>27</td>
+                 <td>Dr. Namita Nadar (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Head - Dietetics)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>28</td>
+                 <td>Dr. Manjari Chandra (MSc - Nutrition)</td>
+                 <td>Therapeutic Nutrition, Wellness Nutrition</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Max Healthcare (Multiple Locations) / Own Consultations (Consultant)</td>
+                 <td>Delhi/NCR</td>
+                 <td>Via Max Website / Search</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a> or search practice</td>
+             </tr>
+             <tr>
+                 <td>29</td>
+                 <td>Luke Coutinho (Holistic Lifestyle Coach)</td>
+                 <td>Integrative & Lifestyle Medicine (Nutrition key component)</td>
+                 <td>15+ Years (Well-Known)</td>
+                 <td>Luke Coutinho Holistic Healing Systems / Online Programs</td>
+                 <td>Global/Online</td>
+                 <td>Via Website</td>
+                 <td><a href="https://lukecoutinho.com/" target="_blank" class="website-link">Luke Coutinho</a></td>
+             </tr>
+             <tr>
+                 <td>30</td>
+                 <td>Sheryl Salis (MSc - Nutrition, RD, CDE)</td>
+                 <td>Diabetes Education, Clinical Nutrition, Exercise Physiology</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Nurture Health Solutions (Founder)</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Nurture Health Solutions Sheryl Salis Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>31</td>
+                 <td>Dr. A. Laxmaiah (MD - Community Med, PhD - Nutrition)</td>
+                 <td>Public Health Nutrition, Epidemiology (Research focused)</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>National Institute of Nutrition (NIN) (Scientist 'G' & Head)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.nin.res.in/" target="_blank" class="website-link">NIN Hyderabad</a> (Primarily Research)</td>
+             </tr>
+             <tr>
+                 <td>32</td>
+                 <td>Dr. Suparna Mukherjee (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition (Critical Care, Renal, Diabetes)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Narayana Superspeciality Hospital (Chief Dietitian)</td>
+                 <td>Howrah</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.narayanahealth.org/" target="_blank" class="website-link">Narayana Health</a></td>
+             </tr>
+             <tr>
+                 <td>33</td>
+                 <td>Parul Malhotra Bahl (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management, Therapeutic Diets</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Diet Expression Clinic (Founder / Nutritionist) / Online</td>
+                 <td>Gurugram</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Diet Expression Clinic Gurugram"</td>
+             </tr>
+             <tr>
+                 <td>34</td>
+                 <td>Dr. Anuja Agarwala (MSc - Nutrition, PhD)</td>
+                 <td>Pediatric Nutrition, Clinical Nutrition</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>AIIMS (Senior Dietitian)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aiims.edu/" target="_blank" class="website-link">AIIMS</a></td>
+             </tr>
+             <tr>
+                 <td>35</td>
+                 <td>Meghana Pasalkar (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sahyadri Hospitals (Chief Dietitian)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sahyadrihospital.com/" target="_blank" class="website-link">Sahyadri Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>36</td>
+                 <td>Dr. Vinita Satyavrat (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes, Weight Management</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Fortis Escorts Hospital, Okhla (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>37</td>
+                 <td>Rizwana Huda (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Renal Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Hospitals, Jubilee Hills (Senior Dietitian)</td>
+                 <td>Hyderabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>38</td>
+                 <td>Dr. Shubi Husain (PhD - Nutrition)</td>
+                 <td>Weight Management, Lifestyle Modification</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Health Sanctuary Pvt Ltd (Founder / Nutritionist - Chain)</td>
+                 <td>Delhi HQ</td>
+                 <td>Via Website</td>
+                 <td><a href="https://healthsanctuary.com/" target="_blank" class="website-link">Health Sanctuary</a></td>
+             </tr>
+             <tr>
+                 <td>39</td>
+                 <td>Naini Setalvad (Nutritionist)</td>
+                 <td>Weight Management, Health Food Columnist</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Own Practice</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Naini Setalvad Nutritionist Mumbai"</td>
+             </tr>
+             <tr>
+                 <td>40</td>
+                 <td>Dr. Bhavna Sharma (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Head Dietitian)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>41</td>
+                 <td>Dr. Seema Singh (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Therapeutic Diets</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Vasant Kunj (Chief Clinical Nutritionist)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>42</td>
+                 <td>Lavleen Kaur (MSc - Nutrition)</td>
+                 <td>Weight Management, Lifestyle Diseases (Indian Diets focus)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Diet Insight Clinic (Founder) / Online</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://dietinsight.in/" target="_blank" class="website-link">Diet Insight</a></td>
+             </tr>
+             <tr>
+                 <td>43</td>
+                 <td>Mehar Panjwani (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition (Diabetes, Weight Management)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Max Multi Speciality Centre, Panchsheel Park (Senior Consultant)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>44</td>
+                 <td>Priyanka Agarwal (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Dwarka (Chief Dietitian)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>45</td>
+                 <td>Dr. Renuka Dang (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Artemis Hospital (Chief Dietitian)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.artemishospitals.com/" target="_blank" class="website-link">Artemis Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>46</td>
+                 <td>Dr. Vijayashree Murali (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes Management</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Sri Ramachandra Medical Centre (SRMC) (Head - Dietetics)</td>
+                 <td>Chennai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sriramachandra.edu.in/medical-centre/" target="_blank" class="website-link">SRMC</a></td>
+             </tr>
+             <tr>
+                 <td>47</td>
+                 <td>Dr. Esther Sathiaraj (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Research</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Christian Medical College (CMC) (Head - Clinical Nutrition & Dietetics)</td>
+                 <td>Vellore</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.cmch-vellore.edu/" target="_blank" class="website-link">CMC Vellore</a></td>
+             </tr>
+             <tr>
+                 <td>48</td>
+                 <td>Neha Pathania (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Wellness Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Paras Hospitals (Chief Dietitian)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.parashospitals.com/" target="_blank" class="website-link">Paras Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>49</td>
+                 <td>Dr. Nafeesa Imteyaz (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Cunningham Road (Chief Dietitian)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+             </tr>
+             <tr>
+                 <td>50</td>
+                 <td>Zalak Shah (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Bhatia Hospital (Senior Dietitian)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.bhatiahospital.org/" target="_blank" class="website-link">Bhatia Hospital</a></td>
+             </tr>
+              <tr>
+                 <td>51</td>
+                 <td>Dr. Geeta Dharmatti (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Public Health Nutrition</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Academic affiliations (President IDA Pune Chapter)</td>
+                 <td>Pune</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Geeta Dharmatti Dietitian Pune"</td>
+            </tr>
+            <tr>
+                 <td>52</td>
+                 <td>Dr. Rekha Sharma (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes Management</td>
+                 <td>30+ Years (Senior)</td>
+                 <td>Formerly Chief Dietitian AIIMS / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rekha Sharma Dietitian Delhi"</td>
+            </tr>
+            <tr>
+                 <td>53</td>
+                 <td>Dr. Anjali Sharma (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Noida (Senior Consultant)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>54</td>
+                 <td>Dr. Barkha Bhatnagar (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Renal Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Manipal Hospitals, Delhi (Senior Renal Dietitian)</td>
+                 <td>Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+            </tr>
+            <tr>
+                 <td>55</td>
+                 <td>Dr. Bharti Dixit (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aakash Healthcare Super Speciality Hospital (Chief Dietitian)</td>
+                 <td>Dwarka, Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.aakashhealthcare.com/" target="_blank" class="website-link">Aakash Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>56</td>
+                 <td>Dr. Charu Sharma (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Pediatric Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Max Hospital, Gurugram (Senior Dietitian)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>57</td>
+                 <td>Dr. Deepti Khatuja (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Memorial Research Institute (FMRI) (Head - Clinical Nutrition)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>58</td>
+                 <td>Dr. Divya Choudhary (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Bariatric Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi/NCR</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Divya Choudhary Bariatric Dietitian Delhi"</td>
+            </tr>
+            <tr>
+                 <td>59</td>
+                 <td>Dr. Ekta Tandon (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Online</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Ekta Tandon Delhi"</td>
+            </tr>
+            <tr>
+                 <td>60</td>
+                 <td>Dr. Garima Goyal (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Private Practice / Online Consultations</td>
+                 <td>Ludhiana</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Garima Goyal Ludhiana"</td>
+            </tr>
+             <tr>
+                 <td>61</td>
+                 <td>Dr. Hena Nafis (MSc - Nutrition, Sports Nutrition Cert.)</td>
+                 <td>Sports Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Nutrience Clinic (Founder)</td>
+                 <td>Kolkata</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Nutrience Clinic Kolkata"</td>
+            </tr>
+            <tr>
+                 <td>62</td>
+                 <td>Dr. Himanshu Rai (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Medanta - The Medicity (Senior Dietitian)</td>
+                 <td>Gurugram</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.medanta.org/" target="_blank" class="website-link">Medanta</a></td>
+            </tr>
+            <tr>
+                 <td>63</td>
+                 <td>Dr. Jasmine Chawla (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Fortis Hospital, Mohali (Chief Dietitian)</td>
+                 <td>Mohali</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.fortishealthcare.com/" target="_blank" class="website-link">Fortis Healthcare</a></td>
+            </tr>
+            <tr>
+                 <td>64</td>
+                 <td>Dr. Kalpana Gupta Shekhawat (Nutritionist, Functional Med Practitioner)</td>
+                 <td>Functional Medicine Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Freedom Diet / Consultant roles</td>
+                 <td>Jaipur/Online</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Freedom Diet Dr Kalpana Jaipur"</td>
+            </tr>
+             <tr>
+                 <td>65</td>
+                 <td>Kavita Devgan (Nutritionist, Author)</td>
+                 <td>Weight Management, Wellness Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Private consultations / Media contributor</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Kavita Devgan Nutritionist Delhi"</td>
+            </tr>
+             <tr>
+                 <td>66</td>
+                 <td>Dr. Lokendra Tomar (Naturopathy Degree)</td>
+                 <td>Weight Management, Naturopathy (Integrative Approach)</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Weight Loss Clinic</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Dr Lokendra Tomar Weight Loss Clinic Delhi" (Note: Naturopath)</td>
+            </tr>
+            <tr>
+                 <td>67</td>
+                 <td>Dr. Madhu Sharma (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Formerly PGI Chandigarh / Consultant roles</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Madhu Sharma Dietitian Chandigarh"</td>
+            </tr>
+            <tr>
+                 <td>68</td>
+                 <td>Dr. Meenakshi Bajaj (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes Management</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>TN Govt Multi Super Speciality Hospital / Private Practice</td>
+                 <td>Chennai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Meenakshi Bajaj Chennai"</td>
+            </tr>
+            <tr>
+                 <td>69</td>
+                 <td>Dr. Megha Jaina (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Oncology Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>BLK-Max Super Speciality Hospital (Senior Dietitian)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.maxhealthcare.in/" target="_blank" class="website-link">Max Healthcare</a></td>
+            </tr>
+             <tr>
+                 <td>70</td>
+                 <td>Dr. Menka Gupta (MBBS, Functional Med Cert - IFM USA)</td>
+                 <td>Functional Medicine Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>NutraNourish Clinic</td>
+                 <td>Singapore / Online (Strong India connect)</td>
+                 <td>Via Website</td>
+                 <td><a href="https://nutranourish.com/" target="_blank" class="website-link">NutraNourish</a></td>
+            </tr>
+             <tr>
+                 <td>71</td>
+                 <td>Dr. Nancy Sahni (PhD - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Therapeutic Diets</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>PGI Chandigarh (Chief Dietitian)</td>
+                 <td>Chandigarh</td>
+                 <td>Via Website</td>
+                 <td><a href="https://pgimer.edu.in/" target="_blank" class="website-link">PGI Chandigarh</a></td>
+            </tr>
+             <tr>
+                 <td>72</td>
+                 <td>Neelanjana Singh (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Wellness Nutrition</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Consultant roles / Author</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Neelanjana Singh Nutritionist Delhi"</td>
+            </tr>
+             <tr>
+                 <td>73</td>
+                 <td>Dr. Neha Agarwal (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Neha Agarwal Mumbai"</td>
+            </tr>
+             <tr>
+                 <td>74</td>
+                 <td>Dr. Nidhi Dhawan (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sarvodaya Hospital (Senior Dietitian)</td>
+                 <td>Faridabad</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.sarvodayahospital.com/" target="_blank" class="website-link">Sarvodaya Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>75</td>
+                 <td>Dr. Nikita Suresh (MSc - Nutrition, Sports Nutrition Cert.)</td>
+                 <td>Clinical Nutrition, Sports Nutrition</td>
+                 <td>~10 Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Bengaluru</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Nikita Suresh Bengaluru"</td>
+            </tr>
+             <tr>
+                 <td>76</td>
+                 <td>Dr. Nilanjana Mitra (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Apollo Multispeciality Hospitals (Senior Dietitian)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>77</td>
+                 <td>Dr. Preeti Jain (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Sir Ganga Ram Hospital (Senior Dietitian)</td>
+                 <td>New Delhi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://sgrh.com/" target="_blank" class="website-link">Sir Ganga Ram Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>78</td>
+                 <td>Dr. Priyanka Rohatgi (MSc - Nutrition, RD, CDE)</td>
+                 <td>Clinical Nutrition, Diabetes, Bariatric Nutrition</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Apollo Hospitals, Bannerghatta Road (Chief Clinical Dietitian)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.apollohospitals.com/" target="_blank" class="website-link">Apollo Hospitals</a></td>
+            </tr>
+             <tr>
+                 <td>79</td>
+                 <td>Dr. Priya Karkera (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Pediatric Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Priya Karkera Mumbai"</td>
+            </tr>
+            <tr>
+                 <td>80</td>
+                 <td>Dr. R K Sharma (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>25+ Years (Senior)</td>
+                 <td>Formerly AIIMS / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr R K Sharma Dietitian Delhi"</td>
+            </tr>
+             <tr>
+                 <td>81</td>
+                 <td>Dr. Rama Agarwal (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Lucknow</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr Rama Agarwal Dietitian Lucknow"</td>
+            </tr>
+             <tr>
+                 <td>82</td>
+                 <td>Dr. Rashmi Srivastava (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Kokilaben Dhirubhai Ambani Hospital (Consultant)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.kokilabenhospital.com/" target="_blank" class="website-link">Kokilaben Hospital</a></td>
+            </tr>
+            <tr>
+                 <td>83</td>
+                 <td>Dr. Ritu Gupta (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Diabetes Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Ritu Gupta Delhi"</td>
+            </tr>
+             <tr>
+                 <td>84</td>
+                 <td>Dr. Rupali Datta (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Wellness</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Formerly Fortis La Femme / Consultant roles</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Rupali Datta Nutritionist Delhi"</td>
+            </tr>
+             <tr>
+                 <td>85</td>
+                 <td>Dr. Sakshi Chopra (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Jaypee Hospital (Consultant Dietitian)</td>
+                 <td>Noida</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jaypeehospital.com/" target="_blank" class="website-link">Jaypee Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>86</td>
+                 <td>Dr. Sameera Ansari (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Dr LH Hiranandani Hospital (Senior Dietitian)</td>
+                 <td>Mumbai</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.hiranandanihospital.org/" target="_blank" class="website-link">Hiranandani Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>87</td>
+                 <td>Dr. Sangeeta Penkar (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Therapeutic Diets</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Jupiter Hospital (Chief Dietitian)</td>
+                 <td>Pune</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.jupiterhospital.com/" target="_blank" class="website-link">Jupiter Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>88</td>
+                 <td>Dr. Sarika Shah (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Ahmedabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Sarika Shah Ahmedabad"</td>
+            </tr>
+             <tr>
+                 <td>89</td>
+                 <td>Dr. Seema Gulati (PhD - Nutrition)</td>
+                 <td>Clinical Nutrition, Research</td>
+                 <td>20+ Years (Senior)</td>
+                 <td>Diabetes Foundation (India) / N-DOC (Chief Project Officer)</td>
+                 <td>Delhi</td>
+                 <td>Via Foundation Websites</td>
+                 <td>Research/Project focus; check N-DOC/DFI</td>
+            </tr>
+             <tr>
+                 <td>90</td>
+                 <td>Dr. Shalini Singhal (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Diet and Wellness Clinic (Chief Nutrition Consultant / Founder)</td>
+                 <td>Delhi</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Diet and Wellness Clinic Shalini Singhal Delhi"</td>
+            </tr>
+             <tr>
+                 <td>91</td>
+                 <td>Dr. Shilpa Joshi (MSc - Nutrition, RD, CDE)</td>
+                 <td>Clinical Nutrition, Diabetes Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Mumbai Diet and Health Centre / Consultant roles</td>
+                 <td>Mumbai</td>
+                 <td>Search Clinic Contact</td>
+                 <td>Search "Mumbai Diet and Health Centre"</td>
+            </tr>
+             <tr>
+                 <td>92</td>
+                 <td>Dr. Shweta Mahajan (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Online</td>
+                 <td>Chandigarh</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Shweta Mahajan Chandigarh"</td>
+            </tr>
+             <tr>
+                 <td>93</td>
+                 <td>Dr. Soumya Nair (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Aster Medcity (Consultant Dietitian)</td>
+                 <td>Kochi</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.astermedcity.com/" target="_blank" class="website-link">Aster Medcity</a></td>
+            </tr>
+             <tr>
+                 <td>94</td>
+                 <td>Dr. Sunita Roy Chowdhury (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Renal Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Peerless Hospital (Senior Dietitian)</td>
+                 <td>Kolkata</td>
+                 <td>Via Website</td>
+                 <td><a href="https://peerlesshospital.com/" target="_blank" class="website-link">Peerless Hospital</a></td>
+            </tr>
+             <tr>
+                 <td>95</td>
+                 <td>Swati Bathwal (Accredited Practising Dietitian - Aus)</td>
+                 <td>Diabetes Education, Sports Nutrition</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Media Contributor</td>
+                 <td>Australia/India</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Swati Bathwal Dietitian"</td>
+            </tr>
+             <tr>
+                 <td>96</td>
+                 <td>Taranjeet Kaur (MSc - Nutrition)</td>
+                 <td>Weight Management, Lifestyle Diseases (Metabolic Balance Coach)</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles / Online</td>
+                 <td>Delhi</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Taranjeet Kaur Delhi"</td>
+            </tr>
+             <tr>
+                 <td>97</td>
+                 <td>Tina Sapra (MSc - Nutrition)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Senior Clinical Nutritionist / Consultant roles / Online</td>
+                 <td>Gurugram</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Tina Sapra Gurgaon"</td>
+            </tr>
+             <tr>
+                 <td>98</td>
+                 <td>Dr. V L Shyam (PhD - Sports Nutrition)</td>
+                 <td>Sports Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Consultant roles / Works with athletes</td>
+                 <td>Kerala</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dr V L Shyam Sports Nutritionist Kerala"</td>
+             </tr>
+             <tr>
+                 <td>99</td>
+                 <td>Vani Krishna (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition</td>
+                 <td>15+ Years (Experienced)</td>
+                 <td>Manipal Hospital, Millers Road (Chief Dietitian)</td>
+                 <td>Bengaluru</td>
+                 <td>Via Website</td>
+                 <td><a href="https://www.manipalhospitals.com/" target="_blank" class="website-link">Manipal Hospitals</a></td>
+             </tr>
+             <tr>
+                 <td>100</td>
+                 <td>Zainab Syed (MSc - Nutrition, RD)</td>
+                 <td>Clinical Nutrition, Weight Management</td>
+                 <td>10+ Years (Experienced)</td>
+                 <td>Consultant roles</td>
+                 <td>Hyderabad</td>
+                 <td>Search Practice Contact</td>
+                 <td>Search "Dietitian Zainab Syed Hyderabad"</td>
+             </tr>
+        </tbody>
+    </table>
+
+     <div class="considerations">
+        <h2>Choosing a Dietitian/Nutritionist:</h2>
+        <ul>
+            <li><strong>Your Goal:</strong> Weight management, managing medical conditions (diabetes, renal disease), sports performance, child nutrition, general wellness?</li>
+            <li><strong>Credentials:</strong> Look for Registered Dietitian (RD), MSc (Nutrition/Dietetics), PhD (Nutrition), or specific certifications (CDE, Sports Nutrition).</li>
+            <li><strong>Specialization:</strong> Choose someone whose expertise aligns with your specific needs.</li>
+            <li><strong>Approach:</strong> Clinical, evidence-based, holistic, specific diets? Ensure qualified and safe practices.</li>
+            <li><strong>Consultation:</strong> Discuss goals, approach, and ensure comfort with the practitioner.</li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

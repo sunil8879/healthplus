@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vegetable Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #40E0D0; /* changed to turquoise */
+      color: black; /* corrected spelling from "colour" */
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: bold; /* bold font globally */
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .title {
+      font-size: 3em;
+      margin-top: 50px;
+      letter-spacing: 0.1em;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .letter {
+      opacity: 0;
+      transform: scale(4) rotate(720deg) translateY(-300px);
+      animation: formTitle 1.2s ease-out forwards;
+    }
+
+    .letter:nth-child(1) { animation-delay: 0s; }
+    .letter:nth-child(2) { animation-delay: 0.1s; }
+    .letter:nth-child(3) { animation-delay: 0.2s; }
+    .letter:nth-child(4) { animation-delay: 0.3s; }
+    .letter:nth-child(5) { animation-delay: 0.4s; }
+    .letter:nth-child(6) { animation-delay: 0.5s; }
+    .letter:nth-child(7) { animation-delay: 0.6s; }
+    .letter:nth-child(8) { animation-delay: 0.7s; }
+    .letter:nth-child(9) { animation-delay: 0.8s; }
+    .letter:nth-child(10) { animation-delay: 0.9s; }
+    .letter:nth-child(11) { animation-delay: 1s; }
+    .letter:nth-child(12) { animation-delay: 1.1s; }
+    .letter:nth-child(13) { animation-delay: 1.2s; }
+    .letter:nth-child(14) { animation-delay: 1.3s; }
+    .letter:nth-child(15) { animation-delay: 1.4s; }
+
+    @keyframes formTitle {
+      0% {
+        opacity: 0;
+        transform: scale(4) rotate(720deg) translateY(-300px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg) translateY(0);
+      }
+    }
+
+    model-viewer {
+      width: 400px;
+      height: 400px;
+      margin: 40px auto;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+
+.arrow-btn {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(145deg, #2ecc71, #27ae60); /* 3D Green Gradient */
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px; /* Rounded pill shape */
+      box-shadow: 
+        0 6px #1e8449, /* Darker green bottom shadow for 3D depth */
+        0 10px 20px rgba(0,0,0,0.2); /* Soft drop shadow */
+      transition: all 0.1s ease; /* Snappy click animation */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      outline: none;
+    }
+
+    .arrow-btn:hover {
+      background: linear-gradient(145deg, #27ae60, #2ecc71); /* Subtle color shift */
+      transform: translateY(-2px); /* Slight lift on hover */
+      box-shadow: 
+        0 8px #1e8449, 
+        0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    .arrow-btn:active {
+      transform: translateY(4px); /* Push down effect */
+      box-shadow: 
+        0 2px #1e8449, /* Reduced shadow to simulate press */
+        0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    .info-box {
+      background-color: white; /* white background for small box */
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black; /* black font inside small box */
+      margin-top: 20px;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+  <!-- ðŸŽ† Animated title -->
+  <div class="title">
+    <span class="letter">V</span>
+    <span class="letter">E</span>
+    <span class="letter">G</span>
+    <span class="letter">E</span>
+    <span class="letter">T</span>
+    <span class="letter">A</span>
+    <span class="letter">B</span>
+    <span class="letter">L</span>
+    <span class="letter">E</span>
+    <span class="letter">&nbsp;</span>
+    <span class="letter">V</span>
+    <span class="letter">I</span>
+    <span class="letter">E</span>
+    <span class="letter">W</span>
+    <span class="letter">E</span>
+    <span class="letter">R</span>
+  </div>
+
+  <!-- ðŸŽ 3D Vegetable viewer -->
+  <model-viewer id="viewer"
+    src="media/Beet root1.glb"
+    alt="vegetable model"
+    auto-rotate
+    auto-rotate-delay="0"
+    disable-zoom
+    camera-controls="false"
+    exposure="1"
+    ar
+    shadow-intensity="1"
+    style="background-color: white; border-radius: 20px;">
+  </model-viewer>
+
+<div class="controls">
+    <button class="arrow-btn" onclick="showPrev()">PREVIOUS</button>
+    <button class="arrow-btn" onclick="showNext()">NEXT</button>
+  </div>
+
+  <!-- ðŸ“‹ Info -->
+  <div id="info" class="info-box">Click the vegetable to view details</div>
+
+  <script>
+  const vegetables = [
+    {
+      name: "Beet root",
+      file: "media/Beet root1.glb",
+      info: "Calories: 43 kcal<br>Nutrients: Rich in nitrates, improves blood circulation, and supports liver function"
+    },
+    {
+      name: "Carrot",
+      file: "media/carrot.glb",
+      info: "Calories: 41 kcal<br>Nutrients: High in beta-carotene (vitamin A), good for eye health and immune function"
+    },
+    {
+      name: "Broccoli",
+      file: "media/broccoli1.glb",
+      info: "Calories: 55 kcal<br>Nutrients: Loaded with vitamin C, fiber, and antioxidants; supports heart health and digestion"
+    },
+    {
+      name: "Tomato",
+      file: "media/tomato1.glb",
+      info: "Calories: 18 kcal<br>Nutrients: Rich in lycopene, vitamin C, and potassium; good for heart and skin health"
+    },
+    {
+      name: "Potato",
+      file: "media/potato1.glb",
+      info: "Calories: 77 kcal<br>Nutrients: High in carbohydrates and potassium; provides energy and supports muscle function"
+    },
+    {
+      name: "Onion",
+      file: "media/onions.glb",
+      info: "Calories: 40 kcal<br>Nutrients: Contains quercetin, an antioxidant that supports immunity and heart health"
+    },
+    {
+      name: "Garlic",
+      file: "media/garlic1.glb",
+      info: "Calories: 149 kcal<br>Nutrients: Boosts immune function, reduces blood pressure, and has antibacterial properties"
+    },
+    {
+      name: "Cabbage",
+      file: "media/cabbage1.glb",
+      info: "Calories: 25 kcal<br>Nutrients: High in vitamin C, fiber, and anti-inflammatory compounds; good for digestion"
+    },
+    {
+      name: "Cauliflower",
+      file: "media/cauliflower1.glb",
+      info: "Calories: 25 kcal<br>Nutrients: Rich in choline, fiber, and antioxidants; supports brain and digestive health"
+    },
+    {
+      name: "Pumpkin",
+      file: "media/pumpkin1.glb",
+      info: "Calories: 26 kcal<br>Nutrients: Packed with beta-carotene and fiber; supports eye health and digestion"
+    },
+    {
+      name: "Bell Pepper",
+      file: "media/Bell pepper1.glb",
+      info: "Calories: 31 kcal<br>Nutrients: High in vitamin C and antioxidants; promotes healthy skin and immune function"
+    },
+    {
+      name: "Cucumber",
+      file: "media/cucumber.glb",
+      info: "Calories: 15 kcal<br>Nutrients: Low in calories, hydrating, and rich in vitamin K"
+    },
+    {
+      name: "Lettuce",
+      file: "media/lettuce.glb",
+      info: "Calories: 15 kcal<br>Nutrients: Contains fiber and vitamins A, C, and K; promotes digestion and hydration"
+    },
+    {
+      name: "Sweet Potato",
+      file: "media/sweetpotato1.glb",
+      info: "Calories: 86 kcal<br>Nutrients: High in fiber, vitamin A, and antioxidants; good for gut and eye health"
+    },
+    {
+      name: "Beetroot",
+      file: "media/Beet root1.glb",
+      info: "Calories: 43 kcal<br>Nutrients: Rich in nitrates, improves blood circulation, and supports liver function"
+    },
+    {
+      name: "Zucchini",
+      file: "media/zucchini1.glb",
+      info: "Calories: 17 kcal<br>Nutrients: Low in calories, high in antioxidants, supports digestion"
+    },
+    {
+      name: "Bitter gourd",
+      file: "media/bitter gourd1.glb",
+      info: "Calories: 19 kcal<br>Nutrients: Lowers blood sugar, high in antioxidants, and supports liver function."
+    },
+    {
+      name: "Celery",
+      file: "media/celery1.glb",
+      info: "Calories: 16 kcal<br>Nutrients: Low-calorie, hydrating, and high in antioxidants; supports heart health."
+    },
+    {
+      name: "Egg plant",
+      file: "media/eggplant1.glb",
+      info: "Calories: 25 kcal<br>Nutrients: High in fiber and antioxidants; supports heart health and reduces inflammation."
+    },
+    {
+      name: "Fenugrek",
+      file: "media/fenugrek11.glb",
+      info: "Calories: 49 kcal<br>Nutrients: Helps control blood sugar, improves digestion, rich in iron"
+    },
+    {
+      name: "Green peas",
+      file: "media/green peas1.glb",
+      info: "Calories: 81 kcal<br>Nutrients: High in protein, supports heart health, rich in fiber"
+    },
+    {
+      name: "Ladiesfinger",
+      file: "media/okra1.glb",
+      info: "Calories: 43 kcal<br>Nutrients: Rich in nitrates, improves blood circulation, and supports liver function"
+    },
+    {
+      name: "Flat Beans",
+      file: "media/Flat beans1.glb",
+      info: "Calories: 31 kcal<br>Nutrients: High in fiber, Vitamin A, C, and folate; supports digestion and immunity"
+    },
+    {
+      name: "French Beans",
+      file: "media/french beans1.glb",
+      info: "Calories: 31 kcal<br>Nutrients: Rich in Vitamin K, C, and manganese; supports bone health and metabolism"
+    },
+    {
+      name: "Pointed Gourd",
+      file: "media/pointed gourd1.glb",
+      info: "Calories: 20 kcal<br>Nutrients: Good source of dietary fiber and antioxidants; supports digestion and detoxification"
+    },
+    {
+      name: "Yardlong Beans",
+      file: "media/yardlong beans1.glb",
+      info: "Calories: 47 kcal<br>Nutrients: Contains protein, Vitamin A, and iron; supports muscle function and vision"
+    }
+  ];
+
+  let current = 0;
+  const viewer = document.getElementById('viewer');
+  const infoBox = document.getElementById('info');
+
+  // Auto-rotation logic
+  let rotation = 0;
+  const speed = 65 / 60;
+let isRotating = true;
+
+  function rotateModel() {
+ if (!isRotating) return; 
+    rotation += speed;
+    viewer.cameraOrbit = `${rotation % 360}deg 75deg 2.5m`;
+    requestAnimationFrame(rotateModel);
+  }
+
+  viewer.addEventListener('load', () => {
+ isRotating = true; 
+      rotateModel();
+    });
+
+  viewer.addEventListener('click', () => {
+  isRotating = false;
+    const veg = vegetables[current];
+    infoBox.innerHTML = `<strong>${veg.name}</strong><br>${veg.info}`;
+  });
+
+  function showVegetable(index) {
+    current = (index + vegetables.length) % vegetables.length;
+    viewer.src = vegetables[current].file;
+    infoBox.innerHTML = "Click the vegetable to view details";
+
+  isRotating = true; 
+      rotateModel();
+    
+  }
+
+  function showNext() {
+    showVegetable(current + 1);
+  }
+
+  function showPrev() {
+    showVegetable(current - 1);
+  }
+</script>
+</body>
+</html>
