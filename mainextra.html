@@ -297,6 +297,95 @@ flex-wrap: wrap;
     margin-top: 10px;
   }
 }
+/* Mobile navbar fix */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a {
+    display: block;
+    margin: 8px 0;
+  }
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap !important;
+  }
+}
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+}
+/* ===== MOBILE FORCE RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 768px) {
+
+  nav, header {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    right: auto !important;
+    left: auto !important;
+  }
+
+  nav ul, nav div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  nav a, 
+  nav button {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 8px 0 !important;
+  }
+}
+/* ===== MOBILE NAV FIX ===== */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+  }
+}
+
   </style>
 </head>
 <body>
