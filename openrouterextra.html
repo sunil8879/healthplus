@@ -2,26 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chat with OpenRouter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthPlus | AI Assistant</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    #response { 
-      background: #f4f4f4; 
-      padding: 15px; 
-      white-space: pre-wrap; 
-      border-radius: 5px;
-      margin-top: 10px;
+    /* Fabulous Background & Layout */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #00b09b, #96c93d, #00d2ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* The Main Chat Card */
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      width: 90%;
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h2 {
+      color: #2d5a27;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p.subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    /* Style the Textarea */
+    textarea {
+      width: 100%;
+      padding: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 20px;
+      font-size: 1rem;
+      resize: none;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      outline: none;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    textarea:focus {
+      border-color: #96c93d;
+      box-shadow: 0 0 15px rgba(150, 201, 61, 0.3);
+    }
+
+    /* Flamboyant Button */
+    button {
+      margin-top: 20px;
+      background: linear-gradient(to right, #00b09b, #96c93d);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    /* Fabulous Response Box */
+    h3 {
+      margin-top: 40px;
+      color: #333;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    #response { 
+      background: #f9fdf9;
+      color: #333;
+      padding: 25px; 
+      white-space: pre-wrap; 
+      border-radius: 20px;
+      margin-top: 10px;
+      text-align: left;
+      border-left: 8px solid #96c93d;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      min-height: 50px;
+    }
+
   </style>
 </head>
 <body>
 
-<h2>HealthPlus AI Chat</h2>
-<textarea id="prompt" rows="5" cols="60" placeholder="Type your message here..."></textarea><br><br>
-<button onclick="sendMessage()">Send Message</button>
+<div class="container">
+  <h2>HealthPlus AI</h2>
+  <p class="subtitle">Your personal flamboyant health companion</p>
 
-<h3>Response:</h3>
-<div id="response">Waiting for your message...</div>
+  <textarea id="prompt" rows="4" placeholder="How can I help you thrive today?"></textarea>
+  <br>
+  <button onclick="sendMessage()">✨ Send Message</button>
+
+  <h3>Response:</h3>
+  <div id="response">Waiting for your brilliance...</div>
+</div>
 
 <script>
 async function sendMessage() {
@@ -36,21 +146,17 @@ async function sendMessage() {
   responseBox.textContent = "AI is thinking...";
 
   try {
-    // WHILE TESTING LOCALLY: Use "http://localhost:5000/api/chat"
-    // AFTER DEPLOYING: Use "https://healthplus-backend-17ow.onrender.com/api/chat"
-    
     const response = await fetch("https://healthplus-backend-1.onrender.com/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ userPrompt: promptInput }) // Matches the 'userPrompt' in your server.js
+      body: JSON.stringify({ userPrompt: promptInput }) 
     });
 
-    const data = await response.json(); // Changed from 'res' to 'response'
+    const data = await response.json(); 
 
     if (data.reply) {
-      // Show the actual AI answer
       responseBox.textContent = data.reply;
     } else if (data.error) {
       responseBox.textContent = "Error from server: " + data.error;
