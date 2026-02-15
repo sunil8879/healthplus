@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Indian & Chinese Recipes - Health Plus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2a9d8f; --secondary: #264653; --bg: #f8f9fa; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        
+        .recipe-header { background: var(--secondary); color: white; padding: 40px 5%; text-align: center; }
+        
+        .search-container { position: relative; max-width: 600px; margin: -30px auto 30px; padding: 0 20px; }
+        #recipeSearch { 
+            width: 100%; padding: 15px 25px; border-radius: 50px; border: none; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 1rem; outline: none;
+        }
+
+        /* Suggestions Dropdown */
+        #suggestions {
+            position: absolute; width: calc(100% - 40px); background: white; 
+            border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-height: 300px; overflow-y: auto; z-index: 100; display: none; margin-top: 5px;
+        }
+        .suggestion-item { padding: 12px 20px; cursor: pointer; border-bottom: 1px solid #eee; transition: 0.2s; }
+        .suggestion-item:hover { background: #f0fdfa; color: var(--primary); }
+
+        /* Recipe Grid */
+        .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 20px 5%; }
+        .recipe-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .recipe-card:hover { transform: translateY(-5px); }
+        .recipe-card img { width: 100%; height: 200px; object-fit: cover; }
+        .recipe-card-body { padding: 15px; }
+        .recipe-card-body h3 { margin: 0 0 10px; font-size: 1.1rem; color: var(--secondary); }
+        .tag { font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; background: #eaf6f5; color: var(--primary); font-weight: bold; }
+
+        .loader { text-align: center; display: none; padding: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="recipe-header">
+    <h1>Healthy Flavors</h1>
+    <p>Authentic Indian & Chinese Recipes</p>
+</div>
+
+<div class="search-container">
+    <input type="text" id="recipeSearch" placeholder="Type at least 3 letters (e.g., 'Pan' for Paneer or 'Dim' for Dim Sum)..." autocomplete="off">
+    <div id="suggestions"></div>
+</div>
+
+<div class="loader" id="loader"><i class="fas fa-spinner fa-spin fa-2x" style="color: var(--primary);"></i></div>
+
+<div class="recipe-grid" id="recipeResults">
+    <!-- Initial/Search results will appear here -->
+</div>
+
+<script>
+    // --- CONFIGURATION ---
+    const API_KEY = '776926714aa947d090feab2e4a8b5886'; // Replace with your actual key
+    const searchInput = document.getElementById('recipeSearch');
+    const suggestionsBox = document.getElementById('suggestions');
+    const resultsGrid = document.getElementById('recipeResults');
+    const loader = document.getElementById('loader');
+
+    // --- TRIGGER SEARCH ON TYPING ---
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        
+        if (query.length >= 3) {
+            fetchSuggestions(query);
+        } else {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+
+    // --- STEP 1: FETCH AUTOCOMPLETE SUGGESTIONS ---
+    // Note: Spoonacular's autocomplete doesn't filter by cuisine directly,
+    // so we use the 'Complex Search' to ensure we only show Indian/Chinese
+    async function fetchSuggestions(query) {
+        try {
+            // We search for recipes specifically filtered by Indian and Chinese cuisines
+            const response = await fetch(`https://api.spoonacular.com/api/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&cuisine=Indian,Chinese&number=6`);
+            const data = await response.json();
+            
+            displaySuggestions(data.results);
+        } catch (error) {
+            console.error("Error fetching suggestions:", error);
+        }
+    }
+
+    function displaySuggestions(recipes) {
+        if (recipes.length === 0) {
+            suggestionsBox.style.display = 'none';
+            return;
+        }
+
+        suggestionsBox.innerHTML = recipes.map(r => `
+            <div class="suggestion-item" onclick="getRecipeDetails(${r.id})">
+                <i class="fas fa-search" style="margin-right:10px; color:#ccc;"></i> ${r.title}
+            </div>
+        `).join('');
+        suggestionsBox.style.display = 'block';
+    }
+
+    // --- STEP 2: FETCH FULL RECIPE DETAILS ---
+    async function getRecipeDetails(id) {
+        suggestionsBox.style.display = 'none';
+        searchInput.value = "";
+        loader.style.display = 'block';
+        resultsGrid.innerHTML = "";
+
+        try {
+            const response = await fetch(`https://api.spoonacular.com/api/recipes/${id}/information?apiKey=${API_KEY}&includeNutrition=true`);
+            const recipe = await response.json();
+            loader.style.display = 'none';
+            displayFullRecipe(recipe);
+        } catch (error) {
+            console.error("Error fetching recipe details:", error);
+            loader.style.display = 'none';
+        }
+    }
+
+    function displayFullRecipe(r) {
+        resultsGrid.innerHTML = `
+            <div class="recipe-card" style="grid-column: 1 / -1; display: flex; flex-wrap: wrap;">
+                <img src="${r.image}" style="width: 400px; max-width: 100%;">
+                <div class="recipe-card-body" style="flex: 1; min-width: 300px;">
+                    <span class="tag">${r.cuisines.join(' / ')}</span>
+                    <h2 style="color: var(--secondary)">${r.title}</h2>
+                    <p><strong>Health Score:</strong> ${r.healthScore}% | <strong>Time:</strong> ${r.readyInMinutes} mins</p>
+                    <h4>Instructions:</h4>
+                    <p>${r.summary.substring(0, 300)}...</p>
+                    <a href="${r.sourceUrl}" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: none;">View Full Step-by-Step Instructions →</a>
+                </div>
+            </div>
+        `;
+    }
+
+    // Load some random Indian/Chinese recipes on start
+    async function loadInitial() {
+        const response = await fetch(`https://api.spoonacular.com/api/recipes/complexSearch?apiKey=${API_KEY}&cuisine=Indian,Chinese&number=8`);
+        const data = await response.json();
+        resultsGrid.innerHTML = data.results.map(r => `
+            <div class="recipe-card" onclick="getRecipeDetails(${r.id})">
+                <img src="${r.image}">
+                <div class="recipe-card-body">
+                    <h3>${r.title}</h3>
+                    <span class="tag">View Recipe</span>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    loadInitial();
+
+    // Close suggestions when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target)) suggestionsBox.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

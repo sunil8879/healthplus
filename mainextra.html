@@ -748,6 +748,7 @@ html, body {
             <ul>
                 <li><a href="recipemainextra.html">Indian Recipes</a></li>
                 <li><a href="recipeletterextra.html">International Recipes</a></li>
+ <li><a href="recipe.html">Indian & Chinese Cuisine</a></li>
                 <li><a href="blogsextra.html">Health & Wellness Blogs</a></li>
                 <li><a href="health_tracker.html">Chart & Data Section</a></li>
                 <li><a href="terminologiesextra.html">Food Terminologies</a></li>
@@ -1481,6 +1482,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 </script>
+
+<script>
+  const logoutLink = document.getElementById("clientLogoutLink");
+
+  if (logoutLink) {
+    logoutLink.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // CLEAR LOGIN STATE
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("userName");
+      localStorage.removeItem("userId");
+
+      // OPTIONAL: Firebase sign out (safe even if unused)
+      if (firebase && firebase.auth) {
+        firebase.auth().signOut().catch(() => {});
+      }
+
+      // REDIRECT TO LOGIN
+      window.location.href = "loginextra.html";
+    });
+  }
+</script>
+
 </body>
 </html>
-
